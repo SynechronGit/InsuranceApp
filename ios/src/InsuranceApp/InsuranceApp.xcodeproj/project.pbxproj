@@ -16,6 +16,9 @@
 		3F0CA46D1CF440C9002A048E /* IABaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0CA4671CF440C9002A048E /* IABaseController.swift */; };
 		3F0CA46E1CF440C9002A048E /* IADashboardController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0CA4691CF440C9002A048E /* IADashboardController.swift */; };
 		3F0CA46F1CF440C9002A048E /* IALoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0CA46B1CF440C9002A048E /* IALoginController.swift */; };
+		3F820C611CF4522000729AE6 /* IAConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F820C601CF4522000729AE6 /* IAConstants.swift */; };
+		3F820C631CF4526D00729AE6 /* IADataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F820C621CF4526D00729AE6 /* IADataManager.swift */; };
+		3F820C691CF4555800729AE6 /* IACustomer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F820C681CF4555800729AE6 /* IACustomer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +54,9 @@
 		3F0CA4671CF440C9002A048E /* IABaseController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IABaseController.swift; sourceTree = "<group>"; };
 		3F0CA4691CF440C9002A048E /* IADashboardController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IADashboardController.swift; sourceTree = "<group>"; };
 		3F0CA46B1CF440C9002A048E /* IALoginController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IALoginController.swift; sourceTree = "<group>"; };
+		3F820C601CF4522000729AE6 /* IAConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IAConstants.swift; sourceTree = "<group>"; };
+		3F820C621CF4526D00729AE6 /* IADataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IADataManager.swift; sourceTree = "<group>"; };
+		3F820C681CF4555800729AE6 /* IACustomer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IACustomer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,9 +107,11 @@
 		3F0CA4301CF4402F002A048E /* InsuranceApp */ = {
 			isa = PBXGroup;
 			children = (
+				3F820C5F1CF4522000729AE6 /* Assistants */,
 				3F0CA4651CF440C9002A048E /* Base */,
-				3F0CA4681CF440C9002A048E /* Dashboard */,
+				3F820C661CF4555800729AE6 /* Reusables */,
 				3F0CA46A1CF440C9002A048E /* Login */,
+				3F0CA4681CF440C9002A048E /* Dashboard */,
 				3F0CA4351CF44030002A048E /* Main.storyboard */,
 				3F0CA4381CF44030002A048E /* Assets.xcassets */,
 				3F0CA43A1CF44030002A048E /* LaunchScreen.storyboard */,
@@ -153,6 +161,31 @@
 				3F0CA46B1CF440C9002A048E /* IALoginController.swift */,
 			);
 			path = Login;
+			sourceTree = "<group>";
+		};
+		3F820C5F1CF4522000729AE6 /* Assistants */ = {
+			isa = PBXGroup;
+			children = (
+				3F820C601CF4522000729AE6 /* IAConstants.swift */,
+				3F820C621CF4526D00729AE6 /* IADataManager.swift */,
+			);
+			path = Assistants;
+			sourceTree = "<group>";
+		};
+		3F820C661CF4555800729AE6 /* Reusables */ = {
+			isa = PBXGroup;
+			children = (
+				3F820C671CF4555800729AE6 /* Models */,
+			);
+			path = Reusables;
+			sourceTree = "<group>";
+		};
+		3F820C671CF4555800729AE6 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				3F820C681CF4555800729AE6 /* IACustomer.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -287,9 +320,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				3F0CA46D1CF440C9002A048E /* IABaseController.swift in Sources */,
+				3F820C631CF4526D00729AE6 /* IADataManager.swift in Sources */,
 				3F0CA46F1CF440C9002A048E /* IALoginController.swift in Sources */,
 				3F0CA46E1CF440C9002A048E /* IADashboardController.swift in Sources */,
 				3F0CA46C1CF440C9002A048E /* IAAppDelegate.swift in Sources */,
+				3F820C611CF4522000729AE6 /* IAConstants.swift in Sources */,
+				3F820C691CF4555800729AE6 /* IACustomer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

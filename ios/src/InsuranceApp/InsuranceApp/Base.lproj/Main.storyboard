@@ -14,7 +14,7 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oi9-Cz-IpD">
@@ -46,7 +46,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1045" y="429"/>
+            <point key="canvasLocation" x="1022" y="429"/>
         </scene>
         <!--Dashboard Controller-->
         <scene sceneID="zWP-iv-os1">
@@ -57,9 +57,25 @@
                         <viewControllerLayoutGuide type="bottom" id="yHq-1k-Eml"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="2Lo-CE-1a8">
-                        <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dashboard" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8TG-v9-RDL">
+                                <rect key="frame" x="10" y="40" width="580" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="G9S-QF-Xhd"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="8TG-v9-RDL" secondAttribute="trailing" constant="10" id="9R3-dU-vCM"/>
+                            <constraint firstItem="8TG-v9-RDL" firstAttribute="leading" secondItem="2Lo-CE-1a8" secondAttribute="leading" constant="10" id="Rep-Np-yLL"/>
+                            <constraint firstItem="8TG-v9-RDL" firstAttribute="top" secondItem="2Lo-CE-1a8" secondAttribute="top" constant="40" id="dpp-s7-veH"/>
+                        </constraints>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>
                 </viewController>
@@ -70,7 +86,7 @@
         <!--Navigation Controller-->
         <scene sceneID="2Un-FI-aB0">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="yS7-Mb-0yN" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="yS7-Mb-0yN" sceneMemberID="viewController">
                     <extendedEdge key="edgesForExtendedLayout"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="rR3-RW-hlS">
