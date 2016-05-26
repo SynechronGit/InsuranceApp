@@ -10,8 +10,10 @@ import UIKit
  * Controller for Add Vehicle screen.
  */
 class IAAddVehicleController: IABaseController {
-    @IBOutlet var licensePlateNumberTextField :UITextField!
-    @IBOutlet var stateTextField :UITextField!
+    @IBOutlet weak var licensePlateNumberTextField :UITextField!
+    @IBOutlet weak var stateTextField :UITextField!
+    @IBOutlet weak var vinTextField: UITextField!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
