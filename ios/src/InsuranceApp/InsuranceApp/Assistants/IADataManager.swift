@@ -14,6 +14,7 @@ import UIKit
  */
 public enum IARequestType: Int {
     case Login
+    case AddVehicle
 }
 
 
@@ -21,7 +22,7 @@ public enum IARequestType: Int {
  * Model to hold server response data.
  */
 class IADataManagerResponse: NSObject {
-    var result: AnyObject!
+    var result: Any!
     var error: NSError!
 }
 
@@ -101,7 +102,7 @@ class IADataManager: NSObject {
     }
     
     
-    private func sendRequest(pRequest:AnyObject!) {
+    private func sendRequest(pRequest:Any!) {
         let aDataManagerResponse :IADataManagerResponse = IADataManagerResponse()
         
         if self.requestType == IARequestType.Login {
@@ -120,6 +121,16 @@ class IADataManager: NSObject {
                 aDataManagerResponse.result = aDBCustomer
             } else {
                 aDataManagerResponse.error = NSError(domain: "com", code: 1, userInfo: [NSLocalizedDescriptionKey:"Email address is not registered."])
+            }
+        } else if self.requestType == IARequestType.AddVehicle {
+            let aVehicle :IAVehicle = pRequest as! IAVehicle
+            let anSqlQuery :String = String(format: "INSERT INTO vehicles (licensePlateNumber, state, photo) VALUES ('%@', '%@', NULL)", aVehicle.licensePlateNumber, aVehicle.state)
+            let anSqlResult = self.executeQuery(anSqlQuery)
+            if anSqlResult != nil && anSqlResult.count >= 1 {
+                
+                aDataManagerResponse.result = aVehicle
+            } else {
+                aDataManagerResponse.error = NSError(domain: "com", code: 1, userInfo: [NSLocalizedDescriptionKey:"Can not insert vehicle."])
             }
         }
         
@@ -159,5 +170,11 @@ class IADataManager: NSObject {
     internal func login(pCustomer :IACustomer) {
         self.requestType = IARequestType.Login
         self.sendRequest(pCustomer)
+    }
+    
+    
+    internal func addVehicle(pVehicle :IAVehicle) {
+        self.requestType = IARequestType.AddVehicle
+        self.sendRequest(pVehicle)
     }
 }

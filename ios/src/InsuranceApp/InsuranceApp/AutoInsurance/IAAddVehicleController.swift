@@ -1,5 +1,5 @@
 //
-//  IALoginController.swift
+//  IAAddVehicleController.swift
 //  InsuranceApp
 //
 
@@ -7,9 +7,11 @@ import UIKit
 
 
 /**
- * Controller for Login screen.
+ * Controller for Add Vehicle screen.
  */
-class IALoginController: IABaseController {
+class IAAddVehicleController: IABaseController {
+    @IBOutlet var licensePlateNumberTextField :UITextField!
+    @IBOutlet var stateTextField :UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,16 +21,16 @@ class IALoginController: IABaseController {
     // MARK: - Selector Methods
     
     /**
-     * Selector method that will be called when loing button is tapped.
+     * Selector method that will be called when submit button is tapped.
      * @return Void
      */
-    @IBAction func didSelectLoginButton() {
-        let aCustomer = IACustomer()
-        aCustomer.emailAddress = "john.doe@example.com"
-        aCustomer.password = ""
+    @IBAction func didSelectSubmitButton() {
+        var aVehicle = IAVehicle()
+        aVehicle.licensePlateNumber = self.licensePlateNumberTextField.text
+        aVehicle.state = self.stateTextField.text
         
         IAAppDelegate.currentAppDelegate.displayLoadingOverlay()
-        self.dataManager.login(aCustomer)
+        self.dataManager.addVehicle(aVehicle)
     }
     
     
@@ -42,10 +44,8 @@ class IALoginController: IABaseController {
         
         if pResponse.error != nil {
             self.displayMessage(message: pResponse.error.localizedDescription, type: IAMessageType.Error)
-        } else if pSender.requestType == IARequestType.Login {
-            IAGlobalData.sharedInstance.loggedInCustomer = pResponse.result as! IACustomer
-            self.performSegueWithIdentifier("LoginToDashboardSegueID", sender: self)
+        } else if pSender.requestType == IARequestType.AddVehicle {
+            self.dismissViewControllerAnimated(true, completion: nil)
         }
     }
-    
 }
