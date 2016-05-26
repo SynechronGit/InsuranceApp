@@ -19,14 +19,6 @@ struct IADriver {
     
     
     init() {
-        firstName = nil
-        lastName = nil
-        relationship = nil
-        dob = nil
-        state = nil
-        license = nil
-        type = nil
-        status = nil
     }
     
     
