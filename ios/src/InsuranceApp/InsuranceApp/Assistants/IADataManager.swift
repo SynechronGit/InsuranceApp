@@ -45,7 +45,7 @@ class IADataManager: NSObject {
     var delegate :IADataManagerDelegate?
     
     
-    private func executeQuery(pQuery:String!) -> Array<Dictionary<String, AnyObject>>! {
+    private func executeQuery(pQuery:String!, values pValues:Array<AnyObject>!) throws -> Array<Dictionary<String, AnyObject>>! {
         var aReturnVal :Array<Dictionary<String, AnyObject>>! = Array()
         
         do {
@@ -55,48 +55,70 @@ class IADataManager: NSObject {
             }
             
             var anSqliteStatement: COpaquePointer = nil
-            if sqlite3_prepare_v2(aDatabaseHandle, pQuery, -1, &anSqliteStatement, nil) != SQLITE_OK {
+            if sqlite3_prepare_v2(aDatabaseHandle, pQuery, -1, &anSqliteStatement, nil) == SQLITE_OK {
+                if pValues != nil && pValues.count > 0 {
+                    for anIndex in 0..<pValues.count {
+                        let aValue = pValues[anIndex]
+                        if aValue is String {
+                            sqlite3_bind_text(anSqliteStatement, Int32(anIndex + 1), (aValue as! String), -1, nil)
+                        } else if aValue is NSNumber {
+                            sqlite3_bind_int(anSqliteStatement, Int32(anIndex + 1), (aValue as! NSNumber).intValue)
+                        }
+                    }
+                }
+            } else {
                 let anErrorMessage = String.fromCString(sqlite3_errmsg(aDatabaseHandle))
                 throw IAError.Generic(NSError(domain: "com", code: 1, userInfo: [NSLocalizedDescriptionKey:"Can not prepare statement. Error: " + anErrorMessage!]))
             }
             
-            while sqlite3_step(anSqliteStatement) == SQLITE_ROW {
-                let aColumnCount :Int = Int(sqlite3_column_count(anSqliteStatement))
-                
-                var aRow = Dictionary<String, AnyObject>()
-                for aColumnIndex in 0..<aColumnCount {
-                    let aColumnName :String! = String.fromCString(UnsafePointer<CChar>(sqlite3_column_name(anSqliteStatement, Int32(aColumnIndex))))
+            while true {
+                let anSqliteStepResult = sqlite3_step(anSqliteStatement)
+                if anSqliteStepResult == SQLITE_ROW {
+                    let aColumnCount :Int = Int(sqlite3_column_count(anSqliteStatement))
                     
-                    let aColumnType :Int32 = sqlite3_column_type(anSqliteStatement, Int32(aColumnIndex))
-                    
-                    var aColumnValue :AnyObject!
-                    if aColumnType == SQLITE_INTEGER {
-                        aColumnValue = NSNumber(int: sqlite3_column_int(anSqliteStatement, Int32(aColumnIndex)))
-                    } else if aColumnType == SQLITE_FLOAT {
-                        aColumnValue = NSNumber(double: sqlite3_column_double(anSqliteStatement, Int32(aColumnIndex)))
-                    } else if aColumnType == SQLITE_BLOB {
-                        let aDataLength = Int(sqlite3_column_bytes(anSqliteStatement, Int32(aColumnIndex)))
-                        aColumnValue = NSData(bytes: sqlite3_column_blob(anSqliteStatement, Int32(aColumnIndex)), length: aDataLength)
-                    } else if aColumnType == SQLITE_NULL {
-                        aColumnValue = NSNull()
-                    } else if aColumnType == SQLITE_TEXT || aColumnType == SQLITE3_TEXT {
-                        aColumnValue = String.fromCString(UnsafePointer<CChar>(sqlite3_column_text(anSqliteStatement, Int32(aColumnIndex))))
+                    var aRow = Dictionary<String, AnyObject>()
+                    for aColumnIndex in 0..<aColumnCount {
+                        let aColumnName :String! = String.fromCString(UnsafePointer<CChar>(sqlite3_column_name(anSqliteStatement, Int32(aColumnIndex))))
+                        
+                        let aColumnType :Int32 = sqlite3_column_type(anSqliteStatement, Int32(aColumnIndex))
+                        
+                        var aColumnValue :AnyObject!
+                        if aColumnType == SQLITE_INTEGER {
+                            aColumnValue = NSNumber(int: sqlite3_column_int(anSqliteStatement, Int32(aColumnIndex)))
+                        } else if aColumnType == SQLITE_FLOAT {
+                            aColumnValue = NSNumber(double: sqlite3_column_double(anSqliteStatement, Int32(aColumnIndex)))
+                        } else if aColumnType == SQLITE_BLOB {
+                            let aDataLength = Int(sqlite3_column_bytes(anSqliteStatement, Int32(aColumnIndex)))
+                            aColumnValue = NSData(bytes: sqlite3_column_blob(anSqliteStatement, Int32(aColumnIndex)), length: aDataLength)
+                        } else if aColumnType == SQLITE_NULL {
+                            aColumnValue = NSNull()
+                        } else if aColumnType == SQLITE_TEXT || aColumnType == SQLITE3_TEXT {
+                            aColumnValue = String.fromCString(UnsafePointer<CChar>(sqlite3_column_text(anSqliteStatement, Int32(aColumnIndex))))
+                        }
+                        aRow.updateValue(aColumnValue, forKey: aColumnName)
                     }
-                    aRow.updateValue(aColumnValue, forKey: aColumnName)
-                }
-                if aRow.count > 0 {
-                    aReturnVal.append(aRow)
+                    if aRow.count > 0 {
+                        aReturnVal.append(aRow)
+                    }
+                } else if anSqliteStepResult == SQLITE_DONE {
+                    break
+                } else {
+                    throw IAError.Generic(NSError(domain: "com", code: 1, userInfo: [NSLocalizedDescriptionKey:"Can not step statement."]))
                 }
             }
             
             if sqlite3_finalize(anSqliteStatement) != SQLITE_OK {
                 let anErrorMessage = String.fromCString(sqlite3_errmsg(aDatabaseHandle))
-                throw IAError.Generic(NSError(domain: "com", code: 1, userInfo: [NSLocalizedDescriptionKey:"Can not finalize statement. Error: " + anErrorMessage!]))
+                throw IAError.Generic(NSError(domain: "com", code: 1, userInfo: [NSLocalizedDescriptionKey:String(format: "Can not finalize statement. Error: %@", anErrorMessage!)]))
             }
-        } catch IAError.Generic(let pMessage){
-            NSLog("Execute query error. %@", pMessage)
+        } catch IAError.Generic(let pError){
+            throw IAError.Generic(NSError(domain: "com", code: 1, userInfo: [NSLocalizedDescriptionKey:String(format: "Execute query error. %@", pError.localizedDescription)]))
         } catch {
-            NSLog("Execute query error.")
+            throw IAError.Generic(NSError(domain: "com", code: 1, userInfo: [NSLocalizedDescriptionKey:"Execute query error."]))
+        }
+        
+        if aReturnVal.count <= 0 {
+            aReturnVal = nil
         }
         
         return aReturnVal
@@ -106,33 +128,37 @@ class IADataManager: NSObject {
     private func sendRequest(pRequest:Any!) {
         let aDataManagerResponse :IADataManagerResponse = IADataManagerResponse()
         
-        if self.requestType == IARequestType.Login {
-            let aCustomer :IACustomer = pRequest as! IACustomer
-            let anSqlQuery :String = String(format: "SELECT id AS CustomerID, first_name AS FirstName, last_name AS LastName, email_address AS EmailAddress, password as Password FROM customers WHERE email_address='%@'", aCustomer.emailAddress)
-            let anSqlResult = self.executeQuery(anSqlQuery)
-            if anSqlResult != nil && anSqlResult.count >= 1 {
-                let aDBCustomerDict :[String:AnyObject] = anSqlResult.first!
-                
-                let aDBCustomer = IACustomer()
-                aDBCustomer.customerID = String(format:"%d", (aDBCustomerDict["CustomerID"] as! NSNumber).integerValue)
-                aDBCustomer.emailAddress = String(aDBCustomerDict["EmailAddress"] as! String)
-                aDBCustomer.firstName = String(aDBCustomerDict["FirstName"] as! String)
-                aDBCustomer.lastName = String(aDBCustomerDict["LastName"] as! String)
-                
-                aDataManagerResponse.result = aDBCustomer
-            } else {
-                aDataManagerResponse.error = NSError(domain: "com", code: 1, userInfo: [NSLocalizedDescriptionKey:"Email address is not registered."])
-            }
-        } else if self.requestType == IARequestType.AddVehicle {
-            let aVehicle :IAVehicle = pRequest as! IAVehicle
-            let anSqlQuery :String = String(format: "INSERT INTO vehicles (licensePlateNumber, state, photo) VALUES ('%@', '%@', NULL)", aVehicle.licensePlateNumber, aVehicle.state)
-            let anSqlResult = self.executeQuery(anSqlQuery)
-            if anSqlResult != nil && anSqlResult.count >= 1 {
-                
+        do {
+            if self.requestType == IARequestType.Login {
+                let aCustomer :IACustomer = pRequest as! IACustomer
+                let anSqlQuery :String = String(format: "SELECT id AS CustomerID, first_name AS FirstName, last_name AS LastName, email_address AS EmailAddress, password as Password FROM customers WHERE email_address='%@'", aCustomer.emailAddress)
+                let anSqlResult = try self.executeQuery(anSqlQuery, values: nil)
+                if anSqlResult != nil && anSqlResult.count >= 1 {
+                    let aDBCustomerDict :[String:AnyObject] = anSqlResult.first!
+                    
+                    let aDBCustomer = IACustomer()
+                    aDBCustomer.customerID = String(format:"%d", (aDBCustomerDict["CustomerID"] as! NSNumber).integerValue)
+                    aDBCustomer.emailAddress = String(aDBCustomerDict["EmailAddress"] as! String)
+                    aDBCustomer.firstName = String(aDBCustomerDict["FirstName"] as! String)
+                    aDBCustomer.lastName = String(aDBCustomerDict["LastName"] as! String)
+                    
+                    aDataManagerResponse.result = aDBCustomer
+                } else {
+                    throw IAError.Generic(NSError(domain: "com", code: 1, userInfo: [NSLocalizedDescriptionKey:"Email address is not registered."]))
+                }
+            } else if self.requestType == IARequestType.AddVehicle {
+                let aVehicle :IAVehicle = pRequest as! IAVehicle
+                let anSqlQuery :String = "INSERT INTO vehicles (license_plate_number, state) VALUES (?, ?)"
+                var aValueArray = Array<AnyObject>()
+                aValueArray.append(aVehicle.licensePlateNumber != nil ? aVehicle.licensePlateNumber : NSNull())
+                aValueArray.append(aVehicle.state != nil ? aVehicle.state : NSNull())
+                try self.executeQuery(anSqlQuery, values: aValueArray)
                 aDataManagerResponse.result = aVehicle
-            } else {
-                aDataManagerResponse.error = NSError(domain: "com", code: 1, userInfo: [NSLocalizedDescriptionKey:"Can not insert vehicle."])
             }
+        } catch IAError.Generic(let pError){
+            aDataManagerResponse.error = NSError(domain: "com", code: 1, userInfo: [NSLocalizedDescriptionKey:pError.localizedDescription])
+        } catch {
+            aDataManagerResponse.error = NSError(domain: "com", code: 1, userInfo: [NSLocalizedDescriptionKey:"Send request error."])
         }
         
         let aDelayTime = dispatch_time(DISPATCH_TIME_NOW, Int64(IAConstants.dataManagerResponseDelayInSeconds * Double(NSEC_PER_SEC)))
