@@ -10,6 +10,34 @@ import UIKit
 
 class IAConstants: NSObject {
     static let dataManagerResponseDelayInSeconds :Double = 1.0
+    static var dataManagerSqliteFilePath :String {
+        get {
+            return NSBundle.mainBundle().pathForResource("AppDatabase", ofType: "sqlite")!
+        }
+    }
+}
+
+
+class IAGlobalData: NSObject {
+    static var __sharedInstance :IAGlobalData!
+    static var sharedInstance :IAGlobalData {
+        get {
+            if __sharedInstance == nil {
+                __sharedInstance = IAGlobalData()
+            }
+            return __sharedInstance
+        }
+    }
+    
+    var loggedInCustomer :IACustomer!
+}
+
+
+/**
+ * Enum to define different error types.
+ */
+public enum IAError: ErrorType {
+    case Generic(NSError)
 }
 
 

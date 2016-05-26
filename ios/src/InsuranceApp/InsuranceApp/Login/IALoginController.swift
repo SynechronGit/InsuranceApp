@@ -24,7 +24,7 @@ class IALoginController: IABaseController {
      */
     @IBAction func didSelectLoginButton() {
         let aCustomer = IACustomer()
-        aCustomer.emailAddress = ""
+        aCustomer.emailAddress = "john.doe@example.com"
         aCustomer.password = ""
         
         IAAppDelegate.currentAppDelegate.displayLoadingOverlay()
@@ -47,7 +47,11 @@ class IALoginController: IABaseController {
      */
     internal override func aiDataManagerDidSucceed(sender pSender:IADataManager, response pResponse: IADataManagerResponse) {
         IAAppDelegate.currentAppDelegate.hideLoadingOverlay()
-        if pSender.requestType == IARequestType.Login {
+        
+        if pResponse.error != nil {
+            self.displayMessage(message: pResponse.error.localizedDescription, type: IAMessageType.Error)
+        } else if pSender.requestType == IARequestType.Login {
+            IAGlobalData.sharedInstance.loggedInCustomer = pResponse.result as! IACustomer
             self.performSegueWithIdentifier("LoginToDashboardSegueID", sender: self)
         }
     }
