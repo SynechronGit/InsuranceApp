@@ -14,6 +14,7 @@ import UIKit
  */
 public enum IARequestType: Int {
     case Login
+    case AddDriver
 }
 
 
@@ -160,4 +161,13 @@ class IADataManager: NSObject {
         self.requestType = IARequestType.Login
         self.sendRequest(pCustomer)
     }
+    
+    
+    internal func addDriver(pDriver :IAAddDriver) {
+        self.requestType = IARequestType.AddDriver
+        self.sendRequest(pDriver as! AnyObject)
+    }
+
+    
+    
 }
