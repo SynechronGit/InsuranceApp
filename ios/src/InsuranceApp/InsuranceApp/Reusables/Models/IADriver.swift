@@ -6,7 +6,7 @@
 
 import Foundation
 
-struct IAAddDriver {
+struct IADriver {
     
     var firstName:String!
     var lastName:String!

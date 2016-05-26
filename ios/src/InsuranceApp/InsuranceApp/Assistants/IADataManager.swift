@@ -206,9 +206,9 @@ class IADataManager: NSObject {
     }
     
     
-    internal func addDriver(pDriver :IAAddDriver) {
+    internal func addDriver(pDriver :IADriver) {
         self.requestType = IARequestType.AddDriver
-        self.sendRequest(pDriver as! AnyObject)
+        self.sendRequest(pDriver)
     }
     
 }
