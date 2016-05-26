@@ -12,7 +12,24 @@ class IAConstants: NSObject {
     static let dataManagerResponseDelayInSeconds :Double = 1.0
     static var dataManagerSqliteFilePath :String {
         get {
-            return NSBundle.mainBundle().pathForResource("AppDatabase", ofType: "sqlite")!
+            let aReturnVal = String(format: "%@/AppDatabase.sqlite", IAConstants.documentDirectoryPath)
+            
+            do {
+                if NSFileManager.defaultManager().fileExistsAtPath(aReturnVal) != true {
+                    try NSFileManager.defaultManager().copyItemAtPath(NSBundle.mainBundle().pathForResource("AppDatabase", ofType: "sqlite")!, toPath: aReturnVal)
+                }
+            } catch {
+                NSLog("Can not copy app database.")
+            }
+            
+            return aReturnVal
+        }
+    }
+    
+    
+    static var documentDirectoryPath :String {
+        get {
+            return NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0]
         }
     }
 }
