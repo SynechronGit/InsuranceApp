@@ -31,7 +31,7 @@ class IAAddDriverController: IABaseController {
         let dateFormatter = NSDateFormatter()
         dateFormatter.dateFormat = "dd-mm-yyyy"
         
-        var aDriver = IAAddDriver()
+        var aDriver = IADriver()
         aDriver.firstName = self.firstNameTextField.text!
         aDriver.lastName = self.lastNameTextField.text!
         aDriver.relationship = self.lastNameTextField.text!
