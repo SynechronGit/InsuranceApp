@@ -225,11 +225,6 @@ class IADataManager: NSObject {
     }
     
     
-    internal func vehicleDetails(pVehicleID :String) {
-        self.requestType = IARequestType.VehicleDetails
-    }
-    
-    
     internal func addDriver(pDriver :IADriver) {
         self.requestType = IARequestType.AddDriver
         self.sendRequest(pDriver)

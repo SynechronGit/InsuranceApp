@@ -88,8 +88,18 @@
                                     <segue destination="RW6-fY-qPa" kind="presentation" modalPresentationStyle="formSheet" id="01A-hV-bfR"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3od-mb-j2M">
+                                <rect key="frame" x="225" y="340" width="150" height="30"/>
+                                <color key="backgroundColor" red="0.086274509799999996" green="0.45882352939999999" blue="0.72156862749999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Insurance Details">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="bsL-16-OO3" kind="show" id="kX6-pf-0so"/>
+                                </connections>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fs3-uX-Uda">
-                                <rect key="frame" x="225" y="263" width="150" height="30"/>
+                                <rect key="frame" x="225" y="276" width="150" height="30"/>
                                 <color key="backgroundColor" red="0.086274509799999996" green="0.45882352939999999" blue="0.72156862749999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Add Driver">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -167,7 +177,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dvC-uV-e6v" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1703" y="1145"/>
+            <point key="canvasLocation" x="1703" y="1204"/>
         </scene>
         <!--Add Driver Controller-->
         <scene sceneID="QGv-Lr-iNi">
@@ -300,6 +310,25 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nt0-A5-UfM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2390" y="429"/>
+        </scene>
+        <!--Auto Insurance Details Controller-->
+        <scene sceneID="BiC-Dj-ciI">
+            <objects>
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="bsL-16-OO3" customClass="IAAutoInsuranceDetailsController" customModule="InsuranceApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="zQH-Al-JVN"/>
+                        <viewControllerLayoutGuide type="bottom" id="PfJ-CK-65L"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8jM-Za-fFH">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <extendedEdge key="edgesForExtendedLayout"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ffG-NZ-plP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2380" y="1204"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="2Un-FI-aB0">
