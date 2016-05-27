@@ -19,7 +19,7 @@
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oi9-Cz-IpD">
                                 <rect key="frame" x="224" y="324" width="153" height="30"/>
-                                <color key="backgroundColor" red="0.20799334210000001" green="0.53935088090000005" blue="0.7937533927" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.086274509799999996" green="0.45882352939999999" blue="0.72156862749999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="153" id="S20-e0-kgl"/>
                                     <constraint firstAttribute="height" constant="30" id="X1H-Lo-FUb"/>
@@ -78,24 +78,18 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lHv-pc-2cv">
-                                <rect key="frame" x="225" y="209" width="150" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3od-mb-j2M">
+                                <rect key="frame" x="225" y="340" width="150" height="30"/>
                                 <color key="backgroundColor" red="0.086274509799999996" green="0.45882352939999999" blue="0.72156862749999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="Add Vehicle">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="AUw-kf-pzp"/>
+                                    <constraint firstAttribute="width" constant="150" id="m0k-Xs-O15"/>
+                                </constraints>
+                                <state key="normal" title="Auto Insurance">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="RW6-fY-qPa" kind="presentation" modalPresentationStyle="formSheet" id="01A-hV-bfR"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fs3-uX-Uda">
-                                <rect key="frame" x="225" y="263" width="150" height="30"/>
-                                <color key="backgroundColor" red="0.086274509799999996" green="0.45882352939999999" blue="0.72156862749999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="Add Driver">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="aL6-SL-tmf" kind="presentation" modalPresentationStyle="formSheet" id="dtY-3d-G0g"/>
+                                    <action selector="didSelectAutoInsuranceView" destination="UIL-Q0-cbF" eventType="touchUpInside" id="uFH-QN-5WO"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -104,14 +98,17 @@
                             <constraint firstAttribute="trailing" secondItem="cjc-L3-FPY" secondAttribute="trailing" constant="10" id="8qe-z8-Buf"/>
                             <constraint firstAttribute="trailing" secondItem="8TG-v9-RDL" secondAttribute="trailing" constant="10" id="9R3-dU-vCM"/>
                             <constraint firstItem="cjc-L3-FPY" firstAttribute="top" secondItem="8TG-v9-RDL" secondAttribute="bottom" constant="54" id="ASD-K3-Miz"/>
+                            <constraint firstItem="3od-mb-j2M" firstAttribute="centerX" secondItem="2Lo-CE-1a8" secondAttribute="centerX" id="CD0-lb-GvF"/>
                             <constraint firstItem="8TG-v9-RDL" firstAttribute="leading" secondItem="2Lo-CE-1a8" secondAttribute="leading" constant="10" id="Rep-Np-yLL"/>
                             <constraint firstItem="8TG-v9-RDL" firstAttribute="top" secondItem="2Lo-CE-1a8" secondAttribute="top" constant="40" id="dpp-s7-veH"/>
                             <constraint firstItem="cjc-L3-FPY" firstAttribute="leading" secondItem="2Lo-CE-1a8" secondAttribute="leading" constant="10" id="lV5-3R-hIh"/>
+                            <constraint firstItem="3od-mb-j2M" firstAttribute="top" secondItem="2Lo-CE-1a8" secondAttribute="top" constant="340" id="sPD-Hm-uwq"/>
                         </constraints>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>
                     <connections>
                         <outlet property="welcomeLabel" destination="cjc-L3-FPY" id="0z1-eW-Sk4"/>
+                        <segue destination="bsL-16-OO3" kind="show" identifier="DashboardToAutoInsuranceDetailsSegueID" id="SEL-0Y-TCf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="r5C-bG-USq" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -167,7 +164,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dvC-uV-e6v" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1703" y="1145"/>
+            <point key="canvasLocation" x="3114" y="1205"/>
         </scene>
         <!--Add Driver Controller-->
         <scene sceneID="QGv-Lr-iNi">
@@ -299,7 +296,66 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nt0-A5-UfM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2390" y="429"/>
+            <point key="canvasLocation" x="3114" y="429"/>
+        </scene>
+        <!--Auto Insurance Details Controller-->
+        <scene sceneID="BiC-Dj-ciI">
+            <objects>
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="bsL-16-OO3" customClass="IAAutoInsuranceDetailsController" customModule="InsuranceApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="zQH-Al-JVN"/>
+                        <viewControllerLayoutGuide type="bottom" id="PfJ-CK-65L"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8jM-Za-fFH">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ofu-QE-Q5q">
+                                <rect key="frame" x="225" y="204" width="150" height="30"/>
+                                <color key="backgroundColor" red="0.086274509799999996" green="0.45882352939999999" blue="0.72156862749999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="Nfn-gS-tW6"/>
+                                    <constraint firstAttribute="width" constant="150" id="Z4T-n4-Dwk"/>
+                                </constraints>
+                                <state key="normal" title="Add Vehicle">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="didSelectAddVehicleButton" destination="bsL-16-OO3" eventType="touchUpInside" id="TeE-O9-9Pq"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Ms-fz-eVT">
+                                <rect key="frame" x="225" y="271" width="150" height="30"/>
+                                <color key="backgroundColor" red="0.086274509799999996" green="0.45882352939999999" blue="0.72156862749999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="J6g-i0-Yjx"/>
+                                    <constraint firstAttribute="width" constant="150" id="JL4-5Z-7P5"/>
+                                </constraints>
+                                <state key="normal" title="Add Driver">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="didSelectAddDriverButton" destination="bsL-16-OO3" eventType="touchUpInside" id="OhF-pW-lQM"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Ofu-QE-Q5q" firstAttribute="centerX" secondItem="8jM-Za-fFH" secondAttribute="centerX" id="0pT-cS-S70"/>
+                            <constraint firstItem="8Ms-fz-eVT" firstAttribute="centerX" secondItem="8jM-Za-fFH" secondAttribute="centerX" id="Qph-1S-onk"/>
+                            <constraint firstItem="Ofu-QE-Q5q" firstAttribute="top" secondItem="8jM-Za-fFH" secondAttribute="top" constant="204" id="cPh-Ve-2jK"/>
+                            <constraint firstItem="8Ms-fz-eVT" firstAttribute="top" secondItem="Ofu-QE-Q5q" secondAttribute="bottom" constant="37" id="wsX-F2-THi"/>
+                        </constraints>
+                    </view>
+                    <extendedEdge key="edgesForExtendedLayout"/>
+                    <connections>
+                        <segue destination="aL6-SL-tmf" kind="presentation" identifier="AutoInsuranceDetailsToAddDriverSegueID" modalPresentationStyle="formSheet" id="eEj-f4-FLu"/>
+                        <segue destination="RW6-fY-qPa" kind="presentation" identifier="AutoInsuranceDetailsToAddVehicleSegueID" modalPresentationStyle="formSheet" id="DEB-rz-Nm2"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ffG-NZ-plP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2416" y="429"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="2Un-FI-aB0">
