@@ -71,6 +71,10 @@ class IADataManager: NSObject {
                             if sqlite3_bind_int(anSqliteStatement, Int32(anIndex + 1), (aValue as! NSNumber).intValue) != SQLITE_OK {
                                 throw IAError.Generic(NSError(domain: "com", code: 1, userInfo: [NSLocalizedDescriptionKey:"Can not bind value."]))
                             }
+                        } else if aValue is NSNull {
+                            if sqlite3_bind_null(anSqliteStatement, Int32(anIndex + 1)) != SQLITE_OK {
+                                throw IAError.Generic(NSError(domain: "com", code: 1, userInfo: [NSLocalizedDescriptionKey:"Can not bind value."]))
+                            }
                         }
                     }
                 }
@@ -180,6 +184,7 @@ class IADataManager: NSObject {
                 aValueArray.append(aDriver.license != nil ? aDriver.license : NSNull())
                 aValueArray.append(aDriver.type != nil ? aDriver.type : NSNull())
                 aValueArray.append(aDriver.status != nil ? aDriver.status : NSNull())
+                aValueArray.append(NSNull())
                 try self.executeQuery(anSqlQuery, values: aValueArray)
                 aDataManagerResponse.result = aDriver
             } else if self.requestType == IARequestType.ListVehicles {

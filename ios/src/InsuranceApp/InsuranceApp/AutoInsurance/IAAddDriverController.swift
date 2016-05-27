@@ -34,7 +34,7 @@ class IAAddDriverController: IABaseController {
         let aDriver = IADriver()
         aDriver.firstName = self.firstNameTextField.text!
         aDriver.lastName = self.lastNameTextField.text!
-        aDriver.relationship = self.lastNameTextField.text!
+        aDriver.relationship = self.relationshipTextField.text!
         aDriver.dob =  dateFormatter.dateFromString(self.dobTextField.text!)
         aDriver.state = self.stateTextField.text!
         aDriver.license = self.licenseTextField.text!
