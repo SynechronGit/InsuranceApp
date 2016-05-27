@@ -5,12 +5,8 @@
 
 import UIKit
 
-struct IAVehicle {
+class IAVehicle: NSObject {
     var state :String!
     var licensePlateNumber :String!
     var photo :UIImage!
-    
-    init() {
-        
-    }
 }

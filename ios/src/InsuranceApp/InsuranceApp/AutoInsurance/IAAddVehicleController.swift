@@ -27,7 +27,7 @@ class IAAddVehicleController: IABaseController {
      * @return Void
      */
     @IBAction func didSelectSubmitButton() {
-        var aVehicle = IAVehicle()
+        let aVehicle = IAVehicle()
         aVehicle.licensePlateNumber = self.licensePlateNumberTextField.text
         aVehicle.state = self.stateTextField.text
         
