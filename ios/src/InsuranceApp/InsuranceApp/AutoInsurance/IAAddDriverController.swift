@@ -31,7 +31,7 @@ class IAAddDriverController: IABaseController {
         let dateFormatter = NSDateFormatter()
         dateFormatter.dateFormat = "dd-mm-yyyy"
         
-        var aDriver = IADriver()
+        let aDriver = IADriver()
         aDriver.firstName = self.firstNameTextField.text!
         aDriver.lastName = self.lastNameTextField.text!
         aDriver.relationship = self.lastNameTextField.text!
@@ -42,8 +42,23 @@ class IAAddDriverController: IABaseController {
         aDriver.status = self.statusTextField.text!
         
        self.dataManager.addDriver(aDriver)
-       
-       self.dismissViewControllerAnimated(true, completion: nil)
         
     }
+    
+    
+    // MARK: - IADataManagerDelegate Methods
+    
+    /**
+     * IADataManagerDelegate method. It is implemented to handle response sent by IADataManager.
+     */
+    internal override func aiDataManagerDidSucceed(sender pSender:IADataManager, response pResponse: IADataManagerResponse) {
+        IAAppDelegate.currentAppDelegate.hideLoadingOverlay()
+        
+        if pResponse.error != nil {
+            self.displayMessage(message: pResponse.error.localizedDescription, type: IAMessageType.Error)
+        } else if pSender.requestType == IARequestType.AddVehicle {
+            self.dismissViewControllerAnimated(true, completion: nil)
+        }
+    }
+
 }
