@@ -168,6 +168,20 @@ class IADataManager: NSObject {
                 aValueArray.append(aVehicle.state != nil ? aVehicle.state : NSNull())
                 try self.executeQuery(anSqlQuery, values: aValueArray)
                 aDataManagerResponse.result = aVehicle
+            } else if self.requestType == IARequestType.AddDriver {
+                let aDriver :IADriver = pRequest as! IADriver
+                let anSqlQuery :String = "INSERT INTO drivers (first_name, last_name, relationship, dob, state, license, type, status, avatar) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)"
+                var aValueArray = Array<AnyObject>()
+                aValueArray.append(aDriver.firstName != nil ? aDriver.firstName : NSNull())
+                aValueArray.append(aDriver.lastName != nil ? aDriver.lastName : NSNull())
+                aValueArray.append(aDriver.relationship != nil ? aDriver.relationship : NSNull())
+                aValueArray.append(aDriver.dob != nil ? aDriver.dob : NSNull())
+                aValueArray.append(aDriver.state != nil ? aDriver.state : NSNull())
+                aValueArray.append(aDriver.license != nil ? aDriver.license : NSNull())
+                aValueArray.append(aDriver.type != nil ? aDriver.type : NSNull())
+                aValueArray.append(aDriver.status != nil ? aDriver.status : NSNull())
+                try self.executeQuery(anSqlQuery, values: aValueArray)
+                aDataManagerResponse.result = aDriver
             } else if self.requestType == IARequestType.ListVehicles {
                 let anSqlQuery :String = "SELECT license_plate_number, state FROM vehicles"
                 let anSqlResult = try self.executeQuery(anSqlQuery, values: nil)

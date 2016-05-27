@@ -6,7 +6,7 @@
 
 import Foundation
 
-struct IADriver {
+class IADriver:NSObject {
     
     var firstName:String!
     var lastName:String!
@@ -17,13 +17,5 @@ struct IADriver {
     var type:String!
     var status:String!
     
-    
-    init() {
-    }
-    
-    
-    func dobDisplayText() -> String {
-        return "11-22-3333"
-    }
 }
 
