@@ -168,6 +168,19 @@ class IADataManager: NSObject {
                 aValueArray.append(aVehicle.state != nil ? aVehicle.state : NSNull())
                 try self.executeQuery(anSqlQuery, values: aValueArray)
                 aDataManagerResponse.result = aVehicle
+            } else if self.requestType == IARequestType.ListVehicles {
+                let anSqlQuery :String = "SELECT license_plate_number, state FROM vehicles"
+                let anSqlResult = try self.executeQuery(anSqlQuery, values: nil)
+                if anSqlResult != nil && anSqlResult.count > 0 {
+                    var aVehicleArray = Array<IAVehicle>()
+                    for var aDBVehicleDict :[String:AnyObject] in anSqlResult {
+                        let aDBVehicle = IAVehicle()
+                        aDBVehicle.licensePlateNumber = aDBVehicleDict["license_plate_number"] as! String
+                        aDBVehicle.state = aDBVehicleDict["state"] as! String
+                        aVehicleArray.append(aDBVehicle)
+                    }
+                    aDataManagerResponse.result = aVehicleArray
+                }
             }
         } catch IAError.Generic(let pError){
             aDataManagerResponse.error = NSError(domain: "com", code: 1, userInfo: [NSLocalizedDescriptionKey:pError.localizedDescription])
@@ -222,6 +235,7 @@ class IADataManager: NSObject {
     
     internal func listVehicles() {
         self.requestType = IARequestType.ListVehicles
+        self.sendRequest(nil)
     }
     
     

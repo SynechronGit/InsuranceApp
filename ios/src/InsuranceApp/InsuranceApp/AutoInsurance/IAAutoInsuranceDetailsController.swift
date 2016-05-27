@@ -16,15 +16,28 @@ class IAAutoInsuranceDetailsController: IABaseController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.reloadAllData()
     }
 
     func reloadAllData() {
+        IAAppDelegate.currentAppDelegate.displayLoadingOverlay()
         self.dataManager.listVehicles()
     }
     
     
     func reloadAllView() {
+        if self.vehicleArray != nil {
+            for aVehicle in self.vehicleArray {
+                NSLog("licensePlateNumber: %@, state: %@", aVehicle.licensePlateNumber, aVehicle.state)
+            }
+        }
         
+        if self.driverArray != nil {
+            for aDriver in self.driverArray {
+                NSLog("firstName: %@, lastName: %@", aDriver.firstName, aDriver.lastName)
+            }
+        }
     }
     
     
@@ -44,13 +57,17 @@ class IAAutoInsuranceDetailsController: IABaseController {
             } else {
                 self.vehicleArray = nil
             }
-            self.dataManager.listDrivers()
+            self.reloadAllView()
+            
+            //IAAppDelegate.currentAppDelegate.displayLoadingOverlay()
+            //self.dataManager.listDrivers()
         } else if pSender.requestType == IARequestType.ListDrivers {
             if pResponse.result != nil {
                 self.driverArray = pResponse.result as! Array
             } else {
                 self.driverArray = nil
             }
+            self.reloadAllView()
         }
     }
 }
