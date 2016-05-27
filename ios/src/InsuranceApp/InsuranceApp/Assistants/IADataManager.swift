@@ -172,12 +172,15 @@ class IADataManager: NSObject {
                 let anSqlQuery :String = "SELECT license_plate_number, state FROM vehicles"
                 let anSqlResult = try self.executeQuery(anSqlQuery, values: nil)
                 if anSqlResult != nil && anSqlResult.count > 0 {
-                    var aVehicleArray = Array<IAVehicle>()
+                    var aVehicleArray :Array<IAVehicle>! = Array<IAVehicle>()
                     for var aDBVehicleDict :[String:AnyObject] in anSqlResult {
                         let aDBVehicle = IAVehicle()
                         aDBVehicle.licensePlateNumber = aDBVehicleDict["license_plate_number"] as! String
                         aDBVehicle.state = aDBVehicleDict["state"] as! String
                         aVehicleArray.append(aDBVehicle)
+                    }
+                    if aVehicleArray.count <= 0 {
+                        aVehicleArray = nil
                     }
                     aDataManagerResponse.result = aVehicleArray
                 }
