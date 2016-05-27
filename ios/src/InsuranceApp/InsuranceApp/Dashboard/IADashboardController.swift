@@ -18,4 +18,15 @@ class IADashboardController: IABaseController {
         
         self.welcomeLabel.text = String(format: "Welcome %@ %@!", IAGlobalData.sharedInstance.loggedInCustomer.firstName, IAGlobalData.sharedInstance.loggedInCustomer.lastName)
     }
+    
+    
+    // MARK: - Selector Methods
+    
+    /**
+     * Selector method that will be called when Auto Insurance view is tapped.
+     * @return Void
+     */
+    @IBAction func didSelectAutoInsuranceView() {
+        self.performSegueWithIdentifier("DashboardToAutoInsuranceDetailsSegueID", sender: self)
+    }
 }

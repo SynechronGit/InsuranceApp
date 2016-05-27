@@ -41,6 +41,26 @@ class IAAutoInsuranceDetailsController: IABaseController {
     }
     
     
+    // MARK: - Selector Methods
+    
+    /**
+     * Selector method that will be called when Add Vehicle button is tapped.
+     * @return Void
+     */
+    @IBAction func didSelectAddVehicleButton() {
+        self.performSegueWithIdentifier("AutoInsuranceDetailsToAddVehicleSegueID", sender: self)
+    }
+    
+    
+    /**
+     * Selector method that will be called when Add Driver button is tapped.
+     * @return Void
+     */
+    @IBAction func didSelectAddDriverButton() {
+        self.performSegueWithIdentifier("AutoInsuranceDetailsToAddDriverSegueID", sender: self)
+    }
+    
+    
     // MARK: - IADataManagerDelegate Methods
     
     /**
