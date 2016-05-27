@@ -60,9 +60,13 @@ class IADataManager: NSObject {
                     for anIndex in 0..<pValues.count {
                         let aValue = pValues[anIndex]
                         if aValue is String {
-                            sqlite3_bind_text(anSqliteStatement, Int32(anIndex + 1), (aValue as! String), -1, nil)
+                            if sqlite3_bind_text(anSqliteStatement, Int32(anIndex + 1), (aValue as! NSString).UTF8String, -1, nil) != SQLITE_OK {
+                                throw IAError.Generic(NSError(domain: "com", code: 1, userInfo: [NSLocalizedDescriptionKey:"Can not bind value."]))
+                            }
                         } else if aValue is NSNumber {
-                            sqlite3_bind_int(anSqliteStatement, Int32(anIndex + 1), (aValue as! NSNumber).intValue)
+                            if sqlite3_bind_int(anSqliteStatement, Int32(anIndex + 1), (aValue as! NSNumber).intValue) != SQLITE_OK {
+                                throw IAError.Generic(NSError(domain: "com", code: 1, userInfo: [NSLocalizedDescriptionKey:"Can not bind value."]))
+                            }
                         }
                     }
                 }
@@ -110,6 +114,12 @@ class IADataManager: NSObject {
             if sqlite3_finalize(anSqliteStatement) != SQLITE_OK {
                 let anErrorMessage = String.fromCString(sqlite3_errmsg(aDatabaseHandle))
                 throw IAError.Generic(NSError(domain: "com", code: 1, userInfo: [NSLocalizedDescriptionKey:String(format: "Can not finalize statement. Error: %@", anErrorMessage!)]))
+            }
+            
+            defer {
+                if aDatabaseHandle != nil {
+                    sqlite3_close(aDatabaseHandle)
+                }
             }
         } catch IAError.Generic(let pError){
             throw IAError.Generic(NSError(domain: "com", code: 1, userInfo: [NSLocalizedDescriptionKey:String(format: "Execute query error. %@", pError.localizedDescription)]))

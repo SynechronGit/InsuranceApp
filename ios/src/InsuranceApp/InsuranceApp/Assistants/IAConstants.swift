@@ -15,6 +15,7 @@ class IAConstants: NSObject {
             let aReturnVal = String(format: "%@/AppDatabase.sqlite", IAConstants.documentDirectoryPath)
             
             do {
+                // If database is not available then create it. This code is written here so that all the other objects need not implement the database availability logic.
                 if NSFileManager.defaultManager().fileExistsAtPath(aReturnVal) != true {
                     try NSFileManager.defaultManager().copyItemAtPath(NSBundle.mainBundle().pathForResource("AppDatabase", ofType: "sqlite")!, toPath: aReturnVal)
                 }

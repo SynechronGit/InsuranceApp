@@ -73,5 +73,17 @@ class IAAppDelegate: UIResponder, UIApplicationDelegate {
         }
     }
     
+    
+    /**
+     * Method that will clear session related and other persistent data related to user on logout.
+     */
+    func resetAppDatabase() {
+        do {
+            try NSFileManager.defaultManager().removeItemAtPath(IAConstants.dataManagerSqliteFilePath)
+        } catch {
+            NSLog("Can not copy app database.")
+        }
+    }
+    
 }
 
