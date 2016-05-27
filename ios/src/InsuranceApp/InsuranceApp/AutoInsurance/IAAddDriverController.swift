@@ -42,6 +42,8 @@ class IAAddDriverController: IABaseController {
         aDriver.status = self.statusTextField.text!
         
        self.dataManager.addDriver(aDriver)
+       
+       self.dismissViewControllerAnimated(true, completion: nil)
         
     }
 }
