@@ -79,8 +79,8 @@ class IAAutoInsuranceDetailsController: IABaseController {
             }
             self.reloadAllView()
             
-            //IAAppDelegate.currentAppDelegate.displayLoadingOverlay()
-            //self.dataManager.listDrivers()
+            IAAppDelegate.currentAppDelegate.displayLoadingOverlay()
+            self.dataManager.listDrivers()
         } else if pSender.requestType == IARequestType.ListDrivers {
             if pResponse.result != nil {
                 self.driverArray = pResponse.result as! Array

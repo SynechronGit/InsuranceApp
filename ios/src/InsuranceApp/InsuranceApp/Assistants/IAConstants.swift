@@ -13,6 +13,7 @@ class IAConstants: NSObject {
     static var dataManagerSqliteFilePath :String {
         get {
             let aReturnVal = String(format: "%@/AppDatabase.sqlite", IAConstants.documentDirectoryPath)
+            print("sqlite directory path: \(IAConstants.documentDirectoryPath)")
             
             do {
                 // If database is not available then create it. This code is written here so that all the other objects need not implement the database availability logic.

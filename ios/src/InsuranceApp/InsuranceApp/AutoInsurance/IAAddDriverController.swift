@@ -35,7 +35,7 @@ class IAAddDriverController: IABaseController {
         aDriver.firstName = self.firstNameTextField.text!
         aDriver.lastName = self.lastNameTextField.text!
         aDriver.relationship = self.relationshipTextField.text!
-        aDriver.dob =  dateFormatter.dateFromString(self.dobTextField.text!)
+        aDriver.dob =  self.dobTextField.text!//dateFormatter.dateFromString(self.dobTextField.text!)
         aDriver.state = self.stateTextField.text!
         aDriver.license = self.licenseTextField.text!
         aDriver.type = self.typeTextField.text!
@@ -56,7 +56,7 @@ class IAAddDriverController: IABaseController {
         
         if pResponse.error != nil {
             self.displayMessage(message: pResponse.error.localizedDescription, type: IAMessageType.Error)
-        } else if pSender.requestType == IARequestType.AddVehicle {
+        } else if pSender.requestType == IARequestType.AddDriver {
             self.dismissViewControllerAnimated(true, completion: nil)
         }
     }

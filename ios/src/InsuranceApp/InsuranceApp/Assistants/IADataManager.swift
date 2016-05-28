@@ -172,21 +172,6 @@ class IADataManager: NSObject {
                 aValueArray.append(aVehicle.state != nil ? aVehicle.state : NSNull())
                 try self.executeQuery(anSqlQuery, values: aValueArray)
                 aDataManagerResponse.result = aVehicle
-            } else if self.requestType == IARequestType.AddDriver {
-                let aDriver :IADriver = pRequest as! IADriver
-                let anSqlQuery :String = "INSERT INTO drivers (first_name, last_name, relationship, dob, state, license, type, status, avatar) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)"
-                var aValueArray = Array<AnyObject>()
-                aValueArray.append(aDriver.firstName != nil ? aDriver.firstName : NSNull())
-                aValueArray.append(aDriver.lastName != nil ? aDriver.lastName : NSNull())
-                aValueArray.append(aDriver.relationship != nil ? aDriver.relationship : NSNull())
-                aValueArray.append(aDriver.dob != nil ? aDriver.dob : NSNull())
-                aValueArray.append(aDriver.state != nil ? aDriver.state : NSNull())
-                aValueArray.append(aDriver.license != nil ? aDriver.license : NSNull())
-                aValueArray.append(aDriver.type != nil ? aDriver.type : NSNull())
-                aValueArray.append(aDriver.status != nil ? aDriver.status : NSNull())
-                aValueArray.append(NSNull())
-                try self.executeQuery(anSqlQuery, values: aValueArray)
-                aDataManagerResponse.result = aDriver
             } else if self.requestType == IARequestType.ListVehicles {
                 let anSqlQuery :String = "SELECT license_plate_number, state FROM vehicles"
                 let anSqlResult = try self.executeQuery(anSqlQuery, values: nil)
@@ -203,7 +188,46 @@ class IADataManager: NSObject {
                     }
                     aDataManagerResponse.result = aVehicleArray
                 }
+            } else if self.requestType == IARequestType.AddDriver {
+                let aDriver :IADriver = pRequest as! IADriver
+                let anSqlQuery :String = "INSERT INTO drivers (first_name, last_name, relationship, dob, state, license, type, status, avatar) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)"
+                var aValueArray = Array<AnyObject>()
+                aValueArray.append(aDriver.firstName != nil ? aDriver.firstName : NSNull())
+                aValueArray.append(aDriver.lastName != nil ? aDriver.lastName : NSNull())
+                aValueArray.append(aDriver.relationship != nil ? aDriver.relationship : NSNull())
+                aValueArray.append(aDriver.dob != nil ? aDriver.dob : NSNull())
+                aValueArray.append(aDriver.state != nil ? aDriver.state : NSNull())
+                aValueArray.append(aDriver.license != nil ? aDriver.license : NSNull())
+                aValueArray.append(aDriver.type != nil ? aDriver.type : NSNull())
+                aValueArray.append(aDriver.status != nil ? aDriver.status : NSNull())
+                aValueArray.append(aDriver.avatar != nil ? aDriver.avatar : NSNull())
+                try self.executeQuery(anSqlQuery, values: aValueArray)
+                aDataManagerResponse.result = aDriver
+            } else if self.requestType == IARequestType.ListDrivers {
+                let anSqlQuery :String = "SELECT first_name, last_name, relationship, dob, state, license, type, status, avatar FROM drivers"
+                let anSqlResult = try self.executeQuery(anSqlQuery, values: nil)
+                if anSqlResult != nil && anSqlResult.count > 0 {
+                    var aDriverArray :Array<IADriver>! = Array<IADriver>()
+                    for var aDBDriverDict :[String:AnyObject] in anSqlResult {
+                        let aDBDriver = IADriver()
+                        aDBDriver.firstName = aDBDriverDict["first_name"] as! String
+                        aDBDriver.lastName = aDBDriverDict["last_name"] as! String
+                        aDBDriver.relationship = aDBDriverDict["relationship"] as! String
+                        aDBDriver.dob   = aDBDriverDict["dob"] as! String
+                        aDBDriver.state = aDBDriverDict["state"] as! String
+                        aDBDriver.license = aDBDriverDict["license"] as! String
+                        aDBDriver.type = aDBDriverDict["type"] as! String
+                        aDBDriver.status = aDBDriverDict["status"] as! String
+                   //     aDBDriver.avatar = aDBDriverDict["avatar"] as! String
+                        aDriverArray.append(aDBDriver)
+                    }
+                    if aDriverArray.count <= 0 {
+                        aDriverArray = nil
+                    }
+                    aDataManagerResponse.result = aDriverArray
+                }
             }
+
         } catch IAError.Generic(let pError){
             aDataManagerResponse.error = NSError(domain: "com", code: 1, userInfo: [NSLocalizedDescriptionKey:pError.localizedDescription])
         } catch {
@@ -269,6 +293,7 @@ class IADataManager: NSObject {
     
     internal func listDrivers() {
         self.requestType = IARequestType.ListDrivers
+        self.sendRequest(nil)
     }
     
     
