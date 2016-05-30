@@ -28,6 +28,8 @@ class IAConstants: NSObject {
         }
     }
     
+    static let dashboardSubviewCornerRadius :CGFloat = 5.0
+    
     
     static var documentDirectoryPath :String {
         get {
