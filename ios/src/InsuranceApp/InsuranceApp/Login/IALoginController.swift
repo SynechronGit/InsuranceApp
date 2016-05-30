@@ -44,7 +44,7 @@ class IALoginController: IABaseController {
             self.displayMessage(message: pResponse.error.localizedDescription, type: IAMessageType.Error)
         } else if pSender.requestType == IARequestType.Login {
             IAGlobalData.sharedInstance.loggedInCustomer = pResponse.result as! IACustomer
-            self.performSegueWithIdentifier("LoginToDashboardSegueID", sender: self)
+            self.performSegueWithIdentifier("LoginToHomeSegueID", sender: self)
         }
     }
     

@@ -41,14 +41,31 @@
                     <extendedEdge key="edgesForExtendedLayout"/>
                     <navigationItem key="navigationItem" id="AKc-Z5-bbV"/>
                     <connections>
-                        <segue destination="UIL-Q0-cbF" kind="show" identifier="LoginToDashboardSegueID" id="ZOL-MV-x2l"/>
+                        <segue destination="s7p-DB-g1P" kind="show" identifier="LoginToHomeSegueID" id="5I0-Fp-hPR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1022" y="429"/>
+            <point key="canvasLocation" x="857" y="390"/>
         </scene>
-        <!--Dashboard Controller-->
+        <!--Item-->
+        <scene sceneID="HbL-iK-cs8">
+            <objects>
+                <navigationController id="E9b-1m-KME" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="d4y-JD-1A1"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="549-Rp-6Eb">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="UIL-Q0-cbF" kind="relationship" relationship="rootViewController" id="sdi-fP-K6N"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FvW-WW-p1H" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2392" y="142"/>
+        </scene>
+        <!--Item-->
         <scene sceneID="zWP-iv-os1">
             <objects>
                 <viewController automaticallyAdjustsScrollViewInsets="NO" id="UIL-Q0-cbF" customClass="IADashboardController" customModule="InsuranceApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -57,29 +74,11 @@
                         <viewControllerLayoutGuide type="bottom" id="yHq-1k-Eml"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="2Lo-CE-1a8">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="64" width="600" height="487"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dashboard" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8TG-v9-RDL">
-                                <rect key="frame" x="10" y="40" width="580" height="21"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="G9S-QF-Xhd"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cjc-L3-FPY">
-                                <rect key="frame" x="10" y="115" width="580" height="21"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="TdQ-tW-7ee"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3od-mb-j2M">
-                                <rect key="frame" x="225" y="340" width="150" height="30"/>
+                                <rect key="frame" x="225" y="40" width="150" height="30"/>
                                 <color key="backgroundColor" red="0.086274509799999996" green="0.45882352939999999" blue="0.72156862749999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="AUw-kf-pzp"/>
@@ -92,28 +91,71 @@
                                     <action selector="didSelectAutoInsuranceView" destination="UIL-Q0-cbF" eventType="touchUpInside" id="uFH-QN-5WO"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WIc-V2-xE2" userLabel="assistanceView">
+                                <rect key="frame" x="9" y="131" width="582" height="320"/>
+                                <color key="backgroundColor" red="0.058823529411764705" green="0.047058823529411764" blue="0.090196078431372548" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="320" id="wHi-VC-qT0"/>
+                                </constraints>
+                            </view>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.078431372549019607" green="0.066666666666666666" blue="0.11372549019607843" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="cjc-L3-FPY" secondAttribute="trailing" constant="10" id="8qe-z8-Buf"/>
-                            <constraint firstAttribute="trailing" secondItem="8TG-v9-RDL" secondAttribute="trailing" constant="10" id="9R3-dU-vCM"/>
-                            <constraint firstItem="cjc-L3-FPY" firstAttribute="top" secondItem="8TG-v9-RDL" secondAttribute="bottom" constant="54" id="ASD-K3-Miz"/>
                             <constraint firstItem="3od-mb-j2M" firstAttribute="centerX" secondItem="2Lo-CE-1a8" secondAttribute="centerX" id="CD0-lb-GvF"/>
-                            <constraint firstItem="8TG-v9-RDL" firstAttribute="leading" secondItem="2Lo-CE-1a8" secondAttribute="leading" constant="10" id="Rep-Np-yLL"/>
-                            <constraint firstItem="8TG-v9-RDL" firstAttribute="top" secondItem="2Lo-CE-1a8" secondAttribute="top" constant="40" id="dpp-s7-veH"/>
-                            <constraint firstItem="cjc-L3-FPY" firstAttribute="leading" secondItem="2Lo-CE-1a8" secondAttribute="leading" constant="10" id="lV5-3R-hIh"/>
-                            <constraint firstItem="3od-mb-j2M" firstAttribute="top" secondItem="2Lo-CE-1a8" secondAttribute="top" constant="340" id="sPD-Hm-uwq"/>
+                            <constraint firstAttribute="bottom" secondItem="WIc-V2-xE2" secondAttribute="bottom" constant="36" id="WNa-rf-Im3"/>
+                            <constraint firstItem="WIc-V2-xE2" firstAttribute="leading" secondItem="2Lo-CE-1a8" secondAttribute="leading" constant="9" id="aqm-jT-bCO"/>
+                            <constraint firstAttribute="trailing" secondItem="WIc-V2-xE2" secondAttribute="trailing" constant="9" id="ewT-EF-NCi"/>
+                            <constraint firstItem="3od-mb-j2M" firstAttribute="top" secondItem="2Lo-CE-1a8" secondAttribute="top" constant="40" id="sPD-Hm-uwq"/>
                         </constraints>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>
+                    <tabBarItem key="tabBarItem" title="Item" id="Uwr-ho-FIR"/>
+                    <navigationItem key="navigationItem" id="o6o-ox-bCs"/>
                     <connections>
-                        <outlet property="welcomeLabel" destination="cjc-L3-FPY" id="0z1-eW-Sk4"/>
                         <segue destination="bsL-16-OO3" kind="show" identifier="DashboardToAutoInsuranceDetailsSegueID" id="SEL-0Y-TCf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="r5C-bG-USq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1703" y="429"/>
+            <point key="canvasLocation" x="3141" y="99"/>
+        </scene>
+        <!--Item 2-->
+        <scene sceneID="xez-In-oKj">
+            <objects>
+                <viewController id="Fwc-eW-kZb" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="dzy-Ho-ARK"/>
+                        <viewControllerLayoutGuide type="bottom" id="5zh-Oq-8JZ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="6s9-bt-VGt">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item 2" id="FzN-Ik-L4T"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HwG-ud-uPI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2353" y="817"/>
+        </scene>
+        <!--Home Tab Controller-->
+        <scene sceneID="aKF-w4-CUr">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="s7p-DB-g1P" customClass="IAHomeTabController" customModule="InsuranceApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <extendedEdge key="edgesForExtendedLayout"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="t2A-Yt-aaZ" customClass="IAHomeTabBar" customModule="InsuranceApp" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="E9b-1m-KME" kind="relationship" relationship="viewControllers" id="8eU-iV-3yU"/>
+                        <segue destination="Fwc-eW-kZb" kind="relationship" relationship="viewControllers" id="lhI-nf-xwR"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fI2-Aq-jFj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1583" y="390"/>
         </scene>
         <!--Add Vehicle Controller-->
         <scene sceneID="MpL-AV-gqW">
@@ -164,7 +206,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dvC-uV-e6v" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3114" y="1205"/>
+            <point key="canvasLocation" x="3820" y="878"/>
         </scene>
         <!--Add Driver Controller-->
         <scene sceneID="QGv-Lr-iNi">
@@ -296,7 +338,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nt0-A5-UfM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3114" y="429"/>
+            <point key="canvasLocation" x="3827" y="99"/>
         </scene>
         <!--Auto Insurance Details Controller-->
         <scene sceneID="BiC-Dj-ciI">
@@ -307,7 +349,7 @@
                         <viewControllerLayoutGuide type="bottom" id="PfJ-CK-65L"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8jM-Za-fFH">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="64" width="600" height="487"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ofu-QE-Q5q">
@@ -355,7 +397,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ffG-NZ-plP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2416" y="429"/>
+            <point key="canvasLocation" x="3849" y="112"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="2Un-FI-aB0">
@@ -374,7 +416,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="j3i-a9-uXx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="337" y="429"/>
+            <point key="canvasLocation" x="161" y="390"/>
         </scene>
     </scenes>
 </document>

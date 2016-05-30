@@ -16,7 +16,7 @@ class IADashboardController: IABaseController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.welcomeLabel.text = String(format: "Welcome %@ %@!", IAGlobalData.sharedInstance.loggedInCustomer.firstName, IAGlobalData.sharedInstance.loggedInCustomer.lastName)
+        //self.welcomeLabel.text = String(format: "Welcome %@ %@!", IAGlobalData.sharedInstance.loggedInCustomer.firstName, IAGlobalData.sharedInstance.loggedInCustomer.lastName)
     }
     
     
