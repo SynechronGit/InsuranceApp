@@ -13,11 +13,32 @@ class IAAutoInsuranceDetailsController: IABaseController {
     var vehicleArray :Array<IAVehicle>!
     var driverArray :Array<IADriver>!
     
+    @IBOutlet weak var payPremiumBtn: UIButton!
+    @IBOutlet weak var fileClaimBtn: UIButton!
+    @IBOutlet weak var viewPolicyBtn: UIButton!
+    @IBOutlet weak var dateView: UIView!
+    @IBOutlet weak var coverageBoxView: UIView!
+    @IBOutlet weak var limitBoxView: UIView!
+    @IBOutlet weak var deductibleBoxView: UIView!
+  
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.updateUI()
+        
         self.reloadAllData()
+
+    }
+    
+    func updateUI(){
+        
+        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "mainBG.png")!)
+        dateView.backgroundColor = UIColor(patternImage: UIImage(named: "dateBg")!)
+        
+        coverageBoxView.backgroundColor = UIColor(patternImage: UIImage(named: "bigBox")!)
+        limitBoxView.backgroundColor = UIColor(patternImage: UIImage(named: "bigBox")!)
+        deductibleBoxView.backgroundColor = UIColor(patternImage: UIImage(named: "bigBox")!)
     }
 
     func reloadAllData() {
