@@ -18,6 +18,11 @@ class IABaseController: UIViewController, IADataManagerDelegate {
         
         self.dataManager = IADataManager()
         self.dataManager.delegate = self
+        
+        let anImageView = UIImageView(frame: CGRectMake(0.0, 0.0, 15.0, 15.0))
+        anImageView.image = UIImage(named: "SearchIcon")
+        let aRightBarButtonItem = UIBarButtonItem(customView: anImageView)
+        self.navigationItem.rightBarButtonItem = aRightBarButtonItem
     }
     
     
