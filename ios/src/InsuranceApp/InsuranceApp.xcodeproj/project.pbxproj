@@ -45,6 +45,13 @@
 		3FE1D2AF1CFC58C3007FA513 /* InsuranceTypeContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FE1D2AE1CFC58C3007FA513 /* InsuranceTypeContainerView.swift */; };
 		3FE1FA8D1CFC81E6008EA53F /* IALabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FE1FA8C1CFC81E6008EA53F /* IALabel.swift */; };
 		3FE1FA8F1CFC8750008EA53F /* IANavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FE1FA8E1CFC8750008EA53F /* IANavigationBar.swift */; };
+		3FF030B41CFD991A00BADE31 /* Ubuntu-300-italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3FF030AD1CFD991A00BADE31 /* Ubuntu-300-italic.ttf */; };
+		3FF030B51CFD991A00BADE31 /* Ubuntu-300.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3FF030AE1CFD991A00BADE31 /* Ubuntu-300.ttf */; };
+		3FF030B61CFD991A00BADE31 /* Ubuntu-500-italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3FF030AF1CFD991A00BADE31 /* Ubuntu-500-italic.ttf */; };
+		3FF030B71CFD991A00BADE31 /* Ubuntu-500.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3FF030B01CFD991A00BADE31 /* Ubuntu-500.ttf */; };
+		3FF030B81CFD991A00BADE31 /* Ubuntu-700.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3FF030B11CFD991A00BADE31 /* Ubuntu-700.ttf */; };
+		3FF030B91CFD991A00BADE31 /* Ubuntu-italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3FF030B21CFD991A00BADE31 /* Ubuntu-italic.ttf */; };
+		3FF030BA1CFD991A00BADE31 /* Ubuntu-regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3FF030B31CFD991A00BADE31 /* Ubuntu-regular.ttf */; };
 		3FFF0B851CF4A04300920ECA /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FFF0B841CF4A04300920ECA /* libsqlite3.tbd */; };
 		3FFF0B881CF4A22D00920ECA /* AppDatabase.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 3FFF0B871CF4A22D00920ECA /* AppDatabase.sqlite */; };
 		7D47A1351CF710E9007E1867 /* IADriver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D47A1341CF710E9007E1867 /* IADriver.swift */; };
@@ -113,6 +120,13 @@
 		3FE1D2AE1CFC58C3007FA513 /* InsuranceTypeContainerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InsuranceTypeContainerView.swift; sourceTree = "<group>"; };
 		3FE1FA8C1CFC81E6008EA53F /* IALabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IALabel.swift; sourceTree = "<group>"; };
 		3FE1FA8E1CFC8750008EA53F /* IANavigationBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IANavigationBar.swift; sourceTree = "<group>"; };
+		3FF030AD1CFD991A00BADE31 /* Ubuntu-300-italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Ubuntu-300-italic.ttf"; sourceTree = "<group>"; };
+		3FF030AE1CFD991A00BADE31 /* Ubuntu-300.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Ubuntu-300.ttf"; sourceTree = "<group>"; };
+		3FF030AF1CFD991A00BADE31 /* Ubuntu-500-italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Ubuntu-500-italic.ttf"; sourceTree = "<group>"; };
+		3FF030B01CFD991A00BADE31 /* Ubuntu-500.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Ubuntu-500.ttf"; sourceTree = "<group>"; };
+		3FF030B11CFD991A00BADE31 /* Ubuntu-700.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Ubuntu-700.ttf"; sourceTree = "<group>"; };
+		3FF030B21CFD991A00BADE31 /* Ubuntu-italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Ubuntu-italic.ttf"; sourceTree = "<group>"; };
+		3FF030B31CFD991A00BADE31 /* Ubuntu-regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Ubuntu-regular.ttf"; sourceTree = "<group>"; };
 		3FFF0B841CF4A04300920ECA /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		3FFF0B861CF4A0BF00920ECA /* BridgingHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BridgingHeader.h; sourceTree = "<group>"; };
 		3FFF0B871CF4A22D00920ECA /* AppDatabase.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = AppDatabase.sqlite; sourceTree = "<group>"; };
@@ -168,6 +182,7 @@
 		3F0CA4301CF4402F002A048E /* InsuranceApp */ = {
 			isa = PBXGroup;
 			children = (
+				3F52D1701CFD974F0084A968 /* Assets */,
 				3F99489B1CFC77B200A880A8 /* ThirdParty */,
 				3F820C5F1CF4522000729AE6 /* Assistants */,
 				3F0CA4651CF440C9002A048E /* Base */,
@@ -229,6 +244,36 @@
 				3F0CA46B1CF440C9002A048E /* IALoginController.swift */,
 			);
 			path = Login;
+			sourceTree = "<group>";
+		};
+		3F52D1701CFD974F0084A968 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				3F52D1711CFD974F0084A968 /* Fonts */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		3F52D1711CFD974F0084A968 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				3F52D1721CFD974F0084A968 /* Ubuntu */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		3F52D1721CFD974F0084A968 /* Ubuntu */ = {
+			isa = PBXGroup;
+			children = (
+				3FF030AD1CFD991A00BADE31 /* Ubuntu-300-italic.ttf */,
+				3FF030AE1CFD991A00BADE31 /* Ubuntu-300.ttf */,
+				3FF030AF1CFD991A00BADE31 /* Ubuntu-500-italic.ttf */,
+				3FF030B01CFD991A00BADE31 /* Ubuntu-500.ttf */,
+				3FF030B11CFD991A00BADE31 /* Ubuntu-700.ttf */,
+				3FF030B21CFD991A00BADE31 /* Ubuntu-italic.ttf */,
+				3FF030B31CFD991A00BADE31 /* Ubuntu-regular.ttf */,
+			);
+			path = Ubuntu;
 			sourceTree = "<group>";
 		};
 		3F64D2161CF7089F00DC682D /* AutoInsurance */ = {
@@ -424,11 +469,18 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3FF030B81CFD991A00BADE31 /* Ubuntu-700.ttf in Resources */,
+				3FF030B91CFD991A00BADE31 /* Ubuntu-italic.ttf in Resources */,
+				3FF030BA1CFD991A00BADE31 /* Ubuntu-regular.ttf in Resources */,
 				3F9948C21CFC782100A880A8 /* Sparkle.png in Resources */,
 				3F9948C01CFC782100A880A8 /* Fragment.png in Resources */,
+				3FF030B41CFD991A00BADE31 /* Ubuntu-300-italic.ttf in Resources */,
+				3FF030B71CFD991A00BADE31 /* Ubuntu-500.ttf in Resources */,
 				3FFF0B881CF4A22D00920ECA /* AppDatabase.sqlite in Resources */,
 				3F0CA43C1CF44030002A048E /* LaunchScreen.storyboard in Resources */,
+				3FF030B51CFD991A00BADE31 /* Ubuntu-300.ttf in Resources */,
 				3F9948C11CFC782100A880A8 /* Smoke.png in Resources */,
+				3FF030B61CFD991A00BADE31 /* Ubuntu-500-italic.ttf in Resources */,
 				3F0CA4391CF44030002A048E /* Assets.xcassets in Resources */,
 				3F9948BF1CFC782100A880A8 /* Fire.png in Resources */,
 				3F0CA4371CF44030002A048E /* Main.storyboard in Resources */,
