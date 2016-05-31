@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="yS7-Mb-0yN">
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="yS7-Mb-0yN">
     <dependencies>
         <deployment identifier="iOS"/>
@@ -1686,24 +1685,6 @@ Insurance</string>
                                     <constraint firstAttribute="width" constant="135" id="sRF-aD-gbg"/>
                                 </constraints>
                             </imageView>
-                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hQW-cU-zca">
-                                <rect key="frame" x="55" y="671" width="658" height="171"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="171" id="6Hn-xq-wB4"/>
-                                    <constraint firstAttribute="width" constant="658" id="G7L-1w-DJI"/>
-                                    <constraint firstAttribute="width" constant="680" id="Kg9-7K-YDM"/>
-                                    <constraint firstAttribute="width" constant="658" id="bhx-cl-cZ4"/>
-                                </constraints>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="G7L-1w-DJI"/>
-                                        <exclude reference="Kg9-7K-YDM"/>
-                                    </mask>
-                                </variation>
-                                <connections>
-                                    <segue destination="bas-Ef-0I5" kind="embed" id="tmC-9i-fAs"/>
-                                </connections>
-                            </containerView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7U9-op-vo6">
                                 <rect key="frame" x="685" y="630" width="28" height="28"/>
                                 <constraints>
@@ -1752,12 +1733,48 @@ Insurance</string>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="pEp-pb-umE">
+                                <rect key="frame" x="55" y="675" width="658" height="171"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="658" id="OoF-zV-hg0"/>
+                                    <constraint firstAttribute="height" constant="171" id="eVH-qU-oun"/>
+                                </constraints>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="28" minimumInteritemSpacing="10" id="pC1-HP-cDr">
+                                    <size key="itemSize" width="143" height="167"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="driverListCell" id="rUz-AI-3zh" customClass="IADriverListCell" customModule="InsuranceApp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="2" width="143" height="167"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="143" height="167"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kif-be-0bd">
+                                                    <rect key="frame" x="50" y="143" width="42" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <color key="backgroundColor" red="0.85098039219999999" green="0.48627450979999998" blue="0.4823529412" alpha="1" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <outlet property="driverNameLabel" destination="Kif-be-0bd" id="bTV-Rx-cfE"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="szN-qR-AUw" firstAttribute="top" secondItem="zQH-Al-JVN" secondAttribute="bottom" constant="162" id="0Hk-DK-Ufb"/>
-                            <constraint firstItem="hQW-cU-zca" firstAttribute="top" secondItem="qlu-0d-cru" secondAttribute="bottom" constant="17" id="1K9-D9-nTn"/>
                             <constraint firstAttribute="trailing" secondItem="KkZ-G7-rxQ" secondAttribute="trailing" constant="40" id="2Vh-k8-c0i"/>
+                            <constraint firstItem="pEp-pb-umE" firstAttribute="top" secondItem="7U9-op-vo6" secondAttribute="bottom" constant="17" id="2nt-Xl-md5"/>
                             <constraint firstItem="7U9-op-vo6" firstAttribute="leading" secondItem="Iac-BQ-8yj" secondAttribute="leading" id="79o-fj-opy"/>
                             <constraint firstItem="hob-zL-Nva" firstAttribute="leading" secondItem="NrZ-bY-rhV" secondAttribute="trailing" id="9sr-7b-xl4"/>
                             <constraint firstItem="0iB-Cl-6FV" firstAttribute="top" secondItem="szN-qR-AUw" secondAttribute="bottom" constant="15" id="B16-6p-EwW"/>
@@ -1770,7 +1787,6 @@ Insurance</string>
                             <constraint firstItem="0iB-Cl-6FV" firstAttribute="leading" secondItem="can-vV-cw3" secondAttribute="trailing" constant="25" id="Oq4-GD-akP"/>
                             <constraint firstItem="7U9-op-vo6" firstAttribute="centerY" secondItem="7fP-J0-cbp" secondAttribute="centerY" id="PYh-7T-F26"/>
                             <constraint firstItem="442-U0-cdq" firstAttribute="top" secondItem="gvj-Qh-7E9" secondAttribute="bottom" constant="15" id="Pe0-Ts-aJm"/>
-                            <constraint firstItem="7U9-op-vo6" firstAttribute="trailing" secondItem="hQW-cU-zca" secondAttribute="trailing" id="Pg1-Td-cJp"/>
                             <constraint firstItem="2Kq-ch-ZHB" firstAttribute="leading" secondItem="gvj-Qh-7E9" secondAttribute="trailing" constant="25" id="Qja-2u-Awp"/>
                             <constraint firstItem="2Kq-ch-ZHB" firstAttribute="top" secondItem="zQH-Al-JVN" secondAttribute="bottom" constant="162" id="Qmm-ED-0Ht"/>
                             <constraint firstItem="gvj-Qh-7E9" firstAttribute="leading" secondItem="8jM-Za-fFH" secondAttribute="leading" constant="44" id="S93-N9-Wkt"/>
@@ -1784,6 +1800,7 @@ Insurance</string>
                             <constraint firstItem="Iac-BQ-8yj" firstAttribute="top" secondItem="0iB-Cl-6FV" secondAttribute="bottom" constant="27" id="kx2-sd-Aed"/>
                             <constraint firstAttribute="trailing" secondItem="Iac-BQ-8yj" secondAttribute="trailing" constant="55" id="mvF-Gu-U1i"/>
                             <constraint firstItem="hob-zL-Nva" firstAttribute="top" secondItem="can-vV-cw3" secondAttribute="bottom" constant="30" id="nHe-0F-dHn"/>
+                            <constraint firstItem="pEp-pb-umE" firstAttribute="leading" secondItem="8jM-Za-fFH" secondAttribute="leadingMargin" constant="35" id="oJl-zg-Pfj"/>
                             <constraint firstItem="7U9-op-vo6" firstAttribute="top" secondItem="XkW-pL-jU7" secondAttribute="bottom" constant="44" id="oi6-Ce-L1Q"/>
                             <constraint firstItem="KkZ-G7-rxQ" firstAttribute="top" secondItem="zQH-Al-JVN" secondAttribute="bottom" constant="45" id="r09-Fi-nic"/>
                             <constraint firstItem="WTt-7O-3ck" firstAttribute="leading" secondItem="hob-zL-Nva" secondAttribute="trailing" constant="-5" id="rZW-Yc-Qkf"/>
@@ -1795,6 +1812,7 @@ Insurance</string>
                         <variation key="default">
                             <mask key="constraints">
                                 <exclude reference="VK0-k9-T9F"/>
+                                <exclude reference="jfH-QK-hzA"/>
                             </mask>
                         </variation>
                     </view>
@@ -1805,6 +1823,7 @@ Insurance</string>
                         <outlet property="coverageBoxView" destination="442-U0-cdq" id="01w-cP-UjD"/>
                         <outlet property="dateView" destination="KkZ-G7-rxQ" id="nt3-Fa-qr1"/>
                         <outlet property="deductibleBoxView" destination="0iB-Cl-6FV" id="SUG-FQ-fsT"/>
+                        <outlet property="driverCollectionView" destination="pEp-pb-umE" id="1MT-kZ-DYO"/>
                         <outlet property="limitBoxView" destination="can-vV-cw3" id="Cmu-XO-zKG"/>
                         <outlet property="payPremiumBtn" destination="gvj-Qh-7E9" id="WID-1f-Ams"/>
                         <outlet property="vehicleCollectionView" destination="XkW-pL-jU7" id="65v-1N-Txv"/>
@@ -1812,58 +1831,7 @@ Insurance</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ffG-NZ-plP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4082" y="142"/>
-        </scene>
-        <!--Driver List Controller-->
-        <scene sceneID="lkC-Kr-RUD">
-            <objects>
-                <collectionViewController id="bas-Ef-0I5" customClass="IADriverListController" customModule="InsuranceApp" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="QhX-Ka-iKj">
-                        <rect key="frame" x="0.0" y="0.0" width="658" height="171"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="27" minimumInteritemSpacing="28" id="rfg-qO-KVB">
-                            <size key="itemSize" width="144" height="171"/>
-                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                        </collectionViewFlowLayout>
-                        <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="driverListCell" id="DAH-9g-dai" customClass="IADriverListCell" customModule="InsuranceApp" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="144" height="171"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="144" height="171"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="d2Q-Gh-5i9">
-                                            <rect key="frame" x="0.0" y="-2" width="144" height="132"/>
-                                            <color key="backgroundColor" red="0.73003135269999997" green="1" blue="0.83357527949999999" alpha="1" colorSpace="calibratedRGB"/>
-                                        </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ik0-hz-eXt">
-                                            <rect key="frame" x="26" y="152" width="92" height="21"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
-                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                </view>
-                                <color key="backgroundColor" red="0.0078431372550000003" green="0.72156862749999995" blue="0.3294117647" alpha="1" colorSpace="calibratedRGB"/>
-                                <connections>
-                                    <outlet property="driverImage" destination="d2Q-Gh-5i9" id="Fbr-YD-9EB"/>
-                                    <outlet property="driverNameLabel" destination="Ik0-hz-eXt" id="sn2-qY-5bm"/>
-                                </connections>
-                            </collectionViewCell>
-                        </cells>
-                        <connections>
-                            <outlet property="dataSource" destination="bas-Ef-0I5" id="OgN-Uq-D4M"/>
-                            <outlet property="delegate" destination="bas-Ef-0I5" id="8wM-Sk-enD"/>
-                        </connections>
-                    </collectionView>
-                </collectionViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="VV0-Bc-79T" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="4082" y="849.5"/>
+            <point key="canvasLocation" x="4068" y="152"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="2Un-FI-aB0">
