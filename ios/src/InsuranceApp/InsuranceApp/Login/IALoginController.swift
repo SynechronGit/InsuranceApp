@@ -10,9 +10,16 @@ import UIKit
  * Controller for Login screen.
  */
 class IALoginController: IABaseController {
+    @IBOutlet weak var userNameTextField: UITextField!
+    @IBOutlet weak var passwordTextField: UITextField!
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.userNameTextField.attributedPlaceholder = NSAttributedString(string: "Username", attributes: [NSForegroundColorAttributeName:self.userNameTextField.textColor!])
+        self.passwordTextField.attributedPlaceholder = NSAttributedString(string: "Password", attributes: [NSForegroundColorAttributeName:self.passwordTextField.textColor!])
     }
     
     
