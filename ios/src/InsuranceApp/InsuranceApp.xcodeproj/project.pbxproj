@@ -19,6 +19,7 @@
 		3F2A0D9A1CF8762300EEACC2 /* IAAutoInsuranceDetailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F2A0D991CF8762300EEACC2 /* IAAutoInsuranceDetailsController.swift */; };
 		3F4D20C21CF71B280024EAE7 /* IAAddVehicleController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F4D20C11CF71B280024EAE7 /* IAAddVehicleController.swift */; };
 		3F4D20C41CF71CE30024EAE7 /* IAVehicle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F4D20C31CF71CE30024EAE7 /* IAVehicle.swift */; };
+		3F5FB78A1CFDDF2F00C27D7F /* IAHomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F5FB7891CFDDF2E00C27D7F /* IAHomeController.swift */; };
 		3F64D2181CF7089F00DC682D /* IAAddDriverController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F64D2171CF7089F00DC682D /* IAAddDriverController.swift */; };
 		3F820C611CF4522000729AE6 /* IAConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F820C601CF4522000729AE6 /* IAConstants.swift */; };
 		3F820C631CF4526D00729AE6 /* IADataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F820C621CF4526D00729AE6 /* IADataManager.swift */; };
@@ -40,8 +41,6 @@
 		3F9948C01CFC782100A880A8 /* Fragment.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F9948AF1CFC782100A880A8 /* Fragment.png */; };
 		3F9948C11CFC782100A880A8 /* Smoke.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F9948B01CFC782100A880A8 /* Smoke.png */; };
 		3F9948C21CFC782100A880A8 /* Sparkle.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F9948B11CFC782100A880A8 /* Sparkle.png */; };
-		3FB2EE021CFC3E2200D56982 /* IAHomeTabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB2EE011CFC3E2200D56982 /* IAHomeTabController.swift */; };
-		3FB2EE041CFC402B00D56982 /* IAHomeTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB2EE031CFC402B00D56982 /* IAHomeTabBar.swift */; };
 		3FE1D2AF1CFC58C3007FA513 /* InsuranceTypeContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FE1D2AE1CFC58C3007FA513 /* InsuranceTypeContainerView.swift */; };
 		3FE1FA8D1CFC81E6008EA53F /* IALabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FE1FA8C1CFC81E6008EA53F /* IALabel.swift */; };
 		3FE1FA8F1CFC8750008EA53F /* IANavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FE1FA8E1CFC8750008EA53F /* IANavigationBar.swift */; };
@@ -95,6 +94,7 @@
 		3F2A0D991CF8762300EEACC2 /* IAAutoInsuranceDetailsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IAAutoInsuranceDetailsController.swift; sourceTree = "<group>"; };
 		3F4D20C11CF71B280024EAE7 /* IAAddVehicleController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IAAddVehicleController.swift; sourceTree = "<group>"; };
 		3F4D20C31CF71CE30024EAE7 /* IAVehicle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IAVehicle.swift; sourceTree = "<group>"; };
+		3F5FB7891CFDDF2E00C27D7F /* IAHomeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IAHomeController.swift; sourceTree = "<group>"; };
 		3F64D2171CF7089F00DC682D /* IAAddDriverController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IAAddDriverController.swift; sourceTree = "<group>"; };
 		3F820C601CF4522000729AE6 /* IAConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IAConstants.swift; sourceTree = "<group>"; };
 		3F820C621CF4526D00729AE6 /* IADataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IADataManager.swift; sourceTree = "<group>"; };
@@ -117,8 +117,6 @@
 		3F9948AF1CFC782100A880A8 /* Fragment.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Fragment.png; sourceTree = "<group>"; };
 		3F9948B01CFC782100A880A8 /* Smoke.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Smoke.png; sourceTree = "<group>"; };
 		3F9948B11CFC782100A880A8 /* Sparkle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Sparkle.png; sourceTree = "<group>"; };
-		3FB2EE011CFC3E2200D56982 /* IAHomeTabController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IAHomeTabController.swift; sourceTree = "<group>"; };
-		3FB2EE031CFC402B00D56982 /* IAHomeTabBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IAHomeTabBar.swift; sourceTree = "<group>"; };
 		3FE1D2AE1CFC58C3007FA513 /* InsuranceTypeContainerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InsuranceTypeContainerView.swift; sourceTree = "<group>"; };
 		3FE1FA8C1CFC81E6008EA53F /* IALabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IALabel.swift; sourceTree = "<group>"; };
 		3FE1FA8E1CFC8750008EA53F /* IANavigationBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IANavigationBar.swift; sourceTree = "<group>"; };
@@ -235,8 +233,7 @@
 			isa = PBXGroup;
 			children = (
 				3F0CA4691CF440C9002A048E /* IADashboardController.swift */,
-				3FB2EE011CFC3E2200D56982 /* IAHomeTabController.swift */,
-				3FB2EE031CFC402B00D56982 /* IAHomeTabBar.swift */,
+				3F5FB7891CFDDF2E00C27D7F /* IAHomeController.swift */,
 				3FE1D2AE1CFC58C3007FA513 /* InsuranceTypeContainerView.swift */,
 			);
 			path = Dashboard;
@@ -522,7 +519,6 @@
 				3F4D20C41CF71CE30024EAE7 /* IAVehicle.swift in Sources */,
 				3FE1FA8D1CFC81E6008EA53F /* IALabel.swift in Sources */,
 				3F820C631CF4526D00729AE6 /* IADataManager.swift in Sources */,
-				3FB2EE021CFC3E2200D56982 /* IAHomeTabController.swift in Sources */,
 				3F9948B91CFC782100A880A8 /* LTMorphingLabel+Evaporate.swift in Sources */,
 				3F0CA46F1CF440C9002A048E /* IALoginController.swift in Sources */,
 				3F0CA46E1CF440C9002A048E /* IADashboardController.swift in Sources */,
@@ -535,13 +531,13 @@
 				3F9948B81CFC782100A880A8 /* LTMorphingLabel+Burn.swift in Sources */,
 				3F9948B51CFC782100A880A8 /* LTEmitterView.swift in Sources */,
 				3F820C611CF4522000729AE6 /* IAConstants.swift in Sources */,
-				3FB2EE041CFC402B00D56982 /* IAHomeTabBar.swift in Sources */,
 				3F820C691CF4555800729AE6 /* IACustomer.swift in Sources */,
 				3F9948BA1CFC782100A880A8 /* LTMorphingLabel+Fall.swift in Sources */,
 				3F9948B71CFC782100A880A8 /* LTMorphingLabel+Anvil.swift in Sources */,
 				3F2A0D9A1CF8762300EEACC2 /* IAAutoInsuranceDetailsController.swift in Sources */,
 				3FE1FA8F1CFC8750008EA53F /* IANavigationBar.swift in Sources */,
 				3F9948BE1CFC782100A880A8 /* NSString+LTMorphingLabel.swift in Sources */,
+				3F5FB78A1CFDDF2F00C27D7F /* IAHomeController.swift in Sources */,
 				3F9948981CFC6B1100A880A8 /* IADashboard.swift in Sources */,
 				3F9948BB1CFC782100A880A8 /* LTMorphingLabel+Pixelate.swift in Sources */,
 				7D47A1351CF710E9007E1867 /* IADriver.swift in Sources */,

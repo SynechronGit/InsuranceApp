@@ -232,19 +232,63 @@
                     <connections>
                         <outlet property="passwordTextField" destination="7Kj-Tg-ANH" id="2MS-vH-i1l"/>
                         <outlet property="userNameTextField" destination="5SI-ku-AjP" id="eL6-sN-KfA"/>
-                        <segue destination="s7p-DB-g1P" kind="show" identifier="LoginToHomeSegueID" id="5I0-Fp-hPR"/>
+                        <segue destination="vKl-jS-HZ4" kind="show" identifier="LoginToHomeSegueID" id="PsJ-rC-MHJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="857" y="390"/>
+            <point key="canvasLocation" x="-365" y="866"/>
         </scene>
-        <!--Item-->
+        <!--Home Controller-->
+        <scene sceneID="a22-dS-FUr">
+            <objects>
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="vKl-jS-HZ4" customClass="IAHomeController" customModule="InsuranceApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="aRI-1z-2IP"/>
+                        <viewControllerLayoutGuide type="bottom" id="qcb-nU-EVz"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="nsz-3f-4d6">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lE6-hq-OKf">
+                                <rect key="frame" x="0.0" y="0.0" width="768" height="949"/>
+                                <connections>
+                                    <segue destination="E9b-1m-KME" kind="embed" id="tse-aI-6qa"/>
+                                </connections>
+                            </containerView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dkP-Vg-1Mw">
+                                <rect key="frame" x="0.0" y="949" width="768" height="75"/>
+                                <color key="backgroundColor" red="0.83137254900000002" green="0.69019607839999997" blue="0.66666666669999997" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="75" id="yPU-wc-BQp"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.058823529409999999" green="0.047058823530000002" blue="0.090196078430000007" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="dkP-Vg-1Mw" secondAttribute="trailing" id="4as-QU-2gz"/>
+                            <constraint firstItem="lE6-hq-OKf" firstAttribute="top" secondItem="nsz-3f-4d6" secondAttribute="top" id="TIb-j9-Hsb"/>
+                            <constraint firstItem="lE6-hq-OKf" firstAttribute="leading" secondItem="nsz-3f-4d6" secondAttribute="leading" id="YtR-uk-1lS"/>
+                            <constraint firstAttribute="bottom" secondItem="dkP-Vg-1Mw" secondAttribute="bottom" id="oD2-Hd-fet"/>
+                            <constraint firstItem="dkP-Vg-1Mw" firstAttribute="top" secondItem="lE6-hq-OKf" secondAttribute="bottom" id="rhq-SS-jET"/>
+                            <constraint firstAttribute="trailing" secondItem="lE6-hq-OKf" secondAttribute="trailing" id="yol-fP-8De"/>
+                            <constraint firstItem="dkP-Vg-1Mw" firstAttribute="leading" secondItem="nsz-3f-4d6" secondAttribute="leading" id="zfz-Ax-4wl"/>
+                        </constraints>
+                    </view>
+                    <extendedEdge key="edgesForExtendedLayout"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="768" height="1024"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Qf5-fr-Md0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-365" y="2048"/>
+        </scene>
+        <!--Navigation Controller-->
         <scene sceneID="HbL-iK-cs8">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="E9b-1m-KME" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="E9b-1m-KME" userLabel="Navigation Controller" sceneMemberID="viewController">
                     <extendedEdge key="edgesForExtendedLayout"/>
-                    <tabBarItem key="tabBarItem" title="Item" id="d4y-JD-1A1"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="549-Rp-6Eb" customClass="IANavigationBar" customModule="InsuranceApp" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -255,22 +299,22 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FvW-WW-p1H" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2346" y="142"/>
+            <point key="canvasLocation" x="-365" y="3173.5"/>
         </scene>
-        <!--Item-->
+        <!--Dashboard Controller-->
         <scene sceneID="zWP-iv-os1">
             <objects>
-                <viewController automaticallyAdjustsScrollViewInsets="NO" id="UIL-Q0-cbF" customClass="IADashboardController" customModule="InsuranceApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="UIL-Q0-cbF" userLabel="Dashboard Controller" customClass="IADashboardController" customModule="InsuranceApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="P4K-Uz-i7G"/>
                         <viewControllerLayoutGuide type="bottom" id="yHq-1k-Eml"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="2Lo-CE-1a8">
-                        <rect key="frame" x="0.0" y="64" width="768" height="911"/>
+                        <rect key="frame" x="0.0" y="44" width="768" height="980"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WIc-V2-xE2" userLabel="assistanceView">
-                                <rect key="frame" x="9" y="555" width="750" height="320"/>
+                                <rect key="frame" x="9" y="624" width="750" height="320"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bH6-oK-eie" userLabel="roadsideAssistanceView">
                                         <rect key="frame" x="9" y="231" width="362" height="80"/>
@@ -1301,7 +1345,6 @@ Insurance</string>
                         </constraints>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>
-                    <tabBarItem key="tabBarItem" title="Item" id="Uwr-ho-FIR"/>
                     <navigationItem key="navigationItem" id="o6o-ox-bCs"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="768" height="1024"/>
@@ -1321,46 +1364,7 @@ Insurance</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="r5C-bG-USq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3209" y="142"/>
-        </scene>
-        <!--Item 2-->
-        <scene sceneID="xez-In-oKj">
-            <objects>
-                <viewController automaticallyAdjustsScrollViewInsets="NO" id="Fwc-eW-kZb" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="dzy-Ho-ARK"/>
-                        <viewControllerLayoutGuide type="bottom" id="5zh-Oq-8JZ"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="6s9-bt-VGt">
-                        <rect key="frame" x="0.0" y="0.0" width="768" height="975"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <extendedEdge key="edgesForExtendedLayout"/>
-                    <tabBarItem key="tabBarItem" title="Item 2" id="FzN-Ik-L4T"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="HwG-ud-uPI" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2353" y="817"/>
-        </scene>
-        <!--Home Tab Controller-->
-        <scene sceneID="aKF-w4-CUr">
-            <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="s7p-DB-g1P" customClass="IAHomeTabController" customModule="InsuranceApp" customModuleProvider="target" sceneMemberID="viewController">
-                    <extendedEdge key="edgesForExtendedLayout"/>
-                    <tabBar key="tabBar" contentMode="scaleToFill" id="t2A-Yt-aaZ" customClass="IAHomeTabBar" customModule="InsuranceApp" customModuleProvider="target">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                    </tabBar>
-                    <connections>
-                        <segue destination="E9b-1m-KME" kind="relationship" relationship="viewControllers" id="8eU-iV-3yU"/>
-                        <segue destination="Fwc-eW-kZb" kind="relationship" relationship="viewControllers" id="lhI-nf-xwR"/>
-                    </connections>
-                </tabBarController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="fI2-Aq-jFj" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1583" y="390"/>
+            <point key="canvasLocation" x="571" y="3174"/>
         </scene>
         <!--Add Vehicle Controller-->
         <scene sceneID="MpL-AV-gqW">
@@ -1411,7 +1415,7 @@ Insurance</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dvC-uV-e6v" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4895" y="621"/>
+            <point key="canvasLocation" x="2455" y="3591"/>
         </scene>
         <!--Add Driver Controller-->
         <scene sceneID="QGv-Lr-iNi">
@@ -1543,7 +1547,7 @@ Insurance</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nt0-A5-UfM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4895" y="-70"/>
+            <point key="canvasLocation" x="2455" y="2784"/>
         </scene>
         <!--Auto Insurance Details Controller-->
         <scene sceneID="BiC-Dj-ciI">
@@ -1554,7 +1558,7 @@ Insurance</string>
                         <viewControllerLayoutGuide type="bottom" id="PfJ-CK-65L"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleAspectFit" id="8jM-Za-fFH">
-                        <rect key="frame" x="0.0" y="64" width="768" height="911"/>
+                        <rect key="frame" x="0.0" y="44" width="768" height="980"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Austin Auto Insurance Pvt. Ltd" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PbS-aO-8r1">
@@ -2015,7 +2019,7 @@ Insurance</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ffG-NZ-plP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4068" y="152"/>
+            <point key="canvasLocation" x="1504" y="3174"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="2Un-FI-aB0">
@@ -2034,7 +2038,7 @@ Insurance</string>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="j3i-a9-uXx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="161" y="390"/>
+            <point key="canvasLocation" x="-365" y="-134"/>
         </scene>
     </scenes>
     <resources>

@@ -14,7 +14,6 @@ class IALoginController: IABaseController {
     @IBOutlet weak var passwordTextField: UITextField!
     
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         

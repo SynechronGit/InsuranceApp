@@ -1,14 +1,14 @@
 //
-//  IAHomeTabController.swift
+//  IAHomeController.swift
 //  InsuranceApp
 //
-//  Created by rupendra on 5/30/16.
+//  Created by rupendra on 5/31/16.
 //  Copyright © 2016 com. All rights reserved.
 //
 
 import UIKit
 
-class IAHomeTabController: UITabBarController {
+class IAHomeController: IABaseController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
