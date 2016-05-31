@@ -55,7 +55,6 @@
 		3FFF0B851CF4A04300920ECA /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FFF0B841CF4A04300920ECA /* libsqlite3.tbd */; };
 		3FFF0B881CF4A22D00920ECA /* AppDatabase.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 3FFF0B871CF4A22D00920ECA /* AppDatabase.sqlite */; };
 		7D47A1351CF710E9007E1867 /* IADriver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D47A1341CF710E9007E1867 /* IADriver.swift */; };
-		7D47A1391CFD6E08007E1867 /* IAVehicleListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D47A1381CFD6E08007E1867 /* IAVehicleListController.swift */; };
 		7D47A13B1CFD7294007E1867 /* IAVehicleListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D47A13A1CFD7294007E1867 /* IAVehicleListCell.swift */; };
 		7D47A13D1CFD95FE007E1867 /* IADriverListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D47A13C1CFD95FE007E1867 /* IADriverListController.swift */; };
 		7D47A13F1CFD9618007E1867 /* IADriverListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D47A13E1CFD9618007E1867 /* IADriverListCell.swift */; };
@@ -135,7 +134,6 @@
 		3FFF0B861CF4A0BF00920ECA /* BridgingHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BridgingHeader.h; sourceTree = "<group>"; };
 		3FFF0B871CF4A22D00920ECA /* AppDatabase.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = AppDatabase.sqlite; sourceTree = "<group>"; };
 		7D47A1341CF710E9007E1867 /* IADriver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IADriver.swift; sourceTree = "<group>"; };
-		7D47A1381CFD6E08007E1867 /* IAVehicleListController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IAVehicleListController.swift; sourceTree = "<group>"; };
 		7D47A13A1CFD7294007E1867 /* IAVehicleListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IAVehicleListCell.swift; sourceTree = "<group>"; };
 		7D47A13C1CFD95FE007E1867 /* IADriverListController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IADriverListController.swift; sourceTree = "<group>"; };
 		7D47A13E1CFD9618007E1867 /* IADriverListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IADriverListCell.swift; sourceTree = "<group>"; };
@@ -290,7 +288,6 @@
 				3F2A0D991CF8762300EEACC2 /* IAAutoInsuranceDetailsController.swift */,
 				3F64D2171CF7089F00DC682D /* IAAddDriverController.swift */,
 				3F4D20C11CF71B280024EAE7 /* IAAddVehicleController.swift */,
-				7D47A1381CFD6E08007E1867 /* IAVehicleListController.swift */,
 				7D47A13A1CFD7294007E1867 /* IAVehicleListCell.swift */,
 				7D47A13C1CFD95FE007E1867 /* IADriverListController.swift */,
 				7D47A13E1CFD9618007E1867 /* IADriverListCell.swift */,
@@ -524,7 +521,6 @@
 				3F9948BD1CFC782100A880A8 /* LTMorphingLabel.swift in Sources */,
 				3F0CA46D1CF440C9002A048E /* IABaseController.swift in Sources */,
 				3F64D2181CF7089F00DC682D /* IAAddDriverController.swift in Sources */,
-				7D47A1391CFD6E08007E1867 /* IAVehicleListController.swift in Sources */,
 				3F9948BC1CFC782100A880A8 /* LTMorphingLabel+Sparkle.swift in Sources */,
 				3F4D20C41CF71CE30024EAE7 /* IAVehicle.swift in Sources */,
 				3FE1FA8D1CFC81E6008EA53F /* IALabel.swift in Sources */,
