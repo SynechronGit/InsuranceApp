@@ -23,8 +23,35 @@
 		3F820C611CF4522000729AE6 /* IAConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F820C601CF4522000729AE6 /* IAConstants.swift */; };
 		3F820C631CF4526D00729AE6 /* IADataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F820C621CF4526D00729AE6 /* IADataManager.swift */; };
 		3F820C691CF4555800729AE6 /* IACustomer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F820C681CF4555800729AE6 /* IACustomer.swift */; };
+		3F9948981CFC6B1100A880A8 /* IADashboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F9948971CFC6B1100A880A8 /* IADashboard.swift */; };
+		3F9948B31CFC782100A880A8 /* LTCharacterLimbo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F9948A01CFC782100A880A8 /* LTCharacterLimbo.swift */; };
+		3F9948B41CFC782100A880A8 /* LTEasing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F9948A11CFC782100A880A8 /* LTEasing.swift */; };
+		3F9948B51CFC782100A880A8 /* LTEmitterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F9948A21CFC782100A880A8 /* LTEmitterView.swift */; };
+		3F9948B61CFC782100A880A8 /* LTMorphingEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F9948A31CFC782100A880A8 /* LTMorphingEffect.swift */; };
+		3F9948B71CFC782100A880A8 /* LTMorphingLabel+Anvil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F9948A41CFC782100A880A8 /* LTMorphingLabel+Anvil.swift */; };
+		3F9948B81CFC782100A880A8 /* LTMorphingLabel+Burn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F9948A51CFC782100A880A8 /* LTMorphingLabel+Burn.swift */; };
+		3F9948B91CFC782100A880A8 /* LTMorphingLabel+Evaporate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F9948A61CFC782100A880A8 /* LTMorphingLabel+Evaporate.swift */; };
+		3F9948BA1CFC782100A880A8 /* LTMorphingLabel+Fall.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F9948A71CFC782100A880A8 /* LTMorphingLabel+Fall.swift */; };
+		3F9948BB1CFC782100A880A8 /* LTMorphingLabel+Pixelate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F9948A81CFC782100A880A8 /* LTMorphingLabel+Pixelate.swift */; };
+		3F9948BC1CFC782100A880A8 /* LTMorphingLabel+Sparkle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F9948A91CFC782100A880A8 /* LTMorphingLabel+Sparkle.swift */; };
+		3F9948BD1CFC782100A880A8 /* LTMorphingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F9948AB1CFC782100A880A8 /* LTMorphingLabel.swift */; };
+		3F9948BE1CFC782100A880A8 /* NSString+LTMorphingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F9948AC1CFC782100A880A8 /* NSString+LTMorphingLabel.swift */; };
+		3F9948BF1CFC782100A880A8 /* Fire.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F9948AE1CFC782100A880A8 /* Fire.png */; };
+		3F9948C01CFC782100A880A8 /* Fragment.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F9948AF1CFC782100A880A8 /* Fragment.png */; };
+		3F9948C11CFC782100A880A8 /* Smoke.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F9948B01CFC782100A880A8 /* Smoke.png */; };
+		3F9948C21CFC782100A880A8 /* Sparkle.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F9948B11CFC782100A880A8 /* Sparkle.png */; };
 		3FB2EE021CFC3E2200D56982 /* IAHomeTabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB2EE011CFC3E2200D56982 /* IAHomeTabController.swift */; };
 		3FB2EE041CFC402B00D56982 /* IAHomeTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB2EE031CFC402B00D56982 /* IAHomeTabBar.swift */; };
+		3FE1D2AF1CFC58C3007FA513 /* InsuranceTypeContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FE1D2AE1CFC58C3007FA513 /* InsuranceTypeContainerView.swift */; };
+		3FE1FA8D1CFC81E6008EA53F /* IALabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FE1FA8C1CFC81E6008EA53F /* IALabel.swift */; };
+		3FE1FA8F1CFC8750008EA53F /* IANavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FE1FA8E1CFC8750008EA53F /* IANavigationBar.swift */; };
+		3FF030B41CFD991A00BADE31 /* Ubuntu-300-italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3FF030AD1CFD991A00BADE31 /* Ubuntu-300-italic.ttf */; };
+		3FF030B51CFD991A00BADE31 /* Ubuntu-300.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3FF030AE1CFD991A00BADE31 /* Ubuntu-300.ttf */; };
+		3FF030B61CFD991A00BADE31 /* Ubuntu-500-italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3FF030AF1CFD991A00BADE31 /* Ubuntu-500-italic.ttf */; };
+		3FF030B71CFD991A00BADE31 /* Ubuntu-500.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3FF030B01CFD991A00BADE31 /* Ubuntu-500.ttf */; };
+		3FF030B81CFD991A00BADE31 /* Ubuntu-700.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3FF030B11CFD991A00BADE31 /* Ubuntu-700.ttf */; };
+		3FF030B91CFD991A00BADE31 /* Ubuntu-italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3FF030B21CFD991A00BADE31 /* Ubuntu-italic.ttf */; };
+		3FF030BA1CFD991A00BADE31 /* Ubuntu-regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3FF030B31CFD991A00BADE31 /* Ubuntu-regular.ttf */; };
 		3FFF0B851CF4A04300920ECA /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FFF0B841CF4A04300920ECA /* libsqlite3.tbd */; };
 		3FFF0B881CF4A22D00920ECA /* AppDatabase.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 3FFF0B871CF4A22D00920ECA /* AppDatabase.sqlite */; };
 		7D47A1351CF710E9007E1867 /* IADriver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D47A1341CF710E9007E1867 /* IADriver.swift */; };
@@ -74,8 +101,36 @@
 		3F820C601CF4522000729AE6 /* IAConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IAConstants.swift; sourceTree = "<group>"; };
 		3F820C621CF4526D00729AE6 /* IADataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IADataManager.swift; sourceTree = "<group>"; };
 		3F820C681CF4555800729AE6 /* IACustomer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IACustomer.swift; sourceTree = "<group>"; };
+		3F9948971CFC6B1100A880A8 /* IADashboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IADashboard.swift; sourceTree = "<group>"; };
+		3F9948A01CFC782100A880A8 /* LTCharacterLimbo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LTCharacterLimbo.swift; sourceTree = "<group>"; };
+		3F9948A11CFC782100A880A8 /* LTEasing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LTEasing.swift; sourceTree = "<group>"; };
+		3F9948A21CFC782100A880A8 /* LTEmitterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LTEmitterView.swift; sourceTree = "<group>"; };
+		3F9948A31CFC782100A880A8 /* LTMorphingEffect.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LTMorphingEffect.swift; sourceTree = "<group>"; };
+		3F9948A41CFC782100A880A8 /* LTMorphingLabel+Anvil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "LTMorphingLabel+Anvil.swift"; sourceTree = "<group>"; };
+		3F9948A51CFC782100A880A8 /* LTMorphingLabel+Burn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "LTMorphingLabel+Burn.swift"; sourceTree = "<group>"; };
+		3F9948A61CFC782100A880A8 /* LTMorphingLabel+Evaporate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "LTMorphingLabel+Evaporate.swift"; sourceTree = "<group>"; };
+		3F9948A71CFC782100A880A8 /* LTMorphingLabel+Fall.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "LTMorphingLabel+Fall.swift"; sourceTree = "<group>"; };
+		3F9948A81CFC782100A880A8 /* LTMorphingLabel+Pixelate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "LTMorphingLabel+Pixelate.swift"; sourceTree = "<group>"; };
+		3F9948A91CFC782100A880A8 /* LTMorphingLabel+Sparkle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "LTMorphingLabel+Sparkle.swift"; sourceTree = "<group>"; };
+		3F9948AA1CFC782100A880A8 /* LTMorphingLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTMorphingLabel.h; sourceTree = "<group>"; };
+		3F9948AB1CFC782100A880A8 /* LTMorphingLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LTMorphingLabel.swift; sourceTree = "<group>"; };
+		3F9948AC1CFC782100A880A8 /* NSString+LTMorphingLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSString+LTMorphingLabel.swift"; sourceTree = "<group>"; };
+		3F9948AE1CFC782100A880A8 /* Fire.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Fire.png; sourceTree = "<group>"; };
+		3F9948AF1CFC782100A880A8 /* Fragment.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Fragment.png; sourceTree = "<group>"; };
+		3F9948B01CFC782100A880A8 /* Smoke.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Smoke.png; sourceTree = "<group>"; };
+		3F9948B11CFC782100A880A8 /* Sparkle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Sparkle.png; sourceTree = "<group>"; };
 		3FB2EE011CFC3E2200D56982 /* IAHomeTabController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IAHomeTabController.swift; sourceTree = "<group>"; };
 		3FB2EE031CFC402B00D56982 /* IAHomeTabBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IAHomeTabBar.swift; sourceTree = "<group>"; };
+		3FE1D2AE1CFC58C3007FA513 /* InsuranceTypeContainerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InsuranceTypeContainerView.swift; sourceTree = "<group>"; };
+		3FE1FA8C1CFC81E6008EA53F /* IALabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IALabel.swift; sourceTree = "<group>"; };
+		3FE1FA8E1CFC8750008EA53F /* IANavigationBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IANavigationBar.swift; sourceTree = "<group>"; };
+		3FF030AD1CFD991A00BADE31 /* Ubuntu-300-italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Ubuntu-300-italic.ttf"; sourceTree = "<group>"; };
+		3FF030AE1CFD991A00BADE31 /* Ubuntu-300.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Ubuntu-300.ttf"; sourceTree = "<group>"; };
+		3FF030AF1CFD991A00BADE31 /* Ubuntu-500-italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Ubuntu-500-italic.ttf"; sourceTree = "<group>"; };
+		3FF030B01CFD991A00BADE31 /* Ubuntu-500.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Ubuntu-500.ttf"; sourceTree = "<group>"; };
+		3FF030B11CFD991A00BADE31 /* Ubuntu-700.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Ubuntu-700.ttf"; sourceTree = "<group>"; };
+		3FF030B21CFD991A00BADE31 /* Ubuntu-italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Ubuntu-italic.ttf"; sourceTree = "<group>"; };
+		3FF030B31CFD991A00BADE31 /* Ubuntu-regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Ubuntu-regular.ttf"; sourceTree = "<group>"; };
 		3FFF0B841CF4A04300920ECA /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		3FFF0B861CF4A0BF00920ECA /* BridgingHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BridgingHeader.h; sourceTree = "<group>"; };
 		3FFF0B871CF4A22D00920ECA /* AppDatabase.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = AppDatabase.sqlite; sourceTree = "<group>"; };
@@ -135,6 +190,8 @@
 		3F0CA4301CF4402F002A048E /* InsuranceApp */ = {
 			isa = PBXGroup;
 			children = (
+				3F52D1701CFD974F0084A968 /* Assets */,
+				3F99489B1CFC77B200A880A8 /* ThirdParty */,
 				3F820C5F1CF4522000729AE6 /* Assistants */,
 				3F0CA4651CF440C9002A048E /* Base */,
 				3F820C661CF4555800729AE6 /* Reusables */,
@@ -173,6 +230,7 @@
 			children = (
 				3F0CA4661CF440C9002A048E /* IAAppDelegate.swift */,
 				3F0CA4671CF440C9002A048E /* IABaseController.swift */,
+				3FE1FA8E1CFC8750008EA53F /* IANavigationBar.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -183,6 +241,7 @@
 				3F0CA4691CF440C9002A048E /* IADashboardController.swift */,
 				3FB2EE011CFC3E2200D56982 /* IAHomeTabController.swift */,
 				3FB2EE031CFC402B00D56982 /* IAHomeTabBar.swift */,
+				3FE1D2AE1CFC58C3007FA513 /* InsuranceTypeContainerView.swift */,
 			);
 			path = Dashboard;
 			sourceTree = "<group>";
@@ -193,6 +252,36 @@
 				3F0CA46B1CF440C9002A048E /* IALoginController.swift */,
 			);
 			path = Login;
+			sourceTree = "<group>";
+		};
+		3F52D1701CFD974F0084A968 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				3F52D1711CFD974F0084A968 /* Fonts */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		3F52D1711CFD974F0084A968 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				3F52D1721CFD974F0084A968 /* Ubuntu */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		3F52D1721CFD974F0084A968 /* Ubuntu */ = {
+			isa = PBXGroup;
+			children = (
+				3FF030AD1CFD991A00BADE31 /* Ubuntu-300-italic.ttf */,
+				3FF030AE1CFD991A00BADE31 /* Ubuntu-300.ttf */,
+				3FF030AF1CFD991A00BADE31 /* Ubuntu-500-italic.ttf */,
+				3FF030B01CFD991A00BADE31 /* Ubuntu-500.ttf */,
+				3FF030B11CFD991A00BADE31 /* Ubuntu-700.ttf */,
+				3FF030B21CFD991A00BADE31 /* Ubuntu-italic.ttf */,
+				3FF030B31CFD991A00BADE31 /* Ubuntu-regular.ttf */,
+			);
+			path = Ubuntu;
 			sourceTree = "<group>";
 		};
 		3F64D2161CF7089F00DC682D /* AutoInsurance */ = {
@@ -223,6 +312,7 @@
 		3F820C661CF4555800729AE6 /* Reusables */ = {
 			isa = PBXGroup;
 			children = (
+				3FE1FA8B1CFC81E6008EA53F /* Utils */,
 				3F820C671CF4555800729AE6 /* Models */,
 			);
 			path = Reusables;
@@ -234,8 +324,57 @@
 				3F820C681CF4555800729AE6 /* IACustomer.swift */,
 				3F4D20C31CF71CE30024EAE7 /* IAVehicle.swift */,
 				7D47A1341CF710E9007E1867 /* IADriver.swift */,
+				3F9948971CFC6B1100A880A8 /* IADashboard.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		3F99489B1CFC77B200A880A8 /* ThirdParty */ = {
+			isa = PBXGroup;
+			children = (
+				3F99489E1CFC782100A880A8 /* LTMorphingLabel */,
+			);
+			path = ThirdParty;
+			sourceTree = "<group>";
+		};
+		3F99489E1CFC782100A880A8 /* LTMorphingLabel */ = {
+			isa = PBXGroup;
+			children = (
+				3F9948A01CFC782100A880A8 /* LTCharacterLimbo.swift */,
+				3F9948A11CFC782100A880A8 /* LTEasing.swift */,
+				3F9948A21CFC782100A880A8 /* LTEmitterView.swift */,
+				3F9948A31CFC782100A880A8 /* LTMorphingEffect.swift */,
+				3F9948A41CFC782100A880A8 /* LTMorphingLabel+Anvil.swift */,
+				3F9948A51CFC782100A880A8 /* LTMorphingLabel+Burn.swift */,
+				3F9948A61CFC782100A880A8 /* LTMorphingLabel+Evaporate.swift */,
+				3F9948A71CFC782100A880A8 /* LTMorphingLabel+Fall.swift */,
+				3F9948A81CFC782100A880A8 /* LTMorphingLabel+Pixelate.swift */,
+				3F9948A91CFC782100A880A8 /* LTMorphingLabel+Sparkle.swift */,
+				3F9948AA1CFC782100A880A8 /* LTMorphingLabel.h */,
+				3F9948AB1CFC782100A880A8 /* LTMorphingLabel.swift */,
+				3F9948AC1CFC782100A880A8 /* NSString+LTMorphingLabel.swift */,
+				3F9948AD1CFC782100A880A8 /* Particles */,
+			);
+			path = LTMorphingLabel;
+			sourceTree = "<group>";
+		};
+		3F9948AD1CFC782100A880A8 /* Particles */ = {
+			isa = PBXGroup;
+			children = (
+				3F9948AE1CFC782100A880A8 /* Fire.png */,
+				3F9948AF1CFC782100A880A8 /* Fragment.png */,
+				3F9948B01CFC782100A880A8 /* Smoke.png */,
+				3F9948B11CFC782100A880A8 /* Sparkle.png */,
+			);
+			path = Particles;
+			sourceTree = "<group>";
+		};
+		3FE1FA8B1CFC81E6008EA53F /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				3FE1FA8C1CFC81E6008EA53F /* IALabel.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -342,9 +481,20 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3FF030B81CFD991A00BADE31 /* Ubuntu-700.ttf in Resources */,
+				3FF030B91CFD991A00BADE31 /* Ubuntu-italic.ttf in Resources */,
+				3FF030BA1CFD991A00BADE31 /* Ubuntu-regular.ttf in Resources */,
+				3F9948C21CFC782100A880A8 /* Sparkle.png in Resources */,
+				3F9948C01CFC782100A880A8 /* Fragment.png in Resources */,
+				3FF030B41CFD991A00BADE31 /* Ubuntu-300-italic.ttf in Resources */,
+				3FF030B71CFD991A00BADE31 /* Ubuntu-500.ttf in Resources */,
 				3FFF0B881CF4A22D00920ECA /* AppDatabase.sqlite in Resources */,
 				3F0CA43C1CF44030002A048E /* LaunchScreen.storyboard in Resources */,
+				3FF030B51CFD991A00BADE31 /* Ubuntu-300.ttf in Resources */,
+				3F9948C11CFC782100A880A8 /* Smoke.png in Resources */,
+				3FF030B61CFD991A00BADE31 /* Ubuntu-500-italic.ttf in Resources */,
 				3F0CA4391CF44030002A048E /* Assets.xcassets in Resources */,
+				3F9948BF1CFC782100A880A8 /* Fire.png in Resources */,
 				3F0CA4371CF44030002A048E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -370,21 +520,37 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3FE1D2AF1CFC58C3007FA513 /* InsuranceTypeContainerView.swift in Sources */,
+				3F9948BD1CFC782100A880A8 /* LTMorphingLabel.swift in Sources */,
 				3F0CA46D1CF440C9002A048E /* IABaseController.swift in Sources */,
 				3F64D2181CF7089F00DC682D /* IAAddDriverController.swift in Sources */,
 				7D47A1391CFD6E08007E1867 /* IAVehicleListController.swift in Sources */,
+				3F9948BC1CFC782100A880A8 /* LTMorphingLabel+Sparkle.swift in Sources */,
 				3F4D20C41CF71CE30024EAE7 /* IAVehicle.swift in Sources */,
+				3FE1FA8D1CFC81E6008EA53F /* IALabel.swift in Sources */,
 				3F820C631CF4526D00729AE6 /* IADataManager.swift in Sources */,
 				3FB2EE021CFC3E2200D56982 /* IAHomeTabController.swift in Sources */,
+				3F9948B91CFC782100A880A8 /* LTMorphingLabel+Evaporate.swift in Sources */,
 				3F0CA46F1CF440C9002A048E /* IALoginController.swift in Sources */,
 				3F0CA46E1CF440C9002A048E /* IADashboardController.swift in Sources */,
 				7D47A13B1CFD7294007E1867 /* IAVehicleListCell.swift in Sources */,
+				3F9948B41CFC782100A880A8 /* LTEasing.swift in Sources */,
+				3F9948B31CFC782100A880A8 /* LTCharacterLimbo.swift in Sources */,
+				3F9948B61CFC782100A880A8 /* LTMorphingEffect.swift in Sources */,
 				3F4D20C21CF71B280024EAE7 /* IAAddVehicleController.swift in Sources */,
 				3F0CA46C1CF440C9002A048E /* IAAppDelegate.swift in Sources */,
+				3F9948B81CFC782100A880A8 /* LTMorphingLabel+Burn.swift in Sources */,
+				3F9948B51CFC782100A880A8 /* LTEmitterView.swift in Sources */,
 				3F820C611CF4522000729AE6 /* IAConstants.swift in Sources */,
 				3FB2EE041CFC402B00D56982 /* IAHomeTabBar.swift in Sources */,
 				3F820C691CF4555800729AE6 /* IACustomer.swift in Sources */,
+				3F9948BA1CFC782100A880A8 /* LTMorphingLabel+Fall.swift in Sources */,
+				3F9948B71CFC782100A880A8 /* LTMorphingLabel+Anvil.swift in Sources */,
 				3F2A0D9A1CF8762300EEACC2 /* IAAutoInsuranceDetailsController.swift in Sources */,
+				3FE1FA8F1CFC8750008EA53F /* IANavigationBar.swift in Sources */,
+				3F9948BE1CFC782100A880A8 /* NSString+LTMorphingLabel.swift in Sources */,
+				3F9948981CFC6B1100A880A8 /* IADashboard.swift in Sources */,
+				3F9948BB1CFC782100A880A8 /* LTMorphingLabel+Pixelate.swift in Sources */,
 				7D47A1351CF710E9007E1867 /* IADriver.swift in Sources */,
 				7D47A13D1CFD95FE007E1867 /* IADriverListController.swift in Sources */,
 				7D47A13F1CFD9618007E1867 /* IADriverListCell.swift in Sources */,

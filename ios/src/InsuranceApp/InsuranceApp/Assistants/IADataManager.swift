@@ -14,6 +14,7 @@ import UIKit
  */
 public enum IARequestType: Int {
     case Login
+    case DashboardDetails
     case AddVehicle
     case ListVehicles
     case VehicleDetails
@@ -164,6 +165,29 @@ class IADataManager: NSObject {
                 } else {
                     throw IAError.Generic(NSError(domain: "com", code: 1, userInfo: [NSLocalizedDescriptionKey:"Email address is not registered."]))
                 }
+            } else if self.requestType == IARequestType.DashboardDetails {
+                let aDashboardDetails :IADashboard = IADashboard()
+                
+                aDashboardDetails.autoInsuranceCarCount = 7
+                aDashboardDetails.autoInsuranceDriverCount = 7
+                
+                aDashboardDetails.homeInsuranceApplianceCount = 16
+                aDashboardDetails.homeInsuranceFurnitureCount = 32
+                aDashboardDetails.homeInsuranceCurtainCount = 24
+                aDashboardDetails.homeInsuranceCrockeryCount = 56
+                
+                aDashboardDetails.boatInsuranceYatchCount = 3
+                aDashboardDetails.boatInsuranceSkipperCount = 3
+                aDashboardDetails.boatInsuranceEquipmentCount = 16
+                aDashboardDetails.boatInsuranceLossCount = 2
+                
+                aDashboardDetails.petInsuranceDogCount = 3
+                aDashboardDetails.petInsuranceCatCount = 1
+                
+                aDashboardDetails.claimCount = 4
+                aDashboardDetails.premiumCount = 2
+                
+                aDataManagerResponse.result = aDashboardDetails
             } else if self.requestType == IARequestType.AddVehicle {
                 let aVehicle :IAVehicle = pRequest as! IAVehicle
                 let anSqlQuery :String = "INSERT INTO vehicles (license_plate_number, state) VALUES (?, ?)"
@@ -273,14 +297,20 @@ class IADataManager: NSObject {
     }
     
     
+    internal func listVehicles() {
+        self.requestType = IARequestType.ListVehicles
+        self.sendRequest(nil)
+    }
+    
+    
     internal func addVehicle(pVehicle :IAVehicle) {
         self.requestType = IARequestType.AddVehicle
         self.sendRequest(pVehicle)
     }
     
     
-    internal func listVehicles() {
-        self.requestType = IARequestType.ListVehicles
+    internal func dashboardDetails() {
+        self.requestType = IARequestType.DashboardDetails
         self.sendRequest(nil)
     }
     
