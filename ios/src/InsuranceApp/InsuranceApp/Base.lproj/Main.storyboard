@@ -1717,8 +1717,18 @@ Insurance</string>
                                             <rect key="frame" x="0.0" y="0.0" width="211" height="169"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BvB-WW-dIN">
-                                                    <rect key="frame" x="84" y="133" width="42" height="21"/>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ubx-p1-gje">
+                                                    <rect key="frame" x="0.0" y="0.0" width="211" height="140"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="140" id="Zlq-xG-DFD"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BvB-WW-dIN">
+                                                    <rect key="frame" x="17" y="148" width="177" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="177" id="RVE-Il-GBI"/>
+                                                        <constraint firstAttribute="height" constant="21" id="qeB-sx-xlG"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
@@ -1727,8 +1737,16 @@ Insurance</string>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                         <color key="backgroundColor" red="0.73003135269999997" green="1" blue="0.83357527949999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="BvB-WW-dIN" secondAttribute="bottom" id="LMl-wg-yIv"/>
+                                            <constraint firstAttribute="trailing" secondItem="ubx-p1-gje" secondAttribute="trailing" id="cnD-Zh-uDg"/>
+                                            <constraint firstItem="BvB-WW-dIN" firstAttribute="centerX" secondItem="18x-JM-NW6" secondAttribute="centerX" id="g70-A1-8xA"/>
+                                            <constraint firstItem="ubx-p1-gje" firstAttribute="leading" secondItem="18x-JM-NW6" secondAttribute="leading" id="pfI-dC-Cxo"/>
+                                            <constraint firstItem="ubx-p1-gje" firstAttribute="top" secondItem="18x-JM-NW6" secondAttribute="top" id="zlk-IB-1zk"/>
+                                        </constraints>
                                         <connections>
                                             <outlet property="modelNoLabel" destination="BvB-WW-dIN" id="yEb-Lu-vB3"/>
+                                            <outlet property="vehicleImageView" destination="ubx-p1-gje" id="7iU-Ac-ulg"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -1753,17 +1771,35 @@ Insurance</string>
                                             <rect key="frame" x="0.0" y="0.0" width="143" height="167"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kif-be-0bd">
-                                                    <rect key="frame" x="50" y="143" width="42" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kif-be-0bd">
+                                                    <rect key="frame" x="8" y="146" width="127" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="127" id="3ju-Xl-f2w"/>
+                                                        <constraint firstAttribute="height" constant="21" id="WJR-sV-Q6I"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1wZ-fR-GzP">
+                                                    <rect key="frame" x="0.0" y="0.0" width="143" height="140"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="140" id="sR9-nt-T7y"/>
+                                                    </constraints>
+                                                </imageView>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                         <color key="backgroundColor" red="0.85098039219999999" green="0.48627450979999998" blue="0.4823529412" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="1wZ-fR-GzP" secondAttribute="trailing" id="1Hh-J4-mY8"/>
+                                            <constraint firstItem="Kif-be-0bd" firstAttribute="centerX" secondItem="rUz-AI-3zh" secondAttribute="centerX" id="F9p-tb-gVE"/>
+                                            <constraint firstItem="1wZ-fR-GzP" firstAttribute="top" secondItem="rUz-AI-3zh" secondAttribute="top" id="WYw-SB-iXe"/>
+                                            <constraint firstItem="1wZ-fR-GzP" firstAttribute="leading" secondItem="rUz-AI-3zh" secondAttribute="leading" id="w5v-Wx-7bT"/>
+                                            <constraint firstAttribute="bottom" secondItem="Kif-be-0bd" secondAttribute="bottom" id="whM-CH-i1v"/>
+                                        </constraints>
                                         <connections>
+                                            <outlet property="driverImage" destination="1wZ-fR-GzP" id="M9W-Pi-pn3"/>
                                             <outlet property="driverNameLabel" destination="Kif-be-0bd" id="bTV-Rx-cfE"/>
                                         </connections>
                                     </collectionViewCell>

@@ -28,14 +28,15 @@ class IAAutoInsuranceDetailsController: IABaseController , UICollectionViewDeleg
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.vehicleCollectionView.delegate = self
-        self.vehicleCollectionView.dataSource = self
-        self.driverCollectionView.delegate = self
-        self.driverCollectionView.dataSource = self
         
         self.updateUI()
     
         self.reloadAllData()
+        
+        self.vehicleCollectionView.delegate = self
+        self.vehicleCollectionView.dataSource = self
+        self.driverCollectionView.delegate = self
+        self.driverCollectionView.dataSource = self
 
     }
     
@@ -52,6 +53,8 @@ class IAAutoInsuranceDetailsController: IABaseController , UICollectionViewDeleg
     func reloadAllData() {
         IAAppDelegate.currentAppDelegate.displayLoadingOverlay()
         self.dataManager.listVehicles()
+        self.vehicleCollectionView.reloadData()
+        self.driverCollectionView.reloadData()
     }
     
     
@@ -127,9 +130,18 @@ class IAAutoInsuranceDetailsController: IABaseController , UICollectionViewDeleg
         var count:Int?
         
         if collectionView == self.vehicleCollectionView {
-            count = self.items.count
+            if(self.vehicleArray == nil){
+                count = 0
+            }else{
+                count = self.vehicleArray.count
+            }
+            
         }else if collectionView == self.driverCollectionView {
-            count = self.items.count
+            if(self.driverArray == nil){
+                count = 0
+            }else{
+                count = self.driverArray.count
+            }
         }
         
         return count!
