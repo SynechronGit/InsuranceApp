@@ -9,7 +9,8 @@ import UIKit
 /**
  * Controller for Auto Insurance Details screen.
  */
-class IAAutoInsuranceDetailsController: IABaseController {
+class IAAutoInsuranceDetailsController: IABaseController , UICollectionViewDelegate, UICollectionViewDataSource {
+    @IBOutlet weak var vehicleCollectionView: UICollectionView!
     var vehicleArray :Array<IAVehicle>!
     var driverArray :Array<IADriver>!
     
@@ -20,13 +21,18 @@ class IAAutoInsuranceDetailsController: IABaseController {
     @IBOutlet weak var coverageBoxView: UIView!
     @IBOutlet weak var limitBoxView: UIView!
     @IBOutlet weak var deductibleBoxView: UIView!
+    
+    
+    let reuseIdentifier = "vehicleListCell" // also enter this string as the cell identifier in the storyboard
+     var items = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"]
   
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.vehicleCollectionView.delegate = self
+        self.vehicleCollectionView.dataSource = self
         self.updateUI()
-        
+    
         self.reloadAllData()
 
     }
@@ -111,4 +117,31 @@ class IAAutoInsuranceDetailsController: IABaseController {
             self.reloadAllView()
         }
     }
+    
+    // MARK: - UICollectionViewDataSource protocol
+    
+    // tell the collection view how many cells to make
+     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        //  print(item)
+        return self.items.count
+    }
+    
+    // make a cell for each cell index path
+     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+        
+        // get a reference to our storyboard cell
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath) as! IAVehicleListCell
+        
+        // Use the outlet in our custom class to get a reference to the UILabel in the cell
+        cell.modelNoLabel.text = self.items[indexPath.item]
+        return cell
+    }
+    
+    // MARK: - UICollectionViewDelegate protocol
+    
+     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        // handle tap events
+        print("You selected cell #\(indexPath.item)!")
+    }
+
 }
