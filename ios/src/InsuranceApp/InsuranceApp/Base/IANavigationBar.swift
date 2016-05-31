@@ -19,4 +19,9 @@ class IANavigationBar: UINavigationBar {
         self.setBackgroundImage(UIImage(), forBarMetrics: UIBarMetrics.Default)
         self.shadowImage = UIImage()
     }
+    
+    
+    override func sizeThatFits(size: CGSize) -> CGSize {
+        return CGSizeMake((self.superview?.bounds.size.width)!, 29.0)
+    }
 }
