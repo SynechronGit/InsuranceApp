@@ -56,7 +56,6 @@
 		3FFF0B881CF4A22D00920ECA /* AppDatabase.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 3FFF0B871CF4A22D00920ECA /* AppDatabase.sqlite */; };
 		7D47A1351CF710E9007E1867 /* IADriver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D47A1341CF710E9007E1867 /* IADriver.swift */; };
 		7D47A13B1CFD7294007E1867 /* IAVehicleListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D47A13A1CFD7294007E1867 /* IAVehicleListCell.swift */; };
-		7D47A13D1CFD95FE007E1867 /* IADriverListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D47A13C1CFD95FE007E1867 /* IADriverListController.swift */; };
 		7D47A13F1CFD9618007E1867 /* IADriverListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D47A13E1CFD9618007E1867 /* IADriverListCell.swift */; };
 /* End PBXBuildFile section */
 
@@ -135,7 +134,6 @@
 		3FFF0B871CF4A22D00920ECA /* AppDatabase.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = AppDatabase.sqlite; sourceTree = "<group>"; };
 		7D47A1341CF710E9007E1867 /* IADriver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IADriver.swift; sourceTree = "<group>"; };
 		7D47A13A1CFD7294007E1867 /* IAVehicleListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IAVehicleListCell.swift; sourceTree = "<group>"; };
-		7D47A13C1CFD95FE007E1867 /* IADriverListController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IADriverListController.swift; sourceTree = "<group>"; };
 		7D47A13E1CFD9618007E1867 /* IADriverListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IADriverListCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -289,7 +287,6 @@
 				3F64D2171CF7089F00DC682D /* IAAddDriverController.swift */,
 				3F4D20C11CF71B280024EAE7 /* IAAddVehicleController.swift */,
 				7D47A13A1CFD7294007E1867 /* IAVehicleListCell.swift */,
-				7D47A13C1CFD95FE007E1867 /* IADriverListController.swift */,
 				7D47A13E1CFD9618007E1867 /* IADriverListCell.swift */,
 			);
 			path = AutoInsurance;
@@ -548,7 +545,6 @@
 				3F9948981CFC6B1100A880A8 /* IADashboard.swift in Sources */,
 				3F9948BB1CFC782100A880A8 /* LTMorphingLabel+Pixelate.swift in Sources */,
 				7D47A1351CF710E9007E1867 /* IADriver.swift in Sources */,
-				7D47A13D1CFD95FE007E1867 /* IADriverListController.swift in Sources */,
 				7D47A13F1CFD9618007E1867 /* IADriverListCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

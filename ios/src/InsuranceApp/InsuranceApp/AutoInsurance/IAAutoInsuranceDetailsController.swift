@@ -14,6 +14,7 @@ class IAAutoInsuranceDetailsController: IABaseController , UICollectionViewDeleg
     var vehicleArray :Array<IAVehicle>!
     var driverArray :Array<IADriver>!
     
+    @IBOutlet weak var driverCollectionView: UICollectionView!
     @IBOutlet weak var payPremiumBtn: UIButton!
     @IBOutlet weak var fileClaimBtn: UIButton!
     @IBOutlet weak var viewPolicyBtn: UIButton!
@@ -22,8 +23,6 @@ class IAAutoInsuranceDetailsController: IABaseController , UICollectionViewDeleg
     @IBOutlet weak var limitBoxView: UIView!
     @IBOutlet weak var deductibleBoxView: UIView!
     
-    
-    let reuseIdentifier = "vehicleListCell" // also enter this string as the cell identifier in the storyboard
      var items = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"]
   
     
@@ -31,6 +30,9 @@ class IAAutoInsuranceDetailsController: IABaseController , UICollectionViewDeleg
         super.viewDidLoad()
         self.vehicleCollectionView.delegate = self
         self.vehicleCollectionView.dataSource = self
+        self.driverCollectionView.delegate = self
+        self.driverCollectionView.dataSource = self
+        
         self.updateUI()
     
         self.reloadAllData()
@@ -122,19 +124,38 @@ class IAAutoInsuranceDetailsController: IABaseController , UICollectionViewDeleg
     
     // tell the collection view how many cells to make
      func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        //  print(item)
-        return self.items.count
+        var count:Int?
+        
+        if collectionView == self.vehicleCollectionView {
+            count = self.items.count
+        }else if collectionView == self.driverCollectionView {
+            count = self.items.count
+        }
+        
+        return count!
+        
     }
     
     // make a cell for each cell index path
      func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         
-        // get a reference to our storyboard cell
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath) as! IAVehicleListCell
+        if collectionView == self.vehicleCollectionView {
+            // get a reference to our storyboard cell
+            let cell = collectionView.dequeueReusableCellWithReuseIdentifier("vehicleListCell", forIndexPath: indexPath) as! IAVehicleListCell
+            
+            // Use the outlet in our custom class to get a reference to the UILabel in the cell
+            cell.modelNoLabel.text = self.items[indexPath.item]
+            return cell
+        }else  {
+            // get a reference to our storyboard cell
+            let cell = collectionView.dequeueReusableCellWithReuseIdentifier("driverListCell", forIndexPath: indexPath) as! IADriverListCell
+            
+            // Use the outlet in our custom class to get a reference to the UILabel in the cell
+            cell.driverNameLabel.text = self.items[indexPath.item]
+            return cell
+        }
         
-        // Use the outlet in our custom class to get a reference to the UILabel in the cell
-        cell.modelNoLabel.text = self.items[indexPath.item]
-        return cell
+        
     }
     
     // MARK: - UICollectionViewDelegate protocol
