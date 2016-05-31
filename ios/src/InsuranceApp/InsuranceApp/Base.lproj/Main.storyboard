@@ -171,7 +171,7 @@
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="a25-fg-Xir" userLabel="myClaimsImageView">
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="MyClaimsIcon" translatesAutoresizingMaskIntoConstraints="NO" id="a25-fg-Xir" userLabel="myClaimsImageView">
                                                 <rect key="frame" x="16" y="20" width="74" height="74"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="74" id="jW4-9w-uH5"/>
@@ -186,12 +186,20 @@ Claims</string>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qdi-qI-KUK">
+                                                <rect key="frame" x="0.0" y="106" width="362" height="8"/>
+                                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.25" colorSpace="calibratedRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="8" id="gu1-Cd-n93"/>
+                                                </constraints>
+                                            </view>
                                         </subviews>
                                         <color key="backgroundColor" red="0.2156862745" green="0.1960784314" blue="0.21960784310000001" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstItem="a25-fg-Xir" firstAttribute="centerY" secondItem="TrC-bc-N9H" secondAttribute="centerY" id="0yP-co-IL5"/>
                                             <constraint firstItem="ibY-hv-Wa1" firstAttribute="leading" secondItem="cId-la-3cT" secondAttribute="trailing" constant="17" id="24F-jB-K69"/>
                                             <constraint firstAttribute="height" constant="114" id="5VF-fj-7fn"/>
+                                            <constraint firstItem="qdi-qI-KUK" firstAttribute="leading" secondItem="TrC-bc-N9H" secondAttribute="leading" id="7CO-0r-yUT"/>
                                             <constraint firstAttribute="bottom" secondItem="ibY-hv-Wa1" secondAttribute="bottom" constant="21" id="85J-ed-h47"/>
                                             <constraint firstItem="a25-fg-Xir" firstAttribute="leading" secondItem="TrC-bc-N9H" secondAttribute="leading" constant="16" id="C9c-D1-oLx"/>
                                             <constraint firstAttribute="bottom" secondItem="Khz-Tv-iy6" secondAttribute="bottom" constant="21" id="FLz-H4-JP9"/>
@@ -199,8 +207,10 @@ Claims</string>
                                             <constraint firstItem="Khz-Tv-iy6" firstAttribute="top" secondItem="TrC-bc-N9H" secondAttribute="top" constant="14" id="LoV-oP-VPX"/>
                                             <constraint firstAttribute="trailing" secondItem="ibY-hv-Wa1" secondAttribute="trailing" constant="105" id="NSe-zc-mW3"/>
                                             <constraint firstItem="ibY-hv-Wa1" firstAttribute="top" secondItem="TrC-bc-N9H" secondAttribute="top" constant="14" id="OAu-gE-E3y"/>
+                                            <constraint firstAttribute="bottom" secondItem="qdi-qI-KUK" secondAttribute="bottom" id="OMb-tC-3B7"/>
                                             <constraint firstItem="Khz-Tv-iy6" firstAttribute="leading" secondItem="ibY-hv-Wa1" secondAttribute="trailing" constant="10" id="Vfm-E2-kyP"/>
                                             <constraint firstAttribute="bottom" secondItem="cId-la-3cT" secondAttribute="bottom" constant="21" id="cfD-Ru-ILj"/>
+                                            <constraint firstAttribute="trailing" secondItem="qdi-qI-KUK" secondAttribute="trailing" id="fjk-w6-XHv"/>
                                             <constraint firstItem="cId-la-3cT" firstAttribute="leading" secondItem="a25-fg-Xir" secondAttribute="trailing" constant="17" id="uFr-Um-9Gb"/>
                                             <constraint firstItem="cId-la-3cT" firstAttribute="top" secondItem="TrC-bc-N9H" secondAttribute="top" constant="14" id="wC2-bH-fqL"/>
                                         </constraints>
@@ -221,7 +231,7 @@ Claims</string>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3vX-Kr-hlv" userLabel="payPremiumImageView">
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="PayPremiumIcon" translatesAutoresizingMaskIntoConstraints="NO" id="3vX-Kr-hlv" userLabel="payPremiumImageView">
                                                 <rect key="frame" x="16" y="20" width="74" height="74"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="74" id="1zA-Fh-3Ut"/>
@@ -236,11 +246,20 @@ Premium</string>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6MD-1k-Jzc">
+                                                <rect key="frame" x="0.0" y="106" width="362" height="8"/>
+                                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.25" colorSpace="calibratedRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="8" id="dAB-Dm-lxU"/>
+                                                </constraints>
+                                            </view>
                                         </subviews>
                                         <color key="backgroundColor" red="0.2156862745" green="0.1960784314" blue="0.21960784310000001" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstItem="DPm-h5-TkP" firstAttribute="top" secondItem="XAh-Fr-0jq" secondAttribute="top" constant="14" id="01m-TR-Yts"/>
+                                            <constraint firstAttribute="bottom" secondItem="6MD-1k-Jzc" secondAttribute="bottom" id="5ZT-zY-Ejk"/>
                                             <constraint firstItem="3vX-Kr-hlv" firstAttribute="leading" secondItem="XAh-Fr-0jq" secondAttribute="leading" constant="16" id="Ajp-6g-IeH"/>
+                                            <constraint firstAttribute="trailing" secondItem="6MD-1k-Jzc" secondAttribute="trailing" id="HoZ-iv-LQ6"/>
                                             <constraint firstItem="DPm-h5-TkP" firstAttribute="leading" secondItem="3vX-Kr-hlv" secondAttribute="trailing" constant="17" id="Mfp-4a-OHX"/>
                                             <constraint firstAttribute="bottom" secondItem="Glw-g4-Nje" secondAttribute="bottom" constant="21" id="OTd-dd-5lZ"/>
                                             <constraint firstAttribute="trailing" secondItem="PnR-1i-yE9" secondAttribute="trailing" constant="10" id="OXT-oA-bdA"/>
@@ -252,6 +271,7 @@ Premium</string>
                                             <constraint firstAttribute="bottom" secondItem="PnR-1i-yE9" secondAttribute="bottom" constant="21" id="rtb-UQ-IMd"/>
                                             <constraint firstAttribute="trailing" secondItem="Glw-g4-Nje" secondAttribute="trailing" constant="105" id="syO-H3-DhZ"/>
                                             <constraint firstAttribute="bottom" secondItem="DPm-h5-TkP" secondAttribute="bottom" constant="21" id="tPZ-vt-MV8"/>
+                                            <constraint firstItem="6MD-1k-Jzc" firstAttribute="leading" secondItem="XAh-Fr-0jq" secondAttribute="leading" id="tT9-6q-OQd"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -314,7 +334,7 @@ Premium</string>
                                             </mask>
                                         </variation>
                                     </label>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="CoO-Nr-NyJ" userLabel="myClaimsImageView">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="AutoInsuranceIcon" translatesAutoresizingMaskIntoConstraints="NO" id="CoO-Nr-NyJ" userLabel="myClaimsImageView">
                                         <rect key="frame" x="16" y="20" width="74" height="74"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="74" id="V0Z-sd-bbP"/>
@@ -382,6 +402,13 @@ Insurance</string>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KWx-8Q-ypx">
+                                        <rect key="frame" x="0.0" y="106" width="732" height="8"/>
+                                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.25" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="8" id="Czq-bc-VqF"/>
+                                        </constraints>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" red="0.76470588235294112" green="0.16470588235294117" blue="0.15686274509803921" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -398,8 +425,10 @@ Insurance</string>
                                     <constraint firstItem="Avl-6K-6VF" firstAttribute="leading" secondItem="qw7-cK-stc" secondAttribute="trailing" constant="10" id="Htz-7W-V1h"/>
                                     <constraint firstItem="CoO-Nr-NyJ" firstAttribute="leading" secondItem="3SN-1S-uvw" secondAttribute="leading" constant="16" id="JjH-PP-FcM"/>
                                     <constraint firstItem="CoO-Nr-NyJ" firstAttribute="centerY" secondItem="3SN-1S-uvw" secondAttribute="centerY" id="JtF-Ol-5qt"/>
+                                    <constraint firstItem="KWx-8Q-ypx" firstAttribute="leading" secondItem="3SN-1S-uvw" secondAttribute="leading" id="MNI-xG-4W4"/>
                                     <constraint firstItem="93O-8p-mwR" firstAttribute="top" secondItem="3SN-1S-uvw" secondAttribute="top" constant="14" id="MZQ-HT-68U"/>
                                     <constraint firstItem="GPJ-bt-tbF" firstAttribute="top" secondItem="3SN-1S-uvw" secondAttribute="top" constant="27" id="MmT-Zh-xJB"/>
+                                    <constraint firstAttribute="bottom" secondItem="KWx-8Q-ypx" secondAttribute="bottom" id="Nvf-st-nbk"/>
                                     <constraint firstItem="bV5-EG-EAo" firstAttribute="top" secondItem="93O-8p-mwR" secondAttribute="bottom" id="P60-ZL-hQc"/>
                                     <constraint firstItem="qw7-cK-stc" firstAttribute="top" secondItem="3SN-1S-uvw" secondAttribute="top" constant="14" id="RsH-0F-Iyc"/>
                                     <constraint firstItem="93O-8p-mwR" firstAttribute="width" secondItem="bV5-EG-EAo" secondAttribute="width" id="SeV-83-QJH"/>
@@ -412,6 +441,7 @@ Insurance</string>
                                     <constraint firstItem="XOd-el-XMa" firstAttribute="top" secondItem="3SN-1S-uvw" secondAttribute="top" constant="14" id="duJ-kU-xAB"/>
                                     <constraint firstAttribute="bottom" secondItem="GPJ-bt-tbF" secondAttribute="bottom" constant="34" id="gHM-fD-3G9"/>
                                     <constraint firstItem="qw7-cK-stc" firstAttribute="leading" secondItem="93O-8p-mwR" secondAttribute="trailing" constant="17" id="jRM-vl-Ciq"/>
+                                    <constraint firstAttribute="trailing" secondItem="KWx-8Q-ypx" secondAttribute="trailing" id="m0k-QR-pre"/>
                                     <constraint firstAttribute="bottom" secondItem="93O-8p-mwR" secondAttribute="bottom" constant="42" id="nAk-Ie-wRY"/>
                                     <constraint firstItem="bV5-EG-EAo" firstAttribute="leading" secondItem="CoO-Nr-NyJ" secondAttribute="trailing" constant="17" id="nDp-LX-3Hk"/>
                                     <constraint firstItem="93O-8p-mwR" firstAttribute="leading" secondItem="CoO-Nr-NyJ" secondAttribute="trailing" constant="17" id="tNq-mb-H8P"/>
@@ -458,7 +488,7 @@ Insurance</string>
                                             </mask>
                                         </variation>
                                     </label>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="urk-0J-Vh9" userLabel="myClaimsImageView">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="HomeInsuranceIcon" translatesAutoresizingMaskIntoConstraints="NO" id="urk-0J-Vh9" userLabel="myClaimsImageView">
                                         <rect key="frame" x="16" y="20" width="74" height="74"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="74" id="1ud-xJ-gfQ"/>
@@ -590,15 +620,24 @@ Insurance</string>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CA6-K8-zm9">
+                                        <rect key="frame" x="0.0" y="106" width="732" height="8"/>
+                                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.25" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="8" id="hcy-aa-44Q"/>
+                                        </constraints>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" red="0.88627450980392153" green="0.72549019607843135" blue="0.090196078431372548" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstItem="Tzj-cj-evh" firstAttribute="leading" secondItem="nc1-xE-oaM" secondAttribute="trailing" constant="10" id="0wN-vz-v41"/>
+                                    <constraint firstAttribute="bottom" secondItem="CA6-K8-zm9" secondAttribute="bottom" id="1nC-Li-xcG"/>
                                     <constraint firstItem="Ons-qK-onq" firstAttribute="top" secondItem="jw4-Td-edd" secondAttribute="top" constant="14" id="331-OP-xZ3"/>
                                     <constraint firstItem="Fjn-BI-pVm" firstAttribute="width" secondItem="Dtg-q4-y3i" secondAttribute="width" id="4L5-gv-hxU"/>
                                     <constraint firstItem="OST-Ye-6gT" firstAttribute="top" secondItem="jw4-Td-edd" secondAttribute="top" constant="14" id="9av-dD-PQj"/>
                                     <constraint firstItem="Tzj-cj-evh" firstAttribute="top" secondItem="jw4-Td-edd" secondAttribute="top" constant="14" id="9cQ-hQ-XiN"/>
                                     <constraint firstAttribute="bottom" secondItem="rFY-2L-SCn" secondAttribute="bottom" constant="21" id="APp-14-LEM"/>
+                                    <constraint firstAttribute="trailing" secondItem="CA6-K8-zm9" secondAttribute="trailing" id="B6z-ET-LgQ"/>
                                     <constraint firstItem="Ons-qK-onq" firstAttribute="leading" secondItem="urk-0J-Vh9" secondAttribute="trailing" constant="17" id="CHm-lw-mqD"/>
                                     <constraint firstItem="nc1-xE-oaM" firstAttribute="top" secondItem="jw4-Td-edd" secondAttribute="top" constant="27" id="Cd9-1u-5tB"/>
                                     <constraint firstAttribute="trailing" secondItem="rFY-2L-SCn" secondAttribute="trailing" constant="105" id="ERl-tV-hDt"/>
@@ -631,6 +670,7 @@ Insurance</string>
                                     <constraint firstItem="WaQ-c1-fNZ" firstAttribute="leading" secondItem="urk-0J-Vh9" secondAttribute="trailing" constant="17" id="jp7-m6-Pby"/>
                                     <constraint firstItem="fBb-qY-0iz" firstAttribute="top" secondItem="xQu-km-BaD" secondAttribute="bottom" id="kVY-Fh-7KP"/>
                                     <constraint firstItem="QI2-iw-FPy" firstAttribute="leading" secondItem="nc1-xE-oaM" secondAttribute="trailing" constant="107" id="leL-6X-96G"/>
+                                    <constraint firstItem="CA6-K8-zm9" firstAttribute="leading" secondItem="jw4-Td-edd" secondAttribute="leading" id="m8S-gm-n4q"/>
                                     <constraint firstItem="Ons-qK-onq" firstAttribute="width" secondItem="WaQ-c1-fNZ" secondAttribute="width" id="oe9-d2-47N"/>
                                     <constraint firstItem="Ons-qK-onq" firstAttribute="leading" secondItem="urk-0J-Vh9" secondAttribute="trailing" constant="17" id="rqD-Ex-9BT"/>
                                     <constraint firstItem="AwE-gI-J4J" firstAttribute="top" secondItem="OST-Ye-6gT" secondAttribute="bottom" id="ruq-iN-cd3"/>
@@ -684,7 +724,7 @@ Insurance</string>
                                             </mask>
                                         </variation>
                                     </label>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="mv2-Tu-2ut" userLabel="myClaimsImageView">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BoatInsuranceIcon" translatesAutoresizingMaskIntoConstraints="NO" id="mv2-Tu-2ut" userLabel="myClaimsImageView">
                                         <rect key="frame" x="16" y="20" width="74" height="74"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="74" id="Ynr-HQ-OSc"/>
@@ -816,6 +856,13 @@ Insurance</string>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hFu-ez-OKf">
+                                        <rect key="frame" x="0.0" y="106" width="732" height="8"/>
+                                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.25" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="8" id="ORr-WC-hwy"/>
+                                        </constraints>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" red="0.10980392156862745" green="0.60784313725490191" blue="0.68235294117647061" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -826,6 +873,7 @@ Insurance</string>
                                     <constraint firstItem="hez-PH-aUD" firstAttribute="top" secondItem="Fyj-k5-EIX" secondAttribute="bottom" id="8g2-0t-o90"/>
                                     <constraint firstItem="WIx-jL-V05" firstAttribute="leading" secondItem="mv2-Tu-2ut" secondAttribute="trailing" constant="17" id="8qk-xb-ZhD"/>
                                     <constraint firstItem="oj7-RT-DUH" firstAttribute="leading" secondItem="guu-A2-39J" secondAttribute="trailing" constant="107" id="CVT-cR-bQV"/>
+                                    <constraint firstAttribute="bottom" secondItem="hFu-ez-OKf" secondAttribute="bottom" id="Cpc-iJ-rlt"/>
                                     <constraint firstItem="epe-Ng-e8s" firstAttribute="width" secondItem="4NG-Hs-IfG" secondAttribute="width" id="E4Z-YC-MfO"/>
                                     <constraint firstAttribute="bottom" secondItem="OLc-Z1-TnS" secondAttribute="bottom" constant="34" id="EO3-EY-VYo"/>
                                     <constraint firstItem="WIx-jL-V05" firstAttribute="width" secondItem="FBV-6q-Z25" secondAttribute="width" id="Gae-Dc-R0Y"/>
@@ -834,6 +882,7 @@ Insurance</string>
                                     <constraint firstAttribute="bottom" secondItem="LnR-WP-vyI" secondAttribute="bottom" constant="21" id="Iou-oF-ZeN"/>
                                     <constraint firstItem="WIx-jL-V05" firstAttribute="leading" secondItem="mv2-Tu-2ut" secondAttribute="trailing" constant="17" id="JZH-1J-n7v"/>
                                     <constraint firstItem="Fyj-k5-EIX" firstAttribute="top" secondItem="dBw-26-ngJ" secondAttribute="top" constant="14" id="KFY-tT-W3t"/>
+                                    <constraint firstAttribute="trailing" secondItem="hFu-ez-OKf" secondAttribute="trailing" id="Lyo-N8-W4m"/>
                                     <constraint firstAttribute="trailing" secondItem="86a-Oq-aox" secondAttribute="trailing" constant="10" id="LzO-rM-ZWG"/>
                                     <constraint firstItem="N2i-dk-2dH" firstAttribute="leading" secondItem="guu-A2-39J" secondAttribute="trailing" constant="10" id="MdP-1t-rkf"/>
                                     <constraint firstItem="guu-A2-39J" firstAttribute="leading" secondItem="LnR-WP-vyI" secondAttribute="trailing" constant="107" id="NPw-Ak-a0a"/>
@@ -864,6 +913,7 @@ Insurance</string>
                                     <constraint firstAttribute="bottom" secondItem="oj7-RT-DUH" secondAttribute="bottom" constant="34" id="vYy-Uz-Ggc"/>
                                     <constraint firstItem="N2i-dk-2dH" firstAttribute="top" secondItem="IAW-5a-CLe" secondAttribute="bottom" id="w4E-zJ-pdy"/>
                                     <constraint firstItem="WIx-jL-V05" firstAttribute="leading" secondItem="mv2-Tu-2ut" secondAttribute="trailing" constant="17" id="x1r-b0-8Bv"/>
+                                    <constraint firstItem="hFu-ez-OKf" firstAttribute="leading" secondItem="dBw-26-ngJ" secondAttribute="leading" id="z5T-j5-j9D"/>
                                     <constraint firstItem="mv2-Tu-2ut" firstAttribute="leading" secondItem="dBw-26-ngJ" secondAttribute="leading" constant="16" id="zEn-7f-23t"/>
                                     <constraint firstItem="LnR-WP-vyI" firstAttribute="leading" secondItem="WIx-jL-V05" secondAttribute="trailing" constant="17" id="zoR-6A-C2C"/>
                                 </constraints>
@@ -910,7 +960,7 @@ Insurance</string>
                                             </mask>
                                         </variation>
                                     </label>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="HRx-8B-Wyf" userLabel="myClaimsImageView">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="PetInsuranceIcon" translatesAutoresizingMaskIntoConstraints="NO" id="HRx-8B-Wyf" userLabel="myClaimsImageView">
                                         <rect key="frame" x="16" y="20" width="74" height="74"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="74" id="rnc-Av-QJH"/>
@@ -978,6 +1028,13 @@ Insurance</string>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lGA-cG-DiC">
+                                        <rect key="frame" x="0.0" y="106" width="732" height="8"/>
+                                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.25" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="8" id="U7m-Pn-bmx"/>
+                                        </constraints>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" red="0.12156862745098039" green="0.64313725490196072" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -1000,9 +1057,12 @@ Insurance</string>
                                     <constraint firstItem="gw7-da-y86" firstAttribute="width" secondItem="s7U-6C-0Fb" secondAttribute="width" id="XgP-n5-QIX"/>
                                     <constraint firstItem="5dz-D8-m6z" firstAttribute="leading" secondItem="CsI-o7-9p9" secondAttribute="trailing" constant="107" id="ZM5-zO-CZ1"/>
                                     <constraint firstItem="gJu-98-Ory" firstAttribute="width" secondItem="nUZ-Jd-uUG" secondAttribute="width" id="bMn-Xt-NiI"/>
+                                    <constraint firstAttribute="trailing" secondItem="lGA-cG-DiC" secondAttribute="trailing" id="bhS-X7-MEW"/>
                                     <constraint firstAttribute="bottom" secondItem="LfT-21-rGE" secondAttribute="bottom" constant="21" id="cIb-wT-k9B"/>
+                                    <constraint firstAttribute="bottom" secondItem="lGA-cG-DiC" secondAttribute="bottom" id="cer-8e-PCC"/>
                                     <constraint firstItem="8uv-ek-1fr" firstAttribute="top" secondItem="LfT-21-rGE" secondAttribute="bottom" id="dd1-yI-AIj"/>
                                     <constraint firstAttribute="bottom" secondItem="CsI-o7-9p9" secondAttribute="bottom" constant="21" id="gq1-vk-ILd"/>
+                                    <constraint firstItem="lGA-cG-DiC" firstAttribute="leading" secondItem="WRm-dx-Y9Z" secondAttribute="leading" id="hmy-ro-KP6"/>
                                     <constraint firstItem="HRx-8B-Wyf" firstAttribute="centerY" secondItem="WRm-dx-Y9Z" secondAttribute="centerY" id="iTr-h1-ZG0"/>
                                     <constraint firstItem="gw7-da-y86" firstAttribute="leading" secondItem="HRx-8B-Wyf" secondAttribute="trailing" constant="17" id="kan-fK-ifU"/>
                                     <constraint firstAttribute="bottom" secondItem="gw7-da-y86" secondAttribute="bottom" constant="42" id="msP-Bk-qrC"/>
@@ -1357,7 +1417,7 @@ Insurance</string>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="yS7-Mb-0yN" sceneMemberID="viewController">
                     <extendedEdge key="edgesForExtendedLayout"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="rR3-RW-hlS">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="rR3-RW-hlS" customClass="IANavigationBar" customModule="InsuranceApp" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -1371,4 +1431,12 @@ Insurance</string>
             <point key="canvasLocation" x="161" y="390"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="AutoInsuranceIcon" width="72" height="73"/>
+        <image name="BoatInsuranceIcon" width="72" height="73"/>
+        <image name="HomeInsuranceIcon" width="72" height="73"/>
+        <image name="MyClaimsIcon" width="72" height="72"/>
+        <image name="PayPremiumIcon" width="72" height="72"/>
+        <image name="PetInsuranceIcon" width="72" height="73"/>
+    </resources>
 </document>
