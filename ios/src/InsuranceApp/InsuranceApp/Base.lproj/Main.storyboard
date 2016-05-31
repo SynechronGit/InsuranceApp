@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="yS7-Mb-0yN">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="yS7-Mb-0yN">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -94,7 +94,8 @@
         <!--Item-->
         <scene sceneID="HbL-iK-cs8">
             <objects>
-                <navigationController id="E9b-1m-KME" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="E9b-1m-KME" sceneMemberID="viewController">
+                    <extendedEdge key="edgesForExtendedLayout"/>
                     <tabBarItem key="tabBarItem" title="Item" id="d4y-JD-1A1"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="549-Rp-6Eb" customClass="IANavigationBar" customModule="InsuranceApp" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -1228,16 +1229,17 @@ Insurance</string>
         <!--Item 2-->
         <scene sceneID="xez-In-oKj">
             <objects>
-                <viewController id="Fwc-eW-kZb" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="Fwc-eW-kZb" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="dzy-Ho-ARK"/>
                         <viewControllerLayoutGuide type="bottom" id="5zh-Oq-8JZ"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="6s9-bt-VGt">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <extendedEdge key="edgesForExtendedLayout"/>
                     <tabBarItem key="tabBarItem" title="Item 2" id="FzN-Ik-L4T"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HwG-ud-uPI" userLabel="First Responder" sceneMemberID="firstResponder"/>
