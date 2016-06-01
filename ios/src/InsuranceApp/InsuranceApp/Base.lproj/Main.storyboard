@@ -266,10 +266,34 @@
                                             <segue destination="E9b-1m-KME" kind="embed" id="tse-aI-6qa"/>
                                         </connections>
                                     </containerView>
+                                    <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1jH-k8-Jmp" userLabel="fileClaimContainerView">
+                                        <rect key="frame" x="0.0" y="0.0" width="768" height="949"/>
+                                        <connections>
+                                            <segue destination="1Z0-fx-7rN" kind="embed" id="YLx-bf-ZNy"/>
+                                        </connections>
+                                    </containerView>
                                     <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Yp3-mj-MDN" userLabel="policiesContainerView">
                                         <rect key="frame" x="0.0" y="0.0" width="768" height="949"/>
                                         <connections>
                                             <segue destination="J35-Gz-GUQ" kind="embed" id="S0M-zB-iuL"/>
+                                        </connections>
+                                    </containerView>
+                                    <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AXn-8W-W0e" userLabel="claimsContainerView">
+                                        <rect key="frame" x="0.0" y="0.0" width="768" height="949"/>
+                                        <connections>
+                                            <segue destination="kbM-DE-2kh" kind="embed" id="azc-Xs-LKg"/>
+                                        </connections>
+                                    </containerView>
+                                    <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Qh-Sn-DTB" userLabel="accountContainerView">
+                                        <rect key="frame" x="0.0" y="0.0" width="768" height="949"/>
+                                        <connections>
+                                            <segue destination="1Ks-VZ-ENz" kind="embed" id="FJg-rY-G81"/>
+                                        </connections>
+                                    </containerView>
+                                    <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Y7-tB-lko" userLabel="notificationContainerView">
+                                        <rect key="frame" x="0.0" y="0.0" width="768" height="949"/>
+                                        <connections>
+                                            <segue destination="dqs-79-o5O" kind="embed" id="Lic-Nm-DJO"/>
                                         </connections>
                                     </containerView>
                                 </subviews>
@@ -277,20 +301,54 @@
                                     <constraint firstAttribute="height" secondItem="Yp3-mj-MDN" secondAttribute="height" id="0Gq-cc-yzz"/>
                                     <constraint firstItem="lE6-hq-OKf" firstAttribute="top" secondItem="mrf-5a-LJL" secondAttribute="top" id="1ED-P4-BLd"/>
                                     <constraint firstAttribute="trailing" secondItem="lE6-hq-OKf" secondAttribute="trailing" id="1mv-1D-ida"/>
+                                    <constraint firstAttribute="bottom" secondItem="4Qh-Sn-DTB" secondAttribute="bottom" id="4Gi-QE-lMi"/>
+                                    <constraint firstAttribute="width" secondItem="4Qh-Sn-DTB" secondAttribute="width" id="4Ld-5E-uyc"/>
+                                    <constraint firstAttribute="bottom" secondItem="1jH-k8-Jmp" secondAttribute="bottom" placeholder="YES" id="54a-M0-eoM"/>
+                                    <constraint firstItem="AXn-8W-W0e" firstAttribute="top" secondItem="mrf-5a-LJL" secondAttribute="top" id="6fO-vp-es8"/>
+                                    <constraint firstItem="5Y7-tB-lko" firstAttribute="top" secondItem="mrf-5a-LJL" secondAttribute="top" id="7vm-cr-lJz"/>
+                                    <constraint firstItem="1jH-k8-Jmp" firstAttribute="top" secondItem="mrf-5a-LJL" secondAttribute="top" id="9Em-3i-g4y"/>
+                                    <constraint firstItem="1jH-k8-Jmp" firstAttribute="width" secondItem="mrf-5a-LJL" secondAttribute="width" id="9fG-fa-uvM"/>
+                                    <constraint firstAttribute="trailing" secondItem="5Y7-tB-lko" secondAttribute="trailing" id="A9D-Po-EsQ"/>
                                     <constraint firstItem="Yp3-mj-MDN" firstAttribute="leading" secondItem="mrf-5a-LJL" secondAttribute="leading" id="Bzi-10-BKs"/>
                                     <constraint firstAttribute="bottom" secondItem="lE6-hq-OKf" secondAttribute="bottom" id="IhE-Nc-Ige"/>
                                     <constraint firstAttribute="bottom" secondItem="Yp3-mj-MDN" secondAttribute="bottom" id="O01-9O-lvA"/>
+                                    <constraint firstAttribute="trailing" secondItem="4Qh-Sn-DTB" secondAttribute="trailing" id="RPx-UD-Ohp"/>
+                                    <constraint firstItem="4Qh-Sn-DTB" firstAttribute="top" secondItem="mrf-5a-LJL" secondAttribute="top" id="Sue-gc-M6Q"/>
+                                    <constraint firstAttribute="width" secondItem="5Y7-tB-lko" secondAttribute="width" id="Swa-12-V7a"/>
+                                    <constraint firstItem="AXn-8W-W0e" firstAttribute="leading" secondItem="mrf-5a-LJL" secondAttribute="leading" id="UJN-KU-lRG"/>
                                     <constraint firstAttribute="trailing" secondItem="Yp3-mj-MDN" secondAttribute="trailing" id="Unz-N3-sZO"/>
+                                    <constraint firstAttribute="height" secondItem="5Y7-tB-lko" secondAttribute="height" id="Uvz-Kf-C3c"/>
                                     <constraint firstAttribute="height" secondItem="lE6-hq-OKf" secondAttribute="height" id="V7o-tp-k6f"/>
+                                    <constraint firstItem="lE6-hq-OKf" firstAttribute="height" secondItem="5Y7-tB-lko" secondAttribute="height" id="Z2h-p5-AbH"/>
                                     <constraint firstAttribute="width" secondItem="lE6-hq-OKf" secondAttribute="width" id="aZY-cK-j5H"/>
                                     <constraint firstItem="lE6-hq-OKf" firstAttribute="leading" secondItem="mrf-5a-LJL" secondAttribute="leading" id="eHe-O8-r3p"/>
+                                    <constraint firstAttribute="height" secondItem="4Qh-Sn-DTB" secondAttribute="height" id="ewA-Nl-kjl"/>
+                                    <constraint firstItem="4Qh-Sn-DTB" firstAttribute="leading" secondItem="mrf-5a-LJL" secondAttribute="leading" id="fcu-ov-WDy"/>
+                                    <constraint firstAttribute="trailing" secondItem="1jH-k8-Jmp" secondAttribute="trailing" placeholder="YES" id="gRq-iN-H8e"/>
                                     <constraint firstAttribute="width" secondItem="Yp3-mj-MDN" secondAttribute="width" id="geG-IN-O5a"/>
+                                    <constraint firstAttribute="bottom" secondItem="5Y7-tB-lko" secondAttribute="bottom" id="kYZ-zB-uDC"/>
+                                    <constraint firstAttribute="width" secondItem="AXn-8W-W0e" secondAttribute="width" id="khC-Aw-3ir"/>
+                                    <constraint firstItem="1jH-k8-Jmp" firstAttribute="height" secondItem="mrf-5a-LJL" secondAttribute="height" id="me7-1f-ZQ9"/>
+                                    <constraint firstAttribute="height" secondItem="AXn-8W-W0e" secondAttribute="height" id="omc-AS-TN4"/>
+                                    <constraint firstAttribute="trailing" secondItem="AXn-8W-W0e" secondAttribute="trailing" id="rNc-H5-wvv"/>
+                                    <constraint firstAttribute="bottom" secondItem="AXn-8W-W0e" secondAttribute="bottom" id="sZu-Nq-yIg"/>
+                                    <constraint firstItem="5Y7-tB-lko" firstAttribute="leading" secondItem="mrf-5a-LJL" secondAttribute="leading" id="tBP-vY-N0U"/>
                                     <constraint firstItem="Yp3-mj-MDN" firstAttribute="top" secondItem="mrf-5a-LJL" secondAttribute="top" id="vrk-an-OWU"/>
+                                    <constraint firstItem="1jH-k8-Jmp" firstAttribute="leading" secondItem="mrf-5a-LJL" secondAttribute="leading" id="yK4-M2-nIJ"/>
                                 </constraints>
                                 <variation key="default">
                                     <mask key="constraints">
+                                        <exclude reference="4Gi-QE-lMi"/>
+                                        <exclude reference="RPx-UD-Ohp"/>
+                                        <exclude reference="A9D-Po-EsQ"/>
+                                        <exclude reference="kYZ-zB-uDC"/>
+                                        <exclude reference="rNc-H5-wvv"/>
+                                        <exclude reference="sZu-Nq-yIg"/>
+                                        <exclude reference="O01-9O-lvA"/>
+                                        <exclude reference="Unz-N3-sZO"/>
                                         <exclude reference="1mv-1D-ida"/>
                                         <exclude reference="IhE-Nc-Ige"/>
+                                        <exclude reference="Z2h-p5-AbH"/>
                                     </mask>
                                 </variation>
                             </scrollView>
@@ -558,9 +616,22 @@
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="768" height="1024"/>
                     <connections>
+                        <outlet property="accountContainerView" destination="4Qh-Sn-DTB" id="4Yv-go-tEi"/>
+                        <outlet property="accountContainerViewLeadingConstraint" destination="fcu-ov-WDy" id="Pt8-vn-btH"/>
+                        <outlet property="accountTabItemView" destination="ScJ-SP-hiL" id="vLN-vd-ffh"/>
+                        <outlet property="claimsContainerView" destination="AXn-8W-W0e" id="bra-UT-1MF"/>
+                        <outlet property="claimsContainerViewLeadingConstraint" destination="UJN-KU-lRG" id="f6g-GV-0K1"/>
+                        <outlet property="claimsTabItemView" destination="1a4-MP-6zH" id="6GH-Pd-89y"/>
                         <outlet property="containerScrollView" destination="mrf-5a-LJL" id="LkB-6y-ZoF"/>
                         <outlet property="dashboardContainerView" destination="lE6-hq-OKf" id="uBg-6b-nZ4"/>
+                        <outlet property="dashboardContainerViewLeadingConstraint" destination="eHe-O8-r3p" id="5vy-ew-TET"/>
                         <outlet property="dashboardTabItemView" destination="sIS-7b-x6v" id="4fL-pt-Lo1"/>
+                        <outlet property="fileClaimContainerView" destination="1jH-k8-Jmp" id="4wW-n4-zRf"/>
+                        <outlet property="fileClaimContainerViewLeadingConstraint" destination="yK4-M2-nIJ" id="P1Z-mN-4IC"/>
+                        <outlet property="fileClaimTabItemView" destination="TyV-LV-fK5" id="CbR-Bf-GCm"/>
+                        <outlet property="notificationsContainerView" destination="5Y7-tB-lko" id="gcQ-Vg-dbw"/>
+                        <outlet property="notificationsContainerViewLeadingConstraint" destination="tBP-vY-N0U" id="Egw-Ep-sDf"/>
+                        <outlet property="notificationsTabItemView" destination="EQa-R0-vSE" id="VKj-b7-evP"/>
                         <outlet property="policiesContainerView" destination="Yp3-mj-MDN" id="VXW-co-tMz"/>
                         <outlet property="policiesContainerViewLeadingConstraint" destination="Bzi-10-BKs" id="bnp-92-Kqw"/>
                         <outlet property="policiesTabItemView" destination="xb3-hB-Eg8" id="J15-25-Tay"/>
@@ -2326,10 +2397,10 @@ Insurance</string>
             </objects>
             <point key="canvasLocation" x="-365" y="-134"/>
         </scene>
-        <!--View Controller-->
+        <!--Policies Controller-->
         <scene sceneID="aPc-nc-Aod">
             <objects>
-                <viewController automaticallyAdjustsScrollViewInsets="NO" id="2Up-4D-4L3" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="2Up-4D-4L3" customClass="IAPoliciesController" customModule="InsuranceApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="kL0-Hd-hhK"/>
                         <viewControllerLayoutGuide type="bottom" id="TgJ-oW-Osi"/>
@@ -2352,7 +2423,7 @@ Insurance</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mRc-ar-axY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="571" y="4325.5"/>
+            <point key="canvasLocation" x="549" y="5400.5"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="UUg-I0-hYF">
@@ -2369,7 +2440,187 @@ Insurance</string>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="irp-ww-R6a" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-365" y="4325.5"/>
+            <point key="canvasLocation" x="-376" y="5400.5"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="A5p-ks-j7M">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="kbM-DE-2kh" sceneMemberID="viewController">
+                    <extendedEdge key="edgesForExtendedLayout"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Osf-iK-WAm" customClass="IANavigationBar" customModule="InsuranceApp" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="sFC-Nh-fCg" kind="relationship" relationship="rootViewController" id="mXm-iF-jew"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DWo-2K-l56" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-376" y="6490.5"/>
+        </scene>
+        <!--Claims Controller-->
+        <scene sceneID="IFa-Ud-7Bi">
+            <objects>
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="sFC-Nh-fCg" customClass="IAClaimsController" customModule="InsuranceApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="hME-JH-BkL"/>
+                        <viewControllerLayoutGuide type="bottom" id="8aV-Oi-XnX"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kKQ-Is-cZ3">
+                        <rect key="frame" x="0.0" y="44" width="768" height="905"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Claims" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cqI-zx-f3o">
+                                <rect key="frame" x="359" y="266" width="52" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <extendedEdge key="edgesForExtendedLayout"/>
+                    <navigationItem key="navigationItem" id="jnK-qC-OVD"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GIc-gR-Jt7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="549" y="6490.5"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="dwU-qP-l97">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="1Ks-VZ-ENz" sceneMemberID="viewController">
+                    <extendedEdge key="edgesForExtendedLayout"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="19Y-bL-ipP" customClass="IANavigationBar" customModule="InsuranceApp" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="31Y-O5-YhU" kind="relationship" relationship="rootViewController" id="MXK-YY-QOv"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8jz-9h-RPc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-376" y="7590.5"/>
+        </scene>
+        <!--Account Controller-->
+        <scene sceneID="Vha-cP-BLL">
+            <objects>
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="31Y-O5-YhU" customClass="IAAccountController" customModule="InsuranceApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="VbV-fE-g1f"/>
+                        <viewControllerLayoutGuide type="bottom" id="OyL-3H-U6R"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="jRL-Da-AL0">
+                        <rect key="frame" x="0.0" y="44" width="768" height="905"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Account" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q9g-n9-Tol">
+                                <rect key="frame" x="347" y="266" width="64" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <extendedEdge key="edgesForExtendedLayout"/>
+                    <navigationItem key="navigationItem" id="Znu-9e-Xj7"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KfQ-5t-MC7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="549" y="7590.5"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="EC2-Ya-J89">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="dqs-79-o5O" sceneMemberID="viewController">
+                    <extendedEdge key="edgesForExtendedLayout"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="SWF-s4-Eib" customClass="IANavigationBar" customModule="InsuranceApp" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="jMC-tm-Zj1" kind="relationship" relationship="rootViewController" id="UFQ-Uk-NFg"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2Dn-og-qnM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-376" y="8707.5"/>
+        </scene>
+        <!--Notifications Controller-->
+        <scene sceneID="qRp-R5-YT3">
+            <objects>
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="jMC-tm-Zj1" customClass="IANotificationsController" customModule="InsuranceApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="kk0-bc-PVc"/>
+                        <viewControllerLayoutGuide type="bottom" id="DzH-Z0-dlu"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="SQ8-K6-Uvh">
+                        <rect key="frame" x="0.0" y="44" width="768" height="905"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Notifications" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1lS-WM-q6W">
+                                <rect key="frame" x="314" y="266" width="97" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <extendedEdge key="edgesForExtendedLayout"/>
+                    <navigationItem key="navigationItem" id="lJY-fY-YPo"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Axd-Oo-kif" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="549" y="8707.5"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="UOt-4U-pbV">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="1Z0-fx-7rN" sceneMemberID="viewController">
+                    <extendedEdge key="edgesForExtendedLayout"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="wkh-c4-9Yt" customClass="IANavigationBar" customModule="InsuranceApp" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="P5y-5s-dzv" kind="relationship" relationship="rootViewController" id="kdf-6O-h39"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Qe5-1y-5s2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-365" y="4307.5"/>
+        </scene>
+        <!--File Claim Controller-->
+        <scene sceneID="Jxv-1y-wi1">
+            <objects>
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="P5y-5s-dzv" customClass="IAFileClaimController" customModule="InsuranceApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="lqF-9h-Eec"/>
+                        <viewControllerLayoutGuide type="bottom" id="AsQ-Fp-8wu"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="FYM-Mb-f1V">
+                        <rect key="frame" x="0.0" y="44" width="768" height="905"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="File Claim" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jTa-p0-Xqi">
+                                <rect key="frame" x="337" y="266" width="74" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <extendedEdge key="edgesForExtendedLayout"/>
+                    <navigationItem key="navigationItem" id="52H-KC-tXb"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IaN-Oy-Afm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="571" y="4307.5"/>
         </scene>
     </scenes>
     <resources>

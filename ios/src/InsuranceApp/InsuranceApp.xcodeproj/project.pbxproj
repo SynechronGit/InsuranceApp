@@ -20,6 +20,11 @@
 		3F4D20C21CF71B280024EAE7 /* IAAddVehicleController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F4D20C11CF71B280024EAE7 /* IAAddVehicleController.swift */; };
 		3F4D20C41CF71CE30024EAE7 /* IAVehicle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F4D20C31CF71CE30024EAE7 /* IAVehicle.swift */; };
 		3F5FB78A1CFDDF2F00C27D7F /* IAHomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F5FB7891CFDDF2E00C27D7F /* IAHomeController.swift */; };
+		3F63F1081CFEF55000623420 /* IAAccountController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F63F1011CFEF55000623420 /* IAAccountController.swift */; };
+		3F63F1091CFEF55000623420 /* IAClaimsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F63F1031CFEF55000623420 /* IAClaimsController.swift */; };
+		3F63F10A1CFEF55000623420 /* IANotificationsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F63F1051CFEF55000623420 /* IANotificationsController.swift */; };
+		3F63F10B1CFEF55000623420 /* IAPoliciesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F63F1071CFEF55000623420 /* IAPoliciesController.swift */; };
+		3F63F1101CFEF5B500623420 /* IAFileClaimController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F63F10F1CFEF5B500623420 /* IAFileClaimController.swift */; };
 		3F64D2181CF7089F00DC682D /* IAAddDriverController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F64D2171CF7089F00DC682D /* IAAddDriverController.swift */; };
 		3F820C611CF4522000729AE6 /* IAConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F820C601CF4522000729AE6 /* IAConstants.swift */; };
 		3F820C631CF4526D00729AE6 /* IADataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F820C621CF4526D00729AE6 /* IADataManager.swift */; };
@@ -95,6 +100,11 @@
 		3F4D20C11CF71B280024EAE7 /* IAAddVehicleController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IAAddVehicleController.swift; sourceTree = "<group>"; };
 		3F4D20C31CF71CE30024EAE7 /* IAVehicle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IAVehicle.swift; sourceTree = "<group>"; };
 		3F5FB7891CFDDF2E00C27D7F /* IAHomeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IAHomeController.swift; sourceTree = "<group>"; };
+		3F63F1011CFEF55000623420 /* IAAccountController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IAAccountController.swift; sourceTree = "<group>"; };
+		3F63F1031CFEF55000623420 /* IAClaimsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IAClaimsController.swift; sourceTree = "<group>"; };
+		3F63F1051CFEF55000623420 /* IANotificationsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IANotificationsController.swift; sourceTree = "<group>"; };
+		3F63F1071CFEF55000623420 /* IAPoliciesController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IAPoliciesController.swift; sourceTree = "<group>"; };
+		3F63F10F1CFEF5B500623420 /* IAFileClaimController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IAFileClaimController.swift; sourceTree = "<group>"; };
 		3F64D2171CF7089F00DC682D /* IAAddDriverController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IAAddDriverController.swift; sourceTree = "<group>"; };
 		3F820C601CF4522000729AE6 /* IAConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IAConstants.swift; sourceTree = "<group>"; };
 		3F820C621CF4526D00729AE6 /* IADataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IADataManager.swift; sourceTree = "<group>"; };
@@ -192,6 +202,11 @@
 				3F0CA46A1CF440C9002A048E /* Login */,
 				3F0CA4681CF440C9002A048E /* Dashboard */,
 				3F64D2161CF7089F00DC682D /* AutoInsurance */,
+				3F63F10E1CFEF5B500623420 /* FileClaim */,
+				3F63F1061CFEF55000623420 /* Policies */,
+				3F63F1021CFEF55000623420 /* Claims */,
+				3F63F1001CFEF55000623420 /* Account */,
+				3F63F1041CFEF55000623420 /* Notifications */,
 				3F0CA4351CF44030002A048E /* Main.storyboard */,
 				3F0CA4381CF44030002A048E /* Assets.xcassets */,
 				3F0CA43A1CF44030002A048E /* LaunchScreen.storyboard */,
@@ -275,6 +290,46 @@
 				3FF030B31CFD991A00BADE31 /* Ubuntu-regular.ttf */,
 			);
 			path = Ubuntu;
+			sourceTree = "<group>";
+		};
+		3F63F1001CFEF55000623420 /* Account */ = {
+			isa = PBXGroup;
+			children = (
+				3F63F1011CFEF55000623420 /* IAAccountController.swift */,
+			);
+			path = Account;
+			sourceTree = "<group>";
+		};
+		3F63F1021CFEF55000623420 /* Claims */ = {
+			isa = PBXGroup;
+			children = (
+				3F63F1031CFEF55000623420 /* IAClaimsController.swift */,
+			);
+			path = Claims;
+			sourceTree = "<group>";
+		};
+		3F63F1041CFEF55000623420 /* Notifications */ = {
+			isa = PBXGroup;
+			children = (
+				3F63F1051CFEF55000623420 /* IANotificationsController.swift */,
+			);
+			path = Notifications;
+			sourceTree = "<group>";
+		};
+		3F63F1061CFEF55000623420 /* Policies */ = {
+			isa = PBXGroup;
+			children = (
+				3F63F1071CFEF55000623420 /* IAPoliciesController.swift */,
+			);
+			path = Policies;
+			sourceTree = "<group>";
+		};
+		3F63F10E1CFEF5B500623420 /* FileClaim */ = {
+			isa = PBXGroup;
+			children = (
+				3F63F10F1CFEF5B500623420 /* IAFileClaimController.swift */,
+			);
+			path = FileClaim;
 			sourceTree = "<group>";
 		};
 		3F64D2161CF7089F00DC682D /* AutoInsurance */ = {
@@ -517,15 +572,18 @@
 				3F64D2181CF7089F00DC682D /* IAAddDriverController.swift in Sources */,
 				3F9948BC1CFC782100A880A8 /* LTMorphingLabel+Sparkle.swift in Sources */,
 				3F4D20C41CF71CE30024EAE7 /* IAVehicle.swift in Sources */,
+				3F63F1101CFEF5B500623420 /* IAFileClaimController.swift in Sources */,
 				3FE1FA8D1CFC81E6008EA53F /* IALabel.swift in Sources */,
 				3F820C631CF4526D00729AE6 /* IADataManager.swift in Sources */,
 				3F9948B91CFC782100A880A8 /* LTMorphingLabel+Evaporate.swift in Sources */,
 				3F0CA46F1CF440C9002A048E /* IALoginController.swift in Sources */,
 				3F0CA46E1CF440C9002A048E /* IADashboardController.swift in Sources */,
+				3F63F10B1CFEF55000623420 /* IAPoliciesController.swift in Sources */,
 				7D47A13B1CFD7294007E1867 /* IAVehicleListCell.swift in Sources */,
 				3F9948B41CFC782100A880A8 /* LTEasing.swift in Sources */,
 				3F9948B31CFC782100A880A8 /* LTCharacterLimbo.swift in Sources */,
 				3F9948B61CFC782100A880A8 /* LTMorphingEffect.swift in Sources */,
+				3F63F1081CFEF55000623420 /* IAAccountController.swift in Sources */,
 				3F4D20C21CF71B280024EAE7 /* IAAddVehicleController.swift in Sources */,
 				3F0CA46C1CF440C9002A048E /* IAAppDelegate.swift in Sources */,
 				3F9948B81CFC782100A880A8 /* LTMorphingLabel+Burn.swift in Sources */,
@@ -533,10 +591,12 @@
 				3F820C611CF4522000729AE6 /* IAConstants.swift in Sources */,
 				3F820C691CF4555800729AE6 /* IACustomer.swift in Sources */,
 				3F9948BA1CFC782100A880A8 /* LTMorphingLabel+Fall.swift in Sources */,
+				3F63F1091CFEF55000623420 /* IAClaimsController.swift in Sources */,
 				3F9948B71CFC782100A880A8 /* LTMorphingLabel+Anvil.swift in Sources */,
 				3F2A0D9A1CF8762300EEACC2 /* IAAutoInsuranceDetailsController.swift in Sources */,
 				3FE1FA8F1CFC8750008EA53F /* IANavigationBar.swift in Sources */,
 				3F9948BE1CFC782100A880A8 /* NSString+LTMorphingLabel.swift in Sources */,
+				3F63F10A1CFEF55000623420 /* IANotificationsController.swift in Sources */,
 				3F5FB78A1CFDDF2F00C27D7F /* IAHomeController.swift in Sources */,
 				3F9948981CFC6B1100A880A8 /* IADashboard.swift in Sources */,
 				3F9948BB1CFC782100A880A8 /* LTMorphingLabel+Pixelate.swift in Sources */,
