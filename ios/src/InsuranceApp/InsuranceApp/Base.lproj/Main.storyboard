@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="yS7-Mb-0yN">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="yS7-Mb-0yN">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -28,7 +28,16 @@
             <string>Ubuntu-Medium</string>
             <string>Ubuntu-Medium</string>
         </mutableArray>
+        <mutableArray key="Ubuntu-700.ttf">
+            <string>Ubuntu-Bold</string>
+        </mutableArray>
         <mutableArray key="Ubuntu-regular.ttf">
+            <string>Ubuntu</string>
+            <string>Ubuntu</string>
+            <string>Ubuntu</string>
+            <string>Ubuntu</string>
+            <string>Ubuntu</string>
+            <string>Ubuntu</string>
             <string>Ubuntu</string>
             <string>Ubuntu</string>
             <string>Ubuntu</string>
@@ -532,14 +541,26 @@
                                                     <constraint firstAttribute="height" constant="27" id="ajg-Yz-ILJ"/>
                                                 </constraints>
                                             </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="37" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WiG-zk-3YH">
+                                                <rect key="frame" x="70" y="3" width="20" height="20"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="20" id="kFK-bl-zRR"/>
+                                                    <constraint firstAttribute="height" constant="20" id="uqy-F1-FGB"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="Ubuntu-Bold" family="Ubuntu" pointSize="9"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstItem="9jW-Ly-maR" firstAttribute="top" secondItem="EQa-R0-vSE" secondAttribute="top" constant="12" id="7mF-PC-5A5"/>
+                                            <constraint firstItem="WiG-zk-3YH" firstAttribute="top" secondItem="EQa-R0-vSE" secondAttribute="top" constant="3" id="GCo-bh-K48"/>
                                             <constraint firstItem="9jW-Ly-maR" firstAttribute="centerX" secondItem="EQa-R0-vSE" secondAttribute="centerX" id="IXD-Jy-WAn"/>
                                             <constraint firstItem="mnT-yY-1zn" firstAttribute="leading" secondItem="EQa-R0-vSE" secondAttribute="leading" id="Yzv-bB-8L0"/>
                                             <constraint firstAttribute="bottom" secondItem="mnT-yY-1zn" secondAttribute="bottom" id="aup-db-PXb"/>
                                             <constraint firstItem="mnT-yY-1zn" firstAttribute="top" secondItem="9jW-Ly-maR" secondAttribute="bottom" constant="6" id="gbS-4J-4JW"/>
+                                            <constraint firstItem="WiG-zk-3YH" firstAttribute="leading" secondItem="9jW-Ly-maR" secondAttribute="trailing" constant="-8" id="scP-9n-4bn"/>
                                             <constraint firstAttribute="trailing" secondItem="mnT-yY-1zn" secondAttribute="trailing" id="zi1-7V-XFL"/>
                                         </constraints>
                                         <variation key="default">
@@ -647,6 +668,7 @@
                         <outlet property="fileClaimContainerView" destination="1jH-k8-Jmp" id="4wW-n4-zRf"/>
                         <outlet property="fileClaimContainerViewLeadingConstraint" destination="yK4-M2-nIJ" id="P1Z-mN-4IC"/>
                         <outlet property="fileClaimTabItemView" destination="TyV-LV-fK5" id="CbR-Bf-GCm"/>
+                        <outlet property="notificationCountLabel" destination="WiG-zk-3YH" id="Hc3-mj-xZ0"/>
                         <outlet property="notificationsContainerView" destination="5Y7-tB-lko" id="gcQ-Vg-dbw"/>
                         <outlet property="notificationsContainerViewLeadingConstraint" destination="tBP-vY-N0U" id="Egw-Ep-sDf"/>
                         <outlet property="notificationsTabItemView" destination="EQa-R0-vSE" id="VKj-b7-evP"/>
