@@ -33,6 +33,7 @@ class IADashboardController: IABaseController {
         let aTapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(IADashboardController.didSelectAutoInsuranceView))
         aTapGestureRecognizer.cancelsTouchesInView = false
         self.autoInsuranceContainerView.addGestureRecognizer(aTapGestureRecognizer)
+        self.autoInsuranceContainerView.layer.borderColor = UIColor.redColor().CGColor
         
         self.myClaimsContainerView.layer.cornerRadius = IAConstants.dashboardSubviewCornerRadius
         self.myClaimsContainerView.layer.masksToBounds = true
@@ -84,7 +85,19 @@ class IADashboardController: IABaseController {
      * @return Void
      */
     @IBAction func didSelectAutoInsuranceView() {
-        self.performSegueWithIdentifier("DashboardToAutoInsuranceDetailsSegueID", sender: self)
+        CATransaction.begin()
+        CATransaction.setCompletionBlock({
+            self.autoInsuranceContainerView.layer.borderWidth = 0.0
+            self.performSegueWithIdentifier("DashboardToAutoInsuranceDetailsSegueID", sender: self)
+        })
+        let anAnimation = CABasicAnimation(keyPath: "borderWidth")
+        anAnimation.fromValue = 0.0
+        anAnimation.toValue = 3.0
+        anAnimation.repeatCount = 3
+        anAnimation.duration = 0.2
+        anAnimation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
+        self.autoInsuranceContainerView.layer.addAnimation(anAnimation, forKey: "pulse")
+        CATransaction.commit()
     }
     
     

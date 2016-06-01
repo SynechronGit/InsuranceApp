@@ -34,7 +34,7 @@ class IAHomeController: IABaseController {
     @IBOutlet weak var notificationsTabItemView: UIView!
     @IBOutlet weak var notificationsContainerView: UIView!
     @IBOutlet weak var notificationsContainerViewLeadingConstraint: NSLayoutConstraint!
-    
+    @IBOutlet weak var notificationCountLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -68,6 +68,13 @@ class IAHomeController: IABaseController {
         aTapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(IAHomeController.didSelectNotificationsTabItemView))
         aTapGestureRecognizer.cancelsTouchesInView = false
         self.notificationsTabItemView.addGestureRecognizer(aTapGestureRecognizer)
+        
+        self.notificationCountLabel.layer.cornerRadius = self.notificationCountLabel.frame.size.width / 2.0
+        self.notificationCountLabel.layer.masksToBounds = true
+        self.notificationCountLabel.layer.backgroundColor = UIColor(red: 160.0/255.0, green: 0.0/255.0, blue: 0.0/255.0, alpha: 1.0).CGColor
+        UIView.animateWithDuration(0.7, delay: 0.0, options: [UIViewAnimationOptions.Repeat, UIViewAnimationOptions.Autoreverse], animations: {
+            self.notificationCountLabel.layer.backgroundColor = UIColor(red: 240.0/255.0, green: 24.0/255.0, blue: 27.0/255.0, alpha: 1.0).CGColor
+        }, completion: nil)
         
         self.containerScrollView.contentSize = CGSizeMake(self.containerScrollView.frame.size.width * 6, self.containerScrollView.frame.size.height)
         self.displayTabWithIndex(0)
