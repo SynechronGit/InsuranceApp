@@ -4,7 +4,7 @@
 //
 
 
-import Foundation
+import UIKit
 
 class IADriver:NSObject {
     
@@ -16,7 +16,12 @@ class IADriver:NSObject {
     var license:String!
     var type:String!
     var status:String!
-    var avatar:String!
+    var avatar:UIImage!
     
+    
+    var fullName:String! {
+        let aReturnVal = (self.firstName != nil ? self.firstName : "") + "" + (self.lastName != nil ? self.lastName : "")
+        return aReturnVal
+    }
 }
 

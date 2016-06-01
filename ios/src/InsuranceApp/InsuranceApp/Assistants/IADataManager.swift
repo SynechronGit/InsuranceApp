@@ -197,14 +197,21 @@ class IADataManager: NSObject {
                 try self.executeQuery(anSqlQuery, values: aValueArray)
                 aDataManagerResponse.result = aVehicle
             } else if self.requestType == IARequestType.ListVehicles {
-                let anSqlQuery :String = "SELECT license_plate_number, state FROM vehicles"
+                let anSqlQuery :String = "SELECT license_plate_number, state, photo FROM vehicles"
                 let anSqlResult = try self.executeQuery(anSqlQuery, values: nil)
                 if anSqlResult != nil && anSqlResult.count > 0 {
                     var aVehicleArray :Array<IAVehicle>! = Array<IAVehicle>()
                     for var aDBVehicleDict :[String:AnyObject] in anSqlResult {
                         let aDBVehicle = IAVehicle()
-                        aDBVehicle.licensePlateNumber = aDBVehicleDict["license_plate_number"] as! String
-                        aDBVehicle.state = aDBVehicleDict["state"] as! String
+                        if aDBVehicleDict["license_plate_number"] is String {
+                            aDBVehicle.licensePlateNumber = aDBVehicleDict["license_plate_number"] as! String
+                        }
+                        if aDBVehicleDict["state"] is String {
+                            aDBVehicle.state = aDBVehicleDict["state"] as! String
+                        }
+                        if aDBVehicleDict["photo"] is NSData {
+                            aDBVehicle.photo = UIImage(data: aDBVehicleDict["photo"] as! NSData)
+                        }
                         aVehicleArray.append(aDBVehicle)
                     }
                     if aVehicleArray.count <= 0 {
@@ -236,13 +243,27 @@ class IADataManager: NSObject {
                         let aDBDriver = IADriver()
                         aDBDriver.firstName = aDBDriverDict["first_name"] as! String
                         aDBDriver.lastName = aDBDriverDict["last_name"] as! String
-                        aDBDriver.relationship = aDBDriverDict["relationship"] as! String
-                        aDBDriver.dob   = aDBDriverDict["dob"] as! String
-                        aDBDriver.state = aDBDriverDict["state"] as! String
-                        aDBDriver.license = aDBDriverDict["license"] as! String
-                        aDBDriver.type = aDBDriverDict["type"] as! String
-                        aDBDriver.status = aDBDriverDict["status"] as! String
-                   //     aDBDriver.avatar = aDBDriverDict["avatar"] as! String
+                        if aDBDriverDict["relationship"] is String {
+                            aDBDriver.relationship = aDBDriverDict["relationship"] as! String
+                        }
+                        if aDBDriverDict["dob"] is String {
+                            aDBDriver.dob   = aDBDriverDict["dob"] as! String
+                        }
+                        if aDBDriverDict["state"] is String {
+                            aDBDriver.state = aDBDriverDict["state"] as! String
+                        }
+                        if aDBDriverDict["license"] is String {
+                            aDBDriver.license = aDBDriverDict["license"] as! String
+                        }
+                        if aDBDriverDict["type"] is String {
+                            aDBDriver.type = aDBDriverDict["type"] as! String
+                        }
+                        if aDBDriverDict["status"] is String {
+                            aDBDriver.status = aDBDriverDict["status"] as! String
+                        }
+                        if aDBDriverDict["avatar"] is NSData {
+                            aDBDriver.avatar = UIImage(data: aDBDriverDict["avatar"] as! NSData)
+                        }
                         aDriverArray.append(aDBDriver)
                     }
                     if aDriverArray.count <= 0 {

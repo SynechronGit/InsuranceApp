@@ -60,18 +60,7 @@ class IAAutoInsuranceDetailsController: IABaseController , UICollectionViewDeleg
     
     
     func reloadAllView() {
-        if self.vehicleArray != nil {
-            for aVehicle in self.vehicleArray {
-                NSLog("licensePlateNumber: %@, state: %@", aVehicle.licensePlateNumber, aVehicle.state)
-            }
-            self.vehicleCollectionView.reloadData()
-        }
-        
-        if self.driverArray != nil {
-            for aDriver in self.driverArray {
-                NSLog("firstName: %@, lastName: %@", aDriver.firstName, aDriver.lastName)
-            }
-        }
+        self.vehicleCollectionView.reloadData()
         self.driverCollectionView.reloadData()
     }
     
@@ -158,15 +147,23 @@ class IAAutoInsuranceDetailsController: IABaseController , UICollectionViewDeleg
             // get a reference to our storyboard cell
             let cell = collectionView.dequeueReusableCellWithReuseIdentifier("vehicleListCell", forIndexPath: indexPath) as! IAVehicleListCell
             
+            let aVehicle = self.vehicleArray[indexPath.item]
+            
+            cell.vehicleImageView.image = aVehicle.photo
+            
             // Use the outlet in our custom class to get a reference to the UILabel in the cell
-            cell.modelNoLabel.text = self.vehicleArray[indexPath.item].licensePlateNumber
+            cell.modelNoLabel.text = aVehicle.licensePlateNumber
             return cell
         }else  {
             // get a reference to our storyboard cell
             let cell = collectionView.dequeueReusableCellWithReuseIdentifier("driverListCell", forIndexPath: indexPath) as! IADriverListCell
             
+            let aDriver = self.driverArray[indexPath.item]
+            
+            cell.driverImage.image = aDriver.avatar
+            
             // Use the outlet in our custom class to get a reference to the UILabel in the cell
-            cell.driverNameLabel.text = self.driverArray[indexPath.item].firstName
+            cell.driverNameLabel.text = aDriver.fullName
             return cell
         }
         

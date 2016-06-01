@@ -18,6 +18,7 @@ class IAAppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+        self.resetAppDatabase()
         return true
     }
     
