@@ -688,7 +688,7 @@
 				INFOPLIST_FILE = InsuranceApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.example.poc.InsuranceApp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Synechron.MyInsurance;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = InsuranceApp/Assistants/BridgingHeader.h;
 			};
@@ -701,7 +701,7 @@
 				INFOPLIST_FILE = InsuranceApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.example.poc.InsuranceApp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Synechron.MyInsurance;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = InsuranceApp/Assistants/BridgingHeader.h;
 			};
