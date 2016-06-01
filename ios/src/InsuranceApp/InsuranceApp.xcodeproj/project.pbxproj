@@ -232,8 +232,8 @@
 		3F0CA4681CF440C9002A048E /* Dashboard */ = {
 			isa = PBXGroup;
 			children = (
-				3F0CA4691CF440C9002A048E /* IADashboardController.swift */,
 				3F5FB7891CFDDF2E00C27D7F /* IAHomeController.swift */,
+				3F0CA4691CF440C9002A048E /* IADashboardController.swift */,
 				3FE1D2AE1CFC58C3007FA513 /* InsuranceTypeContainerView.swift */,
 			);
 			path = Dashboard;
@@ -688,7 +688,7 @@
 				INFOPLIST_FILE = InsuranceApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.example.poc.InsuranceApp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Synechron.MyInsurance;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = InsuranceApp/Assistants/BridgingHeader.h;
 			};
@@ -701,7 +701,7 @@
 				INFOPLIST_FILE = InsuranceApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.example.poc.InsuranceApp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Synechron.MyInsurance;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = InsuranceApp/Assistants/BridgingHeader.h;
 			};
