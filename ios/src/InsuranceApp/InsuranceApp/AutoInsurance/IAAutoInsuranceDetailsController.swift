@@ -11,10 +11,10 @@ import UIKit
  */
 class IAAutoInsuranceDetailsController: IABaseController , UICollectionViewDelegate, UICollectionViewDataSource {
     @IBOutlet weak var vehicleCollectionView: UICollectionView!
+    @IBOutlet weak var driverCollectionView: UICollectionView!
     var vehicleArray :Array<IAVehicle>!
     var driverArray :Array<IADriver>!
     
-    @IBOutlet weak var driverCollectionView: UICollectionView!
     @IBOutlet weak var payPremiumBtn: UIButton!
     @IBOutlet weak var fileClaimBtn: UIButton!
     @IBOutlet weak var viewPolicyBtn: UIButton!
@@ -22,8 +22,6 @@ class IAAutoInsuranceDetailsController: IABaseController , UICollectionViewDeleg
     @IBOutlet weak var coverageBoxView: UIView!
     @IBOutlet weak var limitBoxView: UIView!
     @IBOutlet weak var deductibleBoxView: UIView!
-    
-     var items = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"]
   
     
     override func viewDidLoad() {
@@ -37,6 +35,8 @@ class IAAutoInsuranceDetailsController: IABaseController , UICollectionViewDeleg
         self.vehicleCollectionView.dataSource = self
         self.driverCollectionView.delegate = self
         self.driverCollectionView.dataSource = self
+        
+        
 
     }
     
@@ -44,6 +44,9 @@ class IAAutoInsuranceDetailsController: IABaseController , UICollectionViewDeleg
         
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "mainBG.png")!)
         dateView.backgroundColor = UIColor(patternImage: UIImage(named: "dateBg")!)
+        
+        vehicleCollectionView.backgroundColor = UIColor.clearColor()
+        driverCollectionView.backgroundColor = UIColor.clearColor()
         
         coverageBoxView.backgroundColor = UIColor(patternImage: UIImage(named: "bigBox")!)
         limitBoxView.backgroundColor = UIColor(patternImage: UIImage(named: "bigBox")!)
@@ -53,8 +56,6 @@ class IAAutoInsuranceDetailsController: IABaseController , UICollectionViewDeleg
     func reloadAllData() {
         IAAppDelegate.currentAppDelegate.displayLoadingOverlay()
         self.dataManager.listVehicles()
-        self.vehicleCollectionView.reloadData()
-        self.driverCollectionView.reloadData()
     }
     
     
@@ -63,6 +64,7 @@ class IAAutoInsuranceDetailsController: IABaseController , UICollectionViewDeleg
             for aVehicle in self.vehicleArray {
                 NSLog("licensePlateNumber: %@, state: %@", aVehicle.licensePlateNumber, aVehicle.state)
             }
+            self.vehicleCollectionView.reloadData()
         }
         
         if self.driverArray != nil {
@@ -70,6 +72,7 @@ class IAAutoInsuranceDetailsController: IABaseController , UICollectionViewDeleg
                 NSLog("firstName: %@, lastName: %@", aDriver.firstName, aDriver.lastName)
             }
         }
+        self.driverCollectionView.reloadData()
     }
     
     
@@ -156,14 +159,14 @@ class IAAutoInsuranceDetailsController: IABaseController , UICollectionViewDeleg
             let cell = collectionView.dequeueReusableCellWithReuseIdentifier("vehicleListCell", forIndexPath: indexPath) as! IAVehicleListCell
             
             // Use the outlet in our custom class to get a reference to the UILabel in the cell
-            cell.modelNoLabel.text = self.items[indexPath.item]
+            cell.modelNoLabel.text = self.vehicleArray[indexPath.item].licensePlateNumber
             return cell
         }else  {
             // get a reference to our storyboard cell
             let cell = collectionView.dequeueReusableCellWithReuseIdentifier("driverListCell", forIndexPath: indexPath) as! IADriverListCell
             
             // Use the outlet in our custom class to get a reference to the UILabel in the cell
-            cell.driverNameLabel.text = self.items[indexPath.item]
+            cell.driverNameLabel.text = self.driverArray[indexPath.item].firstName
             return cell
         }
         
