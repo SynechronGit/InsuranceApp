@@ -22,6 +22,6 @@ class IANavigationBar: UINavigationBar {
     
     
     override func sizeThatFits(size: CGSize) -> CGSize {
-        return CGSizeMake((self.superview?.bounds.size.width)!, 29.0)
+        return CGSizeMake((self.superview?.bounds.size.width)!, 28.0)
     }
 }
