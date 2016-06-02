@@ -20,7 +20,7 @@ class IADriver:NSObject {
     
     
     var fullName:String! {
-        let aReturnVal = (self.firstName != nil ? self.firstName : "") + "" + (self.lastName != nil ? self.lastName : "")
+        let aReturnVal = (self.firstName != nil ? self.firstName : "") + " " + (self.lastName != nil ? self.lastName : "")
         return aReturnVal
     }
 }

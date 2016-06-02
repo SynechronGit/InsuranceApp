@@ -61,6 +61,7 @@
 		7D47A1351CF710E9007E1867 /* IADriver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D47A1341CF710E9007E1867 /* IADriver.swift */; };
 		7D47A13B1CFD7294007E1867 /* IAVehicleListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D47A13A1CFD7294007E1867 /* IAVehicleListCell.swift */; };
 		7D47A13F1CFD9618007E1867 /* IADriverListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D47A13E1CFD9618007E1867 /* IADriverListCell.swift */; };
+		7D7F5CEC1D00398700E5CBEB /* IAVehicleDetailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D7F5CEB1D00398700E5CBEB /* IAVehicleDetailsController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -143,6 +144,7 @@
 		7D47A1341CF710E9007E1867 /* IADriver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IADriver.swift; sourceTree = "<group>"; };
 		7D47A13A1CFD7294007E1867 /* IAVehicleListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IAVehicleListCell.swift; sourceTree = "<group>"; };
 		7D47A13E1CFD9618007E1867 /* IADriverListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IADriverListCell.swift; sourceTree = "<group>"; };
+		7D7F5CEB1D00398700E5CBEB /* IAVehicleDetailsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IAVehicleDetailsController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -340,6 +342,7 @@
 				3F4D20C11CF71B280024EAE7 /* IAAddVehicleController.swift */,
 				7D47A13A1CFD7294007E1867 /* IAVehicleListCell.swift */,
 				7D47A13E1CFD9618007E1867 /* IADriverListCell.swift */,
+				7D7F5CEB1D00398700E5CBEB /* IAVehicleDetailsController.swift */,
 			);
 			path = AutoInsurance;
 			sourceTree = "<group>";
@@ -568,6 +571,7 @@
 			files = (
 				3FE1D2AF1CFC58C3007FA513 /* InsuranceTypeContainerView.swift in Sources */,
 				3F9948BD1CFC782100A880A8 /* LTMorphingLabel.swift in Sources */,
+				7D7F5CEC1D00398700E5CBEB /* IAVehicleDetailsController.swift in Sources */,
 				3F0CA46D1CF440C9002A048E /* IABaseController.swift in Sources */,
 				3F64D2181CF7089F00DC682D /* IAAddDriverController.swift in Sources */,
 				3F9948BC1CFC782100A880A8 /* LTMorphingLabel+Sparkle.swift in Sources */,
