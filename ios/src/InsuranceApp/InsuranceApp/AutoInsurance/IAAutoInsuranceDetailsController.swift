@@ -185,5 +185,6 @@ class IAAutoInsuranceDetailsController: IABaseController , UICollectionViewDeleg
             self.performSegueWithIdentifier("AutoInsuranceDetailsToDriverDetailsSegueID", sender: self)
             
         }
-
+    }
+    
 }
