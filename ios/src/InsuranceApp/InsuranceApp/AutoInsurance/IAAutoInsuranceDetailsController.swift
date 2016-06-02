@@ -174,7 +174,17 @@ class IAAutoInsuranceDetailsController: IABaseController , UICollectionViewDeleg
     
      func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         // handle tap events
-        print("You selected cell #\(indexPath.item)!")
+        if collectionView == self.vehicleCollectionView {
+            /**
+             * Delegate method that will be called when Vehicle is tapped.
+             */
+            self.performSegueWithIdentifier("AutoInsuranceDetailsToVehicleDetailsSegueID", sender: self)
+            
+        } else if collectionView == self.driverCollectionView  {
+            
+            
+        }
+
     }
 
 }
