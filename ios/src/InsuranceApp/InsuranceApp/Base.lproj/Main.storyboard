@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="yS7-Mb-0yN">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="yS7-Mb-0yN">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -1772,7 +1772,7 @@ Insurance</string>
                         <viewControllerLayoutGuide type="bottom" id="khw-1Z-sKH"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="53r-gO-tdh">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="44" width="768" height="980"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H8V-bu-Ub6">
@@ -1812,7 +1812,7 @@ Insurance</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dvC-uV-e6v" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2455" y="3591"/>
+            <point key="canvasLocation" x="3228" y="2880"/>
         </scene>
         <!--Add Driver Controller-->
         <scene sceneID="QGv-Lr-iNi">
@@ -1823,7 +1823,7 @@ Insurance</string>
                         <viewControllerLayoutGuide type="bottom" id="5Lu-MN-9aC"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="zt4-aB-Pjp">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="44" width="768" height="980"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Yh-qk-Jg9">
@@ -1944,7 +1944,7 @@ Insurance</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nt0-A5-UfM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2455" y="2784"/>
+            <point key="canvasLocation" x="3228" y="3987"/>
         </scene>
         <!--Auto Insurance Details Controller-->
         <scene sceneID="BiC-Dj-ciI">
@@ -2546,11 +2546,53 @@ Insurance</string>
                         <outlet property="limitBoxView" destination="can-vV-cw3" id="Cmu-XO-zKG"/>
                         <outlet property="payPremiumBtn" destination="gvj-Qh-7E9" id="WID-1f-Ams"/>
                         <outlet property="vehicleCollectionView" destination="XkW-pL-jU7" id="65v-1N-Txv"/>
+                        <segue destination="kBD-qr-sbZ" kind="show" identifier="AutoInsuranceDetailsToVehicleDetailsSegueID" id="B8R-i4-nHc"/>
+                        <segue destination="xfz-SR-z7C" kind="show" identifier="AutoInsuranceDetailsToDriverDetailsSegueID" id="G9U-Zd-vGD"/>
+                        <segue destination="RW6-fY-qPa" kind="show" identifier="AutoInsuranceDetailsToAddVehicleSegueID" id="gH5-OJ-l3x"/>
+                        <segue destination="aL6-SL-tmf" kind="show" identifier="AutoInsuranceDetailsToAddDriverSegueID" id="K4y-Ol-mqP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ffG-NZ-plP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1504" y="3173"/>
+        </scene>
+        <!--Vehicle Details Controller-->
+        <scene sceneID="Tz8-zw-EzH">
+            <objects>
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="kBD-qr-sbZ" customClass="IAVehicleDetailsController" customModule="InsuranceApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="9DE-0J-d7M"/>
+                        <viewControllerLayoutGuide type="bottom" id="kMw-r0-Tp7"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="96b-lG-Nvl">
+                        <rect key="frame" x="0.0" y="44" width="768" height="980"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <extendedEdge key="edgesForExtendedLayout"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6TF-qa-zrR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2388" y="2880"/>
+        </scene>
+        <!--Driver Details Controller-->
+        <scene sceneID="73V-Qt-B7D">
+            <objects>
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="xfz-SR-z7C" customClass="IADriverDetailsController" customModule="InsuranceApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="r0l-Hh-Ygb"/>
+                        <viewControllerLayoutGuide type="bottom" id="d9x-hT-JcA"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="l20-0O-jwd">
+                        <rect key="frame" x="0.0" y="44" width="768" height="980"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <extendedEdge key="edgesForExtendedLayout"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oi4-5R-kKR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2388" y="3987"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="2Un-FI-aB0">

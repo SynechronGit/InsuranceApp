@@ -72,7 +72,7 @@ class IAAutoInsuranceDetailsController: IABaseController , UICollectionViewDeleg
      * @return Void
      */
     @IBAction func didSelectAddVehicleButton() {
-        //self.performSegueWithIdentifier("AutoInsuranceDetailsToAddVehicleSegueID", sender: self)
+        self.performSegueWithIdentifier("AutoInsuranceDetailsToAddVehicleSegueID", sender: self)
     }
     
     
@@ -81,7 +81,7 @@ class IAAutoInsuranceDetailsController: IABaseController , UICollectionViewDeleg
      * @return Void
      */
     @IBAction func didSelectAddDriverButton() {
-        //self.performSegueWithIdentifier("AutoInsuranceDetailsToAddDriverSegueID", sender: self)
+        self.performSegueWithIdentifier("AutoInsuranceDetailsToAddDriverSegueID", sender: self)
     }
     
     

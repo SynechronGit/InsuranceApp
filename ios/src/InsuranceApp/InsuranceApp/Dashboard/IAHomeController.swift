@@ -72,9 +72,15 @@ class IAHomeController: IABaseController {
         self.notificationCountLabel.layer.cornerRadius = self.notificationCountLabel.frame.size.width / 2.0
         self.notificationCountLabel.layer.masksToBounds = true
         self.notificationCountLabel.layer.backgroundColor = UIColor(red: 160.0/255.0, green: 0.0/255.0, blue: 0.0/255.0, alpha: 1.0).CGColor
-        UIView.animateWithDuration(0.7, delay: 0.0, options: [UIViewAnimationOptions.Repeat, UIViewAnimationOptions.Autoreverse], animations: {
-            self.notificationCountLabel.layer.backgroundColor = UIColor(red: 240.0/255.0, green: 24.0/255.0, blue: 27.0/255.0, alpha: 1.0).CGColor
-        }, completion: nil)
+        
+        self.notificationCountLabel.layer.borderColor = UIColor.redColor().CGColor
+        let anAnimation = CABasicAnimation(keyPath: "borderWidth")
+        anAnimation.fromValue = 0.0
+        anAnimation.toValue = 2.0
+        anAnimation.repeatCount = FLT_MAX
+        anAnimation.duration = 1.0
+        anAnimation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
+        self.notificationCountLabel.layer.addAnimation(anAnimation, forKey: "pulse")
         
         self.containerScrollView.contentSize = CGSizeMake(self.containerScrollView.frame.size.width * 6, self.containerScrollView.frame.size.height)
         self.displayTabWithIndex(0)
@@ -128,6 +134,17 @@ class IAHomeController: IABaseController {
             self.notificationsTabItemView.backgroundColor = aSelectedBackgroundColor
         }
         self.containerScrollView.scrollRectToVisible(CGRectMake(self.containerScrollView.frame.size.width * CGFloat(pIndex), 0.0, self.containerScrollView.frame.size.width, self.containerScrollView.frame.size.height), animated: true)
+        
+        // TODO: Implement below animation.
+        /*
+        let aDiff :CGFloat = 50.0
+        self.dashboardContainerView.frame = CGRectMake(self.dashboardContainerView.frame.origin.x + aDiff, self.dashboardContainerView.frame.origin.y + aDiff, self.dashboardContainerView.frame.size.width - (aDiff * 2), self.dashboardContainerView.frame.size.height - (aDiff * 2))
+        self.fileClaimContainerView.frame = CGRectMake(self.fileClaimContainerView.frame.origin.x + aDiff, self.fileClaimContainerView.frame.origin.y + aDiff, self.fileClaimContainerView.frame.size.width - (aDiff * 2), self.fileClaimContainerView.frame.size.height - (aDiff * 2))
+        self.policiesContainerView.frame = CGRectMake(self.policiesContainerView.frame.origin.x + aDiff, self.policiesContainerView.frame.origin.y + aDiff, self.policiesContainerView.frame.size.width - (aDiff * 2), self.policiesContainerView.frame.size.height - (aDiff * 2))
+        self.claimsContainerView.frame = CGRectMake(self.claimsContainerView.frame.origin.x + aDiff, self.claimsContainerView.frame.origin.y + aDiff, self.claimsContainerView.frame.size.width - (aDiff * 2), self.claimsContainerView.frame.size.height - (aDiff * 2))
+        self.accountContainerView.frame = CGRectMake(self.accountContainerView.frame.origin.x + aDiff, self.accountContainerView.frame.origin.y + aDiff, self.accountContainerView.frame.size.width - (aDiff * 2), self.accountContainerView.frame.size.height - (aDiff * 2))
+        self.notificationsContainerView.frame = CGRectMake(self.notificationsContainerView.frame.origin.x + aDiff, self.notificationsContainerView.frame.origin.y + aDiff, self.notificationsContainerView.frame.size.width - (aDiff * 2), self.notificationsContainerView.frame.size.height - (aDiff * 2))
+         */
     }
     
     
