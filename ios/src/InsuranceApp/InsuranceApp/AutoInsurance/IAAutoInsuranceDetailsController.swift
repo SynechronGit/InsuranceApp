@@ -181,10 +181,9 @@ class IAAutoInsuranceDetailsController: IABaseController , UICollectionViewDeleg
             self.performSegueWithIdentifier("AutoInsuranceDetailsToVehicleDetailsSegueID", sender: self)
             
         } else if collectionView == self.driverCollectionView  {
-            
+        
+            self.performSegueWithIdentifier("AutoInsuranceDetailsToDriverDetailsSegueID", sender: self)
             
         }
-
-    }
 
 }
