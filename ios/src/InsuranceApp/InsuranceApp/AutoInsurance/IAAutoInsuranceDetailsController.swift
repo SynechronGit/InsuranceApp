@@ -175,6 +175,10 @@ class IAAutoInsuranceDetailsController: IABaseController , UICollectionViewDeleg
      func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         // handle tap events
         print("You selected cell #\(indexPath.item)!")
+        
+        if collectionView.isEqual(self.driverCollectionView) {
+            self.performSegueWithIdentifier("AutoInsuranceDetailsToDriverDetailsSegueID", sender: self)
+        }
     }
 
 }
