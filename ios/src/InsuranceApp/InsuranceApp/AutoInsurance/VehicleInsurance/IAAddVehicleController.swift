@@ -9,7 +9,7 @@ import UIKit
 /**
  * Controller for Add Vehicle screen.
  */
-class IAAddVehicleController: IABaseController {
+class IAAddVehicleController: IABaseController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     @IBOutlet weak var licensePlateNumberTextField :UITextField!
     @IBOutlet weak var stateTextField :UITextField!
     @IBOutlet weak var vinTextField: UITextField!
@@ -17,8 +17,14 @@ class IAAddVehicleController: IABaseController {
     @IBOutlet weak var mainBgView: UIView!
     
     @IBOutlet weak var addBtn1: UIView!
+    @IBOutlet weak var addPhotoFirstImageView: UIImageView!
     @IBOutlet weak var addBtn2: UIView!
+    @IBOutlet weak var addPhotoSecondImageView: UIImageView!
     @IBOutlet weak var addBtn3: UIView!
+    @IBOutlet weak var addPhotoThirdImageView: UIImageView!
+    
+    var imagePickerController :UIImagePickerController!
+    weak var imagePickerDestinationImageView: UIImageView!
     
     @IBOutlet weak var saveBtnView: UIView!
     
@@ -51,13 +57,13 @@ class IAAddVehicleController: IABaseController {
         super.viewDidLoad()
         
         let addPhoto1  = UITapGestureRecognizer(target: self, action: #selector(didSelectAddPhotoFirst))
-        saveBtnView.addGestureRecognizer(addPhoto1)
+        addBtn1.addGestureRecognizer(addPhoto1)
         
         let addPhoto2  = UITapGestureRecognizer(target: self, action: #selector(didSelectAddPhotoSecond))
-        saveBtnView.addGestureRecognizer(addPhoto2)
+        addBtn2.addGestureRecognizer(addPhoto2)
         
         let addPhoto3  = UITapGestureRecognizer(target: self, action: #selector(didSelectAddPhotoThird))
-        saveBtnView.addGestureRecognizer(addPhoto3)
+        addBtn3.addGestureRecognizer(addPhoto3)
         
         let saveBtnTap = UITapGestureRecognizer(target: self, action: #selector(didSelectAddButton))
         saveBtnView.addGestureRecognizer(saveBtnTap)
@@ -118,41 +124,90 @@ class IAAddVehicleController: IABaseController {
      * Selector method that will be called when button is tapped.
      * @return Void
      */
-     func didSelectAddButton() {
-        let aVehicle = IAVehicle()
-        aVehicle.vin = "1LNLM82W8NY668232"
-        aVehicle.year = self.yearTextBox.text
-        aVehicle.company = self.companyTextBox.text
-        aVehicle.modelNumber = self.modelTextBox.text
-        aVehicle.bodyStyle = self.bosyStyleTextBox.text
-        if self.comprahensiveFirstOption == true {
-            aVehicle.comprehensiveCoverage = self.comprehensiveCoverageFirstOptionLabel.text
-        } else {
-            aVehicle.comprehensiveCoverage = self.comprehensiveCoverageSecondOptionLabel.text
-        }
-        if self.collisionFirstOption == true {
-            aVehicle.collisionCoverage = self.collisionCoverageFirstOptionLabel.text
-        } else {
-            aVehicle.collisionCoverage = self.collisionCoverageSecondOptionLabel.text
-        }
+    func didSelectAddButton() {
         
-        IAAppDelegate.currentAppDelegate.displayLoadingOverlay()
-        self.dataManager.addVehicle(aVehicle)
+        do {
+            
+            if self.addPhotoFirstImageView.image == nil && self.addPhotoSecondImageView.image == nil && self.addPhotoThirdImageView.image == nil  {
+                throw IAError.Generic(NSError(domain: "com", code: 1, userInfo: [NSLocalizedDescriptionKey:"Please provide vehicle's photo."]))
+            }
+            
+            
+            if self.yearTextBox.text == nil || self.yearTextBox.text?.lengthOfBytesUsingEncoding(NSUTF8StringEncoding) <= 0 {
+                throw IAError.Generic(NSError(domain: "com", code: 1, userInfo: [NSLocalizedDescriptionKey:"Please select year."]))
+            }
+            
+            if self.companyTextBox.text == nil || self.companyTextBox.text?.lengthOfBytesUsingEncoding(NSUTF8StringEncoding) <= 0 {
+                throw IAError.Generic(NSError(domain: "com", code: 1, userInfo: [NSLocalizedDescriptionKey:"Please select company."]))
+            }
+            
+            if self.modelTextBox.text == nil || self.modelTextBox.text?.lengthOfBytesUsingEncoding(NSUTF8StringEncoding) <= 0 {
+                throw IAError.Generic(NSError(domain: "com", code: 1, userInfo: [NSLocalizedDescriptionKey:"Please select model number."]))
+            }
+            
+            if self.bosyStyleTextBox.text == nil || self.bosyStyleTextBox.text?.lengthOfBytesUsingEncoding(NSUTF8StringEncoding) <= 0 {
+                throw IAError.Generic(NSError(domain: "com", code: 1, userInfo: [NSLocalizedDescriptionKey:"Please select body style."]))
+            }
+            
+            
+            IAAppDelegate.currentAppDelegate.displayLoadingOverlay()
+            let aVehicle = IAVehicle()
+            aVehicle.photoOne = self.addPhotoFirstImageView.image
+            aVehicle.photoTwo = self.addPhotoSecondImageView.image
+            aVehicle.photoThree = self.addPhotoThirdImageView.image
+            aVehicle.vin = "1LNLM82W8NY668232"
+            aVehicle.year = self.yearTextBox.text
+            aVehicle.company = self.companyTextBox.text
+            aVehicle.modelNumber = self.modelTextBox.text
+            aVehicle.bodyStyle = self.bosyStyleTextBox.text
+            if self.comprahensiveFirstOption == true {
+                aVehicle.comprehensiveCoverage = self.comprehensiveCoverageFirstOptionLabel.text
+            } else {
+                aVehicle.comprehensiveCoverage = self.comprehensiveCoverageSecondOptionLabel.text
+            }
+            if self.collisionFirstOption == true {
+                aVehicle.collisionCoverage = self.collisionCoverageFirstOptionLabel.text
+            } else {
+                aVehicle.collisionCoverage = self.collisionCoverageSecondOptionLabel.text
+            }
+            
+            self.dataManager.addVehicle(aVehicle)
+            
+        } catch IAError.Generic(let pError){
+            self.displayMessage(message: pError.localizedDescription, type: IAMessageType.Error)
+        } catch {
+            self.displayMessage(message: "Add Vehicle error.", type: IAMessageType.Error)
+        }
         
     }
     
     func didSelectAddPhotoFirst() {
-        
+        self.imagePickerDestinationImageView = self.addPhotoFirstImageView
+        self.displayImagePicker()
     }
     
     
     func didSelectAddPhotoSecond() {
+        self.imagePickerDestinationImageView = self.addPhotoSecondImageView
+        self.displayImagePicker()
         
     }
     
     
     func didSelectAddPhotoThird() {
-        
+        self.imagePickerDestinationImageView = self.addPhotoThirdImageView
+        self.displayImagePicker()
+    }
+    
+    func displayImagePicker() {
+        if self.imagePickerController == nil {
+            self.imagePickerController = UIImagePickerController()
+        }
+        self.imagePickerController.allowsEditing = false
+        self.imagePickerController.sourceType = .PhotoLibrary
+        self.imagePickerController.delegate = self
+        self.imagePickerController.modalPresentationStyle = UIModalPresentationStyle.FormSheet
+        self.presentViewController(self.imagePickerController, animated: true, completion: nil)
     }
     
     
@@ -234,6 +289,30 @@ class IAAddVehicleController: IABaseController {
         }
     }
     
+    // MARK: - UIImagePickerControllerDelegate Methods
+    
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
+        if let aPickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
+            if self.imagePickerDestinationImageView != nil && self.imagePickerDestinationImageView.isEqual(self.addPhotoFirstImageView)  {
+                self.addPhotoFirstImageView.image = aPickedImage
+                
+            } else if self.imagePickerDestinationImageView != nil && self.imagePickerDestinationImageView.isEqual(self.addPhotoSecondImageView) {
+                 self.addPhotoSecondImageView.image = aPickedImage
+                
+            } else if self.imagePickerDestinationImageView != nil && self.imagePickerDestinationImageView.isEqual(self.addPhotoThirdImageView) {
+                self.addPhotoThirdImageView.image = aPickedImage
+                
+            }
+        }
+        picker.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    func imagePickerControllerDidCancel(picker: UIImagePickerController) {
+        picker.dismissViewControllerAnimated(true, completion: nil)
+    }
+
+    
+    
     // MARK: - IADataManagerDelegate Methods
     
     /**
@@ -245,7 +324,11 @@ class IAAddVehicleController: IABaseController {
         if pResponse.error != nil {
             self.displayMessage(message: pResponse.error.localizedDescription, type: IAMessageType.Error)
         } else if pSender.requestType == IARequestType.AddVehicle {
-            self.dismissViewControllerAnimated(true, completion: nil)
+            let anAlert = UIAlertController(title: "Vehicle added successfully", message: nil, preferredStyle: .Alert)
+            anAlert.addAction(UIAlertAction(title: "Ok", style: .Default, handler: {(action:UIAlertAction) in
+                self.navigationController?.popViewControllerAnimated(true)
+            }))
+            self.presentViewController(anAlert, animated: true, completion: nil)
         }
     }
 }
