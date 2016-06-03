@@ -10,6 +10,11 @@ import UIKit
 
 class IATextField: UITextField {
     var shouldDisplayAsDropdown :Bool!
+    weak var controller :UIViewController!
+    weak var iaTextFieldDelegate :AnyObject!
+    var tapGestureRecognizer :UITapGestureRecognizer!
+    var dropdownListController :IADropdownListController!
+    var list :Array<String>!
     
     
     private var bottomBorderLayer :CALayer!
@@ -53,6 +58,11 @@ class IATextField: UITextField {
             self.bottomBorderLayer.backgroundColor = UIColor.lightGrayColor().CGColor
             self.layer.addSublayer(self.bottomBorderLayer)
         }
+        if self.tapGestureRecognizer == nil {
+            self.tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(IADashboardController.didSelectAutoInsuranceView))
+            self.tapGestureRecognizer.cancelsTouchesInView = true
+            self.addGestureRecognizer(self.tapGestureRecognizer)
+        }
     }
     
     
@@ -67,8 +77,33 @@ class IATextField: UITextField {
             (self.rightView as! UIImageView).image = UIImage(named: "nextArrow")
             (self.rightView as! UIImageView).contentMode = UIViewContentMode.ScaleAspectFit
             self.rightViewMode = UITextFieldViewMode.Always
-            
-            self.userInteractionEnabled = false
+        }
+    }
+    
+    
+    override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        if self.shouldDisplayAsDropdown != nil && self.shouldDisplayAsDropdown == true {
+            self.resignFirstResponder()
+            if touches.first?.tapCount == 1 && self.controller != nil {
+                if self.dropdownListController == nil {
+                    self.dropdownListController  = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("IADropdownListControllerID") as! IADropdownListController
+                }
+                self.dropdownListController.list = self.list
+                if self.list != nil {
+                    var aHeight :CGFloat = CGFloat(self.list.count) * 36.0
+                    if aHeight > 300.0 {
+                        aHeight = 300.0
+                    }
+                    self.dropdownListController.preferredContentSize = CGSizeMake(320.0, aHeight)
+                } else {
+                    self.dropdownListController.preferredContentSize = CGSizeMake(320.0, 200.0)
+                }
+                self.dropdownListController.modalPresentationStyle = .Popover
+                self.dropdownListController.popoverPresentationController?.permittedArrowDirections = UIPopoverArrowDirection.Any
+                self.dropdownListController.popoverPresentationController?.sourceView = self
+                self.dropdownListController.popoverPresentationController?.sourceRect = self.bounds
+                self.controller.presentViewController(self.dropdownListController, animated: true, completion: nil)
+            }
         }
     }
 }

@@ -42,9 +42,24 @@ class IAAddDriverController: IABaseController {
         self.addContainerView.layer.masksToBounds = true
         
         self.cityTextField.shouldDisplayAsDropdown = true
+        self.cityTextField.controller = self
+        self.cityTextField.list = ["Miami", "Century", "Callaway"]
+        
         self.stateTextField.shouldDisplayAsDropdown = true
+        self.stateTextField.controller = self
+        self.stateTextField.list = ["Florida", ""]
+        
         self.drivingExperienceTextField.shouldDisplayAsDropdown = true
+        self.drivingExperienceTextField.controller = self
+        var aDrivingExperienceArray = Array<String>()
+        for anIndex:Int in 0 ..< 40 {
+            aDrivingExperienceArray.append(String(format: "%02d Years", anIndex + 1))
+        }
+        self.drivingExperienceTextField.list = aDrivingExperienceArray
+        
         self.employeeTypeTextField.shouldDisplayAsDropdown = true
+        self.employeeTypeTextField.controller = self
+        self.employeeTypeTextField.list = nil
     }
 
     
