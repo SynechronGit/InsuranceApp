@@ -4090,8 +4090,10 @@ Insurance</string>
                     <connections>
                         <outlet property="bodyStyleLabel" destination="qtL-Ab-Nz9" id="YQt-o3-V6K"/>
                         <outlet property="collisionCoverageBgView" destination="9Xe-R6-yC6" id="0zq-SO-kgk"/>
+                        <outlet property="collisionValueLabel" destination="i29-xf-Vo1" id="4hJ-JL-u82"/>
                         <outlet property="companyLabel" destination="TFa-uf-mia" id="1Qh-pe-t7H"/>
                         <outlet property="comprehensiveCoverageBgView" destination="vln-rp-RQd" id="lzx-Io-Edl"/>
+                        <outlet property="comprehensiveValueLabel" destination="8Qt-Fn-77n" id="KOt-1Y-3eW"/>
                         <outlet property="descriptionTextView" destination="a8X-rM-Q2w" id="u0D-JD-CBb"/>
                         <outlet property="mainBgView" destination="euZ-fF-2k4" id="Lba-RW-lBG"/>
                         <outlet property="modelNoLabel" destination="Ef1-BB-QgO" id="FvW-io-ad8"/>

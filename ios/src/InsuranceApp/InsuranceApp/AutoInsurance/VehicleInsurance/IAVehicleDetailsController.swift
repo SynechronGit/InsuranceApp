@@ -15,6 +15,8 @@ class IAVehicleDetailsController: IABaseController ,UICollectionViewDelegate, UI
     @IBOutlet weak var vinNoBgView: UIView!
     @IBOutlet weak var comprehensiveCoverageBgView: UIView!
     @IBOutlet weak var collisionCoverageBgView: UIView!
+    @IBOutlet weak var comprehensiveValueLabel: UILabel!
+    @IBOutlet weak var collisionValueLabel: UILabel!
     
     @IBOutlet weak var vehicleNameHeadingLabel: UILabel!
     @IBOutlet weak var yearLabel: UILabel!
@@ -62,6 +64,8 @@ class IAVehicleDetailsController: IABaseController ,UICollectionViewDelegate, UI
         self.companyLabel.text = self.vehicle.company
         self.modelNoLabel.text = self.vehicle.modelNumber
         self.bodyStyleLabel.text = self.vehicle.bodyStyle
+        self.comprehensiveValueLabel.text = self.vehicle.comprehensiveCoverage
+        self.collisionValueLabel.text = self.vehicle.collisionCoverage
         
         self.vinNoLabel.text = self.vehicle.vin
         self.descriptionTextView.text = self.vehicle.vehicleDescription
