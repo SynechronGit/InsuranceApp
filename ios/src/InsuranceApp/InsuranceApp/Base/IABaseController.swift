@@ -23,6 +23,8 @@ class IABaseController: UIViewController, IADataManagerDelegate {
         anImageView.image = UIImage(named: "SearchIcon")
         let aRightBarButtonItem = UIBarButtonItem(customView: anImageView)
         self.navigationItem.rightBarButtonItem = aRightBarButtonItem
+        
+        self.navigationItem.backBarButtonItem = UIBarButtonItem(title:"", style:.Plain, target:nil, action:nil)
     }
     
     
