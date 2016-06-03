@@ -28,10 +28,10 @@ class IAAddVehicleController: IABaseController {
     @IBOutlet weak var vinConfirmationNoBtn: UIButton!
     @IBOutlet weak var vinConfirmationYesBtn: UIButton!
     
-    @IBOutlet weak var yearTextBox: UITextField!
-    @IBOutlet weak var companyTextBox: UITextField!
-    @IBOutlet weak var modelTextBox: UITextField!
-    @IBOutlet weak var bosyStyleTextBox: UITextField!
+    @IBOutlet weak var yearTextBox: IATextField!
+    @IBOutlet weak var companyTextBox: IATextField!
+    @IBOutlet weak var modelTextBox: IATextField!
+    @IBOutlet weak var bosyStyleTextBox: IATextField!
     
     @IBOutlet weak var comprehensiveCoverageFirstOptionButton: UIButton!
     
@@ -41,6 +41,9 @@ class IAAddVehicleController: IABaseController {
     
     @IBOutlet weak var collisionCoverageSecondOptionButton: UIButton!
     
+    var vinConfirmation : Bool = true
+    var comprahensiveFirstOption : Bool = true
+    var collisionFirstOption : Bool = true
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -81,6 +84,32 @@ class IAAddVehicleController: IABaseController {
         
         self.saveBtnView.layer.cornerRadius = IAConstants.dashboardSubviewCornerRadius
         self.saveBtnView.layer.masksToBounds = true
+        
+        self.yearTextBox.shouldDisplayAsDropdown = true
+        self.yearTextBox.controller = self
+        var yearsArray = Array<String>()
+        for anIndex:Int in 1990 ..< 2016 {
+            yearsArray.append(String(format: "%d", anIndex + 1))
+        }
+        self.yearTextBox.list = yearsArray
+        
+        self.companyTextBox.shouldDisplayAsDropdown = true
+        self.companyTextBox.controller = self
+        self.companyTextBox.list = ["Mercedes", "BMW", "Audi"]
+        
+        
+        self.modelTextBox.shouldDisplayAsDropdown = true
+        self.modelTextBox.controller = self
+        var modelArray = Array<String>()
+        modelArray = ["S660","X5","X6", "A4", "A5"]
+        self.modelTextBox.list = modelArray
+        
+        self.bosyStyleTextBox.shouldDisplayAsDropdown = true
+        self.bosyStyleTextBox.controller = self
+        self.bosyStyleTextBox.list = ["Hatchbacks", "Sedans", "Vans‎", "Hardtop"]
+        
+        
+        
     }
     
     // MARK: - Selector Methods
@@ -96,6 +125,8 @@ class IAAddVehicleController: IABaseController {
 //        
 //        IAAppDelegate.currentAppDelegate.displayLoadingOverlay()
 //        self.dataManager.addVehicle(aVehicle)
+        print(collisionFirstOption)
+        
     }
     
     func didSelectAddPhotoFirst() {
@@ -114,22 +145,81 @@ class IAAddVehicleController: IABaseController {
     }
     
     @IBAction func didSelectVinConfirmationYes(sender: AnyObject) {
+        
+        if (vinConfirmation == true){
+            vinConfirmation = false
+            vinConfirmationYesBtn.setBackgroundImage(UIImage(named: "tick_box_deselected"), forState: .Normal)
+            vinConfirmationNoBtn.setBackgroundImage(UIImage(named: "tick_box_selected"), forState: .Normal)
+        }else{
+            vinConfirmation = true
+            vinConfirmationYesBtn.setBackgroundImage(UIImage(named: "tick_box_selected"), forState: .Normal)
+            vinConfirmationNoBtn.setBackgroundImage(UIImage(named: "tick_box_deselected"), forState: .Normal)
+        }
+        
     }
     
     @IBAction func didSelectVinConfirmationNo(sender: AnyObject) {
+        if (vinConfirmation == false){
+            vinConfirmation = true
+            vinConfirmationNoBtn.setBackgroundImage(UIImage(named: "tick_box_deselected"), forState: .Normal)
+            vinConfirmationYesBtn.setBackgroundImage(UIImage(named: "tick_box_selected"), forState: .Normal)
+        }else{
+            vinConfirmation = false
+            vinConfirmationNoBtn.setBackgroundImage(UIImage(named: "tick_box_selected"), forState: .Normal)
+            vinConfirmationYesBtn.setBackgroundImage(UIImage(named: "tick_box_deselected"), forState: .Normal)
+        }
+        
     }
     
     @IBAction func didSelectComprehensiveCoverageFirstOption(sender: AnyObject) {
+        if (comprahensiveFirstOption == true){
+            comprahensiveFirstOption = false
+            comprehensiveCoverageFirstOptionButton.setBackgroundImage(UIImage(named: "tick_box_deselected"), forState: .Normal)
+            comprehensiveCoverageSecondOptionButton.setBackgroundImage(UIImage(named: "tick_box_selected"), forState: .Normal)
+        }else{
+            comprahensiveFirstOption = true
+            comprehensiveCoverageFirstOptionButton.setBackgroundImage(UIImage(named: "tick_box_selected"), forState: .Normal)
+            comprehensiveCoverageSecondOptionButton.setBackgroundImage(UIImage(named: "tick_box_deselected"), forState: .Normal)
+        }
+        
     }
     
     @IBAction func didSelectComprehensiveCoverageSecondOption(sender: AnyObject) {
+        if (comprahensiveFirstOption == false){
+            comprahensiveFirstOption = true
+            comprehensiveCoverageSecondOptionButton.setBackgroundImage(UIImage(named: "tick_box_deselected"), forState: .Normal)
+            comprehensiveCoverageFirstOptionButton.setBackgroundImage(UIImage(named: "tick_box_selected"), forState: .Normal)
+        }else{
+            comprahensiveFirstOption = false
+            comprehensiveCoverageSecondOptionButton.setBackgroundImage(UIImage(named: "tick_box_selected"), forState: .Normal)
+            comprehensiveCoverageFirstOptionButton.setBackgroundImage(UIImage(named: "tick_box_deselected"), forState: .Normal)
+        }
+        
     }
     
     @IBAction func didSelectCollisionCoverageFirstOption(sender: AnyObject) {
+        if (collisionFirstOption == true){
+            collisionFirstOption = false
+            collisionCoverageFirstOptionButton.setBackgroundImage(UIImage(named: "tick_box_deselected"), forState: .Normal)
+            collisionCoverageSecondOptionButton.setBackgroundImage(UIImage(named: "tick_box_selected"), forState: .Normal)
+        }else{
+            collisionFirstOption = true
+            collisionCoverageFirstOptionButton.setBackgroundImage(UIImage(named: "tick_box_selected"), forState: .Normal)
+            collisionCoverageSecondOptionButton.setBackgroundImage(UIImage(named: "tick_box_deselected"), forState: .Normal)
+        }
     }
     
     
     @IBAction func didSelectCollisionCoverageSecondOption(sender: AnyObject) {
+        if (collisionFirstOption == false){
+            collisionFirstOption = true
+            collisionCoverageSecondOptionButton.setBackgroundImage(UIImage(named: "tick_box_deselected"), forState: .Normal)
+            collisionCoverageFirstOptionButton.setBackgroundImage(UIImage(named: "tick_box_selected"), forState: .Normal)
+        }else{
+            collisionFirstOption = false
+            collisionCoverageSecondOptionButton.setBackgroundImage(UIImage(named: "tick_box_selected"), forState: .Normal)
+            collisionCoverageFirstOptionButton.setBackgroundImage(UIImage(named: "tick_box_deselected"), forState: .Normal)
+        }
     }
     
     // MARK: - IADataManagerDelegate Methods
