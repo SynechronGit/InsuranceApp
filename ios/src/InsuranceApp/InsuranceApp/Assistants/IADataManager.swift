@@ -262,11 +262,11 @@ class IADataManager: NSObject {
                 }
             } else if self.requestType == IARequestType.AddDriver {
                 let aDriver :IADriver = pRequest as! IADriver
-                var anImageData :NSData! = nil
+                var anAvatarData :NSData! = nil
                 if aDriver.avatar != nil {
-                    anImageData = UIImagePNGRepresentation(aDriver.avatar)
+                    anAvatarData = UIImagePNGRepresentation(aDriver.avatar)
                 }
-                let anSqlQuery :String = "INSERT INTO drivers (first_name, last_name, dob, state, license, type, status, avatar) VALUES (?, ?, ?, ?, ?, ?, ?, ?)"
+                let anSqlQuery :String = "INSERT INTO drivers (first_name, last_name, dob, state, license, type, status, avatar, appointed_since, driving_experience, phone_number, email_address, street_address, city, zip) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)"
                 var aValueArray = Array<AnyObject>()
                 aValueArray.append(aDriver.firstName != nil ? aDriver.firstName : NSNull())
                 aValueArray.append(aDriver.lastName != nil ? aDriver.lastName : NSNull())
@@ -275,7 +275,15 @@ class IADataManager: NSObject {
                 aValueArray.append(aDriver.licenseNumber != nil ? aDriver.licenseNumber : NSNull())
                 aValueArray.append(aDriver.employeeType != nil ? aDriver.employeeType : NSNull())
                 aValueArray.append(aDriver.status != nil ? aDriver.status : NSNull())
-                aValueArray.append(anImageData != nil ? anImageData : NSNull())
+                aValueArray.append(anAvatarData != nil ? anAvatarData : NSNull())
+                aValueArray.append(aDriver.appointedSince != nil ? aDriver.appointedSince : NSNull())
+                aValueArray.append(aDriver.drivingExperience != nil ? aDriver.drivingExperience : NSNull())
+                aValueArray.append(aDriver.phoneNumber != nil ? aDriver.phoneNumber : NSNull())
+                aValueArray.append(aDriver.emailAddress != nil ? aDriver.emailAddress : NSNull())
+                aValueArray.append(aDriver.streetAddress != nil ? aDriver.streetAddress : NSNull())
+                aValueArray.append(aDriver.city != nil ? aDriver.city : NSNull())
+                aValueArray.append(aDriver.zip != nil ? aDriver.zip : NSNull())
+                
                 try self.executeQuery(anSqlQuery, values: aValueArray)
                 aDataManagerResponse.result = aDriver
             } else if self.requestType == IARequestType.ListDrivers {
