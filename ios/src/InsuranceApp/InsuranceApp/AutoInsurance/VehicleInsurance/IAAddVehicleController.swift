@@ -28,8 +28,7 @@ class IAAddVehicleController: IABaseController {
      */
     @IBAction func didSelectSubmitButton() {
         let aVehicle = IAVehicle()
-        aVehicle.licensePlateNumber = self.licensePlateNumberTextField.text
-        aVehicle.state = self.stateTextField.text
+        aVehicle.vin = self.licensePlateNumberTextField.text
         
         IAAppDelegate.currentAppDelegate.displayLoadingOverlay()
         self.dataManager.addVehicle(aVehicle)

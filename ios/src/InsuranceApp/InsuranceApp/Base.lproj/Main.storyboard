@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="yS7-Mb-0yN">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="yS7-Mb-0yN">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -37,11 +37,28 @@
             <string>Ubuntu-Medium</string>
             <string>Ubuntu-Medium</string>
             <string>Ubuntu-Medium</string>
+            <string>Ubuntu-Medium</string>
+            <string>Ubuntu-Medium</string>
+            <string>Ubuntu-Medium</string>
+            <string>Ubuntu-Medium</string>
+            <string>Ubuntu-Medium</string>
+            <string>Ubuntu-Medium</string>
         </mutableArray>
         <mutableArray key="Ubuntu-700.ttf">
             <string>Ubuntu-Bold</string>
         </mutableArray>
         <mutableArray key="Ubuntu-regular.ttf">
+            <string>Ubuntu</string>
+            <string>Ubuntu</string>
+            <string>Ubuntu</string>
+            <string>Ubuntu</string>
+            <string>Ubuntu</string>
+            <string>Ubuntu</string>
+            <string>Ubuntu</string>
+            <string>Ubuntu</string>
+            <string>Ubuntu</string>
+            <string>Ubuntu</string>
+            <string>Ubuntu</string>
             <string>Ubuntu</string>
             <string>Ubuntu</string>
             <string>Ubuntu</string>
@@ -2690,17 +2707,17 @@ Insurance</string>
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Year: " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rj7-Vj-5KK">
-                                <rect key="frame" x="41" y="85" width="42" height="21"/>
+                                <rect key="frame" x="41" y="85" width="135" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="k4w-uY-Nka"/>
-                                    <constraint firstAttribute="width" constant="42" id="mw8-95-SxX"/>
+                                    <constraint firstAttribute="width" constant="135" id="mw8-95-SxX"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Ubuntu-Medium" family="Ubuntu" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2016" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cma-l5-oz2">
-                                <rect key="frame" x="183" y="85" width="42" height="21"/>
+                                <rect key="frame" x="181" y="85" width="281" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="61S-ak-oBa"/>
                                     <constraint firstAttribute="width" constant="42" id="MQJ-i3-MOM"/>
@@ -2708,9 +2725,14 @@ Insurance</string>
                                 <fontDescription key="fontDescription" name="Ubuntu" family="Ubuntu" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="MQJ-i3-MOM"/>
+                                    </mask>
+                                </variation>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Company: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lTN-pk-24r">
-                                <rect key="frame" x="41" y="119" width="82" height="20"/>
+                                <rect key="frame" x="41" y="119" width="135" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20" id="uY6-ds-xEF"/>
                                     <constraint firstAttribute="width" constant="82" id="w5o-45-Ist"/>
@@ -2718,9 +2740,14 @@ Insurance</string>
                                 <fontDescription key="fontDescription" name="Ubuntu-Medium" family="Ubuntu" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="w5o-45-Ist"/>
+                                    </mask>
+                                </variation>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mercedes Benz" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TFa-uf-mia">
-                                <rect key="frame" x="183" y="119" width="125" height="21"/>
+                                <rect key="frame" x="181" y="119" width="281" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="God-ZV-X8c"/>
                                     <constraint firstAttribute="width" constant="125" id="bKv-pA-cG0"/>
@@ -2728,9 +2755,14 @@ Insurance</string>
                                 <fontDescription key="fontDescription" name="Ubuntu" family="Ubuntu" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="bKv-pA-cG0"/>
+                                    </mask>
+                                </variation>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Model Number:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4DW-YY-k52">
-                                <rect key="frame" x="41" y="153" width="123" height="20"/>
+                                <rect key="frame" x="41" y="153" width="135" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="123" id="1rZ-bN-7Jt"/>
                                     <constraint firstAttribute="height" constant="20" id="ADw-nW-1NN"/>
@@ -2738,21 +2770,29 @@ Insurance</string>
                                 <fontDescription key="fontDescription" name="Ubuntu-Medium" family="Ubuntu" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="1rZ-bN-7Jt"/>
+                                    </mask>
+                                </variation>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="S550" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ef1-BB-QgO">
-                                <rect key="frame" x="183" y="153" width="38" height="20"/>
+                                <rect key="frame" x="181" y="153" width="281" height="20"/>
                                 <fontDescription key="fontDescription" name="Ubuntu" family="Ubuntu" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Body Style:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Qu-hX-0o1">
-                                <rect key="frame" x="41" y="187" width="89" height="20"/>
+                                <rect key="frame" x="41" y="187" width="135" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="QlG-Hm-TLn"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="Ubuntu-Medium" family="Ubuntu" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hardtop" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qtL-Ab-Nz9">
-                                <rect key="frame" x="183" y="187" width="65" height="20"/>
+                                <rect key="frame" x="181" y="187" width="281" height="20"/>
                                 <fontDescription key="fontDescription" name="Ubuntu" family="Ubuntu" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -2866,7 +2906,7 @@ Insurance</string>
                                     <constraint firstItem="Udo-l6-aTz" firstAttribute="centerX" secondItem="9Xe-R6-yC6" secondAttribute="centerX" id="xOV-rH-8AQ"/>
                                 </constraints>
                             </view>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="BNF-C5-rTt" userLabel="Vehicle list Collection View ">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="BNF-C5-rTt" userLabel="Vehicle list Collection View ">
                                 <rect key="frame" x="55" y="357" width="658" height="140"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="140" id="XJg-Fn-IGm"/>
@@ -2911,14 +2951,14 @@ Insurance</string>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="backArrow" translatesAutoresizingMaskIntoConstraints="NO" id="a1m-ir-D09">
+                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="backArrow" translatesAutoresizingMaskIntoConstraints="NO" id="a1m-ir-D09">
                                 <rect key="frame" x="29" y="416" width="12" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="12" id="9am-6m-GN7"/>
                                     <constraint firstAttribute="height" constant="21" id="azi-AZ-ajc"/>
                                 </constraints>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="nextArrow" translatesAutoresizingMaskIntoConstraints="NO" id="bmG-Tb-5u5">
+                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="nextArrow" translatesAutoresizingMaskIntoConstraints="NO" id="bmG-Tb-5u5">
                                 <rect key="frame" x="727" y="416" width="12" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="12" id="9ed-AH-iYb"/>
@@ -2935,9 +2975,9 @@ Insurance</string>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="a8X-rM-Q2w">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a8X-rM-Q2w">
                                 <rect key="frame" x="160" y="518" width="553" height="336"/>
-                                <mutableString key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</mutableString>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <fontDescription key="fontDescription" name="Ubuntu" family="Ubuntu" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
@@ -2950,24 +2990,32 @@ Insurance</string>
                             <constraint firstItem="a8X-rM-Q2w" firstAttribute="leading" secondItem="GIo-su-Tl4" secondAttribute="trailing" constant="22" id="2mQ-qa-71y"/>
                             <constraint firstItem="kMw-r0-Tp7" firstAttribute="top" secondItem="euZ-fF-2k4" secondAttribute="bottom" constant="18" id="4Ai-S0-mVr"/>
                             <constraint firstItem="TFa-uf-mia" firstAttribute="leading" secondItem="lTN-pk-24r" secondAttribute="trailing" constant="60" id="5GQ-MH-2on"/>
+                            <constraint firstItem="cma-l5-oz2" firstAttribute="leading" secondItem="qtL-Ab-Nz9" secondAttribute="leading" id="5kK-MM-Ly7"/>
+                            <constraint firstItem="rj7-Vj-5KK" firstAttribute="trailing" secondItem="lTN-pk-24r" secondAttribute="trailing" id="7Ho-WN-jV7"/>
                             <constraint firstItem="vln-rp-RQd" firstAttribute="centerX" secondItem="96b-lG-Nvl" secondAttribute="centerX" id="7gk-nI-6lU"/>
                             <constraint firstAttribute="trailingMargin" secondItem="a8X-rM-Q2w" secondAttribute="trailing" constant="35" id="8Jl-Y2-EZN"/>
                             <constraint firstItem="4DW-YY-k52" firstAttribute="top" secondItem="lTN-pk-24r" secondAttribute="bottom" constant="14" id="AL5-Wa-Z4e"/>
                             <constraint firstItem="kMw-r0-Tp7" firstAttribute="top" secondItem="a8X-rM-Q2w" secondAttribute="bottom" constant="126" id="Byj-X8-Tnf"/>
                             <constraint firstItem="GIo-su-Tl4" firstAttribute="top" secondItem="BNF-C5-rTt" secondAttribute="bottom" constant="27" id="C0U-TD-LUO"/>
                             <constraint firstItem="BNF-C5-rTt" firstAttribute="top" secondItem="vln-rp-RQd" secondAttribute="bottom" constant="25" id="CAT-lH-gUN"/>
+                            <constraint firstItem="HIw-hg-vf8" firstAttribute="leading" secondItem="cma-l5-oz2" secondAttribute="trailing" constant="20" id="DTt-ve-4Pp"/>
                             <constraint firstItem="BNF-C5-rTt" firstAttribute="leading" secondItem="96b-lG-Nvl" secondAttribute="leadingMargin" constant="35" id="ERU-IP-82z"/>
+                            <constraint firstItem="rj7-Vj-5KK" firstAttribute="trailing" secondItem="6Qu-hX-0o1" secondAttribute="trailing" id="Fbq-Mn-Wau"/>
                             <constraint firstAttribute="trailingMargin" secondItem="HIw-hg-vf8" secondAttribute="trailing" constant="21" id="GSr-pX-kbB"/>
                             <constraint firstItem="Ihf-Yh-FxV" firstAttribute="top" secondItem="9DE-0J-d7M" secondAttribute="bottom" constant="44" id="Gbh-pE-Zyl"/>
                             <constraint firstItem="9Xe-R6-yC6" firstAttribute="centerY" secondItem="vln-rp-RQd" secondAttribute="centerY" id="Ih2-Tu-qb4"/>
-                            <constraint firstItem="cma-l5-oz2" firstAttribute="leading" secondItem="rj7-Vj-5KK" secondAttribute="trailing" constant="100" id="LFr-6Z-dqj"/>
+                            <constraint firstItem="cma-l5-oz2" firstAttribute="leading" secondItem="rj7-Vj-5KK" secondAttribute="trailing" constant="5" id="LFr-6Z-dqj"/>
                             <constraint firstItem="Ef1-BB-QgO" firstAttribute="leading" secondItem="4DW-YY-k52" secondAttribute="trailing" constant="19" id="MoI-de-obl"/>
                             <constraint firstItem="bmG-Tb-5u5" firstAttribute="centerY" secondItem="BNF-C5-rTt" secondAttribute="centerY" id="NZb-X4-FP4"/>
+                            <constraint firstItem="cma-l5-oz2" firstAttribute="leading" secondItem="TFa-uf-mia" secondAttribute="leading" id="Nyf-DD-t2C"/>
                             <constraint firstItem="6Qu-hX-0o1" firstAttribute="leading" secondItem="96b-lG-Nvl" secondAttribute="leadingMargin" constant="21" id="Rhw-Hv-TTw"/>
+                            <constraint firstItem="rj7-Vj-5KK" firstAttribute="trailing" secondItem="4DW-YY-k52" secondAttribute="trailing" id="S58-VS-9ee"/>
                             <constraint firstItem="lTN-pk-24r" firstAttribute="top" secondItem="rj7-Vj-5KK" secondAttribute="bottom" constant="13" id="S7b-XB-QJN"/>
                             <constraint firstItem="a1m-ir-D09" firstAttribute="centerY" secondItem="BNF-C5-rTt" secondAttribute="centerY" id="SYC-Yg-2m4"/>
+                            <constraint firstItem="cma-l5-oz2" firstAttribute="trailing" secondItem="TFa-uf-mia" secondAttribute="trailing" id="T4G-cv-TNQ"/>
                             <constraint firstItem="4DW-YY-k52" firstAttribute="leading" secondItem="96b-lG-Nvl" secondAttribute="leadingMargin" constant="21" id="Tko-v6-ifM"/>
                             <constraint firstItem="lTN-pk-24r" firstAttribute="leading" secondItem="96b-lG-Nvl" secondAttribute="leading" constant="41" id="ULC-Wf-S8d"/>
+                            <constraint firstItem="cma-l5-oz2" firstAttribute="trailing" secondItem="Ef1-BB-QgO" secondAttribute="trailing" id="UsR-3i-Squ"/>
                             <constraint firstItem="Ef1-BB-QgO" firstAttribute="centerY" secondItem="4DW-YY-k52" secondAttribute="centerY" id="V9d-fB-lp9"/>
                             <constraint firstItem="vln-rp-RQd" firstAttribute="top" secondItem="6Qu-hX-0o1" secondAttribute="bottom" constant="23" id="VzM-0Z-XZe"/>
                             <constraint firstAttribute="trailing" secondItem="euZ-fF-2k4" secondAttribute="trailing" constant="18" id="aEq-Rz-2Nf"/>
@@ -2975,6 +3023,8 @@ Insurance</string>
                             <constraint firstItem="rj7-Vj-5KK" firstAttribute="top" secondItem="Ihf-Yh-FxV" secondAttribute="bottom" constant="15" id="dbG-lH-6RL"/>
                             <constraint firstItem="vln-rp-RQd" firstAttribute="leading" secondItem="96b-lG-Nvl" secondAttribute="leadingMargin" constant="21" id="eox-yX-D1O"/>
                             <constraint firstItem="qtL-Ab-Nz9" firstAttribute="leading" secondItem="6Qu-hX-0o1" secondAttribute="trailing" constant="53" id="gHc-c0-7VK"/>
+                            <constraint firstItem="cma-l5-oz2" firstAttribute="leading" secondItem="Ef1-BB-QgO" secondAttribute="leading" id="grt-YB-KwK"/>
+                            <constraint firstItem="cma-l5-oz2" firstAttribute="trailing" secondItem="qtL-Ab-Nz9" secondAttribute="trailing" id="hFX-FR-oh7"/>
                             <constraint firstAttribute="trailingMargin" secondItem="9Xe-R6-yC6" secondAttribute="trailing" constant="21" id="ip2-Ii-9tS"/>
                             <constraint firstItem="rj7-Vj-5KK" firstAttribute="leading" secondItem="96b-lG-Nvl" secondAttribute="leading" constant="41" id="iyW-Lz-oZr"/>
                             <constraint firstItem="qtL-Ab-Nz9" firstAttribute="centerY" secondItem="6Qu-hX-0o1" secondAttribute="centerY" id="izv-1f-kFf"/>
@@ -2989,7 +3039,10 @@ Insurance</string>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
+                                <exclude reference="5GQ-MH-2on"/>
                                 <exclude reference="7gk-nI-6lU"/>
+                                <exclude reference="MoI-de-obl"/>
+                                <exclude reference="gHc-c0-7VK"/>
                             </mask>
                         </variation>
                     </view>

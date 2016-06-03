@@ -9,6 +9,7 @@
 import UIKit
 
 class IAVehicleDetailsController: IABaseController ,UICollectionViewDelegate, UICollectionViewDataSource{
+    var vehicle: IAVehicle!
     
     @IBOutlet weak var mainBgView: UIView!
     @IBOutlet weak var vinNoBgView: UIView!
@@ -29,13 +30,6 @@ class IAVehicleDetailsController: IABaseController ,UICollectionViewDelegate, UI
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.updateUI()
-        
-        self.vehicleListCollectionView.delegate = self
-        self.vehicleListCollectionView.dataSource = self
-    }
-    
-    func updateUI(){
         self.vehicleListCollectionView.backgroundColor = UIColor.clearColor()
         
         self.mainBgView.layer.cornerRadius = 10.0
@@ -49,7 +43,30 @@ class IAVehicleDetailsController: IABaseController ,UICollectionViewDelegate, UI
         
         self.collisionCoverageBgView.layer.cornerRadius = 10.0
         self.collisionCoverageBgView.layer.masksToBounds = true
-
+        
+        self.vehicleListCollectionView.delegate = self
+        self.vehicleListCollectionView.dataSource = self
+        
+        self.reloadAllData()
+    }
+    
+    
+    func reloadAllData() {
+        self.reloadAllView()
+    }
+    
+    
+    func reloadAllView() {
+        self.vehicleNameHeadingLabel.text = self.vehicle.title
+        self.yearLabel.text = self.vehicle.year
+        self.companyLabel.text = self.vehicle.company
+        self.modelNoLabel.text = self.vehicle.modelNumber
+        self.bodyStyleLabel.text = self.vehicle.bodyStyle
+        
+        self.vinNoLabel.text = self.vehicle.vin
+        self.descriptionTextView.text = self.vehicle.vehicleDescription
+        
+        self.vehicleListCollectionView.reloadData()
     }
     
     

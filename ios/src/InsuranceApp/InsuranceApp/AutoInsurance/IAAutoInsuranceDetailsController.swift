@@ -14,7 +14,7 @@ class IAAutoInsuranceDetailsController: IABaseController , UICollectionViewDeleg
     @IBOutlet weak var driverCollectionView: UICollectionView!
     var vehicleArray :Array<IAVehicle>!
     var driverArray :Array<IADriver>!
-    var selectedDriverIndex :Int!
+    var selectedListIndex :Int!
     
     @IBOutlet weak var payPremiumBtn: UIButton!
     @IBOutlet weak var fileClaimBtn: UIButton!
@@ -150,10 +150,10 @@ class IAAutoInsuranceDetailsController: IABaseController , UICollectionViewDeleg
             
             let aVehicle = self.vehicleArray[indexPath.item]
             
-            cell.vehicleImageView.image = aVehicle.photo
+            cell.vehicleImageView.image = aVehicle.photoOne
             
             // Use the outlet in our custom class to get a reference to the UILabel in the cell
-            cell.modelNoLabel.text = aVehicle.licensePlateNumber
+            cell.modelNoLabel.text = aVehicle.title
             return cell
         }else  {
             // get a reference to our storyboard cell
@@ -179,10 +179,11 @@ class IAAutoInsuranceDetailsController: IABaseController , UICollectionViewDeleg
             /**
              * Delegate method that will be called when Vehicle is tapped.
              */
+            self.selectedListIndex = indexPath.item
             self.performSegueWithIdentifier("AutoInsuranceDetailsToVehicleDetailsSegueID", sender: self)
             
         } else if collectionView.isEqual(self.driverCollectionView) {
-            self.selectedDriverIndex = indexPath.item
+            self.selectedListIndex = indexPath.item
             self.performSegueWithIdentifier("AutoInsuranceDetailsToDriverDetailsSegueID", sender: self)
         }
     }
@@ -192,9 +193,14 @@ class IAAutoInsuranceDetailsController: IABaseController , UICollectionViewDeleg
      * Method that will be called while performing segue and will handle setting required data for next controller.
      */
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "AutoInsuranceDetailsToDriverDetailsSegueID" {
-            let aDriver = self.driverArray[self.selectedDriverIndex]
-            self.selectedDriverIndex = nil
+        if segue.identifier == "AutoInsuranceDetailsToVehicleDetailsSegueID" {
+            let aVehicle = self.vehicleArray[self.selectedListIndex]
+            self.selectedListIndex = nil
+            
+            (segue.destinationViewController as! IAVehicleDetailsController).vehicle = aVehicle
+        } else if segue.identifier == "AutoInsuranceDetailsToDriverDetailsSegueID" {
+            let aDriver = self.driverArray[self.selectedListIndex]
+            self.selectedListIndex = nil
             
             (segue.destinationViewController as! IADriverDetailsController).driver = aDriver
         }
