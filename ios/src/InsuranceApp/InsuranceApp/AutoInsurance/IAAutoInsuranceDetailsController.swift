@@ -175,9 +175,13 @@ class IAAutoInsuranceDetailsController: IABaseController , UICollectionViewDeleg
     
      func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         // handle tap events
-        print("You selected cell #\(indexPath.item)!")
-        
-        if collectionView.isEqual(self.driverCollectionView) {
+        if collectionView == self.vehicleCollectionView {
+            /**
+             * Delegate method that will be called when Vehicle is tapped.
+             */
+            self.performSegueWithIdentifier("AutoInsuranceDetailsToVehicleDetailsSegueID", sender: self)
+            
+        } else if collectionView.isEqual(self.driverCollectionView) {
             self.selectedDriverIndex = indexPath.item
             self.performSegueWithIdentifier("AutoInsuranceDetailsToDriverDetailsSegueID", sender: self)
         }
@@ -195,5 +199,5 @@ class IAAutoInsuranceDetailsController: IABaseController , UICollectionViewDeleg
             (segue.destinationViewController as! IADriverDetailsController).driver = aDriver
         }
     }
-
+    
 }
