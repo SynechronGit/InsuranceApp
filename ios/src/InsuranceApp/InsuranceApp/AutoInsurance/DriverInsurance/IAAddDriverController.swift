@@ -97,6 +97,7 @@ class IAAddDriverController: IABaseController, UITextFieldDelegate, UIImagePicke
     
     func textFieldDidEndEditing(textField: UITextField) {
         if textField.isEqual(self.stateTextField) {
+            self.cityTextField.text = nil
             if self.stateTextField.text == "Florida" {
                 self.cityTextField.list = ["Jacksonville", "Miami", "Tampa", "Orlando", "St. Petersburg"]
             } else if self.stateTextField.text == "New York" {
