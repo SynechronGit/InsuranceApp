@@ -194,6 +194,18 @@ class IADataManager: NSObject {
                 aDataManagerResponse.result = aDashboardDetails
             } else if self.requestType == IARequestType.AddVehicle {
                 let aVehicle :IAVehicle = pRequest as! IAVehicle
+                var aPhotoOneData :NSData! = nil
+                if aVehicle.photoOne != nil {
+                    aPhotoOneData = UIImagePNGRepresentation(aVehicle.photoOne)
+                }
+                var aPhotoTwoData :NSData! = nil
+                if aVehicle.photoTwo != nil {
+                    aPhotoTwoData = UIImagePNGRepresentation(aVehicle.photoTwo)
+                }
+                var aPhotoThreeData :NSData! = nil
+                if aVehicle.photoThree != nil {
+                    aPhotoThreeData = UIImagePNGRepresentation(aVehicle.photoThree)
+                }
                 let anSqlQuery :String = "INSERT INTO vehicles (vin, year, company, model_number, body_style, description, photo_one, photo_two, photo_three) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)"
                 var aValueArray = Array<AnyObject>()
                 aValueArray.append(aVehicle.vin != nil ? aVehicle.vin : NSNull())
@@ -202,9 +214,9 @@ class IADataManager: NSObject {
                 aValueArray.append(aVehicle.modelNumber != nil ? aVehicle.modelNumber : NSNull())
                 aValueArray.append(aVehicle.bodyStyle != nil ? aVehicle.bodyStyle : NSNull())
                 aValueArray.append(aVehicle.vehicleDescription != nil ? aVehicle.vehicleDescription : NSNull())
-                aValueArray.append(aVehicle.photoOne != nil ? aVehicle.photoOne : NSNull())
-                aValueArray.append(aVehicle.photoTwo != nil ? aVehicle.photoTwo : NSNull())
-                aValueArray.append(aVehicle.photoThree != nil ? aVehicle.photoThree : NSNull())
+                aValueArray.append(aPhotoOneData != nil ? aPhotoOneData : NSNull())
+                aValueArray.append(aPhotoTwoData != nil ? aPhotoTwoData : NSNull())
+                aValueArray.append(aPhotoThreeData != nil ? aPhotoThreeData : NSNull())
                 try self.executeQuery(anSqlQuery, values: aValueArray)
                 aDataManagerResponse.result = aVehicle
             } else if self.requestType == IARequestType.ListVehicles {

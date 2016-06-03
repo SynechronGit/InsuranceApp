@@ -16,6 +16,8 @@ class IAVehicle: NSObject {
     var bodyStyle :String!
     var vin :String!
     var vehicleDescription :String!
+    var comprehensiveCoverage :String!
+    var collisionCoverage :String!
     
     
     var title :String! {

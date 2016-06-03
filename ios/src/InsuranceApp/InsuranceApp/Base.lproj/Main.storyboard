@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="yS7-Mb-0yN">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="yS7-Mb-0yN">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -2228,37 +2228,21 @@ Insurance</string>
                                             </mask>
                                         </variation>
                                     </view>
-                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vS5-g9-W7p">
-                                        <rect key="frame" x="152" y="430" width="322" height="2"/>
-                                        <color key="backgroundColor" red="0.46274509803921571" green="0.53333333333333333" blue="0.59215686274509804" alpha="1" colorSpace="calibratedRGB"/>
-                                    </view>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PiK-mq-Wop" customClass="IATextField" customModule="InsuranceApp" customModuleProvider="target">
                                         <rect key="frame" x="152" y="396" width="322" height="30"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LoE-1v-Qi3">
-                                        <rect key="frame" x="152" y="480" width="322" height="2"/>
-                                        <color key="backgroundColor" red="0.46274509803921571" green="0.53333333333333333" blue="0.59215686274509804" alpha="1" colorSpace="calibratedRGB"/>
-                                    </view>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zQy-Ga-mXM" customClass="IATextField" customModule="InsuranceApp" customModuleProvider="target">
                                         <rect key="frame" x="152" y="446" width="322" height="30"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cNZ-Os-5uI">
-                                        <rect key="frame" x="152" y="533" width="322" height="2"/>
-                                        <color key="backgroundColor" red="0.46274509803921571" green="0.53333333333333333" blue="0.59215686274509804" alpha="1" colorSpace="calibratedRGB"/>
-                                    </view>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ypt-gf-znz" customClass="IATextField" customModule="InsuranceApp" customModuleProvider="target">
                                         <rect key="frame" x="152" y="499" width="322" height="30"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uaY-R9-hrZ">
-                                        <rect key="frame" x="152" y="586" width="322" height="2"/>
-                                        <color key="backgroundColor" red="0.46274509803921571" green="0.53333333333333333" blue="0.59215686274509804" alpha="1" colorSpace="calibratedRGB"/>
-                                    </view>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xGH-XL-owG" customClass="IATextField" customModule="InsuranceApp" customModuleProvider="target">
                                         <rect key="frame" x="152" y="552" width="322" height="30"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -2492,10 +2476,14 @@ Insurance</string>
                         <outlet property="addBtn3" destination="Ws8-Yj-Rax" id="LLH-gW-bzE"/>
                         <outlet property="bosyStyleTextBox" destination="xGH-XL-owG" id="26w-4K-DpE"/>
                         <outlet property="collisionCoverageFirstOptionButton" destination="Bs7-Mf-6RE" id="pyH-RN-QoT"/>
+                        <outlet property="collisionCoverageFirstOptionLabel" destination="FrB-Ir-s3b" id="vQ9-wv-JAO"/>
                         <outlet property="collisionCoverageSecondOptionButton" destination="a1J-nq-An3" id="3N4-jh-vvq"/>
+                        <outlet property="collisionCoverageSecondOptionLabel" destination="jGl-9G-lU5" id="W2d-IH-EnP"/>
                         <outlet property="companyTextBox" destination="zQy-Ga-mXM" id="Jpx-Px-ey0"/>
                         <outlet property="comprehensiveCoverageFirstOptionButton" destination="hgO-6u-aRc" id="7y2-YS-1wn"/>
+                        <outlet property="comprehensiveCoverageFirstOptionLabel" destination="Pde-QE-cmm" id="1VL-fN-IXw"/>
                         <outlet property="comprehensiveCoverageSecondOptionButton" destination="Dcb-ik-S67" id="rei-bb-tC9"/>
+                        <outlet property="comprehensiveCoverageSecondOptionLabel" destination="s2H-ls-Y0J" id="WgO-19-7mN"/>
                         <outlet property="mainBgView" destination="Hdp-yJ-Xil" id="zlH-cP-kj7"/>
                         <outlet property="modelTextBox" destination="ypt-gf-znz" id="iVg-xv-REQ"/>
                         <outlet property="saveBtnView" destination="ipD-Jg-V8k" id="gNo-H6-4gY"/>

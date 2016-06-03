@@ -34,12 +34,14 @@ class IAAddVehicleController: IABaseController {
     @IBOutlet weak var bosyStyleTextBox: IATextField!
     
     @IBOutlet weak var comprehensiveCoverageFirstOptionButton: UIButton!
-    
+    @IBOutlet weak var comprehensiveCoverageFirstOptionLabel: UILabel!
     @IBOutlet weak var comprehensiveCoverageSecondOptionButton: UIButton!
+    @IBOutlet weak var comprehensiveCoverageSecondOptionLabel: UILabel!
     
     @IBOutlet weak var collisionCoverageFirstOptionButton: UIButton!
-    
+    @IBOutlet weak var collisionCoverageFirstOptionLabel: UILabel!
     @IBOutlet weak var collisionCoverageSecondOptionButton: UIButton!
+    @IBOutlet weak var collisionCoverageSecondOptionLabel: UILabel!
     
     var vinConfirmation : Bool = true
     var comprahensiveFirstOption : Bool = true
@@ -62,6 +64,7 @@ class IAAddVehicleController: IABaseController {
         
         self.updateUI()
     }
+    
     
     func updateUI(){
         self.mainBgView.layer.cornerRadius = 10.0
@@ -97,7 +100,6 @@ class IAAddVehicleController: IABaseController {
         self.companyTextBox.controller = self
         self.companyTextBox.list = ["Mercedes", "BMW", "Audi"]
         
-        
         self.modelTextBox.shouldDisplayAsDropdown = true
         self.modelTextBox.controller = self
         var modelArray = Array<String>()
@@ -107,10 +109,8 @@ class IAAddVehicleController: IABaseController {
         self.bosyStyleTextBox.shouldDisplayAsDropdown = true
         self.bosyStyleTextBox.controller = self
         self.bosyStyleTextBox.list = ["Hatchbacks", "Sedans", "Vans‎", "Hardtop"]
-        
-        
-        
     }
+    
     
     // MARK: - Selector Methods
     
@@ -119,23 +119,34 @@ class IAAddVehicleController: IABaseController {
      * @return Void
      */
      func didSelectAddButton() {
-//        let aVehicle = IAVehicle()
-//        aVehicle.licensePlateNumber = self.licensePlateNumberTextField.text
-//        aVehicle.state = self.stateTextField.text
-//        
-//        IAAppDelegate.currentAppDelegate.displayLoadingOverlay()
-//        self.dataManager.addVehicle(aVehicle)
-        print(collisionFirstOption)
+        let aVehicle = IAVehicle()
+        aVehicle.vin = "1LNLM82W8NY668232"
+        aVehicle.year = self.yearTextBox.text
+        aVehicle.company = self.companyTextBox.text
+        aVehicle.modelNumber = self.modelTextBox.text
+        aVehicle.bodyStyle = self.bosyStyleTextBox.text
+        if self.comprahensiveFirstOption == true {
+            aVehicle.comprehensiveCoverage = self.comprehensiveCoverageFirstOptionLabel.text
+        } else {
+            aVehicle.comprehensiveCoverage = self.comprehensiveCoverageSecondOptionLabel.text
+        }
+        if self.collisionFirstOption == true {
+            aVehicle.collisionCoverage = self.collisionCoverageFirstOptionLabel.text
+        } else {
+            aVehicle.collisionCoverage = self.collisionCoverageSecondOptionLabel.text
+        }
+        
+        IAAppDelegate.currentAppDelegate.displayLoadingOverlay()
+        self.dataManager.addVehicle(aVehicle)
         
     }
     
     func didSelectAddPhotoFirst() {
-    
+        
     }
     
     
     func didSelectAddPhotoSecond() {
-
         
     }
     
@@ -143,6 +154,7 @@ class IAAddVehicleController: IABaseController {
     func didSelectAddPhotoThird() {
         
     }
+    
     
     @IBAction func didSelectVinConfirmationYes(sender: AnyObject) {
         
