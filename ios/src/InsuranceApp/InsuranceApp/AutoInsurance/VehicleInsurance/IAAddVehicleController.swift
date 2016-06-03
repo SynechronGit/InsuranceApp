@@ -56,6 +56,8 @@ class IAAddVehicleController: IABaseController, UIImagePickerControllerDelegate,
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.title = "Add Vehicle"
+        
         let addPhoto1  = UITapGestureRecognizer(target: self, action: #selector(didSelectAddPhotoFirst))
         addBtn1.addGestureRecognizer(addPhoto1)
         

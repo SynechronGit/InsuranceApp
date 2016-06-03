@@ -29,6 +29,8 @@ class IAAutoInsuranceDetailsController: IABaseController , UICollectionViewDeleg
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.title = "Auto Insurance"
+        
         self.updateUI()
         
         self.vehicleCollectionView.delegate = self

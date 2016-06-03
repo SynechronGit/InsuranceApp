@@ -42,6 +42,8 @@ class IAAddDriverController: IABaseController, UITextFieldDelegate, UIImagePicke
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.title = "Add Driver"
+        
         self.addPhotoContainerView.layer.cornerRadius = IAConstants.dashboardSubviewCornerRadius
         self.addPhotoContainerView.layer.masksToBounds = true
         var aTapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(IAAddDriverController.didSelectAddPhotoContainerView))
