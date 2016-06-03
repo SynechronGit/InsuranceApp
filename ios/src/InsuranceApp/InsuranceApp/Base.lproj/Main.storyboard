@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="yS7-Mb-0yN">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="yS7-Mb-0yN">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -3700,6 +3700,7 @@ Insurance</string>
                         <outlet property="deductibleBoxView" destination="0iB-Cl-6FV" id="SUG-FQ-fsT"/>
                         <outlet property="driverCollectionView" destination="pEp-pb-umE" id="1MT-kZ-DYO"/>
                         <outlet property="limitBoxView" destination="can-vV-cw3" id="Cmu-XO-zKG"/>
+                        <outlet property="mainBGView" destination="onS-GF-jhc" id="yOO-44-Uyp"/>
                         <outlet property="payPremiumBtn" destination="gvj-Qh-7E9" id="WID-1f-Ams"/>
                         <outlet property="vehicleCollectionView" destination="XkW-pL-jU7" id="65v-1N-Txv"/>
                         <segue destination="kBD-qr-sbZ" kind="show" identifier="AutoInsuranceDetailsToVehicleDetailsSegueID" id="B8R-i4-nHc"/>
