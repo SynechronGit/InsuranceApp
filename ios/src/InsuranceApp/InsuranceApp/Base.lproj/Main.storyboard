@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="yS7-Mb-0yN">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="yS7-Mb-0yN">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -3105,6 +3105,36 @@ Insurance</string>
                         <rect key="frame" x="0.0" y="44" width="768" height="980"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="onS-GF-jhc">
+                                <rect key="frame" x="18" y="18" width="732" height="944"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="K5I-fS-9uS">
+                                        <rect key="frame" x="0.0" y="934" width="732" height="10"/>
+                                        <color key="backgroundColor" red="0.65490196079999996" green="0.3803921569" blue="0.71764705880000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="10" id="XHL-BO-Zit"/>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="8" id="epR-1l-iEK"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JUR-IR-0BD">
+                                        <rect key="frame" x="0.0" y="0.0" width="732" height="10"/>
+                                        <color key="backgroundColor" red="0.65490196079999996" green="0.3803921569" blue="0.71764705880000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="8" id="E4E-bG-eSq"/>
+                                            <constraint firstAttribute="height" constant="10" id="Wbn-cx-HLw"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.93725490199999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="K5I-fS-9uS" firstAttribute="leading" secondItem="onS-GF-jhc" secondAttribute="leading" id="7fH-IM-b9Y"/>
+                                    <constraint firstItem="JUR-IR-0BD" firstAttribute="leading" secondItem="onS-GF-jhc" secondAttribute="leading" id="N1r-Bf-dBg"/>
+                                    <constraint firstAttribute="trailing" secondItem="K5I-fS-9uS" secondAttribute="trailing" id="SFj-f5-TsB"/>
+                                    <constraint firstItem="JUR-IR-0BD" firstAttribute="top" secondItem="onS-GF-jhc" secondAttribute="top" id="exg-WM-lHT"/>
+                                    <constraint firstAttribute="bottom" secondItem="K5I-fS-9uS" secondAttribute="bottom" id="iml-3I-zw3"/>
+                                    <constraint firstAttribute="trailing" secondItem="JUR-IR-0BD" secondAttribute="trailing" id="zEr-8k-JTh"/>
+                                </constraints>
+                            </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Austin Auto Insurance Pvt. Ltd" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PbS-aO-8r1">
                                 <rect key="frame" x="42" y="48" width="320" height="23"/>
                                 <constraints>
@@ -3379,7 +3409,7 @@ Insurance</string>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="NrZ-bY-rhV">
                                 <rect key="frame" x="194" y="384" width="135" height="2"/>
-                                <color key="backgroundColor" red="0.85098039215686272" green="0.48627450980392156" blue="0.4823529411764706" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.6470588235294118" green="0.37647058823529411" blue="0.74117647058823533" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="135" id="6x7-Sd-sis"/>
                                     <constraint firstAttribute="height" constant="2" id="T4D-RO-q6z"/>
@@ -3387,7 +3417,7 @@ Insurance</string>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="WTt-7O-3ck">
                                 <rect key="frame" x="439" y="384" width="135" height="2"/>
-                                <color key="backgroundColor" red="0.85098039219999999" green="0.48627450979999998" blue="0.4823529412" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.64705882349999999" green="0.37647058820000001" blue="0.74117647060000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="2" id="1xs-mx-mjy"/>
                                     <constraint firstAttribute="width" constant="135" id="Oey-U5-Ea6"/>
@@ -3416,7 +3446,7 @@ Insurance</string>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hXE-id-Vn5">
                                 <rect key="frame" x="194" y="637" width="135" height="2"/>
-                                <color key="backgroundColor" red="0.85098039219999999" green="0.48627450979999998" blue="0.4823529412" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.64705882349999999" green="0.37647058820000001" blue="0.74117647060000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="2" id="e6Z-JB-ZES"/>
                                     <constraint firstAttribute="width" constant="135" id="oaf-CZ-4w6"/>
@@ -3424,7 +3454,7 @@ Insurance</string>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7fP-J0-cbp">
                                 <rect key="frame" x="445" y="637" width="135" height="2"/>
-                                <color key="backgroundColor" red="0.85098039219999999" green="0.48627450979999998" blue="0.4823529412" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.64705882349999999" green="0.37647058820000001" blue="0.74117647060000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="2" id="9a9-4b-DEn"/>
                                     <constraint firstAttribute="width" constant="135" id="sRF-aD-gbg"/>
@@ -3600,7 +3630,7 @@ Insurance</string>
                                 </constraints>
                             </imageView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.12549019610000001" green="0.1058823529" blue="0.1764705882" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="szN-qR-AUw" firstAttribute="top" secondItem="zQH-Al-JVN" secondAttribute="bottom" constant="162" id="0Hk-DK-Ufb"/>
                             <constraint firstItem="XkW-pL-jU7" firstAttribute="leading" secondItem="Ess-Gg-QYm" secondAttribute="trailing" constant="12" id="0Pb-Gw-Zle"/>
@@ -3632,10 +3662,12 @@ Insurance</string>
                             <constraint firstItem="2Kq-ch-ZHB" firstAttribute="leading" secondItem="gvj-Qh-7E9" secondAttribute="trailing" constant="25" id="Qja-2u-Awp"/>
                             <constraint firstItem="2Kq-ch-ZHB" firstAttribute="top" secondItem="zQH-Al-JVN" secondAttribute="bottom" constant="162" id="Qmm-ED-0Ht"/>
                             <constraint firstItem="gvj-Qh-7E9" firstAttribute="leading" secondItem="8jM-Za-fFH" secondAttribute="leading" constant="44" id="S93-N9-Wkt"/>
+                            <constraint firstItem="onS-GF-jhc" firstAttribute="leading" secondItem="8jM-Za-fFH" secondAttribute="leading" constant="18" id="Szp-1L-8f4"/>
                             <constraint firstItem="Iac-BQ-8yj" firstAttribute="leading" secondItem="WTt-7O-3ck" secondAttribute="trailing" constant="26" id="VK0-k9-T9F"/>
                             <constraint firstItem="DyD-hG-YYZ" firstAttribute="leading" secondItem="XkW-pL-jU7" secondAttribute="trailing" constant="12" id="Vaf-Pd-k6D"/>
                             <constraint firstItem="yD3-zy-KP5" firstAttribute="top" secondItem="pEp-pb-umE" secondAttribute="bottom" constant="-96" id="XLg-IC-TEL"/>
                             <constraint firstItem="qlu-0d-cru" firstAttribute="centerY" secondItem="7fP-J0-cbp" secondAttribute="centerY" id="ZDg-IL-4br"/>
+                            <constraint firstAttribute="trailing" secondItem="onS-GF-jhc" secondAttribute="trailing" constant="18" id="aYT-C1-nIL"/>
                             <constraint firstItem="Ess-Gg-QYm" firstAttribute="centerY" secondItem="XkW-pL-jU7" secondAttribute="centerY" constant="-15" id="c2t-oJ-jEg"/>
                             <constraint firstItem="can-vV-cw3" firstAttribute="leading" secondItem="442-U0-cdq" secondAttribute="trailing" constant="25" id="dVx-BV-QBg"/>
                             <constraint firstItem="Iac-BQ-8yj" firstAttribute="trailing" secondItem="7U9-op-vo6" secondAttribute="trailing" id="dv7-ol-ZOy"/>
@@ -3652,9 +3684,11 @@ Insurance</string>
                             <constraint firstItem="hob-zL-Nva" firstAttribute="centerY" secondItem="NrZ-bY-rhV" secondAttribute="centerY" id="maQ-Lg-AwC"/>
                             <constraint firstAttribute="trailing" secondItem="Iac-BQ-8yj" secondAttribute="trailing" constant="55" id="mvF-Gu-U1i"/>
                             <constraint firstItem="hob-zL-Nva" firstAttribute="top" secondItem="can-vV-cw3" secondAttribute="bottom" constant="30" id="nHe-0F-dHn"/>
+                            <constraint firstItem="PfJ-CK-65L" firstAttribute="top" secondItem="onS-GF-jhc" secondAttribute="bottom" constant="18" id="oHC-UX-wnz"/>
                             <constraint firstItem="pEp-pb-umE" firstAttribute="leading" secondItem="8jM-Za-fFH" secondAttribute="leadingMargin" constant="35" id="oJl-zg-Pfj"/>
                             <constraint firstItem="7U9-op-vo6" firstAttribute="top" secondItem="XkW-pL-jU7" secondAttribute="bottom" constant="44" id="oi6-Ce-L1Q"/>
                             <constraint firstItem="qlu-0d-cru" firstAttribute="centerY" secondItem="hXE-id-Vn5" secondAttribute="centerY" id="pv3-Mz-bW6"/>
+                            <constraint firstItem="onS-GF-jhc" firstAttribute="top" secondItem="zQH-Al-JVN" secondAttribute="bottom" constant="18" id="qt0-fS-L8U"/>
                             <constraint firstItem="KkZ-G7-rxQ" firstAttribute="top" secondItem="zQH-Al-JVN" secondAttribute="bottom" constant="45" id="r09-Fi-nic"/>
                             <constraint firstItem="WTt-7O-3ck" firstAttribute="leading" secondItem="hob-zL-Nva" secondAttribute="trailing" id="rZW-Yc-Qkf"/>
                             <constraint firstItem="CAy-dF-mpm" firstAttribute="centerY" secondItem="8YR-8L-BE5" secondAttribute="centerY" id="szH-fv-LoZ"/>
@@ -3691,6 +3725,7 @@ Insurance</string>
                         <outlet property="deductibleBoxView" destination="0iB-Cl-6FV" id="SUG-FQ-fsT"/>
                         <outlet property="driverCollectionView" destination="pEp-pb-umE" id="1MT-kZ-DYO"/>
                         <outlet property="limitBoxView" destination="can-vV-cw3" id="Cmu-XO-zKG"/>
+                        <outlet property="mainBGView" destination="onS-GF-jhc" id="yOO-44-Uyp"/>
                         <outlet property="payPremiumBtn" destination="gvj-Qh-7E9" id="WID-1f-Ams"/>
                         <outlet property="vehicleCollectionView" destination="XkW-pL-jU7" id="65v-1N-Txv"/>
                         <segue destination="kBD-qr-sbZ" kind="show" identifier="AutoInsuranceDetailsToVehicleDetailsSegueID" id="B8R-i4-nHc"/>

@@ -16,6 +16,7 @@ class IAAutoInsuranceDetailsController: IABaseController , UICollectionViewDeleg
     var driverArray :Array<IADriver>!
     var selectedListIndex :Int!
     
+    @IBOutlet weak var mainBGView: UIView!
     @IBOutlet weak var payPremiumBtn: UIButton!
     @IBOutlet weak var fileClaimBtn: UIButton!
     @IBOutlet weak var viewPolicyBtn: UIButton!
@@ -46,8 +47,9 @@ class IAAutoInsuranceDetailsController: IABaseController , UICollectionViewDeleg
     
     
     func updateUI(){
-        
-        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "mainBG.png")!)
+        self.mainBGView.layer.cornerRadius = 10.0
+        self.mainBGView.layer.masksToBounds = true
+
         dateView.backgroundColor = UIColor(patternImage: UIImage(named: "dateBg")!)
         
         vehicleCollectionView.backgroundColor = UIColor.clearColor()
