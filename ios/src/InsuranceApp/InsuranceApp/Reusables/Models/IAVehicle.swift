@@ -6,7 +6,21 @@
 import UIKit
 
 class IAVehicle: NSObject {
-    var state :String!
-    var licensePlateNumber :String!
-    var photo :UIImage!
+    var photoOne :UIImage!
+    var photoTwo :UIImage!
+    var photoThree :UIImage!
+    
+    var year :String!
+    var company :String!
+    var modelNumber :String!
+    var bodyStyle :String!
+    var vin :String!
+    var vehicleDescription :String!
+    
+    
+    var title :String! {
+        get {
+            return self.company + " " + self.modelNumber
+        }
+    }
 }

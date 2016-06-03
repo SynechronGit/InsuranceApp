@@ -190,27 +190,52 @@ class IADataManager: NSObject {
                 aDataManagerResponse.result = aDashboardDetails
             } else if self.requestType == IARequestType.AddVehicle {
                 let aVehicle :IAVehicle = pRequest as! IAVehicle
-                let anSqlQuery :String = "INSERT INTO vehicles (license_plate_number, state) VALUES (?, ?)"
+                let anSqlQuery :String = "INSERT INTO vehicles (vin, year, company, model_number, body_style, description, photo_one, photo_two, photo_three) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)"
                 var aValueArray = Array<AnyObject>()
-                aValueArray.append(aVehicle.licensePlateNumber != nil ? aVehicle.licensePlateNumber : NSNull())
-                aValueArray.append(aVehicle.state != nil ? aVehicle.state : NSNull())
+                aValueArray.append(aVehicle.vin != nil ? aVehicle.vin : NSNull())
+                aValueArray.append(aVehicle.year != nil ? aVehicle.year : NSNull())
+                aValueArray.append(aVehicle.company != nil ? aVehicle.company : NSNull())
+                aValueArray.append(aVehicle.modelNumber != nil ? aVehicle.modelNumber : NSNull())
+                aValueArray.append(aVehicle.bodyStyle != nil ? aVehicle.bodyStyle : NSNull())
+                aValueArray.append(aVehicle.vehicleDescription != nil ? aVehicle.vehicleDescription : NSNull())
+                aValueArray.append(aVehicle.photoOne != nil ? aVehicle.photoOne : NSNull())
+                aValueArray.append(aVehicle.photoTwo != nil ? aVehicle.photoTwo : NSNull())
+                aValueArray.append(aVehicle.photoThree != nil ? aVehicle.photoThree : NSNull())
                 try self.executeQuery(anSqlQuery, values: aValueArray)
                 aDataManagerResponse.result = aVehicle
             } else if self.requestType == IARequestType.ListVehicles {
-                let anSqlQuery :String = "SELECT license_plate_number, state, photo FROM vehicles"
+                let anSqlQuery :String = "SELECT vin, year, company, model_number, body_style, description, photo_one, photo_two, photo_three FROM vehicles"
                 let anSqlResult = try self.executeQuery(anSqlQuery, values: nil)
                 if anSqlResult != nil && anSqlResult.count > 0 {
                     var aVehicleArray :Array<IAVehicle>! = Array<IAVehicle>()
                     for var aDBVehicleDict :[String:AnyObject] in anSqlResult {
                         let aDBVehicle = IAVehicle()
-                        if aDBVehicleDict["license_plate_number"] is String {
-                            aDBVehicle.licensePlateNumber = aDBVehicleDict["license_plate_number"] as! String
+                        if aDBVehicleDict["vin"] is String {
+                            aDBVehicle.vin = aDBVehicleDict["vin"] as! String
                         }
-                        if aDBVehicleDict["state"] is String {
-                            aDBVehicle.state = aDBVehicleDict["state"] as! String
+                        if aDBVehicleDict["year"] is String {
+                            aDBVehicle.year = aDBVehicleDict["year"] as! String
                         }
-                        if aDBVehicleDict["photo"] is NSData {
-                            aDBVehicle.photo = UIImage(data: aDBVehicleDict["photo"] as! NSData)
+                        if aDBVehicleDict["company"] is String {
+                            aDBVehicle.company = aDBVehicleDict["company"] as! String
+                        }
+                        if aDBVehicleDict["model_number"] is String {
+                            aDBVehicle.modelNumber = aDBVehicleDict["model_number"] as! String
+                        }
+                        if aDBVehicleDict["body_style"] is String {
+                            aDBVehicle.bodyStyle = aDBVehicleDict["body_style"] as! String
+                        }
+                        if aDBVehicleDict["description"] is String {
+                            aDBVehicle.vehicleDescription = aDBVehicleDict["description"] as! String
+                        }
+                        if aDBVehicleDict["photo_one"] is NSData {
+                            aDBVehicle.photoOne = UIImage(data: aDBVehicleDict["photo_one"] as! NSData)
+                        }
+                        if aDBVehicleDict["photo_two"] is NSData {
+                            aDBVehicle.photoTwo = UIImage(data: aDBVehicleDict["photo_two"] as! NSData)
+                        }
+                        if aDBVehicleDict["photo_three"] is NSData {
+                            aDBVehicle.photoThree = UIImage(data: aDBVehicleDict["photo_three"] as! NSData)
                         }
                         aVehicleArray.append(aDBVehicle)
                     }
@@ -225,17 +250,16 @@ class IADataManager: NSObject {
                 var aValueArray = Array<AnyObject>()
                 aValueArray.append(aDriver.firstName != nil ? aDriver.firstName : NSNull())
                 aValueArray.append(aDriver.lastName != nil ? aDriver.lastName : NSNull())
-                aValueArray.append(aDriver.relationship != nil ? aDriver.relationship : NSNull())
                 aValueArray.append(aDriver.dob != nil ? aDriver.dob : NSNull())
                 aValueArray.append(aDriver.state != nil ? aDriver.state : NSNull())
-                aValueArray.append(aDriver.license != nil ? aDriver.license : NSNull())
-                aValueArray.append(aDriver.type != nil ? aDriver.type : NSNull())
+                aValueArray.append(aDriver.licenseNumber != nil ? aDriver.licenseNumber : NSNull())
+                aValueArray.append(aDriver.employeeType != nil ? aDriver.employeeType : NSNull())
                 aValueArray.append(aDriver.status != nil ? aDriver.status : NSNull())
                 aValueArray.append(aDriver.avatar != nil ? aDriver.avatar : NSNull())
                 try self.executeQuery(anSqlQuery, values: aValueArray)
                 aDataManagerResponse.result = aDriver
             } else if self.requestType == IARequestType.ListDrivers {
-                let anSqlQuery :String = "SELECT first_name, last_name, relationship, dob, state, license, type, status, avatar FROM drivers"
+                let anSqlQuery :String = "SELECT first_name, last_name, relationship, dob, state, license, type, status, avatar, appointed_since, driving_experience, phone_number, email_address, street_address, city, state, zip FROM drivers"
                 let anSqlResult = try self.executeQuery(anSqlQuery, values: nil)
                 if anSqlResult != nil && anSqlResult.count > 0 {
                     var aDriverArray :Array<IADriver>! = Array<IADriver>()
@@ -243,9 +267,6 @@ class IADataManager: NSObject {
                         let aDBDriver = IADriver()
                         aDBDriver.firstName = aDBDriverDict["first_name"] as! String
                         aDBDriver.lastName = aDBDriverDict["last_name"] as! String
-                        if aDBDriverDict["relationship"] is String {
-                            aDBDriver.relationship = aDBDriverDict["relationship"] as! String
-                        }
                         if aDBDriverDict["dob"] is String {
                             aDBDriver.dob   = aDBDriverDict["dob"] as! String
                         }
@@ -253,16 +274,40 @@ class IADataManager: NSObject {
                             aDBDriver.state = aDBDriverDict["state"] as! String
                         }
                         if aDBDriverDict["license"] is String {
-                            aDBDriver.license = aDBDriverDict["license"] as! String
+                            aDBDriver.licenseNumber = aDBDriverDict["license"] as! String
                         }
                         if aDBDriverDict["type"] is String {
-                            aDBDriver.type = aDBDriverDict["type"] as! String
+                            aDBDriver.employeeType = aDBDriverDict["type"] as! String
                         }
                         if aDBDriverDict["status"] is String {
                             aDBDriver.status = aDBDriverDict["status"] as! String
                         }
                         if aDBDriverDict["avatar"] is NSData {
                             aDBDriver.avatar = UIImage(data: aDBDriverDict["avatar"] as! NSData)
+                        }
+                        if aDBDriverDict["appointed_since"] is String {
+                            aDBDriver.appointedSince = aDBDriverDict["appointed_since"] as! String
+                        }
+                        if aDBDriverDict["driving_experience"] is String {
+                            aDBDriver.drivingExperience = aDBDriverDict["driving_experience"] as! String
+                        }
+                        if aDBDriverDict["phone_number"] is String {
+                            aDBDriver.phoneNumber = aDBDriverDict["phone_number"] as! String
+                        }
+                        if aDBDriverDict["email_address"] is String {
+                            aDBDriver.emailAddress = aDBDriverDict["email_address"] as! String
+                        }
+                        if aDBDriverDict["street_address"] is String {
+                            aDBDriver.streetAddress = aDBDriverDict["street_address"] as! String
+                        }
+                        if aDBDriverDict["city"] is String {
+                            aDBDriver.city = aDBDriverDict["city"] as! String
+                        }
+                        if aDBDriverDict["state"] is String {
+                            aDBDriver.state = aDBDriverDict["state"] as! String
+                        }
+                        if aDBDriverDict["zip"] is String {
+                            aDBDriver.zip = aDBDriverDict["zip"] as! String
                         }
                         aDriverArray.append(aDBDriver)
                     }
