@@ -74,20 +74,36 @@ class IAVehicleDetailsController: IABaseController ,UICollectionViewDelegate, UI
     
     // tell the collection view how many cells to make
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        var aReturnVal :Int = 0
         
-        return 1
+        if self.vehicle.photoOne != nil {
+            aReturnVal = aReturnVal + 1
+        }
+        if self.vehicle.photoTwo != nil {
+            aReturnVal = aReturnVal + 1
+        }
+        if self.vehicle.photoThree != nil {
+            aReturnVal = aReturnVal + 1
+        }
+        
+        return aReturnVal
         
     }
     
     // make a cell for each cell index path
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        
-            // get a reference to our storyboard cell
-            let cell = collectionView.dequeueReusableCellWithReuseIdentifier("vehicleListCell", forIndexPath: indexPath) as! IAVehicleListCell
+        // get a reference to our storyboard cell
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("vehicleListCell", forIndexPath: indexPath) as! IAVehicleListCell
             
-            //let aVehicle = self.vehicleData[indexPath.item]
+        if indexPath.row == 0 {
+            cell.vehicleImageView.image = self.vehicle.photoOne
+        } else if indexPath.row == 1 {
+            cell.vehicleImageView.image = self.vehicle.photoTwo
+        } else if indexPath.row == 2 {
+            cell.vehicleImageView.image = self.vehicle.photoThree
+        }
         
-            return cell
+        return cell
     }
     
     

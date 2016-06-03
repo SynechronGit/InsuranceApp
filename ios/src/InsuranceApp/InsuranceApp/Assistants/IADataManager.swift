@@ -250,7 +250,6 @@ class IADataManager: NSObject {
                 var aValueArray = Array<AnyObject>()
                 aValueArray.append(aDriver.firstName != nil ? aDriver.firstName : NSNull())
                 aValueArray.append(aDriver.lastName != nil ? aDriver.lastName : NSNull())
-                aValueArray.append(aDriver.relationship != nil ? aDriver.relationship : NSNull())
                 aValueArray.append(aDriver.dob != nil ? aDriver.dob : NSNull())
                 aValueArray.append(aDriver.state != nil ? aDriver.state : NSNull())
                 aValueArray.append(aDriver.licenseNumber != nil ? aDriver.licenseNumber : NSNull())
@@ -268,9 +267,6 @@ class IADataManager: NSObject {
                         let aDBDriver = IADriver()
                         aDBDriver.firstName = aDBDriverDict["first_name"] as! String
                         aDBDriver.lastName = aDBDriverDict["last_name"] as! String
-                        if aDBDriverDict["relationship"] is String {
-                            aDBDriver.relationship = aDBDriverDict["relationship"] as! String
-                        }
                         if aDBDriverDict["dob"] is String {
                             aDBDriver.dob   = aDBDriverDict["dob"] as! String
                         }

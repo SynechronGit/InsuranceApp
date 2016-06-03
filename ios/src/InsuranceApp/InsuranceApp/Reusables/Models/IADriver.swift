@@ -22,7 +22,6 @@ class IADriver:NSObject {
     var zip :String!
     var dob :String!
     var status :String!
-    var relationship:String!
     
     
     var fullName:String! {
