@@ -69,6 +69,18 @@ class IAAddDriverController: IABaseController, UITextFieldDelegate, UIImagePicke
         self.stateTextField.delegate = self
         self.stateTextField.list = ["Florida", "New York", "California"]
         
+        self.dobTextField.shouldDisplayAsDatePicker = true
+        self.dobTextField.controller = self
+        self.dobTextField.delegate = self
+        
+        self.appointedSinceTextField.shouldDisplayAsDropdown = true
+        self.appointedSinceTextField.controller = self
+        var anAppointedSinceArray = Array<String>()
+        for anIndex:Int in 1916 ..< 2016 {
+            anAppointedSinceArray.append(String(format: "%d", anIndex + 1))
+        }
+        self.appointedSinceTextField.list = anAppointedSinceArray
+        
         self.drivingExperienceTextField.shouldDisplayAsDropdown = true
         self.drivingExperienceTextField.controller = self
         var aDrivingExperienceArray = Array<String>()
