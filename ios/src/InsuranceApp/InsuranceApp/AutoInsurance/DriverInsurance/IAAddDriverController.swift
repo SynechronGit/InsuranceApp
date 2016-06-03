@@ -9,12 +9,19 @@ import UIKit
 /**
  * Controller for Add Driver screen.
  */
-class IAAddDriverController: IABaseController, UITextFieldDelegate {
+class IAAddDriverController: IABaseController, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     @IBOutlet weak var addPhotoContainerView: UIView!
     @IBOutlet weak var driverPhotoImageView: UIImageView!
+    @IBOutlet weak var driverPhotoIconImageView: UIImageView!
+    @IBOutlet weak var driverPhotoLabel: UILabel!
     
     @IBOutlet weak var takeLicensePhotoContainerView: UIView!
     @IBOutlet weak var licensePhotoImageView: UIImageView!
+    @IBOutlet weak var licensePhotoIconImageView: UIImageView!
+    @IBOutlet weak var licensePhotoLabel: UILabel!
+    
+    var imagePickerController :UIImagePickerController!
+    weak var imagePickerDestinationImageView: UIImageView!
     
     @IBOutlet weak var nameTextField: IATextField!
     @IBOutlet weak var phoneNumberTextField: IATextField!
@@ -37,13 +44,19 @@ class IAAddDriverController: IABaseController, UITextFieldDelegate {
         
         self.addPhotoContainerView.layer.cornerRadius = IAConstants.dashboardSubviewCornerRadius
         self.addPhotoContainerView.layer.masksToBounds = true
+        var aTapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(IAAddDriverController.didSelectAddPhotoContainerView))
+        aTapGestureRecognizer.cancelsTouchesInView = false
+        self.addPhotoContainerView.addGestureRecognizer(aTapGestureRecognizer)
         
         self.takeLicensePhotoContainerView.layer.cornerRadius = IAConstants.dashboardSubviewCornerRadius
         self.takeLicensePhotoContainerView.layer.masksToBounds = true
+        aTapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(IAAddDriverController.didSelectTakeLicensePhotoContainerView))
+        aTapGestureRecognizer.cancelsTouchesInView = false
+        self.takeLicensePhotoContainerView.addGestureRecognizer(aTapGestureRecognizer)
         
         self.addContainerView.layer.cornerRadius = IAConstants.dashboardSubviewCornerRadius
         self.addContainerView.layer.masksToBounds = true
-        let aTapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(IAAddDriverController.didSelectAddButton(_:)))
+        aTapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(IAAddDriverController.didSelectAddButton(_:)))
         aTapGestureRecognizer.cancelsTouchesInView = false
         self.addContainerView.addGestureRecognizer(aTapGestureRecognizer)
         
@@ -83,7 +96,31 @@ class IAAddDriverController: IABaseController, UITextFieldDelegate {
             }
         }
     }
-
+    
+    
+    func didSelectAddPhotoContainerView() {
+        self.imagePickerDestinationImageView = self.driverPhotoImageView
+        self.displayImagePicker()
+    }
+    
+    
+    func didSelectTakeLicensePhotoContainerView() {
+        self.imagePickerDestinationImageView = self.licensePhotoImageView
+        self.displayImagePicker()
+    }
+    
+    
+    func displayImagePicker() {
+        if self.imagePickerController == nil {
+            self.imagePickerController = UIImagePickerController()
+        }
+        self.imagePickerController.allowsEditing = false
+        self.imagePickerController.sourceType = .PhotoLibrary
+        self.imagePickerController.delegate = self
+        self.imagePickerController.modalPresentationStyle = UIModalPresentationStyle.FormSheet
+        self.presentViewController(self.imagePickerController, animated: true, completion: nil)
+    }
+    
     
     @IBAction func didSelectAddButton(sender: AnyObject) {
         do {
@@ -124,6 +161,28 @@ class IAAddDriverController: IABaseController, UITextFieldDelegate {
         } catch {
             self.displayMessage(message: "Add driver error.", type: IAMessageType.Error)
         }
+    }
+    
+    
+    // MARK: - UIImagePickerControllerDelegate Methods
+    
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
+        if let aPickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
+            if self.imagePickerDestinationImageView != nil && self.imagePickerDestinationImageView.isEqual(self.driverPhotoImageView)  {
+                self.driverPhotoImageView.image = aPickedImage
+                self.driverPhotoIconImageView.hidden = true
+                self.driverPhotoLabel.hidden = true
+            } else if self.imagePickerDestinationImageView != nil && self.imagePickerDestinationImageView.isEqual(self.licensePhotoImageView)  {
+                self.licensePhotoImageView.image = aPickedImage
+                self.licensePhotoIconImageView.hidden = true
+                self.licensePhotoLabel.hidden = true
+            }
+        }
+        picker.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    func imagePickerControllerDidCancel(picker: UIImagePickerController) {
+        picker.dismissViewControllerAnimated(true, completion: nil)
     }
     
     

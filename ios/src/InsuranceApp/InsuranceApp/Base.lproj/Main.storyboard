@@ -2568,7 +2568,7 @@ Insurance</string>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rb4-dd-NoX">
                                         <rect key="frame" x="23" y="31" width="143" height="139"/>
                                         <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="lXj-9H-Tx3" userLabel="driverPhotoImageView">
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="lXj-9H-Tx3" userLabel="driverPhotoImageView">
                                                 <rect key="frame" x="0.0" y="0.0" width="143" height="139"/>
                                             </imageView>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="q24-g0-LhW">
@@ -2624,7 +2624,7 @@ Insurance</string>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XFb-aA-Mwa">
                                         <rect key="frame" x="191" y="31" width="217" height="139"/>
                                         <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="GpR-lT-gQY" userLabel="licensePhotoImageView">
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="GpR-lT-gQY" userLabel="licensePhotoImageView">
                                                 <rect key="frame" x="0.0" y="0.0" width="217" height="139"/>
                                             </imageView>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5O5-0Q-apN">
@@ -3008,12 +3008,16 @@ Insurance</string>
                         <outlet property="appointedSinceTextField" destination="pfi-G0-80x" id="LxP-f3-Emh"/>
                         <outlet property="cityTextField" destination="4Kd-dT-UEU" id="Onc-aQ-d6r"/>
                         <outlet property="dobTextField" destination="gFf-AW-qT0" id="QjL-sj-XXz"/>
+                        <outlet property="driverPhotoIconImageView" destination="aPm-Ys-Ysp" id="Ud5-PY-yXW"/>
                         <outlet property="driverPhotoImageView" destination="lXj-9H-Tx3" id="NCH-3r-x9c"/>
+                        <outlet property="driverPhotoLabel" destination="R9i-nV-ycT" id="4fZ-m1-VDv"/>
                         <outlet property="drivingExperienceTextField" destination="jlN-PA-4II" id="NWA-LU-wDk"/>
                         <outlet property="emailAddressTextField" destination="KtB-y3-q9B" id="EiO-JT-k6g"/>
                         <outlet property="employeeTypeTextField" destination="1tL-67-B3B" id="USp-h7-heh"/>
                         <outlet property="licenseNumberTextField" destination="36H-5w-o8T" id="528-qf-pFf"/>
+                        <outlet property="licensePhotoIconImageView" destination="Y5X-Nx-fcX" id="y5M-HR-GIq"/>
                         <outlet property="licensePhotoImageView" destination="GpR-lT-gQY" id="bje-SL-gnk"/>
+                        <outlet property="licensePhotoLabel" destination="Q8s-4X-ogK" id="Uhb-Uy-Thu"/>
                         <outlet property="nameTextField" destination="kl0-P0-00I" id="IkW-ce-HPW"/>
                         <outlet property="phoneNumberTextField" destination="LUg-zh-Z0Q" id="4PD-EF-kLG"/>
                         <outlet property="stateTextField" destination="7xV-fA-19D" id="eaW-MH-dum"/>

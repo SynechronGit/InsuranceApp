@@ -76,6 +76,10 @@ class IADataManager: NSObject {
                             if sqlite3_bind_null(anSqliteStatement, Int32(anIndex + 1)) != SQLITE_OK {
                                 throw IAError.Generic(NSError(domain: "com", code: 1, userInfo: [NSLocalizedDescriptionKey:"Can not bind value."]))
                             }
+                        } else if aValue is NSData {
+                            if sqlite3_bind_blob(anSqliteStatement, Int32(anIndex + 1), (aValue as! NSData).bytes, Int32((aValue as! NSData).length), nil) != SQLITE_OK {
+                                throw IAError.Generic(NSError(domain: "com", code: 1, userInfo: [NSLocalizedDescriptionKey:"Can not bind value."]))
+                            }
                         }
                     }
                 }
@@ -246,7 +250,11 @@ class IADataManager: NSObject {
                 }
             } else if self.requestType == IARequestType.AddDriver {
                 let aDriver :IADriver = pRequest as! IADriver
-                let anSqlQuery :String = "INSERT INTO drivers (first_name, last_name, relationship, dob, state, license, type, status, avatar) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)"
+                var anImageData :NSData! = nil
+                if aDriver.avatar != nil {
+                    anImageData = UIImagePNGRepresentation(aDriver.avatar)
+                }
+                let anSqlQuery :String = "INSERT INTO drivers (first_name, last_name, dob, state, license, type, status, avatar) VALUES (?, ?, ?, ?, ?, ?, ?, ?)"
                 var aValueArray = Array<AnyObject>()
                 aValueArray.append(aDriver.firstName != nil ? aDriver.firstName : NSNull())
                 aValueArray.append(aDriver.lastName != nil ? aDriver.lastName : NSNull())
@@ -255,7 +263,7 @@ class IADataManager: NSObject {
                 aValueArray.append(aDriver.licenseNumber != nil ? aDriver.licenseNumber : NSNull())
                 aValueArray.append(aDriver.employeeType != nil ? aDriver.employeeType : NSNull())
                 aValueArray.append(aDriver.status != nil ? aDriver.status : NSNull())
-                aValueArray.append(aDriver.avatar != nil ? aDriver.avatar : NSNull())
+                aValueArray.append(anImageData != nil ? anImageData : NSNull())
                 try self.executeQuery(anSqlQuery, values: aValueArray)
                 aDataManagerResponse.result = aDriver
             } else if self.requestType == IARequestType.ListDrivers {
