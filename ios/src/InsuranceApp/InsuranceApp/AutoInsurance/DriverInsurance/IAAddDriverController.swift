@@ -9,9 +9,12 @@ import UIKit
 /**
  * Controller for Add Driver screen.
  */
-class IAAddDriverController: IABaseController {
+class IAAddDriverController: IABaseController, UITextFieldDelegate {
     @IBOutlet weak var addPhotoContainerView: UIView!
+    @IBOutlet weak var driverPhotoImageView: UIImageView!
+    
     @IBOutlet weak var takeLicensePhotoContainerView: UIView!
+    @IBOutlet weak var licensePhotoImageView: UIImageView!
     
     @IBOutlet weak var nameTextField: IATextField!
     @IBOutlet weak var phoneNumberTextField: IATextField!
@@ -40,14 +43,18 @@ class IAAddDriverController: IABaseController {
         
         self.addContainerView.layer.cornerRadius = IAConstants.dashboardSubviewCornerRadius
         self.addContainerView.layer.masksToBounds = true
+        let aTapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(IAAddDriverController.didSelectAddButton(_:)))
+        aTapGestureRecognizer.cancelsTouchesInView = false
+        self.addContainerView.addGestureRecognizer(aTapGestureRecognizer)
         
         self.cityTextField.shouldDisplayAsDropdown = true
         self.cityTextField.controller = self
-        self.cityTextField.list = ["Miami", "Century", "Callaway"]
+        self.cityTextField.list = nil
         
         self.stateTextField.shouldDisplayAsDropdown = true
         self.stateTextField.controller = self
-        self.stateTextField.list = ["Florida", ""]
+        self.stateTextField.delegate = self
+        self.stateTextField.list = ["Florida", "New York", "California"]
         
         self.drivingExperienceTextField.shouldDisplayAsDropdown = true
         self.drivingExperienceTextField.controller = self
@@ -59,25 +66,64 @@ class IAAddDriverController: IABaseController {
         
         self.employeeTypeTextField.shouldDisplayAsDropdown = true
         self.employeeTypeTextField.controller = self
-        self.employeeTypeTextField.list = nil
+        self.employeeTypeTextField.list = ["Full Time", "Part Time"]
+    }
+    
+    
+    func textFieldDidEndEditing(textField: UITextField) {
+        if textField.isEqual(self.stateTextField) {
+            if self.stateTextField.text == "Florida" {
+                self.cityTextField.list = ["Jacksonville", "Miami", "Tampa", "Orlando", "St. Petersburg"]
+            } else if self.stateTextField.text == "New York" {
+                self.cityTextField.list = ["New York", "Buffalo", "Rochester", "Yonkers", "Syracuse"]
+            } else if self.stateTextField.text == "California" {
+                self.cityTextField.list = ["Los Angeles", "San Diego", "San Jose", "San Francisco", "Fresno"]
+            } else {
+                self.cityTextField.list = nil
+            }
+        }
     }
 
     
-    @IBAction func didSelectSubmitButton(sender: AnyObject) {
-        let dateFormatter = NSDateFormatter()
-        dateFormatter.dateFormat = "dd-mm-yyyy"
-        
-        let aDriver = IADriver()
-        aDriver.firstName = self.nameTextField.text!
-        aDriver.lastName = self.nameTextField.text!
-        aDriver.phoneNumber = self.phoneNumberTextField.text!
-        aDriver.emailAddress =  self.emailAddressTextField.text!
-        aDriver.streetAddress = self.streetAddressTextField.text!
-        aDriver.city = self.cityTextField.text!
-        aDriver.state = self.stateTextField.text!
-        aDriver.zip = self.zipTextField.text!
-        
-        self.dataManager.addDriver(aDriver)
+    @IBAction func didSelectAddButton(sender: AnyObject) {
+        do {
+            self.view.endEditing(true)
+            
+            if self.driverPhotoImageView.image == nil {
+                throw IAError.Generic(NSError(domain: "com", code: 1, userInfo: [NSLocalizedDescriptionKey:"Please provide driver's photo."]))
+            }
+            
+            if self.licensePhotoImageView.image == nil {
+                throw IAError.Generic(NSError(domain: "com", code: 1, userInfo: [NSLocalizedDescriptionKey:"Please provide license photo."]))
+            }
+            
+            if self.nameTextField.text == nil || self.nameTextField.text?.lengthOfBytesUsingEncoding(NSUTF8StringEncoding) <= 0 {
+                throw IAError.Generic(NSError(domain: "com", code: 1, userInfo: [NSLocalizedDescriptionKey:"Please enter name."]))
+            }
+            
+            if self.phoneNumberTextField.text == nil || self.phoneNumberTextField.text?.lengthOfBytesUsingEncoding(NSUTF8StringEncoding) <= 0 {
+                throw IAError.Generic(NSError(domain: "com", code: 1, userInfo: [NSLocalizedDescriptionKey:"Please enter phone number."]))
+            }
+            
+            let aDriver = IADriver()
+            aDriver.avatar = self.driverPhotoImageView.image
+            aDriver.licensePhoto = self.licensePhotoImageView.image
+            aDriver.firstName = self.nameTextField.text!
+            aDriver.lastName = self.nameTextField.text!
+            aDriver.phoneNumber = self.phoneNumberTextField.text!
+            aDriver.emailAddress =  self.emailAddressTextField.text!
+            aDriver.streetAddress = self.streetAddressTextField.text!
+            aDriver.city = self.cityTextField.text!
+            aDriver.state = self.stateTextField.text!
+            aDriver.zip = self.zipTextField.text!
+            
+            IAAppDelegate.currentAppDelegate.displayLoadingOverlay()
+            self.dataManager.addDriver(aDriver)
+        } catch IAError.Generic(let pError){
+            self.displayMessage(message: pError.localizedDescription, type: IAMessageType.Error)
+        } catch {
+            self.displayMessage(message: "Add driver error.", type: IAMessageType.Error)
+        }
     }
     
     
@@ -92,7 +138,12 @@ class IAAddDriverController: IABaseController {
         if pResponse.error != nil {
             self.displayMessage(message: pResponse.error.localizedDescription, type: IAMessageType.Error)
         } else if pSender.requestType == IARequestType.AddDriver {
-            self.dismissViewControllerAnimated(true, completion: nil)
+            let anAlert = UIAlertController(title: "Driver added successfully. Do you want to add more drivers?", message: nil, preferredStyle: .Alert)
+            anAlert.addAction(UIAlertAction(title: "Yes", style: .Default, handler: nil))
+            anAlert.addAction(UIAlertAction(title: "No", style: .Default, handler: {(action:UIAlertAction) in
+                self.navigationController?.popViewControllerAnimated(true)
+            }))
+            self.presentViewController(anAlert, animated: true, completion: nil)
         }
     }
 

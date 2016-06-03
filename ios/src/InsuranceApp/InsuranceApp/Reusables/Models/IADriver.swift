@@ -14,6 +14,7 @@ class IADriver:NSObject {
     var drivingExperience :String!
     var employeeType :String!
     var licenseNumber :String!
+    var licensePhoto :UIImage!
     var phoneNumber :String!
     var emailAddress :String!
     var streetAddress :String!

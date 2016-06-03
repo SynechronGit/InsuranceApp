@@ -8,7 +8,13 @@
 
 import UIKit
 
-class IATextField: UITextField {
+
+protocol IATextFieldDelegate : class {
+    func iaTextFieldDidSelectValue(pTextField:IATextField)
+}
+
+
+class IATextField: UITextField, IADropdownListControllerDelegate {
     var shouldDisplayAsDropdown :Bool!
     weak var controller :UIViewController!
     weak var iaTextFieldDelegate :AnyObject!
@@ -73,8 +79,8 @@ class IATextField: UITextField {
             self.bottomBorderLayer.frame = CGRectMake(0.0, self.bounds.size.height + 3, self.bounds.size.width, 2.0)
         }
         if self.shouldDisplayAsDropdown != nil && self.shouldDisplayAsDropdown == true && self.rightView == nil {
-            self.rightView = UIImageView(frame: CGRectMake(0.0, 0.0, 19.0, 19.0))
-            (self.rightView as! UIImageView).image = UIImage(named: "nextArrow")
+            self.rightView = UIImageView(frame: CGRectMake(0.0, 0.0, 13.0, 13.0))
+            (self.rightView as! UIImageView).image = UIImage(named: "DropdownArrow")
             (self.rightView as! UIImageView).contentMode = UIViewContentMode.ScaleAspectFit
             self.rightViewMode = UITextFieldViewMode.Always
         }
@@ -88,6 +94,7 @@ class IATextField: UITextField {
                 if self.dropdownListController == nil {
                     self.dropdownListController  = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("IADropdownListControllerID") as! IADropdownListController
                 }
+                self.dropdownListController.delegate = self
                 self.dropdownListController.list = self.list
                 if self.list != nil {
                     var aHeight :CGFloat = CGFloat(self.list.count) * 36.0
@@ -104,6 +111,15 @@ class IATextField: UITextField {
                 self.dropdownListController.popoverPresentationController?.sourceRect = self.bounds
                 self.controller.presentViewController(self.dropdownListController, animated: true, completion: nil)
             }
+        }
+    }
+    
+    
+    func dropdownListController(pDropdownListController:IADropdownListController, didSelectValue pValue:String) {
+        if pDropdownListController.isEqual(self.dropdownListController) {
+            self.text = pValue
+            self.dropdownListController.dismissViewControllerAnimated(true, completion: nil)
+            self.delegate?.textFieldDidEndEditing!(self)
         }
     }
 }

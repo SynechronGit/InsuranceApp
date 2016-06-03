@@ -29,8 +29,6 @@ class IAAutoInsuranceDetailsController: IABaseController , UICollectionViewDeleg
         super.viewDidLoad()
         
         self.updateUI()
-    
-        self.reloadAllData()
         
         self.vehicleCollectionView.delegate = self
         self.vehicleCollectionView.dataSource = self
@@ -40,6 +38,12 @@ class IAAutoInsuranceDetailsController: IABaseController , UICollectionViewDeleg
         
 
     }
+    
+    
+    override func viewDidAppear(animated: Bool) {
+        self.reloadAllData()
+    }
+    
     
     func updateUI(){
         
