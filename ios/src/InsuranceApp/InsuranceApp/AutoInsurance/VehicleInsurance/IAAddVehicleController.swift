@@ -9,7 +9,7 @@ import UIKit
 /**
  * Controller for Add Vehicle screen.
  */
-class IAAddVehicleController: IABaseController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class IAAddVehicleController: IABaseController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate {
     @IBOutlet weak var licensePlateNumberTextField :UITextField!
     @IBOutlet weak var stateTextField :UITextField!
     @IBOutlet weak var vinTextField: UITextField!
@@ -105,16 +105,31 @@ class IAAddVehicleController: IABaseController, UIImagePickerControllerDelegate,
         self.companyTextBox.shouldDisplayAsDropdown = true
         self.companyTextBox.controller = self
         self.companyTextBox.list = ["Mercedes", "BMW", "Audi"]
+        self.companyTextBox.delegate = self
         
         self.modelTextBox.shouldDisplayAsDropdown = true
         self.modelTextBox.controller = self
-        var modelArray = Array<String>()
-        modelArray = ["S660","X5","X6", "A4", "A5"]
-        self.modelTextBox.list = modelArray
+        self.modelTextBox.list = nil
+        
         
         self.bosyStyleTextBox.shouldDisplayAsDropdown = true
         self.bosyStyleTextBox.controller = self
         self.bosyStyleTextBox.list = ["Hatchbacks", "Sedans", "Vans‎", "Hardtop"]
+    }
+    
+    func textFieldDidEndEditing(textField: UITextField) {
+        if textField.isEqual(self.companyTextBox) {
+            self.modelTextBox.text = nil
+            if self.companyTextBox.text == "Mercedes" {
+                self.modelTextBox.list = ["S350", "S400", "S600", "E250", "E350", "C250"]
+            } else if self.companyTextBox.text == "BMW" {
+                self.modelTextBox.list = ["X1", "X2", "X3", "750", "X6", "X5"]
+            } else if self.companyTextBox.text == "Audi" {
+                self.modelTextBox.list = ["A3", "A4", "A5", "Q5", "Q6"]
+            } else {
+                self.modelTextBox.list = nil
+            }
+        }
     }
     
     
