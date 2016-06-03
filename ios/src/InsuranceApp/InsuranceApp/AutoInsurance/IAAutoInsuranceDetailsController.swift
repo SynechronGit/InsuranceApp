@@ -47,7 +47,7 @@ class IAAutoInsuranceDetailsController: IABaseController , UICollectionViewDeleg
     
     func updateUI(){
         
-        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "mainBG.png")!)
+       // self.view.backgroundColor = UIColor(patternImage: UIImage(named: "mainBG.png")!)
         dateView.backgroundColor = UIColor(patternImage: UIImage(named: "dateBg")!)
         
         vehicleCollectionView.backgroundColor = UIColor.clearColor()

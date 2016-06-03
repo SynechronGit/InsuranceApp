@@ -206,7 +206,7 @@ class IADataManager: NSObject {
                 if aVehicle.photoThree != nil {
                     aPhotoThreeData = UIImagePNGRepresentation(aVehicle.photoThree)
                 }
-                let anSqlQuery :String = "INSERT INTO vehicles (vin, year, company, model_number, body_style, description, photo_one, photo_two, photo_three) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)"
+                let anSqlQuery :String = "INSERT INTO vehicles (vin, year, company, model_number, body_style, description, photo_one, photo_two, photo_three, comprehensive_coverage, collision_coverage) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)"
                 var aValueArray = Array<AnyObject>()
                 aValueArray.append(aVehicle.vin != nil ? aVehicle.vin : NSNull())
                 aValueArray.append(aVehicle.year != nil ? aVehicle.year : NSNull())
@@ -217,10 +217,12 @@ class IADataManager: NSObject {
                 aValueArray.append(aPhotoOneData != nil ? aPhotoOneData : NSNull())
                 aValueArray.append(aPhotoTwoData != nil ? aPhotoTwoData : NSNull())
                 aValueArray.append(aPhotoThreeData != nil ? aPhotoThreeData : NSNull())
+                aValueArray.append(aVehicle.comprehensiveCoverage != nil ? aVehicle.comprehensiveCoverage : NSNull())
+                aValueArray.append(aVehicle.collisionCoverage != nil ? aVehicle.collisionCoverage : NSNull())
                 try self.executeQuery(anSqlQuery, values: aValueArray)
                 aDataManagerResponse.result = aVehicle
             } else if self.requestType == IARequestType.ListVehicles {
-                let anSqlQuery :String = "SELECT vin, year, company, model_number, body_style, description, photo_one, photo_two, photo_three FROM vehicles"
+                let anSqlQuery :String = "SELECT vin, year, company, model_number, body_style, description, photo_one, photo_two, photo_three, comprehensive_coverage, collision_coverage FROM vehicles"
                 let anSqlResult = try self.executeQuery(anSqlQuery, values: nil)
                 if anSqlResult != nil && anSqlResult.count > 0 {
                     var aVehicleArray :Array<IAVehicle>! = Array<IAVehicle>()
@@ -252,6 +254,12 @@ class IADataManager: NSObject {
                         }
                         if aDBVehicleDict["photo_three"] is NSData {
                             aDBVehicle.photoThree = UIImage(data: aDBVehicleDict["photo_three"] as! NSData)
+                        }
+                        if aDBVehicleDict["comprehensive_coverage"] is String {
+                            aDBVehicle.comprehensiveCoverage = aDBVehicleDict["comprehensive_coverage"] as! String
+                        }
+                        if aDBVehicleDict["collision_coverage"] is String {
+                            aDBVehicle.collisionCoverage = aDBVehicleDict["collision_coverage"] as! String
                         }
                         aVehicleArray.append(aDBVehicle)
                     }
