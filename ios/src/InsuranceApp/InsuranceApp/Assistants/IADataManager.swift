@@ -266,59 +266,32 @@ class IADataManager: NSObject {
                 if aDriver.avatar != nil {
                     anAvatarData = UIImagePNGRepresentation(aDriver.avatar)
                 }
-                let anSqlQuery :String = "INSERT INTO drivers (first_name, last_name, dob, state, license, type, status, avatar, appointed_since, driving_experience, phone_number, email_address, street_address, city, zip) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)"
+                let anSqlQuery :String = "INSERT INTO drivers (full_name, phone_number, email_address, street_address, city, state, zip_code, dob, license_number, appointed_since, driving_experience, employee_type, avatar) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)"
                 var aValueArray = Array<AnyObject>()
-                aValueArray.append(aDriver.firstName != nil ? aDriver.firstName : NSNull())
-                aValueArray.append(aDriver.lastName != nil ? aDriver.lastName : NSNull())
-                aValueArray.append(aDriver.dob != nil ? aDriver.dob : NSNull())
-                aValueArray.append(aDriver.state != nil ? aDriver.state : NSNull())
-                aValueArray.append(aDriver.licenseNumber != nil ? aDriver.licenseNumber : NSNull())
-                aValueArray.append(aDriver.employeeType != nil ? aDriver.employeeType : NSNull())
-                aValueArray.append(aDriver.status != nil ? aDriver.status : NSNull())
-                aValueArray.append(anAvatarData != nil ? anAvatarData : NSNull())
-                aValueArray.append(aDriver.appointedSince != nil ? aDriver.appointedSince : NSNull())
-                aValueArray.append(aDriver.drivingExperience != nil ? aDriver.drivingExperience : NSNull())
+                aValueArray.append(aDriver.fullName != nil ? aDriver.fullName : NSNull())
                 aValueArray.append(aDriver.phoneNumber != nil ? aDriver.phoneNumber : NSNull())
                 aValueArray.append(aDriver.emailAddress != nil ? aDriver.emailAddress : NSNull())
                 aValueArray.append(aDriver.streetAddress != nil ? aDriver.streetAddress : NSNull())
                 aValueArray.append(aDriver.city != nil ? aDriver.city : NSNull())
+                aValueArray.append(aDriver.state != nil ? aDriver.state : NSNull())
                 aValueArray.append(aDriver.zip != nil ? aDriver.zip : NSNull())
+                aValueArray.append(aDriver.dob != nil ? aDriver.dob : NSNull())
+                aValueArray.append(aDriver.licenseNumber != nil ? aDriver.licenseNumber : NSNull())
+                aValueArray.append(aDriver.appointedSince != nil ? aDriver.appointedSince : NSNull())
+                aValueArray.append(aDriver.drivingExperience != nil ? aDriver.drivingExperience : NSNull())
+                aValueArray.append(aDriver.employeeType != nil ? aDriver.employeeType : NSNull())
+                aValueArray.append(anAvatarData != nil ? anAvatarData : NSNull())
                 
                 try self.executeQuery(anSqlQuery, values: aValueArray)
                 aDataManagerResponse.result = aDriver
             } else if self.requestType == IARequestType.ListDrivers {
-                let anSqlQuery :String = "SELECT first_name, last_name, relationship, dob, state, license, type, status, avatar, appointed_since, driving_experience, phone_number, email_address, street_address, city, state, zip FROM drivers"
+                let anSqlQuery :String = "SELECT full_name, phone_number, email_address, street_address, city, state, zip_code, dob, license_number, appointed_since, driving_experience, employee_type, avatar FROM drivers"
                 let anSqlResult = try self.executeQuery(anSqlQuery, values: nil)
                 if anSqlResult != nil && anSqlResult.count > 0 {
                     var aDriverArray :Array<IADriver>! = Array<IADriver>()
                     for var aDBDriverDict :[String:AnyObject] in anSqlResult {
                         let aDBDriver = IADriver()
-                        aDBDriver.firstName = aDBDriverDict["first_name"] as! String
-                        aDBDriver.lastName = aDBDriverDict["last_name"] as! String
-                        if aDBDriverDict["dob"] is String {
-                            aDBDriver.dob   = aDBDriverDict["dob"] as! String
-                        }
-                        if aDBDriverDict["state"] is String {
-                            aDBDriver.state = aDBDriverDict["state"] as! String
-                        }
-                        if aDBDriverDict["license"] is String {
-                            aDBDriver.licenseNumber = aDBDriverDict["license"] as! String
-                        }
-                        if aDBDriverDict["type"] is String {
-                            aDBDriver.employeeType = aDBDriverDict["type"] as! String
-                        }
-                        if aDBDriverDict["status"] is String {
-                            aDBDriver.status = aDBDriverDict["status"] as! String
-                        }
-                        if aDBDriverDict["avatar"] is NSData {
-                            aDBDriver.avatar = UIImage(data: aDBDriverDict["avatar"] as! NSData)
-                        }
-                        if aDBDriverDict["appointed_since"] is String {
-                            aDBDriver.appointedSince = aDBDriverDict["appointed_since"] as! String
-                        }
-                        if aDBDriverDict["driving_experience"] is String {
-                            aDBDriver.drivingExperience = aDBDriverDict["driving_experience"] as! String
-                        }
+                        aDBDriver.fullName = aDBDriverDict["full_name"] as! String
                         if aDBDriverDict["phone_number"] is String {
                             aDBDriver.phoneNumber = aDBDriverDict["phone_number"] as! String
                         }
@@ -334,8 +307,26 @@ class IADataManager: NSObject {
                         if aDBDriverDict["state"] is String {
                             aDBDriver.state = aDBDriverDict["state"] as! String
                         }
-                        if aDBDriverDict["zip"] is String {
-                            aDBDriver.zip = aDBDriverDict["zip"] as! String
+                        if aDBDriverDict["zip_code"] is String {
+                            aDBDriver.zip = aDBDriverDict["zip_code"] as! String
+                        }
+                        if aDBDriverDict["dob"] is String {
+                            aDBDriver.dob   = aDBDriverDict["dob"] as! String
+                        }
+                        if aDBDriverDict["license_number"] is String {
+                            aDBDriver.licenseNumber = aDBDriverDict["license_number"] as! String
+                        }
+                        if aDBDriverDict["appointed_since"] is String {
+                            aDBDriver.appointedSince = aDBDriverDict["appointed_since"] as! String
+                        }
+                        if aDBDriverDict["driving_experience"] is String {
+                            aDBDriver.drivingExperience = aDBDriverDict["driving_experience"] as! String
+                        }
+                        if aDBDriverDict["employee_type"] is String {
+                            aDBDriver.employeeType = aDBDriverDict["employee_type"] as! String
+                        }
+                        if aDBDriverDict["avatar"] is NSData {
+                            aDBDriver.avatar = UIImage(data: aDBDriverDict["avatar"] as! NSData)
                         }
                         aDriverArray.append(aDBDriver)
                     }

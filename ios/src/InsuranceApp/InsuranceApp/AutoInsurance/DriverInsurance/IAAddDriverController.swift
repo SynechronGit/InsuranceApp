@@ -145,8 +145,7 @@ class IAAddDriverController: IABaseController, UITextFieldDelegate, UIImagePicke
             let aDriver = IADriver()
             aDriver.avatar = self.driverPhotoImageView.image
             aDriver.licensePhoto = self.licensePhotoImageView.image
-            aDriver.firstName = self.nameTextField.text!
-            aDriver.lastName = self.nameTextField.text!
+            aDriver.fullName = self.nameTextField.text!
             aDriver.phoneNumber = self.phoneNumberTextField.text!
             aDriver.emailAddress =  self.emailAddressTextField.text!
             aDriver.streetAddress = self.streetAddressTextField.text!

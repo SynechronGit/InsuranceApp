@@ -8,8 +8,7 @@ import UIKit
 
 class IADriver:NSObject {
     var avatar:UIImage!
-    var firstName:String!
-    var lastName:String!
+    var fullName:String!
     var appointedSince :String!
     var drivingExperience :String!
     var employeeType :String!
@@ -22,12 +21,4 @@ class IADriver:NSObject {
     var state :String!
     var zip :String!
     var dob :String!
-    var status :String!
-    
-    
-    var fullName:String! {
-        let aReturnVal = (self.firstName != nil ? self.firstName : "") + " " + (self.lastName != nil ? self.lastName : "")
-        return aReturnVal
-    }
 }
-
