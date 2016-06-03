@@ -8,13 +8,33 @@
 
 import UIKit
 
+
+protocol IADropdownListControllerDelegate : class {
+    func dropdownListController(pDropdownListController:IADropdownListController, didSelectValue pValue:String)
+}
+
+
 class IADropdownListController: UIViewController {
     @IBOutlet weak var dropdownTable :UITableView!
-    var list :Array<String>!
+    weak var delegate:IADropdownListControllerDelegate?
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    
+    
+    private var _list :Array<String>!
+    var list :Array<String>! {
+        set {
+            _list = newValue
+            if self.dropdownTable != nil {
+                self.dropdownTable.reloadData()
+            }
+        }
+        get {
+            return _list
+        }
     }
     
     
@@ -49,5 +69,17 @@ class IADropdownListController: UIViewController {
         }
         
         return aReturnVal
+    }
+    
+    
+    /**
+     * Method that will handle tap on table cell.
+     */
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        
+        if self.delegate != nil {
+            self.delegate?.dropdownListController(self, didSelectValue: self.list[indexPath.row])
+        }
     }
 }

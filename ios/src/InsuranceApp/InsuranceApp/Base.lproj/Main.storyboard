@@ -49,11 +49,26 @@
             <string>Ubuntu-Medium</string>
             <string>Ubuntu-Medium</string>
             <string>Ubuntu-Medium</string>
+            <string>Ubuntu-Medium</string>
+            <string>Ubuntu-Medium</string>
         </mutableArray>
         <mutableArray key="Ubuntu-700.ttf">
             <string>Ubuntu-Bold</string>
         </mutableArray>
         <mutableArray key="Ubuntu-regular.ttf">
+            <string>Ubuntu</string>
+            <string>Ubuntu</string>
+            <string>Ubuntu</string>
+            <string>Ubuntu</string>
+            <string>Ubuntu</string>
+            <string>Ubuntu</string>
+            <string>Ubuntu</string>
+            <string>Ubuntu</string>
+            <string>Ubuntu</string>
+            <string>Ubuntu</string>
+            <string>Ubuntu</string>
+            <string>Ubuntu</string>
+            <string>Ubuntu</string>
             <string>Ubuntu</string>
             <string>Ubuntu</string>
             <string>Ubuntu</string>
@@ -2553,6 +2568,9 @@ Insurance</string>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rb4-dd-NoX">
                                         <rect key="frame" x="23" y="31" width="143" height="139"/>
                                         <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="lXj-9H-Tx3" userLabel="driverPhotoImageView">
+                                                <rect key="frame" x="0.0" y="0.0" width="143" height="139"/>
+                                            </imageView>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="q24-g0-LhW">
                                                 <rect key="frame" x="0.0" y="133" width="143" height="6"/>
                                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.29989224139999998" colorSpace="calibratedRGB"/>
@@ -2569,7 +2587,7 @@ Insurance</string>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="aPm-Ys-Ysp">
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="camera" translatesAutoresizingMaskIntoConstraints="NO" id="aPm-Ys-Ysp">
                                                 <rect key="frame" x="55" y="41" width="34" height="34"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="91" id="3B3-Jo-xTF"/>
@@ -2589,19 +2607,26 @@ Insurance</string>
                                         <constraints>
                                             <constraint firstItem="R9i-nV-ycT" firstAttribute="top" secondItem="aPm-Ys-Ysp" secondAttribute="bottom" constant="8" id="6b4-G1-eX0"/>
                                             <constraint firstAttribute="trailing" secondItem="R9i-nV-ycT" secondAttribute="trailing" constant="8" id="6sW-9o-xLB"/>
+                                            <constraint firstItem="lXj-9H-Tx3" firstAttribute="leading" secondItem="Rb4-dd-NoX" secondAttribute="leading" id="FjW-l6-geb"/>
                                             <constraint firstAttribute="bottom" secondItem="q24-g0-LhW" secondAttribute="bottom" id="GC3-LS-WLe"/>
+                                            <constraint firstAttribute="trailing" secondItem="lXj-9H-Tx3" secondAttribute="trailing" id="LPl-MO-j5E"/>
                                             <constraint firstItem="q24-g0-LhW" firstAttribute="leading" secondItem="Rb4-dd-NoX" secondAttribute="leading" id="Lni-2p-mfl"/>
                                             <constraint firstItem="aPm-Ys-Ysp" firstAttribute="centerX" secondItem="Rb4-dd-NoX" secondAttribute="centerX" id="M0y-su-hBY"/>
                                             <constraint firstAttribute="width" constant="143" id="W8U-ns-xVJ"/>
                                             <constraint firstItem="aPm-Ys-Ysp" firstAttribute="top" secondItem="Rb4-dd-NoX" secondAttribute="top" constant="41" id="e4G-6G-vBF"/>
                                             <constraint firstAttribute="height" constant="139" id="er2-CA-ePS"/>
                                             <constraint firstItem="R9i-nV-ycT" firstAttribute="leading" secondItem="Rb4-dd-NoX" secondAttribute="leading" constant="8" id="jgE-my-Bbp"/>
+                                            <constraint firstAttribute="bottom" secondItem="lXj-9H-Tx3" secondAttribute="bottom" id="jhA-va-9rK"/>
                                             <constraint firstAttribute="trailing" secondItem="q24-g0-LhW" secondAttribute="trailing" id="mi0-0H-hqE"/>
+                                            <constraint firstItem="lXj-9H-Tx3" firstAttribute="top" secondItem="Rb4-dd-NoX" secondAttribute="top" id="nRh-8U-LaJ"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XFb-aA-Mwa">
                                         <rect key="frame" x="191" y="31" width="217" height="139"/>
                                         <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="GpR-lT-gQY" userLabel="licensePhotoImageView">
+                                                <rect key="frame" x="0.0" y="0.0" width="217" height="139"/>
+                                            </imageView>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5O5-0Q-apN">
                                                 <rect key="frame" x="0.0" y="133" width="217" height="6"/>
                                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.29989224139999998" colorSpace="calibratedRGB"/>
@@ -2618,7 +2643,7 @@ Insurance</string>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Y5X-Nx-fcX">
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="camera" translatesAutoresizingMaskIntoConstraints="NO" id="Y5X-Nx-fcX">
                                                 <rect key="frame" x="92" y="41" width="34" height="34"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="34" id="BvO-Er-NRH"/>
@@ -2638,15 +2663,25 @@ Insurance</string>
                                         <constraints>
                                             <constraint firstAttribute="bottom" secondItem="5O5-0Q-apN" secondAttribute="bottom" id="6k8-jC-X6F"/>
                                             <constraint firstItem="Q8s-4X-ogK" firstAttribute="top" secondItem="Y5X-Nx-fcX" secondAttribute="bottom" constant="8" id="78S-EI-jIf"/>
+                                            <constraint firstItem="GpR-lT-gQY" firstAttribute="leading" secondItem="XFb-aA-Mwa" secondAttribute="leading" id="FyN-Ev-sso"/>
                                             <constraint firstItem="5O5-0Q-apN" firstAttribute="leading" secondItem="XFb-aA-Mwa" secondAttribute="leading" id="K9R-3x-jHj"/>
                                             <constraint firstAttribute="trailing" secondItem="5O5-0Q-apN" secondAttribute="trailing" id="SwF-p3-nxx"/>
+                                            <constraint firstAttribute="trailing" secondItem="GpR-lT-gQY" secondAttribute="trailing" id="TbJ-aN-Jjg"/>
                                             <constraint firstAttribute="trailing" secondItem="Q8s-4X-ogK" secondAttribute="trailing" constant="8" id="bDg-uS-bUE"/>
                                             <constraint firstItem="Y5X-Nx-fcX" firstAttribute="centerX" secondItem="XFb-aA-Mwa" secondAttribute="centerX" id="gXH-kd-g46"/>
                                             <constraint firstAttribute="height" constant="139" id="hgh-fJ-3Zn"/>
+                                            <constraint firstItem="5O5-0Q-apN" firstAttribute="top" secondItem="GpR-lT-gQY" secondAttribute="bottom" id="ho0-dW-K12"/>
+                                            <constraint firstItem="GpR-lT-gQY" firstAttribute="top" secondItem="XFb-aA-Mwa" secondAttribute="top" id="npb-xF-lA1"/>
                                             <constraint firstItem="Y5X-Nx-fcX" firstAttribute="top" secondItem="XFb-aA-Mwa" secondAttribute="top" constant="41" id="ntt-FZ-cap"/>
                                             <constraint firstAttribute="width" constant="217" id="sft-3P-B0I"/>
+                                            <constraint firstAttribute="bottom" secondItem="GpR-lT-gQY" secondAttribute="bottom" id="xB3-C5-EFo"/>
                                             <constraint firstItem="Q8s-4X-ogK" firstAttribute="leading" secondItem="XFb-aA-Mwa" secondAttribute="leading" constant="8" id="zGd-33-e0r"/>
                                         </constraints>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="ho0-dW-K12"/>
+                                            </mask>
+                                        </variation>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pca-o4-qs4">
                                         <rect key="frame" x="23" y="200" width="150" height="21"/>
@@ -2973,10 +3008,12 @@ Insurance</string>
                         <outlet property="appointedSinceTextField" destination="pfi-G0-80x" id="LxP-f3-Emh"/>
                         <outlet property="cityTextField" destination="4Kd-dT-UEU" id="Onc-aQ-d6r"/>
                         <outlet property="dobTextField" destination="gFf-AW-qT0" id="QjL-sj-XXz"/>
+                        <outlet property="driverPhotoImageView" destination="lXj-9H-Tx3" id="NCH-3r-x9c"/>
                         <outlet property="drivingExperienceTextField" destination="jlN-PA-4II" id="NWA-LU-wDk"/>
                         <outlet property="emailAddressTextField" destination="KtB-y3-q9B" id="EiO-JT-k6g"/>
                         <outlet property="employeeTypeTextField" destination="1tL-67-B3B" id="USp-h7-heh"/>
                         <outlet property="licenseNumberTextField" destination="36H-5w-o8T" id="528-qf-pFf"/>
+                        <outlet property="licensePhotoImageView" destination="GpR-lT-gQY" id="bje-SL-gnk"/>
                         <outlet property="nameTextField" destination="kl0-P0-00I" id="IkW-ce-HPW"/>
                         <outlet property="phoneNumberTextField" destination="LUg-zh-Z0Q" id="4PD-EF-kLG"/>
                         <outlet property="stateTextField" destination="7xV-fA-19D" id="eaW-MH-dum"/>
@@ -3337,7 +3374,7 @@ Insurance</string>
                                     <action selector="didSelectAddDriverButton" destination="bsL-16-OO3" eventType="touchUpInside" id="ANv-bz-AVI"/>
                                 </connections>
                             </button>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="XkW-pL-jU7" userLabel="Vehicle list Collection View ">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="XkW-pL-jU7" userLabel="Vehicle list Collection View ">
                                 <rect key="frame" x="55" y="409" width="658" height="171"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="171" id="KZL-XB-c9w"/>
@@ -3402,7 +3439,7 @@ Insurance</string>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="pEp-pb-umE">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="pEp-pb-umE">
                                 <rect key="frame" x="55" y="663" width="658" height="171"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="658" id="OoF-zV-hg0"/>
