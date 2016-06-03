@@ -16,6 +16,8 @@ protocol IADropdownListControllerDelegate : class {
 
 class IADropdownListController: UIViewController {
     @IBOutlet weak var dropdownTable :UITableView!
+    @IBOutlet weak var datePicker :UIDatePicker!
+    @IBOutlet weak var doneButton :UIButton!
     weak var delegate:IADropdownListControllerDelegate?
     
     
@@ -34,6 +36,52 @@ class IADropdownListController: UIViewController {
         }
         get {
             return _list
+        }
+    }
+    
+    
+    private var _shouldDisplayAsDatePicker :Bool!
+    var shouldDisplayAsDatePicker :Bool! {
+        set {
+            _shouldDisplayAsDatePicker = newValue
+        }
+        get {
+            return _shouldDisplayAsDatePicker
+        }
+    }
+    
+    
+    override func viewDidAppear(animated: Bool) {
+        if self.shouldDisplayAsDatePicker != nil && self.shouldDisplayAsDatePicker == true {
+            if self.datePicker != nil {
+                self.datePicker.hidden = false
+            }
+            if self.doneButton != nil {
+                self.doneButton.hidden = false
+            }
+            if self.dropdownTable != nil {
+                self.dropdownTable.hidden = true
+            }
+        } else {
+            if self.datePicker != nil {
+                self.datePicker.hidden = true
+            }
+            if self.doneButton != nil {
+                self.doneButton.hidden = true
+            }
+            if self.dropdownTable != nil {
+                self.dropdownTable.hidden = false
+            }
+        }
+    }
+    
+    
+    @IBAction func didSelectDoneButton() {
+        if self.delegate != nil {
+            let aDateFormatter = NSDateFormatter()
+            aDateFormatter.locale = NSLocale(localeIdentifier: "US_en")
+            aDateFormatter.dateFormat = "MM-dd-yyyy"
+            self.delegate?.dropdownListController(self, didSelectValue: aDateFormatter.stringFromDate(self.datePicker.date))
         }
     }
     

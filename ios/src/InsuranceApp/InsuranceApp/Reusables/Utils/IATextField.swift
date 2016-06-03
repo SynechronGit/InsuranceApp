@@ -16,6 +16,7 @@ protocol IATextFieldDelegate : class {
 
 class IATextField: UITextField, IADropdownListControllerDelegate {
     var shouldDisplayAsDropdown :Bool!
+    var shouldDisplayAsDatePicker :Bool!
     weak var controller :UIViewController!
     weak var iaTextFieldDelegate :AnyObject!
     var tapGestureRecognizer :UITapGestureRecognizer!
@@ -78,7 +79,7 @@ class IATextField: UITextField, IADropdownListControllerDelegate {
         if self.bottomBorderLayer != nil {
             self.bottomBorderLayer.frame = CGRectMake(0.0, self.bounds.size.height + 3, self.bounds.size.width, 2.0)
         }
-        if self.shouldDisplayAsDropdown != nil && self.shouldDisplayAsDropdown == true && self.rightView == nil {
+        if ((self.shouldDisplayAsDropdown != nil && self.shouldDisplayAsDropdown == true) || (self.shouldDisplayAsDropdown != nil && self.shouldDisplayAsDropdown == true)) && self.rightView == nil {
             self.rightView = UIImageView(frame: CGRectMake(0.0, 0.0, 13.0, 13.0))
             (self.rightView as! UIImageView).image = UIImage(named: "DropdownArrow")
             (self.rightView as! UIImageView).contentMode = UIViewContentMode.ScaleAspectFit
@@ -88,13 +89,14 @@ class IATextField: UITextField, IADropdownListControllerDelegate {
     
     
     override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
-        if self.shouldDisplayAsDropdown != nil && self.shouldDisplayAsDropdown == true {
+        if (self.shouldDisplayAsDropdown != nil && self.shouldDisplayAsDropdown == true) || (self.shouldDisplayAsDatePicker != nil && self.shouldDisplayAsDatePicker == true) {
             self.resignFirstResponder()
             if touches.first?.tapCount == 1 && self.controller != nil {
                 if self.dropdownListController == nil {
                     self.dropdownListController  = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("IADropdownListControllerID") as! IADropdownListController
                 }
                 self.dropdownListController.delegate = self
+                self.dropdownListController.shouldDisplayAsDatePicker = self.shouldDisplayAsDatePicker
                 self.dropdownListController.list = self.list
                 if self.list != nil {
                     var aHeight :CGFloat = CGFloat(self.list.count) * 36.0
