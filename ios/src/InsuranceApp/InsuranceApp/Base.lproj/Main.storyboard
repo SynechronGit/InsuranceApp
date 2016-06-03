@@ -3447,11 +3447,24 @@ Insurance</string>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>
                     <connections>
+                        <outlet property="appointedSinceValueLabel" destination="W3H-hG-yGZ" id="8wo-Hd-JEC"/>
+                        <outlet property="avatarImageView" destination="Z3q-ad-Vy3" id="8Jk-Vh-8SJ"/>
+                        <outlet property="cityValueLabel" destination="EC6-H8-Pmp" id="leu-pM-ura"/>
+                        <outlet property="dateOfBirthValueLabel" destination="aiS-iU-ytD" id="TQJ-9i-32D"/>
                         <outlet property="driverDetailsContainerView" destination="r5g-Lt-rzY" id="QVX-sW-RFh"/>
+                        <outlet property="driverNameValueLabel" destination="ON8-fn-Tb6" id="VPt-Fc-ZLB"/>
+                        <outlet property="drivingExperienceValueLabel" destination="uAf-le-gzg" id="0Hg-dY-dqg"/>
                         <outlet property="drivingLicenseNumberContainerView" destination="fGO-zN-XfB" id="hDQ-lE-cGx"/>
+                        <outlet property="drivingLicenseNumberValueLabel" destination="YYC-Hw-w0r" id="Az2-5n-qma"/>
+                        <outlet property="emailAddressValueLabel" destination="yxW-ZX-4CY" id="WW5-aG-VR9"/>
+                        <outlet property="employeeTypeValueLabel" destination="aST-ek-yTd" id="yWX-pd-RVs"/>
+                        <outlet property="phoneNumberValueLabel" destination="h7i-Dw-WuH" id="hYI-v9-8xX"/>
                         <outlet property="registerSafteyDeviceContainerView" destination="6Bo-i9-pda" id="q7F-l6-scw"/>
                         <outlet property="scoreMyDriveAppContainerView" destination="BeY-aC-EQy" id="o4g-SO-Ok9"/>
+                        <outlet property="stateValueLabel" destination="Jpg-3G-dQn" id="lbg-5Z-Hqb"/>
+                        <outlet property="streetAddressValueLabel" destination="gsg-ZX-Afw" id="3FT-Mr-A7a"/>
                         <outlet property="trafficViolationTableView" destination="SBd-1N-Ye0" id="aiq-MA-uCO"/>
+                        <outlet property="zipValueLabel" destination="NWC-JF-sME" id="25U-kp-ueP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oi4-5R-kKR" userLabel="First Responder" sceneMemberID="firstResponder"/>

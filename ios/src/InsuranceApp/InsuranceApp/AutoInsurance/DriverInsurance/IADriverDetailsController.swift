@@ -9,12 +9,28 @@
 import UIKit
 
 class IADriverDetailsController: IABaseController {
+    var driver: IADriver!
+    
     @IBOutlet weak var driverDetailsContainerView: UIView!
     @IBOutlet weak var drivingLicenseNumberContainerView: UIView!
     
-    @IBOutlet weak var appointedSinceLabel: UILabel!
-    @IBOutlet weak var drivingExperienceLabel: UILabel!
-    @IBOutlet weak var employeeTypeLabel: UILabel!
+    @IBOutlet weak var avatarImageView: UIImageView!
+    @IBOutlet weak var driverNameValueLabel: UILabel!
+    
+    @IBOutlet weak var appointedSinceValueLabel: UILabel!
+    @IBOutlet weak var drivingExperienceValueLabel: UILabel!
+    @IBOutlet weak var employeeTypeValueLabel: UILabel!
+    
+    @IBOutlet weak var drivingLicenseNumberValueLabel: UILabel!
+    
+    @IBOutlet weak var phoneNumberValueLabel: UILabel!
+    @IBOutlet weak var emailAddressValueLabel: UILabel!
+    @IBOutlet weak var streetAddressValueLabel: UILabel!
+    @IBOutlet weak var cityValueLabel: UILabel!
+    @IBOutlet weak var stateValueLabel: UILabel!
+    @IBOutlet weak var zipValueLabel: UILabel!
+    @IBOutlet weak var dateOfBirthValueLabel: UILabel!
+    
     
     @IBOutlet weak var trafficViolationTableView: UITableView!
     var trafficViolationArray: Array<IATrafficViolation>!
@@ -35,8 +51,8 @@ class IADriverDetailsController: IABaseController {
         self.scoreMyDriveAppContainerView.layer.cornerRadius = IAConstants.dashboardSubviewCornerRadius
         self.scoreMyDriveAppContainerView.layer.masksToBounds = true
         
-        //self.registerSafteyDeviceContainerView.layer.cornerRadius = IAConstants.dashboardSubviewCornerRadius
-        //self.registerSafteyDeviceContainerView.layer.masksToBounds = true
+        self.registerSafteyDeviceContainerView.layer.cornerRadius = IAConstants.dashboardSubviewCornerRadius
+        self.registerSafteyDeviceContainerView.layer.masksToBounds = true
         
         self.reloadAllData()
     }
@@ -74,10 +90,29 @@ class IADriverDetailsController: IABaseController {
         aTrafficViolation.type = "Cornering"
         aTrafficViolation.location = "15/S Street"
         self.trafficViolationArray.append(aTrafficViolation)
+        
+        self.reloadAllView()
     }
     
     
     func reloadAllView() {
+        self.avatarImageView.image = self.driver.avatar
+        
+        self.driverNameValueLabel.text = self.driver.fullName
+        self.appointedSinceValueLabel.text = self.driver.appointedSince
+        self.drivingExperienceValueLabel.text = self.driver.drivingExperience
+        self.employeeTypeValueLabel.text = self.driver.employeeType
+        
+        self.drivingLicenseNumberValueLabel.text = self.driver.licenseNumber
+        
+        self.phoneNumberValueLabel.text = self.driver.phoneNumber
+        self.emailAddressValueLabel.text = self.driver.emailAddress
+        self.streetAddressValueLabel.text = self.driver.streetAddress
+        self.cityValueLabel.text = self.driver.city
+        self.stateValueLabel.text = self.driver.state
+        self.zipValueLabel.text = self.driver.zip
+        self.dateOfBirthValueLabel.text = self.driver.dob
+        
         self.trafficViolationTableView.reloadData()
     }
     
@@ -105,6 +140,7 @@ class IADriverDetailsController: IABaseController {
      */
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let aReturnVal:IATrafficViolationTableCellView = tableView.dequeueReusableCellWithIdentifier("IATrafficViolationTableCellViewID") as! IATrafficViolationTableCellView
+        aReturnVal.backgroundColor = UIColor.clearColor()
         
         if self.trafficViolationArray != nil {
             let aTrafficViolation = self.trafficViolationArray[indexPath.row]

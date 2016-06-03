@@ -37,8 +37,8 @@ class IAAddDriverController: IABaseController {
         aDriver.relationship = self.relationshipTextField.text!
         aDriver.dob =  self.dobTextField.text!//dateFormatter.dateFromString(self.dobTextField.text!)
         aDriver.state = self.stateTextField.text!
-        aDriver.license = self.licenseTextField.text!
-        aDriver.type = self.typeTextField.text!
+        aDriver.licenseNumber = self.licenseTextField.text!
+        aDriver.employeeType = self.typeTextField.text!
         aDriver.status = self.statusTextField.text!
         
        self.dataManager.addDriver(aDriver)

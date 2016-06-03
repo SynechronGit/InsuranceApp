@@ -228,14 +228,14 @@ class IADataManager: NSObject {
                 aValueArray.append(aDriver.relationship != nil ? aDriver.relationship : NSNull())
                 aValueArray.append(aDriver.dob != nil ? aDriver.dob : NSNull())
                 aValueArray.append(aDriver.state != nil ? aDriver.state : NSNull())
-                aValueArray.append(aDriver.license != nil ? aDriver.license : NSNull())
-                aValueArray.append(aDriver.type != nil ? aDriver.type : NSNull())
+                aValueArray.append(aDriver.licenseNumber != nil ? aDriver.licenseNumber : NSNull())
+                aValueArray.append(aDriver.employeeType != nil ? aDriver.employeeType : NSNull())
                 aValueArray.append(aDriver.status != nil ? aDriver.status : NSNull())
                 aValueArray.append(aDriver.avatar != nil ? aDriver.avatar : NSNull())
                 try self.executeQuery(anSqlQuery, values: aValueArray)
                 aDataManagerResponse.result = aDriver
             } else if self.requestType == IARequestType.ListDrivers {
-                let anSqlQuery :String = "SELECT first_name, last_name, relationship, dob, state, license, type, status, avatar FROM drivers"
+                let anSqlQuery :String = "SELECT first_name, last_name, relationship, dob, state, license, type, status, avatar, appointed_since, driving_experience, phone_number, email_address, street_address, city, state, zip FROM drivers"
                 let anSqlResult = try self.executeQuery(anSqlQuery, values: nil)
                 if anSqlResult != nil && anSqlResult.count > 0 {
                     var aDriverArray :Array<IADriver>! = Array<IADriver>()
@@ -253,16 +253,40 @@ class IADataManager: NSObject {
                             aDBDriver.state = aDBDriverDict["state"] as! String
                         }
                         if aDBDriverDict["license"] is String {
-                            aDBDriver.license = aDBDriverDict["license"] as! String
+                            aDBDriver.licenseNumber = aDBDriverDict["license"] as! String
                         }
                         if aDBDriverDict["type"] is String {
-                            aDBDriver.type = aDBDriverDict["type"] as! String
+                            aDBDriver.employeeType = aDBDriverDict["type"] as! String
                         }
                         if aDBDriverDict["status"] is String {
                             aDBDriver.status = aDBDriverDict["status"] as! String
                         }
                         if aDBDriverDict["avatar"] is NSData {
                             aDBDriver.avatar = UIImage(data: aDBDriverDict["avatar"] as! NSData)
+                        }
+                        if aDBDriverDict["appointed_since"] is String {
+                            aDBDriver.appointedSince = aDBDriverDict["appointed_since"] as! String
+                        }
+                        if aDBDriverDict["driving_experience"] is String {
+                            aDBDriver.drivingExperience = aDBDriverDict["driving_experience"] as! String
+                        }
+                        if aDBDriverDict["phone_number"] is String {
+                            aDBDriver.phoneNumber = aDBDriverDict["phone_number"] as! String
+                        }
+                        if aDBDriverDict["email_address"] is String {
+                            aDBDriver.emailAddress = aDBDriverDict["email_address"] as! String
+                        }
+                        if aDBDriverDict["street_address"] is String {
+                            aDBDriver.streetAddress = aDBDriverDict["street_address"] as! String
+                        }
+                        if aDBDriverDict["city"] is String {
+                            aDBDriver.city = aDBDriverDict["city"] as! String
+                        }
+                        if aDBDriverDict["state"] is String {
+                            aDBDriver.state = aDBDriverDict["state"] as! String
+                        }
+                        if aDBDriverDict["zip"] is String {
+                            aDBDriver.zip = aDBDriverDict["zip"] as! String
                         }
                         aDriverArray.append(aDBDriver)
                     }

@@ -7,16 +7,22 @@
 import UIKit
 
 class IADriver:NSObject {
-    
+    var avatar:UIImage!
     var firstName:String!
     var lastName:String!
+    var appointedSince :String!
+    var drivingExperience :String!
+    var employeeType :String!
+    var licenseNumber :String!
+    var phoneNumber :String!
+    var emailAddress :String!
+    var streetAddress :String!
+    var city :String!
+    var state :String!
+    var zip :String!
+    var dob :String!
+    var status :String!
     var relationship:String!
-    var dob:String!
-    var state:String!
-    var license:String!
-    var type:String!
-    var status:String!
-    var avatar:UIImage!
     
     
     var fullName:String! {

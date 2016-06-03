@@ -14,6 +14,7 @@ class IAAutoInsuranceDetailsController: IABaseController , UICollectionViewDeleg
     @IBOutlet weak var driverCollectionView: UICollectionView!
     var vehicleArray :Array<IAVehicle>!
     var driverArray :Array<IADriver>!
+    var selectedDriverIndex :Int!
     
     @IBOutlet weak var payPremiumBtn: UIButton!
     @IBOutlet weak var fileClaimBtn: UIButton!
@@ -177,7 +178,21 @@ class IAAutoInsuranceDetailsController: IABaseController , UICollectionViewDeleg
         print("You selected cell #\(indexPath.item)!")
         
         if collectionView.isEqual(self.driverCollectionView) {
+            self.selectedDriverIndex = indexPath.item
             self.performSegueWithIdentifier("AutoInsuranceDetailsToDriverDetailsSegueID", sender: self)
+        }
+    }
+    
+    
+    /**
+     * Method that will be called while performing segue and will handle setting required data for next controller.
+     */
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "AutoInsuranceDetailsToDriverDetailsSegueID" {
+            let aDriver = self.driverArray[self.selectedDriverIndex]
+            self.selectedDriverIndex = nil
+            
+            (segue.destinationViewController as! IADriverDetailsController).driver = aDriver
         }
     }
 
