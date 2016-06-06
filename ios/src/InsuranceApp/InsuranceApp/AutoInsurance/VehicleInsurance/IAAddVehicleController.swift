@@ -146,14 +146,17 @@ class IAAddVehicleController: IABaseController, UIImagePickerControllerDelegate,
         
         if textField.isEqual(self.modelTextBox) {
             if (self.modelTextBox.text == "BMW 1 Series 11d sports" || self.modelTextBox.text == "A-Class A 180" || self.modelTextBox.text == "B-Class B 180 Sport"){
-                print("1")
+                
                 self.bosyStyleTextBox.text = "Hatchback"
+                
             } else if (self.modelTextBox.text == "Audi A8" || self.modelTextBox.text == "Audi RS7" || self.modelTextBox.text == "Audi A3" || self.modelTextBox.text == "Audi A4" || self.modelTextBox.text == "BMW 320d" || self.modelTextBox.text == "BMW 520d" || self.modelTextBox.text == "Mercedes S350" || self.modelTextBox.text == "Mercedes S400" || self.modelTextBox.text == "Mercedes Maybach S500" ) {
-                print("2")
+                
                 self.bosyStyleTextBox.text = "Sedan"
+                
             } else if (self.modelTextBox.text == "Audi Q3" || self.modelTextBox.text == "Audi Q5" || self.modelTextBox.text == "Audi Q7" || self.modelTextBox.text == "BMW X6" || self.modelTextBox.text == "BMW X1" || self.modelTextBox.text == "BMW X5" || self.modelTextBox.text == "G 63 AMG" || self.modelTextBox.text == "M Guard" || self.modelTextBox.text == "GLE 250D" || self.modelTextBox.text == "GLE 350D"){
-                print("3")
+                
                 self.bosyStyleTextBox.text = "SUV"
+                
             }
         }
     }
