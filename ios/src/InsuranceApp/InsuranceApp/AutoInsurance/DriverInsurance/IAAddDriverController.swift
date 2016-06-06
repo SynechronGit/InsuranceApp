@@ -97,6 +97,28 @@ class IAAddDriverController: IABaseController, UITextFieldDelegate, UIImagePicke
     }
     
     
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        if textField.isEqual(self.nameTextField) {
+            self.phoneNumberTextField.becomeFirstResponder()
+        } else if textField.isEqual(self.phoneNumberTextField) {
+            self.emailAddressTextField.becomeFirstResponder()
+        } else if textField.isEqual(self.emailAddressTextField) {
+            self.streetAddressTextField.becomeFirstResponder()
+        } else if textField.isEqual(self.streetAddressTextField) {
+            self.streetAddressTextField.resignFirstResponder()
+            self.stateTextField.displayDropdownList()
+        } else if textField.isEqual(self.zipTextField) {
+            self.zipTextField.resignFirstResponder()
+            self.dobTextField.displayDropdownList()
+        } else if textField.isEqual(self.licenseNumberTextField) {
+            self.licenseNumberTextField.resignFirstResponder()
+            self.appointedSinceTextField.displayDropdownList()
+        }
+        
+        return true
+    }
+    
+    
     func textFieldDidEndEditing(textField: UITextField) {
         if textField.isEqual(self.stateTextField) {
             self.cityTextField.text = nil
