@@ -249,7 +249,29 @@ class IAAddDriverController: IABaseController, UITextFieldDelegate, UIImagePicke
             self.displayMessage(message: pResponse.error.localizedDescription, type: IAMessageType.Error)
         } else if pSender.requestType == IARequestType.AddDriver {
             let anAlert = UIAlertController(title: "Driver added successfully. Do you want to add more drivers?", message: nil, preferredStyle: .Alert)
-            anAlert.addAction(UIAlertAction(title: "Yes", style: .Default, handler: nil))
+            anAlert.addAction(UIAlertAction(title: "Yes", style: .Default, handler : {(action:UIAlertAction) in
+                
+                self.driverPhotoImageView.image = nil
+                self.licensePhotoImageView.image = nil
+                self.driverPhotoIconImageView.hidden = false
+                self.driverPhotoLabel.hidden = false
+                self.licensePhotoIconImageView.hidden = false
+                self.licensePhotoLabel.hidden = false
+                self.nameTextField.text! = ""
+                self.phoneNumberTextField.text! = ""
+                self.emailAddressTextField.text! = ""
+                self.streetAddressTextField.text! = ""
+                self.cityTextField.text! = ""
+                self.stateTextField.text! = ""
+                self.zipTextField.text! = ""
+                self.dobTextField.text! = ""
+                self.licenseNumberTextField.text! = ""
+                self.appointedSinceTextField.text! = ""
+                self.drivingExperienceTextField.text! = ""
+                self.employeeTypeTextField.text! = ""
+                
+                }))
+
             anAlert.addAction(UIAlertAction(title: "No", style: .Default, handler: {(action:UIAlertAction) in
                 self.navigationController?.popViewControllerAnimated(true)
             }))
