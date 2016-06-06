@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="yS7-Mb-0yN">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="yS7-Mb-0yN">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -423,57 +423,32 @@
                                 <constraints>
                                     <constraint firstAttribute="height" secondItem="Yp3-mj-MDN" secondAttribute="height" id="0Gq-cc-yzz"/>
                                     <constraint firstItem="lE6-hq-OKf" firstAttribute="top" secondItem="mrf-5a-LJL" secondAttribute="top" id="1ED-P4-BLd"/>
-                                    <constraint firstAttribute="trailing" secondItem="lE6-hq-OKf" secondAttribute="trailing" id="1mv-1D-ida"/>
-                                    <constraint firstAttribute="bottom" secondItem="4Qh-Sn-DTB" secondAttribute="bottom" id="4Gi-QE-lMi"/>
                                     <constraint firstAttribute="width" secondItem="4Qh-Sn-DTB" secondAttribute="width" id="4Ld-5E-uyc"/>
                                     <constraint firstAttribute="bottom" secondItem="1jH-k8-Jmp" secondAttribute="bottom" placeholder="YES" id="54a-M0-eoM"/>
                                     <constraint firstItem="AXn-8W-W0e" firstAttribute="top" secondItem="mrf-5a-LJL" secondAttribute="top" id="6fO-vp-es8"/>
                                     <constraint firstItem="5Y7-tB-lko" firstAttribute="top" secondItem="mrf-5a-LJL" secondAttribute="top" id="7vm-cr-lJz"/>
                                     <constraint firstItem="1jH-k8-Jmp" firstAttribute="top" secondItem="mrf-5a-LJL" secondAttribute="top" id="9Em-3i-g4y"/>
                                     <constraint firstItem="1jH-k8-Jmp" firstAttribute="width" secondItem="mrf-5a-LJL" secondAttribute="width" id="9fG-fa-uvM"/>
-                                    <constraint firstAttribute="trailing" secondItem="5Y7-tB-lko" secondAttribute="trailing" id="A9D-Po-EsQ"/>
                                     <constraint firstItem="Yp3-mj-MDN" firstAttribute="leading" secondItem="mrf-5a-LJL" secondAttribute="leading" id="Bzi-10-BKs"/>
-                                    <constraint firstAttribute="bottom" secondItem="lE6-hq-OKf" secondAttribute="bottom" id="IhE-Nc-Ige"/>
-                                    <constraint firstAttribute="bottom" secondItem="Yp3-mj-MDN" secondAttribute="bottom" id="O01-9O-lvA"/>
-                                    <constraint firstAttribute="trailing" secondItem="4Qh-Sn-DTB" secondAttribute="trailing" id="RPx-UD-Ohp"/>
+                                    <constraint firstAttribute="bottom" secondItem="1jH-k8-Jmp" secondAttribute="bottom" placeholder="YES" id="EUv-F5-bPI"/>
                                     <constraint firstItem="4Qh-Sn-DTB" firstAttribute="top" secondItem="mrf-5a-LJL" secondAttribute="top" id="Sue-gc-M6Q"/>
                                     <constraint firstAttribute="width" secondItem="5Y7-tB-lko" secondAttribute="width" id="Swa-12-V7a"/>
                                     <constraint firstItem="AXn-8W-W0e" firstAttribute="leading" secondItem="mrf-5a-LJL" secondAttribute="leading" id="UJN-KU-lRG"/>
-                                    <constraint firstAttribute="trailing" secondItem="Yp3-mj-MDN" secondAttribute="trailing" id="Unz-N3-sZO"/>
                                     <constraint firstAttribute="height" secondItem="5Y7-tB-lko" secondAttribute="height" id="Uvz-Kf-C3c"/>
                                     <constraint firstAttribute="height" secondItem="lE6-hq-OKf" secondAttribute="height" id="V7o-tp-k6f"/>
-                                    <constraint firstItem="lE6-hq-OKf" firstAttribute="height" secondItem="5Y7-tB-lko" secondAttribute="height" id="Z2h-p5-AbH"/>
                                     <constraint firstAttribute="width" secondItem="lE6-hq-OKf" secondAttribute="width" id="aZY-cK-j5H"/>
+                                    <constraint firstAttribute="trailing" secondItem="1jH-k8-Jmp" secondAttribute="trailing" placeholder="YES" id="akq-z0-lDC"/>
                                     <constraint firstItem="lE6-hq-OKf" firstAttribute="leading" secondItem="mrf-5a-LJL" secondAttribute="leading" id="eHe-O8-r3p"/>
                                     <constraint firstAttribute="height" secondItem="4Qh-Sn-DTB" secondAttribute="height" id="ewA-Nl-kjl"/>
                                     <constraint firstItem="4Qh-Sn-DTB" firstAttribute="leading" secondItem="mrf-5a-LJL" secondAttribute="leading" id="fcu-ov-WDy"/>
-                                    <constraint firstAttribute="trailing" secondItem="1jH-k8-Jmp" secondAttribute="trailing" placeholder="YES" id="gRq-iN-H8e"/>
                                     <constraint firstAttribute="width" secondItem="Yp3-mj-MDN" secondAttribute="width" id="geG-IN-O5a"/>
-                                    <constraint firstAttribute="bottom" secondItem="5Y7-tB-lko" secondAttribute="bottom" id="kYZ-zB-uDC"/>
                                     <constraint firstAttribute="width" secondItem="AXn-8W-W0e" secondAttribute="width" id="khC-Aw-3ir"/>
                                     <constraint firstItem="1jH-k8-Jmp" firstAttribute="height" secondItem="mrf-5a-LJL" secondAttribute="height" id="me7-1f-ZQ9"/>
                                     <constraint firstAttribute="height" secondItem="AXn-8W-W0e" secondAttribute="height" id="omc-AS-TN4"/>
-                                    <constraint firstAttribute="trailing" secondItem="AXn-8W-W0e" secondAttribute="trailing" id="rNc-H5-wvv"/>
-                                    <constraint firstAttribute="bottom" secondItem="AXn-8W-W0e" secondAttribute="bottom" id="sZu-Nq-yIg"/>
                                     <constraint firstItem="5Y7-tB-lko" firstAttribute="leading" secondItem="mrf-5a-LJL" secondAttribute="leading" id="tBP-vY-N0U"/>
                                     <constraint firstItem="Yp3-mj-MDN" firstAttribute="top" secondItem="mrf-5a-LJL" secondAttribute="top" id="vrk-an-OWU"/>
                                     <constraint firstItem="1jH-k8-Jmp" firstAttribute="leading" secondItem="mrf-5a-LJL" secondAttribute="leading" id="yK4-M2-nIJ"/>
                                 </constraints>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="4Gi-QE-lMi"/>
-                                        <exclude reference="RPx-UD-Ohp"/>
-                                        <exclude reference="A9D-Po-EsQ"/>
-                                        <exclude reference="kYZ-zB-uDC"/>
-                                        <exclude reference="rNc-H5-wvv"/>
-                                        <exclude reference="sZu-Nq-yIg"/>
-                                        <exclude reference="O01-9O-lvA"/>
-                                        <exclude reference="Unz-N3-sZO"/>
-                                        <exclude reference="1mv-1D-ida"/>
-                                        <exclude reference="IhE-Nc-Ige"/>
-                                        <exclude reference="Z2h-p5-AbH"/>
-                                    </mask>
-                                </variation>
                             </scrollView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dkP-Vg-1Mw" userLabel="tabBarView">
                                 <rect key="frame" x="0.0" y="949" width="768" height="75"/>
@@ -759,17 +734,26 @@
                         <outlet property="claimsTabItemView" destination="1a4-MP-6zH" id="6GH-Pd-89y"/>
                         <outlet property="containerScrollView" destination="mrf-5a-LJL" id="LkB-6y-ZoF"/>
                         <outlet property="dashboardContainerView" destination="lE6-hq-OKf" id="uBg-6b-nZ4"/>
+                        <outlet property="dashboardContainerViewHeightConstraint" destination="V7o-tp-k6f" id="pMm-dp-YZS"/>
                         <outlet property="dashboardContainerViewLeadingConstraint" destination="eHe-O8-r3p" id="5vy-ew-TET"/>
+                        <outlet property="dashboardContainerViewTopConstraint" destination="1ED-P4-BLd" id="iGu-dS-Pus"/>
+                        <outlet property="dashboardContainerViewWidthConstraint" destination="aZY-cK-j5H" id="CVw-74-4cb"/>
                         <outlet property="dashboardTabItemView" destination="sIS-7b-x6v" id="4fL-pt-Lo1"/>
                         <outlet property="fileClaimContainerView" destination="1jH-k8-Jmp" id="4wW-n4-zRf"/>
+                        <outlet property="fileClaimContainerViewHeightConstraint" destination="me7-1f-ZQ9" id="Jov-O1-msz"/>
                         <outlet property="fileClaimContainerViewLeadingConstraint" destination="yK4-M2-nIJ" id="P1Z-mN-4IC"/>
+                        <outlet property="fileClaimContainerViewTopConstraint" destination="9Em-3i-g4y" id="6O6-B1-2rt"/>
+                        <outlet property="fileClaimContainerViewWidthConstraint" destination="9fG-fa-uvM" id="n52-Ca-efg"/>
                         <outlet property="fileClaimTabItemView" destination="TyV-LV-fK5" id="CbR-Bf-GCm"/>
                         <outlet property="notificationCountLabel" destination="WiG-zk-3YH" id="Hc3-mj-xZ0"/>
                         <outlet property="notificationsContainerView" destination="5Y7-tB-lko" id="gcQ-Vg-dbw"/>
                         <outlet property="notificationsContainerViewLeadingConstraint" destination="tBP-vY-N0U" id="Egw-Ep-sDf"/>
                         <outlet property="notificationsTabItemView" destination="EQa-R0-vSE" id="VKj-b7-evP"/>
                         <outlet property="policiesContainerView" destination="Yp3-mj-MDN" id="VXW-co-tMz"/>
+                        <outlet property="policiesContainerViewHeightConstraint" destination="0Gq-cc-yzz" id="MRI-Vv-TMS"/>
                         <outlet property="policiesContainerViewLeadingConstraint" destination="Bzi-10-BKs" id="bnp-92-Kqw"/>
+                        <outlet property="policiesContainerViewTopConstraint" destination="vrk-an-OWU" id="eYz-IW-prb"/>
+                        <outlet property="policiesContainerViewWidthConstraint" destination="geG-IN-O5a" id="6U3-q3-UeQ"/>
                         <outlet property="policiesTabItemView" destination="xb3-hB-Eg8" id="J15-25-Tay"/>
                     </connections>
                 </viewController>
