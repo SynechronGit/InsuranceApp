@@ -51,25 +51,25 @@
             <string>Ubuntu-Medium</string>
             <string>Ubuntu-Medium</string>
             <string>Ubuntu-Medium</string>
+            <string>Ubuntu-Medium</string>
+            <string>Ubuntu-Medium</string>
+            <string>Ubuntu-Medium</string>
+            <string>Ubuntu-Medium</string>
+            <string>Ubuntu-Medium</string>
+            <string>Ubuntu-Medium</string>
+            <string>Ubuntu-Medium</string>
+            <string>Ubuntu-Medium</string>
+            <string>Ubuntu-Medium</string>
+            <string>Ubuntu-Medium</string>
+            <string>Ubuntu-Medium</string>
+            <string>Ubuntu-Medium</string>
+            <string>Ubuntu-Medium</string>
+            <string>Ubuntu-Medium</string>
         </mutableArray>
         <mutableArray key="Ubuntu-700.ttf">
             <string>Ubuntu-Bold</string>
         </mutableArray>
         <mutableArray key="Ubuntu-regular.ttf">
-            <string>Ubuntu</string>
-            <string>Ubuntu</string>
-            <string>Ubuntu</string>
-            <string>Ubuntu</string>
-            <string>Ubuntu</string>
-            <string>Ubuntu</string>
-            <string>Ubuntu</string>
-            <string>Ubuntu</string>
-            <string>Ubuntu</string>
-            <string>Ubuntu</string>
-            <string>Ubuntu</string>
-            <string>Ubuntu</string>
-            <string>Ubuntu</string>
-            <string>Ubuntu</string>
             <string>Ubuntu</string>
             <string>Ubuntu</string>
             <string>Ubuntu</string>
@@ -4324,7 +4324,7 @@ Insurance</string>
                                             <constraint firstAttribute="height" constant="21" id="Yix-xk-jYy"/>
                                             <constraint firstAttribute="width" constant="125" id="cFw-3l-RVZ"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="Ubuntu" family="Ubuntu" pointSize="17"/>
+                                        <fontDescription key="fontDescription" name="Ubuntu-Medium" family="Ubuntu" pointSize="17"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -4344,7 +4344,7 @@ Insurance</string>
                                             <constraint firstAttribute="width" constant="125" id="fdo-a5-q0K"/>
                                             <constraint firstAttribute="height" constant="21" id="jjj-Z0-ufL"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="Ubuntu" family="Ubuntu" pointSize="17"/>
+                                        <fontDescription key="fontDescription" name="Ubuntu-Medium" family="Ubuntu" pointSize="17"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -4363,7 +4363,7 @@ Insurance</string>
                                             <constraint firstAttribute="height" constant="21" id="LRH-V4-dCN"/>
                                             <constraint firstAttribute="width" constant="65" id="hD8-9a-Lg7"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="Ubuntu" family="Ubuntu" pointSize="17"/>
+                                        <fontDescription key="fontDescription" name="Ubuntu-Medium" family="Ubuntu" pointSize="17"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -4382,7 +4382,7 @@ Insurance</string>
                                             <constraint firstAttribute="width" constant="125" id="BgU-MW-vNA"/>
                                             <constraint firstAttribute="height" constant="21" id="J36-Hu-KF8"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="Ubuntu" family="Ubuntu" pointSize="17"/>
+                                        <fontDescription key="fontDescription" name="Ubuntu-Medium" family="Ubuntu" pointSize="17"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -4400,7 +4400,7 @@ Insurance</string>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="21" id="HmR-6b-Hlb"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="Ubuntu" family="Ubuntu" pointSize="17"/>
+                                        <fontDescription key="fontDescription" name="Ubuntu-Medium" family="Ubuntu" pointSize="17"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -4419,7 +4419,7 @@ Insurance</string>
                                             <constraint firstAttribute="height" constant="21" id="GrV-Si-aNM"/>
                                             <constraint firstAttribute="width" constant="125" id="pHt-Hj-u0S"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="Ubuntu" family="Ubuntu" pointSize="17"/>
+                                        <fontDescription key="fontDescription" name="Ubuntu-Medium" family="Ubuntu" pointSize="17"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -4437,7 +4437,7 @@ Insurance</string>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="21" id="3dY-bl-xiC"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="Ubuntu" family="Ubuntu" pointSize="17"/>
+                                        <fontDescription key="fontDescription" name="Ubuntu-Medium" family="Ubuntu" pointSize="17"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -4486,7 +4486,7 @@ Insurance</string>
                                             <constraint firstAttribute="width" constant="125" id="U9B-wr-hyY"/>
                                             <constraint firstAttribute="height" constant="21" id="WKq-Ut-YjL"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="Ubuntu" family="Ubuntu" pointSize="17"/>
+                                        <fontDescription key="fontDescription" name="Ubuntu-Medium" family="Ubuntu" pointSize="17"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -4506,7 +4506,7 @@ Insurance</string>
                                             <constraint firstAttribute="height" constant="21" id="6oy-bN-WHQ"/>
                                             <constraint firstAttribute="width" constant="125" id="cCb-lY-TT1"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="Ubuntu" family="Ubuntu" pointSize="17"/>
+                                        <fontDescription key="fontDescription" name="Ubuntu-Medium" family="Ubuntu" pointSize="17"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -4525,7 +4525,7 @@ Insurance</string>
                                             <constraint firstAttribute="height" constant="21" id="D2d-Df-jef"/>
                                             <constraint firstAttribute="width" constant="125" id="MmJ-In-FtD"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="Ubuntu" family="Ubuntu" pointSize="17"/>
+                                        <fontDescription key="fontDescription" name="Ubuntu-Medium" family="Ubuntu" pointSize="17"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -4544,7 +4544,7 @@ Insurance</string>
                                             <constraint firstAttribute="width" constant="125" id="Rpd-IR-jFE"/>
                                             <constraint firstAttribute="height" constant="21" id="fEK-U0-QXH"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="Ubuntu" family="Ubuntu" pointSize="17"/>
+                                        <fontDescription key="fontDescription" name="Ubuntu-Medium" family="Ubuntu" pointSize="17"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -4563,7 +4563,7 @@ Insurance</string>
                                             <constraint firstAttribute="height" constant="21" id="JMO-j3-gcy"/>
                                             <constraint firstAttribute="width" constant="125" id="xdU-eO-6N4"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="Ubuntu" family="Ubuntu" pointSize="17"/>
+                                        <fontDescription key="fontDescription" name="Ubuntu-Medium" family="Ubuntu" pointSize="17"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -4582,7 +4582,7 @@ Insurance</string>
                                             <constraint firstAttribute="width" constant="125" id="H6n-P0-tCW"/>
                                             <constraint firstAttribute="height" constant="21" id="M83-WM-6fL"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="Ubuntu" family="Ubuntu" pointSize="17"/>
+                                        <fontDescription key="fontDescription" name="Ubuntu-Medium" family="Ubuntu" pointSize="17"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -4601,7 +4601,7 @@ Insurance</string>
                                             <constraint firstAttribute="height" constant="21" id="C5Q-p1-U2a"/>
                                             <constraint firstAttribute="width" constant="125" id="ZKG-yy-HLT"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="Ubuntu" family="Ubuntu" pointSize="17"/>
+                                        <fontDescription key="fontDescription" name="Ubuntu-Medium" family="Ubuntu" pointSize="17"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
