@@ -42,6 +42,8 @@ class IADriverDetailsController: IABaseController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.title = "Driver Details"
+        
         self.driverDetailsContainerView.layer.cornerRadius = IAConstants.dashboardSubviewCornerRadius
         self.driverDetailsContainerView.layer.masksToBounds = true
         

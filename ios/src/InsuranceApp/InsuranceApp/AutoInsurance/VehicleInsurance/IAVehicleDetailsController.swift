@@ -32,6 +32,8 @@ class IAVehicleDetailsController: IABaseController ,UICollectionViewDelegate, UI
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.title = "Vehicle Details"
+        
         self.vehicleListCollectionView.backgroundColor = UIColor.clearColor()
         
         self.mainBgView.layer.cornerRadius = 10.0

@@ -110,7 +110,7 @@ class IADropdownListController: UIViewController {
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let aReturnVal:UITableViewCell = UITableViewCell()
         aReturnVal.backgroundColor = UIColor.clearColor()
-        aReturnVal.textLabel?.font = UIFont(name: "Ubuntu-Regular", size: 13.0)
+        aReturnVal.textLabel?.font = UIFont(name: "Ubuntu", size: 13.0)
         
         if self.list != nil {
             aReturnVal.textLabel?.text = self.list[indexPath.row]
