@@ -21,6 +21,8 @@ class IADashboardController: IABaseController {
     @IBOutlet var myClaimsContainerView: UIView!
     @IBOutlet var payPremiumContainerView: UIView!
     
+    @IBOutlet weak var metWithAccidentContainerView: UIView!
+    
     @IBOutlet var roadsideAssistanceContainerView: UIView!
     @IBOutlet var insuranceIDCardContainerView: UIView!
     
@@ -40,6 +42,9 @@ class IADashboardController: IABaseController {
         
         self.payPremiumContainerView.layer.cornerRadius = IAConstants.dashboardSubviewCornerRadius
         self.payPremiumContainerView.layer.masksToBounds = true
+        
+        self.metWithAccidentContainerView.layer.cornerRadius = IAConstants.dashboardSubviewCornerRadius
+        self.metWithAccidentContainerView.layer.masksToBounds = true
         
         self.roadsideAssistanceContainerView.layer.cornerRadius = IAConstants.dashboardSubviewCornerRadius
         self.roadsideAssistanceContainerView.layer.masksToBounds = true
