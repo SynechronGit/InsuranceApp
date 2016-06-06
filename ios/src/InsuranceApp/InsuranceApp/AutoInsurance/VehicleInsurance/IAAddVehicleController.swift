@@ -122,24 +122,38 @@ class IAAddVehicleController: IABaseController, UIImagePickerControllerDelegate,
         self.modelTextBox.shouldDisplayAsDropdown = true
         self.modelTextBox.controller = self
         self.modelTextBox.list = nil
+        self.modelTextBox.delegate = self
         
         
         self.bosyStyleTextBox.shouldDisplayAsDropdown = true
         self.bosyStyleTextBox.controller = self
-        self.bosyStyleTextBox.list = ["Hatchbacks", "Sedans", "Vans‎", "Hardtop"]
+        self.bosyStyleTextBox.list = ["Hatchback", "Sedan", "SUV"]
     }
     
     func textFieldDidEndEditing(textField: UITextField) {
         if textField.isEqual(self.companyTextBox) {
             self.modelTextBox.text = nil
             if self.companyTextBox.text == "Mercedes" {
-                self.modelTextBox.list = ["S350", "S400", "S600", "E250", "E350", "C250"]
+                self.modelTextBox.list = ["A-Class A 180", "B-Class B 180 Sport", "Mercedes S350", "Mercedes S400", "Mercedes Maybach S500", "G 63 AMG", "M Guard", "GLE 250D", "GLE 350D" ]
             } else if self.companyTextBox.text == "BMW" {
-                self.modelTextBox.list = ["X1", "X2", "X3", "750", "X6", "X5"]
+                self.modelTextBox.list = ["BMW 1 Series 11d sports", "BMW 320d", "BMW 520d" , "BMW X6" , "BMW X1",  "BMW X5"]
             } else if self.companyTextBox.text == "Audi" {
-                self.modelTextBox.list = ["A3", "A4", "A5", "Q5", "Q6"]
+                self.modelTextBox.list = ["Audi A8", "Audi RS7", "Audi A3", "Audi A4", "Audi Q3", "Audi Q5", "Audi Q7"]
             } else {
                 self.modelTextBox.list = nil
+            }
+        }
+        
+        if textField.isEqual(self.modelTextBox) {
+            if (self.modelTextBox.text == "BMW 1 Series 11d sports" || self.modelTextBox.text == "A-Class A 180" || self.modelTextBox.text == "B-Class B 180 Sport"){
+                print("1")
+                self.bosyStyleTextBox.text = "Hatchback"
+            } else if (self.modelTextBox.text == "Audi A8" || self.modelTextBox.text == "Audi RS7" || self.modelTextBox.text == "Audi A3" || self.modelTextBox.text == "Audi A4" || self.modelTextBox.text == "BMW 320d" || self.modelTextBox.text == "BMW 520d" || self.modelTextBox.text == "Mercedes S350" || self.modelTextBox.text == "Mercedes S400" || self.modelTextBox.text == "Mercedes Maybach S500" ) {
+                print("2")
+                self.bosyStyleTextBox.text = "Sedan"
+            } else if (self.modelTextBox.text == "Audi Q3" || self.modelTextBox.text == "Audi Q5" || self.modelTextBox.text == "Audi Q7" || self.modelTextBox.text == "BMW X6" || self.modelTextBox.text == "BMW X1" || self.modelTextBox.text == "BMW X5" || self.modelTextBox.text == "G 63 AMG" || self.modelTextBox.text == "M Guard" || self.modelTextBox.text == "GLE 250D" || self.modelTextBox.text == "GLE 350D"){
+                print("3")
+                self.bosyStyleTextBox.text = "SUV"
             }
         }
     }
