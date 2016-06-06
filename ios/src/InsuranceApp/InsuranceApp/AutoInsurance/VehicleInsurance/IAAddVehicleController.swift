@@ -49,6 +49,10 @@ class IAAddVehicleController: IABaseController, UIImagePickerControllerDelegate,
     @IBOutlet weak var collisionCoverageSecondOptionButton: UIButton!
     @IBOutlet weak var collisionCoverageSecondOptionLabel: UILabel!
     
+    @IBOutlet weak var descriptionBgView: UIView!
+    @IBOutlet weak var descriptionTextView: UITextView!
+    
+    
     var vinConfirmation : Bool = true
     var comprahensiveFirstOption : Bool = true
     var collisionFirstOption : Bool = true
@@ -95,6 +99,12 @@ class IAAddVehicleController: IABaseController, UIImagePickerControllerDelegate,
         
         self.saveBtnView.layer.cornerRadius = IAConstants.dashboardSubviewCornerRadius
         self.saveBtnView.layer.masksToBounds = true
+        
+        self.descriptionBgView.layer.cornerRadius = IAConstants.dashboardSubviewCornerRadius
+        self.descriptionBgView.layer.borderColor = UIColor.lightGrayColor().CGColor
+        self.descriptionBgView.layer.borderWidth = 2.0
+        self.descriptionBgView.layer.masksToBounds = true
+        
         
         self.yearTextBox.shouldDisplayAsDropdown = true
         self.yearTextBox.controller = self
@@ -177,6 +187,7 @@ class IAAddVehicleController: IABaseController, UIImagePickerControllerDelegate,
             aVehicle.company = self.companyTextBox.text
             aVehicle.modelNumber = self.modelTextBox.text
             aVehicle.bodyStyle = self.bosyStyleTextBox.text
+            aVehicle.vehicleDescription = self.descriptionTextView.text
             if self.comprahensiveFirstOption == true {
                 aVehicle.comprehensiveCoverage = self.comprehensiveCoverageFirstOptionLabel.text
             } else {
