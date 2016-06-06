@@ -2894,6 +2894,9 @@ Insurance</string>
                                             <constraint firstAttribute="height" constant="34" id="uN4-zO-2wA"/>
                                         </constraints>
                                         <state key="normal" image="CalendarIcon"/>
+                                        <connections>
+                                            <action selector="didSelectDobCalendarButton" destination="aL6-SL-tmf" eventType="touchUpInside" id="rDN-2D-jln"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7cG-MP-x1E">
                                         <rect key="frame" x="416" y="565" width="38" height="34"/>
@@ -2902,6 +2905,9 @@ Insurance</string>
                                             <constraint firstAttribute="height" constant="34" id="emS-DT-fCz"/>
                                         </constraints>
                                         <state key="normal" image="CalendarIcon"/>
+                                        <connections>
+                                            <action selector="didSelectAppointedSinceCalendarButton" destination="aL6-SL-tmf" eventType="touchUpInside" id="hCb-J5-nbT"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="City:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tMH-N3-GkD">
                                         <rect key="frame" x="414" y="412" width="50" height="21"/>

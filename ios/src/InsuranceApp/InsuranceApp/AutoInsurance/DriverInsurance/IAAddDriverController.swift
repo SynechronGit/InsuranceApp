@@ -125,6 +125,16 @@ class IAAddDriverController: IABaseController, UITextFieldDelegate, UIImagePicke
     }
     
     
+    @IBAction func didSelectDobCalendarButton() {
+        self.dobTextField.displayDropdownList()
+    }
+    
+    
+    @IBAction func didSelectAppointedSinceCalendarButton() {
+        self.appointedSinceTextField.displayDropdownList()
+    }
+    
+    
     func displayImagePicker() {
         if self.imagePickerController == nil {
             self.imagePickerController = UIImagePickerController()
