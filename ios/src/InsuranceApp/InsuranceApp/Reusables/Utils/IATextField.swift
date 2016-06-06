@@ -92,26 +92,7 @@ class IATextField: UITextField, IADropdownListControllerDelegate {
         if (self.shouldDisplayAsDropdown != nil && self.shouldDisplayAsDropdown == true) || (self.shouldDisplayAsDatePicker != nil && self.shouldDisplayAsDatePicker == true) {
             self.resignFirstResponder()
             if touches.first?.tapCount == 1 && self.controller != nil {
-                if self.dropdownListController == nil {
-                    self.dropdownListController  = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("IADropdownListControllerID") as! IADropdownListController
-                }
-                self.dropdownListController.delegate = self
-                self.dropdownListController.shouldDisplayAsDatePicker = self.shouldDisplayAsDatePicker
-                self.dropdownListController.list = self.list
-                if self.list != nil {
-                    var aHeight :CGFloat = CGFloat(self.list.count) * 36.0
-                    if aHeight > 300.0 {
-                        aHeight = 300.0
-                    }
-                    self.dropdownListController.preferredContentSize = CGSizeMake(320.0, aHeight)
-                } else {
-                    self.dropdownListController.preferredContentSize = CGSizeMake(320.0, 200.0)
-                }
-                self.dropdownListController.modalPresentationStyle = .Popover
-                self.dropdownListController.popoverPresentationController?.permittedArrowDirections = UIPopoverArrowDirection.Any
-                self.dropdownListController.popoverPresentationController?.sourceView = self
-                self.dropdownListController.popoverPresentationController?.sourceRect = self.bounds
-                self.controller.presentViewController(self.dropdownListController, animated: true, completion: nil)
+                self.displayDropdownList()
             }
         }
     }
@@ -123,5 +104,29 @@ class IATextField: UITextField, IADropdownListControllerDelegate {
             self.dropdownListController.dismissViewControllerAnimated(true, completion: nil)
             self.delegate?.textFieldDidEndEditing!(self)
         }
+    }
+    
+    
+    func displayDropdownList() {
+        if self.dropdownListController == nil {
+            self.dropdownListController  = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("IADropdownListControllerID") as! IADropdownListController
+        }
+        self.dropdownListController.delegate = self
+        self.dropdownListController.shouldDisplayAsDatePicker = self.shouldDisplayAsDatePicker
+        self.dropdownListController.list = self.list
+        if self.list != nil {
+            var aHeight :CGFloat = CGFloat(self.list.count) * 36.0
+            if aHeight > 300.0 {
+                aHeight = 300.0
+            }
+            self.dropdownListController.preferredContentSize = CGSizeMake(320.0, aHeight)
+        } else {
+            self.dropdownListController.preferredContentSize = CGSizeMake(320.0, 200.0)
+        }
+        self.dropdownListController.modalPresentationStyle = .Popover
+        self.dropdownListController.popoverPresentationController?.permittedArrowDirections = UIPopoverArrowDirection.Any
+        self.dropdownListController.popoverPresentationController?.sourceView = self
+        self.dropdownListController.popoverPresentationController?.sourceRect = self.bounds
+        self.controller.presentViewController(self.dropdownListController, animated: true, completion: nil)
     }
 }

@@ -14,18 +14,30 @@ class IAHomeController: IABaseController {
     @IBOutlet weak var dashboardTabItemView: UIView!
     @IBOutlet weak var dashboardContainerView: UIView!
     @IBOutlet weak var dashboardContainerViewLeadingConstraint: NSLayoutConstraint!
+    @IBOutlet weak var dashboardContainerViewTopConstraint: NSLayoutConstraint!
+    @IBOutlet weak var dashboardContainerViewWidthConstraint: NSLayoutConstraint!
+    @IBOutlet weak var dashboardContainerViewHeightConstraint: NSLayoutConstraint!
     
     @IBOutlet weak var fileClaimTabItemView: UIView!
     @IBOutlet weak var fileClaimContainerView: UIView!
     @IBOutlet weak var fileClaimContainerViewLeadingConstraint: NSLayoutConstraint!
+    @IBOutlet weak var fileClaimContainerViewTopConstraint: NSLayoutConstraint!
+    @IBOutlet weak var fileClaimContainerViewWidthConstraint: NSLayoutConstraint!
+    @IBOutlet weak var fileClaimContainerViewHeightConstraint: NSLayoutConstraint!
     
     @IBOutlet weak var policiesTabItemView: UIView!
     @IBOutlet weak var policiesContainerView: UIView!
     @IBOutlet weak var policiesContainerViewLeadingConstraint: NSLayoutConstraint!
+    @IBOutlet weak var policiesContainerViewTopConstraint: NSLayoutConstraint!
+    @IBOutlet weak var policiesContainerViewWidthConstraint: NSLayoutConstraint!
+    @IBOutlet weak var policiesContainerViewHeightConstraint: NSLayoutConstraint!
     
     @IBOutlet weak var claimsTabItemView: UIView!
     @IBOutlet weak var claimsContainerView: UIView!
     @IBOutlet weak var claimsContainerViewLeadingConstraint: NSLayoutConstraint!
+    @IBOutlet weak var claimsContainerViewTopConstraint: NSLayoutConstraint!
+    @IBOutlet weak var claimsContainerViewWidthConstraint: NSLayoutConstraint!
+    @IBOutlet weak var claimsContainerViewHeightConstraint: NSLayoutConstraint!
     
     @IBOutlet weak var accountTabItemView: UIView!
     @IBOutlet weak var accountContainerView: UIView!
