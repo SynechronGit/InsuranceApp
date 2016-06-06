@@ -93,6 +93,39 @@ class IAAutoInsuranceDetailsController: IABaseController , UICollectionViewDeleg
         self.performSegueWithIdentifier("AutoInsuranceDetailsToAddDriverSegueID", sender: self)
     }
     
+    @IBAction func didSelectVechicleNext(sender: AnyObject) {
+        let visibleItems: NSArray = self.vehicleCollectionView.indexPathsForVisibleItems()
+        let currentItem: NSIndexPath = visibleItems.objectAtIndex(0) as! NSIndexPath
+        let nextItem: NSIndexPath = NSIndexPath(forRow: currentItem.item + 1, inSection: 0)
+        self.vehicleCollectionView.scrollToItemAtIndexPath(nextItem, atScrollPosition: .Left, animated: true)
+    }
+    
+    
+    @IBAction func didSelectVehiclePrevious(sender: AnyObject) {
+        let visibleItems: NSArray = self.vehicleCollectionView.indexPathsForVisibleItems()
+        let currentItem: NSIndexPath = visibleItems.objectAtIndex(0) as! NSIndexPath
+        let nextItem: NSIndexPath = NSIndexPath(forRow: currentItem.item + 1, inSection: 0)
+        self.vehicleCollectionView.scrollToItemAtIndexPath(nextItem, atScrollPosition: .Right, animated: true)
+    }
+    
+    
+    @IBAction func didSelectDriverNext(sender: AnyObject) {
+        let visibleItems: NSArray = self.driverCollectionView.indexPathsForVisibleItems()
+        let currentItem: NSIndexPath = visibleItems.objectAtIndex(0) as! NSIndexPath
+        let nextItem: NSIndexPath = NSIndexPath(forRow: currentItem.item + 1, inSection: 0)
+        self.driverCollectionView.scrollToItemAtIndexPath(nextItem, atScrollPosition: .Left, animated: true)
+    }
+    
+    @IBAction func didSelectDriverPrevious(sender: AnyObject) {
+        let visibleItems: NSArray = self.driverCollectionView.indexPathsForVisibleItems()
+        let currentItem: NSIndexPath = visibleItems.objectAtIndex(0) as! NSIndexPath
+        let nextItem: NSIndexPath = NSIndexPath(forRow: currentItem.item + 1, inSection: 0)
+        self.driverCollectionView.scrollToItemAtIndexPath(nextItem, atScrollPosition: .Right, animated: true)
+    }
+    
+    
+    
+    
     
     // MARK: - IADataManagerDelegate Methods
     
