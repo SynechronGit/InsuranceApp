@@ -172,8 +172,23 @@ class IADataManager: NSObject {
             } else if self.requestType == IARequestType.DashboardDetails {
                 let aDashboardDetails :IADashboard = IADashboard()
                 
-                aDashboardDetails.autoInsuranceCarCount = 7
-                aDashboardDetails.autoInsuranceDriverCount = 7
+                let anSqlQuery :String = "SELECT (SELECT COUNT(id) FROM vehicles) AS AutoInsuranceCarCount, (SELECT COUNT(id) FROM drivers) AS AutoInsuranceDriverCount"
+                let anSqlResult = try self.executeQuery(anSqlQuery, values: nil)
+                if anSqlResult != nil && anSqlResult.count == 1 {
+                    let aDBDashboardDict :[String:AnyObject] = anSqlResult[0]
+                    if aDBDashboardDict["AutoInsuranceCarCount"] is NSNumber {
+                        aDashboardDetails.autoInsuranceCarCount = (aDBDashboardDict["AutoInsuranceCarCount"] as! NSNumber).integerValue
+                    }
+                    if aDBDashboardDict["AutoInsuranceDriverCount"] is NSNumber {
+                        aDashboardDetails.autoInsuranceDriverCount = (aDBDashboardDict["AutoInsuranceDriverCount"] as! NSNumber).integerValue
+                    }
+                }
+                if aDashboardDetails.autoInsuranceCarCount == nil {
+                    aDashboardDetails.autoInsuranceCarCount = 0
+                }
+                if aDashboardDetails.autoInsuranceDriverCount == nil {
+                    aDashboardDetails.autoInsuranceDriverCount = 0
+                }
                 
                 aDashboardDetails.homeInsuranceApplianceCount = 16
                 aDashboardDetails.homeInsuranceFurnitureCount = 32

@@ -46,9 +46,13 @@ class IADashboardController: IABaseController {
         
         self.insuranceIDCardContainerView.layer.cornerRadius = IAConstants.dashboardSubviewCornerRadius
         self.insuranceIDCardContainerView.layer.masksToBounds = true
-        
+    }
+    
+    
+    override func viewDidAppear(animated: Bool) {
         self.reloadAllData()
     }
+    
     
     func reloadAllData() {
         IAAppDelegate.currentAppDelegate.displayLoadingOverlay()
