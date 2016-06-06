@@ -12,6 +12,8 @@ class IAFileClaimController: IABaseController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.navigationItem.rightBarButtonItem = nil
     }
     
 }
