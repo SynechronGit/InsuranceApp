@@ -8,6 +8,14 @@
 
 import UIKit
 
-class IAPolicy: NSObject {
-
+class IAPolicy:NSObject {
+    var insuranceType:String!
+    var insuredVehicleCount:Int!
+    var insuredDriverCount:Int!
+    var insuredHomeItemCount:Int!
+    var insuredBoatCount:Int!
+    var insuredPetCount:Int!
+    var coverage :NSNumber!
+    var premiumDue :NSNumber!
+    var date :String!
 }

@@ -9,27 +9,33 @@
 import UIKit
 
 class IAPolicyDetailsController: UIViewController {
-
+    @IBOutlet weak var policyDetailsContainerView: UIView!
+    @IBOutlet weak var policyDetailsWebView: UIWebView!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        
+        self.title = "Policies"
+        
+        self.policyDetailsContainerView.layer.cornerRadius = IAConstants.dashboardSubviewCornerRadius
+        self.policyDetailsContainerView.layer.masksToBounds = true
+        
+        self.reloadAllData()
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    
+    func reloadAllData() {
+        self.reloadAllView()
     }
-    */
-
+    
+    
+    func reloadAllView() {
+        let aPdfFilePath = NSBundle.mainBundle().pathForResource("PolicyGeneral", ofType: "pdf")
+        if aPdfFilePath != nil {
+            let aRequest = NSURLRequest(URL: NSURL(fileURLWithPath: aPdfFilePath!))
+            self.policyDetailsWebView.loadRequest(aRequest)
+        }
+    }
+    
 }
