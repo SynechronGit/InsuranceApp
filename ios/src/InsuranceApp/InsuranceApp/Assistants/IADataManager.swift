@@ -222,7 +222,7 @@ class IADataManager: NSObject {
                 if aVehicle.photoThree != nil {
                     aPhotoThreeData = UIImagePNGRepresentation(aVehicle.photoThree)
                 }
-                let anSqlQuery :String = "INSERT INTO vehicles (vin, year, company, model_number, body_style, description, photo_one, photo_two, photo_three, comprehensive_coverage, collision_coverage) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)"
+                let anSqlQuery :String = "INSERT INTO vehicles (vin, year, company, model_number, body_style, description, photo_one, photo_two, photo_three, comprehensive_coverage, collision_coverage, vehicle_name) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)"
                 var aValueArray = Array<AnyObject>()
                 aValueArray.append(aVehicle.vin != nil ? aVehicle.vin : NSNull())
                 aValueArray.append(aVehicle.year != nil ? aVehicle.year : NSNull())
@@ -235,6 +235,7 @@ class IADataManager: NSObject {
                 aValueArray.append(aPhotoThreeData != nil ? aPhotoThreeData : NSNull())
                 aValueArray.append(aVehicle.comprehensiveCoverage != nil ? aVehicle.comprehensiveCoverage : NSNull())
                 aValueArray.append(aVehicle.collisionCoverage != nil ? aVehicle.collisionCoverage : NSNull())
+                aValueArray.append(aVehicle.vehicleName != nil ? aVehicle.vehicleName : NSNull())
                 try self.executeQuery(anSqlQuery, values: aValueArray)
                 aDataManagerResponse.result = aVehicle
             } else if self.requestType == IARequestType.ListVehicles {

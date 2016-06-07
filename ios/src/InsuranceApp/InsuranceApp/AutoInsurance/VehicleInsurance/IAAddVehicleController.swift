@@ -170,6 +170,9 @@ class IAAddVehicleController: IABaseController, UIImagePickerControllerDelegate,
     func didSelectAddButton() {
         
         do {
+            if self.vehicleNameTextBox.text == nil || self.vehicleNameTextBox.text?.lengthOfBytesUsingEncoding(NSUTF8StringEncoding) <= 0 {
+                throw IAError.Generic(NSError(domain: "com", code: 1, userInfo: [NSLocalizedDescriptionKey:"Please enter VIN."]))
+            }
             
             if self.addPhotoFirstImageView.image == nil && self.addPhotoSecondImageView.image == nil && self.addPhotoThirdImageView.image == nil  {
                 throw IAError.Generic(NSError(domain: "com", code: 1, userInfo: [NSLocalizedDescriptionKey:"Please provide vehicle's photo."]))
@@ -204,6 +207,7 @@ class IAAddVehicleController: IABaseController, UIImagePickerControllerDelegate,
             aVehicle.modelNumber = self.modelTextBox.text
             aVehicle.bodyStyle = self.bosyStyleTextBox.text
             aVehicle.vehicleDescription = self.descriptionTextView.text
+            aVehicle.vehicleName = self.vehicleNameTextBox.text
             if self.comprahensiveFirstOption == true {
                 aVehicle.comprehensiveCoverage = self.comprehensiveCoverageFirstOptionLabel.text
             } else {
