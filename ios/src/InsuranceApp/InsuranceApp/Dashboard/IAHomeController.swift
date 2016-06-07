@@ -13,31 +13,21 @@ class IAHomeController: IABaseController {
     
     @IBOutlet weak var dashboardTabItemView: UIView!
     @IBOutlet weak var dashboardContainerView: UIView!
-    @IBOutlet weak var dashboardContainerViewLeadingConstraint: NSLayoutConstraint!
-    @IBOutlet weak var dashboardContainerViewTopConstraint: NSLayoutConstraint!
-    @IBOutlet weak var dashboardContainerViewWidthConstraint: NSLayoutConstraint!
-    @IBOutlet weak var dashboardContainerViewHeightConstraint: NSLayoutConstraint!
+    @IBOutlet weak var dashboardImageView: UIImageView!
+    @IBOutlet weak var dashboardTabContentViewLeadingConstraint: NSLayoutConstraint!
     
     @IBOutlet weak var fileClaimTabItemView: UIView!
     @IBOutlet weak var fileClaimContainerView: UIView!
     @IBOutlet weak var fileClaimContainerViewLeadingConstraint: NSLayoutConstraint!
-    @IBOutlet weak var fileClaimContainerViewTopConstraint: NSLayoutConstraint!
-    @IBOutlet weak var fileClaimContainerViewWidthConstraint: NSLayoutConstraint!
-    @IBOutlet weak var fileClaimContainerViewHeightConstraint: NSLayoutConstraint!
     
     @IBOutlet weak var policiesTabItemView: UIView!
     @IBOutlet weak var policiesContainerView: UIView!
-    @IBOutlet weak var policiesContainerViewLeadingConstraint: NSLayoutConstraint!
-    @IBOutlet weak var policiesContainerViewTopConstraint: NSLayoutConstraint!
-    @IBOutlet weak var policiesContainerViewWidthConstraint: NSLayoutConstraint!
-    @IBOutlet weak var policiesContainerViewHeightConstraint: NSLayoutConstraint!
+    @IBOutlet weak var policiesImageView: UIImageView!
+    @IBOutlet weak var policiesTabContentViewLeadingConstraint: NSLayoutConstraint!
     
     @IBOutlet weak var claimsTabItemView: UIView!
     @IBOutlet weak var claimsContainerView: UIView!
     @IBOutlet weak var claimsContainerViewLeadingConstraint: NSLayoutConstraint!
-    @IBOutlet weak var claimsContainerViewTopConstraint: NSLayoutConstraint!
-    @IBOutlet weak var claimsContainerViewWidthConstraint: NSLayoutConstraint!
-    @IBOutlet weak var claimsContainerViewHeightConstraint: NSLayoutConstraint!
     
     @IBOutlet weak var accountTabItemView: UIView!
     @IBOutlet weak var accountContainerView: UIView!
@@ -51,7 +41,18 @@ class IAHomeController: IABaseController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.dashboardContainerViewLeadingConstraint.constant = 0.0
+        self.fileClaimTabItemView.alpha = 0.5
+        self.claimsTabItemView.alpha = 0.5
+        self.accountTabItemView.alpha = 0.5
+        self.notificationsTabItemView.alpha = 0.5
+        
+        self.dashboardImageView.layer.borderWidth = 1.0
+        self.dashboardImageView.layer.borderColor = UIColor(red: 113.0/255.0, green: 104.0/255.0, blue: 147.0/255.0, alpha: 1.0).CGColor
+        
+        self.policiesImageView.layer.borderWidth = 1.0
+        self.policiesImageView.layer.borderColor = UIColor(red: 113.0/255.0, green: 104.0/255.0, blue: 147.0/255.0, alpha: 1.0).CGColor
+        
+        self.dashboardTabContentViewLeadingConstraint.constant = 0.0
         var aTapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(IAHomeController.didSelectDashboardTabItemView))
         aTapGestureRecognizer.cancelsTouchesInView = false
         self.dashboardTabItemView.addGestureRecognizer(aTapGestureRecognizer)
@@ -61,7 +62,7 @@ class IAHomeController: IABaseController {
         aTapGestureRecognizer.cancelsTouchesInView = false
         self.fileClaimTabItemView.addGestureRecognizer(aTapGestureRecognizer)
         
-        self.policiesContainerViewLeadingConstraint.constant = self.containerScrollView.frame.size.width * 2
+        self.policiesTabContentViewLeadingConstraint.constant = self.containerScrollView.frame.size.width * 2
         aTapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(IAHomeController.didSelectPoliciesTabItemView))
         aTapGestureRecognizer.cancelsTouchesInView = false
         self.policiesTabItemView.addGestureRecognizer(aTapGestureRecognizer)
@@ -95,13 +96,13 @@ class IAHomeController: IABaseController {
         self.notificationCountLabel.layer.addAnimation(anAnimation, forKey: "pulse")
         
         self.containerScrollView.contentSize = CGSizeMake(self.containerScrollView.frame.size.width * 6, self.containerScrollView.frame.size.height)
-        self.displayTabWithIndex(0)
+        self.displayTabWithIndex(0, animated: false)
     }
     
     
-    func displayTabWithIndex(pIndex: Int) {
+    func displayTabWithIndex(pIndex: Int, animated pAnimated :Bool) {
         let aNormalBackgroundColor = UIColor.clearColor()
-        let aSelectedBackgroundColor = UIColor(red: 255.0/255.0, green: 255.0/255.0, blue: 255.0/255.0, alpha: 0.09)
+        let aSelectedBackgroundColor = UIColor(red: 167.0/255.0, green: 97.0/255.0, blue: 183.0/255.0, alpha: 0.2)
         if pIndex == 0 {
             self.dashboardTabItemView.backgroundColor = aSelectedBackgroundColor
             self.fileClaimTabItemView.backgroundColor = aNormalBackgroundColor
@@ -145,18 +146,55 @@ class IAHomeController: IABaseController {
             self.accountTabItemView.backgroundColor = aNormalBackgroundColor
             self.notificationsTabItemView.backgroundColor = aSelectedBackgroundColor
         }
-        self.containerScrollView.scrollRectToVisible(CGRectMake(self.containerScrollView.frame.size.width * CGFloat(pIndex), 0.0, self.containerScrollView.frame.size.width, self.containerScrollView.frame.size.height), animated: true)
         
-        // TODO: Implement below animation.
-        /*
-        let aDiff :CGFloat = 50.0
-        self.dashboardContainerView.frame = CGRectMake(self.dashboardContainerView.frame.origin.x + aDiff, self.dashboardContainerView.frame.origin.y + aDiff, self.dashboardContainerView.frame.size.width - (aDiff * 2), self.dashboardContainerView.frame.size.height - (aDiff * 2))
-        self.fileClaimContainerView.frame = CGRectMake(self.fileClaimContainerView.frame.origin.x + aDiff, self.fileClaimContainerView.frame.origin.y + aDiff, self.fileClaimContainerView.frame.size.width - (aDiff * 2), self.fileClaimContainerView.frame.size.height - (aDiff * 2))
-        self.policiesContainerView.frame = CGRectMake(self.policiesContainerView.frame.origin.x + aDiff, self.policiesContainerView.frame.origin.y + aDiff, self.policiesContainerView.frame.size.width - (aDiff * 2), self.policiesContainerView.frame.size.height - (aDiff * 2))
-        self.claimsContainerView.frame = CGRectMake(self.claimsContainerView.frame.origin.x + aDiff, self.claimsContainerView.frame.origin.y + aDiff, self.claimsContainerView.frame.size.width - (aDiff * 2), self.claimsContainerView.frame.size.height - (aDiff * 2))
-        self.accountContainerView.frame = CGRectMake(self.accountContainerView.frame.origin.x + aDiff, self.accountContainerView.frame.origin.y + aDiff, self.accountContainerView.frame.size.width - (aDiff * 2), self.accountContainerView.frame.size.height - (aDiff * 2))
-        self.notificationsContainerView.frame = CGRectMake(self.notificationsContainerView.frame.origin.x + aDiff, self.notificationsContainerView.frame.origin.y + aDiff, self.notificationsContainerView.frame.size.width - (aDiff * 2), self.notificationsContainerView.frame.size.height - (aDiff * 2))
-         */
+        
+        if pAnimated == true {
+            let aDiff :CGFloat = 150.0
+            
+            UIGraphicsBeginImageContextWithOptions(self.dashboardContainerView.bounds.size, self.dashboardContainerView.opaque, 0.0);
+            self.dashboardContainerView.layer.renderInContext(UIGraphicsGetCurrentContext()!)
+            let aDashboardImage = UIGraphicsGetImageFromCurrentImageContext()
+            UIGraphicsEndImageContext()
+            self.dashboardImageView.image = aDashboardImage
+            self.dashboardContainerView.hidden = true
+            self.dashboardImageView.hidden = false
+            self.dashboardImageView.frame = CGRectMake(0.0, 0.0, self.dashboardContainerView.frame.size.width, self.dashboardContainerView.frame.size.height)
+            
+            UIGraphicsBeginImageContextWithOptions(self.policiesContainerView.bounds.size, self.policiesContainerView.opaque, 0.0);
+            self.policiesContainerView.layer.renderInContext(UIGraphicsGetCurrentContext()!)
+            let aPoliciesImage = UIGraphicsGetImageFromCurrentImageContext()
+            UIGraphicsEndImageContext()
+            self.policiesImageView.image = aPoliciesImage
+            self.policiesContainerView.hidden = true
+            self.policiesImageView.hidden = false
+            self.policiesImageView.frame = CGRectMake(0.0, 0.0, self.policiesContainerView.frame.size.width, self.policiesContainerView.frame.size.height)
+            
+            UIView.animateWithDuration(0.3, delay: 0.0, options: .CurveEaseOut, animations: {
+                self.dashboardImageView.frame = CGRectMake(aDiff, aDiff, self.dashboardContainerView.frame.size.width - (aDiff * 2.0), self.dashboardContainerView.frame.size.height - (aDiff * 2.0))
+                self.policiesImageView.frame = CGRectMake(aDiff, aDiff, self.policiesContainerView.frame.size.width - (aDiff * 2.0), self.policiesContainerView.frame.size.height - (aDiff * 2.0))
+                }, completion: { pFinished in
+                    self.containerScrollView.scrollRectToVisible(CGRectMake(self.containerScrollView.frame.size.width * CGFloat(pIndex), 0.0, self.containerScrollView.frame.size.width, self.containerScrollView.frame.size.height), animated: true)
+                    
+                    UIView.animateWithDuration(0.3, delay: 0.7, options: .CurveEaseOut, animations: {
+                        self.dashboardImageView.frame = CGRectMake(0.0, 0.0, self.dashboardContainerView.frame.size.width, self.dashboardContainerView.frame.size.height)
+                        self.policiesImageView.frame = CGRectMake(0.0, 0.0, self.policiesContainerView.frame.size.width, self.policiesContainerView.frame.size.height)
+                        }, completion: { pFinished in
+                            self.dashboardContainerView.hidden = false
+                            self.dashboardImageView.hidden = true
+                            
+                            self.policiesContainerView.hidden = false
+                            self.policiesImageView.hidden = true
+                    })
+            })
+        } else {
+            self.containerScrollView.scrollRectToVisible(CGRectMake(self.containerScrollView.frame.size.width * CGFloat(pIndex), 0.0, self.containerScrollView.frame.size.width, self.containerScrollView.frame.size.height), animated: false)
+            
+            self.dashboardContainerView.hidden = false
+            self.dashboardImageView.hidden = true
+            
+            self.policiesContainerView.hidden = false
+            self.policiesImageView.hidden = true
+        }
     }
     
     
@@ -167,7 +205,7 @@ class IAHomeController: IABaseController {
      * @return Void
      */
     func didSelectDashboardTabItemView() {
-        self.displayTabWithIndex(0)
+        self.displayTabWithIndex(0, animated: true)
     }
     
     
@@ -176,7 +214,7 @@ class IAHomeController: IABaseController {
      * @return Void
      */
     func didSelectFileClaimTabItemView() {
-        self.displayTabWithIndex(1)
+        //self.displayTabWithIndex(1, animated: true)
     }
     
     
@@ -185,7 +223,7 @@ class IAHomeController: IABaseController {
      * @return Void
      */
     func didSelectPoliciesTabItemView() {
-        self.displayTabWithIndex(2)
+        self.displayTabWithIndex(2, animated: true)
     }
     
     
@@ -194,7 +232,7 @@ class IAHomeController: IABaseController {
      * @return Void
      */
     func didSelectClaimsTabItemView() {
-        self.displayTabWithIndex(3)
+        //self.displayTabWithIndex(3, animated: true)
     }
     
     
@@ -203,7 +241,7 @@ class IAHomeController: IABaseController {
      * @return Void
      */
     func didSelectAccountTabItemView() {
-        self.displayTabWithIndex(4)
+        //self.displayTabWithIndex(4, animated: true)
     }
     
     
@@ -212,7 +250,7 @@ class IAHomeController: IABaseController {
      * @return Void
      */
     func didSelectNotificationsTabItemView() {
-        self.displayTabWithIndex(5)
+        //self.displayTabWithIndex(5, animated: true)
     }
     
 }
