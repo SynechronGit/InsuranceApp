@@ -19,7 +19,6 @@ class IATextField: UITextField, IADropdownListControllerDelegate {
     var shouldDisplayAsDatePicker :Bool!
     weak var controller :UIViewController!
     weak var iaTextFieldDelegate :AnyObject!
-    var tapGestureRecognizer :UITapGestureRecognizer!
     var dropdownListController :IADropdownListController!
     var list :Array<String>!
     
@@ -64,11 +63,6 @@ class IATextField: UITextField, IADropdownListControllerDelegate {
             self.bottomBorderLayer.frame = CGRectMake(0.0, self.bounds.size.height - 2, self.bounds.size.width, 2.0)
             self.bottomBorderLayer.backgroundColor = UIColor.lightGrayColor().CGColor
             self.layer.addSublayer(self.bottomBorderLayer)
-        }
-        if self.tapGestureRecognizer == nil {
-            self.tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(IADashboardController.didSelectAutoInsuranceView))
-            self.tapGestureRecognizer.cancelsTouchesInView = true
-            self.addGestureRecognizer(self.tapGestureRecognizer)
         }
     }
     

@@ -26,6 +26,8 @@
 		3F3F0DC81D003CDC00A851FB /* IAVehicleListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F3F0DC51D003CDC00A851FB /* IAVehicleListCell.swift */; };
 		3F4D20C41CF71CE30024EAE7 /* IAVehicle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F4D20C31CF71CE30024EAE7 /* IAVehicle.swift */; };
 		3F4D24291D016CA10033E924 /* IATextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F4D24281D016CA10033E924 /* IATextField.swift */; };
+		3F4EED5A1D07053D0085E3C4 /* IAPolicyDetailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F4EED591D07053D0085E3C4 /* IAPolicyDetailsController.swift */; };
+		3F4EED5C1D07096B0085E3C4 /* PolicyGeneral.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 3F4EED5B1D07096B0085E3C4 /* PolicyGeneral.pdf */; };
 		3F5FB78A1CFDDF2F00C27D7F /* IAHomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F5FB7891CFDDF2E00C27D7F /* IAHomeController.swift */; };
 		3F63F1081CFEF55000623420 /* IAAccountController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F63F1011CFEF55000623420 /* IAAccountController.swift */; };
 		3F63F1091CFEF55000623420 /* IAClaimsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F63F1031CFEF55000623420 /* IAClaimsController.swift */; };
@@ -57,6 +59,8 @@
 		3FE1D2AF1CFC58C3007FA513 /* InsuranceTypeContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FE1D2AE1CFC58C3007FA513 /* InsuranceTypeContainerView.swift */; };
 		3FE1FA8D1CFC81E6008EA53F /* IALabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FE1FA8C1CFC81E6008EA53F /* IALabel.swift */; };
 		3FE1FA8F1CFC8750008EA53F /* IANavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FE1FA8E1CFC8750008EA53F /* IANavigationBar.swift */; };
+		3FE654FB1D06EA61001CAF46 /* IAPolicyListTableCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FE654FA1D06EA61001CAF46 /* IAPolicyListTableCellView.swift */; };
+		3FE654FD1D06F02A001CAF46 /* IAPolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FE654FC1D06F02A001CAF46 /* IAPolicy.swift */; };
 		3FF030B41CFD991A00BADE31 /* Ubuntu-300-italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3FF030AD1CFD991A00BADE31 /* Ubuntu-300-italic.ttf */; };
 		3FF030B51CFD991A00BADE31 /* Ubuntu-300.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3FF030AE1CFD991A00BADE31 /* Ubuntu-300.ttf */; };
 		3FF030B61CFD991A00BADE31 /* Ubuntu-500-italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3FF030AF1CFD991A00BADE31 /* Ubuntu-500-italic.ttf */; };
@@ -112,6 +116,8 @@
 		3F3F0DC51D003CDC00A851FB /* IAVehicleListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IAVehicleListCell.swift; sourceTree = "<group>"; };
 		3F4D20C31CF71CE30024EAE7 /* IAVehicle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IAVehicle.swift; sourceTree = "<group>"; };
 		3F4D24281D016CA10033E924 /* IATextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IATextField.swift; sourceTree = "<group>"; };
+		3F4EED591D07053D0085E3C4 /* IAPolicyDetailsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IAPolicyDetailsController.swift; sourceTree = "<group>"; };
+		3F4EED5B1D07096B0085E3C4 /* PolicyGeneral.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = PolicyGeneral.pdf; sourceTree = "<group>"; };
 		3F5FB7891CFDDF2E00C27D7F /* IAHomeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IAHomeController.swift; sourceTree = "<group>"; };
 		3F63F1011CFEF55000623420 /* IAAccountController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IAAccountController.swift; sourceTree = "<group>"; };
 		3F63F1031CFEF55000623420 /* IAClaimsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IAClaimsController.swift; sourceTree = "<group>"; };
@@ -144,6 +150,8 @@
 		3FE1D2AE1CFC58C3007FA513 /* InsuranceTypeContainerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InsuranceTypeContainerView.swift; sourceTree = "<group>"; };
 		3FE1FA8C1CFC81E6008EA53F /* IALabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IALabel.swift; sourceTree = "<group>"; };
 		3FE1FA8E1CFC8750008EA53F /* IANavigationBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IANavigationBar.swift; sourceTree = "<group>"; };
+		3FE654FA1D06EA61001CAF46 /* IAPolicyListTableCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IAPolicyListTableCellView.swift; sourceTree = "<group>"; };
+		3FE654FC1D06F02A001CAF46 /* IAPolicy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IAPolicy.swift; sourceTree = "<group>"; };
 		3FF030AD1CFD991A00BADE31 /* Ubuntu-300-italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Ubuntu-300-italic.ttf"; sourceTree = "<group>"; };
 		3FF030AE1CFD991A00BADE31 /* Ubuntu-300.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Ubuntu-300.ttf"; sourceTree = "<group>"; };
 		3FF030AF1CFD991A00BADE31 /* Ubuntu-500-italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Ubuntu-500-italic.ttf"; sourceTree = "<group>"; };
@@ -353,6 +361,9 @@
 			isa = PBXGroup;
 			children = (
 				3F63F1071CFEF55000623420 /* IAPoliciesController.swift */,
+				3FE654FA1D06EA61001CAF46 /* IAPolicyListTableCellView.swift */,
+				3F4EED591D07053D0085E3C4 /* IAPolicyDetailsController.swift */,
+				3F4EED5B1D07096B0085E3C4 /* PolicyGeneral.pdf */,
 			);
 			path = Policies;
 			sourceTree = "<group>";
@@ -403,6 +414,7 @@
 				7D47A1341CF710E9007E1867 /* IADriver.swift */,
 				3F9948971CFC6B1100A880A8 /* IADashboard.swift */,
 				3FAFB54F1D006BA70083D38E /* IATrafficViolation.swift */,
+				3FE654FC1D06F02A001CAF46 /* IAPolicy.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -568,6 +580,7 @@
 				3F9948C01CFC782100A880A8 /* Fragment.png in Resources */,
 				3FF030B41CFD991A00BADE31 /* Ubuntu-300-italic.ttf in Resources */,
 				3FF030B71CFD991A00BADE31 /* Ubuntu-500.ttf in Resources */,
+				3F4EED5C1D07096B0085E3C4 /* PolicyGeneral.pdf in Resources */,
 				3FFF0B881CF4A22D00920ECA /* AppDatabase.sqlite in Resources */,
 				3F0CA43C1CF44030002A048E /* LaunchScreen.storyboard in Resources */,
 				3FF030B51CFD991A00BADE31 /* Ubuntu-300.ttf in Resources */,
@@ -602,12 +615,14 @@
 			files = (
 				3F3F0DC11D003CD700A851FB /* IADriverListCell.swift in Sources */,
 				3FAFB5521D006DC00083D38E /* IATrafficViolationTableCellView.swift in Sources */,
+				3F4EED5A1D07053D0085E3C4 /* IAPolicyDetailsController.swift in Sources */,
 				3FE1D2AF1CFC58C3007FA513 /* InsuranceTypeContainerView.swift in Sources */,
 				3F3F0DC71D003CDC00A851FB /* IAVehicleDetailsController.swift in Sources */,
 				3F9948BD1CFC782100A880A8 /* LTMorphingLabel.swift in Sources */,
 				3F3F0DC81D003CDC00A851FB /* IAVehicleListCell.swift in Sources */,
 				3F0CA46D1CF440C9002A048E /* IABaseController.swift in Sources */,
 				3F3F0DBF1D003CD700A851FB /* IAAddDriverController.swift in Sources */,
+				3FE654FB1D06EA61001CAF46 /* IAPolicyListTableCellView.swift in Sources */,
 				3F9948BC1CFC782100A880A8 /* LTMorphingLabel+Sparkle.swift in Sources */,
 				3F4D20C41CF71CE30024EAE7 /* IAVehicle.swift in Sources */,
 				3F63F1101CFEF5B500623420 /* IAFileClaimController.swift in Sources */,
@@ -626,6 +641,7 @@
 				3F63F1081CFEF55000623420 /* IAAccountController.swift in Sources */,
 				3F0CA46C1CF440C9002A048E /* IAAppDelegate.swift in Sources */,
 				3FAFB5501D006BA70083D38E /* IATrafficViolation.swift in Sources */,
+				3FE654FD1D06F02A001CAF46 /* IAPolicy.swift in Sources */,
 				3F3F0DC01D003CD700A851FB /* IADriverDetailsController.swift in Sources */,
 				3F9948B81CFC782100A880A8 /* LTMorphingLabel+Burn.swift in Sources */,
 				3F9948B51CFC782100A880A8 /* LTEmitterView.swift in Sources */,
