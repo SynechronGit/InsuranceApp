@@ -29,15 +29,14 @@ class IAAddVehicleController: IABaseController, UIImagePickerControllerDelegate,
     @IBOutlet weak var saveBtnView: UIView!
     
     @IBOutlet weak var takeVinNoView: UIView!
-    @IBOutlet weak var vinNoGeneratorView: UIView!
+
     
-    @IBOutlet weak var vinConfirmationNoBtn: UIButton!
-    @IBOutlet weak var vinConfirmationYesBtn: UIButton!
-    
+    @IBOutlet weak var vinTextBox: IATextField!
     @IBOutlet weak var yearTextBox: IATextField!
     @IBOutlet weak var companyTextBox: IATextField!
     @IBOutlet weak var modelTextBox: IATextField!
     @IBOutlet weak var bosyStyleTextBox: IATextField!
+    @IBOutlet weak var vehicleNameTextBox: IATextField!
     
     @IBOutlet weak var comprehensiveCoverageFirstOptionButton: UIButton!
     @IBOutlet weak var comprehensiveCoverageFirstOptionLabel: UILabel!
@@ -79,6 +78,9 @@ class IAAddVehicleController: IABaseController, UIImagePickerControllerDelegate,
     
     
     func updateUI(){
+        self.addBtn2.hidden = true
+        self.addBtn3.hidden = true
+        
         self.mainBgView.layer.cornerRadius = 10.0
         self.mainBgView.layer.masksToBounds = true
         
@@ -93,9 +95,6 @@ class IAAddVehicleController: IABaseController, UIImagePickerControllerDelegate,
         
         self.takeVinNoView.layer.cornerRadius = IAConstants.dashboardSubviewCornerRadius
         self.takeVinNoView.layer.masksToBounds = true
-        
-        self.vinNoGeneratorView.layer.cornerRadius = IAConstants.dashboardSubviewCornerRadius
-        self.vinNoGeneratorView.layer.masksToBounds = true
         
         self.saveBtnView.layer.cornerRadius = IAConstants.dashboardSubviewCornerRadius
         self.saveBtnView.layer.masksToBounds = true
@@ -199,7 +198,7 @@ class IAAddVehicleController: IABaseController, UIImagePickerControllerDelegate,
             aVehicle.photoOne = self.addPhotoFirstImageView.image
             aVehicle.photoTwo = self.addPhotoSecondImageView.image
             aVehicle.photoThree = self.addPhotoThirdImageView.image
-            aVehicle.vin = "1LNLM82W8NY668232"
+            aVehicle.vin = self.vinTextBox.text
             aVehicle.year = self.yearTextBox.text
             aVehicle.company = self.companyTextBox.text
             aVehicle.modelNumber = self.modelTextBox.text
@@ -256,32 +255,7 @@ class IAAddVehicleController: IABaseController, UIImagePickerControllerDelegate,
     }
     
     
-    @IBAction func didSelectVinConfirmationYes(sender: AnyObject) {
-        
-        if (vinConfirmation == true){
-            vinConfirmation = false
-            vinConfirmationYesBtn.setBackgroundImage(UIImage(named: "tick_box_deselected"), forState: .Normal)
-            vinConfirmationNoBtn.setBackgroundImage(UIImage(named: "tick_box_selected"), forState: .Normal)
-        }else{
-            vinConfirmation = true
-            vinConfirmationYesBtn.setBackgroundImage(UIImage(named: "tick_box_selected"), forState: .Normal)
-            vinConfirmationNoBtn.setBackgroundImage(UIImage(named: "tick_box_deselected"), forState: .Normal)
-        }
-        
-    }
-    
-    @IBAction func didSelectVinConfirmationNo(sender: AnyObject) {
-        if (vinConfirmation == false){
-            vinConfirmation = true
-            vinConfirmationNoBtn.setBackgroundImage(UIImage(named: "tick_box_deselected"), forState: .Normal)
-            vinConfirmationYesBtn.setBackgroundImage(UIImage(named: "tick_box_selected"), forState: .Normal)
-        }else{
-            vinConfirmation = false
-            vinConfirmationNoBtn.setBackgroundImage(UIImage(named: "tick_box_selected"), forState: .Normal)
-            vinConfirmationYesBtn.setBackgroundImage(UIImage(named: "tick_box_deselected"), forState: .Normal)
-        }
-        
-    }
+
     
     @IBAction func didSelectComprehensiveCoverageFirstOption(sender: AnyObject) {
         if (comprahensiveFirstOption == true){
@@ -340,9 +314,11 @@ class IAAddVehicleController: IABaseController, UIImagePickerControllerDelegate,
         if let aPickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
             if self.imagePickerDestinationImageView != nil && self.imagePickerDestinationImageView.isEqual(self.addPhotoFirstImageView)  {
                 self.addPhotoFirstImageView.image = aPickedImage
+                self.addBtn2.hidden = false
                 
             } else if self.imagePickerDestinationImageView != nil && self.imagePickerDestinationImageView.isEqual(self.addPhotoSecondImageView) {
-                 self.addPhotoSecondImageView.image = aPickedImage
+                self.addPhotoSecondImageView.image = aPickedImage
+                self.addBtn3.hidden = false
                 
             } else if self.imagePickerDestinationImageView != nil && self.imagePickerDestinationImageView.isEqual(self.addPhotoThirdImageView) {
                 self.addPhotoThirdImageView.image = aPickedImage
