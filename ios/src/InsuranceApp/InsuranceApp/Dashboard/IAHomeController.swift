@@ -86,15 +86,6 @@ class IAHomeController: IABaseController {
         self.notificationCountLabel.layer.masksToBounds = true
         self.notificationCountLabel.layer.backgroundColor = UIColor(red: 160.0/255.0, green: 0.0/255.0, blue: 0.0/255.0, alpha: 1.0).CGColor
         
-        self.notificationCountLabel.layer.borderColor = UIColor.redColor().CGColor
-        let anAnimation = CABasicAnimation(keyPath: "borderWidth")
-        anAnimation.fromValue = 0.0
-        anAnimation.toValue = 2.0
-        anAnimation.repeatCount = FLT_MAX
-        anAnimation.duration = 1.0
-        anAnimation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
-        self.notificationCountLabel.layer.addAnimation(anAnimation, forKey: "pulse")
-        
         self.containerScrollView.contentSize = CGSizeMake(self.containerScrollView.frame.size.width * 6, self.containerScrollView.frame.size.height)
         self.displayTabWithIndex(0, animated: false)
     }

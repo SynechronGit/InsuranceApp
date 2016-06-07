@@ -37,6 +37,10 @@ class IADashboardController: IABaseController {
         self.autoInsuranceContainerView.addGestureRecognizer(aTapGestureRecognizer)
         self.autoInsuranceContainerView.layer.borderColor = UIColor.redColor().CGColor
         
+        self.homeInsuranceContainerView.alpha = 0.6
+        self.boatInsuranceContainerView.alpha = 0.6
+        self.petInsuranceContainerView.alpha = 0.6
+        
         self.myClaimsContainerView.layer.cornerRadius = IAConstants.dashboardSubviewCornerRadius
         self.myClaimsContainerView.layer.masksToBounds = true
         
