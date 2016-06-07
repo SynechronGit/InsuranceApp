@@ -78,6 +78,7 @@ class IAAddDriverController: IABaseController, UITextFieldDelegate, UIImagePicke
         self.appointedSinceTextField.shouldDisplayAsDropdown = true
         self.appointedSinceTextField.controller = self
         var anAppointedSinceArray = Array<String>()
+        anAppointedSinceArray.append("None")
         for anIndex:Int in 1916 ..< 2016 {
             anAppointedSinceArray.append(String(format: "%d", anIndex + 1))
         }
@@ -86,6 +87,7 @@ class IAAddDriverController: IABaseController, UITextFieldDelegate, UIImagePicke
         self.drivingExperienceTextField.shouldDisplayAsDropdown = true
         self.drivingExperienceTextField.controller = self
         var aDrivingExperienceArray = Array<String>()
+        aDrivingExperienceArray.append("Unknown")
         for anIndex:Int in 0 ..< 40 {
             aDrivingExperienceArray.append(String(format: "%02d Years", anIndex + 1))
         }
@@ -93,7 +95,7 @@ class IAAddDriverController: IABaseController, UITextFieldDelegate, UIImagePicke
         
         self.employeeTypeTextField.shouldDisplayAsDropdown = true
         self.employeeTypeTextField.controller = self
-        self.employeeTypeTextField.list = ["Full Time", "Part Time"]
+        self.employeeTypeTextField.list = ["None", "Full Time", "Part Time"]
     }
     
     
