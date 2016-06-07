@@ -21,6 +21,7 @@ public enum IARequestType: Int {
     case AddDriver
     case ListDrivers
     case DriverDetails
+    case ListPolicies
 }
 
 
@@ -358,6 +359,52 @@ class IADataManager: NSObject {
                     }
                     aDataManagerResponse.result = aDriverArray
                 }
+            } else if self.requestType == IARequestType.ListPolicies {
+                let anSqlQuery :String = "SELECT insurance_type, insured_vehicle_count, insured_driver_count, insured_home_item_count, insured_boat_count, insured_pet_count, coverage, premium_due, date FROM policies"
+                let anSqlResult = try self.executeQuery(anSqlQuery, values: nil)
+                if anSqlResult != nil && anSqlResult.count > 0 {
+                    var aPolicyArray :Array<IAPolicy>! = Array<IAPolicy>()
+                    for var aDBPolicyDict :[String:AnyObject] in anSqlResult {
+                        let aDBPolicy = IAPolicy()
+                        
+                        aDBPolicy.insuranceType = aDBPolicyDict["insurance_type"] as! String
+                        
+                        if aDBPolicyDict["insured_vehicle_count"] is String {
+                            aDBPolicy.insuredVehicleCount = Int(aDBPolicyDict["insured_vehicle_count"] as! String)
+                        }
+                        if aDBPolicyDict["insured_driver_count"] is String {
+                            aDBPolicy.insuredDriverCount = Int(aDBPolicyDict["insured_driver_count"] as! String)
+                        }
+                        if aDBPolicyDict["insured_home_item_count"] is String {
+                            aDBPolicy.insuredHomeItemCount = Int(aDBPolicyDict["insured_home_item_count"] as! String)
+                        }
+                        if aDBPolicyDict["insured_boat_count"] is String {
+                            aDBPolicy.insuredBoatCount = Int(aDBPolicyDict["insured_boat_count"] as! String)
+                        }
+                        if aDBPolicyDict["insured_pet_count"] is String {
+                            aDBPolicy.insuredPetCount = Int(aDBPolicyDict["insured_pet_count"] as! String)
+                        }
+                        
+                        let aFormatter = NSNumberFormatter()
+                        aFormatter.numberStyle = .DecimalStyle
+                        
+                        if aDBPolicyDict["coverage"] is String {
+                            aDBPolicy.coverage = aFormatter.numberFromString(aDBPolicyDict["coverage"] as! String)
+                        }
+                        if aDBPolicyDict["premium_due"] is String {
+                            aDBPolicy.premiumDue = aFormatter.numberFromString(aDBPolicyDict["premium_due"] as! String)
+                        }
+                        if aDBPolicyDict["date"] is String {
+                            aDBPolicy.date = aDBPolicyDict["date"] as! String
+                        }
+                        
+                        aPolicyArray.append(aDBPolicy)
+                    }
+                    if aPolicyArray.count <= 0 {
+                        aPolicyArray = nil
+                    }
+                    aDataManagerResponse.result = aPolicyArray
+                }
             }
 
         } catch IAError.Generic(let pError){
@@ -437,6 +484,12 @@ class IADataManager: NSObject {
     
     internal func driverDetails(pDriverID :String) {
         self.requestType = IARequestType.DriverDetails
+    }
+    
+    
+    internal func listPolicies() {
+        self.requestType = IARequestType.ListPolicies
+        self.sendRequest(nil)
     }
     
 }
