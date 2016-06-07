@@ -25,6 +25,10 @@ class IAAutoInsuranceDetailsController: IABaseController , UICollectionViewDeleg
     @IBOutlet weak var limitBoxView: UIView!
     @IBOutlet weak var deductibleBoxView: UIView!
   
+    @IBOutlet weak var vehicleCountLabel: UILabel!
+    @IBOutlet weak var driverCountLabel: UILabel!
+    
+    var dashboardDetails: IADashboard!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -60,6 +64,9 @@ class IAAutoInsuranceDetailsController: IABaseController , UICollectionViewDeleg
         coverageBoxView.backgroundColor = UIColor(patternImage: UIImage(named: "bigBox")!)
         limitBoxView.backgroundColor = UIColor(patternImage: UIImage(named: "bigBox")!)
         deductibleBoxView.backgroundColor = UIColor(patternImage: UIImage(named: "bigBox")!)
+        
+        self.vehicleCountLabel.text = "Vehicles"
+        self.driverCountLabel.text = "Drivers"
     }
 
     func reloadAllData() {
@@ -154,6 +161,17 @@ class IAAutoInsuranceDetailsController: IABaseController , UICollectionViewDeleg
                 self.driverArray = nil
             }
             self.reloadAllView()
+            IAAppDelegate.currentAppDelegate.displayLoadingOverlay()
+            self.dataManager.dashboardDetails()
+        } else if pSender.requestType == IARequestType.DashboardDetails {
+            if pResponse.result != nil {
+                self.dashboardDetails = pResponse.result as! IADashboard
+                self.vehicleCountLabel.text = "Vehicles (\(NSString(format: "%02d", self.dashboardDetails.autoInsuranceCarCount)))"
+                self.driverCountLabel.text = "Drivers (\(NSString(format: "%02d", self.dashboardDetails.autoInsuranceDriverCount)))"
+            } else {
+                self.dashboardDetails = nil
+            }
+            self.reloadAllView()
         }
     }
     
@@ -176,7 +194,7 @@ class IAAutoInsuranceDetailsController: IABaseController , UICollectionViewDeleg
             }else{
                 count = self.driverArray.count
             }
-        }
+        } 
         
         return count!
         
