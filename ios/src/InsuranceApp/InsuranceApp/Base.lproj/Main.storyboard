@@ -422,12 +422,27 @@
                                             <constraint firstItem="lE6-hq-OKf" firstAttribute="top" secondItem="pVB-hU-oDh" secondAttribute="top" id="o1W-Tv-5Aj"/>
                                         </constraints>
                                     </view>
-                                    <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1jH-k8-Jmp" userLabel="fileClaimContainerView">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d8c-0D-uiI" userLabel="fileClaimTabContentView">
                                         <rect key="frame" x="0.0" y="0.0" width="768" height="949"/>
-                                        <connections>
-                                            <segue destination="1Z0-fx-7rN" kind="embed" id="YLx-bf-ZNy"/>
-                                        </connections>
-                                    </containerView>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VLt-xJ-MGq" userLabel="fileClaimImageView">
+                                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                            </imageView>
+                                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1jH-k8-Jmp" userLabel="fileClaimContainerView">
+                                                <rect key="frame" x="0.0" y="0.0" width="768" height="949"/>
+                                                <connections>
+                                                    <segue destination="1Z0-fx-7rN" kind="embed" id="YLx-bf-ZNy"/>
+                                                </connections>
+                                            </containerView>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="1jH-k8-Jmp" secondAttribute="bottom" id="6Ed-Ua-6bh"/>
+                                            <constraint firstItem="1jH-k8-Jmp" firstAttribute="top" secondItem="d8c-0D-uiI" secondAttribute="top" id="tzD-Kf-ckx"/>
+                                            <constraint firstAttribute="trailing" secondItem="1jH-k8-Jmp" secondAttribute="trailing" id="vDG-0e-G2Q"/>
+                                            <constraint firstItem="1jH-k8-Jmp" firstAttribute="leading" secondItem="d8c-0D-uiI" secondAttribute="leading" id="vGe-eC-GsO"/>
+                                        </constraints>
+                                    </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7O2-hO-VAw" userLabel="policiesTabContentView">
                                         <rect key="frame" x="0.0" y="0.0" width="768" height="949"/>
                                         <subviews>
@@ -471,30 +486,29 @@
                                 <constraints>
                                     <constraint firstItem="7O2-hO-VAw" firstAttribute="height" secondItem="mrf-5a-LJL" secondAttribute="height" id="1R7-uW-8nf"/>
                                     <constraint firstAttribute="width" secondItem="4Qh-Sn-DTB" secondAttribute="width" id="4Ld-5E-uyc"/>
-                                    <constraint firstAttribute="bottom" secondItem="1jH-k8-Jmp" secondAttribute="bottom" placeholder="YES" id="54a-M0-eoM"/>
                                     <constraint firstItem="AXn-8W-W0e" firstAttribute="top" secondItem="mrf-5a-LJL" secondAttribute="top" id="6fO-vp-es8"/>
                                     <constraint firstItem="pVB-hU-oDh" firstAttribute="height" secondItem="mrf-5a-LJL" secondAttribute="height" id="7Da-sx-HKh"/>
                                     <constraint firstItem="5Y7-tB-lko" firstAttribute="top" secondItem="mrf-5a-LJL" secondAttribute="top" id="7vm-cr-lJz"/>
-                                    <constraint firstItem="1jH-k8-Jmp" firstAttribute="top" secondItem="mrf-5a-LJL" secondAttribute="top" id="9Em-3i-g4y"/>
-                                    <constraint firstItem="1jH-k8-Jmp" firstAttribute="width" secondItem="mrf-5a-LJL" secondAttribute="width" id="9fG-fa-uvM"/>
-                                    <constraint firstAttribute="bottom" secondItem="1jH-k8-Jmp" secondAttribute="bottom" placeholder="YES" id="EUv-F5-bPI"/>
+                                    <constraint firstAttribute="bottom" secondItem="d8c-0D-uiI" secondAttribute="bottom" placeholder="YES" id="8Zl-Mx-jRT"/>
+                                    <constraint firstAttribute="trailing" secondItem="d8c-0D-uiI" secondAttribute="trailing" placeholder="YES" id="EdE-Uz-nYH"/>
+                                    <constraint firstItem="d8c-0D-uiI" firstAttribute="top" secondItem="mrf-5a-LJL" secondAttribute="top" id="Fzi-Ir-rN4"/>
                                     <constraint firstItem="7O2-hO-VAw" firstAttribute="top" secondItem="mrf-5a-LJL" secondAttribute="top" id="LOS-y4-iz1"/>
                                     <constraint firstItem="pVB-hU-oDh" firstAttribute="leading" secondItem="mrf-5a-LJL" secondAttribute="leading" id="NHM-Mc-Qg7"/>
                                     <constraint firstItem="4Qh-Sn-DTB" firstAttribute="top" secondItem="mrf-5a-LJL" secondAttribute="top" id="Sue-gc-M6Q"/>
                                     <constraint firstAttribute="width" secondItem="5Y7-tB-lko" secondAttribute="width" id="Swa-12-V7a"/>
                                     <constraint firstItem="AXn-8W-W0e" firstAttribute="leading" secondItem="mrf-5a-LJL" secondAttribute="leading" id="UJN-KU-lRG"/>
                                     <constraint firstAttribute="height" secondItem="5Y7-tB-lko" secondAttribute="height" id="Uvz-Kf-C3c"/>
-                                    <constraint firstAttribute="trailing" secondItem="1jH-k8-Jmp" secondAttribute="trailing" placeholder="YES" id="akq-z0-lDC"/>
+                                    <constraint firstItem="d8c-0D-uiI" firstAttribute="width" secondItem="mrf-5a-LJL" secondAttribute="width" id="Wpo-cr-jcz"/>
                                     <constraint firstAttribute="height" secondItem="4Qh-Sn-DTB" secondAttribute="height" id="ewA-Nl-kjl"/>
+                                    <constraint firstItem="d8c-0D-uiI" firstAttribute="leading" secondItem="mrf-5a-LJL" secondAttribute="leading" id="fPy-jC-ZPe"/>
                                     <constraint firstItem="4Qh-Sn-DTB" firstAttribute="leading" secondItem="mrf-5a-LJL" secondAttribute="leading" id="fcu-ov-WDy"/>
                                     <constraint firstItem="7O2-hO-VAw" firstAttribute="leading" secondItem="mrf-5a-LJL" secondAttribute="leading" id="hHG-K0-7lX"/>
+                                    <constraint firstItem="d8c-0D-uiI" firstAttribute="height" secondItem="mrf-5a-LJL" secondAttribute="height" id="kSK-x7-f3G"/>
                                     <constraint firstAttribute="width" secondItem="AXn-8W-W0e" secondAttribute="width" id="khC-Aw-3ir"/>
-                                    <constraint firstItem="1jH-k8-Jmp" firstAttribute="height" secondItem="mrf-5a-LJL" secondAttribute="height" id="me7-1f-ZQ9"/>
                                     <constraint firstAttribute="height" secondItem="AXn-8W-W0e" secondAttribute="height" id="omc-AS-TN4"/>
                                     <constraint firstItem="7O2-hO-VAw" firstAttribute="width" secondItem="mrf-5a-LJL" secondAttribute="width" id="qgq-Ya-1bD"/>
                                     <constraint firstItem="5Y7-tB-lko" firstAttribute="leading" secondItem="mrf-5a-LJL" secondAttribute="leading" id="tBP-vY-N0U"/>
                                     <constraint firstItem="pVB-hU-oDh" firstAttribute="top" secondItem="mrf-5a-LJL" secondAttribute="top" id="xKt-QI-PrH"/>
-                                    <constraint firstItem="1jH-k8-Jmp" firstAttribute="leading" secondItem="mrf-5a-LJL" secondAttribute="leading" id="yK4-M2-nIJ"/>
                                     <constraint firstItem="pVB-hU-oDh" firstAttribute="width" secondItem="mrf-5a-LJL" secondAttribute="width" id="zKx-0C-KPP"/>
                                 </constraints>
                             </scrollView>
@@ -786,7 +800,8 @@
                         <outlet property="dashboardTabContentViewLeadingConstraint" destination="NHM-Mc-Qg7" id="NaC-mD-zvt"/>
                         <outlet property="dashboardTabItemView" destination="sIS-7b-x6v" id="4fL-pt-Lo1"/>
                         <outlet property="fileClaimContainerView" destination="1jH-k8-Jmp" id="4wW-n4-zRf"/>
-                        <outlet property="fileClaimContainerViewLeadingConstraint" destination="yK4-M2-nIJ" id="P1Z-mN-4IC"/>
+                        <outlet property="fileClaimImageView" destination="VLt-xJ-MGq" id="GVN-nX-RvT"/>
+                        <outlet property="fileClaimTabContentViewLeadingConstraint" destination="fPy-jC-ZPe" id="GdL-jO-n2I"/>
                         <outlet property="fileClaimTabItemView" destination="TyV-LV-fK5" id="CbR-Bf-GCm"/>
                         <outlet property="notificationCountLabel" destination="WiG-zk-3YH" id="Hc3-mj-xZ0"/>
                         <outlet property="notificationsContainerView" destination="5Y7-tB-lko" id="gcQ-Vg-dbw"/>
@@ -4655,15 +4670,6 @@ Insurance</string>
                                             <constraint firstAttribute="height" constant="8" id="iQj-Ak-BbD"/>
                                         </constraints>
                                     </view>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="#321" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1nS-K0-62q">
-                                        <rect key="frame" x="495" y="128" width="214" height="34"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="34" id="Nfh-X0-QyQ"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="Ubuntu-Medium" family="Ubuntu" pointSize="26"/>
-                                        <color key="textColor" red="0.76078431372549016" green="0.0" blue="0.031372549019607843" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Accelerating:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FrS-3h-1ZF">
                                         <rect key="frame" x="23" y="352" width="125" height="21"/>
                                         <constraints>
@@ -5020,6 +5026,16 @@ Insurance</string>
                                             <constraint firstAttribute="height" constant="8" id="Joa-7L-Obm"/>
                                         </constraints>
                                     </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="#321" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cqq-zL-tLI">
+                                        <rect key="frame" x="504" y="351" width="200" height="23"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="23" id="Bd6-Mj-QgG"/>
+                                            <constraint firstAttribute="width" constant="200" id="c7N-OR-AYV"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Ubuntu-Medium" family="Ubuntu" pointSize="24"/>
+                                        <color key="textColor" red="0.76078431369999999" green="0.0" blue="0.031372549020000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" red="0.92156862745098034" green="0.92156862745098034" blue="0.92156862745098034" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -5033,7 +5049,6 @@ Insurance</string>
                                     <constraint firstItem="y6M-o2-pgr" firstAttribute="leading" secondItem="Z3q-ad-Vy3" secondAttribute="trailing" constant="30" id="7XW-DG-lC6"/>
                                     <constraint firstItem="ITN-6e-WoC" firstAttribute="leading" secondItem="FrS-3h-1ZF" secondAttribute="leading" id="86G-GB-dZa"/>
                                     <constraint firstItem="mSB-SU-KJi" firstAttribute="centerY" secondItem="nHy-r9-KNO" secondAttribute="centerY" id="8Ms-fT-8Ad"/>
-                                    <constraint firstItem="1nS-K0-62q" firstAttribute="top" secondItem="fGO-zN-XfB" secondAttribute="bottom" constant="15" id="8iU-6i-eyl"/>
                                     <constraint firstItem="0yl-Y9-KG4" firstAttribute="trailing" secondItem="bqc-8Z-T1o" secondAttribute="trailing" id="9BX-cg-AC6"/>
                                     <constraint firstItem="qTX-rq-lYr" firstAttribute="centerY" secondItem="5hJ-fe-GMZ" secondAttribute="centerY" id="9Bd-js-ncY"/>
                                     <constraint firstItem="ITN-6e-WoC" firstAttribute="top" secondItem="wPy-83-3CC" secondAttribute="bottom" constant="12" id="9Lw-Hd-8ep"/>
@@ -5060,6 +5075,7 @@ Insurance</string>
                                     <constraint firstItem="yxW-ZX-4CY" firstAttribute="leading" secondItem="Jpg-3G-dQn" secondAttribute="leading" id="Fcp-e8-Mtm"/>
                                     <constraint firstItem="l59-WQ-Ydz" firstAttribute="trailing" secondItem="PXK-bI-bfq" secondAttribute="trailing" id="GCB-sP-C7G"/>
                                     <constraint firstItem="h7i-Dw-WuH" firstAttribute="leading" secondItem="gsg-ZX-Afw" secondAttribute="leading" id="HE7-cb-um2"/>
+                                    <constraint firstItem="bc5-cg-mQQ" firstAttribute="leading" secondItem="cqq-zL-tLI" secondAttribute="leading" id="HHO-dX-Of3"/>
                                     <constraint firstItem="eBB-pc-MeY" firstAttribute="leading" secondItem="FrS-3h-1ZF" secondAttribute="leading" id="Hz8-uC-cnn"/>
                                     <constraint firstItem="bA5-60-SWT" firstAttribute="centerX" secondItem="r5g-Lt-rzY" secondAttribute="centerX" id="I1b-If-qQu"/>
                                     <constraint firstItem="fGO-zN-XfB" firstAttribute="leading" secondItem="ON8-fn-Tb6" secondAttribute="trailing" constant="10" id="IcP-at-Ia1"/>
@@ -5087,10 +5103,10 @@ Insurance</string>
                                     <constraint firstItem="soX-Fa-EPb" firstAttribute="trailing" secondItem="bqc-8Z-T1o" secondAttribute="trailing" id="UCV-Vq-Hl4"/>
                                     <constraint firstItem="Jpg-3G-dQn" firstAttribute="centerY" secondItem="nHy-r9-KNO" secondAttribute="centerY" id="UMw-cI-XOQ"/>
                                     <constraint firstItem="PXK-bI-bfq" firstAttribute="leading" secondItem="Gh5-Y7-Mnv" secondAttribute="leading" id="Uzn-Az-7t4"/>
+                                    <constraint firstItem="cqq-zL-tLI" firstAttribute="trailing" secondItem="bc5-cg-mQQ" secondAttribute="trailing" id="VJe-jC-ljD"/>
                                     <constraint firstItem="Q94-mM-NqZ" firstAttribute="centerY" secondItem="aST-ek-yTd" secondAttribute="centerY" id="VTf-Me-NEt"/>
                                     <constraint firstItem="fGO-zN-XfB" firstAttribute="trailing" secondItem="NhJ-ab-key" secondAttribute="trailing" id="W9t-LH-MCR"/>
                                     <constraint firstItem="stC-QD-lye" firstAttribute="top" secondItem="r5g-Lt-rzY" secondAttribute="top" id="WNs-fU-5EI"/>
-                                    <constraint firstItem="1nS-K0-62q" firstAttribute="leading" secondItem="fGO-zN-XfB" secondAttribute="leading" id="WqS-xN-IBM"/>
                                     <constraint firstItem="CPc-i1-9AM" firstAttribute="top" secondItem="StU-0h-pv0" secondAttribute="bottom" constant="10" id="WtQ-HK-hY1"/>
                                     <constraint firstItem="0yl-Y9-KG4" firstAttribute="leading" secondItem="bqc-8Z-T1o" secondAttribute="leading" id="Xgj-LY-BrT"/>
                                     <constraint firstItem="aiS-iU-ytD" firstAttribute="trailing" secondItem="yxW-ZX-4CY" secondAttribute="trailing" id="YRh-fN-vLf"/>
@@ -5102,13 +5118,13 @@ Insurance</string>
                                     <constraint firstItem="Gh5-Y7-Mnv" firstAttribute="leading" secondItem="NhJ-ab-key" secondAttribute="leading" id="aV8-ug-IFe"/>
                                     <constraint firstItem="9a2-Xa-b9T" firstAttribute="leading" secondItem="bqc-8Z-T1o" secondAttribute="leading" id="bSv-Cb-X2J"/>
                                     <constraint firstItem="bA5-60-SWT" firstAttribute="centerY" secondItem="6Bo-i9-pda" secondAttribute="centerY" id="bYF-ai-QgK"/>
-                                    <constraint firstItem="1nS-K0-62q" firstAttribute="trailing" secondItem="fGO-zN-XfB" secondAttribute="trailing" id="bwj-wN-jrs"/>
                                     <constraint firstItem="Oug-X6-RHx" firstAttribute="centerY" secondItem="uAf-le-gzg" secondAttribute="centerY" id="bxT-Ji-BiI"/>
                                     <constraint firstItem="NWC-JF-sME" firstAttribute="leading" secondItem="h7i-Dw-WuH" secondAttribute="leading" id="dEr-E1-wfO"/>
                                     <constraint firstItem="bA5-60-SWT" firstAttribute="top" secondItem="3C1-Js-9q6" secondAttribute="bottom" constant="16" id="dr9-dS-Pab"/>
                                     <constraint firstItem="ON8-fn-Tb6" firstAttribute="top" secondItem="r5g-Lt-rzY" secondAttribute="top" constant="26" id="eAc-Ld-P9P"/>
                                     <constraint firstItem="fGO-zN-XfB" firstAttribute="leading" secondItem="W3H-hG-yGZ" secondAttribute="trailing" constant="10" id="eKO-eC-ICM"/>
                                     <constraint firstItem="A4f-eY-BkQ" firstAttribute="centerY" secondItem="yxW-ZX-4CY" secondAttribute="centerY" id="edd-iT-1xn"/>
+                                    <constraint firstItem="cqq-zL-tLI" firstAttribute="centerY" secondItem="EIS-i3-PX2" secondAttribute="centerY" id="ehm-Ds-tfX"/>
                                     <constraint firstItem="fGO-zN-XfB" firstAttribute="top" secondItem="r5g-Lt-rzY" secondAttribute="top" constant="26" id="fmM-WK-pgG"/>
                                     <constraint firstItem="yxW-ZX-4CY" firstAttribute="leading" secondItem="aiS-iU-ytD" secondAttribute="leading" id="g4c-7U-iMb"/>
                                     <constraint firstItem="h7i-Dw-WuH" firstAttribute="leading" secondItem="StU-0h-pv0" secondAttribute="trailing" constant="12" id="gj9-fk-Dw8"/>
@@ -5171,6 +5187,7 @@ Insurance</string>
                                         <exclude reference="55S-gG-i5x"/>
                                         <exclude reference="ksH-bj-7ga"/>
                                         <exclude reference="hg7-fE-I7b"/>
+                                        <exclude reference="HHO-dX-Of3"/>
                                         <exclude reference="iQl-mE-7eo"/>
                                         <exclude reference="tC3-Rn-sx7"/>
                                         <exclude reference="jJ7-Rw-Yr8"/>
@@ -5353,7 +5370,7 @@ Insurance</string>
                                                                 <constraint firstAttribute="width" constant="126" id="wVK-6X-dmS"/>
                                                             </constraints>
                                                             <fontDescription key="fontDescription" name="Ubuntu-Medium" family="Ubuntu" pointSize="17"/>
-                                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Insured Vehicles:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="063-pa-ScO">
@@ -5363,7 +5380,7 @@ Insurance</string>
                                                                 <constraint firstAttribute="height" constant="21" id="hfs-go-CMA"/>
                                                             </constraints>
                                                             <fontDescription key="fontDescription" name="Ubuntu-Medium" family="Ubuntu" pointSize="17"/>
-                                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                             <variation key="default">
                                                                 <mask key="constraints">
@@ -5378,7 +5395,7 @@ Insurance</string>
                                                                 <constraint firstAttribute="width" constant="98" id="frl-uY-Ztx"/>
                                                             </constraints>
                                                             <fontDescription key="fontDescription" name="Ubuntu-Medium" family="Ubuntu" pointSize="17"/>
-                                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Premium Due:  $" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ppc-1b-QpX">
@@ -5388,7 +5405,7 @@ Insurance</string>
                                                                 <constraint firstAttribute="width" constant="132" id="rSg-tB-nVa"/>
                                                             </constraints>
                                                             <fontDescription key="fontDescription" name="Ubuntu-Medium" family="Ubuntu" pointSize="17"/>
-                                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Insured Drivers:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uee-Sv-vs3">
@@ -5398,7 +5415,7 @@ Insurance</string>
                                                                 <constraint firstAttribute="width" constant="126" id="yKu-ea-2KP"/>
                                                             </constraints>
                                                             <fontDescription key="fontDescription" name="Ubuntu-Medium" family="Ubuntu" pointSize="17"/>
-                                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(03 - 06 - 2016)" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7s9-hR-b4g">
@@ -5408,7 +5425,7 @@ Insurance</string>
                                                                 <constraint firstAttribute="width" constant="150" id="zlX-n7-1R7"/>
                                                             </constraints>
                                                             <fontDescription key="fontDescription" name="Ubuntu" family="Ubuntu" pointSize="17"/>
-                                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Auto" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gjS-VY-GzJ">
@@ -5418,7 +5435,7 @@ Insurance</string>
                                                                 <constraint firstAttribute="height" constant="21" id="S8L-FC-xV4"/>
                                                             </constraints>
                                                             <fontDescription key="fontDescription" name="Ubuntu" family="Ubuntu" pointSize="17"/>
-                                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="07" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3wc-n5-g8r">
@@ -5428,7 +5445,7 @@ Insurance</string>
                                                                 <constraint firstAttribute="height" constant="21" id="JYQ-mM-3q3"/>
                                                             </constraints>
                                                             <fontDescription key="fontDescription" name="Ubuntu" family="Ubuntu" pointSize="17"/>
-                                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="98900" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zZI-Jz-AOE">
@@ -5438,7 +5455,7 @@ Insurance</string>
                                                                 <constraint firstAttribute="width" constant="100" id="GXl-nf-TsU"/>
                                                             </constraints>
                                                             <fontDescription key="fontDescription" name="Ubuntu" family="Ubuntu" pointSize="17"/>
-                                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="07" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="npT-PE-wnI">
@@ -5448,7 +5465,7 @@ Insurance</string>
                                                                 <constraint firstAttribute="width" constant="70" id="Y2R-6c-Jyh"/>
                                                             </constraints>
                                                             <fontDescription key="fontDescription" name="Ubuntu" family="Ubuntu" pointSize="17"/>
-                                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5S7-xh-Ffh">
@@ -5465,7 +5482,7 @@ Insurance</string>
                                                                 <constraint firstAttribute="height" constant="21" id="i9p-zA-gsu"/>
                                                             </constraints>
                                                             <fontDescription key="fontDescription" name="Ubuntu" family="Ubuntu" pointSize="17"/>
-                                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>

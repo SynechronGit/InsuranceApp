@@ -18,7 +18,8 @@ class IAHomeController: IABaseController {
     
     @IBOutlet weak var fileClaimTabItemView: UIView!
     @IBOutlet weak var fileClaimContainerView: UIView!
-    @IBOutlet weak var fileClaimContainerViewLeadingConstraint: NSLayoutConstraint!
+    @IBOutlet weak var fileClaimImageView: UIImageView!
+    @IBOutlet weak var fileClaimTabContentViewLeadingConstraint: NSLayoutConstraint!
     
     @IBOutlet weak var policiesTabItemView: UIView!
     @IBOutlet weak var policiesContainerView: UIView!
@@ -41,13 +42,15 @@ class IAHomeController: IABaseController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.fileClaimTabItemView.alpha = 0.5
         self.claimsTabItemView.alpha = 0.5
         self.accountTabItemView.alpha = 0.5
         self.notificationsTabItemView.alpha = 0.5
         
         self.dashboardImageView.layer.borderWidth = 1.0
         self.dashboardImageView.layer.borderColor = UIColor(red: 113.0/255.0, green: 104.0/255.0, blue: 147.0/255.0, alpha: 1.0).CGColor
+        
+        self.fileClaimImageView.layer.borderWidth = 1.0
+        self.fileClaimImageView.layer.borderColor = UIColor(red: 113.0/255.0, green: 104.0/255.0, blue: 147.0/255.0, alpha: 1.0).CGColor
         
         self.policiesImageView.layer.borderWidth = 1.0
         self.policiesImageView.layer.borderColor = UIColor(red: 113.0/255.0, green: 104.0/255.0, blue: 147.0/255.0, alpha: 1.0).CGColor
@@ -57,7 +60,7 @@ class IAHomeController: IABaseController {
         aTapGestureRecognizer.cancelsTouchesInView = false
         self.dashboardTabItemView.addGestureRecognizer(aTapGestureRecognizer)
         
-        self.fileClaimContainerViewLeadingConstraint.constant = self.containerScrollView.frame.size.width * 1
+        self.fileClaimTabContentViewLeadingConstraint.constant = self.containerScrollView.frame.size.width * 1
         aTapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(IAHomeController.didSelectFileClaimTabItemView))
         aTapGestureRecognizer.cancelsTouchesInView = false
         self.fileClaimTabItemView.addGestureRecognizer(aTapGestureRecognizer)
@@ -151,6 +154,15 @@ class IAHomeController: IABaseController {
             self.dashboardImageView.hidden = false
             self.dashboardImageView.frame = CGRectMake(0.0, 0.0, self.dashboardContainerView.frame.size.width, self.dashboardContainerView.frame.size.height)
             
+            UIGraphicsBeginImageContextWithOptions(self.fileClaimContainerView.bounds.size, self.fileClaimContainerView.opaque, 0.0);
+            self.fileClaimContainerView.layer.renderInContext(UIGraphicsGetCurrentContext()!)
+            let aFileClaimImage = UIGraphicsGetImageFromCurrentImageContext()
+            UIGraphicsEndImageContext()
+            self.fileClaimImageView.image = aFileClaimImage
+            self.fileClaimContainerView.hidden = true
+            self.fileClaimImageView.hidden = false
+            self.fileClaimImageView.frame = CGRectMake(0.0, 0.0, self.fileClaimContainerView.frame.size.width, self.fileClaimContainerView.frame.size.height)
+            
             UIGraphicsBeginImageContextWithOptions(self.policiesContainerView.bounds.size, self.policiesContainerView.opaque, 0.0);
             self.policiesContainerView.layer.renderInContext(UIGraphicsGetCurrentContext()!)
             let aPoliciesImage = UIGraphicsGetImageFromCurrentImageContext()
@@ -162,16 +174,21 @@ class IAHomeController: IABaseController {
             
             UIView.animateWithDuration(0.3, delay: 0.0, options: .CurveEaseOut, animations: {
                 self.dashboardImageView.frame = CGRectMake(aDiff, aDiff, self.dashboardContainerView.frame.size.width - (aDiff * 2.0), self.dashboardContainerView.frame.size.height - (aDiff * 2.0))
+                self.fileClaimImageView.frame = CGRectMake(aDiff, aDiff, self.fileClaimContainerView.frame.size.width - (aDiff * 2.0), self.fileClaimContainerView.frame.size.height - (aDiff * 2.0))
                 self.policiesImageView.frame = CGRectMake(aDiff, aDiff, self.policiesContainerView.frame.size.width - (aDiff * 2.0), self.policiesContainerView.frame.size.height - (aDiff * 2.0))
                 }, completion: { pFinished in
                     self.containerScrollView.scrollRectToVisible(CGRectMake(self.containerScrollView.frame.size.width * CGFloat(pIndex), 0.0, self.containerScrollView.frame.size.width, self.containerScrollView.frame.size.height), animated: true)
                     
                     UIView.animateWithDuration(0.3, delay: 0.7, options: .CurveEaseOut, animations: {
                         self.dashboardImageView.frame = CGRectMake(0.0, 0.0, self.dashboardContainerView.frame.size.width, self.dashboardContainerView.frame.size.height)
+                        self.fileClaimImageView.frame = CGRectMake(0.0, 0.0, self.fileClaimContainerView.frame.size.width, self.fileClaimContainerView.frame.size.height)
                         self.policiesImageView.frame = CGRectMake(0.0, 0.0, self.policiesContainerView.frame.size.width, self.policiesContainerView.frame.size.height)
                         }, completion: { pFinished in
                             self.dashboardContainerView.hidden = false
                             self.dashboardImageView.hidden = true
+                            
+                            self.fileClaimContainerView.hidden = false
+                            self.fileClaimImageView.hidden = true
                             
                             self.policiesContainerView.hidden = false
                             self.policiesImageView.hidden = true
@@ -205,7 +222,7 @@ class IAHomeController: IABaseController {
      * @return Void
      */
     func didSelectFileClaimTabItemView() {
-        //self.displayTabWithIndex(1, animated: true)
+        self.displayTabWithIndex(1, animated: true)
     }
     
     
