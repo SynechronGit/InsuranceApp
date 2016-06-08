@@ -409,6 +409,45 @@ class IADataManager: NSObject {
                 }
             } else if self.requestType == IARequestType.ListClaims {
                 
+                let anSqlQuery :String = "SELECT code, date_of_claim, insurance_type, insured_item_name, insurer, status FROM claims"
+                let anSqlResult = try self.executeQuery(anSqlQuery, values: nil)
+                if anSqlResult != nil && anSqlResult.count > 0 {
+                    var aClaimArray :Array<IAClaim>! = Array<IAClaim>()
+                    for var aDBClaimDict :[String:AnyObject] in anSqlResult {
+                        let aDBClaim = IAClaim()
+    
+                        if aDBClaimDict["code"] is String {
+                            aDBClaim.code = aDBClaimDict["code"] as! String
+                        }
+                        
+                        if aDBClaimDict["date_of_claim"] is String {
+                            aDBClaim.dateOfClaim = aDBClaimDict["date_of_claim"] as! String
+                        }
+                        
+                        if aDBClaimDict["insurance_type"] is String {
+                            aDBClaim.insuranceType = aDBClaimDict["insurance_type"] as! String
+                        }
+                        
+                        if aDBClaimDict["insured_item_name"] is String {
+                            aDBClaim.insuredItemName = aDBClaimDict["insured_item_name"] as! String
+                        }
+                        
+                        if aDBClaimDict["insurer"] is String {
+                            aDBClaim.insurer = aDBClaimDict["insurer"] as! String
+                        }
+                        
+                        if aDBClaimDict["status"] is String {
+                            aDBClaim.status = aDBClaimDict["status"] as! String
+                        }
+                        
+                        aClaimArray.append(aDBClaim)
+                    }
+                    if aClaimArray.count <= 0 {
+                        aClaimArray = nil
+                    }
+                    aDataManagerResponse.result = aClaimArray
+                }
+                
             }
 
         } catch IAError.Generic(let pError){
