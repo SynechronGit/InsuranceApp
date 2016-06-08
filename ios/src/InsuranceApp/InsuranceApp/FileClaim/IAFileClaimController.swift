@@ -42,8 +42,78 @@ class IAFileClaimController: IABaseController, UIImagePickerControllerDelegate, 
         self.fileClaimContainerView.layer.cornerRadius = IAConstants.dashboardSubviewCornerRadius
         self.fileClaimContainerView.layer.masksToBounds = true
         
+        self.addPhotoContainerView.layer.cornerRadius = IAConstants.dashboardSubviewCornerRadius
+        self.addPhotoContainerView.layer.masksToBounds = true
+        var aTapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(IAFileClaimController.didSelectAddPhotoContainerView))
+        aTapGestureRecognizer.cancelsTouchesInView = false
+        self.addPhotoContainerView.addGestureRecognizer(aTapGestureRecognizer)
+        
+        self.scanDocumentContainerView.layer.cornerRadius = IAConstants.dashboardSubviewCornerRadius
+        self.scanDocumentContainerView.layer.masksToBounds = true
+        aTapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(IAFileClaimController.didSelectScanDocumentContainerView))
+        aTapGestureRecognizer.cancelsTouchesInView = false
+        self.scanDocumentContainerView.addGestureRecognizer(aTapGestureRecognizer)
+        
+        self.insuranceTypeTextField.shouldDisplayAsDropdown = true
+        self.insuranceTypeTextField.delegate = self
+        self.insuranceTypeTextField.controller = self
+        self.insuranceTypeTextField.list = ["Vehicle", "Driver", "Home", "Boat", "Pet"]
+        
+        self.insuredItemTextField.shouldDisplayAsDropdown = true
+        self.insuredItemTextField.controller = self
+        self.insuredItemTextField.list = nil
+        
+        self.reasonTextField.shouldDisplayAsDropdown = true
+        self.reasonTextField.controller = self
+        self.reasonTextField.list = nil
+        
+        self.dateOfIncidentTextField.shouldDisplayAsDatePicker = true
+        self.dateOfIncidentTextField.controller = self
+        self.dateOfIncidentTextField.delegate = self
+        
         self.submitContainerView.layer.cornerRadius = IAConstants.dashboardSubviewCornerRadius
         self.submitContainerView.layer.masksToBounds = true
+        aTapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(IAFileClaimController.didSelectSubmitButton))
+        aTapGestureRecognizer.cancelsTouchesInView = false
+        self.submitContainerView.addGestureRecognizer(aTapGestureRecognizer)
+    }
+    
+    
+    func resetAllData() {
+        self.insuranceTypeTextField.text = nil
+        self.insuredItemTextField.text = nil
+        self.reasonTextField.text = nil
+        self.estimatedValueTextField.text = nil
+        self.dateOfIncidentTextField.text = nil
+        self.descriptionTextView.text = nil
+    }
+    
+    
+    func textFieldDidEndEditing(textField: UITextField) {
+        if textField.isEqual(self.insuranceTypeTextField) {
+            self.insuredItemTextField.text = nil
+            self.reasonTextField.text = nil
+            
+            if self.insuranceTypeTextField.text == "Vehicle" {
+                self.insuredItemTextField.list = ["Audi A7", "Mercedes Benz S550", "BMW i8"]
+                self.reasonTextField.list = ["Theft", "Accident"]
+            } else if self.insuranceTypeTextField.text == "Driver" {
+                self.insuredItemTextField.list = ["Elijah Shah", "Brayden Howard", "Chris Logan", "Sam Mandies"]
+                self.reasonTextField.list = ["Accident"]
+            } else if self.insuranceTypeTextField.text == "Home" {
+                self.insuredItemTextField.list = ["Appliances", "Furnitures", "Curtains", "Crockery"]
+                self.reasonTextField.list = ["Theft"]
+            } else if self.insuranceTypeTextField.text == "Boat" {
+                self.insuredItemTextField.list = ["Yatch", "Skipper", "Equipments", "Loss"]
+                self.reasonTextField.list = ["Theft", "Accident"]
+            } else if self.insuranceTypeTextField.text == "Pet" {
+                self.insuredItemTextField.list = ["Dogs", "Cats"]
+                self.reasonTextField.list = ["Medical"]
+            } else {
+                self.insuredItemTextField.list = nil
+                self.reasonTextField.list = nil
+            }
+        }
     }
     
     
@@ -58,6 +128,45 @@ class IAFileClaimController: IABaseController, UIImagePickerControllerDelegate, 
             if self.insuranceTypeTextField.text == nil || self.insuranceTypeTextField.text?.lengthOfBytesUsingEncoding(NSUTF8StringEncoding) <= 0 {
                 throw IAError.Generic(NSError(domain: "com", code: 1, userInfo: [NSLocalizedDescriptionKey:"Please select insurance type."]))
             }
+            
+            IAAppDelegate.currentAppDelegate.displayLoadingOverlay()
+            
+            let aDateFormatter = NSDateFormatter()
+            aDateFormatter.locale = NSLocale(localeIdentifier: "US_en")
+            aDateFormatter.dateFormat = "MM-dd-yyyy"
+            
+            let aClaim = IAClaim()
+            aClaim.code = "UY3436809678"
+            
+            
+            if self.insuranceTypeTextField.text == "Vehicle" {
+                aClaim.insuranceType = IAInsuranceType.AutoCar.rawValue
+                aClaim.insurer = "Austin Auto Insurance Pvt. Ltd."
+            } else if self.insuranceTypeTextField.text == "Driver" {
+                aClaim.insuranceType = IAInsuranceType.AutoDriver.rawValue
+                aClaim.insurer = "Austin Insurance Pvt. Ltd."
+            } else if self.insuranceTypeTextField.text == "Home" {
+                aClaim.insuranceType = IAInsuranceType.Home.rawValue
+                aClaim.insurer = "Austin Insurance Pvt. Ltd."
+            } else if self.insuranceTypeTextField.text == "Boat" {
+                aClaim.insuranceType = IAInsuranceType.Boat.rawValue
+                aClaim.insurer = "Austin Insurance Pvt. Ltd."
+            } else if self.insuranceTypeTextField.text == "Pet" {
+                aClaim.insuranceType = IAInsuranceType.Pet.rawValue
+                aClaim.insurer = "Austin Insurance Pvt. Ltd."
+            }
+            
+            aClaim.dateOfClaim = aDateFormatter.stringFromDate(NSDate())
+            aClaim.insuredItemName = self.insuredItemTextField.text
+            aClaim.status = IAClaimStatus.Report.rawValue
+            aClaim.dateOfIncident = self.dateOfIncidentTextField.text!
+            aClaim.incedentType = self.reasonTextField.text
+            aClaim.value = self.estimatedValueTextField.text
+            aClaim.photoOne = self.addPhotoImageView.image
+            aClaim.photoTwo = self.addPhotoImageView.image
+            aClaim.photoThree = self.addPhotoImageView.image
+            
+            self.dataManager.fileClaim(aClaim)
         } catch IAError.Generic(let pError){
             self.displayMessage(message: pError.localizedDescription, type: IAMessageType.Error)
         } catch {
@@ -100,8 +209,12 @@ class IAFileClaimController: IABaseController, UIImagePickerControllerDelegate, 
         if let aPickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
             if self.imagePickerDestinationImageView != nil && self.imagePickerDestinationImageView.isEqual(self.addPhotoImageView)  {
                 self.addPhotoImageView.image = aPickedImage
+                self.addPhotoIconImageView.hidden = true
+                self.addPhotoLabel.hidden = true
             } else if self.imagePickerDestinationImageView != nil && self.imagePickerDestinationImageView.isEqual(self.scanDocumentImageView) {
                 self.scanDocumentImageView.image = aPickedImage
+                self.scanDocumentIconImageView.hidden = true
+                self.scanDocumentLabel.hidden = true
             }
         }
         picker.dismissViewControllerAnimated(true, completion: nil)
@@ -110,5 +223,28 @@ class IAFileClaimController: IABaseController, UIImagePickerControllerDelegate, 
     
     func imagePickerControllerDidCancel(picker: UIImagePickerController) {
         picker.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    
+    // MARK: - IADataManagerDelegate Methods
+    
+    /**
+     * IADataManagerDelegate method. It is implemented to handle response sent by IADataManager.
+     */
+    internal override func aiDataManagerDidSucceed(sender pSender:IADataManager, response pResponse: IADataManagerResponse) {
+        IAAppDelegate.currentAppDelegate.hideLoadingOverlay()
+        
+        if pResponse.error != nil {
+            self.displayMessage(message: pResponse.error.localizedDescription, type: IAMessageType.Error)
+        } else if pSender.requestType == IARequestType.FileClaim {
+            let anAlert = UIAlertController(title: "Claim filed successfully", message: nil, preferredStyle: .Alert)
+            anAlert.addAction(UIAlertAction(title: "OK", style: .Default, handler: {(action:UIAlertAction) in
+                if IAConstants.homeController.claimsController != nil {
+                    IAConstants.homeController.claimsController.reloadAllData()
+                }
+                self.resetAllData()
+            }))
+            self.presentViewController(anAlert, animated: true, completion: nil)
+        }
     }
 }
