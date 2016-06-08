@@ -33,10 +33,20 @@ class IAFileClaimController: IABaseController, UIImagePickerControllerDelegate, 
     @IBOutlet weak var addPhotoThreeIconImageView: UIImageView!
     @IBOutlet weak var addPhotoThreeLabel: UILabel!
     
-    @IBOutlet weak var scanDocumentContainerView: UIView!
-    @IBOutlet weak var scanDocumentImageView: UIImageView!
-    @IBOutlet weak var scanDocumentIconImageView: UIImageView!
-    @IBOutlet weak var scanDocumentLabel: UILabel!
+    @IBOutlet weak var scanDocumentOneContainerView: UIView!
+    @IBOutlet weak var scanDocumentOneImageView: UIImageView!
+    @IBOutlet weak var scanDocumentOneIconImageView: UIImageView!
+    @IBOutlet weak var scanDocumentOneLabel: UILabel!
+    
+    @IBOutlet weak var scanDocumentTwoContainerView: UIView!
+    @IBOutlet weak var scanDocumentTwoImageView: UIImageView!
+    @IBOutlet weak var scanDocumentTwoIconImageView: UIImageView!
+    @IBOutlet weak var scanDocumentTwoLabel: UILabel!
+    
+    @IBOutlet weak var scanDocumentThreeContainerView: UIView!
+    @IBOutlet weak var scanDocumentThreeImageView: UIImageView!
+    @IBOutlet weak var scanDocumentThreeIconImageView: UIImageView!
+    @IBOutlet weak var scanDocumentThreeLabel: UILabel!
     
     var imagePickerController :UIImagePickerController!
     weak var imagePickerDestinationImageView: UIImageView!
@@ -63,18 +73,34 @@ class IAFileClaimController: IABaseController, UIImagePickerControllerDelegate, 
         aTapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(IAFileClaimController.didSelectAddPhotoTwoContainerView))
         aTapGestureRecognizer.cancelsTouchesInView = false
         self.addPhotoTwoContainerView.addGestureRecognizer(aTapGestureRecognizer)
+        self.addPhotoTwoContainerView.hidden = true
         
         self.addPhotoThreeContainerView.layer.cornerRadius = IAConstants.dashboardSubviewCornerRadius
         self.addPhotoThreeContainerView.layer.masksToBounds = true
         aTapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(IAFileClaimController.didSelectAddPhotoThreeContainerView))
         aTapGestureRecognizer.cancelsTouchesInView = false
         self.addPhotoThreeContainerView.addGestureRecognizer(aTapGestureRecognizer)
+        self.addPhotoThreeContainerView.hidden = true
         
-        self.scanDocumentContainerView.layer.cornerRadius = IAConstants.dashboardSubviewCornerRadius
-        self.scanDocumentContainerView.layer.masksToBounds = true
-        aTapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(IAFileClaimController.didSelectScanDocumentContainerView))
+        self.scanDocumentOneContainerView.layer.cornerRadius = IAConstants.dashboardSubviewCornerRadius
+        self.scanDocumentOneContainerView.layer.masksToBounds = true
+        aTapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(IAFileClaimController.didSelectScanDocumentOneContainerView))
         aTapGestureRecognizer.cancelsTouchesInView = false
-        self.scanDocumentContainerView.addGestureRecognizer(aTapGestureRecognizer)
+        self.scanDocumentOneContainerView.addGestureRecognizer(aTapGestureRecognizer)
+        
+        self.scanDocumentTwoContainerView.layer.cornerRadius = IAConstants.dashboardSubviewCornerRadius
+        self.scanDocumentTwoContainerView.layer.masksToBounds = true
+        aTapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(IAFileClaimController.didSelectScanDocumentTwoContainerView))
+        aTapGestureRecognizer.cancelsTouchesInView = false
+        self.scanDocumentTwoContainerView.addGestureRecognizer(aTapGestureRecognizer)
+        self.scanDocumentTwoContainerView.hidden = true
+        
+        self.scanDocumentThreeContainerView.layer.cornerRadius = IAConstants.dashboardSubviewCornerRadius
+        self.scanDocumentThreeContainerView.layer.masksToBounds = true
+        aTapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(IAFileClaimController.didSelectScanDocumentThreeContainerView))
+        aTapGestureRecognizer.cancelsTouchesInView = false
+        self.scanDocumentThreeContainerView.addGestureRecognizer(aTapGestureRecognizer)
+        self.scanDocumentThreeContainerView.hidden = true
         
         self.insuranceTypeTextField.shouldDisplayAsDropdown = true
         self.insuranceTypeTextField.delegate = self
@@ -93,6 +119,9 @@ class IAFileClaimController: IABaseController, UIImagePickerControllerDelegate, 
         self.dateOfIncidentTextField.controller = self
         self.dateOfIncidentTextField.delegate = self
         
+        self.descriptionTextView.layer.borderWidth = 1.0
+        self.descriptionTextView.layer.borderColor = UIColor.lightGrayColor().CGColor
+        
         self.submitContainerView.layer.cornerRadius = IAConstants.dashboardSubviewCornerRadius
         self.submitContainerView.layer.masksToBounds = true
         aTapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(IAFileClaimController.didSelectSubmitButton))
@@ -108,6 +137,7 @@ class IAFileClaimController: IABaseController, UIImagePickerControllerDelegate, 
         self.estimatedValueTextField.text = nil
         self.dateOfIncidentTextField.text = nil
         self.descriptionTextView.text = nil
+        self.view.endEditing(true)
     }
     
     
@@ -215,8 +245,20 @@ class IAFileClaimController: IABaseController, UIImagePickerControllerDelegate, 
     }
     
     
-    func didSelectScanDocumentContainerView() {
-        self.imagePickerDestinationImageView = self.scanDocumentImageView
+    func didSelectScanDocumentOneContainerView() {
+        self.imagePickerDestinationImageView = self.scanDocumentOneImageView
+        self.displayImagePicker()
+    }
+    
+    
+    func didSelectScanDocumentTwoContainerView() {
+        self.imagePickerDestinationImageView = self.scanDocumentTwoImageView
+        self.displayImagePicker()
+    }
+    
+    
+    func didSelectScanDocumentThreeContainerView() {
+        self.imagePickerDestinationImageView = self.scanDocumentThreeImageView
         self.displayImagePicker()
     }
     
@@ -245,18 +287,30 @@ class IAFileClaimController: IABaseController, UIImagePickerControllerDelegate, 
                 self.addPhotoOneImageView.image = aPickedImage
                 self.addPhotoOneIconImageView.hidden = true
                 self.addPhotoOneLabel.hidden = true
+                self.addPhotoTwoContainerView.hidden = false
             } else if self.imagePickerDestinationImageView != nil && self.imagePickerDestinationImageView.isEqual(self.addPhotoTwoImageView)  {
                 self.addPhotoTwoImageView.image = aPickedImage
                 self.addPhotoTwoIconImageView.hidden = true
                 self.addPhotoTwoLabel.hidden = true
+                self.addPhotoThreeContainerView.hidden = false
             } else if self.imagePickerDestinationImageView != nil && self.imagePickerDestinationImageView.isEqual(self.addPhotoThreeImageView)  {
                 self.addPhotoThreeImageView.image = aPickedImage
                 self.addPhotoThreeIconImageView.hidden = true
                 self.addPhotoThreeLabel.hidden = true
-            } else if self.imagePickerDestinationImageView != nil && self.imagePickerDestinationImageView.isEqual(self.scanDocumentImageView) {
-                self.scanDocumentImageView.image = aPickedImage
-                self.scanDocumentIconImageView.hidden = true
-                self.scanDocumentLabel.hidden = true
+            } else if self.imagePickerDestinationImageView != nil && self.imagePickerDestinationImageView.isEqual(self.scanDocumentOneImageView) {
+                self.scanDocumentOneImageView.image = aPickedImage
+                self.scanDocumentOneIconImageView.hidden = true
+                self.scanDocumentOneLabel.hidden = true
+                self.scanDocumentTwoContainerView.hidden = false
+            } else if self.imagePickerDestinationImageView != nil && self.imagePickerDestinationImageView.isEqual(self.scanDocumentTwoImageView) {
+                self.scanDocumentTwoImageView.image = aPickedImage
+                self.scanDocumentTwoIconImageView.hidden = true
+                self.scanDocumentTwoLabel.hidden = true
+                self.scanDocumentThreeContainerView.hidden = false
+            } else if self.imagePickerDestinationImageView != nil && self.imagePickerDestinationImageView.isEqual(self.scanDocumentThreeImageView) {
+                self.scanDocumentThreeImageView.image = aPickedImage
+                self.scanDocumentThreeIconImageView.hidden = true
+                self.scanDocumentThreeLabel.hidden = true
             }
         }
         picker.dismissViewControllerAnimated(true, completion: nil)
