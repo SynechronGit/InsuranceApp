@@ -75,12 +75,16 @@
             <string>Ubuntu-Medium</string>
             <string>Ubuntu-Medium</string>
             <string>Ubuntu-Medium</string>
-            <string>Ubuntu-Medium</string>
         </mutableArray>
         <mutableArray key="Ubuntu-700.ttf">
             <string>Ubuntu-Bold</string>
         </mutableArray>
         <mutableArray key="Ubuntu-regular.ttf">
+            <string>Ubuntu</string>
+            <string>Ubuntu</string>
+            <string>Ubuntu</string>
+            <string>Ubuntu</string>
+            <string>Ubuntu</string>
             <string>Ubuntu</string>
             <string>Ubuntu</string>
             <string>Ubuntu</string>
@@ -2459,7 +2463,7 @@ Insurance</string>
                                             <constraint firstAttribute="width" constant="347" id="STI-ga-81T"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="Ubuntu" family="Ubuntu" pointSize="17"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="572-mR-RpP" customClass="IATextField" customModule="InsuranceApp" customModuleProvider="target">

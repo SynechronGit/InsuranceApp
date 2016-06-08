@@ -9,9 +9,26 @@
 import UIKit
 
 class IAClaimsController: IABaseController {
+    @IBOutlet weak var claimListContainerView: UIView!
+    var claimArray :Array<IAPolicy>!
+    @IBOutlet weak var claimTableView: UITableView!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.reloadAllData()
+    }
+    
+    
+    func reloadAllData() {
+        //IAAppDelegate.currentAppDelegate.displayLoadingOverlay()
+        //self.dataManager.listClaims()
+    }
+    
+    
+    func reloadAllView() {
+        self.claimTableView.reloadData()
     }
     
 }

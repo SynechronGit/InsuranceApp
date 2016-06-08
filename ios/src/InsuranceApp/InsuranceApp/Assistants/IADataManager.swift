@@ -22,6 +22,7 @@ public enum IARequestType: Int {
     case ListDrivers
     case DriverDetails
     case ListPolicies
+    case ListClaims
 }
 
 
@@ -406,6 +407,8 @@ class IADataManager: NSObject {
                     }
                     aDataManagerResponse.result = aPolicyArray
                 }
+            } else if self.requestType == IARequestType.ListClaims {
+                
             }
 
         } catch IAError.Generic(let pError){
@@ -490,6 +493,12 @@ class IADataManager: NSObject {
     
     internal func listPolicies() {
         self.requestType = IARequestType.ListPolicies
+        self.sendRequest(nil)
+    }
+    
+    
+    internal func listClaims() {
+        self.requestType = IARequestType.ListClaims
         self.sendRequest(nil)
     }
     
