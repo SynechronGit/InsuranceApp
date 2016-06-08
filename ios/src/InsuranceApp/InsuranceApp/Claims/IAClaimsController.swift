@@ -22,13 +22,57 @@ class IAClaimsController: IABaseController {
     
     
     func reloadAllData() {
-        //IAAppDelegate.currentAppDelegate.displayLoadingOverlay()
+        IAAppDelegate.currentAppDelegate.displayLoadingOverlay()
         self.dataManager.listClaims()
     }
     
     
     func reloadAllView() {
-       // self.claimTableView.reloadData()
+        self.claimTableView.reloadData()
+    }
+    
+    
+    // MARK: - UITableView Methods
+    
+    /**
+     * Method that will calculate and return number of rows in given section of table.
+     * @return Int. Number of rows in given section
+     */
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        var aReturnVal :Int = 0
+        
+        if self.claimArray != nil {
+            aReturnVal = self.claimArray.count
+        }
+        
+        return aReturnVal
+    }
+    
+    
+    /**
+     * Method that will init, set and return the cell view.
+     * @return UITableViewCell. View of the cell in given table view.
+     */
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let aReturnVal:UITableViewCell = UITableViewCell()
+        aReturnVal.backgroundColor = UIColor.clearColor()
+        aReturnVal.accessoryType = .DisclosureIndicator
+        
+        if self.claimArray != nil {
+            let aClaim = self.claimArray[indexPath.row]
+            aReturnVal.textLabel?.text = aClaim.code
+        }
+        
+        return aReturnVal
+    }
+    
+    
+    /**
+     * Method that will handle tap on table cell.
+     */
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        self.performSegueWithIdentifier("ClaimListToClaimDetailsSegueID", sender: self)
     }
     
     

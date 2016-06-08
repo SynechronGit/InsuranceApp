@@ -5916,6 +5916,10 @@ Insurance</string>
                                                 </connections>
                                             </tableViewCell>
                                         </prototypes>
+                                        <connections>
+                                            <outlet property="dataSource" destination="sFC-Nh-fCg" id="uyo-PU-GhJ"/>
+                                            <outlet property="delegate" destination="sFC-Nh-fCg" id="0uf-Rz-7Mf"/>
+                                        </connections>
                                     </tableView>
                                 </subviews>
                                 <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.93725490199999995" alpha="1" colorSpace="calibratedRGB"/>
@@ -5946,6 +5950,7 @@ Insurance</string>
                     <connections>
                         <outlet property="claimListContainerView" destination="GEL-EV-RpF" id="8lm-EV-Yaq"/>
                         <outlet property="claimTableView" destination="pxE-fn-wJ7" id="uqP-t7-BiN"/>
+                        <segue destination="bZE-lK-xiF" kind="show" identifier="ClaimListToClaimDetailsSegueID" id="6Jn-WB-tgU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GIc-gR-Jt7" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -6137,6 +6142,61 @@ Insurance</string>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IaN-Oy-Afm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="571" y="4307.5"/>
+        </scene>
+        <!--Claim Details Controller-->
+        <scene sceneID="SeD-yq-jl2">
+            <objects>
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="bZE-lK-xiF" customClass="IAClaimDetailsController" customModule="InsuranceApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="uVk-4F-Obm"/>
+                        <viewControllerLayoutGuide type="bottom" id="MSh-wy-c8P"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="l5t-tH-wyf">
+                        <rect key="frame" x="0.0" y="44" width="768" height="905"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mso-hB-nvo">
+                                <rect key="frame" x="18" y="18" width="732" height="869"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6mO-Cj-5Fr">
+                                        <rect key="frame" x="0.0" y="0.0" width="732" height="8"/>
+                                        <color key="backgroundColor" red="0.18039215689999999" green="0.24313725489999999" blue="0.30980392159999998" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="8" id="043-g9-a7A"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a3p-hX-PC6">
+                                        <rect key="frame" x="0.0" y="861" width="732" height="8"/>
+                                        <color key="backgroundColor" red="0.18039215689999999" green="0.24313725489999999" blue="0.30980392159999998" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="8" id="gzh-30-cOP"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="6mO-Cj-5Fr" firstAttribute="leading" secondItem="mso-hB-nvo" secondAttribute="leading" id="1Un-TR-V2f"/>
+                                    <constraint firstItem="a3p-hX-PC6" firstAttribute="leading" secondItem="mso-hB-nvo" secondAttribute="leading" id="PSg-cg-hNg"/>
+                                    <constraint firstAttribute="bottom" secondItem="a3p-hX-PC6" secondAttribute="bottom" id="QT8-uz-abV"/>
+                                    <constraint firstAttribute="trailing" secondItem="6mO-Cj-5Fr" secondAttribute="trailing" id="SnE-YP-BNm"/>
+                                    <constraint firstItem="6mO-Cj-5Fr" firstAttribute="top" secondItem="mso-hB-nvo" secondAttribute="top" id="h3j-Wd-DYI"/>
+                                    <constraint firstAttribute="trailing" secondItem="a3p-hX-PC6" secondAttribute="trailing" id="weW-5m-pZz"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.078431372550000003" green="0.066666666669999999" blue="0.1137254902" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="mso-hB-nvo" secondAttribute="trailing" constant="18" id="Hk1-n2-riV"/>
+                            <constraint firstAttribute="bottom" secondItem="mso-hB-nvo" secondAttribute="bottom" constant="18" id="KFT-Co-hVM"/>
+                            <constraint firstItem="mso-hB-nvo" firstAttribute="top" secondItem="l5t-tH-wyf" secondAttribute="top" constant="18" id="POH-t3-YOe"/>
+                            <constraint firstItem="mso-hB-nvo" firstAttribute="leading" secondItem="l5t-tH-wyf" secondAttribute="leading" constant="18" id="SKK-67-tEb"/>
+                        </constraints>
+                    </view>
+                    <extendedEdge key="edgesForExtendedLayout"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PoY-vo-8OA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1491" y="6490.5"/>
         </scene>
     </scenes>
     <resources>
