@@ -11,6 +11,26 @@ import UIKit
 class IAClaim: NSObject {
     var code:String!
     var insuranceType:String!
+    var insuranceTypeColor:UIColor! {
+        get {
+            var aReturnVal :UIColor!
+            
+            if self.insuranceType != nil {
+                if self.insuranceType == IAInsuranceType.AutoCar.rawValue || self.insuranceType == IAInsuranceType.AutoDriver.rawValue {
+                    aReturnVal = UIColor(red: 165.0/255.0, green: 103.0/255.0, blue: 187.0/255.0, alpha: 1.0)
+                } else if self.insuranceType == IAInsuranceType.Home.rawValue {
+                    aReturnVal = UIColor(red: 201.0/255.0, green: 174.0/255.0, blue: 37.0/255.0, alpha: 1.0)
+                } else if self.insuranceType == IAInsuranceType.Boat.rawValue {
+                    aReturnVal = UIColor(red: 27.0/255.0, green: 167.0/255.0, blue: 185.0/255.0, alpha: 1.0)
+                } else if self.insuranceType == IAInsuranceType.Pet.rawValue {
+                    aReturnVal = UIColor(red: 31.0/255.0, green: 170.0/255.0, blue: 67.0/255.0, alpha: 1.0)
+                }
+            }
+            
+            return aReturnVal
+        }
+    }
+    
     var insuranceTypeDisplayText:String! {
         get {
             var aReturnVal :String!
@@ -40,11 +60,11 @@ class IAClaim: NSObject {
             var aReturnVal :String!
             
             if self.status != nil {
-                if self.status == "UNDER_REVIEW" {
+                if self.status == IAClaimStatus.UnderReview.rawValue {
                     aReturnVal = "Under Review"
-                } else if self.status == "REPORT" {
+                } else if self.status == IAClaimStatus.Report.rawValue {
                     aReturnVal = "Report"
-                } else if self.status == "APPROVED" {
+                } else if self.status == IAClaimStatus.Approved.rawValue {
                     aReturnVal = "Approved"
                 }
             }
