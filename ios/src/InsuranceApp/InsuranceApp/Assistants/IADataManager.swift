@@ -452,6 +452,19 @@ class IADataManager: NSObject {
                             aDBClaim.value = aDBClaimDict["value"] as! String
                         }
                         
+                        if aDBClaimDict["photo1"] is NSData {
+                            aDBClaim.photoOne = UIImage(data: aDBClaimDict["photo1"] as! NSData)
+                        }
+                        
+                        if aDBClaimDict["photo2"] is NSData {
+                            aDBClaim.photoTwo = UIImage(data: aDBClaimDict["photo2"] as! NSData)
+                        }
+                        
+                        if aDBClaimDict["photo3"] is NSData {
+                            aDBClaim.photoThree = UIImage(data: aDBClaimDict["photo3"] as! NSData)
+                        }
+                        
+                        
                         aClaimArray.append(aDBClaim)
                     }
                     if aClaimArray.count <= 0 {
