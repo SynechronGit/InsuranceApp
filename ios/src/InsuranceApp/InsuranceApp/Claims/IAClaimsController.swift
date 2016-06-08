@@ -17,6 +17,8 @@ class IAClaimsController: IABaseController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.claimTableView.tableFooterView = UIView()
+        
         self.reloadAllData()
     }
     

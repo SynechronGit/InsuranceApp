@@ -22,6 +22,8 @@ class IAPoliciesController: IABaseController {
         self.policyListContainerView.layer.cornerRadius = IAConstants.dashboardSubviewCornerRadius
         self.policyListContainerView.layer.masksToBounds = true
         
+        self.policyTableView.tableFooterView = UIView()
+        
         self.reloadAllData()
     }
     
