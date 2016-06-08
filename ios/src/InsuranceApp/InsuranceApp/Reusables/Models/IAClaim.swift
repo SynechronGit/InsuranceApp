@@ -32,6 +32,9 @@ class IAClaim: NSObject {
     var insuredItemName:String!
     var insurer:String!
     var status:String!
+    var dateOfIncident:String!
+    var incedentType:String!
+    var value:String!
     var statusDisplayText:String! {
         get {
             var aReturnVal :String!
