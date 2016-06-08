@@ -409,7 +409,7 @@ class IADataManager: NSObject {
                 }
             } else if self.requestType == IARequestType.ListClaims {
                 
-                let anSqlQuery :String = "SELECT code, date_of_claim, insurance_type, insured_item_name, insurer, status FROM claims"
+                let anSqlQuery :String = "SELECT code, date_of_claim, insurance_type, insured_item_name, insurer, status, incident_date, incident_type, value FROM claims"
                 let anSqlResult = try self.executeQuery(anSqlQuery, values: nil)
                 if anSqlResult != nil && anSqlResult.count > 0 {
                     var aClaimArray :Array<IAClaim>! = Array<IAClaim>()
@@ -438,6 +438,18 @@ class IADataManager: NSObject {
                         
                         if aDBClaimDict["status"] is String {
                             aDBClaim.status = aDBClaimDict["status"] as! String
+                        }
+                        
+                        if aDBClaimDict["incident_date"] is String {
+                            aDBClaim.dateOfIncident = aDBClaimDict["incident_date"] as! String
+                        }
+                        
+                        if aDBClaimDict["incident_type"] is String {
+                            aDBClaim.incedentType = aDBClaimDict["incident_type"] as! String
+                        }
+                        
+                        if aDBClaimDict["value"] is String {
+                            aDBClaim.value = aDBClaimDict["value"] as! String
                         }
                         
                         aClaimArray.append(aDBClaim)
