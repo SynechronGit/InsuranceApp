@@ -24,6 +24,7 @@
 		3F3F0DC61D003CDC00A851FB /* IAAddVehicleController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F3F0DC31D003CDC00A851FB /* IAAddVehicleController.swift */; };
 		3F3F0DC71D003CDC00A851FB /* IAVehicleDetailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F3F0DC41D003CDC00A851FB /* IAVehicleDetailsController.swift */; };
 		3F3F0DC81D003CDC00A851FB /* IAVehicleListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F3F0DC51D003CDC00A851FB /* IAVehicleListCell.swift */; };
+		3F4999C11D0806EC007D8A73 /* IAClaimDetailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F4999C01D0806EC007D8A73 /* IAClaimDetailsController.swift */; };
 		3F4D20C41CF71CE30024EAE7 /* IAVehicle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F4D20C31CF71CE30024EAE7 /* IAVehicle.swift */; };
 		3F4D24291D016CA10033E924 /* IATextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F4D24281D016CA10033E924 /* IATextField.swift */; };
 		3F4EED5A1D07053D0085E3C4 /* IAPolicyDetailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F4EED591D07053D0085E3C4 /* IAPolicyDetailsController.swift */; };
@@ -115,6 +116,7 @@
 		3F3F0DC31D003CDC00A851FB /* IAAddVehicleController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IAAddVehicleController.swift; sourceTree = "<group>"; };
 		3F3F0DC41D003CDC00A851FB /* IAVehicleDetailsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IAVehicleDetailsController.swift; sourceTree = "<group>"; };
 		3F3F0DC51D003CDC00A851FB /* IAVehicleListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IAVehicleListCell.swift; sourceTree = "<group>"; };
+		3F4999C01D0806EC007D8A73 /* IAClaimDetailsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IAClaimDetailsController.swift; sourceTree = "<group>"; };
 		3F4D20C31CF71CE30024EAE7 /* IAVehicle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IAVehicle.swift; sourceTree = "<group>"; };
 		3F4D24281D016CA10033E924 /* IATextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IATextField.swift; sourceTree = "<group>"; };
 		3F4EED591D07053D0085E3C4 /* IAPolicyDetailsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IAPolicyDetailsController.swift; sourceTree = "<group>"; };
@@ -347,6 +349,7 @@
 			isa = PBXGroup;
 			children = (
 				3F63F1031CFEF55000623420 /* IAClaimsController.swift */,
+				3F4999C01D0806EC007D8A73 /* IAClaimDetailsController.swift */,
 			);
 			path = Claims;
 			sourceTree = "<group>";
@@ -617,6 +620,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3F3F0DC11D003CD700A851FB /* IADriverListCell.swift in Sources */,
+				3F4999C11D0806EC007D8A73 /* IAClaimDetailsController.swift in Sources */,
 				3FAFB5521D006DC00083D38E /* IATrafficViolationTableCellView.swift in Sources */,
 				3F4EED5A1D07053D0085E3C4 /* IAPolicyDetailsController.swift in Sources */,
 				3FE1D2AF1CFC58C3007FA513 /* InsuranceTypeContainerView.swift in Sources */,
