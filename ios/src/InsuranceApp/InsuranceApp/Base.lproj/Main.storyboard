@@ -898,6 +898,63 @@
             </objects>
             <point key="canvasLocation" x="-365" y="3211.5"/>
         </scene>
+        <!--Met With Accident Controller-->
+        <scene sceneID="Cta-qT-AGY">
+            <objects>
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="02H-yZ-hpq" customClass="IAMetWithAccidentController" customModule="InsuranceApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="E8w-mj-MPT"/>
+                        <viewControllerLayoutGuide type="bottom" id="8VE-Vo-eHb"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="X3t-CV-KBW">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <extendedEdge key="edgesForExtendedLayout"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Od7-ip-00e" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="425" y="2289"/>
+        </scene>
+        <!--Roadside Assistance Controller-->
+        <scene sceneID="eEa-7N-DlK">
+            <objects>
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="Cy9-jA-znq" customClass="IARoadsideAssistanceController" customModule="InsuranceApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="G8K-37-525"/>
+                        <viewControllerLayoutGuide type="bottom" id="0oX-I7-EB1"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="C9l-mu-ISR">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <extendedEdge key="edgesForExtendedLayout"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="R5T-ue-jKl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1117" y="2289"/>
+        </scene>
+        <!--InsuranceID Card Controller-->
+        <scene sceneID="IHe-Sa-Kxg">
+            <objects>
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="DXU-d4-dZn" customClass="IAInsuranceIDCardController" customModule="InsuranceApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="waJ-cg-W6y"/>
+                        <viewControllerLayoutGuide type="bottom" id="Hcd-t5-368"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="eEm-sV-JUp">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <extendedEdge key="edgesForExtendedLayout"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Bil-NL-F0v" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1787" y="2289"/>
+        </scene>
         <!--Dashboard Controller-->
         <scene sceneID="zWP-iv-os1">
             <objects>
@@ -2010,6 +2067,9 @@ Insurance</string>
                         <outlet property="petInsuranceContainerView" destination="WRm-dx-Y9Z" id="kZY-kZ-Sci"/>
                         <outlet property="roadsideAssistanceContainerView" destination="bH6-oK-eie" id="d2t-bL-4Vd"/>
                         <segue destination="bsL-16-OO3" kind="show" identifier="DashboardToAutoInsuranceDetailsSegueID" id="SEL-0Y-TCf"/>
+                        <segue destination="Cy9-jA-znq" kind="presentation" identifier="DashboardToRoadsideAssistanceSegueID" modalPresentationStyle="formSheet" id="jDD-Wz-5Yj"/>
+                        <segue destination="02H-yZ-hpq" kind="presentation" identifier="DashboardToMetWithAccidentSegueID" modalPresentationStyle="formSheet" id="J3T-i2-c2k"/>
+                        <segue destination="DXU-d4-dZn" kind="presentation" identifier="DashboardToInsuranceIDCardSegueID" modalPresentationStyle="formSheet" id="OGb-vH-ZOb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="r5C-bG-USq" userLabel="First Responder" sceneMemberID="firstResponder"/>
