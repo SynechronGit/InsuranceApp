@@ -6413,7 +6413,7 @@ Insurance</string>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bFe-XR-EJc">
                                         <rect key="frame" x="22" y="633" width="211" height="140"/>
                                         <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="r4T-Po-sDc">
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="r4T-Po-sDc">
                                                 <rect key="frame" x="0.0" y="0.0" width="211" height="140"/>
                                             </imageView>
                                         </subviews>
@@ -6429,7 +6429,7 @@ Insurance</string>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cKX-qU-YPF">
                                         <rect key="frame" x="260" y="633" width="211" height="140"/>
                                         <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1ua-Wd-OgI">
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1ua-Wd-OgI">
                                                 <rect key="frame" x="0.0" y="0.0" width="211" height="140"/>
                                             </imageView>
                                         </subviews>
@@ -6443,7 +6443,7 @@ Insurance</string>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="z2I-Hf-LaJ">
                                         <rect key="frame" x="499" y="633" width="211" height="140"/>
                                         <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="g8q-HI-tGj">
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="g8q-HI-tGj">
                                                 <rect key="frame" x="0.0" y="0.0" width="211" height="140"/>
                                             </imageView>
                                         </subviews>

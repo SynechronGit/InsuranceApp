@@ -59,11 +59,23 @@ class IAClaimDetailsController: IABaseController {
         self.incidentDateLabel.text = claim.dateOfIncident
         self.incedentTypeLabel.text = claim.incedentType
         self.insuranceTypeLabel.text = claim.insuranceTypeDisplayText
-        self.insuredItemHeadingLabel.text = "Insured Car: "
+        
+        if claim.insuranceType == IAInsuranceType.AutoCar.rawValue {
+            self.insuredItemHeadingLabel?.text = "Insured Car: "
+        } else if claim.insuranceType == IAInsuranceType.AutoDriver.rawValue {
+            self.insuredItemHeadingLabel?.text = "Insured Driver: "
+        } else if claim.insuranceType == IAInsuranceType.Boat.rawValue {
+            self.insuredItemHeadingLabel?.text = "Insured Boat: "
+        } else if claim.insuranceType == IAInsuranceType.Pet.rawValue {
+            self.insuredItemHeadingLabel?.text = "Insured Pet: "
+        }
+        
         self.insuredItemLabel.text = claim.insuredItemName
         self.insurerCompanyLabel.text = claim.insurer
         self.valueLabel.text = claim.value
-        
+        self.imageOneImageView.image = claim.photoOne
+        self.imageTwoImageView.image = claim.photoTwo
+        self.imageThreeImageView.image = claim.photoThree
         
     }
 }

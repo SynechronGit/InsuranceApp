@@ -409,7 +409,7 @@ class IADataManager: NSObject {
                 }
             } else if self.requestType == IARequestType.ListClaims {
                 
-                let anSqlQuery :String = "SELECT code, date_of_claim, insurance_type, insured_item_name, insurer, status, incident_date, incident_type, value FROM claims"
+                let anSqlQuery :String = "SELECT code, date_of_claim, insurance_type, insured_item_name, insurer, status, incident_date, incident_type, value, photo1, photo2, photo3 FROM claims"
                 let anSqlResult = try self.executeQuery(anSqlQuery, values: nil)
                 if anSqlResult != nil && anSqlResult.count > 0 {
                     var aClaimArray :Array<IAClaim>! = Array<IAClaim>()
