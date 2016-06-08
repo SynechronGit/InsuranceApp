@@ -12,6 +12,7 @@ class IAClaimsController: IABaseController {
     @IBOutlet weak var claimListContainerView: UIView!
     var claimArray :Array<IAClaim>!
     @IBOutlet weak var claimTableView: UITableView!
+    var selectedTableIndex:Int!
     
     
     override func viewDidLoad() {
@@ -115,8 +116,22 @@ class IAClaimsController: IABaseController {
      */
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        self.selectedTableIndex = indexPath.row
         self.performSegueWithIdentifier("ClaimListToClaimDetailsSegueID", sender: self)
     }
+    
+    /**
+     * Method that will be called while performing segue and will handle setting required data for next controller.
+     */
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "ClaimListToClaimDetailsSegueID" {
+            let aClaim = self.claimArray[self.selectedTableIndex]
+            self.selectedTableIndex = nil
+            
+            (segue.destinationViewController as! IAClaimDetailsController).claim = aClaim
+        }
+    }
+
     
     
     // MARK: - IADataManagerDelegate Methods

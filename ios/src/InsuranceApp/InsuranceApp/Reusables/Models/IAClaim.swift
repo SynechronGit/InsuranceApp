@@ -38,11 +38,11 @@ class IAClaim: NSObject {
             if self.insuranceType != nil {
                 if self.insuranceType == "BOAT" {
                     aReturnVal = "Boat"
-                } else if self.insuranceType == "AUTO_CAR" || self.status == "AUTO_DRIVER" {
+                } else if self.insuranceType == "AUTO_CAR" || self.insuranceType == "AUTO_DRIVER" {
                     aReturnVal = "Auto"
                 } else if self.insuranceType == "PET" {
                     aReturnVal = "Pet"
-                }
+                } 
             }
             
             return aReturnVal
