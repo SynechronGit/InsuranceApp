@@ -119,6 +119,7 @@ class IAFileClaimController: IABaseController, UIImagePickerControllerDelegate, 
         self.dateOfIncidentTextField.controller = self
         self.dateOfIncidentTextField.delegate = self
         
+        self.descriptionTextView.layer.cornerRadius = IAConstants.dashboardSubviewCornerRadius
         self.descriptionTextView.layer.borderWidth = 1.0
         self.descriptionTextView.layer.borderColor = UIColor.lightGrayColor().CGColor
         
