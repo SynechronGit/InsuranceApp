@@ -70,3 +70,25 @@ public enum IAMessageType: Int {
     case Error
     case Information
 }
+
+
+/**
+ * Enum to define different claim status types.
+ */
+public enum IAClaimStatus: String {
+    case Report = "REPORT"
+    case UnderReview = "UNDER_REVIEW"
+    case Approved = "APPROVED"
+}
+
+
+/**
+ * Enum to define different insurance types.
+ */
+public enum IAInsuranceType: String {
+    case AutoCar = "AUTO_CAR"
+    case AutoDriver = "AUTO_DRIVER"
+    case Home = "HOME"
+    case Boat = "BOAT"
+    case Pet = "PET"
+}
