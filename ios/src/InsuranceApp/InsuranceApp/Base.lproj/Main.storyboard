@@ -1039,11 +1039,11 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AvV-c5-QQo">
                                 <rect key="frame" x="19" y="26" width="212" height="212"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="lJJ-fh-cOa">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Tyre" translatesAutoresizingMaskIntoConstraints="NO" id="lJJ-fh-cOa">
                                         <rect key="frame" x="0.0" y="0.0" width="212" height="212"/>
                                     </imageView>
                                 </subviews>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstItem="lJJ-fh-cOa" firstAttribute="leading" secondItem="AvV-c5-QQo" secondAttribute="leading" id="0nD-yk-Edc"/>
                                     <constraint firstAttribute="height" constant="212" id="6KO-3r-0xa"/>
@@ -1056,11 +1056,11 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2Xx-WC-afJ">
                                 <rect key="frame" x="21" y="256" width="212" height="212"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="QzL-la-EnE">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="towCar" translatesAutoresizingMaskIntoConstraints="NO" id="QzL-la-EnE">
                                         <rect key="frame" x="0.0" y="0.0" width="212" height="212"/>
                                     </imageView>
                                 </subviews>
-                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstItem="QzL-la-EnE" firstAttribute="top" secondItem="2Xx-WC-afJ" secondAttribute="top" id="CXy-j2-2sB"/>
                                     <constraint firstAttribute="trailing" secondItem="QzL-la-EnE" secondAttribute="trailing" id="R0r-lv-zdB"/>
@@ -1073,11 +1073,11 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GDK-Ik-kBa">
                                 <rect key="frame" x="249" y="26" width="212" height="212"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="bfd-jg-8wD">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="battery" translatesAutoresizingMaskIntoConstraints="NO" id="bfd-jg-8wD">
                                         <rect key="frame" x="0.0" y="0.0" width="212" height="212"/>
                                     </imageView>
                                 </subviews>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstItem="bfd-jg-8wD" firstAttribute="top" secondItem="GDK-Ik-kBa" secondAttribute="top" id="1pB-E3-2pQ"/>
                                     <constraint firstAttribute="width" constant="212" id="ILo-KO-S8U"/>
@@ -1090,11 +1090,11 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="thv-2I-OAH">
                                 <rect key="frame" x="251" y="256" width="212" height="212"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="IBH-NF-zrb">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="rentCar" translatesAutoresizingMaskIntoConstraints="NO" id="IBH-NF-zrb">
                                         <rect key="frame" x="0.0" y="0.0" width="212" height="212"/>
                                     </imageView>
                                 </subviews>
-                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstItem="IBH-NF-zrb" firstAttribute="leading" secondItem="thv-2I-OAH" secondAttribute="leading" id="5lT-cR-ZyM"/>
                                     <constraint firstItem="IBH-NF-zrb" firstAttribute="top" secondItem="thv-2I-OAH" secondAttribute="top" id="9Lj-ky-bzU"/>
@@ -7360,17 +7360,21 @@ Insurance</string>
         <image name="TabBarIconFileClaim" width="25" height="27"/>
         <image name="TabBarIconNotifications" width="20" height="21"/>
         <image name="TabBarIconPolicies" width="23" height="27"/>
+        <image name="Tyre" width="211" height="211"/>
         <image name="UserNameIcon" width="27" height="29"/>
         <image name="addBtn" width="27" height="28"/>
         <image name="backArrow" width="9" height="18"/>
+        <image name="battery" width="211" height="211"/>
         <image name="call911" width="211" height="211"/>
         <image name="camera" width="32" height="26"/>
         <image name="cancelButton" width="154" height="49"/>
         <image name="dummyDriver" width="143" height="139"/>
         <image name="nextArrow" width="9" height="18"/>
+        <image name="rentCar" width="211" height="211"/>
         <image name="sendLocation" width="211" height="211"/>
         <image name="tabbox" width="210" height="49"/>
         <image name="tick_box_deselected" width="38" height="38"/>
         <image name="tick_box_selected" width="38" height="38"/>
+        <image name="towCar" width="211" height="211"/>
     </resources>
 </document>

@@ -27,16 +27,16 @@ class IARoadsideAssistanceController: UIViewController {
     }
     
     func reloadUI(){
-        let aTapGestureRecognizerTyre = UITapGestureRecognizer(target: self, action: #selector(IAMetWithAccidentController.didClickCancel))
+        let aTapGestureRecognizerTyre = UITapGestureRecognizer(target: self, action: #selector(IARoadsideAssistanceController.didSelectCancelButton))
         aTapGestureRecognizerTyre.cancelsTouchesInView = false
         
-        let aTapGestureRecognizerTow = UITapGestureRecognizer(target: self, action: #selector(IAMetWithAccidentController.didClickCancel))
+        let aTapGestureRecognizerTow = UITapGestureRecognizer(target: self, action: #selector(IARoadsideAssistanceController.didSelectCancelButton))
         aTapGestureRecognizerTow.cancelsTouchesInView = false
         
-        let aTapGestureRecognizerBattery = UITapGestureRecognizer(target: self, action: #selector(IAMetWithAccidentController.didClickCancel))
+        let aTapGestureRecognizerBattery = UITapGestureRecognizer(target: self, action: #selector(IARoadsideAssistanceController.didSelectCancelButton))
         aTapGestureRecognizerBattery.cancelsTouchesInView = false
         
-        let aTapGestureRecognizerRent = UITapGestureRecognizer(target: self, action: #selector(IAMetWithAccidentController.didClickCancel))
+        let aTapGestureRecognizerRent = UITapGestureRecognizer(target: self, action: #selector(IARoadsideAssistanceController.didSelectCancelButton))
         aTapGestureRecognizerRent.cancelsTouchesInView = false
         
         self.flatTyreView.addGestureRecognizer(aTapGestureRecognizerTyre)

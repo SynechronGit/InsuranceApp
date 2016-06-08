@@ -125,7 +125,7 @@ class IADashboardController: IABaseController {
     }
     
     @IBAction func didSelectRoadSideAssistance(){
-       // self.performSegueWithIdentifier("DashboardToRoadsideAssistanceSegueID", sender: self)
+        self.performSegueWithIdentifier("DashboardToRoadsideAssistanceSegueID", sender: self)
     }
     // MARK: - IADataManagerDelegate Methods
     
