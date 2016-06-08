@@ -164,7 +164,11 @@ class IAAddDriverController: IABaseController, UITextFieldDelegate, UIImagePicke
             self.imagePickerController = UIImagePickerController()
         }
         self.imagePickerController.allowsEditing = false
-        self.imagePickerController.sourceType = .PhotoLibrary
+        #if (arch(i386) || arch(x86_64)) && os(iOS)
+            self.imagePickerController.sourceType = .PhotoLibrary
+        #else
+            self.imagePickerController.sourceType = .PhotoLibrary
+        #endif
         self.imagePickerController.delegate = self
         self.imagePickerController.modalPresentationStyle = UIModalPresentationStyle.FormSheet
         self.presentViewController(self.imagePickerController, animated: true, completion: nil)
