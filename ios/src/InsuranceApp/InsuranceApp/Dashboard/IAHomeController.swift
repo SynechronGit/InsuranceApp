@@ -30,6 +30,7 @@ class IAHomeController: IABaseController {
     @IBOutlet weak var claimsContainerView: UIView!
     @IBOutlet weak var claimsImageView: UIImageView!
     @IBOutlet weak var claimsTabContentViewLeadingConstraint: NSLayoutConstraint!
+    weak var claimsController: IAClaimsController!
     
     @IBOutlet weak var accountTabItemView: UIView!
     @IBOutlet weak var accountContainerView: UIView!
@@ -279,6 +280,16 @@ class IAHomeController: IABaseController {
      */
     func didSelectNotificationsTabItemView() {
         //self.displayTabWithIndex(5, animated: true)
+    }
+    
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.destinationViewController is UINavigationController {
+            let aNavController = segue.destinationViewController as! UINavigationController
+            if aNavController.viewControllers[0] is IAClaimsController {
+                self.claimsController = aNavController.viewControllers[0] as! IAClaimsController
+            }
+        }
     }
     
 }

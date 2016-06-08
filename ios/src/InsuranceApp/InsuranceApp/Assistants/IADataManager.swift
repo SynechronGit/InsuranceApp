@@ -23,6 +23,7 @@ public enum IARequestType: Int {
     case DriverDetails
     case ListPolicies
     case ListClaims
+    case FileClaim
 }
 
 
@@ -473,6 +474,37 @@ class IADataManager: NSObject {
                     aDataManagerResponse.result = aClaimArray
                 }
                 
+            } else if self.requestType == IARequestType.FileClaim {
+                let aClaim :IAClaim = pRequest as! IAClaim
+                var aPhotoOneData :NSData! = nil
+                if aClaim.photoOne != nil {
+                    aPhotoOneData = UIImagePNGRepresentation(aClaim.photoOne)
+                }
+                var aPhotoTwoData :NSData! = nil
+                if aClaim.photoTwo != nil {
+                    aPhotoTwoData = UIImagePNGRepresentation(aClaim.photoTwo)
+                }
+                var aPhotoThreeData :NSData! = nil
+                if aClaim.photoThree != nil {
+                    aPhotoThreeData = UIImagePNGRepresentation(aClaim.photoThree)
+                }
+                
+                let anSqlQuery :String = "INSERT INTO claims (code, date_of_claim, insurance_type, insured_item_name, insurer, status, incident_date, incident_type, value, photo1, photo2, photo3) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)"
+                var aValueArray = Array<AnyObject>()
+                aValueArray.append(aClaim.code != nil ? aClaim.code : NSNull())
+                aValueArray.append(aClaim.dateOfClaim != nil ? aClaim.dateOfClaim : NSNull())
+                aValueArray.append(aClaim.insuranceType != nil ? aClaim.insuranceType : NSNull())
+                aValueArray.append(aClaim.insuredItemName != nil ? aClaim.insuredItemName : NSNull())
+                aValueArray.append(aClaim.insurer != nil ? aClaim.insurer : NSNull())
+                aValueArray.append(aClaim.status != nil ? aClaim.status : NSNull())
+                aValueArray.append(aClaim.dateOfIncident != nil ? aClaim.dateOfIncident : NSNull())
+                aValueArray.append(aClaim.incedentType != nil ? aClaim.incedentType : NSNull())
+                aValueArray.append(aClaim.value != nil ? aClaim.value : NSNull())
+                aValueArray.append(aPhotoOneData != nil ? aPhotoOneData : NSNull())
+                aValueArray.append(aPhotoTwoData != nil ? aPhotoTwoData : NSNull())
+                aValueArray.append(aPhotoThreeData != nil ? aPhotoThreeData : NSNull())
+                try self.executeQuery(anSqlQuery, values: aValueArray)
+                aDataManagerResponse.result = aClaim
             }
 
         } catch IAError.Generic(let pError){
@@ -564,6 +596,12 @@ class IADataManager: NSObject {
     internal func listClaims() {
         self.requestType = IARequestType.ListClaims
         self.sendRequest(nil)
+    }
+    
+    
+    internal func fileClaim(pClaim :IAClaim) {
+        self.requestType = IARequestType.FileClaim
+        self.sendRequest(pClaim)
     }
     
 }

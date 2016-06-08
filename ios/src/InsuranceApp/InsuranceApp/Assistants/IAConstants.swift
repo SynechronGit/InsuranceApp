@@ -36,6 +36,21 @@ class IAConstants: NSObject {
             return NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0]
         }
     }
+    
+    
+    static var homeController :IAHomeController {
+        get {
+            var aReturnVal = IAHomeController()
+            
+            let anAppDelegate = UIApplication.sharedApplication().delegate as! IAAppDelegate
+            let aRootController = anAppDelegate.window?.rootViewController as! UINavigationController
+            if  aRootController.viewControllers.count >= 2 {
+                aReturnVal = aRootController.viewControllers[1] as! IAHomeController
+            }
+            
+            return aReturnVal
+        }
+    }
 }
 
 
