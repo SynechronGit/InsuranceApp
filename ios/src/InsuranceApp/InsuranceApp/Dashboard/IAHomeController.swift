@@ -28,7 +28,8 @@ class IAHomeController: IABaseController {
     
     @IBOutlet weak var claimsTabItemView: UIView!
     @IBOutlet weak var claimsContainerView: UIView!
-    @IBOutlet weak var claimsContainerViewLeadingConstraint: NSLayoutConstraint!
+    @IBOutlet weak var claimsImageView: UIImageView!
+    @IBOutlet weak var claimsTabContentViewLeadingConstraint: NSLayoutConstraint!
     
     @IBOutlet weak var accountTabItemView: UIView!
     @IBOutlet weak var accountContainerView: UIView!
@@ -42,7 +43,6 @@ class IAHomeController: IABaseController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.claimsTabItemView.alpha = 0.5
         self.accountTabItemView.alpha = 0.5
         self.notificationsTabItemView.alpha = 0.5
         
@@ -54,6 +54,9 @@ class IAHomeController: IABaseController {
         
         self.policiesImageView.layer.borderWidth = 1.0
         self.policiesImageView.layer.borderColor = UIColor(red: 113.0/255.0, green: 104.0/255.0, blue: 147.0/255.0, alpha: 1.0).CGColor
+        
+        self.claimsImageView.layer.borderWidth = 1.0
+        self.claimsImageView.layer.borderColor = UIColor(red: 113.0/255.0, green: 104.0/255.0, blue: 147.0/255.0, alpha: 1.0).CGColor
         
         self.dashboardTabContentViewLeadingConstraint.constant = 0.0
         var aTapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(IAHomeController.didSelectDashboardTabItemView))
@@ -70,7 +73,7 @@ class IAHomeController: IABaseController {
         aTapGestureRecognizer.cancelsTouchesInView = false
         self.policiesTabItemView.addGestureRecognizer(aTapGestureRecognizer)
         
-        self.claimsContainerViewLeadingConstraint.constant = self.containerScrollView.frame.size.width * 3
+        self.claimsTabContentViewLeadingConstraint.constant = self.containerScrollView.frame.size.width * 3
         aTapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(IAHomeController.didSelectClaimsTabItemView))
         aTapGestureRecognizer.cancelsTouchesInView = false
         self.claimsTabItemView.addGestureRecognizer(aTapGestureRecognizer)
@@ -172,10 +175,20 @@ class IAHomeController: IABaseController {
             self.policiesImageView.hidden = false
             self.policiesImageView.frame = CGRectMake(0.0, 0.0, self.policiesContainerView.frame.size.width, self.policiesContainerView.frame.size.height)
             
+            UIGraphicsBeginImageContextWithOptions(self.claimsContainerView.bounds.size, self.claimsContainerView.opaque, 0.0);
+            self.claimsContainerView.layer.renderInContext(UIGraphicsGetCurrentContext()!)
+            let aClaimsImage = UIGraphicsGetImageFromCurrentImageContext()
+            UIGraphicsEndImageContext()
+            self.claimsImageView.image = aClaimsImage
+            self.claimsContainerView.hidden = true
+            self.claimsImageView.hidden = false
+            self.claimsImageView.frame = CGRectMake(0.0, 0.0, self.claimsContainerView.frame.size.width, self.claimsContainerView.frame.size.height)
+            
             UIView.animateWithDuration(0.3, delay: 0.0, options: .CurveEaseOut, animations: {
                 self.dashboardImageView.frame = CGRectMake(aDiff, aDiff, self.dashboardContainerView.frame.size.width - (aDiff * 2.0), self.dashboardContainerView.frame.size.height - (aDiff * 2.0))
                 self.fileClaimImageView.frame = CGRectMake(aDiff, aDiff, self.fileClaimContainerView.frame.size.width - (aDiff * 2.0), self.fileClaimContainerView.frame.size.height - (aDiff * 2.0))
                 self.policiesImageView.frame = CGRectMake(aDiff, aDiff, self.policiesContainerView.frame.size.width - (aDiff * 2.0), self.policiesContainerView.frame.size.height - (aDiff * 2.0))
+                self.claimsImageView.frame = CGRectMake(aDiff, aDiff, self.claimsContainerView.frame.size.width - (aDiff * 2.0), self.claimsContainerView.frame.size.height - (aDiff * 2.0))
                 }, completion: { pFinished in
                     self.containerScrollView.scrollRectToVisible(CGRectMake(self.containerScrollView.frame.size.width * CGFloat(pIndex), 0.0, self.containerScrollView.frame.size.width, self.containerScrollView.frame.size.height), animated: true)
                     
@@ -183,6 +196,7 @@ class IAHomeController: IABaseController {
                         self.dashboardImageView.frame = CGRectMake(0.0, 0.0, self.dashboardContainerView.frame.size.width, self.dashboardContainerView.frame.size.height)
                         self.fileClaimImageView.frame = CGRectMake(0.0, 0.0, self.fileClaimContainerView.frame.size.width, self.fileClaimContainerView.frame.size.height)
                         self.policiesImageView.frame = CGRectMake(0.0, 0.0, self.policiesContainerView.frame.size.width, self.policiesContainerView.frame.size.height)
+                        self.claimsImageView.frame = CGRectMake(0.0, 0.0, self.claimsContainerView.frame.size.width, self.claimsContainerView.frame.size.height)
                         }, completion: { pFinished in
                             self.dashboardContainerView.hidden = false
                             self.dashboardImageView.hidden = true
@@ -192,6 +206,9 @@ class IAHomeController: IABaseController {
                             
                             self.policiesContainerView.hidden = false
                             self.policiesImageView.hidden = true
+                            
+                            self.claimsContainerView.hidden = false
+                            self.claimsImageView.hidden = true
                     })
             })
         } else {
@@ -202,6 +219,9 @@ class IAHomeController: IABaseController {
             
             self.policiesContainerView.hidden = false
             self.policiesImageView.hidden = true
+            
+            self.claimsContainerView.hidden = false
+            self.claimsImageView.hidden = true
         }
     }
     
@@ -240,7 +260,7 @@ class IAHomeController: IABaseController {
      * @return Void
      */
     func didSelectClaimsTabItemView() {
-        //self.displayTabWithIndex(3, animated: true)
+        self.displayTabWithIndex(3, animated: true)
     }
     
     

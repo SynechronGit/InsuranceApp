@@ -464,12 +464,27 @@
                                             <constraint firstItem="Yp3-mj-MDN" firstAttribute="leading" secondItem="7O2-hO-VAw" secondAttribute="leading" id="zna-jt-kCU"/>
                                         </constraints>
                                     </view>
-                                    <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AXn-8W-W0e" userLabel="claimsContainerView">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="j5I-SU-QG3" userLabel="claimsTabContentView">
                                         <rect key="frame" x="0.0" y="0.0" width="768" height="949"/>
-                                        <connections>
-                                            <segue destination="kbM-DE-2kh" kind="embed" id="azc-Xs-LKg"/>
-                                        </connections>
-                                    </containerView>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Utx-94-zeB" userLabel="claimsImageView">
+                                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                            </imageView>
+                                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AXn-8W-W0e" userLabel="claimsContainerView">
+                                                <rect key="frame" x="0.0" y="0.0" width="768" height="949"/>
+                                                <connections>
+                                                    <segue destination="kbM-DE-2kh" kind="embed" id="azc-Xs-LKg"/>
+                                                </connections>
+                                            </containerView>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstItem="AXn-8W-W0e" firstAttribute="top" secondItem="j5I-SU-QG3" secondAttribute="top" id="7Wz-4O-UM1"/>
+                                            <constraint firstAttribute="bottom" secondItem="AXn-8W-W0e" secondAttribute="bottom" id="8FD-fa-UVa"/>
+                                            <constraint firstItem="AXn-8W-W0e" firstAttribute="leading" secondItem="j5I-SU-QG3" secondAttribute="leading" id="Zjh-SG-oJy"/>
+                                            <constraint firstAttribute="trailing" secondItem="AXn-8W-W0e" secondAttribute="trailing" id="m1X-em-CuS"/>
+                                        </constraints>
+                                    </view>
                                     <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Qh-Sn-DTB" userLabel="accountContainerView">
                                         <rect key="frame" x="0.0" y="0.0" width="768" height="949"/>
                                         <connections>
@@ -486,26 +501,26 @@
                                 <constraints>
                                     <constraint firstItem="7O2-hO-VAw" firstAttribute="height" secondItem="mrf-5a-LJL" secondAttribute="height" id="1R7-uW-8nf"/>
                                     <constraint firstAttribute="width" secondItem="4Qh-Sn-DTB" secondAttribute="width" id="4Ld-5E-uyc"/>
-                                    <constraint firstItem="AXn-8W-W0e" firstAttribute="top" secondItem="mrf-5a-LJL" secondAttribute="top" id="6fO-vp-es8"/>
                                     <constraint firstItem="pVB-hU-oDh" firstAttribute="height" secondItem="mrf-5a-LJL" secondAttribute="height" id="7Da-sx-HKh"/>
+                                    <constraint firstItem="j5I-SU-QG3" firstAttribute="height" secondItem="mrf-5a-LJL" secondAttribute="height" id="7L7-XN-6oB"/>
                                     <constraint firstItem="5Y7-tB-lko" firstAttribute="top" secondItem="mrf-5a-LJL" secondAttribute="top" id="7vm-cr-lJz"/>
                                     <constraint firstAttribute="bottom" secondItem="d8c-0D-uiI" secondAttribute="bottom" placeholder="YES" id="8Zl-Mx-jRT"/>
                                     <constraint firstAttribute="trailing" secondItem="d8c-0D-uiI" secondAttribute="trailing" placeholder="YES" id="EdE-Uz-nYH"/>
                                     <constraint firstItem="d8c-0D-uiI" firstAttribute="top" secondItem="mrf-5a-LJL" secondAttribute="top" id="Fzi-Ir-rN4"/>
                                     <constraint firstItem="7O2-hO-VAw" firstAttribute="top" secondItem="mrf-5a-LJL" secondAttribute="top" id="LOS-y4-iz1"/>
                                     <constraint firstItem="pVB-hU-oDh" firstAttribute="leading" secondItem="mrf-5a-LJL" secondAttribute="leading" id="NHM-Mc-Qg7"/>
+                                    <constraint firstItem="j5I-SU-QG3" firstAttribute="leading" secondItem="mrf-5a-LJL" secondAttribute="leading" id="PRM-Kv-BCm"/>
                                     <constraint firstItem="4Qh-Sn-DTB" firstAttribute="top" secondItem="mrf-5a-LJL" secondAttribute="top" id="Sue-gc-M6Q"/>
                                     <constraint firstAttribute="width" secondItem="5Y7-tB-lko" secondAttribute="width" id="Swa-12-V7a"/>
-                                    <constraint firstItem="AXn-8W-W0e" firstAttribute="leading" secondItem="mrf-5a-LJL" secondAttribute="leading" id="UJN-KU-lRG"/>
                                     <constraint firstAttribute="height" secondItem="5Y7-tB-lko" secondAttribute="height" id="Uvz-Kf-C3c"/>
                                     <constraint firstItem="d8c-0D-uiI" firstAttribute="width" secondItem="mrf-5a-LJL" secondAttribute="width" id="Wpo-cr-jcz"/>
+                                    <constraint firstItem="j5I-SU-QG3" firstAttribute="width" secondItem="mrf-5a-LJL" secondAttribute="width" id="b3G-tS-gYa"/>
+                                    <constraint firstItem="j5I-SU-QG3" firstAttribute="top" secondItem="mrf-5a-LJL" secondAttribute="top" id="bak-Yo-d62"/>
                                     <constraint firstAttribute="height" secondItem="4Qh-Sn-DTB" secondAttribute="height" id="ewA-Nl-kjl"/>
                                     <constraint firstItem="d8c-0D-uiI" firstAttribute="leading" secondItem="mrf-5a-LJL" secondAttribute="leading" id="fPy-jC-ZPe"/>
                                     <constraint firstItem="4Qh-Sn-DTB" firstAttribute="leading" secondItem="mrf-5a-LJL" secondAttribute="leading" id="fcu-ov-WDy"/>
                                     <constraint firstItem="7O2-hO-VAw" firstAttribute="leading" secondItem="mrf-5a-LJL" secondAttribute="leading" id="hHG-K0-7lX"/>
                                     <constraint firstItem="d8c-0D-uiI" firstAttribute="height" secondItem="mrf-5a-LJL" secondAttribute="height" id="kSK-x7-f3G"/>
-                                    <constraint firstAttribute="width" secondItem="AXn-8W-W0e" secondAttribute="width" id="khC-Aw-3ir"/>
-                                    <constraint firstAttribute="height" secondItem="AXn-8W-W0e" secondAttribute="height" id="omc-AS-TN4"/>
                                     <constraint firstItem="7O2-hO-VAw" firstAttribute="width" secondItem="mrf-5a-LJL" secondAttribute="width" id="qgq-Ya-1bD"/>
                                     <constraint firstItem="5Y7-tB-lko" firstAttribute="leading" secondItem="mrf-5a-LJL" secondAttribute="leading" id="tBP-vY-N0U"/>
                                     <constraint firstItem="pVB-hU-oDh" firstAttribute="top" secondItem="mrf-5a-LJL" secondAttribute="top" id="xKt-QI-PrH"/>
@@ -791,8 +806,9 @@
                         <outlet property="accountContainerView" destination="4Qh-Sn-DTB" id="4Yv-go-tEi"/>
                         <outlet property="accountContainerViewLeadingConstraint" destination="fcu-ov-WDy" id="Pt8-vn-btH"/>
                         <outlet property="accountTabItemView" destination="ScJ-SP-hiL" id="vLN-vd-ffh"/>
-                        <outlet property="claimsContainerView" destination="AXn-8W-W0e" id="bra-UT-1MF"/>
-                        <outlet property="claimsContainerViewLeadingConstraint" destination="UJN-KU-lRG" id="f6g-GV-0K1"/>
+                        <outlet property="claimsContainerView" destination="AXn-8W-W0e" id="rrl-6R-lKh"/>
+                        <outlet property="claimsImageView" destination="Utx-94-zeB" id="iar-ZB-bG9"/>
+                        <outlet property="claimsTabContentViewLeadingConstraint" destination="PRM-Kv-BCm" id="Bdr-Qd-PS3"/>
                         <outlet property="claimsTabItemView" destination="1a4-MP-6zH" id="6GH-Pd-89y"/>
                         <outlet property="containerScrollView" destination="mrf-5a-LJL" id="LkB-6y-ZoF"/>
                         <outlet property="dashboardContainerView" destination="lE6-hq-OKf" id="uBg-6b-nZ4"/>
