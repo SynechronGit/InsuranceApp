@@ -4153,22 +4153,12 @@ Insurance</string>
                                         <color key="textColor" red="0.83137254900000002" green="0.83137254900000002" blue="0.83137254900000002" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yYU-kL-XbA">
-                                        <rect key="frame" x="0.0" y="96" width="338" height="6"/>
-                                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.29873383620689653" colorSpace="calibratedRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="6" id="G49-KD-OHB"/>
-                                        </constraints>
-                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" red="0.21568627450980393" green="0.18431372549019609" blue="0.25882352941176467" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstItem="2I5-h4-13e" firstAttribute="top" secondItem="bVI-G2-Eu5" secondAttribute="bottom" constant="10" id="9ly-Qu-UMR"/>
                                     <constraint firstAttribute="height" constant="102" id="Ffm-eK-gsd"/>
-                                    <constraint firstItem="yYU-kL-XbA" firstAttribute="leading" secondItem="vln-rp-RQd" secondAttribute="leading" id="Ssr-DV-2IN"/>
-                                    <constraint firstAttribute="trailing" secondItem="yYU-kL-XbA" secondAttribute="trailing" id="T4c-yq-OQ6"/>
                                     <constraint firstItem="8Qt-Fn-77n" firstAttribute="centerX" secondItem="vln-rp-RQd" secondAttribute="centerX" id="eJk-D5-0zf"/>
-                                    <constraint firstAttribute="bottom" secondItem="yYU-kL-XbA" secondAttribute="bottom" id="eVj-7q-oad"/>
                                     <constraint firstItem="2I5-h4-13e" firstAttribute="centerX" secondItem="vln-rp-RQd" secondAttribute="centerX" id="lUg-K0-d4d"/>
                                     <constraint firstAttribute="width" constant="338" id="q4I-3T-yxt"/>
                                     <constraint firstItem="bVI-G2-Eu5" firstAttribute="centerY" secondItem="vln-rp-RQd" secondAttribute="centerY" id="qTd-xQ-V7F"/>
@@ -4207,14 +4197,6 @@ Insurance</string>
                                         <color key="textColor" red="0.83137254900000002" green="0.83137254900000002" blue="0.83137254900000002" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Sc2-n4-fhy">
-                                        <rect key="frame" x="0.0" y="96" width="338" height="6"/>
-                                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.29873383619999999" colorSpace="calibratedRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="6" id="Pib-fB-RLF"/>
-                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="6" id="hnp-PQ-8SW"/>
-                                        </constraints>
-                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" red="0.2156862745" green="0.1843137255" blue="0.25882352939999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -4223,11 +4205,8 @@ Insurance</string>
                                     <constraint firstItem="qs1-vd-tgl" firstAttribute="top" secondItem="i29-xf-Vo1" secondAttribute="bottom" constant="12" id="Pmg-vf-F17"/>
                                     <constraint firstAttribute="width" constant="338" id="RuO-rd-mnC"/>
                                     <constraint firstAttribute="height" constant="102" id="bLW-0r-rbm"/>
-                                    <constraint firstAttribute="trailing" secondItem="Sc2-n4-fhy" secondAttribute="trailing" id="fRy-I8-bcL"/>
-                                    <constraint firstAttribute="bottom" secondItem="Sc2-n4-fhy" secondAttribute="bottom" id="mC0-sv-hev"/>
                                     <constraint firstItem="i29-xf-Vo1" firstAttribute="centerX" secondItem="9Xe-R6-yC6" secondAttribute="centerX" id="nZD-pp-JEj"/>
                                     <constraint firstItem="Udo-l6-aTz" firstAttribute="top" secondItem="qs1-vd-tgl" secondAttribute="bottom" constant="8" id="o6v-xl-IqJ"/>
-                                    <constraint firstItem="Sc2-n4-fhy" firstAttribute="leading" secondItem="9Xe-R6-yC6" secondAttribute="leading" id="uka-o6-Fkw"/>
                                     <constraint firstItem="Udo-l6-aTz" firstAttribute="centerX" secondItem="9Xe-R6-yC6" secondAttribute="centerX" id="xOV-rH-8AQ"/>
                                 </constraints>
                             </view>
