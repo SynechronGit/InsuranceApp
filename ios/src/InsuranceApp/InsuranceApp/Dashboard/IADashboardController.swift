@@ -47,9 +47,15 @@ class IADashboardController: IABaseController {
         self.payPremiumContainerView.layer.cornerRadius = IAConstants.dashboardSubviewCornerRadius
         self.payPremiumContainerView.layer.masksToBounds = true
         
+        let aTapGestureRecognizerAccident = UITapGestureRecognizer(target: self, action: #selector(IADashboardController.didSelectMetWithAccident))
+        aTapGestureRecognizerAccident.cancelsTouchesInView = false
+        self.metWithAccidentContainerView.addGestureRecognizer(aTapGestureRecognizerAccident)
         self.metWithAccidentContainerView.layer.cornerRadius = IAConstants.dashboardSubviewCornerRadius
         self.metWithAccidentContainerView.layer.masksToBounds = true
         
+        let aTapGestureRecognizerRoadSide = UITapGestureRecognizer(target: self, action: #selector(IADashboardController.didSelectRoadSideAssistance))
+        aTapGestureRecognizerAccident.cancelsTouchesInView = false
+        self.roadsideAssistanceContainerView.addGestureRecognizer(aTapGestureRecognizerRoadSide)
         self.roadsideAssistanceContainerView.layer.cornerRadius = IAConstants.dashboardSubviewCornerRadius
         self.roadsideAssistanceContainerView.layer.masksToBounds = true
         
@@ -114,6 +120,13 @@ class IADashboardController: IABaseController {
     }
     
     
+    @IBAction func didSelectMetWithAccident(){
+        self.performSegueWithIdentifier("DashboardToMetWithAccidentSegueID", sender: self)
+    }
+    
+    @IBAction func didSelectRoadSideAssistance(){
+        self.performSegueWithIdentifier("DashboardToRoadsideAssistanceSegueID", sender: self)
+    }
     // MARK: - IADataManagerDelegate Methods
     
     /**

@@ -10,16 +10,35 @@ import UIKit
 
 class IAMetWithAccidentController: UIViewController {
 
+    @IBOutlet weak var callButtonView: UIView!
+    @IBOutlet weak var sendLocationView: UIView!
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        self.reloadUI()
         // Do any additional setup after loading the view.
+    }
+    
+    func reloadUI(){
+        let aTapGestureRecognizerAccident = UITapGestureRecognizer(target: self, action: #selector(IAMetWithAccidentController.didClickCancel))
+        aTapGestureRecognizerAccident.cancelsTouchesInView = false
+        
+        let aTapGestureRecognizerLocation = UITapGestureRecognizer(target: self, action: #selector(IAMetWithAccidentController.didClickCancel))
+        aTapGestureRecognizerLocation.cancelsTouchesInView = false
+        
+        self.callButtonView.addGestureRecognizer(aTapGestureRecognizerAccident)
+        self.sendLocationView.addGestureRecognizer(aTapGestureRecognizerLocation)
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    @IBAction func didClickCancel(sender: AnyObject) {
+       self.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
     
 
     /*
