@@ -10,9 +10,14 @@ import UIKit
 
 class IARoadsideAssistanceController: UIViewController {
 
+    @IBOutlet weak var flatTyreView: UIView!
+    @IBOutlet weak var towCarView: UIView!
+    @IBOutlet weak var batteryView: UIView!
+    @IBOutlet weak var rentCarView: UIView!
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        self.reloadUI()
         // Do any additional setup after loading the view.
     }
 
@@ -21,7 +26,32 @@ class IARoadsideAssistanceController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
+    func reloadUI(){
+        let aTapGestureRecognizerTyre = UITapGestureRecognizer(target: self, action: #selector(IAMetWithAccidentController.didClickCancel))
+        aTapGestureRecognizerTyre.cancelsTouchesInView = false
+        
+        let aTapGestureRecognizerTow = UITapGestureRecognizer(target: self, action: #selector(IAMetWithAccidentController.didClickCancel))
+        aTapGestureRecognizerTow.cancelsTouchesInView = false
+        
+        let aTapGestureRecognizerBattery = UITapGestureRecognizer(target: self, action: #selector(IAMetWithAccidentController.didClickCancel))
+        aTapGestureRecognizerBattery.cancelsTouchesInView = false
+        
+        let aTapGestureRecognizerRent = UITapGestureRecognizer(target: self, action: #selector(IAMetWithAccidentController.didClickCancel))
+        aTapGestureRecognizerRent.cancelsTouchesInView = false
+        
+        self.flatTyreView.addGestureRecognizer(aTapGestureRecognizerTyre)
+        self.towCarView.addGestureRecognizer(aTapGestureRecognizerTow)
+        self.batteryView.addGestureRecognizer(aTapGestureRecognizerBattery)
+        self.rentCarView.addGestureRecognizer(aTapGestureRecognizerRent)
+        
+    }
+    
+    
+    
+    @IBAction func didSelectCancelButton(sender: AnyObject) {
+         self.dismissViewControllerAnimated(true, completion: nil)
+        
+    }
     /*
     // MARK: - Navigation
 
