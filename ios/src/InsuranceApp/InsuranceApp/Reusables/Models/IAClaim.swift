@@ -55,6 +55,9 @@ class IAClaim: NSObject {
     var dateOfIncident:String!
     var incedentType:String!
     var value:String!
+    var photoOne :UIImage!
+    var photoTwo :UIImage!
+    var photoThree :UIImage!
     var statusDisplayText:String! {
         get {
             var aReturnVal :String!
