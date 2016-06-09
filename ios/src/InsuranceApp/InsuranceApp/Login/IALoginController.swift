@@ -19,6 +19,9 @@ class IALoginController: IABaseController {
         
         self.userNameTextField.attributedPlaceholder = NSAttributedString(string: "Username", attributes: [NSForegroundColorAttributeName:self.userNameTextField.textColor!])
         self.passwordTextField.attributedPlaceholder = NSAttributedString(string: "Password", attributes: [NSForegroundColorAttributeName:self.passwordTextField.textColor!])
+        
+        self.userNameTextField.text = "ashish.nangla"
+        self.passwordTextField.text = "12345678"
     }
     
     

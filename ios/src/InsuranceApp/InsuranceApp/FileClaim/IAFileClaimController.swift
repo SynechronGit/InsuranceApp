@@ -373,6 +373,9 @@ class IAFileClaimController: IABaseController, UIImagePickerControllerDelegate, 
                 if IAConstants.homeController.claimsController != nil {
                     IAConstants.homeController.claimsController.reloadAllData()
                 }
+                if IAConstants.homeController.dashboardController != nil {
+                    IAConstants.homeController.dashboardController.reloadAllData()
+                }
             }))
             self.presentViewController(anAlert, animated: true, completion: nil)
         }
