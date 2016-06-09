@@ -6679,7 +6679,7 @@ Insurance</string>
                                             <constraint firstAttribute="width" constant="218" id="TVH-Jt-YPA"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="Ubuntu" family="Ubuntu" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numbersAndPunctuation"/>
                                         <variation key="default">
                                             <mask key="constraints">
                                                 <exclude reference="TVH-Jt-YPA"/>
