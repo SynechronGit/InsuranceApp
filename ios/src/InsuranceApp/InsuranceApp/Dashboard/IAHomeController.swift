@@ -15,6 +15,7 @@ class IAHomeController: IABaseController {
     @IBOutlet weak var dashboardContainerView: UIView!
     @IBOutlet weak var dashboardImageView: UIImageView!
     @IBOutlet weak var dashboardTabContentViewLeadingConstraint: NSLayoutConstraint!
+    weak var dashboardController: IADashboardController!
     
     @IBOutlet weak var fileClaimTabItemView: UIView!
     @IBOutlet weak var fileClaimContainerView: UIView!
@@ -288,6 +289,8 @@ class IAHomeController: IABaseController {
             let aNavController = segue.destinationViewController as! UINavigationController
             if aNavController.viewControllers[0] is IAClaimsController {
                 self.claimsController = aNavController.viewControllers[0] as! IAClaimsController
+            } else if aNavController.viewControllers[0] is IADashboardController {
+                self.dashboardController = aNavController.viewControllers[0] as! IADashboardController
             }
         }
     }

@@ -131,7 +131,19 @@ class IAAutoInsuranceDetailsController: IABaseController , UICollectionViewDeleg
     }
     
     
+    @IBAction func didSelectPayPremiumButton(sender: AnyObject) {
+        
+    }
     
+    
+    @IBAction func didSelectFileClaimButton(sender: AnyObject) {
+        IAConstants.homeController.didSelectFileClaimTabItemView()
+    }
+    
+    
+    @IBAction func didSelectViewPolicyButton(sender: AnyObject) {
+        IAConstants.homeController.didSelectPoliciesTabItemView()
+    }
     
     
     // MARK: - IADataManagerDelegate Methods

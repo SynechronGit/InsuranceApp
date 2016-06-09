@@ -126,12 +126,13 @@ class IAAddVehicleController: IABaseController, UIImagePickerControllerDelegate,
         
         self.bosyStyleTextBox.shouldDisplayAsDropdown = true
         self.bosyStyleTextBox.controller = self
-        self.bosyStyleTextBox.list = ["Hatchback", "Sedan", "SUV"]
+        self.bosyStyleTextBox.list = nil
     }
     
     func textFieldDidEndEditing(textField: UITextField) {
         if textField.isEqual(self.companyTextBox) {
             self.modelTextBox.text = nil
+            self.bosyStyleTextBox.text = nil
             if self.companyTextBox.text == "Mercedes" {
                 self.modelTextBox.list = ["A-Class A 180", "B-Class B 180 Sport", "S350", "S400", "Maybach S500", "G 63 AMG", "M Guard", "GLE 250D", "GLE 350D" ]
             } else if self.companyTextBox.text == "BMW" {
@@ -145,17 +146,14 @@ class IAAddVehicleController: IABaseController, UIImagePickerControllerDelegate,
         
         if textField.isEqual(self.modelTextBox) {
             if (self.modelTextBox.text == "1 Series 11d sports" || self.modelTextBox.text == "A-Class A 180" || self.modelTextBox.text == "B-Class B 180 Sport"){
-                
+                self.bosyStyleTextBox.list = ["Hatchback", "SUV"]
                 self.bosyStyleTextBox.text = "Hatchback"
-                
             } else if (self.modelTextBox.text == "A8" || self.modelTextBox.text == "RS7" || self.modelTextBox.text == "A3" || self.modelTextBox.text == "A4" || self.modelTextBox.text == "320d" || self.modelTextBox.text == "520d" || self.modelTextBox.text == "S350" || self.modelTextBox.text == "S400" || self.modelTextBox.text == "Maybach S500" ) {
-                
+                self.bosyStyleTextBox.list = ["Hatchback", "Sedan"]
                 self.bosyStyleTextBox.text = "Sedan"
-                
             } else if (self.modelTextBox.text == "Q3" || self.modelTextBox.text == "Q5" || self.modelTextBox.text == "Q7" || self.modelTextBox.text == "X6" || self.modelTextBox.text == "X1" || self.modelTextBox.text == "X5" || self.modelTextBox.text == "G 63 AMG" || self.modelTextBox.text == "M Guard" || self.modelTextBox.text == "GLE 250D" || self.modelTextBox.text == "GLE 350D"){
-                
+                self.bosyStyleTextBox.list = ["Sedan", "SUV"]
                 self.bosyStyleTextBox.text = "SUV"
-                
             }
         }
     }

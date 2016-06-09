@@ -3731,6 +3731,9 @@ Insurance</string>
                                 <state key="normal" title="Pay Premium" backgroundImage="tabbox">
                                     <color key="titleColor" red="0.83137254901960778" green="0.83137254901960778" blue="0.83137254901960778" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="didSelectPayPremiumButton:" destination="bsL-16-OO3" eventType="touchUpInside" id="BL5-Ye-vyJ"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Kq-ch-ZHB">
                                 <rect key="frame" x="279" y="162" width="210" height="50"/>
@@ -3743,6 +3746,9 @@ Insurance</string>
                                 <state key="normal" title="File Claim" backgroundImage="tabbox">
                                     <color key="titleColor" red="0.83137254900000002" green="0.83137254900000002" blue="0.83137254900000002" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="didSelectFileClaimButton:" destination="bsL-16-OO3" eventType="touchUpInside" id="m3a-kr-2sa"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="szN-qR-AUw">
                                 <rect key="frame" x="514" y="162" width="210" height="50"/>
@@ -3755,6 +3761,9 @@ Insurance</string>
                                 <state key="normal" title="View Policy" backgroundImage="tabbox">
                                     <color key="titleColor" red="0.83137254900000002" green="0.83137254900000002" blue="0.83137254900000002" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="didSelectViewPolicyButton:" destination="bsL-16-OO3" eventType="touchUpInside" id="QJH-5k-Rz4"/>
+                                </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KkZ-G7-rxQ">
                                 <rect key="frame" x="484" y="45" width="244" height="86"/>
