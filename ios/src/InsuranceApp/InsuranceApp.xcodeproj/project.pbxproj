@@ -62,6 +62,9 @@
 		3FCEB54E1D084D800022EAA1 /* IARoadsideAssistanceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FCEB54D1D084D800022EAA1 /* IARoadsideAssistanceController.swift */; };
 		3FCEB5501D084DB10022EAA1 /* IAMetWithAccidentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FCEB54F1D084DB10022EAA1 /* IAMetWithAccidentController.swift */; };
 		3FCEB5521D084DCD0022EAA1 /* IAInsuranceIDCardController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FCEB5511D084DCD0022EAA1 /* IAInsuranceIDCardController.swift */; };
+		3FD8E2211D099394005AE78C /* IAPayPremiumController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD8E2201D099394005AE78C /* IAPayPremiumController.swift */; };
+		3FD8E2231D09A0EB005AE78C /* IAPayPremiumTableCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD8E2221D09A0EB005AE78C /* IAPayPremiumTableCellView.swift */; };
+		3FD8E2251D09A1E7005AE78C /* IAPremium.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD8E2241D09A1E7005AE78C /* IAPremium.swift */; };
 		3FE1D2AF1CFC58C3007FA513 /* InsuranceTypeContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FE1D2AE1CFC58C3007FA513 /* InsuranceTypeContainerView.swift */; };
 		3FE1FA8D1CFC81E6008EA53F /* IALabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FE1FA8C1CFC81E6008EA53F /* IALabel.swift */; };
 		3FE1FA8F1CFC8750008EA53F /* IANavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FE1FA8E1CFC8750008EA53F /* IANavigationBar.swift */; };
@@ -162,6 +165,9 @@
 		3FCEB54D1D084D800022EAA1 /* IARoadsideAssistanceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IARoadsideAssistanceController.swift; sourceTree = "<group>"; };
 		3FCEB54F1D084DB10022EAA1 /* IAMetWithAccidentController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IAMetWithAccidentController.swift; sourceTree = "<group>"; };
 		3FCEB5511D084DCD0022EAA1 /* IAInsuranceIDCardController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IAInsuranceIDCardController.swift; sourceTree = "<group>"; };
+		3FD8E2201D099394005AE78C /* IAPayPremiumController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IAPayPremiumController.swift; sourceTree = "<group>"; };
+		3FD8E2221D09A0EB005AE78C /* IAPayPremiumTableCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IAPayPremiumTableCellView.swift; sourceTree = "<group>"; };
+		3FD8E2241D09A1E7005AE78C /* IAPremium.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IAPremium.swift; sourceTree = "<group>"; };
 		3FE1D2AE1CFC58C3007FA513 /* InsuranceTypeContainerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InsuranceTypeContainerView.swift; sourceTree = "<group>"; };
 		3FE1FA8C1CFC81E6008EA53F /* IALabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IALabel.swift; sourceTree = "<group>"; };
 		3FE1FA8E1CFC8750008EA53F /* IANavigationBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IANavigationBar.swift; sourceTree = "<group>"; };
@@ -292,6 +298,8 @@
 				3FCEB54D1D084D800022EAA1 /* IARoadsideAssistanceController.swift */,
 				3FCEB54F1D084DB10022EAA1 /* IAMetWithAccidentController.swift */,
 				3FCEB5511D084DCD0022EAA1 /* IAInsuranceIDCardController.swift */,
+				3FD8E2201D099394005AE78C /* IAPayPremiumController.swift */,
+				3FD8E2221D09A0EB005AE78C /* IAPayPremiumTableCellView.swift */,
 			);
 			path = Dashboard;
 			sourceTree = "<group>";
@@ -442,6 +450,7 @@
 				3FAFB54F1D006BA70083D38E /* IATrafficViolation.swift */,
 				3FE654FC1D06F02A001CAF46 /* IAPolicy.swift */,
 				3FC515671D07F55E00C4529F /* IAClaim.swift */,
+				3FD8E2241D09A1E7005AE78C /* IAPremium.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -665,8 +674,10 @@
 				3F3F0DC61D003CDC00A851FB /* IAAddVehicleController.swift in Sources */,
 				3F9948B41CFC782100A880A8 /* LTEasing.swift in Sources */,
 				3F9948B31CFC782100A880A8 /* LTCharacterLimbo.swift in Sources */,
+				3FD8E2231D09A0EB005AE78C /* IAPayPremiumTableCellView.swift in Sources */,
 				3F33866A1D018C3600BF7915 /* IADropdownListController.swift in Sources */,
 				3F9948B61CFC782100A880A8 /* LTMorphingEffect.swift in Sources */,
+				3FD8E2251D09A1E7005AE78C /* IAPremium.swift in Sources */,
 				3F4D24291D016CA10033E924 /* IATextField.swift in Sources */,
 				3F63F1081CFEF55000623420 /* IAAccountController.swift in Sources */,
 				3FC515681D07F55E00C4529F /* IAClaim.swift in Sources */,
@@ -679,6 +690,7 @@
 				3F820C611CF4522000729AE6 /* IAConstants.swift in Sources */,
 				3F820C691CF4555800729AE6 /* IACustomer.swift in Sources */,
 				3F9948BA1CFC782100A880A8 /* LTMorphingLabel+Fall.swift in Sources */,
+				3FD8E2211D099394005AE78C /* IAPayPremiumController.swift in Sources */,
 				3F63F1091CFEF55000623420 /* IAClaimsController.swift in Sources */,
 				3FCEB5521D084DCD0022EAA1 /* IAInsuranceIDCardController.swift in Sources */,
 				7D2D2CA21D096FFE0083D901 /* IAScoreMyDriveController.swift in Sources */,

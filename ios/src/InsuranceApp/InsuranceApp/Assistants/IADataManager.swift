@@ -24,6 +24,7 @@ public enum IARequestType: Int {
     case ListPolicies
     case ListClaims
     case FileClaim
+    case ListPremiums
 }
 
 
@@ -511,8 +512,42 @@ class IADataManager: NSObject {
                 aValueArray.append(aPhotoThreeData != nil ? aPhotoThreeData : NSNull())
                 try self.executeQuery(anSqlQuery, values: aValueArray)
                 aDataManagerResponse.result = aClaim
+            } else if self.requestType == IARequestType.ListPremiums {
+                let anSqlQuery :String = "SELECT name, insurance_type, date, policy_number, amount FROM premiums"
+                let anSqlResult = try self.executeQuery(anSqlQuery, values: nil)
+                if anSqlResult != nil && anSqlResult.count > 0 {
+                    var aPremiumArray :Array<IAPremium>! = Array<IAPremium>()
+                    for var aDBPremiumDict :[String:AnyObject] in anSqlResult {
+                        let aDBPremium = IAPremium()
+                        
+                        if aDBPremiumDict["name"] is String {
+                            aDBPremium.name = aDBPremiumDict["name"] as! String
+                        }
+                        
+                        if aDBPremiumDict["insurance_type"] is String {
+                            aDBPremium.insuranceType = aDBPremiumDict["insurance_type"] as! String
+                        }
+                        
+                        if aDBPremiumDict["date"] is String {
+                            aDBPremium.date = aDBPremiumDict["date"] as! String
+                        }
+                        
+                        if aDBPremiumDict["policy_number"] is String {
+                            aDBPremium.policyNumber = aDBPremiumDict["policy_number"] as! String
+                        }
+                        
+                        if aDBPremiumDict["amount"] is String {
+                            aDBPremium.amount = aDBPremiumDict["amount"] as! String
+                        }
+                        
+                        aPremiumArray.append(aDBPremium)
+                    }
+                    if aPremiumArray.count <= 0 {
+                        aPremiumArray = nil
+                    }
+                    aDataManagerResponse.result = aPremiumArray
+                }
             }
-
         } catch IAError.Generic(let pError){
             aDataManagerResponse.error = NSError(domain: "com", code: 1, userInfo: [NSLocalizedDescriptionKey:pError.localizedDescription])
         } catch {
@@ -608,6 +643,12 @@ class IADataManager: NSObject {
     internal func fileClaim(pClaim :IAClaim) {
         self.requestType = IARequestType.FileClaim
         self.sendRequest(pClaim)
+    }
+    
+    
+    internal func listPremiums() {
+        self.requestType = IARequestType.ListPremiums
+        self.sendRequest(nil)
     }
     
 }
