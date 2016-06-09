@@ -29,6 +29,9 @@ class IAScoreMyDriveController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.profilePicImageView.layer.cornerRadius = self.profilePicImageView.bounds.width/2
+        self.profilePicImageView.layer.masksToBounds = true
+        
         self.durationLabel.animatedText = String(format: "%02d", 45)
         self.distanceLabel.animatedText = String(format: "%02d", 20)
         self.scoreLabel.animatedText = String(format: "%02d", 550)
