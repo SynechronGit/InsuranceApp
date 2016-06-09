@@ -195,6 +195,12 @@ class IAAddDriverController: IABaseController, UITextFieldDelegate, UIImagePicke
                 throw IAError.Generic(NSError(domain: "com", code: 1, userInfo: [NSLocalizedDescriptionKey:"Please enter phone number."]))
             }
             
+            if self.phoneNumberTextField.text != nil && self.phoneNumberTextField.text?.lengthOfBytesUsingEncoding(NSUTF8StringEncoding) > 0 {
+                if try IAUtils.doesRegexMatch("[^0-9]", subject: self.phoneNumberTextField.text!) == true {
+                    throw IAError.Generic(NSError(domain: "com", code: 1, userInfo: [NSLocalizedDescriptionKey:"Phone number can contain numbers only."]))
+                }
+            }
+            
             let aDriver = IADriver()
             aDriver.avatar = self.driverPhotoImageView.image
             aDriver.licensePhoto = self.licensePhotoImageView.image

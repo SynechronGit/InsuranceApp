@@ -78,6 +78,7 @@
 		3FF030B81CFD991A00BADE31 /* Ubuntu-700.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3FF030B11CFD991A00BADE31 /* Ubuntu-700.ttf */; };
 		3FF030B91CFD991A00BADE31 /* Ubuntu-italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3FF030B21CFD991A00BADE31 /* Ubuntu-italic.ttf */; };
 		3FF030BA1CFD991A00BADE31 /* Ubuntu-regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3FF030B31CFD991A00BADE31 /* Ubuntu-regular.ttf */; };
+		3FF2D9D61D09B6E5001535E9 /* IAUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF2D9D51D09B6E5001535E9 /* IAUtils.swift */; };
 		3FFF0B851CF4A04300920ECA /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FFF0B841CF4A04300920ECA /* libsqlite3.tbd */; };
 		3FFF0B881CF4A22D00920ECA /* AppDatabase.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 3FFF0B871CF4A22D00920ECA /* AppDatabase.sqlite */; };
 		7D2D2CA21D096FFE0083D901 /* IAScoreMyDriveController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D2D2CA11D096FFE0083D901 /* IAScoreMyDriveController.swift */; };
@@ -181,6 +182,7 @@
 		3FF030B11CFD991A00BADE31 /* Ubuntu-700.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Ubuntu-700.ttf"; sourceTree = "<group>"; };
 		3FF030B21CFD991A00BADE31 /* Ubuntu-italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Ubuntu-italic.ttf"; sourceTree = "<group>"; };
 		3FF030B31CFD991A00BADE31 /* Ubuntu-regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Ubuntu-regular.ttf"; sourceTree = "<group>"; };
+		3FF2D9D51D09B6E5001535E9 /* IAUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IAUtils.swift; sourceTree = "<group>"; };
 		3FFF0B841CF4A04300920ECA /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		3FFF0B861CF4A0BF00920ECA /* BridgingHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BridgingHeader.h; sourceTree = "<group>"; };
 		3FFF0B871CF4A22D00920ECA /* AppDatabase.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = AppDatabase.sqlite; sourceTree = "<group>"; };
@@ -501,6 +503,7 @@
 				3FE1FA8C1CFC81E6008EA53F /* IALabel.swift */,
 				3F4D24281D016CA10033E924 /* IATextField.swift */,
 				3F3386691D018C3600BF7915 /* IADropdownListController.swift */,
+				3FF2D9D51D09B6E5001535E9 /* IAUtils.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -702,6 +705,7 @@
 				3F9948BE1CFC782100A880A8 /* NSString+LTMorphingLabel.swift in Sources */,
 				3F63F10A1CFEF55000623420 /* IANotificationsController.swift in Sources */,
 				3FCEB5501D084DB10022EAA1 /* IAMetWithAccidentController.swift in Sources */,
+				3FF2D9D61D09B6E5001535E9 /* IAUtils.swift in Sources */,
 				3F5FB78A1CFDDF2F00C27D7F /* IAHomeController.swift in Sources */,
 				3F9948981CFC6B1100A880A8 /* IADashboard.swift in Sources */,
 				3F9948BB1CFC782100A880A8 /* LTMorphingLabel+Pixelate.swift in Sources */,
