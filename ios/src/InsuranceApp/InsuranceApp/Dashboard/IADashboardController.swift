@@ -49,6 +49,9 @@ class IADashboardController: IABaseController {
         
         self.payPremiumContainerView.layer.cornerRadius = IAConstants.dashboardSubviewCornerRadius
         self.payPremiumContainerView.layer.masksToBounds = true
+        let aPayPremiumTapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(IADashboardController.didSelectPayPremiumContainerView))
+        aPayPremiumTapGestureRecognizer.cancelsTouchesInView = false
+        self.payPremiumContainerView.addGestureRecognizer(aPayPremiumTapGestureRecognizer)
         
         let aTapGestureRecognizerAccident = UITapGestureRecognizer(target: self, action: #selector(IADashboardController.didSelectMetWithAccident))
         aTapGestureRecognizerAccident.cancelsTouchesInView = false
@@ -143,6 +146,11 @@ class IADashboardController: IABaseController {
     
     @IBAction func didSelectMyClaimsContainerView() {
         IAConstants.homeController.didSelectClaimsTabItemView()
+    }
+    
+    
+    @IBAction func didSelectPayPremiumContainerView() {
+        self.performSegueWithIdentifier("DashboardToPayPremiumSegueID", sender: self)
     }
     
     
