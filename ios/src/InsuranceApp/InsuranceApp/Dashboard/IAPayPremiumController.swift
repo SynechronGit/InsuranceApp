@@ -33,6 +33,11 @@ class IAPayPremiumController: IABaseController {
     }
     
     
+    @IBAction func didSelectCloseButton(sender: AnyObject) {
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    
     // MARK: - UITableView Methods
     
     /**
@@ -57,24 +62,25 @@ class IAPayPremiumController: IABaseController {
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let aReturnVal:IAPayPremiumTableCellView = tableView.dequeueReusableCellWithIdentifier("IAPayPremiumTableCellViewID") as! IAPayPremiumTableCellView
         aReturnVal.backgroundColor = UIColor.clearColor()
-        aReturnVal.accessoryType = .DisclosureIndicator
         
         if self.premiumArray != nil {
             let aPremium = self.premiumArray[indexPath.row]
             
             aReturnVal.dateLabel.text = aPremium.date
             aReturnVal.nameLabel?.text = aPremium.name
-            aReturnVal.policyNumberLabel.text = "#" + aPremium.policyNumber
-            aReturnVal.amountLabel?.text = "$ " + aPremium.amount
+            aReturnVal.policyNumberLabel.text = "Policy Number: #" + aPremium.policyNumber
+            aReturnVal.amountLabel?.text = "$" + aPremium.amount
             
             if aPremium.insuranceType == IAInsuranceType.AutoCar.rawValue {
-                aReturnVal.amountLabel?.textColor = UIColor.blackColor()
+                aReturnVal.amountLabel?.textColor = IAConstants.colorInsuranceTypeAutoCar
             } else if aPremium.insuranceType == IAInsuranceType.AutoDriver.rawValue {
-                aReturnVal.amountLabel?.textColor = UIColor.blackColor()
+                aReturnVal.amountLabel?.textColor = IAConstants.colorInsuranceTypeAutoDriver
+            } else if aPremium.insuranceType == IAInsuranceType.Home.rawValue {
+                aReturnVal.amountLabel?.textColor = IAConstants.colorInsuranceTypeHome
             } else if aPremium.insuranceType == IAInsuranceType.Boat.rawValue {
-                aReturnVal.amountLabel?.textColor = UIColor.blackColor()
+                aReturnVal.amountLabel?.textColor = IAConstants.colorInsuranceTypeBoat
             } else if aPremium.insuranceType == IAInsuranceType.Pet.rawValue {
-                aReturnVal.amountLabel?.textColor = UIColor.blackColor()
+                aReturnVal.amountLabel?.textColor = IAConstants.colorInsuranceTypePet
             }
         }
         

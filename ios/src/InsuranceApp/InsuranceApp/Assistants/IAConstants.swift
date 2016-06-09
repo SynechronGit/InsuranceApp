@@ -51,6 +51,12 @@ class IAConstants: NSObject {
             return aReturnVal
         }
     }
+    
+    static let colorInsuranceTypeAutoCar :UIColor = UIColor(red: 161.0/255.0, green: 91.0/255.0, blue: 186.0/255.0, alpha: 1.0)
+    static let colorInsuranceTypeAutoDriver :UIColor = UIColor(red: 161.0/255.0, green: 91.0/255.0, blue: 186.0/255.0, alpha: 1.0)
+    static let colorInsuranceTypeHome :UIColor = UIColor(red: 201.0/255.0, green: 171.0/255.0, blue: 0.0/255.0, alpha: 1.0)
+    static let colorInsuranceTypeBoat :UIColor = UIColor(red: 0.0/255.0, green: 170.0/255.0, blue: 183.0/255.0, alpha: 1.0)
+    static let colorInsuranceTypePet :UIColor = UIColor(red: 0.0/255.0, green: 168.0/255.0, blue: 45.0/255.0, alpha: 1.0)
 }
 
 
