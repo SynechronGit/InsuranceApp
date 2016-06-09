@@ -125,20 +125,49 @@ class IAFileClaimController: IABaseController, UIImagePickerControllerDelegate, 
         
         self.submitContainerView.layer.cornerRadius = IAConstants.dashboardSubviewCornerRadius
         self.submitContainerView.layer.masksToBounds = true
-        aTapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(IAFileClaimController.didSelectSubmitButton))
+        aTapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(IAFileClaimController.didSelectSubmitContainerView))
         aTapGestureRecognizer.cancelsTouchesInView = false
         self.submitContainerView.addGestureRecognizer(aTapGestureRecognizer)
     }
     
     
     func resetAllData() {
+        self.view.endEditing(true)
+        
         self.insuranceTypeTextField.text = nil
         self.insuredItemTextField.text = nil
         self.reasonTextField.text = nil
         self.estimatedValueTextField.text = nil
         self.dateOfIncidentTextField.text = nil
         self.descriptionTextView.text = nil
-        self.view.endEditing(true)
+        
+        self.addPhotoOneImageView.image = nil
+        self.addPhotoOneIconImageView.hidden = false
+        self.addPhotoOneLabel.hidden = false
+        
+        self.addPhotoTwoImageView.image = nil
+        self.addPhotoTwoIconImageView.hidden = false
+        self.addPhotoTwoLabel.hidden = false
+        self.addPhotoTwoContainerView.hidden = true
+        
+        self.addPhotoThreeImageView.image = nil
+        self.addPhotoThreeIconImageView.hidden = false
+        self.addPhotoThreeLabel.hidden = false
+        self.addPhotoThreeContainerView.hidden = true
+        
+        self.scanDocumentOneImageView.image = nil
+        self.scanDocumentOneIconImageView.hidden = false
+        self.scanDocumentOneLabel.hidden = false
+        
+        self.scanDocumentTwoImageView.image = nil
+        self.scanDocumentTwoIconImageView.hidden = false
+        self.scanDocumentTwoLabel.hidden = false
+        self.scanDocumentTwoContainerView.hidden = true
+        
+        self.scanDocumentThreeImageView.image = nil
+        self.scanDocumentThreeIconImageView.hidden = false
+        self.scanDocumentThreeLabel.hidden = false
+        self.scanDocumentThreeContainerView.hidden = true
     }
     
     
@@ -176,7 +205,7 @@ class IAFileClaimController: IABaseController, UIImagePickerControllerDelegate, 
      * Selector method that will be called when Submit button is tapped.
      * @return Void
      */
-    func didSelectSubmitButton() {
+    func didSelectSubmitContainerView() {
         do {
             if self.insuranceTypeTextField.text == nil || self.insuranceTypeTextField.text?.lengthOfBytesUsingEncoding(NSUTF8StringEncoding) <= 0 {
                 throw IAError.Generic(NSError(domain: "com", code: 1, userInfo: [NSLocalizedDescriptionKey:"Please select insurance type."]))
@@ -190,7 +219,6 @@ class IAFileClaimController: IABaseController, UIImagePickerControllerDelegate, 
             
             let aClaim = IAClaim()
             aClaim.code = "UY3436809678"
-            
             
             if self.insuranceTypeTextField.text == "Vehicle" {
                 aClaim.insuranceType = IAInsuranceType.AutoCar.rawValue
@@ -225,6 +253,11 @@ class IAFileClaimController: IABaseController, UIImagePickerControllerDelegate, 
         } catch {
             self.displayMessage(message: "File claim error.", type: IAMessageType.Error)
         }
+    }
+    
+    
+    @IBAction func didSelectDateOfIncidentCalendarButton() {
+        self.dateOfIncidentTextField.displayDropdownList()
     }
     
     
@@ -336,10 +369,10 @@ class IAFileClaimController: IABaseController, UIImagePickerControllerDelegate, 
         } else if pSender.requestType == IARequestType.FileClaim {
             let anAlert = UIAlertController(title: "Claim filed successfully", message: nil, preferredStyle: .Alert)
             anAlert.addAction(UIAlertAction(title: "OK", style: .Default, handler: {(action:UIAlertAction) in
+                self.resetAllData()
                 if IAConstants.homeController.claimsController != nil {
                     IAConstants.homeController.claimsController.reloadAllData()
                 }
-                self.resetAllData()
             }))
             self.presentViewController(anAlert, animated: true, completion: nil)
         }
