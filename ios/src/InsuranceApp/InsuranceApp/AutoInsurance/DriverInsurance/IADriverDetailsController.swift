@@ -50,9 +50,15 @@ class IADriverDetailsController: IABaseController {
         self.drivingLicenseNumberContainerView.layer.cornerRadius = IAConstants.dashboardSubviewCornerRadius
         self.drivingLicenseNumberContainerView.layer.masksToBounds = true
         
+        let aTapGestureRecognizerScore = UITapGestureRecognizer(target: self, action: #selector(IADriverDetailsController.didSelectScoreMyDrive))
+        aTapGestureRecognizerScore.cancelsTouchesInView = false
+        self.scoreMyDriveAppContainerView.addGestureRecognizer(aTapGestureRecognizerScore)
         self.scoreMyDriveAppContainerView.layer.cornerRadius = IAConstants.dashboardSubviewCornerRadius
         self.scoreMyDriveAppContainerView.layer.masksToBounds = true
         
+        let aTapGestureRecognizerSafety = UITapGestureRecognizer(target: self, action: #selector(IADriverDetailsController.didSelectRegisterSafetyDevice))
+        aTapGestureRecognizerSafety.cancelsTouchesInView = false
+        self.registerSafteyDeviceContainerView.addGestureRecognizer(aTapGestureRecognizerSafety)
         self.registerSafteyDeviceContainerView.layer.cornerRadius = IAConstants.dashboardSubviewCornerRadius
         self.registerSafteyDeviceContainerView.layer.masksToBounds = true
         
@@ -135,6 +141,14 @@ class IADriverDetailsController: IABaseController {
         return aReturnVal
     }
     
+    //Tap Gesture Selector methods
+    @IBAction func didSelectScoreMyDrive(){
+         self.performSegueWithIdentifier("DriverDetailsToScroreMyDriveSeague", sender: self)
+    }
+    
+    @IBAction func didSelectRegisterSafetyDevice(){
+       // self.performSegueWithIdentifier("DriverDetailsToRegisterSafetyDeviceSeague", sender: self)
+    }
     
     /**
      * Method that will init, set and return the cell view.

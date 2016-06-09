@@ -175,7 +175,7 @@ class IADataManager: NSObject {
             } else if self.requestType == IARequestType.DashboardDetails {
                 let aDashboardDetails :IADashboard = IADashboard()
                 
-                let anSqlQuery :String = "SELECT (SELECT COUNT(id) FROM vehicles) AS AutoInsuranceCarCount, (SELECT COUNT(id) FROM drivers) AS AutoInsuranceDriverCount"
+                let anSqlQuery :String = "SELECT (SELECT COUNT(id) FROM vehicles) AS AutoInsuranceCarCount, (SELECT COUNT(id) FROM drivers) AS AutoInsuranceDriverCount, (SELECT COUNT(id) FROM claims) AS ClaimCount"
                 let anSqlResult = try self.executeQuery(anSqlQuery, values: nil)
                 if anSqlResult != nil && anSqlResult.count == 1 {
                     let aDBDashboardDict :[String:AnyObject] = anSqlResult[0]
@@ -185,12 +185,18 @@ class IADataManager: NSObject {
                     if aDBDashboardDict["AutoInsuranceDriverCount"] is NSNumber {
                         aDashboardDetails.autoInsuranceDriverCount = (aDBDashboardDict["AutoInsuranceDriverCount"] as! NSNumber).integerValue
                     }
+                    if aDBDashboardDict["ClaimCount"] is NSNumber {
+                        aDashboardDetails.claimCount = (aDBDashboardDict["ClaimCount"] as! NSNumber).integerValue
+                    }
                 }
                 if aDashboardDetails.autoInsuranceCarCount == nil {
                     aDashboardDetails.autoInsuranceCarCount = 0
                 }
                 if aDashboardDetails.autoInsuranceDriverCount == nil {
                     aDashboardDetails.autoInsuranceDriverCount = 0
+                }
+                if aDashboardDetails.claimCount == nil {
+                    aDashboardDetails.claimCount = 0
                 }
                 
                 aDashboardDetails.homeInsuranceApplianceCount = 16
@@ -206,7 +212,7 @@ class IADataManager: NSObject {
                 aDashboardDetails.petInsuranceDogCount = 3
                 aDashboardDetails.petInsuranceCatCount = 1
                 
-                aDashboardDetails.claimCount = 4
+                //aDashboardDetails.claimCount = 4
                 aDashboardDetails.premiumCount = 2
                 
                 aDataManagerResponse.result = aDashboardDetails

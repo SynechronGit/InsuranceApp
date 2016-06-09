@@ -77,6 +77,8 @@
 		3FF030BA1CFD991A00BADE31 /* Ubuntu-regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3FF030B31CFD991A00BADE31 /* Ubuntu-regular.ttf */; };
 		3FFF0B851CF4A04300920ECA /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FFF0B841CF4A04300920ECA /* libsqlite3.tbd */; };
 		3FFF0B881CF4A22D00920ECA /* AppDatabase.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 3FFF0B871CF4A22D00920ECA /* AppDatabase.sqlite */; };
+		7D2D2CA21D096FFE0083D901 /* IAScoreMyDriveController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D2D2CA11D096FFE0083D901 /* IAScoreMyDriveController.swift */; };
+		7D2D2CA41D09702A0083D901 /* IARegisterSafetyDeviceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D2D2CA31D09702A0083D901 /* IARegisterSafetyDeviceController.swift */; };
 		7D47A1351CF710E9007E1867 /* IADriver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D47A1341CF710E9007E1867 /* IADriver.swift */; };
 /* End PBXBuildFile section */
 
@@ -176,6 +178,8 @@
 		3FFF0B841CF4A04300920ECA /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		3FFF0B861CF4A0BF00920ECA /* BridgingHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BridgingHeader.h; sourceTree = "<group>"; };
 		3FFF0B871CF4A22D00920ECA /* AppDatabase.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = AppDatabase.sqlite; sourceTree = "<group>"; };
+		7D2D2CA11D096FFE0083D901 /* IAScoreMyDriveController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IAScoreMyDriveController.swift; sourceTree = "<group>"; };
+		7D2D2CA31D09702A0083D901 /* IARegisterSafetyDeviceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IARegisterSafetyDeviceController.swift; sourceTree = "<group>"; };
 		7D47A1341CF710E9007E1867 /* IADriver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IADriver.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -307,6 +311,8 @@
 				3F3F0DBE1D003CD700A851FB /* IADriverListCell.swift */,
 				3F3F0DBD1D003CD700A851FB /* IADriverDetailsController.swift */,
 				3FAFB5511D006DC00083D38E /* IATrafficViolationTableCellView.swift */,
+				7D2D2CA11D096FFE0083D901 /* IAScoreMyDriveController.swift */,
+				7D2D2CA31D09702A0083D901 /* IARegisterSafetyDeviceController.swift */,
 			);
 			path = DriverInsurance;
 			sourceTree = "<group>";
@@ -649,6 +655,7 @@
 				3F9948BC1CFC782100A880A8 /* LTMorphingLabel+Sparkle.swift in Sources */,
 				3F4D20C41CF71CE30024EAE7 /* IAVehicle.swift in Sources */,
 				3F63F1101CFEF5B500623420 /* IAFileClaimController.swift in Sources */,
+				7D2D2CA41D09702A0083D901 /* IARegisterSafetyDeviceController.swift in Sources */,
 				3FE1FA8D1CFC81E6008EA53F /* IALabel.swift in Sources */,
 				3F820C631CF4526D00729AE6 /* IADataManager.swift in Sources */,
 				3F9948B91CFC782100A880A8 /* LTMorphingLabel+Evaporate.swift in Sources */,
@@ -674,6 +681,7 @@
 				3F9948BA1CFC782100A880A8 /* LTMorphingLabel+Fall.swift in Sources */,
 				3F63F1091CFEF55000623420 /* IAClaimsController.swift in Sources */,
 				3FCEB5521D084DCD0022EAA1 /* IAInsuranceIDCardController.swift in Sources */,
+				7D2D2CA21D096FFE0083D901 /* IAScoreMyDriveController.swift in Sources */,
 				3F9948B71CFC782100A880A8 /* LTMorphingLabel+Anvil.swift in Sources */,
 				3F2A0D9A1CF8762300EEACC2 /* IAAutoInsuranceDetailsController.swift in Sources */,
 				3FB6BED21D081D36005D6811 /* IAClaimListTableCellView.swift in Sources */,
