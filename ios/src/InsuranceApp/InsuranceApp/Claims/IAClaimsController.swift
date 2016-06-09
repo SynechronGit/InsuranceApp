@@ -18,6 +18,8 @@ class IAClaimsController: IABaseController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.title = "Claims"
+        
         self.claimTableView.tableFooterView = UIView()
         
         self.reloadAllData()

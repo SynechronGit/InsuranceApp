@@ -43,6 +43,9 @@ class IADashboardController: IABaseController {
         
         self.myClaimsContainerView.layer.cornerRadius = IAConstants.dashboardSubviewCornerRadius
         self.myClaimsContainerView.layer.masksToBounds = true
+        let aMyClaimsTapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(IADashboardController.didSelectMyClaimsContainerView))
+        aMyClaimsTapGestureRecognizer.cancelsTouchesInView = false
+        self.myClaimsContainerView.addGestureRecognizer(aMyClaimsTapGestureRecognizer)
         
         self.payPremiumContainerView.layer.cornerRadius = IAConstants.dashboardSubviewCornerRadius
         self.payPremiumContainerView.layer.masksToBounds = true
@@ -135,6 +138,11 @@ class IADashboardController: IABaseController {
     
     @IBAction func didSelectInsuranceIDCardContainerView(){
         self.performSegueWithIdentifier("DashboardToInsuranceIDCardSegueID", sender: self)
+    }
+    
+    
+    @IBAction func didSelectMyClaimsContainerView() {
+        IAConstants.homeController.didSelectClaimsTabItemView()
     }
     
     

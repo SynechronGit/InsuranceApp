@@ -36,6 +36,8 @@ class IAClaimDetailsController: IABaseController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.title = "Claim Details"
+        
         self.mainBgView.layer.cornerRadius = 10.0
         self.mainBgView.layer.masksToBounds = true
         
