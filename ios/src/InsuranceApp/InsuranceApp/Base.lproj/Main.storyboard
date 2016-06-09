@@ -5661,7 +5661,7 @@ Insurance</string>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Miles" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Qv-bB-jvw">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Miles" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Qv-bB-jvw">
                                 <rect key="frame" x="60" y="336" width="35" height="17"/>
                                 <fontDescription key="fontDescription" name="Ubuntu-Light" family="Ubuntu" pointSize="15"/>
                                 <color key="textColor" red="0.1764705882352941" green="0.41568627450980389" blue="0.50980392156862742" alpha="1" colorSpace="calibratedRGB"/>
@@ -8001,7 +8001,7 @@ Insurance</string>
         <image name="PetInsuranceIcon" width="72" height="73"/>
         <image name="RegisterSafteyDeviceIcon" width="19" height="19"/>
         <image name="ScanDocumentIcon" width="66" height="22"/>
-        <image name="ScoreMyDriveAppIcon" width="20" height="21"/>
+        <image name="ScoreMyDriveAppIcon" width="26" height="22"/>
         <image name="StatisticsGraph" width="393" height="208"/>
         <image name="TabBarIconAccount" width="23" height="27"/>
         <image name="TabBarIconClaims" width="21" height="25"/>
