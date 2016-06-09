@@ -61,6 +61,9 @@ class IADashboardController: IABaseController {
         
         self.insuranceIDCardContainerView.layer.cornerRadius = IAConstants.dashboardSubviewCornerRadius
         self.insuranceIDCardContainerView.layer.masksToBounds = true
+        let aTapGestureRecognizerInsuranceIDCard = UITapGestureRecognizer(target: self, action: #selector(IADashboardController.didSelectInsuranceIDCardContainerView))
+        aTapGestureRecognizerInsuranceIDCard.cancelsTouchesInView = false
+        self.insuranceIDCardContainerView.addGestureRecognizer(aTapGestureRecognizerInsuranceIDCard)
     }
     
     
@@ -124,9 +127,17 @@ class IADashboardController: IABaseController {
         self.performSegueWithIdentifier("DashboardToMetWithAccidentSegueID", sender: self)
     }
     
+    
     @IBAction func didSelectRoadSideAssistance(){
         self.performSegueWithIdentifier("DashboardToRoadsideAssistanceSegueID", sender: self)
     }
+    
+    
+    @IBAction func didSelectInsuranceIDCardContainerView(){
+        self.performSegueWithIdentifier("DashboardToInsuranceIDCardSegueID", sender: self)
+    }
+    
+    
     // MARK: - IADataManagerDelegate Methods
     
     /**

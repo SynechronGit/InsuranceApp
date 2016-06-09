@@ -67,6 +67,7 @@
 		3FE1FA8F1CFC8750008EA53F /* IANavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FE1FA8E1CFC8750008EA53F /* IANavigationBar.swift */; };
 		3FE654FB1D06EA61001CAF46 /* IAPolicyListTableCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FE654FA1D06EA61001CAF46 /* IAPolicyListTableCellView.swift */; };
 		3FE654FD1D06F02A001CAF46 /* IAPolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FE654FC1D06F02A001CAF46 /* IAPolicy.swift */; };
+		3FEF461B1D09423E00A33FE6 /* InsuranceIDCard.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 3FEF461A1D09423E00A33FE6 /* InsuranceIDCard.pdf */; };
 		3FF030B41CFD991A00BADE31 /* Ubuntu-300-italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3FF030AD1CFD991A00BADE31 /* Ubuntu-300-italic.ttf */; };
 		3FF030B51CFD991A00BADE31 /* Ubuntu-300.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3FF030AE1CFD991A00BADE31 /* Ubuntu-300.ttf */; };
 		3FF030B61CFD991A00BADE31 /* Ubuntu-500-italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3FF030AF1CFD991A00BADE31 /* Ubuntu-500-italic.ttf */; };
@@ -164,6 +165,7 @@
 		3FE1FA8E1CFC8750008EA53F /* IANavigationBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IANavigationBar.swift; sourceTree = "<group>"; };
 		3FE654FA1D06EA61001CAF46 /* IAPolicyListTableCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IAPolicyListTableCellView.swift; sourceTree = "<group>"; };
 		3FE654FC1D06F02A001CAF46 /* IAPolicy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IAPolicy.swift; sourceTree = "<group>"; };
+		3FEF461A1D09423E00A33FE6 /* InsuranceIDCard.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = InsuranceIDCard.pdf; sourceTree = "<group>"; };
 		3FF030AD1CFD991A00BADE31 /* Ubuntu-300-italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Ubuntu-300-italic.ttf"; sourceTree = "<group>"; };
 		3FF030AE1CFD991A00BADE31 /* Ubuntu-300.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Ubuntu-300.ttf"; sourceTree = "<group>"; };
 		3FF030AF1CFD991A00BADE31 /* Ubuntu-500-italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Ubuntu-500-italic.ttf"; sourceTree = "<group>"; };
@@ -279,6 +281,7 @@
 		3F0CA4681CF440C9002A048E /* Dashboard */ = {
 			isa = PBXGroup;
 			children = (
+				3FEF461A1D09423E00A33FE6 /* InsuranceIDCard.pdf */,
 				3F5FB7891CFDDF2E00C27D7F /* IAHomeController.swift */,
 				3F0CA4691CF440C9002A048E /* IADashboardController.swift */,
 				3FE1D2AE1CFC58C3007FA513 /* InsuranceTypeContainerView.swift */,
@@ -605,6 +608,7 @@
 				3F9948C11CFC782100A880A8 /* Smoke.png in Resources */,
 				3FF030B61CFD991A00BADE31 /* Ubuntu-500-italic.ttf in Resources */,
 				3F0CA4391CF44030002A048E /* Assets.xcassets in Resources */,
+				3FEF461B1D09423E00A33FE6 /* InsuranceIDCard.pdf in Resources */,
 				3F9948BF1CFC782100A880A8 /* Fire.png in Resources */,
 				3F0CA4371CF44030002A048E /* Main.storyboard in Resources */,
 			);
