@@ -2772,7 +2772,7 @@ Insurance</string>
                                             <constraint firstAttribute="width" constant="337" id="wsM-ZS-O8d"/>
                                         </constraints>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DFC-OI-G92">
+                                    <view alpha="0.59999999999999998" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DFC-OI-G92">
                                         <rect key="frame" x="455" y="42" width="255" height="49"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DH8-3Z-6rP">
@@ -2790,7 +2790,7 @@ Insurance</string>
                                                     <constraint firstAttribute="height" constant="21" id="Vgs-F4-pKX"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" name="Ubuntu-Medium" family="Ubuntu" pointSize="17"/>
-                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <color key="textColor" red="0.76909054487179485" green="0.7689135706317064" blue="0.73194618829769575" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="camera" translatesAutoresizingMaskIntoConstraints="NO" id="YjK-65-aI8">
@@ -5529,11 +5529,80 @@ Insurance</string>
                         <outlet property="streetAddressValueLabel" destination="gsg-ZX-Afw" id="3FT-Mr-A7a"/>
                         <outlet property="trafficViolationTableView" destination="SBd-1N-Ye0" id="aiq-MA-uCO"/>
                         <outlet property="zipValueLabel" destination="NWC-JF-sME" id="25U-kp-ueP"/>
+                        <segue destination="VdV-xi-BZo" kind="presentation" identifier="DriverDetailsToScroreMyDriveSeague" modalPresentationStyle="formSheet" id="gsx-w0-ng2"/>
+                        <segue destination="n0M-IJ-37G" kind="presentation" identifier="DriverDetailsToRegisterSafetyDeviceSeague" modalPresentationStyle="formSheet" id="q60-gn-nNF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oi4-5R-kKR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2388" y="3987"/>
+        </scene>
+        <!--Score My Drive Controller-->
+        <scene sceneID="pRd-Uw-7QS">
+            <objects>
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="VdV-xi-BZo" customClass="IAScoreMyDriveController" customModule="InsuranceApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="HQW-f8-CIa"/>
+                        <viewControllerLayoutGuide type="bottom" id="hFR-uD-sJc"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="PlS-bg-QS9">
+                        <rect key="frame" x="0.0" y="0.0" width="480" height="616"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hdC-Aj-DWx">
+                                <rect key="frame" x="0.0" y="0.0" width="480" height="8"/>
+                                <color key="backgroundColor" red="0.65490196079999996" green="0.3803921569" blue="0.71764705880000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="8" id="NLC-Te-TUk"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Dt-OF-s8B">
+                                <rect key="frame" x="0.0" y="608" width="480" height="8"/>
+                                <color key="backgroundColor" red="0.65490196079999996" green="0.3803921569" blue="0.71764705880000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="8" id="foT-fL-bwN"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="5Dt-OF-s8B" secondAttribute="trailing" constant="-20" id="00D-YU-Ys7"/>
+                            <constraint firstItem="hdC-Aj-DWx" firstAttribute="top" secondItem="HQW-f8-CIa" secondAttribute="bottom" id="IiD-UA-QMt"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="hdC-Aj-DWx" secondAttribute="trailing" constant="-20" id="U2O-gk-eM2"/>
+                            <constraint firstItem="hFR-uD-sJc" firstAttribute="top" secondItem="5Dt-OF-s8B" secondAttribute="bottom" id="XBj-fE-L5y"/>
+                            <constraint firstItem="hdC-Aj-DWx" firstAttribute="leading" secondItem="PlS-bg-QS9" secondAttribute="leadingMargin" constant="-20" id="p5Y-TE-I57"/>
+                            <constraint firstItem="5Dt-OF-s8B" firstAttribute="leading" secondItem="PlS-bg-QS9" secondAttribute="leadingMargin" constant="-20" id="tGY-XI-4PQ"/>
+                        </constraints>
+                    </view>
+                    <extendedEdge key="edgesForExtendedLayout"/>
+                    <value key="contentSizeForViewInPopover" type="size" width="480" height="614"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="480" height="616"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Fok-ua-6dq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3919" y="3783"/>
+        </scene>
+        <!--Register Safety Device Controller-->
+        <scene sceneID="k3s-Di-LCK">
+            <objects>
+                <viewController id="n0M-IJ-37G" customClass="IARegisterSafetyDeviceController" customModule="InsuranceApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="mhK-cM-hqS"/>
+                        <viewControllerLayoutGuide type="bottom" id="fop-9B-tsb"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kaH-Os-WCx">
+                        <rect key="frame" x="0.0" y="0.0" width="480" height="614"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <value key="contentSizeForViewInPopover" type="size" width="480" height="614"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="480" height="614"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xTJ-Jl-4aI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3919" y="4446"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="2Un-FI-aB0">
