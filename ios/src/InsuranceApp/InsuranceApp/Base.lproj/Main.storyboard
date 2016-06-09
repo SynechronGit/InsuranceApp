@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="yS7-Mb-0yN">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="yS7-Mb-0yN">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -6583,7 +6583,7 @@ Insurance</string>
                                             <constraint firstAttribute="height" constant="30" id="zMx-Vg-fSC"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="Ubuntu" family="Ubuntu" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select Insured:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SCm-44-SVL">
                                         <rect key="frame" x="21" y="92" width="150" height="21"/>
@@ -6642,7 +6642,7 @@ Insurance</string>
                                             <constraint firstAttribute="height" constant="30" id="hL2-sV-2mO"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="Ubuntu" family="Ubuntu" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
                                         <variation key="default">
                                             <mask key="constraints">
                                                 <exclude reference="NeW-U2-XSU"/>
@@ -6656,7 +6656,7 @@ Insurance</string>
                                             <constraint firstAttribute="width" constant="218" id="XZn-7z-Bkf"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="Ubuntu" family="Ubuntu" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
                                         <variation key="default">
                                             <mask key="constraints">
                                                 <exclude reference="XZn-7z-Bkf"/>
@@ -6670,7 +6670,7 @@ Insurance</string>
                                             <constraint firstAttribute="width" constant="218" id="TVH-Jt-YPA"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="Ubuntu" family="Ubuntu" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
                                         <variation key="default">
                                             <mask key="constraints">
                                                 <exclude reference="TVH-Jt-YPA"/>
@@ -6684,7 +6684,7 @@ Insurance</string>
                                             <constraint firstAttribute="width" constant="218" id="mGm-h2-QwC"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="Ubuntu" family="Ubuntu" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
                                         <variation key="default">
                                             <mask key="constraints">
                                                 <exclude reference="mGm-h2-QwC"/>
@@ -6698,6 +6698,9 @@ Insurance</string>
                                             <constraint firstAttribute="height" constant="34" id="yUp-9Y-9O4"/>
                                         </constraints>
                                         <state key="normal" image="CalendarIcon"/>
+                                        <connections>
+                                            <action selector="didSelectDateOfIncidentCalendarButton" destination="P5y-5s-dzv" eventType="touchUpInside" id="aLp-XE-guU"/>
+                                        </connections>
                                     </button>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="7ie-Jz-vPN">
                                         <rect key="frame" x="192" y="312" width="518" height="100"/>
@@ -6706,7 +6709,7 @@ Insurance</string>
                                             <constraint firstAttribute="height" constant="100" id="ukO-5U-hsC"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="Ubuntu" family="Ubuntu" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="no" spellCheckingType="no"/>
                                     </textView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UsH-NC-M2U">
                                         <rect key="frame" x="21" y="432" width="218" height="139"/>
