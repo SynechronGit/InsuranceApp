@@ -94,11 +94,15 @@
             <string>Ubuntu-Medium</string>
             <string>Ubuntu-Medium</string>
             <string>Ubuntu-Medium</string>
+            <string>Ubuntu-Medium</string>
         </mutableArray>
         <mutableArray key="Ubuntu-700.ttf">
             <string>Ubuntu-Bold</string>
         </mutableArray>
         <mutableArray key="Ubuntu-regular.ttf">
+            <string>Ubuntu</string>
+            <string>Ubuntu</string>
+            <string>Ubuntu</string>
             <string>Ubuntu</string>
             <string>Ubuntu</string>
             <string>Ubuntu</string>
@@ -5595,19 +5599,156 @@ Insurance</string>
         <!--Register Safety Device Controller-->
         <scene sceneID="k3s-Di-LCK">
             <objects>
-                <viewController id="n0M-IJ-37G" customClass="IARegisterSafetyDeviceController" customModule="InsuranceApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="n0M-IJ-37G" customClass="IARegisterSafetyDeviceController" customModule="InsuranceApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="mhK-cM-hqS"/>
                         <viewControllerLayoutGuide type="bottom" id="fop-9B-tsb"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="kaH-Os-WCx">
-                        <rect key="frame" x="0.0" y="0.0" width="480" height="614"/>
+                        <rect key="frame" x="0.0" y="0.0" width="480" height="432"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XCu-oR-XuY">
+                                <rect key="frame" x="0.0" y="0.0" width="480" height="8"/>
+                                <color key="backgroundColor" red="0.65490196079999996" green="0.3803921569" blue="0.71764705880000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="8" id="9QA-Vu-9kj"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VgE-Ba-4NO">
+                                <rect key="frame" x="0.0" y="424" width="480" height="8"/>
+                                <color key="backgroundColor" red="0.65490196079999996" green="0.3803921569" blue="0.71764705880000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="8" id="inS-rf-z5O"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Register Safety Device" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dsv-M3-NHb">
+                                <rect key="frame" x="50" y="29" width="380" height="23"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="23" id="EZg-kQ-qCi"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Ubuntu-Medium" family="Ubuntu" pointSize="18"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Device Type:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x4v-Xg-FLT">
+                                <rect key="frame" x="70" y="146" width="110" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="110" id="DuA-h7-jTw"/>
+                                    <constraint firstAttribute="height" constant="21" id="UDC-Vr-Jp9"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Ubuntu" family="Ubuntu" pointSize="16"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Serial Number:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FZA-LN-X1K">
+                                <rect key="frame" x="70" y="217" width="110" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="jly-J0-cQo"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Ubuntu" family="Ubuntu" pointSize="16"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UdR-eh-ksv" userLabel="topSeparatorView">
+                                <rect key="frame" x="18" y="70" width="444" height="1"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="C4H-Zo-SPN"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SI8-Xe-uJa" userLabel="bottomSeparatorView">
+                                <rect key="frame" x="18" y="316" width="444" height="1"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="tPc-a9-O63"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iG4-bQ-WJO">
+                                <rect key="frame" x="163" y="345" width="155" height="50"/>
+                                <color key="backgroundColor" red="0.1803921568627451" green="0.24313725490196078" blue="0.30980392156862746" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="155" id="6L8-VU-5m5"/>
+                                    <constraint firstAttribute="height" constant="50" id="uRy-k6-E6e"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Ubuntu" family="Ubuntu" pointSize="17"/>
+                                <state key="normal" title="Register">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="didSelectRegisterButton:" destination="n0M-IJ-37G" eventType="touchUpInside" id="fcO-LG-a1Q"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Get-xg-VtR" customClass="IATextField" customModule="InsuranceApp" customModuleProvider="target">
+                                <rect key="frame" x="194" y="142" width="219" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="219" id="UZj-bM-LSI"/>
+                                    <constraint firstAttribute="height" constant="30" id="bNY-G0-1Lr"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="h0i-1g-fxv" customClass="IATextField" customModule="InsuranceApp" customModuleProvider="target">
+                                <rect key="frame" x="194" y="213" width="219" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="cF2-yS-RXB"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters" autocorrectionType="no" spellCheckingType="no"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uee-uQ-je3">
+                                <rect key="frame" x="438" y="20" width="30" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="30" id="Ff6-Dr-MsQ"/>
+                                    <constraint firstAttribute="height" constant="30" id="QGC-dh-deU"/>
+                                </constraints>
+                                <state key="normal" title="X"/>
+                                <connections>
+                                    <action selector="didSelectCloseButton:" destination="n0M-IJ-37G" eventType="touchUpInside" id="Av2-Mw-7Eu"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Get-xg-VtR" firstAttribute="centerY" secondItem="x4v-Xg-FLT" secondAttribute="centerY" id="1ar-ca-59Q"/>
+                            <constraint firstAttribute="trailing" secondItem="Uee-uQ-je3" secondAttribute="trailing" constant="12" id="3eo-Y0-Qht"/>
+                            <constraint firstAttribute="bottom" secondItem="VgE-Ba-4NO" secondAttribute="bottom" id="5dO-UG-n4I"/>
+                            <constraint firstItem="UdR-eh-ksv" firstAttribute="leading" secondItem="kaH-Os-WCx" secondAttribute="leading" constant="18" id="7Mk-sA-783"/>
+                            <constraint firstItem="UdR-eh-ksv" firstAttribute="top" secondItem="XCu-oR-XuY" secondAttribute="bottom" constant="62" id="8Nz-lc-aQ4"/>
+                            <constraint firstItem="Dsv-M3-NHb" firstAttribute="leading" secondItem="kaH-Os-WCx" secondAttribute="leading" constant="50" id="B3W-8A-NxT"/>
+                            <constraint firstItem="FZA-LN-X1K" firstAttribute="top" secondItem="x4v-Xg-FLT" secondAttribute="bottom" constant="50" id="EIb-he-yIA"/>
+                            <constraint firstItem="iG4-bQ-WJO" firstAttribute="top" secondItem="SI8-Xe-uJa" secondAttribute="bottom" constant="28" id="FZL-vK-DvI"/>
+                            <constraint firstAttribute="trailing" secondItem="VgE-Ba-4NO" secondAttribute="trailing" id="HbN-P7-BYJ"/>
+                            <constraint firstItem="SI8-Xe-uJa" firstAttribute="trailing" secondItem="UdR-eh-ksv" secondAttribute="trailing" id="L06-9j-6if"/>
+                            <constraint firstItem="h0i-1g-fxv" firstAttribute="trailing" secondItem="Get-xg-VtR" secondAttribute="trailing" id="Sju-2y-XX0"/>
+                            <constraint firstItem="FZA-LN-X1K" firstAttribute="trailing" secondItem="x4v-Xg-FLT" secondAttribute="trailing" id="V54-wZ-jdE"/>
+                            <constraint firstItem="Uee-uQ-je3" firstAttribute="top" secondItem="XCu-oR-XuY" secondAttribute="bottom" constant="12" id="WZ5-Dz-ObE"/>
+                            <constraint firstItem="Get-xg-VtR" firstAttribute="leading" secondItem="x4v-Xg-FLT" secondAttribute="trailing" constant="14" id="Xvx-Ja-MbF"/>
+                            <constraint firstItem="Dsv-M3-NHb" firstAttribute="top" secondItem="XCu-oR-XuY" secondAttribute="bottom" constant="21" id="aRD-QO-kgg"/>
+                            <constraint firstItem="SI8-Xe-uJa" firstAttribute="top" secondItem="UdR-eh-ksv" secondAttribute="bottom" constant="245" id="akA-Bj-SdG"/>
+                            <constraint firstItem="iG4-bQ-WJO" firstAttribute="centerX" secondItem="kaH-Os-WCx" secondAttribute="centerX" id="bdJ-6c-6VP"/>
+                            <constraint firstAttribute="trailing" secondItem="XCu-oR-XuY" secondAttribute="trailing" id="cFU-BD-I3M"/>
+                            <constraint firstAttribute="trailing" secondItem="UdR-eh-ksv" secondAttribute="trailing" constant="18" id="eBi-Qs-k4z"/>
+                            <constraint firstItem="h0i-1g-fxv" firstAttribute="leading" secondItem="Get-xg-VtR" secondAttribute="leading" id="i8H-JF-han"/>
+                            <constraint firstItem="SI8-Xe-uJa" firstAttribute="leading" secondItem="UdR-eh-ksv" secondAttribute="leading" id="iGd-Hx-7Ab"/>
+                            <constraint firstAttribute="trailing" secondItem="Dsv-M3-NHb" secondAttribute="trailing" constant="50" id="ig1-g3-Lge"/>
+                            <constraint firstItem="FZA-LN-X1K" firstAttribute="leading" secondItem="x4v-Xg-FLT" secondAttribute="leading" id="mLc-Yw-rs5"/>
+                            <constraint firstItem="XCu-oR-XuY" firstAttribute="top" secondItem="kaH-Os-WCx" secondAttribute="top" id="q1S-Rp-Vp3"/>
+                            <constraint firstItem="x4v-Xg-FLT" firstAttribute="top" secondItem="UdR-eh-ksv" secondAttribute="bottom" constant="75" id="tDp-G0-mO5"/>
+                            <constraint firstItem="h0i-1g-fxv" firstAttribute="centerY" secondItem="FZA-LN-X1K" secondAttribute="centerY" id="uHs-2A-qDJ"/>
+                            <constraint firstItem="XCu-oR-XuY" firstAttribute="leading" secondItem="kaH-Os-WCx" secondAttribute="leading" id="vle-aS-wh0"/>
+                            <constraint firstItem="x4v-Xg-FLT" firstAttribute="leading" secondItem="kaH-Os-WCx" secondAttribute="leading" constant="70" id="xHm-te-UXL"/>
+                            <constraint firstItem="VgE-Ba-4NO" firstAttribute="leading" secondItem="kaH-Os-WCx" secondAttribute="leading" id="yzb-Uj-nAI"/>
+                        </constraints>
                     </view>
-                    <value key="contentSizeForViewInPopover" type="size" width="480" height="614"/>
+                    <extendedEdge key="edgesForExtendedLayout"/>
+                    <value key="contentSizeForViewInPopover" type="size" width="480" height="432"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="480" height="614"/>
+                    <size key="freeformSize" width="480" height="432"/>
+                    <connections>
+                        <outlet property="deviceTypeTextField" destination="Get-xg-VtR" id="YZB-Ss-jEP"/>
+                        <outlet property="serialNumberTextField" destination="h0i-1g-fxv" id="QfA-5W-6e3"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xTJ-Jl-4aI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

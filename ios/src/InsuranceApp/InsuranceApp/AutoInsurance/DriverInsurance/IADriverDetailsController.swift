@@ -147,7 +147,7 @@ class IADriverDetailsController: IABaseController {
     }
     
     @IBAction func didSelectRegisterSafetyDevice(){
-       // self.performSegueWithIdentifier("DriverDetailsToRegisterSafetyDeviceSeague", sender: self)
+        self.performSegueWithIdentifier("DriverDetailsToRegisterSafetyDeviceSeague", sender: self)
     }
     
     /**
