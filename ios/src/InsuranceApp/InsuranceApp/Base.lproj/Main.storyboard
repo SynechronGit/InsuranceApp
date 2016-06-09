@@ -103,11 +103,14 @@
             <string>Ubuntu-Medium</string>
             <string>Ubuntu-Medium</string>
             <string>Ubuntu-Medium</string>
+            <string>Ubuntu-Medium</string>
         </mutableArray>
         <mutableArray key="Ubuntu-700.ttf">
             <string>Ubuntu-Bold</string>
         </mutableArray>
         <mutableArray key="Ubuntu-regular.ttf">
+            <string>Ubuntu</string>
+            <string>Ubuntu</string>
             <string>Ubuntu</string>
             <string>Ubuntu</string>
             <string>Ubuntu</string>
@@ -5664,7 +5667,7 @@ Insurance</string>
                                 <color key="textColor" red="0.1764705882352941" green="0.41568627450980389" blue="0.50980392156862742" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="weA-LH-fim" customClass="IALabel" customModule="InsuranceApp" customModuleProvider="target">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="weA-LH-fim" customClass="IALabel" customModule="InsuranceApp" customModuleProvider="target">
                                 <rect key="frame" x="50" y="300" width="54" height="32"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="54" id="8sH-uB-wYd"/>
@@ -5694,7 +5697,7 @@ Insurance</string>
                                 <color key="textColor" red="0.1764705882352941" green="0.41568627450980389" blue="0.50980392156862742" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="23" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5fb-PG-e95" customClass="IALabel" customModule="InsuranceApp" customModuleProvider="target">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5fb-PG-e95" customClass="IALabel" customModule="InsuranceApp" customModuleProvider="target">
                                 <rect key="frame" x="376" y="300" width="54" height="32"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="54" id="6nh-jp-GX4"/>
@@ -5718,7 +5721,7 @@ Insurance</string>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cpt-bM-bwI">
                                 <rect key="frame" x="133" y="208" width="215" height="215"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="520" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TtD-Er-wSy" customClass="IALabel" customModule="InsuranceApp" customModuleProvider="target">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TtD-Er-wSy" customClass="IALabel" customModule="InsuranceApp" customModuleProvider="target">
                                         <rect key="frame" x="50" y="92" width="115" height="35"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="35" id="c04-3b-gHz"/>
