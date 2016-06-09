@@ -2,11 +2,11 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "mia_splashscreen2x_1024.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
+      "filename" : "MIA_SplashScreen2x.png",
       "scale" : "2x"
     },
     {

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="yS7-Mb-0yN">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="yS7-Mb-0yN">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -310,8 +310,8 @@
                                 <color key="textColor" red="0.83137254900000002" green="0.69019607839999997" blue="0.66666666669999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Don't have Account??" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q5B-cc-puj">
-                                <rect key="frame" x="20" y="938" width="359" height="23"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Don't have an account?" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q5B-cc-puj">
+                                <rect key="frame" x="20" y="867" width="359" height="23"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="23" id="Ipl-Id-ple"/>
                                 </constraints>
@@ -320,7 +320,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Create an account &gt;" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f61-os-K1U">
-                                <rect key="frame" x="389" y="938" width="359" height="23"/>
+                                <rect key="frame" x="389" y="867" width="359" height="23"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="23" id="EmP-S8-9ZL"/>
                                 </constraints>
@@ -377,6 +377,13 @@
                                 <color key="textColor" red="0.396078431372549" green="0.32941176470588235" blue="0.64313725490196072" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="synechronLogo" translatesAutoresizingMaskIntoConstraints="NO" id="wqA-GJ-REE">
+                                <rect key="frame" x="285" y="931" width="198" height="48"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="AMc-OK-MHb"/>
+                                    <constraint firstAttribute="width" constant="198" id="Mt8-5U-Onf"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -404,8 +411,9 @@
                             <constraint firstItem="Cep-II-U6d" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="V4I-zM-j3w"/>
                             <constraint firstItem="oi9-Cz-IpD" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="800" id="WW9-FG-rv2"/>
                             <constraint firstItem="yrQ-Gi-jdn" firstAttribute="top" secondItem="Hb5-QR-JpJ" secondAttribute="bottom" constant="13" id="awr-gr-yId"/>
-                            <constraint firstAttribute="bottom" secondItem="f61-os-K1U" secondAttribute="bottom" constant="63" id="b8o-4A-eaL"/>
+                            <constraint firstAttribute="bottom" secondItem="f61-os-K1U" secondAttribute="bottom" constant="134" id="b8o-4A-eaL"/>
                             <constraint firstAttribute="bottom" secondItem="Mu4-9F-00X" secondAttribute="bottom" id="dRi-cM-Pxj"/>
+                            <constraint firstItem="wqA-GJ-REE" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="e8Z-zF-wGh"/>
                             <constraint firstItem="yrQ-Gi-jdn" firstAttribute="top" secondItem="Cep-II-U6d" secondAttribute="bottom" constant="84" id="epK-Bg-YmI"/>
                             <constraint firstItem="oi9-Cz-IpD" firstAttribute="top" secondItem="yrQ-Gi-jdn" secondAttribute="bottom" constant="50" id="ewF-19-vMV"/>
                             <constraint firstItem="Cep-II-U6d" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="465" id="ho9-8N-www"/>
@@ -413,8 +421,9 @@
                             <constraint firstItem="7Kj-Tg-ANH" firstAttribute="trailing" secondItem="yrQ-Gi-jdn" secondAttribute="trailing" id="kaC-YE-qE4"/>
                             <constraint firstAttribute="trailing" secondItem="Cep-II-U6d" secondAttribute="trailing" constant="299" id="phI-tA-CXg"/>
                             <constraint firstItem="5SI-ku-AjP" firstAttribute="leading" secondItem="Kl2-8v-NhZ" secondAttribute="trailing" constant="5" id="qde-qM-33P"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="wqA-GJ-REE" secondAttribute="bottom" constant="45" id="uwj-fF-fom"/>
                             <constraint firstItem="Cep-II-U6d" firstAttribute="top" secondItem="Kl2-8v-NhZ" secondAttribute="bottom" constant="13" id="xYh-jk-ZKp"/>
-                            <constraint firstAttribute="bottom" secondItem="q5B-cc-puj" secondAttribute="bottom" constant="63" id="yVI-FQ-nIY"/>
+                            <constraint firstAttribute="bottom" secondItem="q5B-cc-puj" secondAttribute="bottom" constant="134" id="yVI-FQ-nIY"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
@@ -7485,7 +7494,7 @@ Insurance</string>
         <image name="HomeInsuranceIcon" width="72" height="73"/>
         <image name="LoginBg" width="768" height="1024"/>
         <image name="LoginButtonBg" width="139" height="35"/>
-        <image name="LoginLogo" width="115" height="115"/>
+        <image name="LoginLogo" width="116" height="116"/>
         <image name="MyClaimsIcon" width="72" height="72"/>
         <image name="PasswordIcon" width="16" height="29"/>
         <image name="PayPremiumIcon" width="72" height="72"/>
@@ -7512,6 +7521,7 @@ Insurance</string>
         <image name="nextArrow" width="9" height="18"/>
         <image name="rentCar" width="211" height="211"/>
         <image name="sendLocation" width="211" height="211"/>
+        <image name="synechronLogo" width="198" height="48"/>
         <image name="tabbox" width="210" height="49"/>
         <image name="tick_box_deselected" width="38" height="38"/>
         <image name="tick_box_selected" width="38" height="38"/>
