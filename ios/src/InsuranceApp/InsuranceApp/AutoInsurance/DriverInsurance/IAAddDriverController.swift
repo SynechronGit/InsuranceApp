@@ -9,7 +9,7 @@ import UIKit
 /**
  * Controller for Add Driver screen.
  */
-class IAAddDriverController: IABaseController, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class IAAddDriverController: IABaseController, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, IADropdownListControllerDelegate{
     @IBOutlet weak var addPhotoContainerView: UIView!
     @IBOutlet weak var driverPhotoImageView: UIImageView!
     @IBOutlet weak var driverPhotoIconImageView: UIImageView!
@@ -22,6 +22,7 @@ class IAAddDriverController: IABaseController, UITextFieldDelegate, UIImagePicke
     
     var imagePickerController :UIImagePickerController!
     weak var imagePickerDestinationImageView: UIImageView!
+    var dropdownListController :IADropdownListController!
     
     @IBOutlet weak var nameTextField: IATextField!
     @IBOutlet weak var phoneNumberTextField: IATextField!
@@ -175,17 +176,40 @@ class IAAddDriverController: IABaseController, UITextFieldDelegate, UIImagePicke
     
     
     func displayImagePicker() {
+        if self.dropdownListController == nil {
+            self.dropdownListController  = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("IADropdownListControllerID") as! IADropdownListController
+        }
+        self.dropdownListController.delegate = self
+        self.dropdownListController.list = ["Camera", "Photo Album"]
+        self.dropdownListController.preferredContentSize = CGSizeMake(200.0, 80.0)
+        self.dropdownListController.modalPresentationStyle = .Popover
+        self.dropdownListController.popoverPresentationController?.permittedArrowDirections = UIPopoverArrowDirection.Any
+        self.dropdownListController.popoverPresentationController?.sourceView = self.imagePickerDestinationImageView
+        self.dropdownListController.popoverPresentationController?.sourceRect = self.imagePickerDestinationImageView.bounds
+        self.presentViewController(self.dropdownListController, animated: true, completion: nil)
+    }
+    
+    
+    func dropdownListController(pDropdownListController:IADropdownListController, didSelectValue pValue:String) {
+        pDropdownListController.dismissViewControllerAnimated(false, completion: nil)
+        
         if self.imagePickerController == nil {
             self.imagePickerController = UIImagePickerController()
         }
         self.imagePickerController.allowsEditing = false
+        self.imagePickerController.delegate = self
+        self.imagePickerController.modalPresentationStyle = UIModalPresentationStyle.FormSheet
+        
         #if (arch(i386) || arch(x86_64)) && os(iOS)
             self.imagePickerController.sourceType = .PhotoLibrary
         #else
-            self.imagePickerController.sourceType = .PhotoLibrary
+            if pValue == "Camera" {
+                self.imagePickerController.sourceType = .Camera
+            } else if pValue == "Photo Album" {
+                self.imagePickerController.sourceType = .PhotoLibrary
+            }
         #endif
-        self.imagePickerController.delegate = self
-        self.imagePickerController.modalPresentationStyle = UIModalPresentationStyle.FormSheet
+        
         self.presentViewController(self.imagePickerController, animated: true, completion: nil)
     }
     
@@ -305,7 +329,9 @@ class IAAddDriverController: IABaseController, UITextFieldDelegate, UIImagePicke
     // MARK: - UIImagePickerControllerDelegate Methods
     
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
-        if let aPickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
+        if var aPickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
+            aPickedImage = IAUtils.fixImageOrientation(aPickedImage)
+            
             if self.imagePickerDestinationImageView != nil && self.imagePickerDestinationImageView.isEqual(self.driverPhotoImageView)  {
                 self.driverPhotoImageView.image = aPickedImage
                 self.driverPhotoIconImageView.hidden = true
