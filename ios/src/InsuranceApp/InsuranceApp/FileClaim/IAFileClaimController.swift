@@ -261,7 +261,7 @@ class IAFileClaimController: IABaseController, UIImagePickerControllerDelegate, 
             aClaim.status = IAClaimStatus.Report.rawValue
             aClaim.dateOfIncident = self.dateOfIncidentTextField.text!
             aClaim.incedentType = self.reasonTextField.text
-            aClaim.value = self.estimatedValueTextField.text
+            aClaim.value = "$"+self.estimatedValueTextField.text!
             aClaim.photoOne = self.addPhotoOneImageView.image
             aClaim.photoTwo = self.addPhotoTwoImageView.image
             aClaim.photoThree = self.addPhotoThreeImageView.image
