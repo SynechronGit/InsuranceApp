@@ -132,7 +132,7 @@ class IAAutoInsuranceDetailsController: IABaseController , UICollectionViewDeleg
     
     
     @IBAction func didSelectPayPremiumButton(sender: AnyObject) {
-        
+        self.performSegueWithIdentifier("AutoInsuranceDetailsToPayPremiumSegueID", sender: self)
     }
     
     

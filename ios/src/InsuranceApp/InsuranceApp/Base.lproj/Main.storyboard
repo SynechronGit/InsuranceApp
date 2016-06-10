@@ -4286,6 +4286,7 @@ Insurance</string>
                         <segue destination="xfz-SR-z7C" kind="show" identifier="AutoInsuranceDetailsToDriverDetailsSegueID" id="G9U-Zd-vGD"/>
                         <segue destination="RW6-fY-qPa" kind="show" identifier="AutoInsuranceDetailsToAddVehicleSegueID" id="gH5-OJ-l3x"/>
                         <segue destination="aL6-SL-tmf" kind="show" identifier="AutoInsuranceDetailsToAddDriverSegueID" id="K4y-Ol-mqP"/>
+                        <segue destination="GVT-2B-hVV" kind="presentation" identifier="AutoInsuranceDetailsToPayPremiumSegueID" modalPresentationStyle="formSheet" id="fxs-LO-5jC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ffG-NZ-plP" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -8432,4 +8433,7 @@ Insurance</string>
         <image name="tick_box_selected" width="38" height="38"/>
         <image name="towCar" width="211" height="211"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="fxs-LO-5jC"/>
+    </inferredMetricsTieBreakers>
 </document>
