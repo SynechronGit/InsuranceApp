@@ -58,7 +58,7 @@ class IAConstants: NSObject {
     static let colorInsuranceTypeBoat :UIColor = UIColor(red: 0.0/255.0, green: 170.0/255.0, blue: 183.0/255.0, alpha: 1.0)
     static let colorInsuranceTypePet :UIColor = UIColor(red: 0.0/255.0, green: 168.0/255.0, blue: 45.0/255.0, alpha: 1.0)
     
-    static let dateFormatAppStandard = "MM-dd-yyyy"
+    static let dateFormatAppStandard = "MM - dd - yyyy"
 }
 
 

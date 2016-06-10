@@ -261,7 +261,7 @@ class IAFileClaimController: IABaseController, UIImagePickerControllerDelegate, 
             
             let aDateFormatter = NSDateFormatter()
             aDateFormatter.locale = NSLocale(localeIdentifier: "US_en")
-            aDateFormatter.dateFormat = "MM-dd-yyyy"
+            aDateFormatter.dateFormat = "MM - dd - yyyy"
             
             let aClaim = IAClaim()
             aClaim.code = "UY3436809678"

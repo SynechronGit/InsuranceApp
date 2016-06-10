@@ -90,7 +90,7 @@ class IADropdownListController: UIViewController {
         if self.delegate != nil {
             let aDateFormatter = NSDateFormatter()
             aDateFormatter.locale = NSLocale(localeIdentifier: "US_en")
-            aDateFormatter.dateFormat = "MM-dd-yyyy"
+            aDateFormatter.dateFormat = IAConstants.dateFormatAppStandard
             self.delegate?.dropdownListController(self, didSelectValue: aDateFormatter.stringFromDate(self.datePicker.date))
         }
     }
