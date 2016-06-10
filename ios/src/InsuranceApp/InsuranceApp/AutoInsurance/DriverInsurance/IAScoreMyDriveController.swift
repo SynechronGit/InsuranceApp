@@ -9,6 +9,7 @@
 import UIKit
 
 class IAScoreMyDriveController: UIViewController {
+    var driver: IADriver!
 
     @IBOutlet weak var profilePicImageView: UIImageView!
     @IBOutlet weak var profileNameLabel: UILabel!
@@ -31,6 +32,9 @@ class IAScoreMyDriveController: UIViewController {
         super.viewDidLoad()
         self.profilePicImageView.layer.cornerRadius = self.profilePicImageView.bounds.width/2
         self.profilePicImageView.layer.masksToBounds = true
+        self.profilePicImageView.image = driver.avatar
+        
+        self.profileNameLabel.text = driver.fullName
         
         self.durationLabel.animatedText = String(format: "%02d", 45)
         self.distanceLabel.animatedText = String(format: "%02d", 20)
