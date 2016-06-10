@@ -74,24 +74,16 @@ class IAAddDriverController: IABaseController, UITextFieldDelegate, UIImagePicke
         self.dobTextField.shouldDisplayAsDatePicker = true
         self.dobTextField.controller = self
         self.dobTextField.delegate = self
+        self.dobTextField.minimumDate = NSDate().dateByAddingTimeInterval(-100 * 365 * 24 * 60 * 60)
+        self.dobTextField.maximumDate = NSDate()
         
         self.appointedSinceTextField.shouldDisplayAsDropdown = true
         self.appointedSinceTextField.controller = self
-        var anAppointedSinceArray = Array<String>()
-        anAppointedSinceArray.append("None")
-        for anIndex:Int in 1916 ..< 2016 {
-            anAppointedSinceArray.append(String(format: "%d", anIndex + 1))
-        }
-        self.appointedSinceTextField.list = anAppointedSinceArray
+        self.appointedSinceTextField.list = nil
         
         self.drivingExperienceTextField.shouldDisplayAsDropdown = true
         self.drivingExperienceTextField.controller = self
-        var aDrivingExperienceArray = Array<String>()
-        aDrivingExperienceArray.append("Unknown")
-        for anIndex:Int in 0 ..< 40 {
-            aDrivingExperienceArray.append(String(format: "%02d Years", anIndex + 1))
-        }
-        self.drivingExperienceTextField.list = aDrivingExperienceArray
+        self.drivingExperienceTextField.list = nil
         
         self.employeeTypeTextField.shouldDisplayAsDropdown = true
         self.employeeTypeTextField.controller = self
@@ -132,6 +124,29 @@ class IAAddDriverController: IABaseController, UITextFieldDelegate, UIImagePicke
                 self.cityTextField.list = ["Los Angeles", "San Diego", "San Jose", "San Francisco", "Fresno"]
             } else {
                 self.cityTextField.list = nil
+            }
+        } else if textField.isEqual(self.dobTextField) {
+            if self.dobTextField.text?.lengthOfBytesUsingEncoding(NSUTF8StringEncoding) > 0 {
+                let aDateOfBirth = NSDate.dateFromString(self.dobTextField.text!, format: IAConstants.dateFormatAppStandard)
+                
+                var anAppointedSinceArray = Array<String>()
+                anAppointedSinceArray.append("None")
+                if aDateOfBirth.year < NSDate().year {
+                    for anIndex:Int in aDateOfBirth.year ..< NSDate().year {
+                        anAppointedSinceArray.append(String(format: "%d", anIndex + 1))
+                    }
+                }
+                self.appointedSinceTextField.list = anAppointedSinceArray
+                
+                let aMaxExperience = NSDate().year - aDateOfBirth.year
+                var aDrivingExperienceArray = Array<String>()
+                aDrivingExperienceArray.append("Unknown")
+                if 0 < aMaxExperience {
+                    for anIndex:Int in 0 ..< aMaxExperience {
+                        aDrivingExperienceArray.append(String(format: "%02d Years", anIndex + 1))
+                    }
+                }
+                self.drivingExperienceTextField.list = aDrivingExperienceArray
             }
         }
     }
@@ -187,6 +202,8 @@ class IAAddDriverController: IABaseController, UITextFieldDelegate, UIImagePicke
                 throw IAError.Generic(NSError(domain: "com", code: 1, userInfo: [NSLocalizedDescriptionKey:"Please provide license photo."]))
             }
             
+            // Name Validations
+            
             if self.nameTextField.text == nil || self.nameTextField.text?.lengthOfBytesUsingEncoding(NSUTF8StringEncoding) <= 0 {
                 throw IAError.Generic(NSError(domain: "com", code: 1, userInfo: [NSLocalizedDescriptionKey:"Please enter name."]))
             }
@@ -201,6 +218,8 @@ class IAAddDriverController: IABaseController, UITextFieldDelegate, UIImagePicke
                 throw IAError.Generic(NSError(domain: "com", code: 1, userInfo: [NSLocalizedDescriptionKey:"Name exceeds maximum allowed length."]))
             }
             
+            // Phone Number Validations
+            
             if self.phoneNumberTextField.text == nil || self.phoneNumberTextField.text?.lengthOfBytesUsingEncoding(NSUTF8StringEncoding) <= 0 {
                 throw IAError.Generic(NSError(domain: "com", code: 1, userInfo: [NSLocalizedDescriptionKey:"Please enter phone number."]))
             }
@@ -213,6 +232,48 @@ class IAAddDriverController: IABaseController, UITextFieldDelegate, UIImagePicke
             
             if self.phoneNumberTextField.text != nil && self.phoneNumberTextField.text?.lengthOfBytesUsingEncoding(NSUTF8StringEncoding) > 15 {
                 throw IAError.Generic(NSError(domain: "com", code: 1, userInfo: [NSLocalizedDescriptionKey:"Phone number exceeds maximum allowed length."]))
+            }
+            
+            // Email Address Validations
+            
+            if self.emailAddressTextField.text == nil || self.emailAddressTextField.text?.lengthOfBytesUsingEncoding(NSUTF8StringEncoding) <= 0 {
+                throw IAError.Generic(NSError(domain: "com", code: 1, userInfo: [NSLocalizedDescriptionKey:"Please enter email address."]))
+            }
+            
+            if self.emailAddressTextField.text != nil && self.emailAddressTextField.text?.lengthOfBytesUsingEncoding(NSUTF8StringEncoding) > 0 {
+                if try IAUtils.doesRegexMatch("[^A-Za-z0-9@\\-\\._]", subject: self.emailAddressTextField.text!) == true {
+                    throw IAError.Generic(NSError(domain: "com", code: 1, userInfo: [NSLocalizedDescriptionKey:"Email address contains invalid characters."]))
+                }
+            }
+            
+            if self.emailAddressTextField.text != nil && self.emailAddressTextField.text?.lengthOfBytesUsingEncoding(NSUTF8StringEncoding) > 50 {
+                throw IAError.Generic(NSError(domain: "com", code: 1, userInfo: [NSLocalizedDescriptionKey:"Email address exceeds maximum allowed length."]))
+            }
+            
+            // Street Address Validations
+            
+            if self.streetAddressTextField.text == nil || self.streetAddressTextField.text?.lengthOfBytesUsingEncoding(NSUTF8StringEncoding) <= 0 {
+                throw IAError.Generic(NSError(domain: "com", code: 1, userInfo: [NSLocalizedDescriptionKey:"Please enter street address."]))
+            }
+            
+            if self.streetAddressTextField.text != nil && self.streetAddressTextField.text?.lengthOfBytesUsingEncoding(NSUTF8StringEncoding) > 100 {
+                throw IAError.Generic(NSError(domain: "com", code: 1, userInfo: [NSLocalizedDescriptionKey:"Street address exceeds maximum allowed length."]))
+            }
+            
+            // Zip Code Validations
+            
+            if self.zipTextField.text == nil || self.zipTextField.text?.lengthOfBytesUsingEncoding(NSUTF8StringEncoding) <= 0 {
+                throw IAError.Generic(NSError(domain: "com", code: 1, userInfo: [NSLocalizedDescriptionKey:"Please enter zip code."]))
+            }
+            
+            if self.zipTextField.text != nil && self.zipTextField.text?.lengthOfBytesUsingEncoding(NSUTF8StringEncoding) > 0 {
+                if try IAUtils.doesRegexMatch("[^0-9]", subject: self.zipTextField.text!) == true {
+                    throw IAError.Generic(NSError(domain: "com", code: 1, userInfo: [NSLocalizedDescriptionKey:"Zip code contains invalid characters."]))
+                }
+            }
+            
+            if self.zipTextField.text != nil && self.zipTextField.text?.lengthOfBytesUsingEncoding(NSUTF8StringEncoding) != 5 {
+                throw IAError.Generic(NSError(domain: "com", code: 1, userInfo: [NSLocalizedDescriptionKey:"Zip code should be of 5 digits."]))
             }
             
             let aDriver = IADriver()

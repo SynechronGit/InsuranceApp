@@ -39,7 +39,7 @@ extension NSDate {
         get {
             var aReturnVal :Int! = nil
             
-            let aDateComponents :NSDateComponents = NSCalendar.currentCalendar().components(NSCalendarUnit.Day, fromDate: self)
+            let aDateComponents :NSDateComponents = NSCalendar.currentCalendar().components(NSCalendarUnit.Year, fromDate: self)
             aReturnVal = aDateComponents.year
             
             return aReturnVal
