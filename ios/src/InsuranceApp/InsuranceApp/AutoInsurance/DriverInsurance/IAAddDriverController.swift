@@ -382,6 +382,8 @@ class IAAddDriverController: IABaseController, UITextFieldDelegate, UIImagePicke
                 self.appointedSinceTextField.text! = ""
                 self.drivingExperienceTextField.text! = ""
                 self.employeeTypeTextField.text! = ""
+                self.appointedSinceTextField.list = nil
+                self.drivingExperienceTextField.list = nil
                 
                 }))
 
