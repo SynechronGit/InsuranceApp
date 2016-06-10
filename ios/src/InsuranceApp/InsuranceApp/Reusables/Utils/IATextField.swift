@@ -104,7 +104,7 @@ class IATextField: UITextField, IADropdownListControllerDelegate {
     
     
     func displayDropdownList() {
-        if (self.list != nil && self.list.count > 0) || self.shouldDisplayAsDatePicker {
+        if (self.list != nil && self.list.count > 0) || (self.shouldDisplayAsDatePicker != nil && self.shouldDisplayAsDatePicker == true) {
             if self.dropdownListController == nil {
                 self.dropdownListController  = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("IADropdownListControllerID") as! IADropdownListController
             }
