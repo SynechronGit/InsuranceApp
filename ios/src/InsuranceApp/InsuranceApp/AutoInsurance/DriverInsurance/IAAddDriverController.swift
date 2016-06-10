@@ -191,14 +191,28 @@ class IAAddDriverController: IABaseController, UITextFieldDelegate, UIImagePicke
                 throw IAError.Generic(NSError(domain: "com", code: 1, userInfo: [NSLocalizedDescriptionKey:"Please enter name."]))
             }
             
+            if self.nameTextField.text != nil && self.nameTextField.text?.lengthOfBytesUsingEncoding(NSUTF8StringEncoding) > 0 {
+                if try IAUtils.doesRegexMatch("[^A-Za-z ]", subject: self.nameTextField.text!) == true {
+                    throw IAError.Generic(NSError(domain: "com", code: 1, userInfo: [NSLocalizedDescriptionKey:"Name contains invalid characters."]))
+                }
+            }
+            
+            if self.nameTextField.text != nil && self.nameTextField.text?.lengthOfBytesUsingEncoding(NSUTF8StringEncoding) > 25 {
+                throw IAError.Generic(NSError(domain: "com", code: 1, userInfo: [NSLocalizedDescriptionKey:"Name exceeds maximum allowed length."]))
+            }
+            
             if self.phoneNumberTextField.text == nil || self.phoneNumberTextField.text?.lengthOfBytesUsingEncoding(NSUTF8StringEncoding) <= 0 {
                 throw IAError.Generic(NSError(domain: "com", code: 1, userInfo: [NSLocalizedDescriptionKey:"Please enter phone number."]))
             }
             
             if self.phoneNumberTextField.text != nil && self.phoneNumberTextField.text?.lengthOfBytesUsingEncoding(NSUTF8StringEncoding) > 0 {
                 if try IAUtils.doesRegexMatch("[^0-9]", subject: self.phoneNumberTextField.text!) == true {
-                    throw IAError.Generic(NSError(domain: "com", code: 1, userInfo: [NSLocalizedDescriptionKey:"Phone number can contain numbers only."]))
+                    throw IAError.Generic(NSError(domain: "com", code: 1, userInfo: [NSLocalizedDescriptionKey:"Phone number contains invalid characters."]))
                 }
+            }
+            
+            if self.phoneNumberTextField.text != nil && self.phoneNumberTextField.text?.lengthOfBytesUsingEncoding(NSUTF8StringEncoding) > 15 {
+                throw IAError.Generic(NSError(domain: "com", code: 1, userInfo: [NSLocalizedDescriptionKey:"Phone number exceeds maximum allowed length."]))
             }
             
             let aDriver = IADriver()

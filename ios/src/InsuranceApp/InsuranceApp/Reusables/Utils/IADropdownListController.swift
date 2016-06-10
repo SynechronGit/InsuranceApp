@@ -111,6 +111,7 @@ class IADropdownListController: UIViewController {
         let aReturnVal:UITableViewCell = UITableViewCell()
         aReturnVal.backgroundColor = UIColor.clearColor()
         aReturnVal.textLabel?.font = UIFont(name: "Ubuntu", size: 13.0)
+        aReturnVal.textLabel?.textAlignment = NSTextAlignment.Center
         
         if self.list != nil {
             aReturnVal.textLabel?.text = self.list[indexPath.row]
