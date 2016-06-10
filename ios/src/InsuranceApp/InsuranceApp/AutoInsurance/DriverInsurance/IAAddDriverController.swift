@@ -300,6 +300,18 @@ class IAAddDriverController: IABaseController, UITextFieldDelegate, UIImagePicke
                 throw IAError.Generic(NSError(domain: "com", code: 1, userInfo: [NSLocalizedDescriptionKey:"Zip code should be of 5 digits."]))
             }
             
+            // License Number Validations
+            
+            if self.licenseNumberTextField.text != nil && self.licenseNumberTextField.text?.lengthOfBytesUsingEncoding(NSUTF8StringEncoding) > 0 {
+                if try IAUtils.doesRegexMatch("[^A-Za-z0-9]", subject: self.licenseNumberTextField.text!) == true {
+                    throw IAError.Generic(NSError(domain: "com", code: 1, userInfo: [NSLocalizedDescriptionKey:"License number contains invalid characters."]))
+                }
+            }
+            
+            if self.licenseNumberTextField.text != nil && self.licenseNumberTextField.text?.lengthOfBytesUsingEncoding(NSUTF8StringEncoding) > 20 {
+                throw IAError.Generic(NSError(domain: "com", code: 1, userInfo: [NSLocalizedDescriptionKey:"License number should not be greater than 20 characters."]))
+            }
+            
             let aDriver = IADriver()
             aDriver.avatar = self.driverPhotoImageView.image
             aDriver.licensePhoto = self.licensePhotoImageView.image
