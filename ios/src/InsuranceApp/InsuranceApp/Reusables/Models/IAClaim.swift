@@ -10,6 +10,7 @@ import UIKit
 
 class IAClaim: NSObject {
     var code:String!
+    var policyNumber:String!
     var insuranceType:String!
     var insuranceTypeColor:UIColor! {
         get {

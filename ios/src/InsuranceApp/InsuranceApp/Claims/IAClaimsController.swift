@@ -69,6 +69,7 @@ class IAClaimsController: IABaseController {
             aReturnVal.colorStripeView.backgroundColor = aClaim.insuranceTypeColor
             aReturnVal.codeLabel?.text = "#" + aClaim.code
             aReturnVal.codeLabel.textColor = aClaim.insuranceTypeColor
+            aReturnVal.policyNumberLabel.text = aClaim.policyNumber
             aReturnVal.dateOfClaimLabel?.text = aClaim.dateOfClaim
             aReturnVal.insuranceTypeLabel?.text = aClaim.insuranceTypeDisplayText
             

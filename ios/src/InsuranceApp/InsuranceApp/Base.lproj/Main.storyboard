@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="yS7-Mb-0yN">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="yS7-Mb-0yN">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -107,11 +107,13 @@
             <string>Ubuntu-Medium</string>
             <string>Ubuntu-Medium</string>
             <string>Ubuntu-Medium</string>
+            <string>Ubuntu-Medium</string>
         </mutableArray>
         <mutableArray key="Ubuntu-700.ttf">
             <string>Ubuntu-Bold</string>
         </mutableArray>
         <mutableArray key="Ubuntu-regular.ttf">
+            <string>Ubuntu</string>
             <string>Ubuntu</string>
             <string>Ubuntu</string>
             <string>Ubuntu</string>
@@ -6166,6 +6168,7 @@ Insurance</string>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="137" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="HOG-ns-SdU">
                                         <rect key="frame" x="0.0" y="8" width="732" height="853"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <color key="separatorColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                         <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         <prototypes>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="IAPolicyListTableCellViewID" id="nqw-9M-wvN" customClass="IAPolicyListTableCellView" customModule="InsuranceApp" customModuleProvider="target">
@@ -6176,20 +6179,21 @@ Insurance</string>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Insurance Type:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mQx-dO-FjV">
-                                                            <rect key="frame" x="22" y="38" width="126" height="21"/>
+                                                            <rect key="frame" x="22" y="38" width="135" height="21"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="21" id="8lm-2D-07J"/>
-                                                                <constraint firstAttribute="width" constant="126" id="wVK-6X-dmS"/>
+                                                                <constraint firstAttribute="width" constant="135" id="wVK-6X-dmS"/>
                                                             </constraints>
                                                             <fontDescription key="fontDescription" name="Ubuntu-Medium" family="Ubuntu" pointSize="17"/>
                                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Insured Vehicles:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="063-pa-ScO">
-                                                            <rect key="frame" x="22" y="69" width="134" height="21"/>
+                                                            <rect key="frame" x="22" y="69" width="135" height="21"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="135" id="JRU-yl-Ube"/>
                                                                 <constraint firstAttribute="height" constant="21" id="hfs-go-CMA"/>
+                                                                <constraint firstAttribute="width" constant="135" id="wJt-fT-pxy"/>
                                                             </constraints>
                                                             <fontDescription key="fontDescription" name="Ubuntu-Medium" family="Ubuntu" pointSize="17"/>
                                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -6200,18 +6204,18 @@ Insurance</string>
                                                                 </mask>
                                                             </variation>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Coverage:  $" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C70-Wi-JnW">
-                                                            <rect key="frame" x="22" y="100" width="98" height="21"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Coverage:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C70-Wi-JnW">
+                                                            <rect key="frame" x="22" y="100" width="135" height="21"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="21" id="38b-VO-IJS"/>
-                                                                <constraint firstAttribute="width" constant="98" id="frl-uY-Ztx"/>
+                                                                <constraint firstAttribute="width" constant="135" id="frl-uY-Ztx"/>
                                                             </constraints>
                                                             <fontDescription key="fontDescription" name="Ubuntu-Medium" family="Ubuntu" pointSize="17"/>
                                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Premium Due:  $" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ppc-1b-QpX">
-                                                            <rect key="frame" x="237" y="100" width="132" height="21"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Premium Due: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ppc-1b-QpX">
+                                                            <rect key="frame" x="251" y="100" width="132" height="21"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="21" id="Bkq-8L-IBO"/>
                                                                 <constraint firstAttribute="width" constant="132" id="rSg-tB-nVa"/>
@@ -6221,7 +6225,7 @@ Insurance</string>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Insured Drivers:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uee-Sv-vs3">
-                                                            <rect key="frame" x="237" y="69" width="126" height="21"/>
+                                                            <rect key="frame" x="251" y="69" width="126" height="21"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="21" id="fej-Fm-UGS"/>
                                                                 <constraint firstAttribute="width" constant="126" id="yKu-ea-2KP"/>
@@ -6241,9 +6245,9 @@ Insurance</string>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Auto" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gjS-VY-GzJ">
-                                                            <rect key="frame" x="151" y="38" width="300" height="21"/>
+                                                            <rect key="frame" x="160" y="38" width="90" height="21"/>
                                                             <constraints>
-                                                                <constraint firstAttribute="width" constant="300" id="BOS-3I-zM7"/>
+                                                                <constraint firstAttribute="width" constant="90" id="BOS-3I-zM7"/>
                                                                 <constraint firstAttribute="height" constant="21" id="S8L-FC-xV4"/>
                                                             </constraints>
                                                             <fontDescription key="fontDescription" name="Ubuntu" family="Ubuntu" pointSize="17"/>
@@ -6251,7 +6255,7 @@ Insurance</string>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="07" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3wc-n5-g8r">
-                                                            <rect key="frame" x="159" y="69" width="70" height="21"/>
+                                                            <rect key="frame" x="160" y="69" width="70" height="21"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="70" id="Bpa-g9-Zsm"/>
                                                                 <constraint firstAttribute="height" constant="21" id="JYQ-mM-3q3"/>
@@ -6261,17 +6265,17 @@ Insurance</string>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="98900" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zZI-Jz-AOE">
-                                                            <rect key="frame" x="123" y="100" width="100" height="21"/>
+                                                            <rect key="frame" x="160" y="100" width="85" height="21"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="21" id="45e-YY-kc5"/>
-                                                                <constraint firstAttribute="width" constant="100" id="GXl-nf-TsU"/>
+                                                                <constraint firstAttribute="width" constant="85" id="GXl-nf-TsU"/>
                                                             </constraints>
                                                             <fontDescription key="fontDescription" name="Ubuntu" family="Ubuntu" pointSize="17"/>
                                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="07" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="npT-PE-wnI">
-                                                            <rect key="frame" x="366" y="69" width="70" height="21"/>
+                                                            <rect key="frame" x="380" y="69" width="70" height="21"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="21" id="12Q-2m-xxb"/>
                                                                 <constraint firstAttribute="width" constant="70" id="Y2R-6c-Jyh"/>
@@ -6288,7 +6292,7 @@ Insurance</string>
                                                             </constraints>
                                                         </view>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dOQ-3D-PvP">
-                                                            <rect key="frame" x="374" y="100" width="100" height="21"/>
+                                                            <rect key="frame" x="388" y="100" width="100" height="21"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="100" id="Ldb-EA-62S"/>
                                                                 <constraint firstAttribute="height" constant="21" id="i9p-zA-gsu"/>
@@ -6298,7 +6302,7 @@ Insurance</string>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2353" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hCS-5i-S6M">
-                                                            <rect key="frame" x="151" y="5" width="300" height="21"/>
+                                                            <rect key="frame" x="160" y="5" width="300" height="21"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="21" id="mXm-U0-8V6"/>
                                                                 <constraint firstAttribute="width" constant="300" id="zVb-J3-0mU"/>
@@ -6308,19 +6312,42 @@ Insurance</string>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Policy Number:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fHh-u5-NHd">
-                                                            <rect key="frame" x="22" y="5" width="126" height="21"/>
+                                                            <rect key="frame" x="22" y="5" width="135" height="21"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="21" id="kpn-JR-wSy"/>
-                                                                <constraint firstAttribute="width" constant="126" id="nEM-lX-CJe"/>
+                                                                <constraint firstAttribute="width" constant="135" id="nEM-lX-CJe"/>
                                                             </constraints>
                                                             <fontDescription key="fontDescription" name="Ubuntu-Medium" family="Ubuntu" pointSize="17"/>
                                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Insurer:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Ub-Ap-Epe">
+                                                            <rect key="frame" x="251" y="38" width="126" height="21"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="126" id="P5S-LF-47L"/>
+                                                                <constraint firstAttribute="height" constant="21" id="gBN-aZ-gfN"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" name="Ubuntu-Medium" family="Ubuntu" pointSize="17"/>
+                                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="07" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bl7-Hf-zB4">
+                                                            <rect key="frame" x="380" y="38" width="320" height="21"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="21" id="hi5-WO-6wS"/>
+                                                                <constraint firstAttribute="width" constant="320" id="wcR-jF-FNM"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" name="Ubuntu" family="Ubuntu" pointSize="17"/>
+                                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
                                                     </subviews>
                                                     <constraints>
+                                                        <constraint firstItem="Bl7-Hf-zB4" firstAttribute="leading" secondItem="4Ub-Ap-Epe" secondAttribute="trailing" constant="3" id="4XK-Mh-dbH"/>
                                                         <constraint firstItem="3wc-n5-g8r" firstAttribute="leading" secondItem="063-pa-ScO" secondAttribute="trailing" constant="3" id="5uj-jI-Vi0"/>
+                                                        <constraint firstItem="4Ub-Ap-Epe" firstAttribute="centerY" secondItem="Bl7-Hf-zB4" secondAttribute="centerY" id="6G1-rH-Poh"/>
                                                         <constraint firstItem="C70-Wi-JnW" firstAttribute="top" secondItem="063-pa-ScO" secondAttribute="bottom" constant="10" id="6yz-Au-nn1"/>
+                                                        <constraint firstItem="uee-Sv-vs3" firstAttribute="leading" secondItem="4Ub-Ap-Epe" secondAttribute="leading" id="9Ed-6g-BzE"/>
                                                         <constraint firstItem="ppc-1b-QpX" firstAttribute="centerY" secondItem="dOQ-3D-PvP" secondAttribute="centerY" id="Bl0-MW-oj3"/>
                                                         <constraint firstItem="hCS-5i-S6M" firstAttribute="leading" secondItem="fHh-u5-NHd" secondAttribute="trailing" constant="3" id="EYd-xx-aqO"/>
                                                         <constraint firstItem="gjS-VY-GzJ" firstAttribute="leading" secondItem="mQx-dO-FjV" secondAttribute="trailing" constant="3" id="G8e-cl-2uv"/>
@@ -6331,7 +6358,7 @@ Insurance</string>
                                                         <constraint firstItem="mQx-dO-FjV" firstAttribute="centerY" secondItem="gjS-VY-GzJ" secondAttribute="centerY" id="Phw-jx-ldV"/>
                                                         <constraint firstItem="063-pa-ScO" firstAttribute="centerY" secondItem="3wc-n5-g8r" secondAttribute="centerY" id="QSn-xC-4Zf"/>
                                                         <constraint firstItem="C70-Wi-JnW" firstAttribute="centerY" secondItem="ppc-1b-QpX" secondAttribute="centerY" id="R99-sd-Ktp"/>
-                                                        <constraint firstItem="uee-Sv-vs3" firstAttribute="leading" secondItem="5S7-xh-Ffh" secondAttribute="trailing" constant="231" id="RlL-Pv-hVE"/>
+                                                        <constraint firstItem="uee-Sv-vs3" firstAttribute="leading" secondItem="5S7-xh-Ffh" secondAttribute="trailing" constant="245" id="RlL-Pv-hVE"/>
                                                         <constraint firstAttribute="bottom" secondItem="5S7-xh-Ffh" secondAttribute="bottom" id="SZ0-RT-KtQ"/>
                                                         <constraint firstItem="7s9-hR-b4g" firstAttribute="centerY" secondItem="C70-Wi-JnW" secondAttribute="centerY" id="UgB-Cb-h1H"/>
                                                         <constraint firstItem="fHh-u5-NHd" firstAttribute="centerY" secondItem="hCS-5i-S6M" secondAttribute="centerY" id="Uqt-f3-9As"/>
@@ -6339,6 +6366,7 @@ Insurance</string>
                                                         <constraint firstAttribute="trailing" secondItem="7s9-hR-b4g" secondAttribute="trailing" constant="75" id="cm1-uK-70K"/>
                                                         <constraint firstItem="dOQ-3D-PvP" firstAttribute="centerY" secondItem="C70-Wi-JnW" secondAttribute="centerY" id="d6e-XX-SYX"/>
                                                         <constraint firstItem="fHh-u5-NHd" firstAttribute="top" secondItem="Kx4-Yj-eUH" secondAttribute="top" constant="5" id="dOV-P5-8CL"/>
+                                                        <constraint firstItem="4Ub-Ap-Epe" firstAttribute="centerY" secondItem="mQx-dO-FjV" secondAttribute="centerY" id="eVb-1g-qLh"/>
                                                         <constraint firstItem="5S7-xh-Ffh" firstAttribute="top" secondItem="Kx4-Yj-eUH" secondAttribute="top" id="gGI-eT-aYd"/>
                                                         <constraint firstItem="C70-Wi-JnW" firstAttribute="leading" secondItem="mQx-dO-FjV" secondAttribute="leading" id="iWz-cd-XcL"/>
                                                         <constraint firstItem="fHh-u5-NHd" firstAttribute="leading" secondItem="5S7-xh-Ffh" secondAttribute="trailing" constant="16" id="l1y-IC-uyM"/>
@@ -6365,6 +6393,8 @@ Insurance</string>
                                                     <outlet property="insuredDriversCountTitleLabel" destination="uee-Sv-vs3" id="ysy-18-GJV"/>
                                                     <outlet property="insuredItemCountLabel" destination="3wc-n5-g8r" id="3a5-i6-OUb"/>
                                                     <outlet property="insuredItemCountTitleLabel" destination="063-pa-ScO" id="HIn-N5-5db"/>
+                                                    <outlet property="insurerLabel" destination="Bl7-Hf-zB4" id="XQ9-Ll-fBW"/>
+                                                    <outlet property="policyNumberLabel" destination="hCS-5i-S6M" id="Owi-Hh-ntN"/>
                                                     <outlet property="premiumDueLabel" destination="dOQ-3D-PvP" id="0y1-mp-7Q0"/>
                                                 </connections>
                                             </tableViewCell>
@@ -6546,6 +6576,7 @@ Insurance</string>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="258" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="pxE-fn-wJ7">
                                         <rect key="frame" x="0.0" y="8" width="732" height="853"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <color key="separatorColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                         <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         <prototypes>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="IAClaimListTableCellViewID" id="LTa-i8-TNS" customClass="IAClaimListTableCellView" customModule="InsuranceApp" customModuleProvider="target">
@@ -6556,10 +6587,11 @@ Insurance</string>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date Of Claim:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vyk-jC-QHe">
-                                                            <rect key="frame" x="22" y="85" width="115" height="21"/>
+                                                            <rect key="frame" x="22" y="85" width="125" height="21"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="21" id="7w3-G6-h2v"/>
                                                                 <constraint firstAttribute="width" constant="126" id="DL2-T5-a28"/>
+                                                                <constraint firstAttribute="width" constant="125" id="Z9a-Zn-bNg"/>
                                                             </constraints>
                                                             <fontDescription key="fontDescription" name="Ubuntu-Medium" family="Ubuntu" pointSize="17"/>
                                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -6571,9 +6603,10 @@ Insurance</string>
                                                             </variation>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Insurance Type:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Cg-Wg-kX6">
-                                                            <rect key="frame" x="22" y="115" width="123" height="21"/>
+                                                            <rect key="frame" x="22" y="115" width="125" height="21"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="135" id="ODR-Q7-Tpn"/>
+                                                                <constraint firstAttribute="width" constant="125" id="sZU-wI-5Z5"/>
                                                                 <constraint firstAttribute="height" constant="21" id="vw1-Dr-nAc"/>
                                                             </constraints>
                                                             <fontDescription key="fontDescription" name="Ubuntu-Medium" family="Ubuntu" pointSize="17"/>
@@ -6586,9 +6619,10 @@ Insurance</string>
                                                             </variation>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Insured Item:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wFU-SK-p9B">
-                                                            <rect key="frame" x="22" y="145" width="105" height="21"/>
+                                                            <rect key="frame" x="22" y="145" width="125" height="21"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="98" id="8DE-L2-2Ts"/>
+                                                                <constraint firstAttribute="width" constant="125" id="K7v-2p-I4H"/>
                                                                 <constraint firstAttribute="height" constant="21" id="rhs-xQ-rcg"/>
                                                             </constraints>
                                                             <fontDescription key="fontDescription" name="Ubuntu-Medium" family="Ubuntu" pointSize="17"/>
@@ -6618,7 +6652,7 @@ Insurance</string>
                                                             </variation>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="03 - 01 - 2015" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BVL-jN-1Rt">
-                                                            <rect key="frame" x="140" y="85" width="103" height="21"/>
+                                                            <rect key="frame" x="150" y="85" width="103" height="21"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="21" id="Lvm-WL-kcy"/>
                                                                 <constraint firstAttribute="width" constant="300" id="ugv-Sm-xd1"/>
@@ -6633,7 +6667,7 @@ Insurance</string>
                                                             </variation>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Auto" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dqW-C0-I2H">
-                                                            <rect key="frame" x="148" y="115" width="38" height="21"/>
+                                                            <rect key="frame" x="150" y="115" width="38" height="21"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="70" id="4ay-1I-Ydl"/>
                                                                 <constraint firstAttribute="height" constant="21" id="QlN-OO-YlJ"/>
@@ -6648,7 +6682,7 @@ Insurance</string>
                                                             </variation>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mercedez S550" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sc2-E6-E3p">
-                                                            <rect key="frame" x="130" y="145" width="118" height="21"/>
+                                                            <rect key="frame" x="150" y="145" width="118" height="21"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="100" id="PwV-BL-g0b"/>
                                                                 <constraint firstAttribute="height" constant="21" id="Ttw-kV-Cej"/>
@@ -6670,8 +6704,9 @@ Insurance</string>
                                                             </constraints>
                                                         </view>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Insurer:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BY2-Hn-22y">
-                                                            <rect key="frame" x="22" y="175" width="61" height="21"/>
+                                                            <rect key="frame" x="22" y="175" width="125" height="21"/>
                                                             <constraints>
+                                                                <constraint firstAttribute="width" constant="125" id="77z-On-mcA"/>
                                                                 <constraint firstAttribute="width" constant="98" id="9Jz-kP-Ogb"/>
                                                                 <constraint firstAttribute="height" constant="21" id="9ml-xv-dD8"/>
                                                             </constraints>
@@ -6685,7 +6720,7 @@ Insurance</string>
                                                             </variation>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Austin Auto Insurance Pvt. Ltd." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u4M-Rb-quo">
-                                                            <rect key="frame" x="86" y="175" width="237" height="21"/>
+                                                            <rect key="frame" x="150" y="175" width="237" height="21"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="100" id="DH8-Ta-Odc"/>
                                                                 <constraint firstAttribute="height" constant="21" id="gg9-x6-oWB"/>
@@ -6758,10 +6793,11 @@ Insurance</string>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Policy Number:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pcO-x6-kgL">
-                                                            <rect key="frame" x="22" y="56" width="120" height="21"/>
+                                                            <rect key="frame" x="22" y="56" width="125" height="21"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="135" id="Blh-hb-ATX"/>
                                                                 <constraint firstAttribute="height" constant="21" id="WIZ-i8-otI"/>
+                                                                <constraint firstAttribute="width" constant="125" id="X2m-YY-izN"/>
                                                             </constraints>
                                                             <fontDescription key="fontDescription" name="Ubuntu-Medium" family="Ubuntu" pointSize="17"/>
                                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -6773,7 +6809,7 @@ Insurance</string>
                                                             </variation>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2638" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LNn-Ul-tbi">
-                                                            <rect key="frame" x="145" y="56" width="39" height="21"/>
+                                                            <rect key="frame" x="150" y="56" width="39" height="21"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="21" id="07F-IO-sh1"/>
                                                                 <constraint firstAttribute="width" constant="70" id="FBx-LT-xhR"/>
@@ -6844,6 +6880,7 @@ Insurance</string>
                                                     <outlet property="insuredItemTitleLabel" destination="wFU-SK-p9B" id="XAH-KU-6QX"/>
                                                     <outlet property="insuredItemValueLabel" destination="Sc2-E6-E3p" id="rV9-35-adn"/>
                                                     <outlet property="insurerLabel" destination="u4M-Rb-quo" id="7xq-4W-Gs6"/>
+                                                    <outlet property="policyNumberLabel" destination="LNn-Ul-tbi" id="6gn-am-wcR"/>
                                                     <outlet property="statusApprovedLabel" destination="Ghj-hE-muZ" id="aG8-lY-3qn"/>
                                                     <outlet property="statusReportDoneImageView" destination="40z-Ih-USu" id="Rv4-rR-s0g"/>
                                                     <outlet property="statusReportLabel" destination="5Fn-LS-eoH" id="Qpw-QW-Yw9"/>

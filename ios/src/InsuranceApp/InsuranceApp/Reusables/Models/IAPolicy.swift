@@ -9,7 +9,9 @@
 import UIKit
 
 class IAPolicy:NSObject {
+    var policyNumber:String!
     var insuranceType:String!
+    var insurer:String!
     var insuredVehicleCount:Int!
     var insuredDriverCount:Int!
     var insuredHomeItemCount:Int!

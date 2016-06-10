@@ -10,7 +10,9 @@ import UIKit
 
 class IAPolicyListTableCellView: UITableViewCell {
     @IBOutlet weak var colorStripeView: UIView!
+    @IBOutlet weak var policyNumberLabel: UILabel!
     @IBOutlet weak var insuranceTypeLabel: UILabel!
+    @IBOutlet weak var insurerLabel: UILabel!
     @IBOutlet weak var insuredItemCountTitleLabel: UILabel!
     @IBOutlet weak var insuredItemCountLabel: UILabel!
     @IBOutlet weak var insuredDriversCountTitleLabel: UILabel!
