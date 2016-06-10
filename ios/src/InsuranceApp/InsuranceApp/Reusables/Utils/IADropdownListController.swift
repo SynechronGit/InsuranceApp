@@ -17,6 +17,8 @@ protocol IADropdownListControllerDelegate : class {
 class IADropdownListController: UIViewController {
     @IBOutlet weak var dropdownTable :UITableView!
     @IBOutlet weak var datePicker :UIDatePicker!
+    var minimumDate :NSDate!
+    var maximumDate :NSDate!
     @IBOutlet weak var doneButton :UIButton!
     weak var delegate:IADropdownListControllerDelegate?
     
@@ -55,6 +57,8 @@ class IADropdownListController: UIViewController {
         if self.shouldDisplayAsDatePicker != nil && self.shouldDisplayAsDatePicker == true {
             if self.datePicker != nil {
                 self.datePicker.hidden = false
+                self.datePicker.minimumDate = self.minimumDate
+                self.datePicker.maximumDate = self.maximumDate
             }
             if self.doneButton != nil {
                 self.doneButton.hidden = false
