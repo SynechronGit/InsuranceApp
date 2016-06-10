@@ -211,6 +211,25 @@ class IAFileClaimController: IABaseController, UIImagePickerControllerDelegate, 
                 throw IAError.Generic(NSError(domain: "com", code: 1, userInfo: [NSLocalizedDescriptionKey:"Please select insurance type."]))
             }
             
+            
+            if self.estimatedValueTextField.text == nil || self.estimatedValueTextField.text?.lengthOfBytesUsingEncoding(NSUTF8StringEncoding) <= 0 {
+                throw IAError.Generic(NSError(domain: "com", code: 1, userInfo: [NSLocalizedDescriptionKey:"Please enter estimated value."]))
+            }
+            
+            if self.estimatedValueTextField.text != nil && self.estimatedValueTextField.text?.lengthOfBytesUsingEncoding(NSUTF8StringEncoding) > 0 {
+                if try IAUtils.doesRegexMatch("[^0-9]", subject: self.estimatedValueTextField.text!) == true {
+                    throw IAError.Generic(NSError(domain: "com", code: 1, userInfo: [NSLocalizedDescriptionKey:"Estimated value contains invalid characters."]))
+                }
+            }
+            
+            if self.estimatedValueTextField.text != nil && self.estimatedValueTextField.text?.lengthOfBytesUsingEncoding(NSUTF8StringEncoding) > 8 {
+                throw IAError.Generic(NSError(domain: "com", code: 1, userInfo: [NSLocalizedDescriptionKey:"Estimated value exceeds maximum allowed length."]))
+            }
+            
+            if IAUtils.convertStringtoInt(self.estimatedValueTextField.text!) <= 0{
+                throw IAError.Generic(NSError(domain: "com", code: 1, userInfo: [NSLocalizedDescriptionKey:"Estimated value is must be greater than zero"]))
+            }
+            
             IAAppDelegate.currentAppDelegate.displayLoadingOverlay()
             
             let aDateFormatter = NSDateFormatter()

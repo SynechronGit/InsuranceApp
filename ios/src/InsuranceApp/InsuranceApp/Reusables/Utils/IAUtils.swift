@@ -19,5 +19,12 @@ class IAUtils: NSObject {
         
         return aReturnVal
     }
-
+    
+    static func convertStringtoInt(aIntString: String) -> Int {
+        var convertedInt : Int = Int()
+        if let myNumber = NSNumberFormatter().numberFromString(aIntString) {
+             convertedInt = myNumber.integerValue
+        }
+    return convertedInt
+    }
 }
