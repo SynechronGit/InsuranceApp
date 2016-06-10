@@ -211,6 +211,13 @@ class IAFileClaimController: IABaseController, UIImagePickerControllerDelegate, 
                 throw IAError.Generic(NSError(domain: "com", code: 1, userInfo: [NSLocalizedDescriptionKey:"Please select insurance type."]))
             }
             
+            if self.insuredItemTextField.text == nil || self.insuredItemTextField.text?.lengthOfBytesUsingEncoding(NSUTF8StringEncoding) <= 0 {
+                throw IAError.Generic(NSError(domain: "com", code: 1, userInfo: [NSLocalizedDescriptionKey:"Please select insured Item."]))
+            }
+            
+            if self.reasonTextField.text == nil || self.reasonTextField.text?.lengthOfBytesUsingEncoding(NSUTF8StringEncoding) <= 0 {
+                throw IAError.Generic(NSError(domain: "com", code: 1, userInfo: [NSLocalizedDescriptionKey:"Please select reason for claim."]))
+            }
             
             if self.estimatedValueTextField.text == nil || self.estimatedValueTextField.text?.lengthOfBytesUsingEncoding(NSUTF8StringEncoding) <= 0 {
                 throw IAError.Generic(NSError(domain: "com", code: 1, userInfo: [NSLocalizedDescriptionKey:"Please enter estimated value."]))
@@ -228,6 +235,14 @@ class IAFileClaimController: IABaseController, UIImagePickerControllerDelegate, 
             
             if IAUtils.convertStringtoInt(self.estimatedValueTextField.text!) <= 0{
                 throw IAError.Generic(NSError(domain: "com", code: 1, userInfo: [NSLocalizedDescriptionKey:"Estimated value is must be greater than zero"]))
+            }
+            
+            if self.dateOfIncidentTextField.text == nil || self.dateOfIncidentTextField.text?.lengthOfBytesUsingEncoding(NSUTF8StringEncoding) <= 0 {
+                throw IAError.Generic(NSError(domain: "com", code: 1, userInfo: [NSLocalizedDescriptionKey:"Please select date of incident."]))
+            }
+            
+            if self.descriptionTextView.text != nil && self.descriptionTextView.text?.lengthOfBytesUsingEncoding(NSUTF8StringEncoding) > 500 {
+                throw IAError.Generic(NSError(domain: "com", code: 1, userInfo: [NSLocalizedDescriptionKey:"Description exceeds maximum allowed length."]))
             }
             
             IAAppDelegate.currentAppDelegate.displayLoadingOverlay()

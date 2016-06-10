@@ -168,17 +168,12 @@ class IAAddVehicleController: IABaseController, UIImagePickerControllerDelegate,
     func didSelectAddButton() {
         
         do {
-            if self.vehicleNameTextBox.text == nil || self.vehicleNameTextBox.text?.lengthOfBytesUsingEncoding(NSUTF8StringEncoding) <= 0 {
+            if self.vinTextBox.text == nil || self.vinTextBox.text?.lengthOfBytesUsingEncoding(NSUTF8StringEncoding) <= 0 {
                 throw IAError.Generic(NSError(domain: "com", code: 1, userInfo: [NSLocalizedDescriptionKey:"Please enter VIN."]))
             }
             
-            if self.addPhotoFirstImageView.image == nil && self.addPhotoSecondImageView.image == nil && self.addPhotoThirdImageView.image == nil  {
-                throw IAError.Generic(NSError(domain: "com", code: 1, userInfo: [NSLocalizedDescriptionKey:"Please provide vehicle's photo."]))
-            }
-            
-            
-            if self.yearTextBox.text == nil || self.yearTextBox.text?.lengthOfBytesUsingEncoding(NSUTF8StringEncoding) <= 0 {
-                throw IAError.Generic(NSError(domain: "com", code: 1, userInfo: [NSLocalizedDescriptionKey:"Please select year."]))
+            if self.vinTextBox.text != nil && self.vinTextBox.text?.lengthOfBytesUsingEncoding(NSUTF8StringEncoding) > 17 {
+                throw IAError.Generic(NSError(domain: "com", code: 1, userInfo: [NSLocalizedDescriptionKey:"VIN exceeds maximum allowed length(17)."]))
             }
             
             if self.companyTextBox.text == nil || self.companyTextBox.text?.lengthOfBytesUsingEncoding(NSUTF8StringEncoding) <= 0 {
@@ -193,6 +188,11 @@ class IAAddVehicleController: IABaseController, UIImagePickerControllerDelegate,
                 throw IAError.Generic(NSError(domain: "com", code: 1, userInfo: [NSLocalizedDescriptionKey:"Please select body style."]))
             }
             
+            if self.yearTextBox.text == nil || self.yearTextBox.text?.lengthOfBytesUsingEncoding(NSUTF8StringEncoding) <= 0 {
+                throw IAError.Generic(NSError(domain: "com", code: 1, userInfo: [NSLocalizedDescriptionKey:"Please select year."]))
+            }
+            
+            
             if self.vehicleNameTextBox.text == nil || self.vehicleNameTextBox.text?.lengthOfBytesUsingEncoding(NSUTF8StringEncoding) <= 0 {
                 throw IAError.Generic(NSError(domain: "com", code: 1, userInfo: [NSLocalizedDescriptionKey:"Please enter vehicle's name"]))
             }
@@ -203,6 +203,18 @@ class IAAddVehicleController: IABaseController, UIImagePickerControllerDelegate,
                 }
             }
             
+            if self.vehicleNameTextBox.text != nil && self.vehicleNameTextBox.text?.lengthOfBytesUsingEncoding(NSUTF8StringEncoding) > 25 {
+                throw IAError.Generic(NSError(domain: "com", code: 1, userInfo: [NSLocalizedDescriptionKey:"Name exceeds maximum allowed length."]))
+            }
+            
+            if self.descriptionTextView.text != nil && self.descriptionTextView.text?.lengthOfBytesUsingEncoding(NSUTF8StringEncoding) > 500 {
+                throw IAError.Generic(NSError(domain: "com", code: 1, userInfo: [NSLocalizedDescriptionKey:"Description exceeds maximum allowed length."]))
+            }
+            
+            if self.addPhotoFirstImageView.image == nil && self.addPhotoSecondImageView.image == nil && self.addPhotoThirdImageView.image == nil  {
+                throw IAError.Generic(NSError(domain: "com", code: 1, userInfo: [NSLocalizedDescriptionKey:"Please provide vehicle's photo."]))
+            }
+
             
             IAAppDelegate.currentAppDelegate.displayLoadingOverlay()
             let aVehicle = IAVehicle()
