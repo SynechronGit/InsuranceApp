@@ -171,4 +171,16 @@ class IADriverDetailsController: IABaseController {
         return aReturnVal
     }
     
+    /**
+     * Method that will be called while performing segue and will handle setting required data for next controller.
+     */
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "DriverDetailsToScroreMyDriveSeague" {
+            let aDriver = self.driver
+            
+            (segue.destinationViewController as! IAScoreMyDriveController).driver = aDriver
+        }
+    }
+
+    
 }
