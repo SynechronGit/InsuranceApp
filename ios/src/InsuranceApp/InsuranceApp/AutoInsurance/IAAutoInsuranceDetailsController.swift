@@ -233,6 +233,7 @@ class IAAutoInsuranceDetailsController: IABaseController , UICollectionViewDeleg
             let aDriver = self.driverArray[indexPath.item]
             
             cell.driverImage.image = aDriver.avatar
+            cell.driverImage.layer.masksToBounds = true
             
             // Use the outlet in our custom class to get a reference to the UILabel in the cell
             cell.driverNameLabel.text = aDriver.fullName

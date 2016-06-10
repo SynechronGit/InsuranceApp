@@ -50,6 +50,8 @@ class IADriverDetailsController: IABaseController {
         self.drivingLicenseNumberContainerView.layer.cornerRadius = IAConstants.dashboardSubviewCornerRadius
         self.drivingLicenseNumberContainerView.layer.masksToBounds = true
         
+        self.avatarImageView.layer.masksToBounds = true
+        
         let aTapGestureRecognizerScore = UITapGestureRecognizer(target: self, action: #selector(IADriverDetailsController.didSelectScoreMyDrive))
         aTapGestureRecognizerScore.cancelsTouchesInView = false
         self.scoreMyDriveAppContainerView.addGestureRecognizer(aTapGestureRecognizerScore)
