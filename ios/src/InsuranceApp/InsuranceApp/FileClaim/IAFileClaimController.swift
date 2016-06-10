@@ -199,6 +199,16 @@ class IAFileClaimController: IABaseController, UIImagePickerControllerDelegate, 
     }
     
     
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        if textField.isEqual(self.estimatedValueTextField) {
+            self.view.endEditing(true)
+            self.dateOfIncidentTextField.displayDropdownList()
+        }
+        
+        return true
+    }
+    
+    
     // MARK: - Selector Methods
     
     /**
