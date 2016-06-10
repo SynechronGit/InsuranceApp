@@ -174,7 +174,7 @@ class IAAddVehicleController: IABaseController, UIImagePickerControllerDelegate,
             }
             
             if self.vinTextBox.text != nil && self.vinTextBox.text?.lengthOfBytesUsingEncoding(NSUTF8StringEncoding) > 17 {
-                throw IAError.Generic(NSError(domain: "com", code: 1, userInfo: [NSLocalizedDescriptionKey:"VIN exceeds maximum allowed length(17)."]))
+                throw IAError.Generic(NSError(domain: "com", code: 1, userInfo: [NSLocalizedDescriptionKey:"VIN should not be greater than 17 characters."]))
             }
             
             if self.companyTextBox.text == nil || self.companyTextBox.text?.lengthOfBytesUsingEncoding(NSUTF8StringEncoding) <= 0 {
@@ -205,11 +205,11 @@ class IAAddVehicleController: IABaseController, UIImagePickerControllerDelegate,
             }
             
             if self.vehicleNameTextBox.text != nil && self.vehicleNameTextBox.text?.lengthOfBytesUsingEncoding(NSUTF8StringEncoding) > 25 {
-                throw IAError.Generic(NSError(domain: "com", code: 1, userInfo: [NSLocalizedDescriptionKey:"Name exceeds maximum allowed length."]))
+                throw IAError.Generic(NSError(domain: "com", code: 1, userInfo: [NSLocalizedDescriptionKey:"Name should not be greater than 25 digits."]))
             }
             
             if self.descriptionTextView.text != nil && self.descriptionTextView.text?.lengthOfBytesUsingEncoding(NSUTF8StringEncoding) > 500 {
-                throw IAError.Generic(NSError(domain: "com", code: 1, userInfo: [NSLocalizedDescriptionKey:"Description exceeds maximum allowed length."]))
+                throw IAError.Generic(NSError(domain: "com", code: 1, userInfo: [NSLocalizedDescriptionKey:"Description should not be greater than 500 characters."]))
             }
             
             if self.addPhotoFirstImageView.image == nil && self.addPhotoSecondImageView.image == nil && self.addPhotoThirdImageView.image == nil  {

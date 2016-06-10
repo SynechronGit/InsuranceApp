@@ -239,7 +239,7 @@ class IAAddDriverController: IABaseController, UITextFieldDelegate, UIImagePicke
             }
             
             if self.nameTextField.text != nil && self.nameTextField.text?.lengthOfBytesUsingEncoding(NSUTF8StringEncoding) > 25 {
-                throw IAError.Generic(NSError(domain: "com", code: 1, userInfo: [NSLocalizedDescriptionKey:"Name exceeds maximum allowed length."]))
+                throw IAError.Generic(NSError(domain: "com", code: 1, userInfo: [NSLocalizedDescriptionKey:"Name should not be greater than 25 characters."]))
             }
             
             // Phone Number Validations
@@ -255,7 +255,7 @@ class IAAddDriverController: IABaseController, UITextFieldDelegate, UIImagePicke
             }
             
             if self.phoneNumberTextField.text != nil && self.phoneNumberTextField.text?.lengthOfBytesUsingEncoding(NSUTF8StringEncoding) > 15 {
-                throw IAError.Generic(NSError(domain: "com", code: 1, userInfo: [NSLocalizedDescriptionKey:"Phone number exceeds maximum allowed length."]))
+                throw IAError.Generic(NSError(domain: "com", code: 1, userInfo: [NSLocalizedDescriptionKey:"Phone number should not be greater than 15 digits."]))
             }
             
             // Email Address Validations
@@ -271,7 +271,7 @@ class IAAddDriverController: IABaseController, UITextFieldDelegate, UIImagePicke
             }
             
             if self.emailAddressTextField.text != nil && self.emailAddressTextField.text?.lengthOfBytesUsingEncoding(NSUTF8StringEncoding) > 50 {
-                throw IAError.Generic(NSError(domain: "com", code: 1, userInfo: [NSLocalizedDescriptionKey:"Email address exceeds maximum allowed length."]))
+                throw IAError.Generic(NSError(domain: "com", code: 1, userInfo: [NSLocalizedDescriptionKey:"Email address should not be greater than 50 characters."]))
             }
             
             // Street Address Validations
@@ -281,7 +281,7 @@ class IAAddDriverController: IABaseController, UITextFieldDelegate, UIImagePicke
             }
             
             if self.streetAddressTextField.text != nil && self.streetAddressTextField.text?.lengthOfBytesUsingEncoding(NSUTF8StringEncoding) > 100 {
-                throw IAError.Generic(NSError(domain: "com", code: 1, userInfo: [NSLocalizedDescriptionKey:"Street address exceeds maximum allowed length."]))
+                throw IAError.Generic(NSError(domain: "com", code: 1, userInfo: [NSLocalizedDescriptionKey:"Street address should not be greater than 100 characters."]))
             }
             
             // Zip Code Validations

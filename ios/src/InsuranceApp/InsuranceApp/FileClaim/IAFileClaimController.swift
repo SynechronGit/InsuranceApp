@@ -241,7 +241,7 @@ class IAFileClaimController: IABaseController, UIImagePickerControllerDelegate, 
             }
             
             if self.estimatedValueTextField.text != nil && self.estimatedValueTextField.text?.lengthOfBytesUsingEncoding(NSUTF8StringEncoding) > 8 {
-                throw IAError.Generic(NSError(domain: "com", code: 1, userInfo: [NSLocalizedDescriptionKey:"Estimated value exceeds maximum allowed length."]))
+                throw IAError.Generic(NSError(domain: "com", code: 1, userInfo: [NSLocalizedDescriptionKey:"Estimated value should not be greater than 5 digits."]))
             }
             
             if IAUtils.convertStringtoInt(self.estimatedValueTextField.text!) <= 0{
@@ -253,7 +253,7 @@ class IAFileClaimController: IABaseController, UIImagePickerControllerDelegate, 
             }
             
             if self.descriptionTextView.text != nil && self.descriptionTextView.text?.lengthOfBytesUsingEncoding(NSUTF8StringEncoding) > 500 {
-                throw IAError.Generic(NSError(domain: "com", code: 1, userInfo: [NSLocalizedDescriptionKey:"Description exceeds maximum allowed length."]))
+                throw IAError.Generic(NSError(domain: "com", code: 1, userInfo: [NSLocalizedDescriptionKey:"Description should not be greater than 500 characters."]))
             }
             
             IAAppDelegate.currentAppDelegate.displayLoadingOverlay()
