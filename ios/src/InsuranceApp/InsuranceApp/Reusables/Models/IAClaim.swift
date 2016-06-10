@@ -43,7 +43,9 @@ class IAClaim: NSObject {
                     aReturnVal = "Auto"
                 } else if self.insuranceType == "PET" {
                     aReturnVal = "Pet"
-                } 
+                } else if self.insuranceType == "HOME" {
+                    aReturnVal = "Home"
+                }
             }
             
             return aReturnVal
