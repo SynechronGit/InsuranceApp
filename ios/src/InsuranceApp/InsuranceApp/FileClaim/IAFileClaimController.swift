@@ -291,6 +291,7 @@ class IAFileClaimController: IABaseController, UIImagePickerControllerDelegate, 
             aClaim.photoOne = self.addPhotoOneImageView.image
             aClaim.photoTwo = self.addPhotoTwoImageView.image
             aClaim.photoThree = self.addPhotoThreeImageView.image
+            aClaim.policyNumber = "\(arc4random_uniform(8999) + 1000)"
             
             self.dataManager.fileClaim(aClaim)
         } catch IAError.Generic(let pError){
