@@ -119,6 +119,7 @@ class IAFileClaimController: IABaseController, UIImagePickerControllerDelegate, 
         self.dateOfIncidentTextField.shouldDisplayAsDatePicker = true
         self.dateOfIncidentTextField.controller = self
         self.dateOfIncidentTextField.delegate = self
+        self.dateOfIncidentTextField.maximumDate = NSDate()
         
         self.descriptionTextView.layer.cornerRadius = IAConstants.dashboardSubviewCornerRadius
         self.descriptionTextView.layer.borderWidth = 1.0
