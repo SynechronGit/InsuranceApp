@@ -104,7 +104,7 @@ class IAPoliciesController: IABaseController {
             aReturnVal.coverageLabel?.text = String(format: "$%02d", aPolicy.coverage.integerValue)
             aReturnVal.premiumDueLabel?.text = String(format: "$%02d", aPolicy.premiumDue.integerValue)
             
-            aReturnVal.dateLabel.text = "(" + aPolicy.date + ")"
+            aReturnVal.dateLabel.text = aPolicy.date
         }
         
         return aReturnVal
