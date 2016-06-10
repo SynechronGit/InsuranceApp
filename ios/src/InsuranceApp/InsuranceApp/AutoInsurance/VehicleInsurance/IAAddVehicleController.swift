@@ -193,6 +193,16 @@ class IAAddVehicleController: IABaseController, UIImagePickerControllerDelegate,
                 throw IAError.Generic(NSError(domain: "com", code: 1, userInfo: [NSLocalizedDescriptionKey:"Please select body style."]))
             }
             
+            if self.vehicleNameTextBox.text == nil || self.vehicleNameTextBox.text?.lengthOfBytesUsingEncoding(NSUTF8StringEncoding) <= 0 {
+                throw IAError.Generic(NSError(domain: "com", code: 1, userInfo: [NSLocalizedDescriptionKey:"Please enter vehicle's name"]))
+            }
+            
+            if self.vehicleNameTextBox.text != nil && self.vehicleNameTextBox.text?.lengthOfBytesUsingEncoding(NSUTF8StringEncoding) > 0 {
+                if try IAUtils.doesRegexMatch("[^A-Za-z ]", subject: self.vehicleNameTextBox.text!) == true {
+                    throw IAError.Generic(NSError(domain: "com", code: 1, userInfo: [NSLocalizedDescriptionKey:"Name contains invalid characters."]))
+                }
+            }
+            
             
             IAAppDelegate.currentAppDelegate.displayLoadingOverlay()
             let aVehicle = IAVehicle()
