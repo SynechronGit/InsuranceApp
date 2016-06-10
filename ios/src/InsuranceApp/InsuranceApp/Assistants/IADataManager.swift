@@ -504,7 +504,7 @@ class IADataManager: NSObject {
                     aPhotoThreeData = UIImagePNGRepresentation(aClaim.photoThree)
                 }
                 
-                let anSqlQuery :String = "INSERT INTO claims (code, date_of_claim, insurance_type, insured_item_name, insurer, status, incident_date, incident_type, value, photo1, photo2, photo3) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)"
+                let anSqlQuery :String = "INSERT INTO claims (code, date_of_claim, insurance_type, insured_item_name, insurer, status, incident_date, incident_type, value, photo1, photo2, photo3, policy_number) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)"
                 var aValueArray = Array<AnyObject>()
                 aValueArray.append(aClaim.code != nil ? aClaim.code : NSNull())
                 aValueArray.append(aClaim.dateOfClaim != nil ? aClaim.dateOfClaim : NSNull())
@@ -518,6 +518,7 @@ class IADataManager: NSObject {
                 aValueArray.append(aPhotoOneData != nil ? aPhotoOneData : NSNull())
                 aValueArray.append(aPhotoTwoData != nil ? aPhotoTwoData : NSNull())
                 aValueArray.append(aPhotoThreeData != nil ? aPhotoThreeData : NSNull())
+                aValueArray.append(aClaim.policyNumber != nil ? aClaim.policyNumber : NSNull())
                 try self.executeQuery(anSqlQuery, values: aValueArray)
                 aDataManagerResponse.result = aClaim
             } else if self.requestType == IARequestType.ListPremiums {
