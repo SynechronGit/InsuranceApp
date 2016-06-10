@@ -112,6 +112,11 @@ class IATextField: UITextField, IADropdownListControllerDelegate {
             self.dropdownListController.shouldDisplayAsDatePicker = self.shouldDisplayAsDatePicker
             self.dropdownListController.minimumDate = self.minimumDate
             self.dropdownListController.maximumDate = self.maximumDate
+            if self.text?.lengthOfBytesUsingEncoding(NSUTF8StringEncoding) > 0 {
+                self.dropdownListController.date = NSDate.dateFromString(self.text!, format: IAConstants.dateFormatAppStandard)
+            } else {
+                self.dropdownListController.date = nil
+            }
             self.dropdownListController.list = self.list
             if self.list != nil {
                 var aHeight :CGFloat = CGFloat(self.list.count) * 36.0

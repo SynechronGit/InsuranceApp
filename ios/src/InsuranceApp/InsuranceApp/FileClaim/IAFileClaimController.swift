@@ -241,7 +241,7 @@ class IAFileClaimController: IABaseController, UIImagePickerControllerDelegate, 
             }
             
             if self.estimatedValueTextField.text != nil && self.estimatedValueTextField.text?.lengthOfBytesUsingEncoding(NSUTF8StringEncoding) > 8 {
-                throw IAError.Generic(NSError(domain: "com", code: 1, userInfo: [NSLocalizedDescriptionKey:"Estimated value should not be greater than 5 digits."]))
+                throw IAError.Generic(NSError(domain: "com", code: 1, userInfo: [NSLocalizedDescriptionKey:"Estimated value should not be greater than 8 digits."]))
             }
             
             if IAUtils.convertStringtoInt(self.estimatedValueTextField.text!) <= 0{
