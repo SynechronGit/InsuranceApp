@@ -370,7 +370,7 @@ class IADataManager: NSObject {
                     aDataManagerResponse.result = aDriverArray
                 }
             } else if self.requestType == IARequestType.ListPolicies {
-                let anSqlQuery :String = "SELECT insurance_type, insured_vehicle_count, insured_driver_count, insured_home_item_count, insured_boat_count, insured_pet_count, coverage, premium_due, date FROM policies"
+                let anSqlQuery :String = "SELECT insurance_type, insured_vehicle_count, insured_driver_count, insured_home_item_count, insured_boat_count, insured_pet_count, coverage, premium_due, date, policy_number, insurer FROM policies"
                 let anSqlResult = try self.executeQuery(anSqlQuery, values: nil)
                 if anSqlResult != nil && anSqlResult.count > 0 {
                     var aPolicyArray :Array<IAPolicy>! = Array<IAPolicy>()
@@ -393,6 +393,12 @@ class IADataManager: NSObject {
                         }
                         if aDBPolicyDict["insured_pet_count"] is String {
                             aDBPolicy.insuredPetCount = Int(aDBPolicyDict["insured_pet_count"] as! String)
+                        }
+                        if aDBPolicyDict["policy_number"] is String {
+                            aDBPolicy.policyNumber = aDBPolicyDict["policy_number"] as! String
+                        }
+                        if aDBPolicyDict["insurer"] is String {
+                            aDBPolicy.insurer = aDBPolicyDict["insurer"] as! String
                         }
                         
                         let aFormatter = NSNumberFormatter()
@@ -417,7 +423,7 @@ class IADataManager: NSObject {
                 }
             } else if self.requestType == IARequestType.ListClaims {
                 
-                let anSqlQuery :String = "SELECT code, date_of_claim, insurance_type, insured_item_name, insurer, status, incident_date, incident_type, value, photo1, photo2, photo3 FROM claims"
+                let anSqlQuery :String = "SELECT code, date_of_claim, insurance_type, insured_item_name, insurer, status, incident_date, incident_type, value, photo1, photo2, photo3, policy_number FROM claims"
                 let anSqlResult = try self.executeQuery(anSqlQuery, values: nil)
                 if anSqlResult != nil && anSqlResult.count > 0 {
                     var aClaimArray :Array<IAClaim>! = Array<IAClaim>()
@@ -471,7 +477,9 @@ class IADataManager: NSObject {
                         if aDBClaimDict["photo3"] is NSData {
                             aDBClaim.photoThree = UIImage(data: aDBClaimDict["photo3"] as! NSData)
                         }
-                        
+                        if aDBClaimDict["policy_number"] is String {
+                            aDBClaim.policyNumber = aDBClaimDict["policy_number"] as! String
+                        }
                         
                         aClaimArray.append(aDBClaim)
                     }

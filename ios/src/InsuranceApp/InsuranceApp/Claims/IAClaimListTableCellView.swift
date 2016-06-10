@@ -11,6 +11,7 @@ import UIKit
 class IAClaimListTableCellView: UITableViewCell {
     @IBOutlet weak var colorStripeView: UIView!
     @IBOutlet weak var codeLabel: UILabel!
+    @IBOutlet weak var policyNumberLabel: UILabel!
     @IBOutlet weak var dateOfClaimLabel: UILabel!
     @IBOutlet weak var insuranceTypeLabel: UILabel!
     @IBOutlet weak var insuredItemTitleLabel: UILabel!

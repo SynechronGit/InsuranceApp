@@ -68,7 +68,11 @@ class IAPoliciesController: IABaseController {
         if self.policyArray != nil {
             let aPolicy = self.policyArray[indexPath.row]
             
+            aReturnVal.policyNumberLabel.text = aPolicy.policyNumber
+            
             aReturnVal.insuranceTypeLabel?.text = aPolicy.insuranceType
+            
+            aReturnVal.insurerLabel.text = aPolicy.insurer
             
             if aPolicy.insuranceType == "Auto" {
                 aReturnVal.colorStripeView.backgroundColor = UIColor(red: 165.0/255.0, green: 103.0/255.0, blue: 187.0/255.0, alpha: 1.0)
@@ -97,8 +101,8 @@ class IAPoliciesController: IABaseController {
                 aReturnVal.insuredDriversCountLabel.hidden = true
             }
             
-            aReturnVal.coverageLabel?.text = String(format: "%02d", aPolicy.coverage.integerValue)
-            aReturnVal.premiumDueLabel?.text = String(format: "%02d", aPolicy.premiumDue.integerValue)
+            aReturnVal.coverageLabel?.text = String(format: "$%02d", aPolicy.coverage.integerValue)
+            aReturnVal.premiumDueLabel?.text = String(format: "$%02d", aPolicy.premiumDue.integerValue)
             
             aReturnVal.dateLabel.text = "(" + aPolicy.date + ")"
         }
