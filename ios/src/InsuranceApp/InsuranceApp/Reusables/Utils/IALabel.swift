@@ -11,7 +11,7 @@ import UIKit
 class IALabel: LTMorphingLabel {
     var animatedText: String! {
         set {
-            self.morphingEffect = LTMorphingEffect.Evaporate
+            self.morphingEffect = LTMorphingEffect.evaporate
             self.morphingDuration = 1.5
             self.text = newValue
         }

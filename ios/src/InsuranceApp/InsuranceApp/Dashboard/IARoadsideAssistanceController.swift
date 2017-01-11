@@ -48,8 +48,8 @@ class IARoadsideAssistanceController: UIViewController {
     
     
     
-    @IBAction func didSelectCancelButton(sender: AnyObject) {
-         self.dismissViewControllerAnimated(true, completion: nil)
+    @IBAction func didSelectCancelButton(_ sender: AnyObject) {
+         self.dismiss(animated: true, completion: nil)
         
     }
     /*

@@ -7,6 +7,41 @@
 //
 
 import UIKit
+// FIXME: comparison operators with optionals were removed from the Swift Standard Libary.
+// Consider refactoring the code to use the non-optional operators.
+fileprivate func < <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
+  switch (lhs, rhs) {
+  case let (l?, r?):
+    return l < r
+  case (nil, _?):
+    return true
+  default:
+    return false
+  }
+}
+
+// FIXME: comparison operators with optionals were removed from the Swift Standard Libary.
+// Consider refactoring the code to use the non-optional operators.
+fileprivate func <= <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
+  switch (lhs, rhs) {
+  case let (l?, r?):
+    return l <= r
+  default:
+    return !(rhs < lhs)
+  }
+}
+
+// FIXME: comparison operators with optionals were removed from the Swift Standard Libary.
+// Consider refactoring the code to use the non-optional operators.
+fileprivate func > <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
+  switch (lhs, rhs) {
+  case let (l?, r?):
+    return l > r
+  default:
+    return rhs < lhs
+  }
+}
+
 
 class IAFileClaimController: IABaseController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate, IADropdownListControllerDelegate {
     @IBOutlet weak var fileClaimContainerView: UIView!
@@ -74,14 +109,14 @@ class IAFileClaimController: IABaseController, UIImagePickerControllerDelegate, 
         aTapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(IAFileClaimController.didSelectAddPhotoTwoContainerView))
         aTapGestureRecognizer.cancelsTouchesInView = false
         self.addPhotoTwoContainerView.addGestureRecognizer(aTapGestureRecognizer)
-        self.addPhotoTwoContainerView.hidden = true
+        self.addPhotoTwoContainerView.isHidden = true
         
         self.addPhotoThreeContainerView.layer.cornerRadius = IAConstants.dashboardSubviewCornerRadius
         self.addPhotoThreeContainerView.layer.masksToBounds = true
         aTapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(IAFileClaimController.didSelectAddPhotoThreeContainerView))
         aTapGestureRecognizer.cancelsTouchesInView = false
         self.addPhotoThreeContainerView.addGestureRecognizer(aTapGestureRecognizer)
-        self.addPhotoThreeContainerView.hidden = true
+        self.addPhotoThreeContainerView.isHidden = true
         
         self.scanDocumentOneContainerView.layer.cornerRadius = IAConstants.dashboardSubviewCornerRadius
         self.scanDocumentOneContainerView.layer.masksToBounds = true
@@ -94,14 +129,14 @@ class IAFileClaimController: IABaseController, UIImagePickerControllerDelegate, 
         aTapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(IAFileClaimController.didSelectScanDocumentTwoContainerView))
         aTapGestureRecognizer.cancelsTouchesInView = false
         self.scanDocumentTwoContainerView.addGestureRecognizer(aTapGestureRecognizer)
-        self.scanDocumentTwoContainerView.hidden = true
+        self.scanDocumentTwoContainerView.isHidden = true
         
         self.scanDocumentThreeContainerView.layer.cornerRadius = IAConstants.dashboardSubviewCornerRadius
         self.scanDocumentThreeContainerView.layer.masksToBounds = true
         aTapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(IAFileClaimController.didSelectScanDocumentThreeContainerView))
         aTapGestureRecognizer.cancelsTouchesInView = false
         self.scanDocumentThreeContainerView.addGestureRecognizer(aTapGestureRecognizer)
-        self.scanDocumentThreeContainerView.hidden = true
+        self.scanDocumentThreeContainerView.isHidden = true
         
         self.insuranceTypeTextField.shouldDisplayAsDropdown = true
         self.insuranceTypeTextField.delegate = self
@@ -119,11 +154,11 @@ class IAFileClaimController: IABaseController, UIImagePickerControllerDelegate, 
         self.dateOfIncidentTextField.shouldDisplayAsDatePicker = true
         self.dateOfIncidentTextField.controller = self
         self.dateOfIncidentTextField.delegate = self
-        self.dateOfIncidentTextField.maximumDate = NSDate()
+        self.dateOfIncidentTextField.maximumDate = Date()
         
         self.descriptionTextView.layer.cornerRadius = IAConstants.dashboardSubviewCornerRadius
         self.descriptionTextView.layer.borderWidth = 1.0
-        self.descriptionTextView.layer.borderColor = UIColor.lightGrayColor().CGColor
+        self.descriptionTextView.layer.borderColor = UIColor.lightGray.cgColor
         
         self.submitContainerView.layer.cornerRadius = IAConstants.dashboardSubviewCornerRadius
         self.submitContainerView.layer.masksToBounds = true
@@ -144,36 +179,36 @@ class IAFileClaimController: IABaseController, UIImagePickerControllerDelegate, 
         self.descriptionTextView.text = nil
         
         self.addPhotoOneImageView.image = nil
-        self.addPhotoOneIconImageView.hidden = false
-        self.addPhotoOneLabel.hidden = false
+        self.addPhotoOneIconImageView.isHidden = false
+        self.addPhotoOneLabel.isHidden = false
         
         self.addPhotoTwoImageView.image = nil
-        self.addPhotoTwoIconImageView.hidden = false
-        self.addPhotoTwoLabel.hidden = false
-        self.addPhotoTwoContainerView.hidden = true
+        self.addPhotoTwoIconImageView.isHidden = false
+        self.addPhotoTwoLabel.isHidden = false
+        self.addPhotoTwoContainerView.isHidden = true
         
         self.addPhotoThreeImageView.image = nil
-        self.addPhotoThreeIconImageView.hidden = false
-        self.addPhotoThreeLabel.hidden = false
-        self.addPhotoThreeContainerView.hidden = true
+        self.addPhotoThreeIconImageView.isHidden = false
+        self.addPhotoThreeLabel.isHidden = false
+        self.addPhotoThreeContainerView.isHidden = true
         
         self.scanDocumentOneImageView.image = nil
-        self.scanDocumentOneIconImageView.hidden = false
-        self.scanDocumentOneLabel.hidden = false
+        self.scanDocumentOneIconImageView.isHidden = false
+        self.scanDocumentOneLabel.isHidden = false
         
         self.scanDocumentTwoImageView.image = nil
-        self.scanDocumentTwoIconImageView.hidden = false
-        self.scanDocumentTwoLabel.hidden = false
-        self.scanDocumentTwoContainerView.hidden = true
+        self.scanDocumentTwoIconImageView.isHidden = false
+        self.scanDocumentTwoLabel.isHidden = false
+        self.scanDocumentTwoContainerView.isHidden = true
         
         self.scanDocumentThreeImageView.image = nil
-        self.scanDocumentThreeIconImageView.hidden = false
-        self.scanDocumentThreeLabel.hidden = false
-        self.scanDocumentThreeContainerView.hidden = true
+        self.scanDocumentThreeIconImageView.isHidden = false
+        self.scanDocumentThreeLabel.isHidden = false
+        self.scanDocumentThreeContainerView.isHidden = true
     }
     
     
-    func textFieldDidEndEditing(textField: UITextField) {
+    func textFieldDidEndEditing(_ textField: UITextField) {
         if textField.isEqual(self.insuranceTypeTextField) {
             self.insuredItemTextField.text = nil
             self.reasonTextField.text = nil
@@ -201,7 +236,7 @@ class IAFileClaimController: IABaseController, UIImagePickerControllerDelegate, 
     }
     
     
-    func textFieldShouldReturn(textField: UITextField) -> Bool {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         if textField.isEqual(self.estimatedValueTextField) {
             self.view.endEditing(true)
             self.dateOfIncidentTextField.displayDropdownList()
@@ -219,48 +254,48 @@ class IAFileClaimController: IABaseController, UIImagePickerControllerDelegate, 
      */
     func didSelectSubmitContainerView() {
         do {
-            if self.insuranceTypeTextField.text == nil || self.insuranceTypeTextField.text?.lengthOfBytesUsingEncoding(NSUTF8StringEncoding) <= 0 {
-                throw IAError.Generic(NSError(domain: "com", code: 1, userInfo: [NSLocalizedDescriptionKey:"Please select insurance type."]))
+            if self.insuranceTypeTextField.text == nil || self.insuranceTypeTextField.text?.lengthOfBytes(using: String.Encoding.utf8) <= 0 {
+                throw IAError.generic(NSError(domain: "com", code: 1, userInfo: [NSLocalizedDescriptionKey:"Please select insurance type."]))
             }
             
-            if self.insuredItemTextField.text == nil || self.insuredItemTextField.text?.lengthOfBytesUsingEncoding(NSUTF8StringEncoding) <= 0 {
-                throw IAError.Generic(NSError(domain: "com", code: 1, userInfo: [NSLocalizedDescriptionKey:"Please select insured Item."]))
+            if self.insuredItemTextField.text == nil || self.insuredItemTextField.text?.lengthOfBytes(using: String.Encoding.utf8) <= 0 {
+                throw IAError.generic(NSError(domain: "com", code: 1, userInfo: [NSLocalizedDescriptionKey:"Please select insured Item."]))
             }
             
-            if self.reasonTextField.text == nil || self.reasonTextField.text?.lengthOfBytesUsingEncoding(NSUTF8StringEncoding) <= 0 {
-                throw IAError.Generic(NSError(domain: "com", code: 1, userInfo: [NSLocalizedDescriptionKey:"Please select reason for claim."]))
+            if self.reasonTextField.text == nil || self.reasonTextField.text?.lengthOfBytes(using: String.Encoding.utf8) <= 0 {
+                throw IAError.generic(NSError(domain: "com", code: 1, userInfo: [NSLocalizedDescriptionKey:"Please select reason for claim."]))
             }
             
-            if self.estimatedValueTextField.text == nil || self.estimatedValueTextField.text?.lengthOfBytesUsingEncoding(NSUTF8StringEncoding) <= 0 {
-                throw IAError.Generic(NSError(domain: "com", code: 1, userInfo: [NSLocalizedDescriptionKey:"Please enter estimated value."]))
+            if self.estimatedValueTextField.text == nil || self.estimatedValueTextField.text?.lengthOfBytes(using: String.Encoding.utf8) <= 0 {
+                throw IAError.generic(NSError(domain: "com", code: 1, userInfo: [NSLocalizedDescriptionKey:"Please enter estimated value."]))
             }
             
-            if self.estimatedValueTextField.text != nil && self.estimatedValueTextField.text?.lengthOfBytesUsingEncoding(NSUTF8StringEncoding) > 0 {
+            if self.estimatedValueTextField.text != nil && self.estimatedValueTextField.text?.lengthOfBytes(using: String.Encoding.utf8) > 0 {
                 if try IAUtils.doesRegexMatch("[^0-9]", subject: self.estimatedValueTextField.text!) == true {
-                    throw IAError.Generic(NSError(domain: "com", code: 1, userInfo: [NSLocalizedDescriptionKey:"Estimated value contains invalid characters."]))
+                    throw IAError.generic(NSError(domain: "com", code: 1, userInfo: [NSLocalizedDescriptionKey:"Estimated value contains invalid characters."]))
                 }
             }
             
-            if self.estimatedValueTextField.text != nil && self.estimatedValueTextField.text?.lengthOfBytesUsingEncoding(NSUTF8StringEncoding) > 8 {
-                throw IAError.Generic(NSError(domain: "com", code: 1, userInfo: [NSLocalizedDescriptionKey:"Estimated value should not be greater than 8 digits."]))
+            if self.estimatedValueTextField.text != nil && self.estimatedValueTextField.text?.lengthOfBytes(using: String.Encoding.utf8) > 8 {
+                throw IAError.generic(NSError(domain: "com", code: 1, userInfo: [NSLocalizedDescriptionKey:"Estimated value should not be greater than 8 digits."]))
             }
             
             if IAUtils.convertStringtoInt(self.estimatedValueTextField.text!) <= 0{
-                throw IAError.Generic(NSError(domain: "com", code: 1, userInfo: [NSLocalizedDescriptionKey:"Estimated value is must be greater than zero"]))
+                throw IAError.generic(NSError(domain: "com", code: 1, userInfo: [NSLocalizedDescriptionKey:"Estimated value is must be greater than zero"]))
             }
             
-            if self.dateOfIncidentTextField.text == nil || self.dateOfIncidentTextField.text?.lengthOfBytesUsingEncoding(NSUTF8StringEncoding) <= 0 {
-                throw IAError.Generic(NSError(domain: "com", code: 1, userInfo: [NSLocalizedDescriptionKey:"Please select date of incident."]))
+            if self.dateOfIncidentTextField.text == nil || self.dateOfIncidentTextField.text?.lengthOfBytes(using: String.Encoding.utf8) <= 0 {
+                throw IAError.generic(NSError(domain: "com", code: 1, userInfo: [NSLocalizedDescriptionKey:"Please select date of incident."]))
             }
             
-            if self.descriptionTextView.text != nil && self.descriptionTextView.text?.lengthOfBytesUsingEncoding(NSUTF8StringEncoding) > 500 {
-                throw IAError.Generic(NSError(domain: "com", code: 1, userInfo: [NSLocalizedDescriptionKey:"Description should not be greater than 500 characters."]))
+            if self.descriptionTextView.text != nil && self.descriptionTextView.text?.lengthOfBytes(using: String.Encoding.utf8) > 500 {
+                throw IAError.generic(NSError(domain: "com", code: 1, userInfo: [NSLocalizedDescriptionKey:"Description should not be greater than 500 characters."]))
             }
             
             IAAppDelegate.currentAppDelegate.displayLoadingOverlay()
             
-            let aDateFormatter = NSDateFormatter()
-            aDateFormatter.locale = NSLocale(localeIdentifier: "US_en")
+            let aDateFormatter = DateFormatter()
+            aDateFormatter.locale = Locale(identifier: "US_en")
             aDateFormatter.dateFormat = "MM - dd - yyyy"
             
             let aClaim = IAClaim()
@@ -283,7 +318,7 @@ class IAFileClaimController: IABaseController, UIImagePickerControllerDelegate, 
                 aClaim.insurer = "Austin Insurance Pvt. Ltd."
             }
             
-            aClaim.dateOfClaim = aDateFormatter.stringFromDate(NSDate())
+            aClaim.dateOfClaim = aDateFormatter.string(from: Date())
             aClaim.insuredItemName = self.insuredItemTextField.text
             aClaim.status = IAClaimStatus.Report.rawValue
             aClaim.dateOfIncident = self.dateOfIncidentTextField.text!
@@ -295,10 +330,10 @@ class IAFileClaimController: IABaseController, UIImagePickerControllerDelegate, 
             aClaim.policyNumber = "\(arc4random_uniform(8999) + 1000)"
             
             self.dataManager.fileClaim(aClaim)
-        } catch IAError.Generic(let pError){
-            self.displayMessage(message: pError.localizedDescription, type: IAMessageType.Error)
+        } catch IAError.generic(let pError){
+            self.displayMessage(message: pError.localizedDescription, type: IAMessageType.error)
         } catch {
-            self.displayMessage(message: "File claim error.", type: IAMessageType.Error)
+            self.displayMessage(message: "File claim error.", type: IAMessageType.error)
         }
     }
     
@@ -346,85 +381,85 @@ class IAFileClaimController: IABaseController, UIImagePickerControllerDelegate, 
     
     func displayImagePicker() {
         if self.dropdownListController == nil {
-            self.dropdownListController  = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("IADropdownListControllerID") as! IADropdownListController
+            self.dropdownListController  = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "IADropdownListControllerID") as! IADropdownListController
         }
         self.dropdownListController.delegate = self
         self.dropdownListController.list = ["Camera", "Photo Album"]
-        self.dropdownListController.preferredContentSize = CGSizeMake(200.0, 80.0)
-        self.dropdownListController.modalPresentationStyle = .Popover
-        self.dropdownListController.popoverPresentationController?.permittedArrowDirections = UIPopoverArrowDirection.Any
+        self.dropdownListController.preferredContentSize = CGSize(width: 200.0, height: 80.0)
+        self.dropdownListController.modalPresentationStyle = .popover
+        self.dropdownListController.popoverPresentationController?.permittedArrowDirections = UIPopoverArrowDirection.any
         self.dropdownListController.popoverPresentationController?.sourceView = self.imagePickerDestinationImageView
         self.dropdownListController.popoverPresentationController?.sourceRect = self.imagePickerDestinationImageView.bounds
-        self.presentViewController(self.dropdownListController, animated: true, completion: nil)
+        self.present(self.dropdownListController, animated: true, completion: nil)
     }
     
     
-    func dropdownListController(pDropdownListController:IADropdownListController, didSelectValue pValue:String) {
-        pDropdownListController.dismissViewControllerAnimated(false, completion: nil)
+    func dropdownListController(_ pDropdownListController:IADropdownListController, didSelectValue pValue:String) {
+        pDropdownListController.dismiss(animated: false, completion: nil)
         
         if self.imagePickerController == nil {
             self.imagePickerController = UIImagePickerController()
         }
         self.imagePickerController.allowsEditing = false
         self.imagePickerController.delegate = self
-        self.imagePickerController.modalPresentationStyle = UIModalPresentationStyle.FormSheet
+        self.imagePickerController.modalPresentationStyle = UIModalPresentationStyle.formSheet
         
         #if (arch(i386) || arch(x86_64)) && os(iOS)
-            self.imagePickerController.sourceType = .PhotoLibrary
+            self.imagePickerController.sourceType = .photoLibrary
         #else
             if pValue == "Camera" {
-                self.imagePickerController.sourceType = .Camera
+                self.imagePickerController.sourceType = .camera
             } else if pValue == "Photo Album" {
-                self.imagePickerController.sourceType = .PhotoLibrary
+                self.imagePickerController.sourceType = .photoLibrary
             }
         #endif
         
-        self.presentViewController(self.imagePickerController, animated: true, completion: nil)
+        self.present(self.imagePickerController, animated: true, completion: nil)
     }
     
     
     // MARK: - UIImagePickerControllerDelegate Methods
     
-    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         if var aPickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
             aPickedImage = IAUtils.fixImageOrientation(aPickedImage)
             
             if self.imagePickerDestinationImageView != nil && self.imagePickerDestinationImageView.isEqual(self.addPhotoOneImageView)  {
                 self.addPhotoOneImageView.image = aPickedImage
-                self.addPhotoOneIconImageView.hidden = true
-                self.addPhotoOneLabel.hidden = true
-                self.addPhotoTwoContainerView.hidden = false
+                self.addPhotoOneIconImageView.isHidden = true
+                self.addPhotoOneLabel.isHidden = true
+                self.addPhotoTwoContainerView.isHidden = false
             } else if self.imagePickerDestinationImageView != nil && self.imagePickerDestinationImageView.isEqual(self.addPhotoTwoImageView)  {
                 self.addPhotoTwoImageView.image = aPickedImage
-                self.addPhotoTwoIconImageView.hidden = true
-                self.addPhotoTwoLabel.hidden = true
-                self.addPhotoThreeContainerView.hidden = false
+                self.addPhotoTwoIconImageView.isHidden = true
+                self.addPhotoTwoLabel.isHidden = true
+                self.addPhotoThreeContainerView.isHidden = false
             } else if self.imagePickerDestinationImageView != nil && self.imagePickerDestinationImageView.isEqual(self.addPhotoThreeImageView)  {
                 self.addPhotoThreeImageView.image = aPickedImage
-                self.addPhotoThreeIconImageView.hidden = true
-                self.addPhotoThreeLabel.hidden = true
+                self.addPhotoThreeIconImageView.isHidden = true
+                self.addPhotoThreeLabel.isHidden = true
             } else if self.imagePickerDestinationImageView != nil && self.imagePickerDestinationImageView.isEqual(self.scanDocumentOneImageView) {
                 self.scanDocumentOneImageView.image = aPickedImage
-                self.scanDocumentOneIconImageView.hidden = true
-                self.scanDocumentOneLabel.hidden = true
-                self.scanDocumentTwoContainerView.hidden = false
+                self.scanDocumentOneIconImageView.isHidden = true
+                self.scanDocumentOneLabel.isHidden = true
+                self.scanDocumentTwoContainerView.isHidden = false
             } else if self.imagePickerDestinationImageView != nil && self.imagePickerDestinationImageView.isEqual(self.scanDocumentTwoImageView) {
                 self.scanDocumentTwoImageView.image = aPickedImage
-                self.scanDocumentTwoIconImageView.hidden = true
-                self.scanDocumentTwoLabel.hidden = true
-                self.scanDocumentThreeContainerView.hidden = false
+                self.scanDocumentTwoIconImageView.isHidden = true
+                self.scanDocumentTwoLabel.isHidden = true
+                self.scanDocumentThreeContainerView.isHidden = false
             } else if self.imagePickerDestinationImageView != nil && self.imagePickerDestinationImageView.isEqual(self.scanDocumentThreeImageView) {
                 self.scanDocumentThreeImageView.image = aPickedImage
-                self.scanDocumentThreeIconImageView.hidden = true
-                self.scanDocumentThreeLabel.hidden = true
+                self.scanDocumentThreeIconImageView.isHidden = true
+                self.scanDocumentThreeLabel.isHidden = true
             }
         }
-        picker.dismissViewControllerAnimated(true, completion: nil)
+        picker.dismiss(animated: true, completion: nil)
     }
     
     
-    func imagePickerControllerDidCancel(picker: UIImagePickerController) {
-        picker.dismissViewControllerAnimated(true, completion: nil)
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        picker.dismiss(animated: true, completion: nil)
     }
     
     
@@ -437,10 +472,10 @@ class IAFileClaimController: IABaseController, UIImagePickerControllerDelegate, 
         IAAppDelegate.currentAppDelegate.hideLoadingOverlay()
         
         if pResponse.error != nil {
-            self.displayMessage(message: pResponse.error.localizedDescription, type: IAMessageType.Error)
-        } else if pSender.requestType == IARequestType.FileClaim {
-            let anAlert = UIAlertController(title: "Claim filed successfully", message: nil, preferredStyle: .Alert)
-            anAlert.addAction(UIAlertAction(title: "OK", style: .Default, handler: {(action:UIAlertAction) in
+            self.displayMessage(message: pResponse.error.localizedDescription, type: IAMessageType.error)
+        } else if pSender.requestType == IARequestType.fileClaim {
+            let anAlert = UIAlertController(title: "Claim filed successfully", message: nil, preferredStyle: .alert)
+            anAlert.addAction(UIAlertAction(title: "OK", style: .default, handler: {(action:UIAlertAction) in
                 self.resetAllData()
                 if IAConstants.homeController.claimsController != nil {
                     IAConstants.homeController.claimsController.reloadAllData()
@@ -449,7 +484,7 @@ class IAFileClaimController: IABaseController, UIImagePickerControllerDelegate, 
                     IAConstants.homeController.dashboardController.reloadAllData()
                 }
             }))
-            self.presentViewController(anAlert, animated: true, completion: nil)
+            self.present(anAlert, animated: true, completion: nil)
         }
     }
 }

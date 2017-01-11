@@ -25,16 +25,16 @@ class IAInsuranceIDCardController: UIViewController {
     
     
     func reloadAllView() {
-        let aPdfFilePath = NSBundle.mainBundle().pathForResource("InsuranceIDCard", ofType: "pdf")
+        let aPdfFilePath = Bundle.main.path(forResource: "InsuranceIDCard", ofType: "pdf")
         if aPdfFilePath != nil {
-            let aRequest = NSURLRequest(URL: NSURL(fileURLWithPath: aPdfFilePath!))
+            let aRequest = URLRequest(url: URL(fileURLWithPath: aPdfFilePath!))
             self.insuranceIDCardWebView.loadRequest(aRequest)
         }
     }
     
     
-    @IBAction func didSelectCancelButton(sender: AnyObject) {
-        self.dismissViewControllerAnimated(true, completion: nil)
+    @IBAction func didSelectCancelButton(_ sender: AnyObject) {
+        self.dismiss(animated: true, completion: nil)
     }
     
 }

@@ -8,28 +8,28 @@
 
 import UIKit
 
-extension NSDate {
-    static func dateFromString(pDateString :String, format pDateFormat :String) -> NSDate! {
-        var aReturnVal :NSDate! = nil
+extension Date {
+    static func dateFromString(_ pDateString :String, format pDateFormat :String) -> Date! {
+        var aReturnVal :Date! = nil
         
-        let aDateFormatter = NSDateFormatter()
-        aDateFormatter.locale = NSLocale(localeIdentifier: "US_en")
+        let aDateFormatter = DateFormatter()
+        aDateFormatter.locale = Locale(identifier: "US_en")
         aDateFormatter.dateFormat = pDateFormat
         
-        aReturnVal = aDateFormatter.dateFromString(pDateString)
+        aReturnVal = aDateFormatter.date(from: pDateString)
         
         return aReturnVal
     }
     
     
-    func stringWithFormat(pDateFormat :String) -> String! {
+    func stringWithFormat(_ pDateFormat :String) -> String! {
         var aReturnVal :String! = nil
         
-        let aDateFormatter = NSDateFormatter()
-        aDateFormatter.locale = NSLocale(localeIdentifier: "US_en")
+        let aDateFormatter = DateFormatter()
+        aDateFormatter.locale = Locale(identifier: "US_en")
         aDateFormatter.dateFormat = pDateFormat
         
-        aReturnVal = aDateFormatter.stringFromDate(self)
+        aReturnVal = aDateFormatter.string(from: self)
         
         return aReturnVal
     }
@@ -39,7 +39,7 @@ extension NSDate {
         get {
             var aReturnVal :Int! = nil
             
-            let aDateComponents :NSDateComponents = NSCalendar.currentCalendar().components(NSCalendarUnit.Year, fromDate: self)
+            let aDateComponents :DateComponents = (Calendar.current as NSCalendar).components(NSCalendar.Unit.year, from: self)
             aReturnVal = aDateComponents.year
             
             return aReturnVal

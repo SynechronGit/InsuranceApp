@@ -22,20 +22,20 @@ class IARegisterSafetyDeviceController: UIViewController {
     }
     
     
-    @IBAction func didSelectRegisterButton(sender: AnyObject) {
+    @IBAction func didSelectRegisterButton(_ sender: AnyObject) {
         self.view.endEditing(true)
         
-        let anAlert = UIAlertController(title: "Registration successful.", message: nil, preferredStyle: .Alert)
-        anAlert.addAction(UIAlertAction(title: "OK", style: .Default, handler : {(action:UIAlertAction) in
+        let anAlert = UIAlertController(title: "Registration successful.", message: nil, preferredStyle: .alert)
+        anAlert.addAction(UIAlertAction(title: "OK", style: .default, handler : {(action:UIAlertAction) in
             self.deviceTypeTextField.text = nil
             self.serialNumberTextField.text = nil
-            self.dismissViewControllerAnimated(true, completion: nil)
+            self.dismiss(animated: true, completion: nil)
         }))
-        self.presentViewController(anAlert, animated: true, completion: nil)
+        self.present(anAlert, animated: true, completion: nil)
     }
     
     
-    @IBAction func didSelectCloseButton(sender: AnyObject) {
-        self.dismissViewControllerAnimated(true, completion: nil)
+    @IBAction func didSelectCloseButton(_ sender: AnyObject) {
+        self.dismiss(animated: true, completion: nil)
     }
 }

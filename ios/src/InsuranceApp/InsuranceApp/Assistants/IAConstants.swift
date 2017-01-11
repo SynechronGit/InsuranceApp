@@ -17,8 +17,8 @@ class IAConstants: NSObject {
             
             do {
                 // If database is not available then create it. This code is written here so that all the other objects need not implement the database availability logic.
-                if NSFileManager.defaultManager().fileExistsAtPath(aReturnVal) != true {
-                    try NSFileManager.defaultManager().copyItemAtPath(NSBundle.mainBundle().pathForResource("AppDatabase", ofType: "sqlite")!, toPath: aReturnVal)
+                if FileManager.default.fileExists(atPath: aReturnVal) != true {
+                    try FileManager.default.copyItem(atPath: Bundle.main.path(forResource: "AppDatabase", ofType: "sqlite")!, toPath: aReturnVal)
                 }
             } catch {
                 NSLog("Can not copy app database.")
@@ -33,7 +33,7 @@ class IAConstants: NSObject {
     
     static var documentDirectoryPath :String {
         get {
-            return NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0]
+            return NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0]
         }
     }
     
@@ -42,7 +42,7 @@ class IAConstants: NSObject {
         get {
             var aReturnVal = IAHomeController()
             
-            let anAppDelegate = UIApplication.sharedApplication().delegate as! IAAppDelegate
+            let anAppDelegate = UIApplication.shared.delegate as! IAAppDelegate
             let aRootController = anAppDelegate.window?.rootViewController as! UINavigationController
             if  aRootController.viewControllers.count >= 2 {
                 aReturnVal = aRootController.viewControllers[1] as! IAHomeController
@@ -80,8 +80,8 @@ class IAGlobalData: NSObject {
 /**
  * Enum to define different error types.
  */
-public enum IAError: ErrorType {
-    case Generic(NSError)
+public enum IAError: Error {
+    case generic(NSError)
 }
 
 
@@ -89,9 +89,9 @@ public enum IAError: ErrorType {
  * Enum to define different message types.
  */
 public enum IAMessageType: Int {
-    case Success
-    case Error
-    case Information
+    case success
+    case error
+    case information
 }
 
 

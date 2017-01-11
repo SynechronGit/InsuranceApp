@@ -21,8 +21,8 @@ class IAScoreMyDriveController: UIViewController {
     @IBOutlet weak var distanceLabel: IALabel!
     @IBOutlet weak var downArrowImageView: UIImageView!
     
-    var timerDuration  = NSTimer()
-    var timerDistance  = NSTimer()
+    var timerDuration  = Timer()
+    var timerDistance  = Timer()
     var aDuration : Int = 45
     var aDistance : Int = 20
     var aScore : Int = 550
@@ -45,19 +45,19 @@ class IAScoreMyDriveController: UIViewController {
     }
     
     
-    @IBAction func didClickCancel(sender: AnyObject) {
-        self.dismissViewControllerAnimated(true, completion: nil)
+    @IBAction func didClickCancel(_ sender: AnyObject) {
+        self.dismiss(animated: true, completion: nil)
     }
-    @IBAction func startButtonPressed(sender: AnyObject) {
+    @IBAction func startButtonPressed(_ sender: AnyObject) {
         if !counterStarted {
             counterStarted = true
-            timerDuration = NSTimer.scheduledTimerWithTimeInterval(1.2, target: self, selector: #selector(IAScoreMyDriveController.updateDuration), userInfo: nil, repeats: true)
+            timerDuration = Timer.scheduledTimer(timeInterval: 1.2, target: self, selector: #selector(IAScoreMyDriveController.updateDuration), userInfo: nil, repeats: true)
             
-            timerDistance = NSTimer.scheduledTimerWithTimeInterval(1.9, target: self, selector: #selector(IAScoreMyDriveController.updateDistance), userInfo: nil, repeats: true)
+            timerDistance = Timer.scheduledTimer(timeInterval: 1.9, target: self, selector: #selector(IAScoreMyDriveController.updateDistance), userInfo: nil, repeats: true)
         }
       
     }
-    @IBAction func stopButtonPressed(sender: AnyObject) {
+    @IBAction func stopButtonPressed(_ sender: AnyObject) {
         if counterStarted {
             counterStarted = false
             timerDuration.invalidate()
@@ -78,13 +78,13 @@ class IAScoreMyDriveController: UIViewController {
         
     }
 
-    @IBAction func reportAccidentPressed(sender: AnyObject) {
+    @IBAction func reportAccidentPressed(_ sender: AnyObject) {
         
-        let anAlert = UIAlertController(title: "Accident reported successfully.", message: nil, preferredStyle: .Alert)
-        anAlert.addAction(UIAlertAction(title: "Ok", style: .Default, handler : {(action:UIAlertAction) in
-            self.dismissViewControllerAnimated(true, completion: nil)
+        let anAlert = UIAlertController(title: "Accident reported successfully.", message: nil, preferredStyle: .alert)
+        anAlert.addAction(UIAlertAction(title: "Ok", style: .default, handler : {(action:UIAlertAction) in
+            self.dismiss(animated: true, completion: nil)
         }))
-        self.presentViewController(anAlert, animated: true, completion: nil)
+        self.present(anAlert, animated: true, completion: nil)
         
     }
     

@@ -10,16 +10,16 @@ import UIKit
 
 
 protocol IADropdownListControllerDelegate : class {
-    func dropdownListController(pDropdownListController:IADropdownListController, didSelectValue pValue:String)
+    func dropdownListController(_ pDropdownListController:IADropdownListController, didSelectValue pValue:String)
 }
 
 
 class IADropdownListController: UIViewController {
     @IBOutlet weak var dropdownTable :UITableView!
     @IBOutlet weak var datePicker :UIDatePicker!
-    var minimumDate :NSDate!
-    var maximumDate :NSDate!
-    var date :NSDate!
+    var minimumDate :Date!
+    var maximumDate :Date!
+    var date :Date!
     @IBOutlet weak var doneButton :UIButton!
     weak var delegate:IADropdownListControllerDelegate?
     
@@ -29,7 +29,7 @@ class IADropdownListController: UIViewController {
     }
     
     
-    private var _list :Array<String>!
+    fileprivate var _list :Array<String>!
     var list :Array<String>! {
         set {
             _list = newValue
@@ -43,7 +43,7 @@ class IADropdownListController: UIViewController {
     }
     
     
-    private var _shouldDisplayAsDatePicker :Bool!
+    fileprivate var _shouldDisplayAsDatePicker :Bool!
     var shouldDisplayAsDatePicker :Bool! {
         set {
             _shouldDisplayAsDatePicker = newValue
@@ -54,33 +54,33 @@ class IADropdownListController: UIViewController {
     }
     
     
-    override func viewDidAppear(animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         if self.shouldDisplayAsDatePicker != nil && self.shouldDisplayAsDatePicker == true {
             if self.datePicker != nil {
-                self.datePicker.hidden = false
+                self.datePicker.isHidden = false
                 self.datePicker.minimumDate = self.minimumDate
                 self.datePicker.maximumDate = self.maximumDate
                 if self.date != nil {
                     self.datePicker.date = self.date
                 } else {
-                    self.datePicker.date = NSDate()
+                    self.datePicker.date = Date()
                 }
             }
             if self.doneButton != nil {
-                self.doneButton.hidden = false
+                self.doneButton.isHidden = false
             }
             if self.dropdownTable != nil {
-                self.dropdownTable.hidden = true
+                self.dropdownTable.isHidden = true
             }
         } else {
             if self.datePicker != nil {
-                self.datePicker.hidden = true
+                self.datePicker.isHidden = true
             }
             if self.doneButton != nil {
-                self.doneButton.hidden = true
+                self.doneButton.isHidden = true
             }
             if self.dropdownTable != nil {
-                self.dropdownTable.hidden = false
+                self.dropdownTable.isHidden = false
             }
         }
     }
@@ -88,10 +88,10 @@ class IADropdownListController: UIViewController {
     
     @IBAction func didSelectDoneButton() {
         if self.delegate != nil {
-            let aDateFormatter = NSDateFormatter()
-            aDateFormatter.locale = NSLocale(localeIdentifier: "US_en")
+            let aDateFormatter = DateFormatter()
+            aDateFormatter.locale = Locale(identifier: "US_en")
             aDateFormatter.dateFormat = IAConstants.dateFormatAppStandard
-            self.delegate?.dropdownListController(self, didSelectValue: aDateFormatter.stringFromDate(self.datePicker.date))
+            self.delegate?.dropdownListController(self, didSelectValue: aDateFormatter.string(from: self.datePicker.date))
         }
     }
     
@@ -102,7 +102,7 @@ class IADropdownListController: UIViewController {
      * Method that will calculate and return number of rows in given section of table.
      * @return Int. Number of rows in given section
      */
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         var aReturnVal :Int = 0
         
         if self.list != nil {
@@ -117,11 +117,11 @@ class IADropdownListController: UIViewController {
      * Method that will init, set and return the cell view.
      * @return UITableViewCell. View of the cell in given table view.
      */
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAtIndexPath indexPath: IndexPath) -> UITableViewCell {
         let aReturnVal:UITableViewCell = UITableViewCell()
-        aReturnVal.backgroundColor = UIColor.clearColor()
+        aReturnVal.backgroundColor = UIColor.clear
         aReturnVal.textLabel?.font = UIFont(name: "Ubuntu", size: 13.0)
-        aReturnVal.textLabel?.textAlignment = NSTextAlignment.Center
+        aReturnVal.textLabel?.textAlignment = NSTextAlignment.center
         
         if self.list != nil {
             aReturnVal.textLabel?.text = self.list[indexPath.row]
@@ -134,8 +134,8 @@ class IADropdownListController: UIViewController {
     /**
      * Method that will handle tap on table cell.
      */
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+    func tableView(_ tableView: UITableView, didSelectRowAtIndexPath indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
         
         if self.delegate != nil {
             self.delegate?.dropdownListController(self, didSelectValue: self.list[indexPath.row])

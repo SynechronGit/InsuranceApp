@@ -7,25 +7,49 @@
 //
 
 import UIKit
+// FIXME: comparison operators with optionals were removed from the Swift Standard Libary.
+// Consider refactoring the code to use the non-optional operators.
+fileprivate func < <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
+  switch (lhs, rhs) {
+  case let (l?, r?):
+    return l < r
+  case (nil, _?):
+    return true
+  default:
+    return false
+  }
+}
+
+// FIXME: comparison operators with optionals were removed from the Swift Standard Libary.
+// Consider refactoring the code to use the non-optional operators.
+fileprivate func > <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
+  switch (lhs, rhs) {
+  case let (l?, r?):
+    return l > r
+  default:
+    return rhs < lhs
+  }
+}
+
 
 
 protocol IATextFieldDelegate : class {
-    func iaTextFieldDidSelectValue(pTextField:IATextField)
+    func iaTextFieldDidSelectValue(_ pTextField:IATextField)
 }
 
 
 class IATextField: UITextField, IADropdownListControllerDelegate {
     var shouldDisplayAsDropdown :Bool!
     var shouldDisplayAsDatePicker :Bool!
-    var minimumDate :NSDate!
-    var maximumDate :NSDate!
+    var minimumDate :Date!
+    var maximumDate :Date!
     weak var controller :UIViewController!
     weak var iaTextFieldDelegate :AnyObject!
     var dropdownListController :IADropdownListController!
     var list :Array<String>!
     
     
-    private var bottomBorderLayer :CALayer!
+    fileprivate var bottomBorderLayer :CALayer!
     
     /**
      * Override init method so that common initialization will be done from different init methods.
@@ -62,8 +86,8 @@ class IATextField: UITextField, IADropdownListControllerDelegate {
         if self.bottomBorderLayer == nil {
             self.layer.masksToBounds = false
             self.bottomBorderLayer = CALayer()
-            self.bottomBorderLayer.frame = CGRectMake(0.0, self.bounds.size.height - 2, self.bounds.size.width, 2.0)
-            self.bottomBorderLayer.backgroundColor = UIColor.lightGrayColor().CGColor
+            self.bottomBorderLayer.frame = CGRect(x: 0.0, y: self.bounds.size.height - 2, width: self.bounds.size.width, height: 2.0)
+            self.bottomBorderLayer.backgroundColor = UIColor.lightGray.cgColor
             self.layer.addSublayer(self.bottomBorderLayer)
         }
     }
@@ -73,18 +97,18 @@ class IATextField: UITextField, IADropdownListControllerDelegate {
         super.layoutSubviews()
         
         if self.bottomBorderLayer != nil {
-            self.bottomBorderLayer.frame = CGRectMake(0.0, self.bounds.size.height + 3, self.bounds.size.width, 2.0)
+            self.bottomBorderLayer.frame = CGRect(x: 0.0, y: self.bounds.size.height + 3, width: self.bounds.size.width, height: 2.0)
         }
         if ((self.shouldDisplayAsDropdown != nil && self.shouldDisplayAsDropdown == true) || (self.shouldDisplayAsDropdown != nil && self.shouldDisplayAsDropdown == true)) && self.rightView == nil {
-            self.rightView = UIImageView(frame: CGRectMake(0.0, 0.0, 13.0, 13.0))
+            self.rightView = UIImageView(frame: CGRect(x: 0.0, y: 0.0, width: 13.0, height: 13.0))
             (self.rightView as! UIImageView).image = UIImage(named: "DropdownArrow")
-            (self.rightView as! UIImageView).contentMode = UIViewContentMode.ScaleAspectFit
-            self.rightViewMode = UITextFieldViewMode.Always
+            (self.rightView as! UIImageView).contentMode = UIViewContentMode.scaleAspectFit
+            self.rightViewMode = UITextFieldViewMode.always
         }
     }
     
     
-    override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         if (self.shouldDisplayAsDropdown != nil && self.shouldDisplayAsDropdown == true) || (self.shouldDisplayAsDatePicker != nil && self.shouldDisplayAsDatePicker == true) {
             self.resignFirstResponder()
             if touches.first?.tapCount == 1 && self.controller != nil {
@@ -94,10 +118,10 @@ class IATextField: UITextField, IADropdownListControllerDelegate {
     }
     
     
-    func dropdownListController(pDropdownListController:IADropdownListController, didSelectValue pValue:String) {
+    func dropdownListController(_ pDropdownListController:IADropdownListController, didSelectValue pValue:String) {
         if pDropdownListController.isEqual(self.dropdownListController) {
             self.text = pValue
-            self.dropdownListController.dismissViewControllerAnimated(true, completion: nil)
+            self.dropdownListController.dismiss(animated: true, completion: nil)
             self.delegate?.textFieldDidEndEditing!(self)
         }
     }
@@ -106,14 +130,14 @@ class IATextField: UITextField, IADropdownListControllerDelegate {
     func displayDropdownList() {
         if (self.list != nil && self.list.count > 0) || (self.shouldDisplayAsDatePicker != nil && self.shouldDisplayAsDatePicker == true) {
             if self.dropdownListController == nil {
-                self.dropdownListController  = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("IADropdownListControllerID") as! IADropdownListController
+                self.dropdownListController  = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "IADropdownListControllerID") as! IADropdownListController
             }
             self.dropdownListController.delegate = self
             self.dropdownListController.shouldDisplayAsDatePicker = self.shouldDisplayAsDatePicker
             self.dropdownListController.minimumDate = self.minimumDate
             self.dropdownListController.maximumDate = self.maximumDate
-            if self.text?.lengthOfBytesUsingEncoding(NSUTF8StringEncoding) > 0 {
-                self.dropdownListController.date = NSDate.dateFromString(self.text!, format: IAConstants.dateFormatAppStandard)
+            if self.text?.lengthOfBytes(using: String.Encoding.utf8) > 0 {
+                self.dropdownListController.date = Date.dateFromString(self.text!, format: IAConstants.dateFormatAppStandard)
             } else {
                 self.dropdownListController.date = nil
             }
@@ -123,15 +147,15 @@ class IATextField: UITextField, IADropdownListControllerDelegate {
                 if aHeight > 300.0 {
                     aHeight = 300.0
                 }
-                self.dropdownListController.preferredContentSize = CGSizeMake(320.0, aHeight)
+                self.dropdownListController.preferredContentSize = CGSize(width: 320.0, height: aHeight)
             } else {
-                self.dropdownListController.preferredContentSize = CGSizeMake(320.0, 200.0)
+                self.dropdownListController.preferredContentSize = CGSize(width: 320.0, height: 200.0)
             }
-            self.dropdownListController.modalPresentationStyle = .Popover
-            self.dropdownListController.popoverPresentationController?.permittedArrowDirections = UIPopoverArrowDirection.Any
+            self.dropdownListController.modalPresentationStyle = .popover
+            self.dropdownListController.popoverPresentationController?.permittedArrowDirections = UIPopoverArrowDirection.any
             self.dropdownListController.popoverPresentationController?.sourceView = self
             self.dropdownListController.popoverPresentationController?.sourceRect = self.bounds
-            self.controller.presentViewController(self.dropdownListController, animated: true, completion: nil)
+            self.controller.present(self.dropdownListController, animated: true, completion: nil)
         }
     }
 }

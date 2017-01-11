@@ -47,7 +47,7 @@ class IAAutoInsuranceDetailsController: IABaseController , UICollectionViewDeleg
     }
     
     
-    override func viewDidAppear(animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         self.reloadAllData()
     }
     
@@ -58,8 +58,8 @@ class IAAutoInsuranceDetailsController: IABaseController , UICollectionViewDeleg
 
         dateView.backgroundColor = UIColor(patternImage: UIImage(named: "dateBg")!)
         
-        vehicleCollectionView.backgroundColor = UIColor.clearColor()
-        driverCollectionView.backgroundColor = UIColor.clearColor()
+        vehicleCollectionView.backgroundColor = UIColor.clear
+        driverCollectionView.backgroundColor = UIColor.clear
         
         coverageBoxView.backgroundColor = UIColor(patternImage: UIImage(named: "bigBox")!)
         limitBoxView.backgroundColor = UIColor(patternImage: UIImage(named: "bigBox")!)
@@ -88,7 +88,7 @@ class IAAutoInsuranceDetailsController: IABaseController , UICollectionViewDeleg
      * @return Void
      */
     @IBAction func didSelectAddVehicleButton() {
-        self.performSegueWithIdentifier("AutoInsuranceDetailsToAddVehicleSegueID", sender: self)
+        self.performSegue(withIdentifier: "AutoInsuranceDetailsToAddVehicleSegueID", sender: self)
     }
     
     
@@ -97,51 +97,51 @@ class IAAutoInsuranceDetailsController: IABaseController , UICollectionViewDeleg
      * @return Void
      */
     @IBAction func didSelectAddDriverButton() {
-        self.performSegueWithIdentifier("AutoInsuranceDetailsToAddDriverSegueID", sender: self)
+        self.performSegue(withIdentifier: "AutoInsuranceDetailsToAddDriverSegueID", sender: self)
     }
     
-    @IBAction func didSelectVechicleNext(sender: AnyObject) {
-        let visibleItems: NSArray = self.vehicleCollectionView.indexPathsForVisibleItems()
-        let currentItem: NSIndexPath = visibleItems.objectAtIndex(0) as! NSIndexPath
-        let nextItem: NSIndexPath = NSIndexPath(forRow: currentItem.item + 1, inSection: 0)
-        self.vehicleCollectionView.scrollToItemAtIndexPath(nextItem, atScrollPosition: .Left, animated: true)
-    }
-    
-    
-    @IBAction func didSelectVehiclePrevious(sender: AnyObject) {
-        let visibleItems: NSArray = self.vehicleCollectionView.indexPathsForVisibleItems()
-        let currentItem: NSIndexPath = visibleItems.objectAtIndex(0) as! NSIndexPath
-        let nextItem: NSIndexPath = NSIndexPath(forRow: currentItem.item + 1, inSection: 0)
-        self.vehicleCollectionView.scrollToItemAtIndexPath(nextItem, atScrollPosition: .Right, animated: true)
+    @IBAction func didSelectVechicleNext(_ sender: AnyObject) {
+        let visibleItems: NSArray = self.vehicleCollectionView.indexPathsForVisibleItems as NSArray
+        let currentItem: IndexPath = visibleItems.object(at: 0) as! IndexPath
+        let nextItem: IndexPath = IndexPath(row: currentItem.item + 1, section: 0)
+        self.vehicleCollectionView.scrollToItem(at: nextItem, at: .left, animated: true)
     }
     
     
-    @IBAction func didSelectDriverNext(sender: AnyObject) {
-        let visibleItems: NSArray = self.driverCollectionView.indexPathsForVisibleItems()
-        let currentItem: NSIndexPath = visibleItems.objectAtIndex(0) as! NSIndexPath
-        let nextItem: NSIndexPath = NSIndexPath(forRow: currentItem.item + 1, inSection: 0)
-        self.driverCollectionView.scrollToItemAtIndexPath(nextItem, atScrollPosition: .Left, animated: true)
-    }
-    
-    @IBAction func didSelectDriverPrevious(sender: AnyObject) {
-        let visibleItems: NSArray = self.driverCollectionView.indexPathsForVisibleItems()
-        let currentItem: NSIndexPath = visibleItems.objectAtIndex(0) as! NSIndexPath
-        let nextItem: NSIndexPath = NSIndexPath(forRow: currentItem.item + 1, inSection: 0)
-        self.driverCollectionView.scrollToItemAtIndexPath(nextItem, atScrollPosition: .Right, animated: true)
+    @IBAction func didSelectVehiclePrevious(_ sender: AnyObject) {
+        let visibleItems: NSArray = self.vehicleCollectionView.indexPathsForVisibleItems as NSArray
+        let currentItem: IndexPath = visibleItems.object(at: 0) as! IndexPath
+        let nextItem: IndexPath = IndexPath(row: currentItem.item + 1, section: 0)
+        self.vehicleCollectionView.scrollToItem(at: nextItem, at: .right, animated: true)
     }
     
     
-    @IBAction func didSelectPayPremiumButton(sender: AnyObject) {
-        self.performSegueWithIdentifier("AutoInsuranceDetailsToPayPremiumSegueID", sender: self)
+    @IBAction func didSelectDriverNext(_ sender: AnyObject) {
+        let visibleItems: NSArray = self.driverCollectionView.indexPathsForVisibleItems as NSArray
+        let currentItem: IndexPath = visibleItems.object(at: 0) as! IndexPath
+        let nextItem: IndexPath = IndexPath(row: currentItem.item + 1, section: 0)
+        self.driverCollectionView.scrollToItem(at: nextItem, at: .left, animated: true)
+    }
+    
+    @IBAction func didSelectDriverPrevious(_ sender: AnyObject) {
+        let visibleItems: NSArray = self.driverCollectionView.indexPathsForVisibleItems as NSArray
+        let currentItem: IndexPath = visibleItems.object(at: 0) as! IndexPath
+        let nextItem: IndexPath = IndexPath(row: currentItem.item + 1, section: 0)
+        self.driverCollectionView.scrollToItem(at: nextItem, at: .right, animated: true)
     }
     
     
-    @IBAction func didSelectFileClaimButton(sender: AnyObject) {
+    @IBAction func didSelectPayPremiumButton(_ sender: AnyObject) {
+        self.performSegue(withIdentifier: "AutoInsuranceDetailsToPayPremiumSegueID", sender: self)
+    }
+    
+    
+    @IBAction func didSelectFileClaimButton(_ sender: AnyObject) {
         IAConstants.homeController.didSelectFileClaimTabItemView()
     }
     
     
-    @IBAction func didSelectViewPolicyButton(sender: AnyObject) {
+    @IBAction func didSelectViewPolicyButton(_ sender: AnyObject) {
         IAConstants.homeController.didSelectPoliciesTabItemView()
     }
     
@@ -155,8 +155,8 @@ class IAAutoInsuranceDetailsController: IABaseController , UICollectionViewDeleg
         IAAppDelegate.currentAppDelegate.hideLoadingOverlay()
         
         if pResponse.error != nil {
-            self.displayMessage(message: pResponse.error.localizedDescription, type: IAMessageType.Error)
-        } else if pSender.requestType == IARequestType.ListVehicles {
+            self.displayMessage(message: pResponse.error.localizedDescription, type: IAMessageType.error)
+        } else if pSender.requestType == IARequestType.listVehicles {
             if pResponse.result != nil {
                 self.vehicleArray = pResponse.result as! Array
             } else {
@@ -166,7 +166,7 @@ class IAAutoInsuranceDetailsController: IABaseController , UICollectionViewDeleg
             
             IAAppDelegate.currentAppDelegate.displayLoadingOverlay()
             self.dataManager.listDrivers()
-        } else if pSender.requestType == IARequestType.ListDrivers {
+        } else if pSender.requestType == IARequestType.listDrivers {
             if pResponse.result != nil {
                 self.driverArray = pResponse.result as! Array
             } else {
@@ -175,7 +175,7 @@ class IAAutoInsuranceDetailsController: IABaseController , UICollectionViewDeleg
             self.reloadAllView()
             IAAppDelegate.currentAppDelegate.displayLoadingOverlay()
             self.dataManager.dashboardDetails()
-        } else if pSender.requestType == IARequestType.DashboardDetails {
+        } else if pSender.requestType == IARequestType.dashboardDetails {
             if pResponse.result != nil {
                 self.dashboardDetails = pResponse.result as! IADashboard
                 self.vehicleCountLabel.text = "Vehicles (\(NSString(format: "%02d", self.dashboardDetails.autoInsuranceCarCount)))"
@@ -190,7 +190,7 @@ class IAAutoInsuranceDetailsController: IABaseController , UICollectionViewDeleg
     // MARK: - UICollectionViewDataSource protocol
     
     // tell the collection view how many cells to make
-     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         var count:Int?
         
         if collectionView == self.vehicleCollectionView {
@@ -213,11 +213,11 @@ class IAAutoInsuranceDetailsController: IABaseController , UICollectionViewDeleg
     }
     
     // make a cell for each cell index path
-     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         if collectionView == self.vehicleCollectionView {
             // get a reference to our storyboard cell
-            let cell = collectionView.dequeueReusableCellWithReuseIdentifier("vehicleListCell", forIndexPath: indexPath) as! IAVehicleListCell
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "vehicleListCell", for: indexPath) as! IAVehicleListCell
             
             let aVehicle = self.vehicleArray[indexPath.item]
             
@@ -228,7 +228,7 @@ class IAAutoInsuranceDetailsController: IABaseController , UICollectionViewDeleg
             return cell
         }else  {
             // get a reference to our storyboard cell
-            let cell = collectionView.dequeueReusableCellWithReuseIdentifier("driverListCell", forIndexPath: indexPath) as! IADriverListCell
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "driverListCell", for: indexPath) as! IADriverListCell
             
             let aDriver = self.driverArray[indexPath.item]
             
@@ -245,18 +245,18 @@ class IAAutoInsuranceDetailsController: IABaseController , UICollectionViewDeleg
     
     // MARK: - UICollectionViewDelegate protocol
     
-     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         // handle tap events
         if collectionView == self.vehicleCollectionView {
             /**
              * Delegate method that will be called when Vehicle is tapped.
              */
             self.selectedListIndex = indexPath.item
-            self.performSegueWithIdentifier("AutoInsuranceDetailsToVehicleDetailsSegueID", sender: self)
+            self.performSegue(withIdentifier: "AutoInsuranceDetailsToVehicleDetailsSegueID", sender: self)
             
         } else if collectionView.isEqual(self.driverCollectionView) {
             self.selectedListIndex = indexPath.item
-            self.performSegueWithIdentifier("AutoInsuranceDetailsToDriverDetailsSegueID", sender: self)
+            self.performSegue(withIdentifier: "AutoInsuranceDetailsToDriverDetailsSegueID", sender: self)
         }
     }
     
@@ -264,17 +264,17 @@ class IAAutoInsuranceDetailsController: IABaseController , UICollectionViewDeleg
     /**
      * Method that will be called while performing segue and will handle setting required data for next controller.
      */
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "AutoInsuranceDetailsToVehicleDetailsSegueID" {
             let aVehicle = self.vehicleArray[self.selectedListIndex]
             self.selectedListIndex = nil
             
-            (segue.destinationViewController as! IAVehicleDetailsController).vehicle = aVehicle
+            (segue.destination as! IAVehicleDetailsController).vehicle = aVehicle
         } else if segue.identifier == "AutoInsuranceDetailsToDriverDetailsSegueID" {
             let aDriver = self.driverArray[self.selectedListIndex]
             self.selectedListIndex = nil
             
-            (segue.destinationViewController as! IADriverDetailsController).driver = aDriver
+            (segue.destination as! IADriverDetailsController).driver = aDriver
         }
     }
     

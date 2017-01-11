@@ -35,8 +35,8 @@ class IAMetWithAccidentController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func didClickCancel(sender: AnyObject) {
-       self.dismissViewControllerAnimated(true, completion: nil)
+    @IBAction func didClickCancel(_ sender: AnyObject) {
+       self.dismiss(animated: true, completion: nil)
     }
     
     

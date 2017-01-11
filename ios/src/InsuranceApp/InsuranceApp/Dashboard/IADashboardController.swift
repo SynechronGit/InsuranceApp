@@ -35,7 +35,7 @@ class IADashboardController: IABaseController {
         let aTapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(IADashboardController.didSelectAutoInsuranceView))
         aTapGestureRecognizer.cancelsTouchesInView = false
         self.autoInsuranceContainerView.addGestureRecognizer(aTapGestureRecognizer)
-        self.autoInsuranceContainerView.layer.borderColor = UIColor.redColor().CGColor
+        self.autoInsuranceContainerView.layer.borderColor = UIColor.red.cgColor
         
         self.homeInsuranceContainerView.alpha = 0.6
         self.boatInsuranceContainerView.alpha = 0.6
@@ -73,7 +73,7 @@ class IADashboardController: IABaseController {
     }
     
     
-    override func viewDidAppear(animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         self.reloadAllData()
     }
     
@@ -116,7 +116,7 @@ class IADashboardController: IABaseController {
         CATransaction.begin()
         CATransaction.setCompletionBlock({
             self.autoInsuranceContainerView.layer.borderWidth = 0.0
-            self.performSegueWithIdentifier("DashboardToAutoInsuranceDetailsSegueID", sender: self)
+            self.performSegue(withIdentifier: "DashboardToAutoInsuranceDetailsSegueID", sender: self)
         })
         let anAnimation = CABasicAnimation(keyPath: "borderWidth")
         anAnimation.fromValue = 0.0
@@ -124,23 +124,23 @@ class IADashboardController: IABaseController {
         anAnimation.repeatCount = 3
         anAnimation.duration = 0.2
         anAnimation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
-        self.autoInsuranceContainerView.layer.addAnimation(anAnimation, forKey: "pulse")
+        self.autoInsuranceContainerView.layer.add(anAnimation, forKey: "pulse")
         CATransaction.commit()
     }
     
     
     @IBAction func didSelectMetWithAccident(){
-        self.performSegueWithIdentifier("DashboardToMetWithAccidentSegueID", sender: self)
+        self.performSegue(withIdentifier: "DashboardToMetWithAccidentSegueID", sender: self)
     }
     
     
     @IBAction func didSelectRoadSideAssistance(){
-        self.performSegueWithIdentifier("DashboardToRoadsideAssistanceSegueID", sender: self)
+        self.performSegue(withIdentifier: "DashboardToRoadsideAssistanceSegueID", sender: self)
     }
     
     
     @IBAction func didSelectInsuranceIDCardContainerView(){
-        self.performSegueWithIdentifier("DashboardToInsuranceIDCardSegueID", sender: self)
+        self.performSegue(withIdentifier: "DashboardToInsuranceIDCardSegueID", sender: self)
     }
     
     
@@ -150,7 +150,7 @@ class IADashboardController: IABaseController {
     
     
     @IBAction func didSelectPayPremiumContainerView() {
-        self.performSegueWithIdentifier("DashboardToPayPremiumSegueID", sender: self)
+        self.performSegue(withIdentifier: "DashboardToPayPremiumSegueID", sender: self)
     }
     
     
@@ -163,8 +163,8 @@ class IADashboardController: IABaseController {
         IAAppDelegate.currentAppDelegate.hideLoadingOverlay()
         
         if pResponse.error != nil {
-            self.displayMessage(message: pResponse.error.localizedDescription, type: IAMessageType.Error)
-        } else if pSender.requestType == IARequestType.DashboardDetails {
+            self.displayMessage(message: pResponse.error.localizedDescription, type: IAMessageType.error)
+        } else if pSender.requestType == IARequestType.dashboardDetails {
             self.dashboardDetails = pResponse.result as! IADashboard
             self.reloadAllView()
         }

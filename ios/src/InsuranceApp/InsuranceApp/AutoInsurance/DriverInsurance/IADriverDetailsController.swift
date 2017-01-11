@@ -133,7 +133,7 @@ class IADriverDetailsController: IABaseController {
      * Method that will calculate and return number of rows in given section of table.
      * @return Int. Number of rows in given section
      */
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         var aReturnVal :Int = 0
         
         if self.trafficViolationArray != nil {
@@ -145,20 +145,20 @@ class IADriverDetailsController: IABaseController {
     
     //Tap Gesture Selector methods
     @IBAction func didSelectScoreMyDrive(){
-         self.performSegueWithIdentifier("DriverDetailsToScroreMyDriveSeague", sender: self)
+         self.performSegue(withIdentifier: "DriverDetailsToScroreMyDriveSeague", sender: self)
     }
     
     @IBAction func didSelectRegisterSafetyDevice(){
-        self.performSegueWithIdentifier("DriverDetailsToRegisterSafetyDeviceSeague", sender: self)
+        self.performSegue(withIdentifier: "DriverDetailsToRegisterSafetyDeviceSeague", sender: self)
     }
     
     /**
      * Method that will init, set and return the cell view.
      * @return UITableViewCell. View of the cell in given table view.
      */
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let aReturnVal:IATrafficViolationTableCellView = tableView.dequeueReusableCellWithIdentifier("IATrafficViolationTableCellViewID") as! IATrafficViolationTableCellView
-        aReturnVal.backgroundColor = UIColor.clearColor()
+    func tableView(_ tableView: UITableView, cellForRowAtIndexPath indexPath: IndexPath) -> UITableViewCell {
+        let aReturnVal:IATrafficViolationTableCellView = tableView.dequeueReusableCell(withIdentifier: "IATrafficViolationTableCellViewID") as! IATrafficViolationTableCellView
+        aReturnVal.backgroundColor = UIColor.clear
         
         if self.trafficViolationArray != nil {
             let aTrafficViolation = self.trafficViolationArray[indexPath.row]
@@ -174,11 +174,11 @@ class IADriverDetailsController: IABaseController {
     /**
      * Method that will be called while performing segue and will handle setting required data for next controller.
      */
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "DriverDetailsToScroreMyDriveSeague" {
             let aDriver = self.driver
             
-            (segue.destinationViewController as! IAScoreMyDriveController).driver = aDriver
+            (segue.destination as! IAScoreMyDriveController).driver = aDriver
         }
     }
 

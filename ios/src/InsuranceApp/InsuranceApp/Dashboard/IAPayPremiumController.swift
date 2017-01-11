@@ -33,8 +33,8 @@ class IAPayPremiumController: IABaseController {
     }
     
     
-    @IBAction func didSelectCloseButton(sender: AnyObject) {
-        self.dismissViewControllerAnimated(true, completion: nil)
+    @IBAction func didSelectCloseButton(_ sender: AnyObject) {
+        self.dismiss(animated: true, completion: nil)
     }
     
     
@@ -44,7 +44,7 @@ class IAPayPremiumController: IABaseController {
      * Method that will calculate and return number of rows in given section of table.
      * @return Int. Number of rows in given section
      */
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         var aReturnVal :Int = 0
         
         if self.premiumArray != nil {
@@ -59,9 +59,9 @@ class IAPayPremiumController: IABaseController {
      * Method that will init, set and return the cell view.
      * @return UITableViewCell. View of the cell in given table view.
      */
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let aReturnVal:IAPayPremiumTableCellView = tableView.dequeueReusableCellWithIdentifier("IAPayPremiumTableCellViewID") as! IAPayPremiumTableCellView
-        aReturnVal.backgroundColor = UIColor.clearColor()
+    func tableView(_ tableView: UITableView, cellForRowAtIndexPath indexPath: IndexPath) -> UITableViewCell {
+        let aReturnVal:IAPayPremiumTableCellView = tableView.dequeueReusableCell(withIdentifier: "IAPayPremiumTableCellViewID") as! IAPayPremiumTableCellView
+        aReturnVal.backgroundColor = UIColor.clear
         
         if self.premiumArray != nil {
             let aPremium = self.premiumArray[indexPath.row]
@@ -91,8 +91,8 @@ class IAPayPremiumController: IABaseController {
     /**
      * Method that will handle tap on table cell.
      */
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+    func tableView(_ tableView: UITableView, didSelectRowAtIndexPath indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
     }
     
     
@@ -105,8 +105,8 @@ class IAPayPremiumController: IABaseController {
         IAAppDelegate.currentAppDelegate.hideLoadingOverlay()
         
         if pResponse.error != nil {
-            self.displayMessage(message: pResponse.error.localizedDescription, type: IAMessageType.Error)
-        } else if pSender.requestType == IARequestType.ListPremiums {
+            self.displayMessage(message: pResponse.error.localizedDescription, type: IAMessageType.error)
+        } else if pSender.requestType == IARequestType.listPremiums {
             if pResponse.result != nil {
                 self.premiumArray = pResponse.result as! Array
             } else {

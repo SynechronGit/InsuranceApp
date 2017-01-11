@@ -34,7 +34,7 @@ class IAVehicleDetailsController: IABaseController ,UICollectionViewDelegate, UI
         
         self.title = "Vehicle Details"
         
-        self.vehicleListCollectionView.backgroundColor = UIColor.clearColor()
+        self.vehicleListCollectionView.backgroundColor = UIColor.clear
         
         self.mainBgView.layer.cornerRadius = 10.0
         self.mainBgView.layer.masksToBounds = true
@@ -79,7 +79,7 @@ class IAVehicleDetailsController: IABaseController ,UICollectionViewDelegate, UI
     // MARK: - UICollectionViewDataSource protocol
     
     // tell the collection view how many cells to make
-    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         var aReturnVal :Int = 0
         
         if self.vehicle.photoOne != nil {
@@ -97,9 +97,9 @@ class IAVehicleDetailsController: IABaseController ,UICollectionViewDelegate, UI
     }
     
     // make a cell for each cell index path
-    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         // get a reference to our storyboard cell
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("vehicleListCell", forIndexPath: indexPath) as! IAVehicleListCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "vehicleListCell", for: indexPath) as! IAVehicleListCell
             
         if indexPath.row == 0 {
             cell.vehicleImageView.image = self.vehicle.photoOne

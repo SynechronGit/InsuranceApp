@@ -31,9 +31,9 @@ class IAPolicyDetailsController: UIViewController {
     
     
     func reloadAllView() {
-        let aPdfFilePath = NSBundle.mainBundle().pathForResource("PolicyGeneral", ofType: "pdf")
+        let aPdfFilePath = Bundle.main.path(forResource: "PolicyGeneral", ofType: "pdf")
         if aPdfFilePath != nil {
-            let aRequest = NSURLRequest(URL: NSURL(fileURLWithPath: aPdfFilePath!))
+            let aRequest = URLRequest(url: URL(fileURLWithPath: aPdfFilePath!))
             self.policyDetailsWebView.loadRequest(aRequest)
         }
     }

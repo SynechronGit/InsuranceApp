@@ -4,6 +4,41 @@
 //
 
 import UIKit
+// FIXME: comparison operators with optionals were removed from the Swift Standard Libary.
+// Consider refactoring the code to use the non-optional operators.
+fileprivate func < <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
+  switch (lhs, rhs) {
+  case let (l?, r?):
+    return l < r
+  case (nil, _?):
+    return true
+  default:
+    return false
+  }
+}
+
+// FIXME: comparison operators with optionals were removed from the Swift Standard Libary.
+// Consider refactoring the code to use the non-optional operators.
+fileprivate func > <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
+  switch (lhs, rhs) {
+  case let (l?, r?):
+    return l > r
+  default:
+    return rhs < lhs
+  }
+}
+
+// FIXME: comparison operators with optionals were removed from the Swift Standard Libary.
+// Consider refactoring the code to use the non-optional operators.
+fileprivate func <= <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
+  switch (lhs, rhs) {
+  case let (l?, r?):
+    return l <= r
+  default:
+    return !(rhs < lhs)
+  }
+}
+
 
 
 /**
@@ -75,8 +110,8 @@ class IAAddDriverController: IABaseController, UITextFieldDelegate, UIImagePicke
         self.dobTextField.shouldDisplayAsDatePicker = true
         self.dobTextField.controller = self
         self.dobTextField.delegate = self
-        self.dobTextField.minimumDate = NSDate().dateByAddingTimeInterval(-100 * 365 * 24 * 60 * 60)
-        self.dobTextField.maximumDate = NSDate()
+        self.dobTextField.minimumDate = Date().addingTimeInterval(-100 * 365 * 24 * 60 * 60)
+        self.dobTextField.maximumDate = Date()
         
         self.appointedSinceTextField.shouldDisplayAsDropdown = true
         self.appointedSinceTextField.controller = self
@@ -92,7 +127,7 @@ class IAAddDriverController: IABaseController, UITextFieldDelegate, UIImagePicke
     }
     
     
-    func textFieldShouldReturn(textField: UITextField) -> Bool {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         if textField.isEqual(self.nameTextField) {
             self.phoneNumberTextField.becomeFirstResponder()
         } else if textField.isEqual(self.phoneNumberTextField) {
@@ -114,7 +149,7 @@ class IAAddDriverController: IABaseController, UITextFieldDelegate, UIImagePicke
     }
     
     
-    func textFieldDidEndEditing(textField: UITextField) {
+    func textFieldDidEndEditing(_ textField: UITextField) {
         if textField.isEqual(self.stateTextField) {
             self.cityTextField.text = nil
             if self.stateTextField.text == "Florida" {
@@ -127,19 +162,19 @@ class IAAddDriverController: IABaseController, UITextFieldDelegate, UIImagePicke
                 self.cityTextField.list = nil
             }
         } else if textField.isEqual(self.dobTextField) {
-            if self.dobTextField.text?.lengthOfBytesUsingEncoding(NSUTF8StringEncoding) > 0 {
-                let aDateOfBirth = NSDate.dateFromString(self.dobTextField.text!, format: IAConstants.dateFormatAppStandard)
+            if self.dobTextField.text?.lengthOfBytes(using: String.Encoding.utf8) > 0 {
+                let aDateOfBirth = Date.dateFromString(self.dobTextField.text!, format: IAConstants.dateFormatAppStandard)
                 
                 var anAppointedSinceArray = Array<String>()
                 anAppointedSinceArray.append("None")
-                if aDateOfBirth.year < NSDate().year {
-                    for anIndex:Int in aDateOfBirth.year ..< NSDate().year {
+                if aDateOfBirth?.year < Date().year {
+                    for anIndex:Int in (aDateOfBirth?.year)! ..< Date().year {
                         anAppointedSinceArray.append(String(format: "%d", anIndex + 1))
                     }
                 }
                 self.appointedSinceTextField.list = anAppointedSinceArray
                 
-                let aMaxExperience = NSDate().year - aDateOfBirth.year
+                let aMaxExperience = Date().year - (aDateOfBirth?.year)!
                 var aDrivingExperienceArray = Array<String>()
                 aDrivingExperienceArray.append("Unknown")
                 if 0 < aMaxExperience {
@@ -177,139 +212,139 @@ class IAAddDriverController: IABaseController, UITextFieldDelegate, UIImagePicke
     
     func displayImagePicker() {
         if self.dropdownListController == nil {
-            self.dropdownListController  = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("IADropdownListControllerID") as! IADropdownListController
+            self.dropdownListController  = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "IADropdownListControllerID") as! IADropdownListController
         }
         self.dropdownListController.delegate = self
         self.dropdownListController.list = ["Camera", "Photo Album"]
-        self.dropdownListController.preferredContentSize = CGSizeMake(200.0, 80.0)
-        self.dropdownListController.modalPresentationStyle = .Popover
-        self.dropdownListController.popoverPresentationController?.permittedArrowDirections = UIPopoverArrowDirection.Any
+        self.dropdownListController.preferredContentSize = CGSize(width: 200.0, height: 80.0)
+        self.dropdownListController.modalPresentationStyle = .popover
+        self.dropdownListController.popoverPresentationController?.permittedArrowDirections = UIPopoverArrowDirection.any
         self.dropdownListController.popoverPresentationController?.sourceView = self.imagePickerDestinationImageView
         self.dropdownListController.popoverPresentationController?.sourceRect = self.imagePickerDestinationImageView.bounds
-        self.presentViewController(self.dropdownListController, animated: true, completion: nil)
+        self.present(self.dropdownListController, animated: true, completion: nil)
     }
     
     
-    func dropdownListController(pDropdownListController:IADropdownListController, didSelectValue pValue:String) {
-        pDropdownListController.dismissViewControllerAnimated(false, completion: nil)
+    func dropdownListController(_ pDropdownListController:IADropdownListController, didSelectValue pValue:String) {
+        pDropdownListController.dismiss(animated: false, completion: nil)
         
         if self.imagePickerController == nil {
             self.imagePickerController = UIImagePickerController()
         }
         self.imagePickerController.allowsEditing = false
         self.imagePickerController.delegate = self
-        self.imagePickerController.modalPresentationStyle = UIModalPresentationStyle.FormSheet
+        self.imagePickerController.modalPresentationStyle = UIModalPresentationStyle.formSheet
         
         #if (arch(i386) || arch(x86_64)) && os(iOS)
-            self.imagePickerController.sourceType = .PhotoLibrary
+            self.imagePickerController.sourceType = .photoLibrary
         #else
             if pValue == "Camera" {
-                self.imagePickerController.sourceType = .Camera
+                self.imagePickerController.sourceType = .camera
             } else if pValue == "Photo Album" {
-                self.imagePickerController.sourceType = .PhotoLibrary
+                self.imagePickerController.sourceType = .photoLibrary
             }
         #endif
         
-        self.presentViewController(self.imagePickerController, animated: true, completion: nil)
+        self.present(self.imagePickerController, animated: true, completion: nil)
     }
     
     
-    @IBAction func didSelectAddButton(sender: AnyObject) {
+    @IBAction func didSelectAddButton(_ sender: AnyObject) {
         do {
             self.view.endEditing(true)
             
             if self.driverPhotoImageView.image == nil {
-                throw IAError.Generic(NSError(domain: "com", code: 1, userInfo: [NSLocalizedDescriptionKey:"Please provide driver's photo."]))
+                throw IAError.generic(NSError(domain: "com", code: 1, userInfo: [NSLocalizedDescriptionKey:"Please provide driver's photo."]))
             }
             
             if self.licensePhotoImageView.image == nil {
-                throw IAError.Generic(NSError(domain: "com", code: 1, userInfo: [NSLocalizedDescriptionKey:"Please provide license photo."]))
+                throw IAError.generic(NSError(domain: "com", code: 1, userInfo: [NSLocalizedDescriptionKey:"Please provide license photo."]))
             }
             
             // Name Validations
             
-            if self.nameTextField.text == nil || self.nameTextField.text?.lengthOfBytesUsingEncoding(NSUTF8StringEncoding) <= 0 {
-                throw IAError.Generic(NSError(domain: "com", code: 1, userInfo: [NSLocalizedDescriptionKey:"Please enter name."]))
+            if self.nameTextField.text == nil || self.nameTextField.text?.lengthOfBytes(using: String.Encoding.utf8) <= 0 {
+                throw IAError.generic(NSError(domain: "com", code: 1, userInfo: [NSLocalizedDescriptionKey:"Please enter name."]))
             }
             
-            if self.nameTextField.text != nil && self.nameTextField.text?.lengthOfBytesUsingEncoding(NSUTF8StringEncoding) > 0 {
+            if self.nameTextField.text != nil && self.nameTextField.text?.lengthOfBytes(using: String.Encoding.utf8) > 0 {
                 if try IAUtils.doesRegexMatch("[^A-Za-z ]", subject: self.nameTextField.text!) == true {
-                    throw IAError.Generic(NSError(domain: "com", code: 1, userInfo: [NSLocalizedDescriptionKey:"Name contains invalid characters."]))
+                    throw IAError.generic(NSError(domain: "com", code: 1, userInfo: [NSLocalizedDescriptionKey:"Name contains invalid characters."]))
                 }
             }
             
-            if self.nameTextField.text != nil && self.nameTextField.text?.lengthOfBytesUsingEncoding(NSUTF8StringEncoding) > 25 {
-                throw IAError.Generic(NSError(domain: "com", code: 1, userInfo: [NSLocalizedDescriptionKey:"Name should not be greater than 25 characters."]))
+            if self.nameTextField.text != nil && self.nameTextField.text?.lengthOfBytes(using: String.Encoding.utf8) > 25 {
+                throw IAError.generic(NSError(domain: "com", code: 1, userInfo: [NSLocalizedDescriptionKey:"Name should not be greater than 25 characters."]))
             }
             
             // Phone Number Validations
             
-            if self.phoneNumberTextField.text == nil || self.phoneNumberTextField.text?.lengthOfBytesUsingEncoding(NSUTF8StringEncoding) <= 0 {
-                throw IAError.Generic(NSError(domain: "com", code: 1, userInfo: [NSLocalizedDescriptionKey:"Please enter phone number."]))
+            if self.phoneNumberTextField.text == nil || self.phoneNumberTextField.text?.lengthOfBytes(using: String.Encoding.utf8) <= 0 {
+                throw IAError.generic(NSError(domain: "com", code: 1, userInfo: [NSLocalizedDescriptionKey:"Please enter phone number."]))
             }
             
-            if self.phoneNumberTextField.text != nil && self.phoneNumberTextField.text?.lengthOfBytesUsingEncoding(NSUTF8StringEncoding) > 0 {
+            if self.phoneNumberTextField.text != nil && self.phoneNumberTextField.text?.lengthOfBytes(using: String.Encoding.utf8) > 0 {
                 if try IAUtils.doesRegexMatch("[^0-9]", subject: self.phoneNumberTextField.text!) == true {
-                    throw IAError.Generic(NSError(domain: "com", code: 1, userInfo: [NSLocalizedDescriptionKey:"Phone number contains invalid characters."]))
+                    throw IAError.generic(NSError(domain: "com", code: 1, userInfo: [NSLocalizedDescriptionKey:"Phone number contains invalid characters."]))
                 }
             }
             
-            if self.phoneNumberTextField.text != nil && self.phoneNumberTextField.text?.lengthOfBytesUsingEncoding(NSUTF8StringEncoding) > 15 {
-                throw IAError.Generic(NSError(domain: "com", code: 1, userInfo: [NSLocalizedDescriptionKey:"Phone number should not be greater than 15 digits."]))
+            if self.phoneNumberTextField.text != nil && self.phoneNumberTextField.text?.lengthOfBytes(using: String.Encoding.utf8) > 15 {
+                throw IAError.generic(NSError(domain: "com", code: 1, userInfo: [NSLocalizedDescriptionKey:"Phone number should not be greater than 15 digits."]))
             }
             
             // Email Address Validations
             
-            if self.emailAddressTextField.text == nil || self.emailAddressTextField.text?.lengthOfBytesUsingEncoding(NSUTF8StringEncoding) <= 0 {
-                throw IAError.Generic(NSError(domain: "com", code: 1, userInfo: [NSLocalizedDescriptionKey:"Please enter email address."]))
+            if self.emailAddressTextField.text == nil || self.emailAddressTextField.text?.lengthOfBytes(using: String.Encoding.utf8) <= 0 {
+                throw IAError.generic(NSError(domain: "com", code: 1, userInfo: [NSLocalizedDescriptionKey:"Please enter email address."]))
             }
             
-            if self.emailAddressTextField.text != nil && self.emailAddressTextField.text?.lengthOfBytesUsingEncoding(NSUTF8StringEncoding) > 0 {
+            if self.emailAddressTextField.text != nil && self.emailAddressTextField.text?.lengthOfBytes(using: String.Encoding.utf8) > 0 {
                 if try IAUtils.doesRegexMatch("[^A-Za-z0-9@\\-\\._]", subject: self.emailAddressTextField.text!) == true {
-                    throw IAError.Generic(NSError(domain: "com", code: 1, userInfo: [NSLocalizedDescriptionKey:"Email address contains invalid characters."]))
+                    throw IAError.generic(NSError(domain: "com", code: 1, userInfo: [NSLocalizedDescriptionKey:"Email address contains invalid characters."]))
                 }
             }
             
-            if self.emailAddressTextField.text != nil && self.emailAddressTextField.text?.lengthOfBytesUsingEncoding(NSUTF8StringEncoding) > 50 {
-                throw IAError.Generic(NSError(domain: "com", code: 1, userInfo: [NSLocalizedDescriptionKey:"Email address should not be greater than 50 characters."]))
+            if self.emailAddressTextField.text != nil && self.emailAddressTextField.text?.lengthOfBytes(using: String.Encoding.utf8) > 50 {
+                throw IAError.generic(NSError(domain: "com", code: 1, userInfo: [NSLocalizedDescriptionKey:"Email address should not be greater than 50 characters."]))
             }
             
             // Street Address Validations
             
-            if self.streetAddressTextField.text == nil || self.streetAddressTextField.text?.lengthOfBytesUsingEncoding(NSUTF8StringEncoding) <= 0 {
-                throw IAError.Generic(NSError(domain: "com", code: 1, userInfo: [NSLocalizedDescriptionKey:"Please enter street address."]))
+            if self.streetAddressTextField.text == nil || self.streetAddressTextField.text?.lengthOfBytes(using: String.Encoding.utf8) <= 0 {
+                throw IAError.generic(NSError(domain: "com", code: 1, userInfo: [NSLocalizedDescriptionKey:"Please enter street address."]))
             }
             
-            if self.streetAddressTextField.text != nil && self.streetAddressTextField.text?.lengthOfBytesUsingEncoding(NSUTF8StringEncoding) > 100 {
-                throw IAError.Generic(NSError(domain: "com", code: 1, userInfo: [NSLocalizedDescriptionKey:"Street address should not be greater than 100 characters."]))
+            if self.streetAddressTextField.text != nil && self.streetAddressTextField.text?.lengthOfBytes(using: String.Encoding.utf8) > 100 {
+                throw IAError.generic(NSError(domain: "com", code: 1, userInfo: [NSLocalizedDescriptionKey:"Street address should not be greater than 100 characters."]))
             }
             
             // Zip Code Validations
             
-            if self.zipTextField.text == nil || self.zipTextField.text?.lengthOfBytesUsingEncoding(NSUTF8StringEncoding) <= 0 {
-                throw IAError.Generic(NSError(domain: "com", code: 1, userInfo: [NSLocalizedDescriptionKey:"Please enter zip code."]))
+            if self.zipTextField.text == nil || self.zipTextField.text?.lengthOfBytes(using: String.Encoding.utf8) <= 0 {
+                throw IAError.generic(NSError(domain: "com", code: 1, userInfo: [NSLocalizedDescriptionKey:"Please enter zip code."]))
             }
             
-            if self.zipTextField.text != nil && self.zipTextField.text?.lengthOfBytesUsingEncoding(NSUTF8StringEncoding) > 0 {
+            if self.zipTextField.text != nil && self.zipTextField.text?.lengthOfBytes(using: String.Encoding.utf8) > 0 {
                 if try IAUtils.doesRegexMatch("[^0-9]", subject: self.zipTextField.text!) == true {
-                    throw IAError.Generic(NSError(domain: "com", code: 1, userInfo: [NSLocalizedDescriptionKey:"Zip code contains invalid characters."]))
+                    throw IAError.generic(NSError(domain: "com", code: 1, userInfo: [NSLocalizedDescriptionKey:"Zip code contains invalid characters."]))
                 }
             }
             
-            if self.zipTextField.text != nil && self.zipTextField.text?.lengthOfBytesUsingEncoding(NSUTF8StringEncoding) != 5 {
-                throw IAError.Generic(NSError(domain: "com", code: 1, userInfo: [NSLocalizedDescriptionKey:"Zip code should be of 5 digits."]))
+            if self.zipTextField.text != nil && self.zipTextField.text?.lengthOfBytes(using: String.Encoding.utf8) != 5 {
+                throw IAError.generic(NSError(domain: "com", code: 1, userInfo: [NSLocalizedDescriptionKey:"Zip code should be of 5 digits."]))
             }
             
             // License Number Validations
             
-            if self.licenseNumberTextField.text != nil && self.licenseNumberTextField.text?.lengthOfBytesUsingEncoding(NSUTF8StringEncoding) > 0 {
+            if self.licenseNumberTextField.text != nil && self.licenseNumberTextField.text?.lengthOfBytes(using: String.Encoding.utf8) > 0 {
                 if try IAUtils.doesRegexMatch("[^A-Za-z0-9]", subject: self.licenseNumberTextField.text!) == true {
-                    throw IAError.Generic(NSError(domain: "com", code: 1, userInfo: [NSLocalizedDescriptionKey:"License number contains invalid characters."]))
+                    throw IAError.generic(NSError(domain: "com", code: 1, userInfo: [NSLocalizedDescriptionKey:"License number contains invalid characters."]))
                 }
             }
             
-            if self.licenseNumberTextField.text != nil && self.licenseNumberTextField.text?.lengthOfBytesUsingEncoding(NSUTF8StringEncoding) > 20 {
-                throw IAError.Generic(NSError(domain: "com", code: 1, userInfo: [NSLocalizedDescriptionKey:"License number should not be greater than 20 characters."]))
+            if self.licenseNumberTextField.text != nil && self.licenseNumberTextField.text?.lengthOfBytes(using: String.Encoding.utf8) > 20 {
+                throw IAError.generic(NSError(domain: "com", code: 1, userInfo: [NSLocalizedDescriptionKey:"License number should not be greater than 20 characters."]))
             }
             
             let aDriver = IADriver()
@@ -330,35 +365,35 @@ class IAAddDriverController: IABaseController, UITextFieldDelegate, UIImagePicke
             
             IAAppDelegate.currentAppDelegate.displayLoadingOverlay()
             self.dataManager.addDriver(aDriver)
-        } catch IAError.Generic(let pError){
-            self.displayMessage(message: pError.localizedDescription, type: IAMessageType.Error)
+        } catch IAError.generic(let pError){
+            self.displayMessage(message: pError.localizedDescription, type: IAMessageType.error)
         } catch {
-            self.displayMessage(message: "Add driver error.", type: IAMessageType.Error)
+            self.displayMessage(message: "Add driver error.", type: IAMessageType.error)
         }
     }
     
     
     // MARK: - UIImagePickerControllerDelegate Methods
     
-    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         if var aPickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
             aPickedImage = IAUtils.fixImageOrientation(aPickedImage)
             
             if self.imagePickerDestinationImageView != nil && self.imagePickerDestinationImageView.isEqual(self.driverPhotoImageView)  {
                 self.driverPhotoImageView.image = aPickedImage
-                self.driverPhotoIconImageView.hidden = true
-                self.driverPhotoLabel.hidden = true
+                self.driverPhotoIconImageView.isHidden = true
+                self.driverPhotoLabel.isHidden = true
             } else if self.imagePickerDestinationImageView != nil && self.imagePickerDestinationImageView.isEqual(self.licensePhotoImageView)  {
                 self.licensePhotoImageView.image = aPickedImage
-                self.licensePhotoIconImageView.hidden = true
-                self.licensePhotoLabel.hidden = true
+                self.licensePhotoIconImageView.isHidden = true
+                self.licensePhotoLabel.isHidden = true
             }
         }
-        picker.dismissViewControllerAnimated(true, completion: nil)
+        picker.dismiss(animated: true, completion: nil)
     }
     
-    func imagePickerControllerDidCancel(picker: UIImagePickerController) {
-        picker.dismissViewControllerAnimated(true, completion: nil)
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        picker.dismiss(animated: true, completion: nil)
     }
     
     
@@ -371,17 +406,17 @@ class IAAddDriverController: IABaseController, UITextFieldDelegate, UIImagePicke
         IAAppDelegate.currentAppDelegate.hideLoadingOverlay()
         
         if pResponse.error != nil {
-            self.displayMessage(message: pResponse.error.localizedDescription, type: IAMessageType.Error)
-        } else if pSender.requestType == IARequestType.AddDriver {
-            let anAlert = UIAlertController(title: "Driver added successfully. Do you want to add more drivers?", message: nil, preferredStyle: .Alert)
-            anAlert.addAction(UIAlertAction(title: "Yes", style: .Default, handler : {(action:UIAlertAction) in
+            self.displayMessage(message: pResponse.error.localizedDescription, type: IAMessageType.error)
+        } else if pSender.requestType == IARequestType.addDriver {
+            let anAlert = UIAlertController(title: "Driver added successfully. Do you want to add more drivers?", message: nil, preferredStyle: .alert)
+            anAlert.addAction(UIAlertAction(title: "Yes", style: .default, handler : {(action:UIAlertAction) in
                 
                 self.driverPhotoImageView.image = nil
                 self.licensePhotoImageView.image = nil
-                self.driverPhotoIconImageView.hidden = false
-                self.driverPhotoLabel.hidden = false
-                self.licensePhotoIconImageView.hidden = false
-                self.licensePhotoLabel.hidden = false
+                self.driverPhotoIconImageView.isHidden = false
+                self.driverPhotoLabel.isHidden = false
+                self.licensePhotoIconImageView.isHidden = false
+                self.licensePhotoLabel.isHidden = false
                 self.nameTextField.text! = ""
                 self.phoneNumberTextField.text! = ""
                 self.emailAddressTextField.text! = ""
@@ -399,10 +434,10 @@ class IAAddDriverController: IABaseController, UITextFieldDelegate, UIImagePicke
                 
                 }))
 
-            anAlert.addAction(UIAlertAction(title: "No", style: .Default, handler: {(action:UIAlertAction) in
-                self.navigationController?.popViewControllerAnimated(true)
+            anAlert.addAction(UIAlertAction(title: "No", style: .default, handler: {(action:UIAlertAction) in
+                self.navigationController?.popViewController(animated: true)
             }))
-            self.presentViewController(anAlert, animated: true, completion: nil)
+            self.present(anAlert, animated: true, completion: nil)
         }
     }
 

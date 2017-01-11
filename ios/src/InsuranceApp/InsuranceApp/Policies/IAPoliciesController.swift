@@ -45,7 +45,7 @@ class IAPoliciesController: IABaseController {
      * Method that will calculate and return number of rows in given section of table.
      * @return Int. Number of rows in given section
      */
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         var aReturnVal :Int = 0
         
         if self.policyArray != nil {
@@ -60,10 +60,10 @@ class IAPoliciesController: IABaseController {
      * Method that will init, set and return the cell view.
      * @return UITableViewCell. View of the cell in given table view.
      */
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let aReturnVal:IAPolicyListTableCellView = tableView.dequeueReusableCellWithIdentifier("IAPolicyListTableCellViewID") as! IAPolicyListTableCellView
-        aReturnVal.backgroundColor = UIColor.clearColor()
-        aReturnVal.accessoryType = .DisclosureIndicator
+    func tableView(_ tableView: UITableView, cellForRowAtIndexPath indexPath: IndexPath) -> UITableViewCell {
+        let aReturnVal:IAPolicyListTableCellView = tableView.dequeueReusableCell(withIdentifier: "IAPolicyListTableCellViewID") as! IAPolicyListTableCellView
+        aReturnVal.backgroundColor = UIColor.clear
+        aReturnVal.accessoryType = .disclosureIndicator
         
         if self.policyArray != nil {
             let aPolicy = self.policyArray[indexPath.row]
@@ -93,16 +93,16 @@ class IAPoliciesController: IABaseController {
             }
             
             if aPolicy.insuranceType == "Auto" {
-                aReturnVal.insuredDriversCountTitleLabel.hidden = false
-                aReturnVal.insuredDriversCountLabel.hidden = false
+                aReturnVal.insuredDriversCountTitleLabel.isHidden = false
+                aReturnVal.insuredDriversCountLabel.isHidden = false
                 aReturnVal.insuredDriversCountLabel?.text = String(format: "%02d", aPolicy.insuredDriverCount)
             } else {
-                aReturnVal.insuredDriversCountTitleLabel.hidden = true
-                aReturnVal.insuredDriversCountLabel.hidden = true
+                aReturnVal.insuredDriversCountTitleLabel.isHidden = true
+                aReturnVal.insuredDriversCountLabel.isHidden = true
             }
             
-            aReturnVal.coverageLabel?.text = String(format: "$%02d", aPolicy.coverage.integerValue)
-            aReturnVal.premiumDueLabel?.text = String(format: "$%02d", aPolicy.premiumDue.integerValue)
+            aReturnVal.coverageLabel?.text = String(format: "$%02d", aPolicy.coverage.intValue)
+            aReturnVal.premiumDueLabel?.text = String(format: "$%02d", aPolicy.premiumDue.intValue)
             
             aReturnVal.dateLabel.text = aPolicy.date
         }
@@ -114,9 +114,9 @@ class IAPoliciesController: IABaseController {
     /**
      * Method that will handle tap on table cell.
      */
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        tableView.deselectRowAtIndexPath(indexPath, animated: true)
-        self.performSegueWithIdentifier("PolicyListToPolicyDetailsSegueID", sender: self)
+    func tableView(_ tableView: UITableView, didSelectRowAtIndexPath indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        self.performSegue(withIdentifier: "PolicyListToPolicyDetailsSegueID", sender: self)
     }
     
     
@@ -129,8 +129,8 @@ class IAPoliciesController: IABaseController {
         IAAppDelegate.currentAppDelegate.hideLoadingOverlay()
         
         if pResponse.error != nil {
-            self.displayMessage(message: pResponse.error.localizedDescription, type: IAMessageType.Error)
-        } else if pSender.requestType == IARequestType.ListPolicies {
+            self.displayMessage(message: pResponse.error.localizedDescription, type: IAMessageType.error)
+        } else if pSender.requestType == IARequestType.listPolicies {
             if pResponse.result != nil {
                 self.policyArray = pResponse.result as! Array
             } else {

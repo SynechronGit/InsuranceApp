@@ -19,12 +19,12 @@ class IABaseController: UIViewController, IADataManagerDelegate {
         self.dataManager = IADataManager()
         self.dataManager.delegate = self
         
-        let anImageView = UIImageView(frame: CGRectMake(0.0, 0.0, 15.0, 15.0))
+        let anImageView = UIImageView(frame: CGRect(x: 0.0, y: 0.0, width: 15.0, height: 15.0))
         anImageView.image = UIImage(named: "SearchIcon")
         let aRightBarButtonItem = UIBarButtonItem(customView: anImageView)
         self.navigationItem.rightBarButtonItem = aRightBarButtonItem
         
-        self.navigationItem.backBarButtonItem = UIBarButtonItem(title:"", style:.Plain, target:nil, action:nil)
+        self.navigationItem.backBarButtonItem = UIBarButtonItem(title:"", style:.plain, target:nil, action:nil)
     }
     
     
@@ -34,10 +34,10 @@ class IABaseController: UIViewController, IADataManagerDelegate {
      * @param: pType. IAMessageType. Message type that should be displayed.
      */
     internal func displayMessage(message pMessage: String, type pType: IAMessageType) {
-        let anAlert = UIAlertController(title: pMessage, message: nil, preferredStyle: .Alert)
-        let anOkAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
+        let anAlert = UIAlertController(title: pMessage, message: nil, preferredStyle: .alert)
+        let anOkAction = UIAlertAction(title: "OK", style: .default, handler: nil)
         anAlert.addAction(anOkAction)
-        presentViewController(anAlert, animated: true, completion: nil)
+        present(anAlert, animated: true, completion: nil)
     }
     
     
@@ -48,7 +48,7 @@ class IABaseController: UIViewController, IADataManagerDelegate {
      */
     internal func aiDataManagerDidFail(sender pSender:IADataManager, error pError: NSError) {
         IAAppDelegate.currentAppDelegate.hideLoadingOverlay()
-        self.displayMessage(message: pError.localizedDescription, type: IAMessageType.Error)
+        self.displayMessage(message: pError.localizedDescription, type: IAMessageType.error)
     }
     
     

@@ -17,7 +17,7 @@ class IAAppDelegate: UIResponder, UIApplicationDelegate {
     var loadingActivityIndicatorView: UIActivityIndicatorView!
 
 
-    func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         self.resetAppDatabase()
         return true
     }
@@ -28,7 +28,7 @@ class IAAppDelegate: UIResponder, UIApplicationDelegate {
      */
     static var currentAppDelegate :IAAppDelegate {
         get {
-            return UIApplication.sharedApplication().delegate as! IAAppDelegate
+            return UIApplication.shared.delegate as! IAAppDelegate
         }
     }
     
@@ -45,14 +45,14 @@ class IAAppDelegate: UIResponder, UIApplicationDelegate {
             self.loadingOverlayView.backgroundColor = UIColor(red: 0.0, green: 0.0, blue: 0.0, alpha: 0.5)
             self.window?.addSubview(self.loadingOverlayView)
             
-            self.loadingActivityIndicatorView = UIActivityIndicatorView(activityIndicatorStyle: .WhiteLarge)
+            self.loadingActivityIndicatorView = UIActivityIndicatorView(activityIndicatorStyle: .whiteLarge)
             self.loadingOverlayView.addSubview(self.loadingActivityIndicatorView)
         }
         self.loadingOverlayView.frame = self.window!.bounds
-        self.loadingActivityIndicatorView.frame = CGRectMake((self.loadingOverlayView.frame.size.width / 2.0) - (self.loadingActivityIndicatorView.frame.size.width / 2.0), (self.loadingOverlayView.frame.size.height / 2.0) - (self.loadingActivityIndicatorView.frame.size.height / 2.0), 37.0, 37.0)
-        self.window?.bringSubviewToFront(self.loadingOverlayView)
-        self.loadingOverlayView.hidden = false
-        if self.loadingActivityIndicatorView.isAnimating() != true {
+        self.loadingActivityIndicatorView.frame = CGRect(x: (self.loadingOverlayView.frame.size.width / 2.0) - (self.loadingActivityIndicatorView.frame.size.width / 2.0), y: (self.loadingOverlayView.frame.size.height / 2.0) - (self.loadingActivityIndicatorView.frame.size.height / 2.0), width: 37.0, height: 37.0)
+        self.window?.bringSubview(toFront: self.loadingOverlayView)
+        self.loadingOverlayView.isHidden = false
+        if self.loadingActivityIndicatorView.isAnimating != true {
             self.loadingActivityIndicatorView.startAnimating()
         }
     }
@@ -65,7 +65,7 @@ class IAAppDelegate: UIResponder, UIApplicationDelegate {
         _displayLoadingOverlayCount = _displayLoadingOverlayCount - 1
         if self.loadingOverlayView != nil {
             if _displayLoadingOverlayCount <= 0 {
-                self.loadingOverlayView.hidden = true
+                self.loadingOverlayView.isHidden = true
                 self.loadingActivityIndicatorView.stopAnimating()
             }
         }
@@ -80,7 +80,7 @@ class IAAppDelegate: UIResponder, UIApplicationDelegate {
      */
     func resetAppDatabase() {
         do {
-            try NSFileManager.defaultManager().removeItemAtPath(IAConstants.dataManagerSqliteFilePath)
+            try FileManager.default.removeItem(atPath: IAConstants.dataManagerSqliteFilePath)
         } catch {
             NSLog("Can not copy app database.")
         }

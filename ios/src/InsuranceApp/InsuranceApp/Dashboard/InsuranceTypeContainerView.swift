@@ -21,7 +21,7 @@ class InsuranceTypeContainerView: UIView {
     }
     
     
-    private func initialize() {
+    fileprivate func initialize() {
         self.layer.cornerRadius = IAConstants.dashboardSubviewCornerRadius
         self.layer.masksToBounds = true
     }

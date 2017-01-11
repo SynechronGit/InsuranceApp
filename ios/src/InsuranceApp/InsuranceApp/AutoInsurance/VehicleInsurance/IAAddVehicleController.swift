@@ -4,6 +4,41 @@
 //
 
 import UIKit
+// FIXME: comparison operators with optionals were removed from the Swift Standard Libary.
+// Consider refactoring the code to use the non-optional operators.
+fileprivate func < <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
+  switch (lhs, rhs) {
+  case let (l?, r?):
+    return l < r
+  case (nil, _?):
+    return true
+  default:
+    return false
+  }
+}
+
+// FIXME: comparison operators with optionals were removed from the Swift Standard Libary.
+// Consider refactoring the code to use the non-optional operators.
+fileprivate func <= <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
+  switch (lhs, rhs) {
+  case let (l?, r?):
+    return l <= r
+  default:
+    return !(rhs < lhs)
+  }
+}
+
+// FIXME: comparison operators with optionals were removed from the Swift Standard Libary.
+// Consider refactoring the code to use the non-optional operators.
+fileprivate func > <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
+  switch (lhs, rhs) {
+  case let (l?, r?):
+    return l > r
+  default:
+    return rhs < lhs
+  }
+}
+
 
 
 /**
@@ -79,8 +114,8 @@ class IAAddVehicleController: IABaseController, UIImagePickerControllerDelegate,
     
     
     func updateUI(){
-        self.addBtn2.hidden = true
-        self.addBtn3.hidden = true
+        self.addBtn2.isHidden = true
+        self.addBtn3.isHidden = true
         
         self.mainBgView.layer.cornerRadius = 10.0
         self.mainBgView.layer.masksToBounds = true
@@ -101,7 +136,7 @@ class IAAddVehicleController: IABaseController, UIImagePickerControllerDelegate,
         self.saveBtnView.layer.masksToBounds = true
         
         self.descriptionBgView.layer.cornerRadius = IAConstants.dashboardSubviewCornerRadius
-        self.descriptionBgView.layer.borderColor = UIColor.lightGrayColor().CGColor
+        self.descriptionBgView.layer.borderColor = UIColor.lightGray.cgColor
         self.descriptionBgView.layer.borderWidth = 2.0
         self.descriptionBgView.layer.masksToBounds = true
         
@@ -130,7 +165,7 @@ class IAAddVehicleController: IABaseController, UIImagePickerControllerDelegate,
         self.bosyStyleTextBox.list = nil
     }
     
-    func textFieldDidEndEditing(textField: UITextField) {
+    func textFieldDidEndEditing(_ textField: UITextField) {
         if textField.isEqual(self.companyTextBox) {
             self.modelTextBox.text = nil
             self.bosyStyleTextBox.text = nil
@@ -169,51 +204,51 @@ class IAAddVehicleController: IABaseController, UIImagePickerControllerDelegate,
     func didSelectAddButton() {
         
         do {
-            if self.vinTextBox.text == nil || self.vinTextBox.text?.lengthOfBytesUsingEncoding(NSUTF8StringEncoding) <= 0 {
-                throw IAError.Generic(NSError(domain: "com", code: 1, userInfo: [NSLocalizedDescriptionKey:"Please enter VIN."]))
+            if self.vinTextBox.text == nil || self.vinTextBox.text?.lengthOfBytes(using: String.Encoding.utf8) <= 0 {
+                throw IAError.generic(NSError(domain: "com", code: 1, userInfo: [NSLocalizedDescriptionKey:"Please enter VIN."]))
             }
             
-            if self.vinTextBox.text != nil && self.vinTextBox.text?.lengthOfBytesUsingEncoding(NSUTF8StringEncoding) > 17 {
-                throw IAError.Generic(NSError(domain: "com", code: 1, userInfo: [NSLocalizedDescriptionKey:"VIN should not be greater than 17 characters."]))
+            if self.vinTextBox.text != nil && self.vinTextBox.text?.lengthOfBytes(using: String.Encoding.utf8) > 17 {
+                throw IAError.generic(NSError(domain: "com", code: 1, userInfo: [NSLocalizedDescriptionKey:"VIN should not be greater than 17 characters."]))
             }
             
-            if self.companyTextBox.text == nil || self.companyTextBox.text?.lengthOfBytesUsingEncoding(NSUTF8StringEncoding) <= 0 {
-                throw IAError.Generic(NSError(domain: "com", code: 1, userInfo: [NSLocalizedDescriptionKey:"Please select company."]))
+            if self.companyTextBox.text == nil || self.companyTextBox.text?.lengthOfBytes(using: String.Encoding.utf8) <= 0 {
+                throw IAError.generic(NSError(domain: "com", code: 1, userInfo: [NSLocalizedDescriptionKey:"Please select company."]))
             }
             
-            if self.modelTextBox.text == nil || self.modelTextBox.text?.lengthOfBytesUsingEncoding(NSUTF8StringEncoding) <= 0 {
-                throw IAError.Generic(NSError(domain: "com", code: 1, userInfo: [NSLocalizedDescriptionKey:"Please select model number."]))
+            if self.modelTextBox.text == nil || self.modelTextBox.text?.lengthOfBytes(using: String.Encoding.utf8) <= 0 {
+                throw IAError.generic(NSError(domain: "com", code: 1, userInfo: [NSLocalizedDescriptionKey:"Please select model number."]))
             }
             
-            if self.bosyStyleTextBox.text == nil || self.bosyStyleTextBox.text?.lengthOfBytesUsingEncoding(NSUTF8StringEncoding) <= 0 {
-                throw IAError.Generic(NSError(domain: "com", code: 1, userInfo: [NSLocalizedDescriptionKey:"Please select body style."]))
+            if self.bosyStyleTextBox.text == nil || self.bosyStyleTextBox.text?.lengthOfBytes(using: String.Encoding.utf8) <= 0 {
+                throw IAError.generic(NSError(domain: "com", code: 1, userInfo: [NSLocalizedDescriptionKey:"Please select body style."]))
             }
             
-            if self.yearTextBox.text == nil || self.yearTextBox.text?.lengthOfBytesUsingEncoding(NSUTF8StringEncoding) <= 0 {
-                throw IAError.Generic(NSError(domain: "com", code: 1, userInfo: [NSLocalizedDescriptionKey:"Please select year."]))
+            if self.yearTextBox.text == nil || self.yearTextBox.text?.lengthOfBytes(using: String.Encoding.utf8) <= 0 {
+                throw IAError.generic(NSError(domain: "com", code: 1, userInfo: [NSLocalizedDescriptionKey:"Please select year."]))
             }
             
             
-            if self.vehicleNameTextBox.text == nil || self.vehicleNameTextBox.text?.lengthOfBytesUsingEncoding(NSUTF8StringEncoding) <= 0 {
-                throw IAError.Generic(NSError(domain: "com", code: 1, userInfo: [NSLocalizedDescriptionKey:"Please enter vehicle's name"]))
+            if self.vehicleNameTextBox.text == nil || self.vehicleNameTextBox.text?.lengthOfBytes(using: String.Encoding.utf8) <= 0 {
+                throw IAError.generic(NSError(domain: "com", code: 1, userInfo: [NSLocalizedDescriptionKey:"Please enter vehicle's name"]))
             }
             
-            if self.vehicleNameTextBox.text != nil && self.vehicleNameTextBox.text?.lengthOfBytesUsingEncoding(NSUTF8StringEncoding) > 0 {
+            if self.vehicleNameTextBox.text != nil && self.vehicleNameTextBox.text?.lengthOfBytes(using: String.Encoding.utf8) > 0 {
                 if try IAUtils.doesRegexMatch("[^A-Za-z ]", subject: self.vehicleNameTextBox.text!) == true {
-                    throw IAError.Generic(NSError(domain: "com", code: 1, userInfo: [NSLocalizedDescriptionKey:"Name contains invalid characters."]))
+                    throw IAError.generic(NSError(domain: "com", code: 1, userInfo: [NSLocalizedDescriptionKey:"Name contains invalid characters."]))
                 }
             }
             
-            if self.vehicleNameTextBox.text != nil && self.vehicleNameTextBox.text?.lengthOfBytesUsingEncoding(NSUTF8StringEncoding) > 25 {
-                throw IAError.Generic(NSError(domain: "com", code: 1, userInfo: [NSLocalizedDescriptionKey:"Name should not be greater than 25 digits."]))
+            if self.vehicleNameTextBox.text != nil && self.vehicleNameTextBox.text?.lengthOfBytes(using: String.Encoding.utf8) > 25 {
+                throw IAError.generic(NSError(domain: "com", code: 1, userInfo: [NSLocalizedDescriptionKey:"Name should not be greater than 25 digits."]))
             }
             
-            if self.descriptionTextView.text != nil && self.descriptionTextView.text?.lengthOfBytesUsingEncoding(NSUTF8StringEncoding) > 500 {
-                throw IAError.Generic(NSError(domain: "com", code: 1, userInfo: [NSLocalizedDescriptionKey:"Description should not be greater than 500 characters."]))
+            if self.descriptionTextView.text != nil && self.descriptionTextView.text?.lengthOfBytes(using: String.Encoding.utf8) > 500 {
+                throw IAError.generic(NSError(domain: "com", code: 1, userInfo: [NSLocalizedDescriptionKey:"Description should not be greater than 500 characters."]))
             }
             
             if self.addPhotoFirstImageView.image == nil && self.addPhotoSecondImageView.image == nil && self.addPhotoThirdImageView.image == nil  {
-                throw IAError.Generic(NSError(domain: "com", code: 1, userInfo: [NSLocalizedDescriptionKey:"Please provide vehicle's photo."]))
+                throw IAError.generic(NSError(domain: "com", code: 1, userInfo: [NSLocalizedDescriptionKey:"Please provide vehicle's photo."]))
             }
 
             
@@ -242,10 +277,10 @@ class IAAddVehicleController: IABaseController, UIImagePickerControllerDelegate,
             
             self.dataManager.addVehicle(aVehicle)
             
-        } catch IAError.Generic(let pError){
-            self.displayMessage(message: pError.localizedDescription, type: IAMessageType.Error)
+        } catch IAError.generic(let pError){
+            self.displayMessage(message: pError.localizedDescription, type: IAMessageType.error)
         } catch {
-            self.displayMessage(message: "Add Vehicle error.", type: IAMessageType.Error)
+            self.displayMessage(message: "Add Vehicle error.", type: IAMessageType.error)
         }
         
     }
@@ -270,118 +305,118 @@ class IAAddVehicleController: IABaseController, UIImagePickerControllerDelegate,
     
     func displayImagePicker() {
         if self.dropdownListController == nil {
-            self.dropdownListController  = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("IADropdownListControllerID") as! IADropdownListController
+            self.dropdownListController  = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "IADropdownListControllerID") as! IADropdownListController
         }
         self.dropdownListController.delegate = self
         self.dropdownListController.list = ["Camera", "Photo Album"]
-        self.dropdownListController.preferredContentSize = CGSizeMake(200.0, 80.0)
-        self.dropdownListController.modalPresentationStyle = .Popover
-        self.dropdownListController.popoverPresentationController?.permittedArrowDirections = UIPopoverArrowDirection.Any
+        self.dropdownListController.preferredContentSize = CGSize(width: 200.0, height: 80.0)
+        self.dropdownListController.modalPresentationStyle = .popover
+        self.dropdownListController.popoverPresentationController?.permittedArrowDirections = UIPopoverArrowDirection.any
         self.dropdownListController.popoverPresentationController?.sourceView = self.imagePickerDestinationImageView
         self.dropdownListController.popoverPresentationController?.sourceRect = self.imagePickerDestinationImageView.bounds
-        self.presentViewController(self.dropdownListController, animated: true, completion: nil)
+        self.present(self.dropdownListController, animated: true, completion: nil)
     }
     
     
-    func dropdownListController(pDropdownListController:IADropdownListController, didSelectValue pValue:String) {
-        pDropdownListController.dismissViewControllerAnimated(false, completion: nil)
+    func dropdownListController(_ pDropdownListController:IADropdownListController, didSelectValue pValue:String) {
+        pDropdownListController.dismiss(animated: false, completion: nil)
         
         if self.imagePickerController == nil {
             self.imagePickerController = UIImagePickerController()
         }
         self.imagePickerController.allowsEditing = false
         self.imagePickerController.delegate = self
-        self.imagePickerController.modalPresentationStyle = UIModalPresentationStyle.FormSheet
+        self.imagePickerController.modalPresentationStyle = UIModalPresentationStyle.formSheet
         
         #if (arch(i386) || arch(x86_64)) && os(iOS)
-            self.imagePickerController.sourceType = .PhotoLibrary
+            self.imagePickerController.sourceType = .photoLibrary
         #else
             if pValue == "Camera" {
-                self.imagePickerController.sourceType = .Camera
+                self.imagePickerController.sourceType = .camera
             } else if pValue == "Photo Album" {
-                self.imagePickerController.sourceType = .PhotoLibrary
+                self.imagePickerController.sourceType = .photoLibrary
             }
         #endif
         
-        self.presentViewController(self.imagePickerController, animated: true, completion: nil)
+        self.present(self.imagePickerController, animated: true, completion: nil)
     }
 
     
-    @IBAction func didSelectComprehensiveCoverageFirstOption(sender: AnyObject) {
+    @IBAction func didSelectComprehensiveCoverageFirstOption(_ sender: AnyObject) {
         if (comprahensiveFirstOption == true){
             comprahensiveFirstOption = false
-            comprehensiveCoverageFirstOptionButton.setBackgroundImage(UIImage(named: "tick_box_deselected"), forState: .Normal)
-            comprehensiveCoverageSecondOptionButton.setBackgroundImage(UIImage(named: "tick_box_selected"), forState: .Normal)
+            comprehensiveCoverageFirstOptionButton.setBackgroundImage(UIImage(named: "tick_box_deselected"), for: UIControlState())
+            comprehensiveCoverageSecondOptionButton.setBackgroundImage(UIImage(named: "tick_box_selected"), for: UIControlState())
         }else{
             comprahensiveFirstOption = true
-            comprehensiveCoverageFirstOptionButton.setBackgroundImage(UIImage(named: "tick_box_selected"), forState: .Normal)
-            comprehensiveCoverageSecondOptionButton.setBackgroundImage(UIImage(named: "tick_box_deselected"), forState: .Normal)
+            comprehensiveCoverageFirstOptionButton.setBackgroundImage(UIImage(named: "tick_box_selected"), for: UIControlState())
+            comprehensiveCoverageSecondOptionButton.setBackgroundImage(UIImage(named: "tick_box_deselected"), for: UIControlState())
         }
         
     }
     
-    @IBAction func didSelectComprehensiveCoverageSecondOption(sender: AnyObject) {
+    @IBAction func didSelectComprehensiveCoverageSecondOption(_ sender: AnyObject) {
         if (comprahensiveFirstOption == false){
             comprahensiveFirstOption = true
-            comprehensiveCoverageSecondOptionButton.setBackgroundImage(UIImage(named: "tick_box_deselected"), forState: .Normal)
-            comprehensiveCoverageFirstOptionButton.setBackgroundImage(UIImage(named: "tick_box_selected"), forState: .Normal)
+            comprehensiveCoverageSecondOptionButton.setBackgroundImage(UIImage(named: "tick_box_deselected"), for: UIControlState())
+            comprehensiveCoverageFirstOptionButton.setBackgroundImage(UIImage(named: "tick_box_selected"), for: UIControlState())
         }else{
             comprahensiveFirstOption = false
-            comprehensiveCoverageSecondOptionButton.setBackgroundImage(UIImage(named: "tick_box_selected"), forState: .Normal)
-            comprehensiveCoverageFirstOptionButton.setBackgroundImage(UIImage(named: "tick_box_deselected"), forState: .Normal)
+            comprehensiveCoverageSecondOptionButton.setBackgroundImage(UIImage(named: "tick_box_selected"), for: UIControlState())
+            comprehensiveCoverageFirstOptionButton.setBackgroundImage(UIImage(named: "tick_box_deselected"), for: UIControlState())
         }
         
     }
     
-    @IBAction func didSelectCollisionCoverageFirstOption(sender: AnyObject) {
+    @IBAction func didSelectCollisionCoverageFirstOption(_ sender: AnyObject) {
         if (collisionFirstOption == true){
             collisionFirstOption = false
-            collisionCoverageFirstOptionButton.setBackgroundImage(UIImage(named: "tick_box_deselected"), forState: .Normal)
-            collisionCoverageSecondOptionButton.setBackgroundImage(UIImage(named: "tick_box_selected"), forState: .Normal)
+            collisionCoverageFirstOptionButton.setBackgroundImage(UIImage(named: "tick_box_deselected"), for: UIControlState())
+            collisionCoverageSecondOptionButton.setBackgroundImage(UIImage(named: "tick_box_selected"), for: UIControlState())
         }else{
             collisionFirstOption = true
-            collisionCoverageFirstOptionButton.setBackgroundImage(UIImage(named: "tick_box_selected"), forState: .Normal)
-            collisionCoverageSecondOptionButton.setBackgroundImage(UIImage(named: "tick_box_deselected"), forState: .Normal)
+            collisionCoverageFirstOptionButton.setBackgroundImage(UIImage(named: "tick_box_selected"), for: UIControlState())
+            collisionCoverageSecondOptionButton.setBackgroundImage(UIImage(named: "tick_box_deselected"), for: UIControlState())
         }
     }
     
     
-    @IBAction func didSelectCollisionCoverageSecondOption(sender: AnyObject) {
+    @IBAction func didSelectCollisionCoverageSecondOption(_ sender: AnyObject) {
         if (collisionFirstOption == false){
             collisionFirstOption = true
-            collisionCoverageSecondOptionButton.setBackgroundImage(UIImage(named: "tick_box_deselected"), forState: .Normal)
-            collisionCoverageFirstOptionButton.setBackgroundImage(UIImage(named: "tick_box_selected"), forState: .Normal)
+            collisionCoverageSecondOptionButton.setBackgroundImage(UIImage(named: "tick_box_deselected"), for: UIControlState())
+            collisionCoverageFirstOptionButton.setBackgroundImage(UIImage(named: "tick_box_selected"), for: UIControlState())
         }else{
             collisionFirstOption = false
-            collisionCoverageSecondOptionButton.setBackgroundImage(UIImage(named: "tick_box_selected"), forState: .Normal)
-            collisionCoverageFirstOptionButton.setBackgroundImage(UIImage(named: "tick_box_deselected"), forState: .Normal)
+            collisionCoverageSecondOptionButton.setBackgroundImage(UIImage(named: "tick_box_selected"), for: UIControlState())
+            collisionCoverageFirstOptionButton.setBackgroundImage(UIImage(named: "tick_box_deselected"), for: UIControlState())
         }
     }
     
     // MARK: - UIImagePickerControllerDelegate Methods
     
-    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         if var aPickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
             aPickedImage = IAUtils.fixImageOrientation(aPickedImage)
             
             if self.imagePickerDestinationImageView != nil && self.imagePickerDestinationImageView.isEqual(self.addPhotoFirstImageView)  {
                 self.addPhotoFirstImageView.image = aPickedImage
-                self.addBtn2.hidden = false
+                self.addBtn2.isHidden = false
                 
             } else if self.imagePickerDestinationImageView != nil && self.imagePickerDestinationImageView.isEqual(self.addPhotoSecondImageView) {
                 self.addPhotoSecondImageView.image = aPickedImage
-                self.addBtn3.hidden = false
+                self.addBtn3.isHidden = false
                 
             } else if self.imagePickerDestinationImageView != nil && self.imagePickerDestinationImageView.isEqual(self.addPhotoThirdImageView) {
                 self.addPhotoThirdImageView.image = aPickedImage
                 
             }
         }
-        picker.dismissViewControllerAnimated(true, completion: nil)
+        picker.dismiss(animated: true, completion: nil)
     }
     
-    func imagePickerControllerDidCancel(picker: UIImagePickerController) {
-        picker.dismissViewControllerAnimated(true, completion: nil)
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        picker.dismiss(animated: true, completion: nil)
     }
 
     
@@ -395,13 +430,13 @@ class IAAddVehicleController: IABaseController, UIImagePickerControllerDelegate,
         IAAppDelegate.currentAppDelegate.hideLoadingOverlay()
         
         if pResponse.error != nil {
-            self.displayMessage(message: pResponse.error.localizedDescription, type: IAMessageType.Error)
-        } else if pSender.requestType == IARequestType.AddVehicle {
-            let anAlert = UIAlertController(title: "Vehicle added successfully", message: nil, preferredStyle: .Alert)
-            anAlert.addAction(UIAlertAction(title: "Ok", style: .Default, handler: {(action:UIAlertAction) in
-                self.navigationController?.popViewControllerAnimated(true)
+            self.displayMessage(message: pResponse.error.localizedDescription, type: IAMessageType.error)
+        } else if pSender.requestType == IARequestType.addVehicle {
+            let anAlert = UIAlertController(title: "Vehicle added successfully", message: nil, preferredStyle: .alert)
+            anAlert.addAction(UIAlertAction(title: "Ok", style: .default, handler: {(action:UIAlertAction) in
+                self.navigationController?.popViewController(animated: true)
             }))
-            self.presentViewController(anAlert, animated: true, completion: nil)
+            self.present(anAlert, animated: true, completion: nil)
         }
     }
 }

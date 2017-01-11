@@ -50,10 +50,10 @@ class IALoginController: IABaseController {
         IAAppDelegate.currentAppDelegate.hideLoadingOverlay()
         
         if pResponse.error != nil {
-            self.displayMessage(message: pResponse.error.localizedDescription, type: IAMessageType.Error)
-        } else if pSender.requestType == IARequestType.Login {
+            self.displayMessage(message: pResponse.error.localizedDescription, type: IAMessageType.error)
+        } else if pSender.requestType == IARequestType.login {
             IAGlobalData.sharedInstance.loggedInCustomer = pResponse.result as! IACustomer
-            self.performSegueWithIdentifier("LoginToHomeSegueID", sender: self)
+            self.performSegue(withIdentifier: "LoginToHomeSegueID", sender: self)
         }
     }
     

@@ -49,16 +49,16 @@ class IAHomeController: IABaseController {
         self.notificationsTabItemView.alpha = 0.5
         
         self.dashboardImageView.layer.borderWidth = 1.0
-        self.dashboardImageView.layer.borderColor = UIColor(red: 113.0/255.0, green: 104.0/255.0, blue: 147.0/255.0, alpha: 1.0).CGColor
+        self.dashboardImageView.layer.borderColor = UIColor(red: 113.0/255.0, green: 104.0/255.0, blue: 147.0/255.0, alpha: 1.0).cgColor
         
         self.fileClaimImageView.layer.borderWidth = 1.0
-        self.fileClaimImageView.layer.borderColor = UIColor(red: 113.0/255.0, green: 104.0/255.0, blue: 147.0/255.0, alpha: 1.0).CGColor
+        self.fileClaimImageView.layer.borderColor = UIColor(red: 113.0/255.0, green: 104.0/255.0, blue: 147.0/255.0, alpha: 1.0).cgColor
         
         self.policiesImageView.layer.borderWidth = 1.0
-        self.policiesImageView.layer.borderColor = UIColor(red: 113.0/255.0, green: 104.0/255.0, blue: 147.0/255.0, alpha: 1.0).CGColor
+        self.policiesImageView.layer.borderColor = UIColor(red: 113.0/255.0, green: 104.0/255.0, blue: 147.0/255.0, alpha: 1.0).cgColor
         
         self.claimsImageView.layer.borderWidth = 1.0
-        self.claimsImageView.layer.borderColor = UIColor(red: 113.0/255.0, green: 104.0/255.0, blue: 147.0/255.0, alpha: 1.0).CGColor
+        self.claimsImageView.layer.borderColor = UIColor(red: 113.0/255.0, green: 104.0/255.0, blue: 147.0/255.0, alpha: 1.0).cgColor
         
         self.dashboardTabContentViewLeadingConstraint.constant = 0.0
         var aTapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(IAHomeController.didSelectDashboardTabItemView))
@@ -92,15 +92,15 @@ class IAHomeController: IABaseController {
         
         self.notificationCountLabel.layer.cornerRadius = self.notificationCountLabel.frame.size.width / 2.0
         self.notificationCountLabel.layer.masksToBounds = true
-        self.notificationCountLabel.layer.backgroundColor = UIColor(red: 160.0/255.0, green: 0.0/255.0, blue: 0.0/255.0, alpha: 1.0).CGColor
+        self.notificationCountLabel.layer.backgroundColor = UIColor(red: 160.0/255.0, green: 0.0/255.0, blue: 0.0/255.0, alpha: 1.0).cgColor
         
-        self.containerScrollView.contentSize = CGSizeMake(self.containerScrollView.frame.size.width * 6, self.containerScrollView.frame.size.height)
+        self.containerScrollView.contentSize = CGSize(width: self.containerScrollView.frame.size.width * 6, height: self.containerScrollView.frame.size.height)
         self.displayTabWithIndex(0, animated: false)
     }
     
     
-    func displayTabWithIndex(pIndex: Int, animated pAnimated :Bool) {
-        let aNormalBackgroundColor = UIColor.clearColor()
+    func displayTabWithIndex(_ pIndex: Int, animated pAnimated :Bool) {
+        let aNormalBackgroundColor = UIColor.clear
         let aSelectedBackgroundColor = UIColor(red: 167.0/255.0, green: 97.0/255.0, blue: 183.0/255.0, alpha: 0.2)
         if pIndex == 0 {
             self.dashboardTabItemView.backgroundColor = aSelectedBackgroundColor
@@ -150,80 +150,80 @@ class IAHomeController: IABaseController {
         if pAnimated == true {
             let aDiff :CGFloat = 150.0
             
-            UIGraphicsBeginImageContextWithOptions(self.dashboardContainerView.bounds.size, self.dashboardContainerView.opaque, 0.0);
-            self.dashboardContainerView.layer.renderInContext(UIGraphicsGetCurrentContext()!)
+            UIGraphicsBeginImageContextWithOptions(self.dashboardContainerView.bounds.size, self.dashboardContainerView.isOpaque, 0.0);
+            self.dashboardContainerView.layer.render(in: UIGraphicsGetCurrentContext()!)
             let aDashboardImage = UIGraphicsGetImageFromCurrentImageContext()
             UIGraphicsEndImageContext()
             self.dashboardImageView.image = aDashboardImage
-            self.dashboardContainerView.hidden = true
-            self.dashboardImageView.hidden = false
-            self.dashboardImageView.frame = CGRectMake(0.0, 0.0, self.dashboardContainerView.frame.size.width, self.dashboardContainerView.frame.size.height)
+            self.dashboardContainerView.isHidden = true
+            self.dashboardImageView.isHidden = false
+            self.dashboardImageView.frame = CGRect(x: 0.0, y: 0.0, width: self.dashboardContainerView.frame.size.width, height: self.dashboardContainerView.frame.size.height)
             
-            UIGraphicsBeginImageContextWithOptions(self.fileClaimContainerView.bounds.size, self.fileClaimContainerView.opaque, 0.0);
-            self.fileClaimContainerView.layer.renderInContext(UIGraphicsGetCurrentContext()!)
+            UIGraphicsBeginImageContextWithOptions(self.fileClaimContainerView.bounds.size, self.fileClaimContainerView.isOpaque, 0.0);
+            self.fileClaimContainerView.layer.render(in: UIGraphicsGetCurrentContext()!)
             let aFileClaimImage = UIGraphicsGetImageFromCurrentImageContext()
             UIGraphicsEndImageContext()
             self.fileClaimImageView.image = aFileClaimImage
-            self.fileClaimContainerView.hidden = true
-            self.fileClaimImageView.hidden = false
-            self.fileClaimImageView.frame = CGRectMake(0.0, 0.0, self.fileClaimContainerView.frame.size.width, self.fileClaimContainerView.frame.size.height)
+            self.fileClaimContainerView.isHidden = true
+            self.fileClaimImageView.isHidden = false
+            self.fileClaimImageView.frame = CGRect(x: 0.0, y: 0.0, width: self.fileClaimContainerView.frame.size.width, height: self.fileClaimContainerView.frame.size.height)
             
-            UIGraphicsBeginImageContextWithOptions(self.policiesContainerView.bounds.size, self.policiesContainerView.opaque, 0.0);
-            self.policiesContainerView.layer.renderInContext(UIGraphicsGetCurrentContext()!)
+            UIGraphicsBeginImageContextWithOptions(self.policiesContainerView.bounds.size, self.policiesContainerView.isOpaque, 0.0);
+            self.policiesContainerView.layer.render(in: UIGraphicsGetCurrentContext()!)
             let aPoliciesImage = UIGraphicsGetImageFromCurrentImageContext()
             UIGraphicsEndImageContext()
             self.policiesImageView.image = aPoliciesImage
-            self.policiesContainerView.hidden = true
-            self.policiesImageView.hidden = false
-            self.policiesImageView.frame = CGRectMake(0.0, 0.0, self.policiesContainerView.frame.size.width, self.policiesContainerView.frame.size.height)
+            self.policiesContainerView.isHidden = true
+            self.policiesImageView.isHidden = false
+            self.policiesImageView.frame = CGRect(x: 0.0, y: 0.0, width: self.policiesContainerView.frame.size.width, height: self.policiesContainerView.frame.size.height)
             
-            UIGraphicsBeginImageContextWithOptions(self.claimsContainerView.bounds.size, self.claimsContainerView.opaque, 0.0);
-            self.claimsContainerView.layer.renderInContext(UIGraphicsGetCurrentContext()!)
+            UIGraphicsBeginImageContextWithOptions(self.claimsContainerView.bounds.size, self.claimsContainerView.isOpaque, 0.0);
+            self.claimsContainerView.layer.render(in: UIGraphicsGetCurrentContext()!)
             let aClaimsImage = UIGraphicsGetImageFromCurrentImageContext()
             UIGraphicsEndImageContext()
             self.claimsImageView.image = aClaimsImage
-            self.claimsContainerView.hidden = true
-            self.claimsImageView.hidden = false
-            self.claimsImageView.frame = CGRectMake(0.0, 0.0, self.claimsContainerView.frame.size.width, self.claimsContainerView.frame.size.height)
+            self.claimsContainerView.isHidden = true
+            self.claimsImageView.isHidden = false
+            self.claimsImageView.frame = CGRect(x: 0.0, y: 0.0, width: self.claimsContainerView.frame.size.width, height: self.claimsContainerView.frame.size.height)
             
-            UIView.animateWithDuration(0.3, delay: 0.0, options: .CurveEaseOut, animations: {
-                self.dashboardImageView.frame = CGRectMake(aDiff, aDiff, self.dashboardContainerView.frame.size.width - (aDiff * 2.0), self.dashboardContainerView.frame.size.height - (aDiff * 2.0))
-                self.fileClaimImageView.frame = CGRectMake(aDiff, aDiff, self.fileClaimContainerView.frame.size.width - (aDiff * 2.0), self.fileClaimContainerView.frame.size.height - (aDiff * 2.0))
-                self.policiesImageView.frame = CGRectMake(aDiff, aDiff, self.policiesContainerView.frame.size.width - (aDiff * 2.0), self.policiesContainerView.frame.size.height - (aDiff * 2.0))
-                self.claimsImageView.frame = CGRectMake(aDiff, aDiff, self.claimsContainerView.frame.size.width - (aDiff * 2.0), self.claimsContainerView.frame.size.height - (aDiff * 2.0))
+            UIView.animate(withDuration: 0.3, delay: 0.0, options: .curveEaseOut, animations: {
+                self.dashboardImageView.frame = CGRect(x: aDiff, y: aDiff, width: self.dashboardContainerView.frame.size.width - (aDiff * 2.0), height: self.dashboardContainerView.frame.size.height - (aDiff * 2.0))
+                self.fileClaimImageView.frame = CGRect(x: aDiff, y: aDiff, width: self.fileClaimContainerView.frame.size.width - (aDiff * 2.0), height: self.fileClaimContainerView.frame.size.height - (aDiff * 2.0))
+                self.policiesImageView.frame = CGRect(x: aDiff, y: aDiff, width: self.policiesContainerView.frame.size.width - (aDiff * 2.0), height: self.policiesContainerView.frame.size.height - (aDiff * 2.0))
+                self.claimsImageView.frame = CGRect(x: aDiff, y: aDiff, width: self.claimsContainerView.frame.size.width - (aDiff * 2.0), height: self.claimsContainerView.frame.size.height - (aDiff * 2.0))
                 }, completion: { pFinished in
-                    self.containerScrollView.scrollRectToVisible(CGRectMake(self.containerScrollView.frame.size.width * CGFloat(pIndex), 0.0, self.containerScrollView.frame.size.width, self.containerScrollView.frame.size.height), animated: true)
+                    self.containerScrollView.scrollRectToVisible(CGRect(x: self.containerScrollView.frame.size.width * CGFloat(pIndex), y: 0.0, width: self.containerScrollView.frame.size.width, height: self.containerScrollView.frame.size.height), animated: true)
                     
-                    UIView.animateWithDuration(0.3, delay: 0.7, options: .CurveEaseOut, animations: {
-                        self.dashboardImageView.frame = CGRectMake(0.0, 0.0, self.dashboardContainerView.frame.size.width, self.dashboardContainerView.frame.size.height)
-                        self.fileClaimImageView.frame = CGRectMake(0.0, 0.0, self.fileClaimContainerView.frame.size.width, self.fileClaimContainerView.frame.size.height)
-                        self.policiesImageView.frame = CGRectMake(0.0, 0.0, self.policiesContainerView.frame.size.width, self.policiesContainerView.frame.size.height)
-                        self.claimsImageView.frame = CGRectMake(0.0, 0.0, self.claimsContainerView.frame.size.width, self.claimsContainerView.frame.size.height)
+                    UIView.animate(withDuration: 0.3, delay: 0.7, options: .curveEaseOut, animations: {
+                        self.dashboardImageView.frame = CGRect(x: 0.0, y: 0.0, width: self.dashboardContainerView.frame.size.width, height: self.dashboardContainerView.frame.size.height)
+                        self.fileClaimImageView.frame = CGRect(x: 0.0, y: 0.0, width: self.fileClaimContainerView.frame.size.width, height: self.fileClaimContainerView.frame.size.height)
+                        self.policiesImageView.frame = CGRect(x: 0.0, y: 0.0, width: self.policiesContainerView.frame.size.width, height: self.policiesContainerView.frame.size.height)
+                        self.claimsImageView.frame = CGRect(x: 0.0, y: 0.0, width: self.claimsContainerView.frame.size.width, height: self.claimsContainerView.frame.size.height)
                         }, completion: { pFinished in
-                            self.dashboardContainerView.hidden = false
-                            self.dashboardImageView.hidden = true
+                            self.dashboardContainerView.isHidden = false
+                            self.dashboardImageView.isHidden = true
                             
-                            self.fileClaimContainerView.hidden = false
-                            self.fileClaimImageView.hidden = true
+                            self.fileClaimContainerView.isHidden = false
+                            self.fileClaimImageView.isHidden = true
                             
-                            self.policiesContainerView.hidden = false
-                            self.policiesImageView.hidden = true
+                            self.policiesContainerView.isHidden = false
+                            self.policiesImageView.isHidden = true
                             
-                            self.claimsContainerView.hidden = false
-                            self.claimsImageView.hidden = true
+                            self.claimsContainerView.isHidden = false
+                            self.claimsImageView.isHidden = true
                     })
             })
         } else {
-            self.containerScrollView.scrollRectToVisible(CGRectMake(self.containerScrollView.frame.size.width * CGFloat(pIndex), 0.0, self.containerScrollView.frame.size.width, self.containerScrollView.frame.size.height), animated: false)
+            self.containerScrollView.scrollRectToVisible(CGRect(x: self.containerScrollView.frame.size.width * CGFloat(pIndex), y: 0.0, width: self.containerScrollView.frame.size.width, height: self.containerScrollView.frame.size.height), animated: false)
             
-            self.dashboardContainerView.hidden = false
-            self.dashboardImageView.hidden = true
+            self.dashboardContainerView.isHidden = false
+            self.dashboardImageView.isHidden = true
             
-            self.policiesContainerView.hidden = false
-            self.policiesImageView.hidden = true
+            self.policiesContainerView.isHidden = false
+            self.policiesImageView.isHidden = true
             
-            self.claimsContainerView.hidden = false
-            self.claimsImageView.hidden = true
+            self.claimsContainerView.isHidden = false
+            self.claimsImageView.isHidden = true
         }
     }
     
@@ -284,9 +284,9 @@ class IAHomeController: IABaseController {
     }
     
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.destinationViewController is UINavigationController {
-            let aNavController = segue.destinationViewController as! UINavigationController
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.destination is UINavigationController {
+            let aNavController = segue.destination as! UINavigationController
             if aNavController.viewControllers[0] is IAClaimsController {
                 self.claimsController = aNavController.viewControllers[0] as! IAClaimsController
             } else if aNavController.viewControllers[0] is IADashboardController {

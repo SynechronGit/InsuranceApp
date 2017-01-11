@@ -30,17 +30,17 @@ class IACustomer: NSObject {
     init(dictionary pDictionary:NSDictionary) {
         super.init()
         
-        if pDictionary.valueForKey("customerID")?.isKindOfClass(NSString) == true {
-            self.customerID = pDictionary.valueForKey("customerID") as! String
+        if (pDictionary.value(forKey: "customerID") is NSString) == true {
+            self.customerID = pDictionary.value(forKey: "customerID") as! String
         }
-        if pDictionary.valueForKey("firstName")?.isKindOfClass(NSString) == true {
-            self.firstName = pDictionary.valueForKey("firstName") as! String
+        if (pDictionary.value(forKey: "firstName") is NSString) == true {
+            self.firstName = pDictionary.value(forKey: "firstName") as! String
         }
-        if pDictionary.valueForKey("lastName")?.isKindOfClass(NSString) == true {
-            self.lastName = pDictionary.valueForKey("lastName") as! String
+        if (pDictionary.value(forKey: "lastName") is NSString) == true {
+            self.lastName = pDictionary.value(forKey: "lastName") as! String
         }
-        if pDictionary.valueForKey("avatarImageName")?.isKindOfClass(NSString) == true {
-            self.avatar = UIImage(named: pDictionary.valueForKey("avatarImageName") as! String)
+        if (pDictionary.value(forKey: "avatarImageName") is NSString) == true {
+            self.avatar = UIImage(named: pDictionary.value(forKey: "avatarImageName") as! String)
         } else {
             self.avatar = UIImage(named: "DummyIcon")
         }

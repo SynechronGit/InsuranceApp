@@ -43,7 +43,7 @@ class IAClaimsController: IABaseController {
      * Method that will calculate and return number of rows in given section of table.
      * @return Int. Number of rows in given section
      */
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         var aReturnVal :Int = 0
         
         if self.claimArray != nil {
@@ -58,10 +58,10 @@ class IAClaimsController: IABaseController {
      * Method that will init, set and return the cell view.
      * @return UITableViewCell. View of the cell in given table view.
      */
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let aReturnVal:IAClaimListTableCellView = tableView.dequeueReusableCellWithIdentifier("IAClaimListTableCellViewID") as! IAClaimListTableCellView
-        aReturnVal.backgroundColor = UIColor.clearColor()
-        aReturnVal.accessoryType = .DisclosureIndicator
+    func tableView(_ tableView: UITableView, cellForRowAtIndexPath indexPath: IndexPath) -> UITableViewCell {
+        let aReturnVal:IAClaimListTableCellView = tableView.dequeueReusableCell(withIdentifier: "IAClaimListTableCellViewID") as! IAClaimListTableCellView
+        aReturnVal.backgroundColor = UIColor.clear
+        aReturnVal.accessoryType = .disclosureIndicator
         
         if self.claimArray != nil {
             let aClaim = self.claimArray[indexPath.row]
@@ -88,21 +88,21 @@ class IAClaimsController: IABaseController {
             let aCurrentStatusColor = UIColor(red: 0.0/255.0, green: 200.0/255.0, blue: 0.0/255.0, alpha: 1.0)
             if aClaim.status == IAClaimStatus.Report.rawValue {
                 aReturnVal.statusReportLabel.textColor = aCurrentStatusColor
-                aReturnVal.statusUnderReviewLabel.textColor = UIColor.blackColor()
-                aReturnVal.statusApprovedLabel.textColor = UIColor.blackColor()
+                aReturnVal.statusUnderReviewLabel.textColor = UIColor.black
+                aReturnVal.statusApprovedLabel.textColor = UIColor.black
                 
                 aReturnVal.statusReportDoneImageView.image = UIImage(named: "ClaimStatusRightArrowNormal")
                 aReturnVal.statusUnderReviewDoneImageView.image = UIImage(named: "ClaimStatusRightArrowNormal")
             } else if aClaim.status == IAClaimStatus.UnderReview.rawValue {
-                aReturnVal.statusReportLabel.textColor = UIColor.blackColor()
+                aReturnVal.statusReportLabel.textColor = UIColor.black
                 aReturnVal.statusUnderReviewLabel.textColor = aCurrentStatusColor
-                aReturnVal.statusApprovedLabel.textColor = UIColor.blackColor()
+                aReturnVal.statusApprovedLabel.textColor = UIColor.black
                 
                 aReturnVal.statusReportDoneImageView.image = UIImage(named: "ClaimStatusRightArrowDone")
                 aReturnVal.statusUnderReviewDoneImageView.image = UIImage(named: "ClaimStatusRightArrowNormal")
             } else if aClaim.status == IAClaimStatus.Approved.rawValue {
-                aReturnVal.statusReportLabel.textColor = UIColor.blackColor()
-                aReturnVal.statusUnderReviewLabel.textColor = UIColor.blackColor()
+                aReturnVal.statusReportLabel.textColor = UIColor.black
+                aReturnVal.statusUnderReviewLabel.textColor = UIColor.black
                 aReturnVal.statusApprovedLabel.textColor = aCurrentStatusColor
                 
                 aReturnVal.statusReportDoneImageView.image = UIImage(named: "ClaimStatusRightArrowDone")
@@ -117,21 +117,21 @@ class IAClaimsController: IABaseController {
     /**
      * Method that will handle tap on table cell.
      */
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+    func tableView(_ tableView: UITableView, didSelectRowAtIndexPath indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
         self.selectedTableIndex = indexPath.row
-        self.performSegueWithIdentifier("ClaimListToClaimDetailsSegueID", sender: self)
+        self.performSegue(withIdentifier: "ClaimListToClaimDetailsSegueID", sender: self)
     }
     
     /**
      * Method that will be called while performing segue and will handle setting required data for next controller.
      */
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "ClaimListToClaimDetailsSegueID" {
             let aClaim = self.claimArray[self.selectedTableIndex]
             self.selectedTableIndex = nil
             
-            (segue.destinationViewController as! IAClaimDetailsController).claim = aClaim
+            (segue.destination as! IAClaimDetailsController).claim = aClaim
         }
     }
 
@@ -146,8 +146,8 @@ class IAClaimsController: IABaseController {
         IAAppDelegate.currentAppDelegate.hideLoadingOverlay()
         
         if pResponse.error != nil {
-            self.displayMessage(message: pResponse.error.localizedDescription, type: IAMessageType.Error)
-        } else if pSender.requestType == IARequestType.ListClaims {
+            self.displayMessage(message: pResponse.error.localizedDescription, type: IAMessageType.error)
+        } else if pSender.requestType == IARequestType.listClaims {
             if pResponse.result != nil {
                 self.claimArray = pResponse.result as! Array
             } else {
