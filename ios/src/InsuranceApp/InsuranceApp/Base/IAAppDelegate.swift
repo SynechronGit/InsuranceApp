@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import HockeySDK
 
 @UIApplicationMain
 class IAAppDelegate: UIResponder, UIApplicationDelegate {
@@ -18,7 +19,13 @@ class IAAppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        
         self.resetAppDatabase()
+        
+        BITHockeyManager.shared().configure(withIdentifier: "1f7937bef7aa4207a47a3e134a019b29")
+        BITHockeyManager.shared().start()
+        BITHockeyManager.shared().authenticator.authenticateInstallation() // This line is obsolete in the crash only builds
+        
         return true
     }
     

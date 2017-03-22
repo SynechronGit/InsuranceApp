@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1B1C34DA1E827D9400161873 /* HockeySDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B1C34D81E827D9400161873 /* HockeySDK.framework */; };
+		1B1C34DB1E827D9400161873 /* HockeySDKResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 1B1C34D91E827D9400161873 /* HockeySDKResources.bundle */; };
 		3F0CA4371CF44030002A048E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F0CA4351CF44030002A048E /* Main.storyboard */; };
 		3F0CA4391CF44030002A048E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F0CA4381CF44030002A048E /* Assets.xcassets */; };
 		3F0CA43C1CF44030002A048E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F0CA43A1CF44030002A048E /* LaunchScreen.storyboard */; };
@@ -105,6 +107,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1B1C34D81E827D9400161873 /* HockeySDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = HockeySDK.framework; sourceTree = "<group>"; };
+		1B1C34D91E827D9400161873 /* HockeySDKResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = HockeySDKResources.bundle; sourceTree = "<group>"; };
 		3F0CA42E1CF4402F002A048E /* InsuranceApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InsuranceApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F0CA4361CF44030002A048E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3F0CA4381CF44030002A048E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -198,6 +202,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1B1C34DA1E827D9400161873 /* HockeySDK.framework in Frameworks */,
 				3FFF0B851CF4A04300920ECA /* libsqlite3.tbd in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -219,6 +224,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1B1C34D71E827D9400161873 /* HockeySDK-iOS */ = {
+			isa = PBXGroup;
+			children = (
+				1B1C34D81E827D9400161873 /* HockeySDK.framework */,
+				1B1C34D91E827D9400161873 /* HockeySDKResources.bundle */,
+			);
+			path = "HockeySDK-iOS";
+			sourceTree = "<group>";
+		};
 		3F0CA4251CF4402F002A048E = {
 			isa = PBXGroup;
 			children = (
@@ -462,6 +476,7 @@
 		3F99489B1CFC77B200A880A8 /* ThirdParty */ = {
 			isa = PBXGroup;
 			children = (
+				1B1C34D71E827D9400161873 /* HockeySDK-iOS */,
 				3F99489E1CFC782100A880A8 /* LTMorphingLabel */,
 			);
 			path = ThirdParty;
@@ -637,6 +652,7 @@
 				3FEF461B1D09423E00A33FE6 /* InsuranceIDCard.pdf in Resources */,
 				3F9948BF1CFC782100A880A8 /* Fire.png in Resources */,
 				3F0CA4371CF44030002A048E /* Main.storyboard in Resources */,
+				1B1C34DB1E827D9400161873 /* HockeySDKResources.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -864,6 +880,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				DEVELOPMENT_TEAM = N6ZJQTRK2Z;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/InsuranceApp/ThirdParty/HockeySDK-iOS",
+				);
 				INFOPLIST_FILE = InsuranceApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -882,6 +902,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				DEVELOPMENT_TEAM = N6ZJQTRK2Z;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/InsuranceApp/ThirdParty/HockeySDK-iOS",
+				);
 				INFOPLIST_FILE = InsuranceApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
