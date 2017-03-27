@@ -234,7 +234,7 @@ class IADataManager: NSObject {
                 if aVehicle.photoThree != nil {
                     aPhotoThreeData = UIImagePNGRepresentation(aVehicle.photoThree)
                 }
-                let anSqlQuery :String = "INSERT INTO vehicles (vin, year, company, model_number, body_style, description, photo_one, photo_two, photo_three, comprehensive_coverage, collision_coverage, vehicle_name) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)"
+                let anSqlQuery :String = "INSERT INTO vehicles (vin, year, company, model_number, body_style, description, photo_one, photo_two, photo_three, comprehensive_coverage, collision_coverage) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)"
                 var aValueArray = Array<AnyObject>()
                 aValueArray.append(aVehicle.vin != nil ? (aVehicle.vin as AnyObject) : (NSNull() as AnyObject))
                 aValueArray.append(aVehicle.year != nil ? (aVehicle.year as AnyObject) : (NSNull() as AnyObject))
@@ -247,7 +247,6 @@ class IADataManager: NSObject {
                 aValueArray.append(aPhotoThreeData != nil ? (aPhotoThreeData as AnyObject) : (NSNull() as AnyObject))
                 aValueArray.append(aVehicle.comprehensiveCoverage != nil ? (aVehicle.comprehensiveCoverage as AnyObject) : (NSNull() as AnyObject))
                 aValueArray.append(aVehicle.collisionCoverage != nil ? (aVehicle.collisionCoverage as AnyObject) : (NSNull() as AnyObject))
-                aValueArray.append(aVehicle.vehicleName != nil ? (aVehicle.vehicleName as AnyObject) : (NSNull() as AnyObject))
                 _ = try self.executeQuery(anSqlQuery, values: aValueArray)
                 aDataManagerResponse.result = aVehicle
             } else if self.requestType == IARequestType.listVehicles {
@@ -318,8 +317,7 @@ class IADataManager: NSObject {
                 aValueArray.append(aDriver.drivingExperience != nil ? (aDriver.drivingExperience as AnyObject) : (NSNull() as AnyObject))
                 aValueArray.append(aDriver.employeeType != nil ? (aDriver.employeeType as AnyObject) : (NSNull() as AnyObject))
                 aValueArray.append(anAvatarData != nil ? (anAvatarData as AnyObject) : (NSNull() as AnyObject))
-                
-                try self.executeQuery(anSqlQuery, values: aValueArray)
+                _ = try self.executeQuery(anSqlQuery, values: aValueArray)
                 aDataManagerResponse.result = aDriver
             } else if self.requestType == IARequestType.listDrivers {
                 let anSqlQuery :String = "SELECT full_name, phone_number, email_address, street_address, city, state, zip_code, dob, license_number, appointed_since, driving_experience, employee_type, avatar FROM drivers"

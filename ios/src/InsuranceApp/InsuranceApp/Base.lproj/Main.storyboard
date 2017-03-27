@@ -673,7 +673,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="E9b-1m-KME" userLabel="Navigation Controller" sceneMemberID="viewController">
                     <extendedEdge key="edgesForExtendedLayout"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="549-Rp-6Eb" customClass="IANavigationBar" customModule="InsuranceApp" customModuleProvider="target">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="549-Rp-6Eb" customClass="IANavigationBar" customModule="InsuranceApp" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -3382,11 +3382,11 @@ Insurance</string>
                         <rect key="frame" x="0.0" y="64" width="768" height="960"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="onS-GF-jhc">
-                                <rect key="frame" x="18" y="18" width="732" height="944"/>
+                            <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="onS-GF-jhc">
+                                <rect key="frame" x="18" y="18" width="732" height="924"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="K5I-fS-9uS">
-                                        <rect key="frame" x="0.0" y="934" width="732" height="10"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="K5I-fS-9uS">
+                                        <rect key="frame" x="0.0" y="914" width="732" height="10"/>
                                         <color key="backgroundColor" red="0.65490196079999996" green="0.3803921569" blue="0.71764705880000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="10" id="XHL-BO-Zit"/>
@@ -3424,7 +3424,7 @@ Insurance</string>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="060-6k-cx9">
-                                        <rect key="frame" x="14" y="705" width="12" height="21"/>
+                                        <rect key="frame" x="15" y="705" width="12" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="12" id="Jfu-L0-x3M"/>
                                             <constraint firstAttribute="height" constant="21" id="x3J-fI-zsa"/>
@@ -3435,7 +3435,7 @@ Insurance</string>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bN1-GZ-m1y">
-                                        <rect key="frame" x="13" y="451" width="12" height="21"/>
+                                        <rect key="frame" x="15" y="451" width="12" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="12" id="IVt-UA-HZQ"/>
                                             <constraint firstAttribute="height" constant="21" id="W84-wu-Hnv"/>
@@ -3449,10 +3449,14 @@ Insurance</string>
                                 <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.93725490199999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="K5I-fS-9uS" firstAttribute="leading" secondItem="onS-GF-jhc" secondAttribute="leading" id="7fH-IM-b9Y"/>
+                                    <constraint firstItem="bN1-GZ-m1y" firstAttribute="leading" secondItem="onS-GF-jhc" secondAttribute="leading" constant="15" id="FyD-m9-pHn"/>
+                                    <constraint firstAttribute="trailing" secondItem="hfU-yA-xjJ" secondAttribute="trailing" constant="15" id="N0u-vV-1JX"/>
                                     <constraint firstItem="JUR-IR-0BD" firstAttribute="leading" secondItem="onS-GF-jhc" secondAttribute="leading" id="N1r-Bf-dBg"/>
                                     <constraint firstAttribute="trailing" secondItem="K5I-fS-9uS" secondAttribute="trailing" id="SFj-f5-TsB"/>
                                     <constraint firstItem="JUR-IR-0BD" firstAttribute="top" secondItem="onS-GF-jhc" secondAttribute="top" id="exg-WM-lHT"/>
                                     <constraint firstAttribute="bottom" secondItem="K5I-fS-9uS" secondAttribute="bottom" id="iml-3I-zw3"/>
+                                    <constraint firstAttribute="trailing" secondItem="fVd-f0-LAc" secondAttribute="trailing" constant="15" id="ioc-4c-bTx"/>
+                                    <constraint firstItem="060-6k-cx9" firstAttribute="leading" secondItem="onS-GF-jhc" secondAttribute="leading" constant="15" id="pvt-99-sJ2"/>
                                     <constraint firstAttribute="trailing" secondItem="JUR-IR-0BD" secondAttribute="trailing" id="zEr-8k-JTh"/>
                                 </constraints>
                             </view>
@@ -3500,7 +3504,6 @@ Insurance</string>
                                 <rect key="frame" x="44" y="162" width="210" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="VRj-4h-Acd"/>
-                                    <constraint firstAttribute="width" constant="210" id="mEs-MB-80i"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Ubuntu" family="Ubuntu" pointSize="17"/>
                                 <inset key="contentEdgeInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="2"/>
@@ -3513,10 +3516,6 @@ Insurance</string>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Kq-ch-ZHB">
                                 <rect key="frame" x="279" y="162" width="210" height="50"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="210" id="7rE-1x-7od"/>
-                                    <constraint firstAttribute="height" constant="50" id="FPY-vF-DD5"/>
-                                </constraints>
                                 <fontDescription key="fontDescription" name="Ubuntu" family="Ubuntu" pointSize="17"/>
                                 <inset key="contentEdgeInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="2"/>
                                 <state key="normal" title="File Claim" backgroundImage="tabbox">
@@ -3528,10 +3527,6 @@ Insurance</string>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="szN-qR-AUw">
                                 <rect key="frame" x="514" y="162" width="210" height="50"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="210" id="KSd-4i-fpu"/>
-                                    <constraint firstAttribute="height" constant="50" id="dk4-nu-irN"/>
-                                </constraints>
                                 <fontDescription key="fontDescription" name="Ubuntu" family="Ubuntu" pointSize="17"/>
                                 <inset key="contentEdgeInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="2"/>
                                 <state key="normal" title="View Policy" backgroundImage="tabbox">
@@ -3609,7 +3604,7 @@ Insurance</string>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Coverage" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iqD-bz-3z8">
-                                        <rect key="frame" x="70" y="83" width="71" height="18"/>
+                                        <rect key="frame" x="70.5" y="83" width="70.5" height="18"/>
                                         <fontDescription key="fontDescription" name="Ubuntu-Medium" family="Ubuntu" pointSize="16"/>
                                         <color key="textColor" red="0.83137254900000002" green="0.83137254900000002" blue="0.83137254900000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
@@ -3621,7 +3616,6 @@ Insurance</string>
                                     <constraint firstItem="iqD-bz-3z8" firstAttribute="centerX" secondItem="442-U0-cdq" secondAttribute="centerX" id="daJ-uH-2qW"/>
                                     <constraint firstItem="iqD-bz-3z8" firstAttribute="centerX" secondItem="442-U0-cdq" secondAttribute="centerX" id="luH-zO-rKg"/>
                                     <constraint firstItem="Rgg-KJ-sKO" firstAttribute="centerX" secondItem="442-U0-cdq" secondAttribute="centerX" id="rf6-Mg-K46"/>
-                                    <constraint firstAttribute="width" constant="210" id="tmt-cn-SwG"/>
                                     <constraint firstItem="iqD-bz-3z8" firstAttribute="top" secondItem="442-U0-cdq" secondAttribute="top" constant="83" id="uum-mE-zKe"/>
                                     <constraint firstItem="Rgg-KJ-sKO" firstAttribute="top" secondItem="442-U0-cdq" secondAttribute="top" constant="17" id="wF0-YN-IaN"/>
                                     <constraint firstItem="iqD-bz-3z8" firstAttribute="top" secondItem="Rgg-KJ-sKO" secondAttribute="bottom" constant="37" id="xvY-bW-Kkf"/>
@@ -3669,8 +3663,6 @@ Insurance</string>
                                 </subviews>
                                 <color key="backgroundColor" red="0.66666666666666663" green="0.66666666666666663" blue="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="116" id="F22-xx-q49"/>
-                                    <constraint firstAttribute="width" constant="210" id="GY0-Z4-eui"/>
                                     <constraint firstItem="Ce6-pw-gom" firstAttribute="top" secondItem="can-vV-cw3" secondAttribute="top" constant="22" id="Gjf-lt-Yw1"/>
                                     <constraint firstItem="7xY-Bc-x0Y" firstAttribute="centerX" secondItem="can-vV-cw3" secondAttribute="centerX" id="HlV-NK-frg"/>
                                     <constraint firstItem="7xY-Bc-x0Y" firstAttribute="centerX" secondItem="can-vV-cw3" secondAttribute="centerX" id="SIC-Qd-ePT"/>
@@ -3715,9 +3707,7 @@ Insurance</string>
                                     <constraint firstItem="Up3-iy-egi" firstAttribute="top" secondItem="0iB-Cl-6FV" secondAttribute="top" constant="22" id="4eL-MG-qfh"/>
                                     <constraint firstItem="bQx-gG-Zxf" firstAttribute="centerX" secondItem="0iB-Cl-6FV" secondAttribute="centerX" id="960-x3-p0A"/>
                                     <constraint firstItem="bQx-gG-Zxf" firstAttribute="top" secondItem="0iB-Cl-6FV" secondAttribute="top" constant="83" id="B6a-H8-cp7"/>
-                                    <constraint firstAttribute="height" constant="116" id="Iwk-QC-YaV"/>
                                     <constraint firstItem="Up3-iy-egi" firstAttribute="centerX" secondItem="0iB-Cl-6FV" secondAttribute="centerX" id="KvR-UP-j9Z"/>
-                                    <constraint firstAttribute="width" constant="210" id="QOB-Gk-XO4"/>
                                     <constraint firstItem="bQx-gG-Zxf" firstAttribute="centerX" secondItem="0iB-Cl-6FV" secondAttribute="centerX" id="tZ0-KH-ntN"/>
                                 </constraints>
                                 <variation key="default">
@@ -3805,7 +3795,6 @@ Insurance</string>
                                 <rect key="frame" x="55" y="409" width="658" height="171"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="171" id="KZL-XB-c9w"/>
-                                    <constraint firstAttribute="width" constant="658" id="gNb-Pg-Umh"/>
                                 </constraints>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="11" minimumInteritemSpacing="10" id="MYZ-ur-Vqx">
                                     <size key="itemSize" width="211" height="169"/>
@@ -3868,7 +3857,6 @@ Insurance</string>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="pEp-pb-umE">
                                 <rect key="frame" x="55" y="663" width="658" height="171"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="658" id="OoF-zV-hg0"/>
                                     <constraint firstAttribute="height" constant="171" id="eVH-qU-oun"/>
                                 </constraints>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="28" minimumInteritemSpacing="10" id="pC1-HP-cDr">
@@ -3932,7 +3920,6 @@ Insurance</string>
                         </subviews>
                         <color key="backgroundColor" red="0.12549019610000001" green="0.1058823529" blue="0.1764705882" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="szN-qR-AUw" firstAttribute="top" secondItem="zQH-Al-JVN" secondAttribute="bottom" constant="162" id="0Hk-DK-Ufb"/>
                             <constraint firstItem="fVd-f0-LAc" firstAttribute="leading" secondItem="pEp-pb-umE" secondAttribute="trailing" constant="10" id="2Lt-oQ-dFQ"/>
                             <constraint firstAttribute="trailing" secondItem="KkZ-G7-rxQ" secondAttribute="trailing" constant="40" id="2Vh-k8-c0i"/>
                             <constraint firstItem="pEp-pb-umE" firstAttribute="top" secondItem="7U9-op-vo6" secondAttribute="bottom" constant="11" id="2nt-Xl-md5"/>
@@ -3944,9 +3931,12 @@ Insurance</string>
                             <constraint firstItem="7fP-J0-cbp" firstAttribute="leading" secondItem="qlu-0d-cru" secondAttribute="trailing" constant="13" id="DZa-7M-meV"/>
                             <constraint firstItem="CAy-dF-mpm" firstAttribute="top" secondItem="PbS-aO-8r1" secondAttribute="bottom" constant="12" id="E5R-aa-e3f"/>
                             <constraint firstItem="szN-qR-AUw" firstAttribute="leading" secondItem="2Kq-ch-ZHB" secondAttribute="trailing" constant="25" id="EJs-mA-vVG"/>
-                            <constraint firstItem="XkW-pL-jU7" firstAttribute="leading" secondItem="8jM-Za-fFH" secondAttribute="leadingMargin" constant="35" id="Ipr-U1-ycI"/>
+                            <constraint firstItem="442-U0-cdq" firstAttribute="top" secondItem="can-vV-cw3" secondAttribute="top" id="GSh-1V-xH1"/>
+                            <constraint firstItem="442-U0-cdq" firstAttribute="bottom" secondItem="can-vV-cw3" secondAttribute="bottom" id="HT9-ZY-owI"/>
                             <constraint firstItem="060-6k-cx9" firstAttribute="centerY" secondItem="pEp-pb-umE" secondAttribute="centerY" constant="-15" id="KBe-vr-cWm"/>
+                            <constraint firstItem="442-U0-cdq" firstAttribute="bottom" secondItem="0iB-Cl-6FV" secondAttribute="bottom" id="KM8-ie-4oT"/>
                             <constraint firstItem="hob-zL-Nva" firstAttribute="centerY" secondItem="WTt-7O-3ck" secondAttribute="centerY" id="Mgv-Ah-pjh"/>
+                            <constraint firstItem="szN-qR-AUw" firstAttribute="bottom" secondItem="gvj-Qh-7E9" secondAttribute="bottom" id="Mlk-i2-RNk"/>
                             <constraint firstItem="hob-zL-Nva" firstAttribute="centerX" secondItem="8jM-Za-fFH" secondAttribute="centerX" id="Mvf-Ux-P7l"/>
                             <constraint firstItem="qlu-0d-cru" firstAttribute="top" secondItem="XkW-pL-jU7" secondAttribute="bottom" constant="46" id="NIX-Kx-a8b"/>
                             <constraint firstItem="CAy-dF-mpm" firstAttribute="leading" secondItem="8jM-Za-fFH" secondAttribute="leading" constant="42" id="NXK-Af-e1j"/>
@@ -3956,23 +3946,28 @@ Insurance</string>
                             <constraint firstItem="0iB-Cl-6FV" firstAttribute="leading" secondItem="can-vV-cw3" secondAttribute="trailing" constant="25" id="Oq4-GD-akP"/>
                             <constraint firstItem="7U9-op-vo6" firstAttribute="centerY" secondItem="7fP-J0-cbp" secondAttribute="centerY" id="PYh-7T-F26"/>
                             <constraint firstItem="442-U0-cdq" firstAttribute="top" secondItem="gvj-Qh-7E9" secondAttribute="bottom" constant="15" id="Pe0-Ts-aJm"/>
+                            <constraint firstItem="gvj-Qh-7E9" firstAttribute="width" secondItem="szN-qR-AUw" secondAttribute="width" id="Pr5-J2-6LX"/>
                             <constraint firstItem="fGY-tU-Nla" firstAttribute="leading" secondItem="8jM-Za-fFH" secondAttribute="leading" constant="42" id="PrX-Az-aIH"/>
                             <constraint firstItem="fVd-f0-LAc" firstAttribute="centerY" secondItem="pEp-pb-umE" secondAttribute="centerY" constant="-15" id="QOp-uf-c4G"/>
                             <constraint firstItem="2Kq-ch-ZHB" firstAttribute="leading" secondItem="gvj-Qh-7E9" secondAttribute="trailing" constant="25" id="Qja-2u-Awp"/>
-                            <constraint firstItem="2Kq-ch-ZHB" firstAttribute="top" secondItem="zQH-Al-JVN" secondAttribute="bottom" constant="162" id="Qmm-ED-0Ht"/>
                             <constraint firstItem="gvj-Qh-7E9" firstAttribute="leading" secondItem="8jM-Za-fFH" secondAttribute="leading" constant="44" id="S93-N9-Wkt"/>
                             <constraint firstItem="onS-GF-jhc" firstAttribute="leading" secondItem="8jM-Za-fFH" secondAttribute="leading" constant="18" id="Szp-1L-8f4"/>
+                            <constraint firstItem="442-U0-cdq" firstAttribute="width" secondItem="can-vV-cw3" secondAttribute="width" id="THi-YK-svF"/>
                             <constraint firstItem="Iac-BQ-8yj" firstAttribute="leading" secondItem="WTt-7O-3ck" secondAttribute="trailing" constant="26" id="VK0-k9-T9F"/>
-                            <constraint firstItem="pEp-pb-umE" firstAttribute="leading" secondItem="060-6k-cx9" secondAttribute="trailing" constant="11" id="WX7-h0-lCR"/>
+                            <constraint firstItem="pEp-pb-umE" firstAttribute="leading" secondItem="060-6k-cx9" secondAttribute="trailing" constant="10" id="WX7-h0-lCR"/>
                             <constraint firstItem="hfU-yA-xjJ" firstAttribute="leading" secondItem="XkW-pL-jU7" secondAttribute="trailing" constant="10" id="Y2u-ZI-fG1"/>
                             <constraint firstItem="qlu-0d-cru" firstAttribute="centerY" secondItem="7fP-J0-cbp" secondAttribute="centerY" id="ZDg-IL-4br"/>
                             <constraint firstAttribute="trailing" secondItem="onS-GF-jhc" secondAttribute="trailing" constant="18" id="aYT-C1-nIL"/>
                             <constraint firstItem="bN1-GZ-m1y" firstAttribute="centerY" secondItem="XkW-pL-jU7" secondAttribute="centerY" constant="-15" id="cDn-3S-a0J"/>
+                            <constraint firstItem="szN-qR-AUw" firstAttribute="top" secondItem="gvj-Qh-7E9" secondAttribute="top" id="cNR-Zw-QG6"/>
+                            <constraint firstItem="442-U0-cdq" firstAttribute="top" secondItem="0iB-Cl-6FV" secondAttribute="top" id="cpl-Gg-P48"/>
                             <constraint firstItem="can-vV-cw3" firstAttribute="leading" secondItem="442-U0-cdq" secondAttribute="trailing" constant="25" id="dVx-BV-QBg"/>
                             <constraint firstItem="Iac-BQ-8yj" firstAttribute="trailing" secondItem="7U9-op-vo6" secondAttribute="trailing" id="dv7-ol-ZOy"/>
                             <constraint firstItem="can-vV-cw3" firstAttribute="top" secondItem="2Kq-ch-ZHB" secondAttribute="bottom" constant="15" id="e58-aR-UeM"/>
+                            <constraint firstItem="2Kq-ch-ZHB" firstAttribute="top" secondItem="gvj-Qh-7E9" secondAttribute="top" id="fxK-nj-9ha"/>
                             <constraint firstItem="Iac-BQ-8yj" firstAttribute="centerY" secondItem="hob-zL-Nva" secondAttribute="centerY" id="ghs-0W-VZG"/>
                             <constraint firstItem="hXE-id-Vn5" firstAttribute="leading" secondItem="NrZ-bY-rhV" secondAttribute="leading" id="hGG-F4-i7q"/>
+                            <constraint firstItem="gvj-Qh-7E9" firstAttribute="width" secondItem="2Kq-ch-ZHB" secondAttribute="width" id="hTQ-n3-Ehi"/>
                             <constraint firstItem="442-U0-cdq" firstAttribute="leading" secondItem="8jM-Za-fFH" secondAttribute="leadingMargin" constant="24" id="jNO-7J-vH1"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Iac-BQ-8yj" secondAttribute="trailing" constant="35" id="jfH-QK-hzA"/>
                             <constraint firstItem="WTt-7O-3ck" firstAttribute="top" secondItem="0iB-Cl-6FV" secondAttribute="bottom" constant="40" id="jh7-lY-dmP"/>
@@ -3980,21 +3975,24 @@ Insurance</string>
                             <constraint firstItem="PbS-aO-8r1" firstAttribute="leading" secondItem="8jM-Za-fFH" secondAttribute="leading" constant="42" id="lAq-so-Nt1"/>
                             <constraint firstItem="hob-zL-Nva" firstAttribute="centerY" secondItem="NrZ-bY-rhV" secondAttribute="centerY" id="maQ-Lg-AwC"/>
                             <constraint firstAttribute="trailing" secondItem="Iac-BQ-8yj" secondAttribute="trailing" constant="55" id="mvF-Gu-U1i"/>
+                            <constraint firstItem="2Kq-ch-ZHB" firstAttribute="bottom" secondItem="gvj-Qh-7E9" secondAttribute="bottom" id="nDe-GS-VsF"/>
                             <constraint firstItem="hob-zL-Nva" firstAttribute="top" secondItem="can-vV-cw3" secondAttribute="bottom" constant="30" id="nHe-0F-dHn"/>
                             <constraint firstItem="PfJ-CK-65L" firstAttribute="top" secondItem="onS-GF-jhc" secondAttribute="bottom" constant="18" id="oHC-UX-wnz"/>
-                            <constraint firstItem="pEp-pb-umE" firstAttribute="leading" secondItem="8jM-Za-fFH" secondAttribute="leadingMargin" constant="35" id="oJl-zg-Pfj"/>
                             <constraint firstItem="7U9-op-vo6" firstAttribute="top" secondItem="XkW-pL-jU7" secondAttribute="bottom" constant="44" id="oi6-Ce-L1Q"/>
+                            <constraint firstAttribute="trailing" secondItem="szN-qR-AUw" secondAttribute="trailing" constant="44" id="pdr-kS-pa3"/>
                             <constraint firstItem="qlu-0d-cru" firstAttribute="centerY" secondItem="hXE-id-Vn5" secondAttribute="centerY" id="pv3-Mz-bW6"/>
-                            <constraint firstItem="XkW-pL-jU7" firstAttribute="leading" secondItem="bN1-GZ-m1y" secondAttribute="trailing" constant="12" id="qhR-nt-gWs"/>
+                            <constraint firstItem="XkW-pL-jU7" firstAttribute="leading" secondItem="bN1-GZ-m1y" secondAttribute="trailing" constant="10" id="qhR-nt-gWs"/>
                             <constraint firstItem="onS-GF-jhc" firstAttribute="top" secondItem="zQH-Al-JVN" secondAttribute="bottom" constant="18" id="qt0-fS-L8U"/>
                             <constraint firstItem="KkZ-G7-rxQ" firstAttribute="top" secondItem="zQH-Al-JVN" secondAttribute="bottom" constant="45" id="r09-Fi-nic"/>
                             <constraint firstItem="WTt-7O-3ck" firstAttribute="leading" secondItem="hob-zL-Nva" secondAttribute="trailing" constant="7" id="rZW-Yc-Qkf"/>
                             <constraint firstItem="hfU-yA-xjJ" firstAttribute="centerY" secondItem="XkW-pL-jU7" secondAttribute="centerY" constant="-15" id="sOv-g0-62L"/>
                             <constraint firstItem="CAy-dF-mpm" firstAttribute="centerY" secondItem="8YR-8L-BE5" secondAttribute="centerY" id="szH-fv-LoZ"/>
+                            <constraint firstAttribute="trailing" secondItem="0iB-Cl-6FV" secondAttribute="trailing" constant="44" id="tYD-2q-0Y4"/>
                             <constraint firstItem="gvj-Qh-7E9" firstAttribute="top" secondItem="zQH-Al-JVN" secondAttribute="bottom" constant="162" id="tjo-Ix-rAK"/>
                             <constraint firstItem="PbS-aO-8r1" firstAttribute="top" secondItem="8jM-Za-fFH" secondAttribute="top" constant="48" id="v4x-2D-aIB"/>
                             <constraint firstItem="XkW-pL-jU7" firstAttribute="top" secondItem="Iac-BQ-8yj" secondAttribute="bottom" constant="11" id="wqO-pD-c9S"/>
                             <constraint firstItem="7U9-op-vo6" firstAttribute="centerY" secondItem="qlu-0d-cru" secondAttribute="centerY" id="x3f-19-RhS"/>
+                            <constraint firstItem="442-U0-cdq" firstAttribute="width" secondItem="0iB-Cl-6FV" secondAttribute="width" id="yVh-7a-OPM"/>
                             <constraint firstItem="qlu-0d-cru" firstAttribute="leading" secondItem="hXE-id-Vn5" secondAttribute="trailing" constant="8" id="yYj-Mv-zFn"/>
                             <constraint firstItem="fGY-tU-Nla" firstAttribute="top" secondItem="CAy-dF-mpm" secondAttribute="bottom" constant="9" id="z1S-7d-72G"/>
                         </constraints>
@@ -5794,7 +5792,7 @@ Insurance</string>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="yS7-Mb-0yN" sceneMemberID="viewController">
                     <extendedEdge key="edgesForExtendedLayout"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="rR3-RW-hlS" customClass="IANavigationBar" customModule="InsuranceApp" customModuleProvider="target">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="rR3-RW-hlS" customClass="IANavigationBar" customModule="InsuranceApp" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -6273,7 +6271,7 @@ Insurance</string>
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="J35-Gz-GUQ" sceneMemberID="viewController">
                     <extendedEdge key="edgesForExtendedLayout"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="REN-n7-vvY" customClass="IANavigationBar" customModule="InsuranceApp" customModuleProvider="target">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="REN-n7-vvY" customClass="IANavigationBar" customModule="InsuranceApp" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -6290,7 +6288,7 @@ Insurance</string>
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="kbM-DE-2kh" sceneMemberID="viewController">
                     <extendedEdge key="edgesForExtendedLayout"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Osf-iK-WAm" customClass="IANavigationBar" customModule="InsuranceApp" customModuleProvider="target">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="Osf-iK-WAm" customClass="IANavigationBar" customModule="InsuranceApp" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -6393,7 +6391,7 @@ Insurance</string>
                                                             </variation>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Report" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Fn-LS-eoH">
-                                                            <rect key="frame" x="22" y="217" width="48" height="21"/>
+                                                            <rect key="frame" x="22" y="217" width="47.5" height="21"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="150" id="Fng-sb-gxh"/>
                                                                 <constraint firstAttribute="height" constant="21" id="bYU-GH-Kly"/>
@@ -6425,7 +6423,7 @@ Insurance</string>
                                                             </variation>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Auto" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dqW-C0-I2H">
-                                                            <rect key="frame" x="150" y="115" width="38" height="21"/>
+                                                            <rect key="frame" x="150" y="115" width="37.5" height="21"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="70" id="4ay-1I-Ydl"/>
                                                                 <constraint firstAttribute="height" constant="21" id="QlN-OO-YlJ"/>
@@ -6478,7 +6476,7 @@ Insurance</string>
                                                             </variation>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Austin Auto Insurance Pvt. Ltd." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u4M-Rb-quo">
-                                                            <rect key="frame" x="150" y="175" width="237" height="21"/>
+                                                            <rect key="frame" x="150" y="175" width="236" height="21"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="100" id="DH8-Ta-Odc"/>
                                                                 <constraint firstAttribute="height" constant="21" id="gg9-x6-oWB"/>
@@ -6493,7 +6491,7 @@ Insurance</string>
                                                             </variation>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Under Review" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k3Q-A4-vmY">
-                                                            <rect key="frame" x="110" y="217" width="95" height="21"/>
+                                                            <rect key="frame" x="109.5" y="217" width="95" height="21"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="150" id="Xsk-Ql-Ll5"/>
                                                                 <constraint firstAttribute="height" constant="21" id="oGx-qk-5fd"/>
@@ -6510,7 +6508,7 @@ Insurance</string>
                                                             </variation>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Approved" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ghj-hE-muZ">
-                                                            <rect key="frame" x="245" y="217" width="67" height="21"/>
+                                                            <rect key="frame" x="244.5" y="217" width="67" height="21"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="21" id="og2-0u-Nix"/>
                                                                 <constraint firstAttribute="width" constant="150" id="rBr-d9-DvB"/>
@@ -6527,14 +6525,14 @@ Insurance</string>
                                                             </variation>
                                                         </label>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ClaimStatusRightArrowNormal" translatesAutoresizingMaskIntoConstraints="NO" id="40z-Ih-USu">
-                                                            <rect key="frame" x="75" y="213" width="30" height="30"/>
+                                                            <rect key="frame" x="74.5" y="213" width="30" height="30"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="30" id="aNj-1H-Y1h"/>
                                                                 <constraint firstAttribute="height" constant="30" id="kwR-0w-NOz"/>
                                                             </constraints>
                                                         </imageView>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ClaimStatusRightArrowNormal" translatesAutoresizingMaskIntoConstraints="NO" id="2go-6u-gLZ">
-                                                            <rect key="frame" x="210" y="213" width="30" height="30"/>
+                                                            <rect key="frame" x="209.5" y="213" width="30" height="30"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="30" id="2SM-VN-PgK"/>
                                                                 <constraint firstAttribute="height" constant="30" id="L1C-kV-NCm"/>
@@ -6567,7 +6565,7 @@ Insurance</string>
                                                             </variation>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2638" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LNn-Ul-tbi">
-                                                            <rect key="frame" x="150" y="56" width="39" height="21"/>
+                                                            <rect key="frame" x="150" y="56" width="38" height="21"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="21" id="07F-IO-sh1"/>
                                                                 <constraint firstAttribute="width" constant="70" id="FBx-LT-xhR"/>
@@ -6693,7 +6691,7 @@ Insurance</string>
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="1Ks-VZ-ENz" sceneMemberID="viewController">
                     <extendedEdge key="edgesForExtendedLayout"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="19Y-bL-ipP" customClass="IANavigationBar" customModule="InsuranceApp" customModuleProvider="target">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="19Y-bL-ipP" customClass="IANavigationBar" customModule="InsuranceApp" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -6755,7 +6753,7 @@ Insurance</string>
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="dqs-79-o5O" sceneMemberID="viewController">
                     <extendedEdge key="edgesForExtendedLayout"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="SWF-s4-Eib" customClass="IANavigationBar" customModule="InsuranceApp" customModuleProvider="target">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="SWF-s4-Eib" customClass="IANavigationBar" customModule="InsuranceApp" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -6817,7 +6815,7 @@ Insurance</string>
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="1Z0-fx-7rN" sceneMemberID="viewController">
                     <extendedEdge key="edgesForExtendedLayout"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="wkh-c4-9Yt" customClass="IANavigationBar" customModule="InsuranceApp" customModuleProvider="target">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="wkh-c4-9Yt" customClass="IANavigationBar" customModule="InsuranceApp" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>

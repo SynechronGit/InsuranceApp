@@ -19,6 +19,8 @@
 		3F0CA46E1CF440C9002A048E /* IADashboardController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0CA4691CF440C9002A048E /* IADashboardController.swift */; };
 		3F0CA46F1CF440C9002A048E /* IALoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0CA46B1CF440C9002A048E /* IALoginController.swift */; };
 		3F18A3F91D0AA2C3001072DD /* NSDateAdditions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F18A3F81D0AA2C3001072DD /* NSDateAdditions.swift */; };
+		3F2959021E89101400779086 /* ATKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F2959001E890FFE00779086 /* ATKit.framework */; };
+		3F2959031E89101400779086 /* ATKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3F2959001E890FFE00779086 /* ATKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		3F2A0D9A1CF8762300EEACC2 /* IAAutoInsuranceDetailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F2A0D991CF8762300EEACC2 /* IAAutoInsuranceDetailsController.swift */; };
 		3F33866A1D018C3600BF7915 /* IADropdownListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F3386691D018C3600BF7915 /* IADropdownListController.swift */; };
 		3F3F0DBF1D003CD700A851FB /* IAAddDriverController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F3F0DBC1D003CD700A851FB /* IAAddDriverController.swift */; };
@@ -106,6 +108,20 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		3F2959041E89101400779086 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				3F2959031E89101400779086 /* ATKit.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		1B1C34D81E827D9400161873 /* HockeySDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = HockeySDK.framework; sourceTree = "<group>"; };
 		1B1C34D91E827D9400161873 /* HockeySDKResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = HockeySDKResources.bundle; sourceTree = "<group>"; };
@@ -125,6 +141,7 @@
 		3F0CA4691CF440C9002A048E /* IADashboardController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IADashboardController.swift; sourceTree = "<group>"; };
 		3F0CA46B1CF440C9002A048E /* IALoginController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IALoginController.swift; sourceTree = "<group>"; };
 		3F18A3F81D0AA2C3001072DD /* NSDateAdditions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSDateAdditions.swift; sourceTree = "<group>"; };
+		3F2959001E890FFE00779086 /* ATKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ATKit.framework; sourceTree = "<group>"; };
 		3F2A0D991CF8762300EEACC2 /* IAAutoInsuranceDetailsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IAAutoInsuranceDetailsController.swift; sourceTree = "<group>"; };
 		3F3386691D018C3600BF7915 /* IADropdownListController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IADropdownListController.swift; sourceTree = "<group>"; };
 		3F3F0DBC1D003CD700A851FB /* IAAddDriverController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IAAddDriverController.swift; sourceTree = "<group>"; };
@@ -203,6 +220,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1B1C34DA1E827D9400161873 /* HockeySDK.framework in Frameworks */,
+				3F2959021E89101400779086 /* ATKit.framework in Frameworks */,
 				3FFF0B851CF4A04300920ECA /* libsqlite3.tbd in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -476,6 +494,7 @@
 		3F99489B1CFC77B200A880A8 /* ThirdParty */ = {
 			isa = PBXGroup;
 			children = (
+				3F2959001E890FFE00779086 /* ATKit.framework */,
 				1B1C34D71E827D9400161873 /* HockeySDK-iOS */,
 				3F99489E1CFC782100A880A8 /* LTMorphingLabel */,
 			);
@@ -536,6 +555,7 @@
 				3F0CA42A1CF4402F002A048E /* Sources */,
 				3F0CA42B1CF4402F002A048E /* Frameworks */,
 				3F0CA42C1CF4402F002A048E /* Resources */,
+				3F2959041E89101400779086 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -883,6 +903,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/InsuranceApp/ThirdParty/HockeySDK-iOS",
+					"$(PROJECT_DIR)/InsuranceApp/ThirdParty",
 				);
 				INFOPLIST_FILE = InsuranceApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
@@ -905,6 +926,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/InsuranceApp/ThirdParty/HockeySDK-iOS",
+					"$(PROJECT_DIR)/InsuranceApp/ThirdParty",
 				);
 				INFOPLIST_FILE = InsuranceApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.4;

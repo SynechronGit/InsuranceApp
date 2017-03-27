@@ -4,6 +4,7 @@
 //
 
 import UIKit
+import ATKit
 
 
 /**
@@ -48,6 +49,12 @@ class IAAutoInsuranceDetailsController: IABaseController , UICollectionViewDeleg
     
     
     override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        coverageBoxView.backgroundColor = UIColor(patternImage: UIImage(named: "bigBox")!.scaledImage(size: coverageBoxView.frame.size, scaleMode: UIImageScaleMode.resize))
+        limitBoxView.backgroundColor = UIColor(patternImage: UIImage(named: "bigBox")!.scaledImage(size: limitBoxView.frame.size, scaleMode: UIImageScaleMode.resize))
+        deductibleBoxView.backgroundColor = UIColor(patternImage: UIImage(named: "bigBox")!.scaledImage(size: deductibleBoxView.frame.size, scaleMode: UIImageScaleMode.resize))
+        
         self.reloadAllData()
     }
     
@@ -61,9 +68,9 @@ class IAAutoInsuranceDetailsController: IABaseController , UICollectionViewDeleg
         vehicleCollectionView.backgroundColor = UIColor.clear
         driverCollectionView.backgroundColor = UIColor.clear
         
-        coverageBoxView.backgroundColor = UIColor(patternImage: UIImage(named: "bigBox")!)
-        limitBoxView.backgroundColor = UIColor(patternImage: UIImage(named: "bigBox")!)
-        deductibleBoxView.backgroundColor = UIColor(patternImage: UIImage(named: "bigBox")!)
+        //coverageBoxView.backgroundColor = UIColor(patternImage: UIImage(named: "bigBox")!)
+        //limitBoxView.backgroundColor = UIColor(patternImage: UIImage(named: "bigBox")!)
+        //deductibleBoxView.backgroundColor = UIColor(patternImage: UIImage(named: "bigBox")!)
         
         self.vehicleCountLabel.text = "Vehicles"
         self.driverCountLabel.text = "Drivers"

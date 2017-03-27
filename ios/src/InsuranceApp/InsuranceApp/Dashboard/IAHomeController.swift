@@ -65,6 +65,8 @@ class IAHomeController: IABaseController {
         aTapGestureRecognizer.cancelsTouchesInView = false
         self.dashboardTabItemView.addGestureRecognizer(aTapGestureRecognizer)
         
+        self.containerScrollView.layoutIfNeeded()
+        
         self.fileClaimTabContentViewLeadingConstraint.constant = self.containerScrollView.frame.size.width * 1
         aTapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(IAHomeController.didSelectFileClaimTabItemView))
         aTapGestureRecognizer.cancelsTouchesInView = false
