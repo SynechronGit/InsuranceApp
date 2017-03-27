@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -58,7 +59,6 @@
                                 <rect key="frame" x="142" y="465" width="484" height="1"/>
                                 <color key="backgroundColor" red="0.39607843139999999" green="0.3294117647" blue="0.64313725489999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="484" id="Pfe-l1-ohm"/>
                                     <constraint firstAttribute="height" constant="1" id="gM5-vd-J2g"/>
                                 </constraints>
                             </view>
@@ -67,7 +67,6 @@
                                 <color key="backgroundColor" red="0.39607843139999999" green="0.3294117647" blue="0.64313725489999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="k2f-y7-Bll"/>
-                                    <constraint firstAttribute="width" constant="484" id="zsJ-dp-NJd"/>
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Can not access your account?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uOw-cD-ONb">
@@ -79,6 +78,9 @@
                                 <fontDescription key="fontDescription" name="Ubuntu" family="Ubuntu" pointSize="19"/>
                                 <color key="textColor" red="0.83137254900000002" green="0.69019607839999997" blue="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <fontDescription key="fontDescription" name="Ubuntu" family="Ubuntu" pointSize="14"/>
+                                </variation>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Don't have an account?" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q5B-cc-puj">
                                 <rect key="frame" x="20" y="867" width="359" height="23"/>
@@ -88,6 +90,9 @@
                                 <fontDescription key="fontDescription" name="Ubuntu" family="Ubuntu" pointSize="19"/>
                                 <color key="textColor" red="0.83137254900000002" green="0.69019607839999997" blue="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <fontDescription key="fontDescription" name="Ubuntu" family="Ubuntu" pointSize="14"/>
+                                </variation>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Create an account &gt;" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f61-os-K1U">
                                 <rect key="frame" x="389" y="867" width="359" height="23"/>
@@ -97,6 +102,9 @@
                                 <fontDescription key="fontDescription" name="Ubuntu-Medium" family="Ubuntu" pointSize="19"/>
                                 <color key="textColor" red="0.39607843139999999" green="0.3294117647" blue="0.64313725489999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <fontDescription key="fontDescription" name="Ubuntu-Medium" family="Ubuntu" pointSize="14"/>
+                                </variation>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="PasswordIcon" translatesAutoresizingMaskIntoConstraints="NO" id="Hb5-QR-JpJ">
                                 <rect key="frame" x="142" y="508" width="29" height="29"/>
@@ -120,6 +128,9 @@
                                 <color key="textColor" red="0.83921568627450982" green="1" blue="0.8666666666666667" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="Ubuntu" family="Ubuntu" pointSize="23"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress"/>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <fontDescription key="fontDescription" name="Ubuntu" family="Ubuntu" pointSize="20"/>
+                                </variation>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7Kj-Tg-ANH">
                                 <rect key="frame" x="176" y="506" width="450" height="34"/>
@@ -129,12 +140,19 @@
                                 <color key="textColor" red="0.83921568629999999" green="1" blue="0.86666666670000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="Ubuntu" family="Ubuntu" pointSize="23"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" secureTextEntry="YES"/>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <fontDescription key="fontDescription" name="Ubuntu" family="Ubuntu" pointSize="20"/>
+                                </variation>
                             </textField>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LoginLogo" translatesAutoresizingMaskIntoConstraints="NO" id="aTa-5u-K1v">
                                 <rect key="frame" x="327" y="137" width="115" height="115"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="115" id="XUs-38-ghx"/>
-                                    <constraint firstAttribute="height" constant="115" id="b4g-wg-Bor"/>
+                                    <constraint firstAttribute="width" constant="115" id="XUs-38-ghx">
+                                        <variation key="heightClass=regular-widthClass=compact" constant="90"/>
+                                    </constraint>
+                                    <constraint firstAttribute="height" constant="115" id="b4g-wg-Bor">
+                                        <variation key="heightClass=regular-widthClass=compact" constant="90"/>
+                                    </constraint>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MY INSURANCE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8DD-AC-ggD">
@@ -146,29 +164,50 @@
                                 <fontDescription key="fontDescription" name="Ubuntu-Medium" family="Ubuntu" pointSize="23"/>
                                 <color key="textColor" red="0.396078431372549" green="0.32941176470588235" blue="0.64313725490196072" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <fontDescription key="fontDescription" name="Ubuntu-Medium" family="Ubuntu" pointSize="20"/>
+                                </variation>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="synechronLogo" translatesAutoresizingMaskIntoConstraints="NO" id="wqA-GJ-REE">
                                 <rect key="frame" x="285" y="931" width="198" height="48"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="48" id="AMc-OK-MHb"/>
-                                    <constraint firstAttribute="width" constant="198" id="Mt8-5U-Onf"/>
+                                    <constraint firstAttribute="height" constant="48" id="AMc-OK-MHb">
+                                        <variation key="heightClass=regular-widthClass=compact" constant="28"/>
+                                    </constraint>
+                                    <constraint firstAttribute="width" secondItem="wqA-GJ-REE" secondAttribute="height" multiplier="33:8" id="lKY-k5-MTS"/>
                                 </constraints>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="q5B-cc-puj" firstAttribute="centerY" secondItem="f61-os-K1U" secondAttribute="centerY" id="0wn-nX-aaA"/>
                             <constraint firstItem="oi9-Cz-IpD" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="1gy-aL-Y0a"/>
+                            <constraint firstItem="wqA-GJ-REE" firstAttribute="top" secondItem="q5B-cc-puj" secondAttribute="bottom" constant="41" id="1qc-94-6Vb">
+                                <variation key="heightClass=regular-widthClass=compact" constant="20"/>
+                            </constraint>
                             <constraint firstItem="Cep-II-U6d" firstAttribute="top" secondItem="5SI-ku-AjP" secondAttribute="bottom" constant="10" id="1tu-OT-llC"/>
+                            <constraint firstItem="yrQ-Gi-jdn" firstAttribute="trailing" secondItem="Cep-II-U6d" secondAttribute="trailing" id="3Yc-0R-Xkz"/>
                             <constraint firstItem="7Kj-Tg-ANH" firstAttribute="leading" secondItem="Hb5-QR-JpJ" secondAttribute="trailing" constant="5" id="41M-5g-Ly3"/>
                             <constraint firstItem="Mu4-9F-00X" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="4qk-o3-a4h"/>
                             <constraint firstItem="q5B-cc-puj" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="4r5-A3-m0y"/>
                             <constraint firstAttribute="trailing" secondItem="Mu4-9F-00X" secondAttribute="trailing" id="5uC-z3-omK"/>
-                            <constraint firstItem="uOw-cD-ONb" firstAttribute="top" secondItem="oi9-Cz-IpD" secondAttribute="bottom" constant="41" id="7c6-1K-fa3"/>
+                            <constraint firstItem="uOw-cD-ONb" firstAttribute="top" secondItem="oi9-Cz-IpD" secondAttribute="bottom" constant="41" id="7c6-1K-fa3">
+                                <variation key="heightClass=regular-widthClass=compact" constant="20"/>
+                            </constraint>
                             <constraint firstItem="q5B-cc-puj" firstAttribute="width" secondItem="f61-os-K1U" secondAttribute="width" id="8er-Hm-jpI"/>
+                            <constraint firstItem="yrQ-Gi-jdn" firstAttribute="leading" secondItem="Cep-II-U6d" secondAttribute="leading" id="9Ce-JP-qLQ"/>
                             <constraint firstItem="Kl2-8v-NhZ" firstAttribute="leading" secondItem="Cep-II-U6d" secondAttribute="leading" id="D6E-RF-E99"/>
                             <constraint firstItem="f61-os-K1U" firstAttribute="leading" secondItem="q5B-cc-puj" secondAttribute="trailing" constant="10" id="DYN-uQ-vKi"/>
-                            <constraint firstItem="aTa-5u-K1v" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="137" id="G3X-ps-894"/>
+                            <constraint firstItem="aTa-5u-K1v" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="137" id="G3X-ps-894">
+                                <variation key="heightClass=regular-widthClass=compact" constant="40"/>
+                            </constraint>
                             <constraint firstAttribute="trailing" secondItem="f61-os-K1U" secondAttribute="trailing" constant="20" id="Iff-5V-j44"/>
+                            <constraint firstItem="Cep-II-U6d" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="142" id="K5N-el-8zf">
+                                <variation key="heightClass=regular-widthClass=compact" constant="20"/>
+                            </constraint>
+                            <constraint firstAttribute="trailing" secondItem="Cep-II-U6d" secondAttribute="trailing" constant="142" id="Ke5-CP-QNF">
+                                <variation key="heightClass=regular-widthClass=compact" constant="20"/>
+                            </constraint>
                             <constraint firstItem="yrQ-Gi-jdn" firstAttribute="top" secondItem="7Kj-Tg-ANH" secondAttribute="bottom" constant="10" id="Kp7-q4-lhe"/>
                             <constraint firstItem="yrQ-Gi-jdn" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Mci-vO-Gra"/>
                             <constraint firstItem="Cep-II-U6d" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="229" id="NTP-OO-ZPh"/>
@@ -181,19 +220,21 @@
                             <constraint firstItem="Cep-II-U6d" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="V4I-zM-j3w"/>
                             <constraint firstItem="oi9-Cz-IpD" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="800" id="WW9-FG-rv2"/>
                             <constraint firstItem="yrQ-Gi-jdn" firstAttribute="top" secondItem="Hb5-QR-JpJ" secondAttribute="bottom" constant="13" id="awr-gr-yId"/>
-                            <constraint firstAttribute="bottom" secondItem="f61-os-K1U" secondAttribute="bottom" constant="134" id="b8o-4A-eaL"/>
                             <constraint firstAttribute="bottom" secondItem="Mu4-9F-00X" secondAttribute="bottom" id="dRi-cM-Pxj"/>
                             <constraint firstItem="wqA-GJ-REE" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="e8Z-zF-wGh"/>
                             <constraint firstItem="yrQ-Gi-jdn" firstAttribute="top" secondItem="Cep-II-U6d" secondAttribute="bottom" constant="84" id="epK-Bg-YmI"/>
                             <constraint firstItem="oi9-Cz-IpD" firstAttribute="top" secondItem="yrQ-Gi-jdn" secondAttribute="bottom" constant="50" id="ewF-19-vMV"/>
-                            <constraint firstItem="Cep-II-U6d" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="465" id="ho9-8N-www"/>
                             <constraint firstItem="5SI-ku-AjP" firstAttribute="trailing" secondItem="Cep-II-U6d" secondAttribute="trailing" id="iQv-nx-8iV"/>
+                            <constraint firstItem="Cep-II-U6d" firstAttribute="top" secondItem="8DD-AC-ggD" secondAttribute="bottom" constant="162" id="j35-tW-sW3">
+                                <variation key="heightClass=regular-widthClass=compact" constant="100"/>
+                            </constraint>
                             <constraint firstItem="7Kj-Tg-ANH" firstAttribute="trailing" secondItem="yrQ-Gi-jdn" secondAttribute="trailing" id="kaC-YE-qE4"/>
                             <constraint firstAttribute="trailing" secondItem="Cep-II-U6d" secondAttribute="trailing" constant="299" id="phI-tA-CXg"/>
                             <constraint firstItem="5SI-ku-AjP" firstAttribute="leading" secondItem="Kl2-8v-NhZ" secondAttribute="trailing" constant="5" id="qde-qM-33P"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="wqA-GJ-REE" secondAttribute="bottom" constant="45" id="uwj-fF-fom"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="wqA-GJ-REE" secondAttribute="bottom" constant="45" id="uwj-fF-fom">
+                                <variation key="heightClass=regular-widthClass=compact" constant="20"/>
+                            </constraint>
                             <constraint firstItem="Cep-II-U6d" firstAttribute="top" secondItem="Kl2-8v-NhZ" secondAttribute="bottom" constant="13" id="xYh-jk-ZKp"/>
-                            <constraint firstAttribute="bottom" secondItem="q5B-cc-puj" secondAttribute="bottom" constant="134" id="yVI-FQ-nIY"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
@@ -673,7 +714,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="E9b-1m-KME" userLabel="Navigation Controller" sceneMemberID="viewController">
                     <extendedEdge key="edgesForExtendedLayout"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="549-Rp-6Eb" customClass="IANavigationBar" customModule="InsuranceApp" customModuleProvider="target">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="549-Rp-6Eb" customClass="IANavigationBar" customModule="InsuranceApp" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -4098,13 +4139,13 @@ Insurance</string>
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="VIN #" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SZ6-oV-Ss8">
-                                        <rect key="frame" x="102" y="11" width="41" height="18"/>
+                                        <rect key="frame" x="103" y="10" width="39" height="19"/>
                                         <fontDescription key="fontDescription" name="Ubuntu" family="Ubuntu" pointSize="16"/>
                                         <color key="textColor" red="0.10588235294117647" green="0.035294117647058823" blue="0.18431372549019609" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1HGBH41JYMN109186" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fO8-aC-odh">
-                                        <rect key="frame" x="39" y="57" width="168" height="18"/>
+                                        <rect key="frame" x="38" y="57" width="170.5" height="19"/>
                                         <fontDescription key="fontDescription" name="Ubuntu" family="Ubuntu" pointSize="16"/>
                                         <color key="textColor" red="0.1058823529" green="0.035294117649999998" blue="0.1843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
@@ -5792,7 +5833,7 @@ Insurance</string>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="yS7-Mb-0yN" sceneMemberID="viewController">
                     <extendedEdge key="edgesForExtendedLayout"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="rR3-RW-hlS" customClass="IANavigationBar" customModule="InsuranceApp" customModuleProvider="target">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="rR3-RW-hlS" customClass="IANavigationBar" customModule="InsuranceApp" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -6271,7 +6312,7 @@ Insurance</string>
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="J35-Gz-GUQ" sceneMemberID="viewController">
                     <extendedEdge key="edgesForExtendedLayout"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="REN-n7-vvY" customClass="IANavigationBar" customModule="InsuranceApp" customModuleProvider="target">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="REN-n7-vvY" customClass="IANavigationBar" customModule="InsuranceApp" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -6288,7 +6329,7 @@ Insurance</string>
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="kbM-DE-2kh" sceneMemberID="viewController">
                     <extendedEdge key="edgesForExtendedLayout"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="Osf-iK-WAm" customClass="IANavigationBar" customModule="InsuranceApp" customModuleProvider="target">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Osf-iK-WAm" customClass="IANavigationBar" customModule="InsuranceApp" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -6391,7 +6432,7 @@ Insurance</string>
                                                             </variation>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Report" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Fn-LS-eoH">
-                                                            <rect key="frame" x="22" y="217" width="47.5" height="21"/>
+                                                            <rect key="frame" x="22" y="217" width="46" height="21"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="150" id="Fng-sb-gxh"/>
                                                                 <constraint firstAttribute="height" constant="21" id="bYU-GH-Kly"/>
@@ -6408,7 +6449,7 @@ Insurance</string>
                                                             </variation>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="03 - 01 - 2015" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BVL-jN-1Rt">
-                                                            <rect key="frame" x="150" y="85" width="103" height="21"/>
+                                                            <rect key="frame" x="150" y="85" width="108" height="21"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="21" id="Lvm-WL-kcy"/>
                                                                 <constraint firstAttribute="width" constant="300" id="ugv-Sm-xd1"/>
@@ -6423,7 +6464,7 @@ Insurance</string>
                                                             </variation>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Auto" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dqW-C0-I2H">
-                                                            <rect key="frame" x="150" y="115" width="37.5" height="21"/>
+                                                            <rect key="frame" x="150" y="115" width="36" height="21"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="70" id="4ay-1I-Ydl"/>
                                                                 <constraint firstAttribute="height" constant="21" id="QlN-OO-YlJ"/>
@@ -6438,7 +6479,7 @@ Insurance</string>
                                                             </variation>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mercedez S550" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sc2-E6-E3p">
-                                                            <rect key="frame" x="150" y="145" width="118" height="21"/>
+                                                            <rect key="frame" x="150" y="145" width="119.5" height="21"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="100" id="PwV-BL-g0b"/>
                                                                 <constraint firstAttribute="height" constant="21" id="Ttw-kV-Cej"/>
@@ -6491,7 +6532,7 @@ Insurance</string>
                                                             </variation>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Under Review" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k3Q-A4-vmY">
-                                                            <rect key="frame" x="109.5" y="217" width="95" height="21"/>
+                                                            <rect key="frame" x="108" y="217" width="94" height="21"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="150" id="Xsk-Ql-Ll5"/>
                                                                 <constraint firstAttribute="height" constant="21" id="oGx-qk-5fd"/>
@@ -6508,7 +6549,7 @@ Insurance</string>
                                                             </variation>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Approved" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ghj-hE-muZ">
-                                                            <rect key="frame" x="244.5" y="217" width="67" height="21"/>
+                                                            <rect key="frame" x="242" y="217" width="65.5" height="21"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="21" id="og2-0u-Nix"/>
                                                                 <constraint firstAttribute="width" constant="150" id="rBr-d9-DvB"/>
@@ -6525,14 +6566,14 @@ Insurance</string>
                                                             </variation>
                                                         </label>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ClaimStatusRightArrowNormal" translatesAutoresizingMaskIntoConstraints="NO" id="40z-Ih-USu">
-                                                            <rect key="frame" x="74.5" y="213" width="30" height="30"/>
+                                                            <rect key="frame" x="73" y="213" width="30" height="30"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="30" id="aNj-1H-Y1h"/>
                                                                 <constraint firstAttribute="height" constant="30" id="kwR-0w-NOz"/>
                                                             </constraints>
                                                         </imageView>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ClaimStatusRightArrowNormal" translatesAutoresizingMaskIntoConstraints="NO" id="2go-6u-gLZ">
-                                                            <rect key="frame" x="209.5" y="213" width="30" height="30"/>
+                                                            <rect key="frame" x="207" y="213" width="30" height="30"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="30" id="2SM-VN-PgK"/>
                                                                 <constraint firstAttribute="height" constant="30" id="L1C-kV-NCm"/>
@@ -6691,7 +6732,7 @@ Insurance</string>
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="1Ks-VZ-ENz" sceneMemberID="viewController">
                     <extendedEdge key="edgesForExtendedLayout"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="19Y-bL-ipP" customClass="IANavigationBar" customModule="InsuranceApp" customModuleProvider="target">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="19Y-bL-ipP" customClass="IANavigationBar" customModule="InsuranceApp" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -6753,7 +6794,7 @@ Insurance</string>
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="dqs-79-o5O" sceneMemberID="viewController">
                     <extendedEdge key="edgesForExtendedLayout"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="SWF-s4-Eib" customClass="IANavigationBar" customModule="InsuranceApp" customModuleProvider="target">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="SWF-s4-Eib" customClass="IANavigationBar" customModule="InsuranceApp" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -6815,7 +6856,7 @@ Insurance</string>
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="1Z0-fx-7rN" sceneMemberID="viewController">
                     <extendedEdge key="edgesForExtendedLayout"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="wkh-c4-9Yt" customClass="IANavigationBar" customModule="InsuranceApp" customModuleProvider="target">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="wkh-c4-9Yt" customClass="IANavigationBar" customModule="InsuranceApp" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
