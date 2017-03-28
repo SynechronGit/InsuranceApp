@@ -144,10 +144,12 @@ class IAFileClaimController: IABaseController, UIImagePickerControllerDelegate, 
         self.insuranceTypeTextField.list = ["Vehicle", "Driver", "Home", "Boat", "Pet"]
         
         self.insuredItemTextField.shouldDisplayAsDropdown = true
+        self.insuredItemTextField.delegate = self
         self.insuredItemTextField.controller = self
         self.insuredItemTextField.list = nil
         
         self.reasonTextField.shouldDisplayAsDropdown = true
+        self.reasonTextField.delegate = self
         self.reasonTextField.controller = self
         self.reasonTextField.list = nil
         
@@ -243,6 +245,18 @@ class IAFileClaimController: IABaseController, UIImagePickerControllerDelegate, 
         }
         
         return true
+    }
+    
+    
+    
+    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
+        var aReturnVal :Bool = true
+        
+        if textField is IATextField && (textField as! IATextField).shouldDisplayAsDropdown != nil && (textField as! IATextField).shouldDisplayAsDropdown == true {
+            aReturnVal = false
+        }
+        
+        return aReturnVal
     }
     
     

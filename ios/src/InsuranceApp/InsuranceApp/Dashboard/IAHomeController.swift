@@ -150,7 +150,7 @@ class IAHomeController: IABaseController {
         
         
         if pAnimated == true {
-            let aDiff :CGFloat = 150.0
+            let aPercent :CGFloat = 70.0
             
             UIGraphicsBeginImageContextWithOptions(self.dashboardContainerView.bounds.size, self.dashboardContainerView.isOpaque, 0.0);
             self.dashboardContainerView.layer.render(in: UIGraphicsGetCurrentContext()!)
@@ -189,10 +189,18 @@ class IAHomeController: IABaseController {
             self.claimsImageView.frame = CGRect(x: 0.0, y: 0.0, width: self.claimsContainerView.frame.size.width, height: self.claimsContainerView.frame.size.height)
             
             UIView.animate(withDuration: 0.3, delay: 0.0, options: .curveEaseOut, animations: {
-                self.dashboardImageView.frame = CGRect(x: aDiff, y: aDiff, width: self.dashboardContainerView.frame.size.width - (aDiff * 2.0), height: self.dashboardContainerView.frame.size.height - (aDiff * 2.0))
-                self.fileClaimImageView.frame = CGRect(x: aDiff, y: aDiff, width: self.fileClaimContainerView.frame.size.width - (aDiff * 2.0), height: self.fileClaimContainerView.frame.size.height - (aDiff * 2.0))
-                self.policiesImageView.frame = CGRect(x: aDiff, y: aDiff, width: self.policiesContainerView.frame.size.width - (aDiff * 2.0), height: self.policiesContainerView.frame.size.height - (aDiff * 2.0))
-                self.claimsImageView.frame = CGRect(x: aDiff, y: aDiff, width: self.claimsContainerView.frame.size.width - (aDiff * 2.0), height: self.claimsContainerView.frame.size.height - (aDiff * 2.0))
+                let aDashboardImageViewSize = self.dashboardContainerView.frame.size.scaledSize(percent: aPercent)
+                self.dashboardImageView.frame = CGRect(x: (self.dashboardImageView.frame.size.width - aDashboardImageViewSize.width) / 2.0, y: (self.dashboardImageView.frame.size.height - aDashboardImageViewSize.height) / 2.0, width: aDashboardImageViewSize.width, height: aDashboardImageViewSize.height)
+                
+                let aFileClaimImageViewSize = self.fileClaimContainerView.frame.size.scaledSize(percent: aPercent)
+                self.fileClaimImageView.frame = CGRect(x: (self.fileClaimImageView.frame.size.width - aFileClaimImageViewSize.width) / 2.0, y: (self.fileClaimImageView.frame.size.height - aFileClaimImageViewSize.height) / 2.0, width: aFileClaimImageViewSize.width, height: aFileClaimImageViewSize.height)
+                
+                let aPoliciesImageViewSize = self.policiesImageView.frame.size.scaledSize(percent: aPercent)
+                self.policiesImageView.frame = CGRect(x: (self.policiesImageView.frame.size.width - aPoliciesImageViewSize.width) / 2.0, y: (self.policiesImageView.frame.size.height - aPoliciesImageViewSize.height) / 2.0, width: aPoliciesImageViewSize.width, height: aPoliciesImageViewSize.height)
+                
+                let aClaimsImageViewSize = self.claimsImageView.frame.size.scaledSize(percent: aPercent)
+                self.claimsImageView.frame = CGRect(x: (self.claimsImageView.frame.size.width - aClaimsImageViewSize.width) / 2.0, y: (self.claimsImageView.frame.size.height - aClaimsImageViewSize.height) / 2.0, width: aClaimsImageViewSize.width, height: aClaimsImageViewSize.height)
+                
                 }, completion: { pFinished in
                     self.containerScrollView.scrollRectToVisible(CGRect(x: self.containerScrollView.frame.size.width * CGFloat(pIndex), y: 0.0, width: self.containerScrollView.frame.size.width, height: self.containerScrollView.frame.size.height), animated: true)
                     
