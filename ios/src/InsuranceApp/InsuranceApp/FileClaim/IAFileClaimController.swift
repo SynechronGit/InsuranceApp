@@ -46,6 +46,9 @@ fileprivate func > <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
 class IAFileClaimController: IABaseController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate, IADropdownListControllerDelegate {
     @IBOutlet weak var fileClaimContainerView: UIView!
     
+    @IBOutlet weak var fileClaimScrollView: UIScrollView!
+    @IBOutlet weak var fileClaimContentViewHeightConstraint: NSLayoutConstraint!
+    
     @IBOutlet weak var insuranceTypeTextField: IATextField!
     @IBOutlet weak var insuredItemTextField: IATextField!
     @IBOutlet weak var reasonTextField: IATextField!
@@ -69,6 +72,7 @@ class IAFileClaimController: IABaseController, UIImagePickerControllerDelegate, 
     @IBOutlet weak var addPhotoThreeLabel: UILabel!
     
     @IBOutlet weak var scanDocumentOneContainerView: UIView!
+    @IBOutlet weak var scanDocumentOneContainerTopConstraint: NSLayoutConstraint!
     @IBOutlet weak var scanDocumentOneImageView: UIImageView!
     @IBOutlet weak var scanDocumentOneIconImageView: UIImageView!
     @IBOutlet weak var scanDocumentOneLabel: UILabel!
@@ -207,6 +211,36 @@ class IAFileClaimController: IABaseController, UIImagePickerControllerDelegate, 
         self.scanDocumentThreeIconImageView.isHidden = false
         self.scanDocumentThreeLabel.isHidden = false
         self.scanDocumentThreeContainerView.isHidden = true
+    }
+    
+    
+    func assignScrollContentHeight() {
+        if UIDevice.current.isIphone {
+            var aContentViewHeight :CGFloat = 849.0
+            var aScanDocumentOneTop :CGFloat = 18.0
+            
+            if self.addPhotoTwoContainerView.isHidden == false {
+                aScanDocumentOneTop = aScanDocumentOneTop + self.addPhotoTwoContainerView.frame.size.height + 18.0
+                aContentViewHeight = aContentViewHeight + self.addPhotoTwoContainerView.frame.size.height + 18.0
+            }
+            
+            if self.addPhotoThreeContainerView.isHidden == false {
+                aScanDocumentOneTop = aScanDocumentOneTop + self.addPhotoThreeContainerView.frame.size.height + 18.0
+                aContentViewHeight = aContentViewHeight + self.addPhotoThreeContainerView.frame.size.height + 18.0
+            }
+            
+            if self.scanDocumentTwoContainerView.isHidden == false {
+                aContentViewHeight = aContentViewHeight + self.scanDocumentTwoContainerView.frame.size.height + 18.0
+            }
+            
+            if self.scanDocumentThreeContainerView.isHidden == false {
+                aContentViewHeight = aContentViewHeight + self.scanDocumentThreeContainerView.frame.size.height + 18.0
+            }
+            
+            self.scanDocumentOneContainerTopConstraint.constant = aScanDocumentOneTop
+            self.fileClaimContentViewHeightConstraint.constant = aContentViewHeight
+            self.fileClaimScrollView.contentSize = CGSize(width: self.fileClaimScrollView.frame.width, height: aContentViewHeight)
+        }
     }
     
     
@@ -468,6 +502,7 @@ class IAFileClaimController: IABaseController, UIImagePickerControllerDelegate, 
                 self.scanDocumentThreeLabel.isHidden = true
             }
         }
+        self.assignScrollContentHeight()
         picker.dismiss(animated: true, completion: nil)
     }
     
