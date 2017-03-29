@@ -17,6 +17,7 @@ class IAPolicyListTableCellView: UITableViewCell {
     @IBOutlet weak var insuredItemCountLabel: UILabel!
     @IBOutlet weak var insuredDriversCountTitleLabel: UILabel!
     @IBOutlet weak var insuredDriversCountLabel: UILabel!
+    @IBOutlet weak var coverageTitleLabelTopConstraint: NSLayoutConstraint!
     @IBOutlet weak var coverageLabel: UILabel!
     @IBOutlet weak var premiumDueLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!

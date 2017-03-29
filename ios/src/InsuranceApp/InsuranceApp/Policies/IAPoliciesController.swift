@@ -8,7 +8,7 @@
 
 import UIKit
 
-class IAPoliciesController: IABaseController {
+class IAPoliciesController: IABaseController, UITableViewDataSource, UITableViewDelegate {
     @IBOutlet weak var policyListContainerView: UIView!
     var policyArray :Array<IAPolicy>!
     @IBOutlet weak var policyTableView: UITableView!
@@ -60,8 +60,13 @@ class IAPoliciesController: IABaseController {
      * Method that will init, set and return the cell view.
      * @return UITableViewCell. View of the cell in given table view.
      */
-    func tableView(_ tableView: UITableView, cellForRowAtIndexPath indexPath: IndexPath) -> UITableViewCell {
-        let aReturnVal:IAPolicyListTableCellView = tableView.dequeueReusableCell(withIdentifier: "IAPolicyListTableCellViewID") as! IAPolicyListTableCellView
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        var aReturnVal:IAPolicyListTableCellView = IAPolicyListTableCellView()
+        if UIDevice.current.isIpad {
+            aReturnVal = tableView.dequeueReusableCell(withIdentifier: "IAPolicyListTablePadCellViewID") as! IAPolicyListTableCellView
+        } else {
+            aReturnVal = tableView.dequeueReusableCell(withIdentifier: "IAPolicyListTablePhoneCellViewID") as! IAPolicyListTableCellView
+        }
         aReturnVal.backgroundColor = UIColor.clear
         aReturnVal.accessoryType = .disclosureIndicator
         
@@ -96,9 +101,15 @@ class IAPoliciesController: IABaseController {
                 aReturnVal.insuredDriversCountTitleLabel.isHidden = false
                 aReturnVal.insuredDriversCountLabel.isHidden = false
                 aReturnVal.insuredDriversCountLabel?.text = String(format: "%02d", aPolicy.insuredDriverCount)
+                if aReturnVal.coverageTitleLabelTopConstraint != nil {
+                    aReturnVal.coverageTitleLabelTopConstraint.constant = 35.0
+                }
             } else {
                 aReturnVal.insuredDriversCountTitleLabel.isHidden = true
                 aReturnVal.insuredDriversCountLabel.isHidden = true
+                if aReturnVal.coverageTitleLabelTopConstraint != nil {
+                    aReturnVal.coverageTitleLabelTopConstraint.constant = 8.0
+                }
             }
             
             aReturnVal.coverageLabel?.text = String(format: "$%02d", aPolicy.coverage.intValue)
@@ -111,10 +122,20 @@ class IAPoliciesController: IABaseController {
     }
     
     
+    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableViewAutomaticDimension
+    }
+    
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableViewAutomaticDimension
+    }
+    
+    
     /**
      * Method that will handle tap on table cell.
      */
-    func tableView(_ tableView: UITableView, didSelectRowAtIndexPath indexPath: IndexPath) {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         self.performSegue(withIdentifier: "PolicyListToPolicyDetailsSegueID", sender: self)
     }
