@@ -60,8 +60,8 @@ class IAAutoInsuranceDetailsController: IABaseController , UICollectionViewDeleg
     
     
     func updateUI(){
-        self.mainBGView.layer.cornerRadius = 10.0
-        self.mainBGView.layer.masksToBounds = true
+        //self.mainBGView.layer.cornerRadius = 10.0
+        //self.mainBGView.layer.masksToBounds = true
 
         dateView.backgroundColor = UIColor(patternImage: UIImage(named: "dateBg")!)
         
