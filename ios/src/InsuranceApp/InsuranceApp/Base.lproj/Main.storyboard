@@ -3639,13 +3639,13 @@ Insurance</string>
                                 <rect key="frame" x="44" y="227" width="210" height="116"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$3500" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rgg-KJ-sKO">
-                                        <rect key="frame" x="64.5" y="17" width="81" height="34"/>
+                                        <rect key="frame" x="64" y="17" width="82" height="33"/>
                                         <fontDescription key="fontDescription" name="Ubuntu" family="Ubuntu" pointSize="29"/>
                                         <color key="textColor" red="0.83137254900000002" green="0.83137254900000002" blue="0.83137254900000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Coverage" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iqD-bz-3z8">
-                                        <rect key="frame" x="71" y="83" width="69.5" height="19"/>
+                                        <rect key="frame" x="70.5" y="83" width="70.5" height="18"/>
                                         <fontDescription key="fontDescription" name="Ubuntu-Medium" family="Ubuntu" pointSize="16"/>
                                         <color key="textColor" red="0.83137254900000002" green="0.83137254900000002" blue="0.83137254900000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
@@ -4145,7 +4145,7 @@ Insurance</string>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1HGBH41JYMN109186" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fO8-aC-odh">
-                                        <rect key="frame" x="39.5" y="57" width="168" height="18"/>
+                                        <rect key="frame" x="39" y="57" width="168" height="18"/>
                                         <fontDescription key="fontDescription" name="Ubuntu" family="Ubuntu" pointSize="16"/>
                                         <color key="textColor" red="0.1058823529" green="0.035294117649999998" blue="0.1843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
@@ -5833,7 +5833,7 @@ Insurance</string>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="yS7-Mb-0yN" sceneMemberID="viewController">
                     <extendedEdge key="edgesForExtendedLayout"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="rR3-RW-hlS" customClass="IANavigationBar" customModule="InsuranceApp" customModuleProvider="target">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="rR3-RW-hlS" customClass="IANavigationBar" customModule="InsuranceApp" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -7061,26 +7061,26 @@ Insurance</string>
                         <rect key="frame" x="0.0" y="64" width="768" height="885"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ain-a8-JcK" userLabel="topBorderView">
+                                <rect key="frame" x="18" y="10" width="732" height="8"/>
+                                <color key="backgroundColor" red="0.18039215689999999" green="0.24313725489999999" blue="0.30980392159999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="8" id="Ab5-vL-BSa"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="anl-E7-Agi" userLabel="bottomBorderView">
+                                <rect key="frame" x="18" y="867" width="732" height="8"/>
+                                <color key="backgroundColor" red="0.18039215689999999" green="0.24313725489999999" blue="0.30980392159999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="8" id="CLe-6z-nTL"/>
+                                </constraints>
+                            </view>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xZG-lP-d7y">
                                 <rect key="frame" x="18" y="18" width="732" height="849"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qqG-HI-jz0">
                                         <rect key="frame" x="0.0" y="0.0" width="732" height="849"/>
                                         <subviews>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ain-a8-JcK">
-                                                <rect key="frame" x="0.0" y="0.0" width="732" height="8"/>
-                                                <color key="backgroundColor" red="0.18039215689999999" green="0.24313725489999999" blue="0.30980392159999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="8" id="Ab5-vL-BSa"/>
-                                                </constraints>
-                                            </view>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="anl-E7-Agi">
-                                                <rect key="frame" x="0.0" y="841" width="732" height="8"/>
-                                                <color key="backgroundColor" red="0.18039215689999999" green="0.24313725489999999" blue="0.30980392159999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="8" id="CLe-6z-nTL"/>
-                                                </constraints>
-                                            </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Insurance Type:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lh6-1o-FKt">
                                                 <rect key="frame" x="21" y="37" width="150" height="21"/>
                                                 <constraints>
@@ -7581,7 +7581,6 @@ Insurance</string>
                                         <constraints>
                                             <constraint firstItem="xRk-oe-H2q" firstAttribute="centerY" secondItem="Tup-6i-jnv" secondAttribute="centerY" id="1ES-1r-lZV"/>
                                             <constraint firstItem="mwY-YF-lq0" firstAttribute="trailing" secondItem="PRa-ef-1qE" secondAttribute="trailing" id="2at-rZ-Mz6"/>
-                                            <constraint firstItem="Ain-a8-JcK" firstAttribute="top" secondItem="qqG-HI-jz0" secondAttribute="top" id="3ZU-7s-Xk8"/>
                                             <constraint firstItem="jgT-cR-tUk" firstAttribute="trailing" secondItem="lh6-1o-FKt" secondAttribute="trailing" id="3uO-QX-cCX"/>
                                             <constraint firstItem="UsH-NC-M2U" firstAttribute="leading" secondItem="jgT-cR-tUk" secondAttribute="leading" id="5aG-sp-d3f"/>
                                             <constraint firstItem="gdI-Dl-Yhj" firstAttribute="top" secondItem="frJ-DM-GPB" secondAttribute="bottom" constant="18" id="6de-ar-ieO"/>
@@ -7590,34 +7589,31 @@ Insurance</string>
                                             <constraint firstItem="PRa-ef-1qE" firstAttribute="centerY" secondItem="lh6-1o-FKt" secondAttribute="centerY" id="Asz-Aw-YqV"/>
                                             <constraint firstItem="46Z-Og-Lzb" firstAttribute="trailing" secondItem="PRa-ef-1qE" secondAttribute="trailing" id="BKZ-Un-mMd"/>
                                             <constraint firstItem="46Z-Og-Lzb" firstAttribute="leading" secondItem="PRa-ef-1qE" secondAttribute="leading" id="BPx-64-VOg"/>
-                                            <constraint firstAttribute="trailing" secondItem="anl-E7-Agi" secondAttribute="trailing" id="CCw-yX-LAI"/>
                                             <constraint firstItem="hUH-er-3QJ" firstAttribute="leading" secondItem="qqG-HI-jz0" secondAttribute="leading" constant="22" id="Crc-mr-Nif"/>
                                             <constraint firstItem="frJ-DM-GPB" firstAttribute="top" secondItem="9k7-K3-8Xs" secondAttribute="bottom" constant="18" id="DMh-rw-YE8"/>
                                             <constraint firstItem="17d-eq-WJq" firstAttribute="centerX" secondItem="qqG-HI-jz0" secondAttribute="centerX" id="Dr8-Ds-Z0F"/>
                                             <constraint firstItem="bA3-w8-wNg" firstAttribute="leading" secondItem="PRa-ef-1qE" secondAttribute="leading" id="E8q-DW-leH"/>
                                             <constraint firstItem="uvM-o2-leg" firstAttribute="top" secondItem="SCm-44-SVL" secondAttribute="bottom" constant="34" id="EA8-ga-JSq"/>
                                             <constraint firstItem="M8i-Sa-xWJ" firstAttribute="centerX" secondItem="qqG-HI-jz0" secondAttribute="centerX" id="EDc-gl-xwC"/>
-                                            <constraint firstItem="anl-E7-Agi" firstAttribute="top" secondItem="hUH-er-3QJ" secondAttribute="bottom" constant="72" id="GPL-1S-Slw"/>
                                             <constraint firstItem="mwY-YF-lq0" firstAttribute="leading" secondItem="PRa-ef-1qE" secondAttribute="leading" id="GQO-9B-DuH"/>
                                             <constraint firstItem="zoY-kK-U8Z" firstAttribute="top" secondItem="rR5-KC-dJ9" secondAttribute="bottom" constant="34" id="HCG-Vs-0Js"/>
                                             <constraint firstItem="46Z-Og-Lzb" firstAttribute="centerY" secondItem="rR5-KC-dJ9" secondAttribute="centerY" id="HJy-3B-V3O"/>
                                             <constraint firstItem="rBV-AR-Hfr" firstAttribute="top" secondItem="M8i-Sa-xWJ" secondAttribute="bottom" constant="18" id="Iwr-iy-sJB"/>
                                             <constraint firstAttribute="height" constant="849" id="LZF-VN-eNL"/>
                                             <constraint firstItem="7ie-Jz-vPN" firstAttribute="top" secondItem="jgT-cR-tUk" secondAttribute="top" id="NEd-AB-85O"/>
-                                            <constraint firstAttribute="trailing" secondItem="Ain-a8-JcK" secondAttribute="trailing" id="NHk-Uh-HSG"/>
                                             <constraint firstItem="rBV-AR-Hfr" firstAttribute="trailing" secondItem="7ie-Jz-vPN" secondAttribute="trailing" id="P1x-rh-4Z9"/>
                                             <constraint firstItem="mwY-YF-lq0" firstAttribute="centerY" secondItem="uvM-o2-leg" secondAttribute="centerY" id="Qce-6z-0QK"/>
                                             <constraint firstItem="gdI-Dl-Yhj" firstAttribute="centerX" secondItem="qqG-HI-jz0" secondAttribute="centerX" id="RsT-DP-k4f"/>
                                             <constraint firstAttribute="trailing" secondItem="7ie-Jz-vPN" secondAttribute="trailing" constant="21" id="SoX-RE-O56"/>
                                             <constraint firstItem="9k7-K3-8Xs" firstAttribute="leading" secondItem="Tup-6i-jnv" secondAttribute="leading" id="UtZ-os-kSc"/>
                                             <constraint firstItem="gdI-Dl-Yhj" firstAttribute="trailing" secondItem="7ie-Jz-vPN" secondAttribute="trailing" id="VPE-ui-jLW"/>
+                                            <constraint firstAttribute="bottom" secondItem="17d-eq-WJq" secondAttribute="bottom" constant="23" id="Vea-2h-xFj"/>
                                             <constraint firstItem="rR5-KC-dJ9" firstAttribute="top" secondItem="uvM-o2-leg" secondAttribute="bottom" constant="34" id="Vpu-Fw-KFU"/>
                                             <constraint firstAttribute="trailing" secondItem="PRa-ef-1qE" secondAttribute="trailing" constant="21" id="W5B-J9-tZ3"/>
                                             <constraint firstItem="17d-eq-WJq" firstAttribute="top" secondItem="hUH-er-3QJ" secondAttribute="bottom" constant="8" id="Wfk-mr-SbX"/>
                                             <constraint firstItem="bA3-w8-wNg" firstAttribute="centerY" secondItem="SCm-44-SVL" secondAttribute="centerY" id="Wqv-nu-zc5"/>
                                             <constraint firstItem="gdI-Dl-Yhj" firstAttribute="centerY" secondItem="83k-mo-b7B" secondAttribute="centerY" id="YaS-4g-8UN"/>
                                             <constraint firstItem="M8i-Sa-xWJ" firstAttribute="top" secondItem="UsH-NC-M2U" secondAttribute="bottom" constant="18" id="ZQV-2Q-I9f"/>
-                                            <constraint firstAttribute="bottom" secondItem="anl-E7-Agi" secondAttribute="bottom" id="ZqG-nB-zBf"/>
                                             <constraint firstItem="lh6-1o-FKt" firstAttribute="leading" secondItem="qqG-HI-jz0" secondAttribute="leading" constant="21" id="a2r-55-z46"/>
                                             <constraint firstItem="frJ-DM-GPB" firstAttribute="centerX" secondItem="qqG-HI-jz0" secondAttribute="centerX" id="a41-f0-yJE"/>
                                             <constraint firstItem="SCm-44-SVL" firstAttribute="top" secondItem="lh6-1o-FKt" secondAttribute="bottom" constant="34" id="aIs-Nm-Uce"/>
@@ -7625,7 +7621,6 @@ Insurance</string>
                                             <constraint firstItem="uvM-o2-leg" firstAttribute="trailing" secondItem="lh6-1o-FKt" secondAttribute="trailing" id="am6-J6-t1m"/>
                                             <constraint firstItem="lh6-1o-FKt" firstAttribute="leading" secondItem="rR5-KC-dJ9" secondAttribute="leading" id="aqV-Gq-64R"/>
                                             <constraint firstItem="lh6-1o-FKt" firstAttribute="leading" secondItem="zoY-kK-U8Z" secondAttribute="leading" id="c22-yj-b2Y"/>
-                                            <constraint firstItem="lh6-1o-FKt" firstAttribute="top" secondItem="Ain-a8-JcK" secondAttribute="bottom" constant="29" id="cux-nO-Eny"/>
                                             <constraint firstItem="1f2-H1-uxd" firstAttribute="centerY" secondItem="zoY-kK-U8Z" secondAttribute="centerY" id="dpS-UF-bFh"/>
                                             <constraint firstItem="UsH-NC-M2U" firstAttribute="centerX" secondItem="qqG-HI-jz0" secondAttribute="centerX" id="fuR-YP-RtI"/>
                                             <constraint firstItem="lh6-1o-FKt" firstAttribute="leading" secondItem="jgT-cR-tUk" secondAttribute="leading" id="giY-Kl-fRa"/>
@@ -7638,12 +7633,11 @@ Insurance</string>
                                             <constraint firstItem="UsH-NC-M2U" firstAttribute="leading" secondItem="qqG-HI-jz0" secondAttribute="leading" constant="89" id="kdG-qc-3Zt"/>
                                             <constraint firstItem="nSi-5N-CHK" firstAttribute="centerY" secondItem="1f2-H1-uxd" secondAttribute="centerY" id="mO6-zh-RnO"/>
                                             <constraint firstItem="uvM-o2-leg" firstAttribute="leading" secondItem="lh6-1o-FKt" secondAttribute="leading" id="nV9-Yy-Owc"/>
+                                            <constraint firstItem="lh6-1o-FKt" firstAttribute="top" secondItem="qqG-HI-jz0" secondAttribute="top" constant="37" id="o73-DI-bMm"/>
                                             <constraint firstItem="9k7-K3-8Xs" firstAttribute="top" secondItem="UsH-NC-M2U" secondAttribute="bottom" constant="18" id="oYp-R2-4Lf"/>
                                             <constraint firstItem="zoY-kK-U8Z" firstAttribute="trailing" secondItem="lh6-1o-FKt" secondAttribute="trailing" id="rtt-1x-UhM"/>
                                             <constraint firstItem="UsH-NC-M2U" firstAttribute="top" secondItem="7ie-Jz-vPN" secondAttribute="bottom" constant="20" id="sAn-t2-nYa"/>
-                                            <constraint firstItem="anl-E7-Agi" firstAttribute="leading" secondItem="qqG-HI-jz0" secondAttribute="leading" id="tBs-g4-llX"/>
                                             <constraint firstItem="90q-aq-KOh" firstAttribute="centerY" secondItem="Tup-6i-jnv" secondAttribute="centerY" id="tez-1X-PBg"/>
-                                            <constraint firstItem="Ain-a8-JcK" firstAttribute="leading" secondItem="qqG-HI-jz0" secondAttribute="leading" id="uTd-4J-ptD"/>
                                             <constraint firstItem="bA3-w8-wNg" firstAttribute="trailing" secondItem="PRa-ef-1qE" secondAttribute="trailing" id="xce-pc-vE6"/>
                                             <constraint firstItem="1f2-H1-uxd" firstAttribute="leading" secondItem="PRa-ef-1qE" secondAttribute="leading" id="xiF-La-mHq"/>
                                             <constraint firstItem="nSi-5N-CHK" firstAttribute="leading" secondItem="1f2-H1-uxd" secondAttribute="trailing" constant="8" id="yLC-BS-dDv"/>
@@ -7681,6 +7675,7 @@ Insurance</string>
                                         </variation>
                                     </view>
                                 </subviews>
+                                <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.93725490199999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="qqG-HI-jz0" firstAttribute="width" secondItem="xZG-lP-d7y" secondAttribute="width" id="6n3-7n-nbN"/>
                                     <constraint firstItem="qqG-HI-jz0" firstAttribute="top" secondItem="xZG-lP-d7y" secondAttribute="top" id="Sft-2A-Uk0"/>
@@ -7692,9 +7687,15 @@ Insurance</string>
                         </subviews>
                         <color key="backgroundColor" red="0.078431372550000003" green="0.066666666669999999" blue="0.1137254902" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="anl-E7-Agi" firstAttribute="trailing" secondItem="xZG-lP-d7y" secondAttribute="trailing" id="80B-Cv-kcc"/>
+                            <constraint firstItem="anl-E7-Agi" firstAttribute="top" secondItem="xZG-lP-d7y" secondAttribute="bottom" id="AsH-73-UVs"/>
                             <constraint firstItem="xZG-lP-d7y" firstAttribute="top" secondItem="FYM-Mb-f1V" secondAttribute="top" constant="18" id="Siy-nY-VXO"/>
+                            <constraint firstItem="Ain-a8-JcK" firstAttribute="trailing" secondItem="xZG-lP-d7y" secondAttribute="trailing" id="Tvy-jW-AM2"/>
                             <constraint firstAttribute="bottom" secondItem="xZG-lP-d7y" secondAttribute="bottom" constant="18" id="Ulf-Xq-IJg"/>
                             <constraint firstAttribute="trailing" secondItem="xZG-lP-d7y" secondAttribute="trailing" constant="18" id="abf-n3-ugf"/>
+                            <constraint firstItem="xZG-lP-d7y" firstAttribute="top" secondItem="Ain-a8-JcK" secondAttribute="bottom" id="dpa-Vh-ohi"/>
+                            <constraint firstItem="Ain-a8-JcK" firstAttribute="leading" secondItem="xZG-lP-d7y" secondAttribute="leading" id="jIs-Xk-W57"/>
+                            <constraint firstItem="anl-E7-Agi" firstAttribute="leading" secondItem="xZG-lP-d7y" secondAttribute="leading" id="n7u-qd-Wzd"/>
                             <constraint firstItem="xZG-lP-d7y" firstAttribute="leading" secondItem="FYM-Mb-f1V" secondAttribute="leading" constant="18" id="nU0-tR-DTq"/>
                         </constraints>
                     </view>
