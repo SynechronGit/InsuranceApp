@@ -117,7 +117,7 @@ class IAAddVehicleController: IABaseController, UIImagePickerControllerDelegate,
         self.addBtn2.isHidden = true
         self.addBtn3.isHidden = true
         
-        self.mainBgView.layer.cornerRadius = 10.0
+        //self.mainBgView.layer.cornerRadius = 10.0
         self.mainBgView.layer.masksToBounds = true
         
         self.addBtn1.layer.cornerRadius = IAConstants.dashboardSubviewCornerRadius
