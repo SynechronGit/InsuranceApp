@@ -57,6 +57,7 @@ class IAAddVehicleController: IABaseController, UIImagePickerControllerDelegate,
     @IBOutlet weak var addPhotoSecondImageView: UIImageView!
     @IBOutlet weak var addBtn3: UIView!
     @IBOutlet weak var addPhotoThirdImageView: UIImageView!
+    @IBOutlet weak var vehicleImageBottomBorderTopConstraint :NSLayoutConstraint!
     
     var imagePickerController :UIImagePickerController!
     weak var imagePickerDestinationImageView: UIImageView!
