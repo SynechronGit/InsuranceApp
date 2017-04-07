@@ -174,6 +174,13 @@ class IAFileClaimController: IABaseController, UIImagePickerControllerDelegate, 
     }
     
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        self.assignScrollContentHeight()
+    }
+    
+    
     func resetAllData() {
         self.view.endEditing(true)
         
