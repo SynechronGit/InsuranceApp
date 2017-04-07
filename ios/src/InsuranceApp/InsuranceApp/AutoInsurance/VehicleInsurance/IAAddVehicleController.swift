@@ -49,7 +49,10 @@ class IAAddVehicleController: IABaseController, UIImagePickerControllerDelegate,
     @IBOutlet weak var stateTextField :UITextField!
     @IBOutlet weak var vinTextField: UITextField!
     
+    
+    @IBOutlet weak var addVehicleScrollView: UIScrollView!
     @IBOutlet weak var mainBgView: UIView!
+    @IBOutlet weak var mainBgViewHeightConstraint: NSLayoutConstraint!
     
     @IBOutlet weak var addBtn1: UIView!
     @IBOutlet weak var addPhotoFirstImageView: UIImageView!
@@ -164,6 +167,12 @@ class IAAddVehicleController: IABaseController, UIImagePickerControllerDelegate,
         self.bosyStyleTextBox.shouldDisplayAsDropdown = true
         self.bosyStyleTextBox.controller = self
         self.bosyStyleTextBox.list = nil
+    }
+    
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        self.assignScrollContentHeight()
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
@@ -394,6 +403,29 @@ class IAAddVehicleController: IABaseController, UIImagePickerControllerDelegate,
         }
     }
     
+    
+    func assignScrollContentHeight() {
+        if UIDevice.current.isIphone {
+            var aContentViewHeight :CGFloat = 1262.0
+            var aBottomBorderTop :CGFloat = self.addBtn1.frame.size.height + 30.0 + 30.0
+            
+            if self.addBtn2.isHidden == false {
+                aBottomBorderTop = aBottomBorderTop + self.addBtn2.frame.size.height + 18.0
+                aContentViewHeight = aContentViewHeight + self.addBtn2.frame.size.height + 18.0
+            }
+            
+            if self.addBtn3.isHidden == false {
+                aBottomBorderTop = aBottomBorderTop + self.addBtn3.frame.size.height + 18.0
+                aContentViewHeight = aContentViewHeight + self.addBtn3.frame.size.height + 18.0
+            }
+            
+            self.vehicleImageBottomBorderTopConstraint.constant = aBottomBorderTop
+            self.mainBgViewHeightConstraint.constant = aContentViewHeight
+            self.addVehicleScrollView.contentSize = CGSize(width: self.addVehicleScrollView.frame.width, height: aContentViewHeight)
+        }
+    }
+    
+    
     // MARK: - UIImagePickerControllerDelegate Methods
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
@@ -410,10 +442,10 @@ class IAAddVehicleController: IABaseController, UIImagePickerControllerDelegate,
                 
             } else if self.imagePickerDestinationImageView != nil && self.imagePickerDestinationImageView.isEqual(self.addPhotoThirdImageView) {
                 self.addPhotoThirdImageView.image = aPickedImage
-                
             }
         }
         picker.dismiss(animated: true, completion: nil)
+        self.assignScrollContentHeight()
     }
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
