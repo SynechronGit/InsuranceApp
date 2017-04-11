@@ -23,9 +23,20 @@ class IADropdownListController: UIViewController {
     @IBOutlet weak var doneButton :UIButton!
     weak var delegate:IADropdownListControllerDelegate?
     
+    @IBOutlet weak var dropdownTableTopConstraint :NSLayoutConstraint!
+    @IBOutlet weak var dropdownTableBottomConstraint :NSLayoutConstraint!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if UIDevice.current.isIphone {
+            self.dropdownTableTopConstraint.constant = 20.0
+            self.dropdownTableBottomConstraint.constant = 20.0
+        } else {
+            self.dropdownTableTopConstraint.constant = 0.0
+            self.dropdownTableBottomConstraint.constant = 0.0
+        }
     }
     
     

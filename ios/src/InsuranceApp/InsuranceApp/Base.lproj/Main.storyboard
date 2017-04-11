@@ -145,7 +145,7 @@
                                 </variation>
                             </textField>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LoginLogo" translatesAutoresizingMaskIntoConstraints="NO" id="aTa-5u-K1v">
-                                <rect key="frame" x="339.5" y="40" width="90" height="90"/>
+                                <rect key="frame" x="339" y="40" width="90" height="90"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="115" id="XUs-38-ghx">
                                         <variation key="heightClass=regular-widthClass=compact" constant="90"/>
@@ -169,7 +169,7 @@
                                 </variation>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="synechronLogo" translatesAutoresizingMaskIntoConstraints="NO" id="wqA-GJ-REE">
-                                <rect key="frame" x="327" y="976" width="115.5" height="28"/>
+                                <rect key="frame" x="326" y="976" width="116" height="28"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="48" id="AMc-OK-MHb">
                                         <variation key="heightClass=regular-widthClass=compact" constant="28"/>
@@ -714,7 +714,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="E9b-1m-KME" userLabel="Navigation Controller" sceneMemberID="viewController">
                     <extendedEdge key="edgesForExtendedLayout"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="549-Rp-6Eb" customClass="IANavigationBar" customModule="InsuranceApp" customModuleProvider="target">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="549-Rp-6Eb" customClass="IANavigationBar" customModule="InsuranceApp" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -2541,7 +2541,7 @@ Premium</string>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters" autocorrectionType="no" spellCheckingType="no"/>
                                             </textField>
                                             <view alpha="0.59999999999999998" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DFC-OI-G92">
-                                                <rect key="frame" x="238.5" y="132" width="255" height="49"/>
+                                                <rect key="frame" x="239" y="132" width="255" height="49"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DH8-3Z-6rP">
                                                         <rect key="frame" x="0.0" y="43" width="255" height="6"/>
@@ -3072,7 +3072,7 @@ Premium</string>
                                         <rect key="frame" x="0.0" y="0.0" width="732" height="1150"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="slB-0F-fYY">
-                                                <rect key="frame" x="284" y="1027.5" width="165" height="49"/>
+                                                <rect key="frame" x="284" y="1028" width="165" height="49"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O1a-J7-TKc">
                                                         <rect key="frame" x="0.0" y="11" width="165" height="21"/>
@@ -3104,7 +3104,7 @@ Premium</string>
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rb4-dd-NoX">
-                                                <rect key="frame" x="294.5" y="31" width="143" height="139"/>
+                                                <rect key="frame" x="295" y="31" width="143" height="139"/>
                                                 <subviews>
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="lXj-9H-Tx3" userLabel="driverPhotoImageView">
                                                         <rect key="frame" x="0.0" y="0.0" width="143" height="139"/>
@@ -3250,7 +3250,7 @@ Premium</string>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="URu-NU-LJt" customClass="IATextField" customModule="InsuranceApp" customModuleProvider="target">
-                                                <rect key="frame" x="180" y="662.5" width="529" height="30"/>
+                                                <rect key="frame" x="180" y="663" width="529" height="30"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="30" id="bbk-Wc-fXB"/>
                                                 </constraints>
@@ -3270,7 +3270,7 @@ Premium</string>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="36H-5w-o8T" customClass="IATextField" customModule="InsuranceApp" customModuleProvider="target">
-                                                <rect key="frame" x="180" y="768.5" width="529" height="30"/>
+                                                <rect key="frame" x="180" y="769" width="529" height="30"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="30" id="SG4-XB-DNa"/>
                                                 </constraints>
@@ -3290,7 +3290,7 @@ Premium</string>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pfi-G0-80x" customClass="IATextField" customModule="InsuranceApp" customModuleProvider="target">
-                                                <rect key="frame" x="180" y="821.5" width="481" height="30"/>
+                                                <rect key="frame" x="180" y="822" width="481" height="30"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="30" id="swn-Nd-kMP"/>
                                                 </constraints>
@@ -3331,7 +3331,7 @@ Premium</string>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jlN-PA-4II" customClass="IATextField" customModule="InsuranceApp" customModuleProvider="target">
-                                                <rect key="frame" x="180" y="874.5" width="529" height="30"/>
+                                                <rect key="frame" x="180" y="875" width="529" height="30"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="30" id="n8K-an-x8P"/>
                                                 </constraints>
@@ -3339,7 +3339,7 @@ Premium</string>
                                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="next"/>
                                             </textField>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1tL-67-B3B" customClass="IATextField" customModule="InsuranceApp" customModuleProvider="target">
-                                                <rect key="frame" x="180" y="927.5" width="529" height="30"/>
+                                                <rect key="frame" x="180" y="928" width="529" height="30"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="30" id="kad-U4-Ouw"/>
                                                 </constraints>
@@ -3368,7 +3368,7 @@ Premium</string>
                                                 </variation>
                                             </textField>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7cG-MP-x1E">
-                                                <rect key="frame" x="671" y="819.5" width="38" height="34"/>
+                                                <rect key="frame" x="671" y="820" width="38" height="34"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="38" id="U6x-nC-h5f"/>
                                                     <constraint firstAttribute="height" constant="34" id="emS-DT-fCz"/>
@@ -3388,7 +3388,7 @@ Premium</string>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ghk-FT-bYR" customClass="IATextField" customModule="InsuranceApp" customModuleProvider="target">
-                                                <rect key="frame" x="180" y="609.5" width="529" height="30"/>
+                                                <rect key="frame" x="180" y="610" width="529" height="30"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="219" id="TQU-M8-CPe"/>
                                                     <constraint firstAttribute="height" constant="30" id="fz2-6M-V9z"/>
@@ -3402,7 +3402,7 @@ Premium</string>
                                                 </variation>
                                             </textField>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XFb-aA-Mwa">
-                                                <rect key="frame" x="257.5" y="186" width="217" height="139"/>
+                                                <rect key="frame" x="258" y="186" width="217" height="139"/>
                                                 <subviews>
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="GpR-lT-gQY" userLabel="licensePhotoImageView">
                                                         <rect key="frame" x="0.0" y="0.0" width="217" height="139"/>
@@ -3473,7 +3473,7 @@ Premium</string>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gFf-AW-qT0" customClass="IATextField" customModule="InsuranceApp" customModuleProvider="target">
-                                                <rect key="frame" x="180" y="715.5" width="481" height="30"/>
+                                                <rect key="frame" x="180" y="716" width="481" height="30"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="30" id="Pkl-hX-khV"/>
                                                 </constraints>
@@ -3481,7 +3481,7 @@ Premium</string>
                                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="next"/>
                                             </textField>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0KS-9o-qEv">
-                                                <rect key="frame" x="671" y="713.5" width="38" height="34"/>
+                                                <rect key="frame" x="671" y="714" width="38" height="34"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="38" id="1qK-Pm-UmY"/>
                                                     <constraint firstAttribute="height" constant="34" id="uN4-zO-2wA"/>
@@ -6135,7 +6135,7 @@ Premium</string>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="yS7-Mb-0yN" sceneMemberID="viewController">
                     <extendedEdge key="edgesForExtendedLayout"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="rR3-RW-hlS" customClass="IANavigationBar" customModule="InsuranceApp" customModuleProvider="target">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="rR3-RW-hlS" customClass="IANavigationBar" customModule="InsuranceApp" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -6189,16 +6189,12 @@ Premium</string>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="tpJ-Ni-F4g" firstAttribute="leading" secondItem="Wph-Zk-yEV" secondAttribute="leading" id="3C6-Mt-AJX"/>
-                            <constraint firstItem="tpJ-Ni-F4g" firstAttribute="top" secondItem="Wph-Zk-yEV" secondAttribute="top" id="3Zk-S0-mnq"/>
                             <constraint firstItem="tpJ-Ni-F4g" firstAttribute="top" secondItem="Wph-Zk-yEV" secondAttribute="top" id="B6p-OI-OM6"/>
                             <constraint firstAttribute="bottom" secondItem="bVe-Vj-9jl" secondAttribute="bottom" id="Bav-oR-OQK"/>
                             <constraint firstItem="63y-gV-Vcg" firstAttribute="top" secondItem="Wph-Zk-yEV" secondAttribute="top" id="E2y-Nq-1Mo"/>
                             <constraint firstItem="bVe-Vj-9jl" firstAttribute="top" secondItem="63y-gV-Vcg" secondAttribute="bottom" id="PDu-pY-4KP"/>
-                            <constraint firstAttribute="bottom" secondItem="tpJ-Ni-F4g" secondAttribute="bottom" id="PYU-8L-5u1"/>
                             <constraint firstAttribute="trailing" secondItem="63y-gV-Vcg" secondAttribute="trailing" id="Q5X-hk-q8P"/>
                             <constraint firstItem="bVe-Vj-9jl" firstAttribute="leading" secondItem="Wph-Zk-yEV" secondAttribute="leading" id="TxB-eS-Jsj"/>
-                            <constraint firstAttribute="trailing" secondItem="tpJ-Ni-F4g" secondAttribute="trailing" id="aqp-zo-IMd"/>
                             <constraint firstAttribute="trailing" secondItem="bVe-Vj-9jl" secondAttribute="trailing" id="gwP-u6-kmt"/>
                             <constraint firstAttribute="bottom" secondItem="tpJ-Ni-F4g" secondAttribute="bottom" id="jtr-Jh-TnO"/>
                             <constraint firstAttribute="trailing" secondItem="tpJ-Ni-F4g" secondAttribute="trailing" id="kFn-DH-HaW"/>
@@ -6215,6 +6211,8 @@ Premium</string>
                         <outlet property="datePicker" destination="bVe-Vj-9jl" id="Ir3-m9-lHc"/>
                         <outlet property="doneButton" destination="63y-gV-Vcg" id="0z4-KP-5PK"/>
                         <outlet property="dropdownTable" destination="tpJ-Ni-F4g" id="gMn-aG-Qv8"/>
+                        <outlet property="dropdownTableBottomConstraint" destination="jtr-Jh-TnO" id="q8f-xh-tez"/>
+                        <outlet property="dropdownTableTopConstraint" destination="B6p-OI-OM6" id="0S6-K9-LZw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9zr-9x-vnH" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -6631,7 +6629,7 @@ Premium</string>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="07" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="100" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ai5-OP-HNB">
-                                                            <rect key="frame" x="134" y="63.5" width="588" height="16"/>
+                                                            <rect key="frame" x="134" y="64" width="588" height="16"/>
                                                             <fontDescription key="fontDescription" name="Ubuntu" family="Ubuntu" pointSize="14"/>
                                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <nil key="highlightedColor"/>
@@ -6841,7 +6839,7 @@ Premium</string>
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="J35-Gz-GUQ" sceneMemberID="viewController">
                     <extendedEdge key="edgesForExtendedLayout"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="REN-n7-vvY" customClass="IANavigationBar" customModule="InsuranceApp" customModuleProvider="target">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="REN-n7-vvY" customClass="IANavigationBar" customModule="InsuranceApp" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -6858,7 +6856,7 @@ Premium</string>
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="kbM-DE-2kh" sceneMemberID="viewController">
                     <extendedEdge key="edgesForExtendedLayout"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Osf-iK-WAm" customClass="IANavigationBar" customModule="InsuranceApp" customModuleProvider="target">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="Osf-iK-WAm" customClass="IANavigationBar" customModule="InsuranceApp" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -6908,11 +6906,11 @@ Premium</string>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="IAClaimListTableCellViewID" rowHeight="254" id="LTa-i8-TNS" customClass="IAClaimListTableCellView" customModule="InsuranceApp" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="28" width="732" height="254"/>
                                                 <autoresizingMask key="autoresizingMask"/>
-                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" tableViewCell="LTa-i8-TNS" id="ykw-7S-zYg">
+                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="LTa-i8-TNS" id="ykw-7S-zYg">
                                                     <rect key="frame" x="0.0" y="0.0" width="732" height="253"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Date Of Claim:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vyk-jC-QHe">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date Of Claim:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vyk-jC-QHe">
                                                             <rect key="frame" x="21" y="81" width="125" height="21"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="21" id="pdP-LQ-Xn2"/>
@@ -6924,7 +6922,7 @@ Premium</string>
                                                                 <fontDescription key="fontDescription" name="Ubuntu-Medium" family="Ubuntu" pointSize="14"/>
                                                             </variation>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Insurance Type:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Cg-Wg-kX6">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Insurance Type:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Cg-Wg-kX6">
                                                             <rect key="frame" x="21" y="110" width="125" height="21"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="21" id="xF6-Ee-NY2"/>
@@ -6936,7 +6934,7 @@ Premium</string>
                                                                 <fontDescription key="fontDescription" name="Ubuntu-Medium" family="Ubuntu" pointSize="14"/>
                                                             </variation>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Insured Item:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wFU-SK-p9B">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Insured Item:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wFU-SK-p9B">
                                                             <rect key="frame" x="21" y="139" width="125" height="21"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="21" id="VUZ-ns-OoE"/>
@@ -6948,7 +6946,7 @@ Premium</string>
                                                                 <fontDescription key="fontDescription" name="Ubuntu-Medium" family="Ubuntu" pointSize="14"/>
                                                             </variation>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Report" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Fn-LS-eoH">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Report" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Fn-LS-eoH">
                                                             <rect key="frame" x="21" y="213" width="47.5" height="21"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="21" id="PbO-dc-ahh"/>
@@ -6960,7 +6958,7 @@ Premium</string>
                                                                 <fontDescription key="fontDescription" name="Ubuntu" family="Ubuntu" pointSize="13"/>
                                                             </variation>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="03 - 01 - 2015" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BVL-jN-1Rt">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="03 - 01 - 2015" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BVL-jN-1Rt">
                                                             <rect key="frame" x="151" y="81" width="566" height="21"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="21" id="6BY-5Y-BBA"/>
@@ -6972,7 +6970,7 @@ Premium</string>
                                                                 <fontDescription key="fontDescription" name="Ubuntu" family="Ubuntu" pointSize="14"/>
                                                             </variation>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Auto" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dqW-C0-I2H">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Auto" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dqW-C0-I2H">
                                                             <rect key="frame" x="151" y="110" width="566" height="21"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="21" id="3W1-7S-yqJ"/>
@@ -6984,7 +6982,7 @@ Premium</string>
                                                                 <fontDescription key="fontDescription" name="Ubuntu" family="Ubuntu" pointSize="14"/>
                                                             </variation>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Mercedez S550" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sc2-E6-E3p">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mercedez S550" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sc2-E6-E3p">
                                                             <rect key="frame" x="151" y="139" width="566" height="21"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="21" id="Yfp-DA-HbS"/>
@@ -6996,14 +6994,14 @@ Premium</string>
                                                                 <fontDescription key="fontDescription" name="Ubuntu" family="Ubuntu" pointSize="14"/>
                                                             </variation>
                                                         </label>
-                                                        <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kVe-fp-pwA">
+                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kVe-fp-pwA">
                                                             <rect key="frame" x="0.0" y="0.0" width="6" height="253.5"/>
                                                             <color key="backgroundColor" red="0.57647058819999997" green="0.27450980390000002" blue="0.68627450980000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="6" id="iTY-AE-5l0"/>
                                                             </constraints>
                                                         </view>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Insurer:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BY2-Hn-22y">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Insurer:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BY2-Hn-22y">
                                                             <rect key="frame" x="21" y="168" width="125" height="21"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="21" id="09e-38-Apu"/>
@@ -7015,7 +7013,7 @@ Premium</string>
                                                                 <fontDescription key="fontDescription" name="Ubuntu-Medium" family="Ubuntu" pointSize="14"/>
                                                             </variation>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Austin Auto Insurance Pvt. Ltd." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="100" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u4M-Rb-quo">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Austin Auto Insurance Pvt. Ltd." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="100" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u4M-Rb-quo">
                                                             <rect key="frame" x="151" y="158.5" width="566" height="40"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="40" id="pLc-op-aPh"/>
@@ -7027,7 +7025,7 @@ Premium</string>
                                                                 <fontDescription key="fontDescription" name="Ubuntu" family="Ubuntu" pointSize="14"/>
                                                             </variation>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Under Review" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k3Q-A4-vmY">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Under Review" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k3Q-A4-vmY">
                                                             <rect key="frame" x="108.5" y="213" width="95" height="21"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="21" id="x46-Cc-POd"/>
@@ -7039,7 +7037,7 @@ Premium</string>
                                                                 <fontDescription key="fontDescription" name="Ubuntu" family="Ubuntu" pointSize="13"/>
                                                             </variation>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Approved" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ghj-hE-muZ">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Approved" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ghj-hE-muZ">
                                                             <rect key="frame" x="243.5" y="213" width="67" height="21"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="21" id="KW1-ey-L37"/>
@@ -7051,21 +7049,21 @@ Premium</string>
                                                                 <fontDescription key="fontDescription" name="Ubuntu" family="Ubuntu" pointSize="13"/>
                                                             </variation>
                                                         </label>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="ClaimStatusRightArrowNormal" translatesAutoresizingMaskIntoConstraints="NO" id="40z-Ih-USu">
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="ClaimStatusRightArrowNormal" translatesAutoresizingMaskIntoConstraints="NO" id="40z-Ih-USu">
                                                             <rect key="frame" x="73.5" y="209" width="30" height="30"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="30" id="eG3-4F-27M"/>
                                                                 <constraint firstAttribute="height" constant="30" id="iBx-AE-lw4"/>
                                                             </constraints>
                                                         </imageView>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="ClaimStatusRightArrowNormal" translatesAutoresizingMaskIntoConstraints="NO" id="2go-6u-gLZ">
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="ClaimStatusRightArrowNormal" translatesAutoresizingMaskIntoConstraints="NO" id="2go-6u-gLZ">
                                                             <rect key="frame" x="208.5" y="209" width="30" height="30"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="30" id="Ba9-DW-C0P"/>
                                                                 <constraint firstAttribute="height" constant="30" id="yLT-dE-Kcc"/>
                                                             </constraints>
                                                         </imageView>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="#EL3726809234" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UOW-09-avJ">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="#EL3726809234" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UOW-09-avJ">
                                                             <rect key="frame" x="21" y="20" width="696" height="23"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="23" id="1qc-XT-4M2"/>
@@ -7077,7 +7075,7 @@ Premium</string>
                                                                 <fontDescription key="fontDescription" name="Ubuntu-Medium" family="Ubuntu" pointSize="15"/>
                                                             </variation>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Policy Number:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pcO-x6-kgL">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Policy Number:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pcO-x6-kgL">
                                                             <rect key="frame" x="21" y="52" width="125" height="21"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="21" id="2H0-BR-I8J"/>
@@ -7090,7 +7088,7 @@ Premium</string>
                                                                 <fontDescription key="fontDescription" name="Ubuntu-Medium" family="Ubuntu" pointSize="14"/>
                                                             </variation>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="2638" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LNn-Ul-tbi">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2638" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LNn-Ul-tbi">
                                                             <rect key="frame" x="151" y="52" width="566" height="21"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="21" id="beS-KV-n6a"/>
@@ -7215,7 +7213,7 @@ Premium</string>
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="1Ks-VZ-ENz" sceneMemberID="viewController">
                     <extendedEdge key="edgesForExtendedLayout"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="19Y-bL-ipP" customClass="IANavigationBar" customModule="InsuranceApp" customModuleProvider="target">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="19Y-bL-ipP" customClass="IANavigationBar" customModule="InsuranceApp" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -7277,7 +7275,7 @@ Premium</string>
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="dqs-79-o5O" sceneMemberID="viewController">
                     <extendedEdge key="edgesForExtendedLayout"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="SWF-s4-Eib" customClass="IANavigationBar" customModule="InsuranceApp" customModuleProvider="target">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="SWF-s4-Eib" customClass="IANavigationBar" customModule="InsuranceApp" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -7339,7 +7337,7 @@ Premium</string>
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="1Z0-fx-7rN" sceneMemberID="viewController">
                     <extendedEdge key="edgesForExtendedLayout"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="wkh-c4-9Yt" customClass="IANavigationBar" customModule="InsuranceApp" customModuleProvider="target">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="wkh-c4-9Yt" customClass="IANavigationBar" customModule="InsuranceApp" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -8359,7 +8357,7 @@ Premium</string>
                                                 </variation>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Under Review" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pBc-bT-rAX">
-                                                <rect key="frame" x="160" y="27.5" width="556" height="24"/>
+                                                <rect key="frame" x="160" y="27" width="556" height="24"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="24" id="lAe-3L-Dwl"/>
                                                 </constraints>
@@ -8387,7 +8385,7 @@ Premium</string>
                                                 </variation>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="EL2736809234" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ULE-OO-mbL">
-                                                <rect key="frame" x="160" y="85.5" width="556" height="21"/>
+                                                <rect key="frame" x="160" y="85" width="556" height="21"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="21" id="Sg1-TW-y8d"/>
                                                 </constraints>
@@ -8415,7 +8413,7 @@ Premium</string>
                                                 </variation>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="03 - 01 - 2015" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="57T-sy-THK">
-                                                <rect key="frame" x="160" y="141.5" width="556" height="24"/>
+                                                <rect key="frame" x="160" y="141" width="556" height="24"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="24" id="Otj-Ms-5MK"/>
                                                 </constraints>
@@ -8427,14 +8425,14 @@ Premium</string>
                                                 </variation>
                                             </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="t5W-RA-pJ5">
-                                                <rect key="frame" x="0.0" y="184.5" width="732" height="2"/>
+                                                <rect key="frame" x="0.0" y="184" width="732" height="2"/>
                                                 <color key="backgroundColor" red="0.74901960779999999" green="0.77647058820000003" blue="0.79607843140000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="2" id="7Vz-UF-zCz"/>
                                                 </constraints>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Incident Date: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YvG-DV-rNU">
-                                                <rect key="frame" x="16" y="205.5" width="139" height="18"/>
+                                                <rect key="frame" x="16" y="205" width="139" height="18"/>
                                                 <fontDescription key="fontDescription" name="Ubuntu" family="Ubuntu" pointSize="19"/>
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -8455,14 +8453,14 @@ Premium</string>
                                                 </variation>
                                             </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d7e-wO-hal">
-                                                <rect key="frame" x="0.0" y="242.5" width="732" height="2"/>
+                                                <rect key="frame" x="0.0" y="242" width="732" height="2"/>
                                                 <color key="backgroundColor" red="0.74901960779999999" green="0.77647058820000003" blue="0.79607843140000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="2" id="rZ9-w3-j6L"/>
                                                 </constraints>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Incident: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bi0-u9-lOi">
-                                                <rect key="frame" x="16" y="263.5" width="139" height="18"/>
+                                                <rect key="frame" x="16" y="263" width="139" height="18"/>
                                                 <fontDescription key="fontDescription" name="Ubuntu" family="Ubuntu" pointSize="19"/>
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -8483,14 +8481,14 @@ Premium</string>
                                                 </variation>
                                             </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Sa6-5u-ssW">
-                                                <rect key="frame" x="0.0" y="300.5" width="732" height="2"/>
+                                                <rect key="frame" x="0.0" y="300" width="732" height="2"/>
                                                 <color key="backgroundColor" red="0.74901960779999999" green="0.77647058820000003" blue="0.79607843140000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="2" id="kr5-YN-4Pa"/>
                                                 </constraints>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Insurance Type: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HtA-Os-luB">
-                                                <rect key="frame" x="16" y="321.5" width="139" height="18"/>
+                                                <rect key="frame" x="16" y="321" width="139" height="18"/>
                                                 <fontDescription key="fontDescription" name="Ubuntu" family="Ubuntu" pointSize="19"/>
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -8511,14 +8509,14 @@ Premium</string>
                                                 </variation>
                                             </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qaB-2u-kCn">
-                                                <rect key="frame" x="0.0" y="358.5" width="732" height="2"/>
+                                                <rect key="frame" x="0.0" y="358" width="732" height="2"/>
                                                 <color key="backgroundColor" red="0.74901960779999999" green="0.77647058820000003" blue="0.79607843140000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="2" id="seX-O0-x3F"/>
                                                 </constraints>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Insured Car: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZQn-t0-Wfk">
-                                                <rect key="frame" x="16" y="379.5" width="139" height="18"/>
+                                                <rect key="frame" x="16" y="379" width="139" height="18"/>
                                                 <fontDescription key="fontDescription" name="Ubuntu" family="Ubuntu" pointSize="19"/>
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -8539,14 +8537,14 @@ Premium</string>
                                                 </variation>
                                             </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RGD-r8-9cM">
-                                                <rect key="frame" x="0.0" y="416.5" width="732" height="2"/>
+                                                <rect key="frame" x="0.0" y="416" width="732" height="2"/>
                                                 <color key="backgroundColor" red="0.74901960779999999" green="0.77647058820000003" blue="0.79607843140000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="2" id="Tff-W2-n7c"/>
                                                 </constraints>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Insurer: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0I0-PU-MzO">
-                                                <rect key="frame" x="16" y="437.5" width="139" height="18"/>
+                                                <rect key="frame" x="16" y="437" width="139" height="18"/>
                                                 <fontDescription key="fontDescription" name="Ubuntu" family="Ubuntu" pointSize="19"/>
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -8567,14 +8565,14 @@ Premium</string>
                                                 </variation>
                                             </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lc4-Uh-DTq">
-                                                <rect key="frame" x="0.0" y="474.5" width="732" height="2"/>
+                                                <rect key="frame" x="0.0" y="474" width="732" height="2"/>
                                                 <color key="backgroundColor" red="0.74901960779999999" green="0.77647058820000003" blue="0.79607843140000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="2" id="ur8-CH-Psg"/>
                                                 </constraints>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Value: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EjC-WE-FiH">
-                                                <rect key="frame" x="16" y="495.5" width="139" height="18"/>
+                                                <rect key="frame" x="16" y="495" width="139" height="18"/>
                                                 <fontDescription key="fontDescription" name="Ubuntu" family="Ubuntu" pointSize="19"/>
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -8595,14 +8593,14 @@ Premium</string>
                                                 </variation>
                                             </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VKs-Dl-eb3">
-                                                <rect key="frame" x="0.0" y="532.5" width="732" height="2"/>
+                                                <rect key="frame" x="0.0" y="532" width="732" height="2"/>
                                                 <color key="backgroundColor" red="0.74901960779999999" green="0.77647058820000003" blue="0.79607843140000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="2" id="ZRv-Oa-erz"/>
                                                 </constraints>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Claimed Item Images:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V7N-YR-z34">
-                                                <rect key="frame" x="16" y="555.5" width="700" height="22"/>
+                                                <rect key="frame" x="16" y="555" width="700" height="22"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="22" id="a9f-Sz-8Rw"/>
                                                 </constraints>
@@ -8611,7 +8609,7 @@ Premium</string>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bFe-XR-EJc">
-                                                <rect key="frame" x="260.5" y="592.5" width="211" height="140"/>
+                                                <rect key="frame" x="261" y="592" width="211" height="140"/>
                                                 <subviews>
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="r4T-Po-sDc">
                                                         <rect key="frame" x="0.0" y="0.0" width="211" height="140"/>
@@ -8627,7 +8625,7 @@ Premium</string>
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cKX-qU-YPF">
-                                                <rect key="frame" x="260" y="747.5" width="211" height="140"/>
+                                                <rect key="frame" x="260" y="747" width="211" height="140"/>
                                                 <subviews>
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1ua-Wd-OgI">
                                                         <rect key="frame" x="0.0" y="0.0" width="211" height="140"/>
@@ -8641,7 +8639,7 @@ Premium</string>
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="z2I-Hf-LaJ">
-                                                <rect key="frame" x="260.5" y="902.5" width="211" height="140"/>
+                                                <rect key="frame" x="261" y="902" width="211" height="140"/>
                                                 <subviews>
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="g8q-HI-tGj">
                                                         <rect key="frame" x="0.0" y="0.0" width="211" height="140"/>
