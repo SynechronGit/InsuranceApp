@@ -108,13 +108,17 @@ class IATextField: UITextField, IADropdownListControllerDelegate {
     }
     
     
-    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+    override func becomeFirstResponder() -> Bool {
+        let aReturnVal :Bool = super.becomeFirstResponder()
+        
         if (self.shouldDisplayAsDropdown != nil && self.shouldDisplayAsDropdown == true) || (self.shouldDisplayAsDatePicker != nil && self.shouldDisplayAsDatePicker == true) {
-            self.resignFirstResponder()
-            if touches.first?.tapCount == 1 && self.controller != nil {
+            self.endEditing(true)
+            if self.controller != nil {
                 self.displayDropdownList()
             }
         }
+        
+        return aReturnVal
     }
     
     
