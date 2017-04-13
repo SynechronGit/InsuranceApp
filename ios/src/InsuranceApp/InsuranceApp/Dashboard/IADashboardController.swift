@@ -35,7 +35,7 @@ class IADashboardController: IABaseController {
         let aTapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(IADashboardController.didSelectAutoInsuranceView))
         aTapGestureRecognizer.cancelsTouchesInView = false
         self.autoInsuranceContainerView.addGestureRecognizer(aTapGestureRecognizer)
-        self.autoInsuranceContainerView.layer.borderColor = UIColor.red.cgColor
+        self.autoInsuranceContainerView.layer.borderColor = UIColor(red: (self.autoInsuranceContainerView.backgroundColor?.redComponent)! * 1.3, green: (self.autoInsuranceContainerView.backgroundColor?.greenComponent)! * 1.3, blue: (self.autoInsuranceContainerView.backgroundColor?.blueComponent)! * 1.3, alpha: 1.0).cgColor
         
         self.homeInsuranceContainerView.alpha = 0.6
         self.boatInsuranceContainerView.alpha = 0.6
