@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		1B1C34DA1E827D9400161873 /* HockeySDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B1C34D81E827D9400161873 /* HockeySDK.framework */; };
 		1B1C34DB1E827D9400161873 /* HockeySDKResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 1B1C34D91E827D9400161873 /* HockeySDKResources.bundle */; };
+		1B5923B41EA74D8E00878844 /* IADataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F820C621CF4526D00729AE6 /* IADataManager.swift */; };
 		3F0CA4371CF44030002A048E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F0CA4351CF44030002A048E /* Main.storyboard */; };
 		3F0CA4391CF44030002A048E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F0CA4381CF44030002A048E /* Assets.xcassets */; };
 		3F0CA43C1CF44030002A048E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F0CA43A1CF44030002A048E /* LaunchScreen.storyboard */; };
@@ -41,7 +42,6 @@
 		3F63F10B1CFEF55000623420 /* IAPoliciesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F63F1071CFEF55000623420 /* IAPoliciesController.swift */; };
 		3F63F1101CFEF5B500623420 /* IAFileClaimController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F63F10F1CFEF5B500623420 /* IAFileClaimController.swift */; };
 		3F820C611CF4522000729AE6 /* IAConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F820C601CF4522000729AE6 /* IAConstants.swift */; };
-		3F820C631CF4526D00729AE6 /* IADataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F820C621CF4526D00729AE6 /* IADataManager.swift */; };
 		3F820C691CF4555800729AE6 /* IACustomer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F820C681CF4555800729AE6 /* IACustomer.swift */; };
 		3F9948981CFC6B1100A880A8 /* IADashboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F9948971CFC6B1100A880A8 /* IADashboard.swift */; };
 		3F9948B31CFC782100A880A8 /* LTCharacterLimbo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F9948A01CFC782100A880A8 /* LTCharacterLimbo.swift */; };
@@ -697,6 +697,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1B5923B41EA74D8E00878844 /* IADataManager.swift in Sources */,
 				3F3F0DC11D003CD700A851FB /* IADriverListCell.swift in Sources */,
 				3F4999C11D0806EC007D8A73 /* IAClaimDetailsController.swift in Sources */,
 				3F18A3F91D0AA2C3001072DD /* NSDateAdditions.swift in Sources */,
@@ -714,7 +715,6 @@
 				3F63F1101CFEF5B500623420 /* IAFileClaimController.swift in Sources */,
 				7D2D2CA41D09702A0083D901 /* IARegisterSafetyDeviceController.swift in Sources */,
 				3FE1FA8D1CFC81E6008EA53F /* IALabel.swift in Sources */,
-				3F820C631CF4526D00729AE6 /* IADataManager.swift in Sources */,
 				3F9948B91CFC782100A880A8 /* LTMorphingLabel+Evaporate.swift in Sources */,
 				3F0CA46F1CF440C9002A048E /* IALoginController.swift in Sources */,
 				3F0CA46E1CF440C9002A048E /* IADashboardController.swift in Sources */,
@@ -944,6 +944,7 @@
 				PROVISIONING_PROFILE = "a8b0e95a-3a57-467d-98ee-2c2b2f3753ea";
 				PROVISIONING_PROFILE_SPECIFIER = SynechronMarkelProdProfile;
 				SWIFT_OBJC_BRIDGING_HEADER = InsuranceApp/Assistants/BridgingHeader.h;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
