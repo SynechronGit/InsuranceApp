@@ -520,7 +520,7 @@ class IADataManager: NSObject {
                 aValueArray.append(aPhotoTwoData != nil ? (aPhotoTwoData as AnyObject) : (NSNull() as AnyObject))
                 aValueArray.append(aPhotoThreeData != nil ? (aPhotoThreeData as AnyObject) : (NSNull() as AnyObject))
                 aValueArray.append(aClaim.policyNumber != nil ? (aClaim.policyNumber as AnyObject) : (NSNull() as AnyObject))
-                try self.executeQuery(anSqlQuery, values: aValueArray)
+                 _ = try self.executeQuery(anSqlQuery, values: aValueArray)
                 aDataManagerResponse.result = aClaim
             } else if self.requestType == IARequestType.listPremiums {
                 let anSqlQuery :String = "SELECT name, insurance_type, date, policy_number, amount FROM premiums"
