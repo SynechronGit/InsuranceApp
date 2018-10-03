@@ -2,8 +2,8 @@
 //  ATKit.h
 //  ATKit
 //
-//  Created by Rupendra on 25/06/16.
-//  Copyright © 2016 Example. All rights reserved.
+//  Created by Rupendra on 11/01/18.
+//  Copyright © 2018 Aurvan.com. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>

@@ -7,4 +7,5 @@ framework module ATKit {
 
 module ATKit.Swift {
     header "ATKit-Swift.h"
+    requires objc
 }

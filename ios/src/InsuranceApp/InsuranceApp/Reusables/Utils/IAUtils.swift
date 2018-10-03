@@ -86,3 +86,10 @@ class IAUtils: NSObject {
     }
 
 }
+
+
+extension CGSize {
+    func scaledSize(percent pPercent :CGFloat) -> CGSize {
+        return CGSize(width: self.width * pPercent / 100, height: self.height * pPercent / 100)
+    }
+}
