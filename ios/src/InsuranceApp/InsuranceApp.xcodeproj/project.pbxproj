@@ -903,6 +903,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				DEVELOPMENT_TEAM = N6ZJQTRK2Z;
 				ENABLE_BITCODE = NO;
@@ -916,8 +917,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.synechron.markel.MyInsurance;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "a8b0e95a-3a57-467d-98ee-2c2b2f3753ea";
-				PROVISIONING_PROFILE_SPECIFIER = SynechronMarkelProdProfile;
+				PROVISIONING_PROFILE = "46573cb9-7767-4f68-848b-78fe808eaa6d";
+				PROVISIONING_PROFILE_SPECIFIER = "Markel Account - iOS Development";
 				SWIFT_OBJC_BRIDGING_HEADER = InsuranceApp/Assistants/BridgingHeader.h;
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -941,8 +942,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.synechron.markel.MyInsurance;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "a8b0e95a-3a57-467d-98ee-2c2b2f3753ea";
-				PROVISIONING_PROFILE_SPECIFIER = SynechronMarkelProdProfile;
+				PROVISIONING_PROFILE = "4ebf32a2-78d1-4d26-9fff-dd6325f2f4ed";
+				PROVISIONING_PROFILE_SPECIFIER = "Markel Account - iOS InHouse";
 				SWIFT_OBJC_BRIDGING_HEADER = InsuranceApp/Assistants/BridgingHeader.h;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
